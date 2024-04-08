@@ -27,6 +27,7 @@ public class Floor : MonoBehaviour
     private void Update()
     {
         BoundsInt bounds = GetBoundsFromCamera();
+        Debug.Log(bounds.size);
         for (int x = bounds.min.x; x <= bounds.max.x; x++)
         {
             for (int y = bounds.min.y; y <= bounds.max.y; y++)
@@ -44,10 +45,11 @@ public class Floor : MonoBehaviour
 
     BoundsInt GetBoundsFromCamera()
     {
+        float cameraSize = mainCamera.orthographicSize;
         Vector3 cameraPosition = mainCamera.transform.position;
-        Vector3 cameraSize = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Mathf.Abs(cameraPosition.z)));
-        Vector3Int minPosition = tilemap.WorldToCell(cameraPosition - cameraSize);
-        Vector3Int maxPosition = tilemap.WorldToCell(cameraPosition + cameraSize);
+        Vector3Int minPosition = tilemap.WorldToCell(cameraPosition - new Vector3(cameraSize * mainCamera.aspect, cameraSize, 0));
+        Vector3Int maxPosition = tilemap.WorldToCell(cameraPosition + new Vector3(cameraSize * mainCamera.aspect, cameraSize, 0));
+        
 
         return new BoundsInt(minPosition, maxPosition - minPosition);
     }
