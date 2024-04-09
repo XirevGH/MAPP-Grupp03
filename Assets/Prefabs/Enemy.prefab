@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 7459260586138351890}
   - component: {fileID: 4452318053238822982}
   - component: {fileID: 1244441984418440535}
+  - component: {fileID: -8718832928761771214}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -179,7 +180,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 56cf7b90f6fd85c42a7f25efe2ae38bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1b40db17f2181064888d17ac69c34b04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -205,8 +206,9 @@ MonoBehaviour:
   player: {fileID: 0}
   movementSpeed: 1
   health: 5
-  damageNumbers: {fileID: 0}
-  anim: {fileID: 0}
+  damageNumbers: {fileID: 287581913604085729}
+  damageNumberAnim: {fileID: 2898152515693454215}
+  enemyAnim: {fileID: -8718832928761771214}
 --- !u!58 &4452318053238822982
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -269,6 +271,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &-8718832928761771214
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6536046719154458180}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c0fe0562b57bac43a23657a1a9dc92d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6541820272251200914
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,8 +367,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 0
+  m_fontColor: {r: 0, g: 0, b: 0, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -362,8 +385,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.8
-  m_fontSizeBase: 0.8
+  m_fontSize: 1.36
+  m_fontSizeBase: 1.36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

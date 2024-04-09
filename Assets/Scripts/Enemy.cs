@@ -10,7 +10,9 @@ public class Enemy : MonoBehaviour
 
     public float health;
     public TMP_Text damageNumbers;
-    public Animator anim;
+    public Animator damageNumberAnim;
+    public Animator enemyAnim;
+    private bool isDead;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -19,23 +21,32 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(this.GetComponent<Transform>().position, player.GetComponent<Transform>().position, movementSpeed/200);
-
         CheckIfDead();
     }
 
     public void TakeDamage(float damageTaken)
     {
-        health -= damageTaken;
-        damageNumbers.text = damageTaken.ToString();
-        anim.SetTrigger("TakingDamage");
+        if (!isDead) { 
+            health -= damageTaken;
+            damageNumbers.text = damageTaken.ToString();
+            damageNumberAnim.SetTrigger("TakingDamage");
+            enemyAnim.SetTrigger("TakeDamage");
+        }
+
     }
 
     private void CheckIfDead()
     {
-        Debug.Log(health);
-        if (health <= 0)
+        if (health <= 0 && !isDead)
         {
-            Destroy(gameObject);
+            isDead = true;
+            enemyAnim.SetTrigger("Dead");
+            Invoke("DestroyGameObject", 0.8f);
         }
+    }
+
+    private void DestroyGameObject()
+    {
+        Destroy(gameObject);
     }
 }

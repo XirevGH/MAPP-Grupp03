@@ -9,7 +9,6 @@ public class BassGuitar : MonoBehaviour
 
     public float DealDamage() 
     {
-        Debug.Log("Dealing damage");
         return damage; 
     }
 
