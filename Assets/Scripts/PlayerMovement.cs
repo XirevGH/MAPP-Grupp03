@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 25f;
+    [SerializeField] private float moveSpeed;
     [SerializeField] private Transform pos;
 
     private float horizontalValue;
