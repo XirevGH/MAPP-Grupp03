@@ -27,7 +27,6 @@ public class Floor : MonoBehaviour
     private void Update()
     {
         BoundsInt bounds = GetBoundsFromCamera();
-        Debug.Log(bounds.size);
         for (int x = bounds.min.x; x <= bounds.max.x; x++)
         {
             for (int y = bounds.min.y; y <= bounds.max.y; y++)
