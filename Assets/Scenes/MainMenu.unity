@@ -11395,6 +11395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mony: 1000
+  MonyText: {fileID: 368561307}
   DamegCost: {fileID: 867063608}
   DamegStats: {fileID: 196335105}
   BPMCost: {fileID: 1501115216}

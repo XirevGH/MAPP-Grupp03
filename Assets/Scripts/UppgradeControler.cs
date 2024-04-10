@@ -6,6 +6,7 @@ using UnityEngine;
 public class UppgradeControler : MonoBehaviour
 {
     [SerializeField] private int mony;
+    [SerializeField] private TextMeshProUGUI MonyText;
     
     [SerializeField] private TextMeshProUGUI DamegCost;
     [SerializeField] private TextMeshProUGUI DamegStats;
@@ -44,7 +45,7 @@ public class UppgradeControler : MonoBehaviour
 
     private void Start()
     {
-    perLevelPricIncreas = 0;
+    
     levelDamag = 0;
     levelBPM = 0;
     levelSize = 0;
@@ -55,7 +56,7 @@ public class UppgradeControler : MonoBehaviour
     levelInvinsebiletyFrames = 0;
 
 
-
+        MonyText.SetText(mony.ToString());
 
         DamegCost.SetText(((levelDamag + 1) * perLevelPricIncreas).ToString());
         DamegStats.SetText(levelDamag * 5 + "%");
@@ -85,7 +86,7 @@ public class UppgradeControler : MonoBehaviour
     }
     public void ByDameg()
     {
-        if(EnothMoney(levelDamag * perLevelPricIncreas)){
+        if(EnothMoney((levelDamag + 1) * perLevelPricIncreas)){
             levelDamag += 1;
             DamegCost.SetText(((levelDamag + 1) * perLevelPricIncreas).ToString());
             DamegStats.SetText(levelDamag * 5 + "%");
@@ -94,7 +95,7 @@ public class UppgradeControler : MonoBehaviour
 
     public void ByBPM()
     {
-        if(EnothMoney(levelBPM * perLevelPricIncreas)){
+        if(EnothMoney((levelBPM + 1) * perLevelPricIncreas)){
             levelBPM += 1;
             BPMCost.SetText(((levelBPM + 1) * perLevelPricIncreas).ToString());
             BPMStats.SetText(levelBPM * 5 + "%");
@@ -103,7 +104,7 @@ public class UppgradeControler : MonoBehaviour
 
     public void BySize()
     {
-        if(EnothMoney(levelSize * perLevelPricIncreas)){
+        if(EnothMoney((levelSize + 1) * perLevelPricIncreas)){
             levelSize += 1;
             SizeCost.SetText(((levelSize + 1) * perLevelPricIncreas).ToString());
             SizeStats.SetText(levelSize * 10 + "%");
@@ -112,7 +113,7 @@ public class UppgradeControler : MonoBehaviour
 
     public void ByXpMultiplayer()
     {
-        if(EnothMoney(levelXpMultilapyer * perLevelPricIncreas)){
+        if(EnothMoney((levelXpMultilapyer + 1) * perLevelPricIncreas)){
             levelXpMultilapyer += 1;
             XpMultCost.SetText(((levelXpMultilapyer + 1) * perLevelPricIncreas).ToString());
             XpMultStats.SetText(levelXpMultilapyer * 2.5 + "%");
@@ -121,7 +122,7 @@ public class UppgradeControler : MonoBehaviour
 
     public void ByHP()
     {
-        if(EnothMoney(levelHP * perLevelPricIncreas)){
+        if(EnothMoney((levelHP + 1) * perLevelPricIncreas)){
             levelHP += 1;
             HPCost.SetText(((levelHP + 1) * perLevelPricIncreas).ToString());
             HPStats.SetText(levelHP * 10 + "%");
@@ -131,7 +132,7 @@ public class UppgradeControler : MonoBehaviour
 
     public void ByDefence()
     {
-        if(EnothMoney(levelDefece * perLevelPricIncreas)){
+        if(EnothMoney((levelDefece + 1)  * perLevelPricIncreas)){
             levelDefece += 1;
             DefenceCost.SetText(((levelDefece + 1) * perLevelPricIncreas).ToString());
             DefenceStats.SetText(levelDefece * 5 + "");
@@ -140,7 +141,7 @@ public class UppgradeControler : MonoBehaviour
 
     public void ByMovSpeed()
     {
-        if(EnothMoney(levelMoveSpeed * perLevelPricIncreas)){
+        if(EnothMoney((levelMoveSpeed + 1) * perLevelPricIncreas)){
             levelMoveSpeed += 1;
             MovSpeedCost.SetText(((levelMoveSpeed + 1) * perLevelPricIncreas).ToString());
             MovSpeedStats.SetText(levelMoveSpeed * 0.1 + "");
@@ -149,7 +150,7 @@ public class UppgradeControler : MonoBehaviour
 
     public void ByInvinsebiletyFrames()
     {
-       if(EnothMoney(levelInvinsebiletyFrames * perLevelPricIncreas)){
+       if(EnothMoney((levelInvinsebiletyFrames + 1) * perLevelPricIncreas)){
             levelInvinsebiletyFrames += 1;
             InvinsebliletyCost.SetText(((levelInvinsebiletyFrames + 1) * perLevelPricIncreas).ToString());
             InvinsebliletyStats.SetText(levelInvinsebiletyFrames * 0.1 + "s");
@@ -159,7 +160,8 @@ public class UppgradeControler : MonoBehaviour
     public bool EnothMoney(int price)
     {
         if(mony >= price){
-            mony -= price; 
+            mony -= price;
+            MonyText.SetText(mony.ToString());
             return true;
         }
         return false;
