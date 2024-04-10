@@ -12,15 +12,16 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemy;
     public GameObject parent;
     public GameObject[] spawnLocations;
-
-    public bool waveHasSpawned;
+    
+    public int spawnRate;
+    private bool waveHasSpawned;
 
     void Update()
     {
         if (!waveHasSpawned)
         {
             waveHasSpawned = true;
-            Invoke("SpawnNextWave", 10);
+            Invoke("SpawnNextWave", spawnRate);
             SpawnEnemiesInCircle(10);
             SpawnEnemiesInCorners();
         }
