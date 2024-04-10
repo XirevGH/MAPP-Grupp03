@@ -8,8 +8,9 @@ public class BreakDanceAbility : MonoBehaviour
     public bool usedAbility = false;
     public bool dealDamage = false;
     public float abilityCooldown;
-    
-     GameObject enemy;   
+    public float abilityTime;
+
+    GameObject enemy;   
 
 
     void Update()
@@ -29,11 +30,10 @@ public class BreakDanceAbility : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         if (dealDamage && other.CompareTag("Enemy")) //checkar om det finns enemies inom collidern som kan göras skada på
-        {  
+        {
             // TODO lägg till så att man kan göra skada på enemies i collidern
 
             Debug.Log("Hello");
-            dealDamage = false;
         }
   
     }
@@ -44,6 +44,7 @@ public class BreakDanceAbility : MonoBehaviour
         dealDamage = true;
         usedAbility = true;
         //TODO lägg till animation
+        Invoke("BreakDanceTime", abilityTime);
         Invoke("CanUseAbility", abilityCooldown); //efter en viss stund gör den så att usedAbility blir false så man kan använda ability igen
         Debug.Log("There");
        
@@ -54,4 +55,11 @@ public class BreakDanceAbility : MonoBehaviour
         usedAbility = false;
         Debug.Log("Yahallo");
     }
+
+    private void BreakDanceTime()
+    {
+        dealDamage = false;
+        Debug.Log("Yoyoyoyoyoy");
+    }
+
 }
