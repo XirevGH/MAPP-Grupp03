@@ -7,6 +7,8 @@ public class BassGuitar : Weapon
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        DealDamage(other);
+        if (WeaponIsReady()) { 
+            DealDamage(other);
+        }
     }
 }

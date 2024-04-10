@@ -20,13 +20,14 @@ public abstract class Weapon : MonoBehaviour
             cooldownTimer -= Time.deltaTime;
             if (cooldownTimer <= 0 )
             {
+                Debug.Log("weapon is ready");
                SetWeaponReady();
             }
         }
     }
     public void DealDamage(Collider2D other)
     {
-        DealDamage(other);
+        other.GetComponent<Enemy>().TakeDamage(damage);
     }
     public bool WeaponIsReady() 
     { 
