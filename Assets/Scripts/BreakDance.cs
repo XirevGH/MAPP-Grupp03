@@ -4,53 +4,37 @@ using UnityEngine;
 
 public class BreakDance : Weapon
 {
-    public float damage;
-    public bool usedAbility = false;
-    public bool dealDamage = false;
-    public float abilityCooldown;
+    public bool dealDamage;
     public float abilityTime;
-
-    GameObject enemy;   
-
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E) && !usedAbility) //kräver att man klickar på knappen och att man inte har ability på cooldown
-        {
-            Attack();
-        }
-    }
+    public int amountOfHits;
+    private int hitsCounter;
+    Collider2D other;   
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (dealDamage && other.CompareTag("Enemy")) //checkar om det finns enemies inom collidern som kan göras skada på
-        {
-            // TODO lägg till så att man kan göra skada på enemies i collidern
-            other.GetComponent<Enemy>().TakeDamage(damage);
+        if (WeaponIsReady()) {
+            hitsCounter = amountOfHits;
+            while (hitsCounter > 0)
+                {
+                    BreakDanceInterval();
+                }
+            StartCooldown();
         }
-  
     }
 
-
-    void Attack() //Gör så att man använder abilityn, behöver lägga till animationsdelen här senare
+    private void BreakDanceInterval()
     {
-        dealDamage = true;
-        usedAbility = true;
-        //TODO lägg till animation
-        Invoke("BreakDanceTime", abilityTime);
-        Invoke("CanUseAbility", abilityCooldown); //efter en viss stund gör den så att usedAbility blir false så man kan använda ability igen
-       
+        if (!dealDamage) 
+        {
+            dealDamage = true;
+            Invoke("BreakDanceDamage", 0.5f);
+        }
     }
 
-    private void CanUseAbility()
+    private void BreakDanceDamage()
     {
-        Debug.Log("You can use ability");
-        usedAbility = false;
-    }
-
-    private void BreakDanceTime()
-    {
+        DealDamage(other);
+        hitsCounter--;
         dealDamage = false;
     }
-
 }

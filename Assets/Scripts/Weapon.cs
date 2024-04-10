@@ -5,47 +5,51 @@ using UnityEngine;
 public abstract class Weapon : MonoBehaviour
 {
     public float damage;
-    public bool onCooldown;
-    private float cooldownDuration;
+    public bool weaponReady;
+    public float cooldownDuration;
     private float cooldownTimer;
 
+    private void Start()
+    {
+        weaponReady = true;
+    }
     private void Update()
     {
-        if (onCooldown)
+        if (!weaponReady)
         {
             cooldownTimer -= Time.deltaTime;
             if (cooldownTimer <= 0 )
             {
-                ResetCooldown();
+               SetWeaponReady();
             }
         }
     }
-    public float DealDamage()
+    public void DealDamage(Collider2D other)
     {
-        return damage;
+        DealDamage(other);
     }
-    public bool IsOnCooldown() 
+    public bool WeaponIsReady() 
     { 
-        return onCooldown; 
+        return weaponReady; 
     }
 
     public void StartCooldown()
     {
         cooldownTimer = cooldownDuration;
-        onCooldown = true;
+        weaponReady = false;
     }
 
-    private void ResetCooldown()
+    private void SetWeaponReady()
     {
-        onCooldown = false;
+        weaponReady = true;
     }
 
-    public void SetCooldown( float duration )
+    public void SetCooldownDuration( float duration )
     {
         cooldownDuration = duration;
     }
 
-    public float GetCooldown()
+    public float GetCooldownDuration()
     {
         return cooldownDuration;
     }
