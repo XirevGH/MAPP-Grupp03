@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalValue;
     private float verticalValue;
     public bool canMove;
- 
+    private float moveLimiter = 0.7f;
 
 
     void Start()
@@ -51,7 +52,15 @@ public class PlayerMovement : MonoBehaviour
         if (!canMove)
             return;
 
-        pos.position = new Vector2(pos.position.x + horizontalValue * moveSpeed * Time.deltaTime, pos.position.y + verticalValue * moveSpeed * Time.deltaTime);
+      
+        
+            if (horizontalValue != 0 && verticalValue != 0) 
+            {
+                horizontalValue *= moveLimiter;
+                verticalValue *= moveLimiter;
+            }
+
+            pos.position = new Vector2(pos.position.x + horizontalValue * moveSpeed * Time.deltaTime, pos.position.y + verticalValue * moveSpeed * Time.deltaTime);
 
     }
 
