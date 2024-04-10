@@ -11,11 +11,5 @@ public class LightningExplosion : MonoBehaviour
         ps = GetComponent<ParticleSystem>();
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            other.gameObject.GetComponent<Enemy>().TakeDamage(1);
-        }
-    }
+    
 }
