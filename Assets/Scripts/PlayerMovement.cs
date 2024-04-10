@@ -15,19 +15,6 @@ public class PlayerMovement : MonoBehaviour
 
     private float horizontalValue;
     private float verticalValue;
-    public bool canMove;
-    private float moveLimiter = 0.7f;
-
-
-    void Start()
-    {
-        
-        canMove = true;
-        
-        
-    }
-
-   
 
     // Update is called once per frame
     void Update()
@@ -38,29 +25,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (!canMove) return;
-
         horizontalValue = Input.GetAxis("Horizontal");
         verticalValue = Input.GetAxis("Vertical");
   
     }
 
-
-
     private void FixedUpdate()
     {
-        if (!canMove)
-            return;
-
-      
-        
-            if (horizontalValue != 0 && verticalValue != 0) 
-            {
-                horizontalValue *= moveLimiter;
-                verticalValue *= moveLimiter;
-            }
-
-            pos.position = new Vector2(pos.position.x + horizontalValue * moveSpeed * Time.deltaTime, pos.position.y + verticalValue * moveSpeed * Time.deltaTime);
+        pos.position = new Vector2(pos.position.x + horizontalValue * moveSpeed * Time.deltaTime, pos.position.y + verticalValue * moveSpeed * Time.deltaTime);
 
     }
 

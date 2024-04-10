@@ -5,10 +5,18 @@ using UnityEngine;
 
 public class BassGuitar : Weapon
 {
-    private void OnTriggerEnter2D(Collider2D other)
+    HashSet<Collider2D> colliders = new HashSet<Collider2D>();
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (WeaponIsReady()) { 
+        
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("BassGuitarSwing") && !colliders.Contains(other)) 
+        {
+            colliders.Add(other);
             DealDamage(other);
+        }
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("BassGuitarIdle"))
+        {
+            colliders.Clear();
         }
     }
 }

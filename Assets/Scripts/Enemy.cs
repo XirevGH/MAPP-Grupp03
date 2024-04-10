@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.MoveTowards(this.GetComponent<Transform>().position, player.GetComponent<Transform>().position, movementSpeed/200);
+        transform.position = Vector3.MoveTowards(transform.position, player.GetComponent<Transform>().position, movementSpeed/200);
         CheckIfDead();
     }
 

@@ -348,7 +348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19476edc09a67704db3b37bf7ac060ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  anim: {fileID: 0}
+  damage: 1
   weaponReady: 0
   cooldownDuration: 3
 --- !u!1 &420424551
@@ -385,7 +386,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   pos: {fileID: 420424554}
-  canMove: 0
 --- !u!212 &420424553
 SpriteRenderer:
   m_ObjectHideFlags: 0
