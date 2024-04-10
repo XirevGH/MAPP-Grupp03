@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class ManuController : MonoBehaviour
 {
+    [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject exit;
     [SerializeField] private GameObject play;
-    [SerializeField] private GameObject uppfrades;
+    [SerializeField] private GameObject uppgradesPanel;
     [SerializeField] private GameObject settingPanel;
     [SerializeField] private GameObject creditPanel;
   
@@ -30,12 +31,13 @@ public class ManuController : MonoBehaviour
     public void ShowCredits()
     {
         creditPanel.SetActive(true);
-
+        mainMenu.SetActive(false);
     }
 
     public void CloseCredits()
     {
         creditPanel.SetActive(false);
+        mainMenu.SetActive(true);
 
     }
 
@@ -50,23 +52,26 @@ public class ManuController : MonoBehaviour
     public void ShowSetting()
     {
         settingPanel.SetActive(true);
-
+        mainMenu.SetActive(false);
     }
     public void CloseSetting()
     {
         settingPanel.SetActive(false);
+        mainMenu.SetActive(true);
 
     }
 
     public void ShowUppgrades()
     {
-        settingPanel.SetActive(true);
+        uppgradesPanel.SetActive(true);
+        mainMenu.SetActive(false);
 
     }
 
     public void CloseUppgrades()
     {
-        uppfrades.SetActive(false);
+        uppgradesPanel.SetActive(false);
+        mainMenu.SetActive(true);
 
     }
 
