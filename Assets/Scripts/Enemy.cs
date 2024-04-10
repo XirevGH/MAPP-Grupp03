@@ -12,7 +12,6 @@ public class Enemy : MonoBehaviour
     public TMP_Text damageNumbers;
     public Animator damageNumberAnim;
     public Animator enemyAnim;
-    private bool isDead;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -20,13 +19,15 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, player.GetComponent<Transform>().position, movementSpeed/200);
-        CheckIfDead();
+        if (IsAlive()) 
+        { 
+            transform.position = Vector3.MoveTowards(transform.position, player.GetComponent<Transform>().position, movementSpeed/200);
+        }
     }
 
     public void TakeDamage(float damageTaken)
     {
-        if (!isDead) { 
+        if (IsAlive()) { 
             health -= damageTaken;
             damageNumbers.text = damageTaken.ToString();
             damageNumberAnim.SetTrigger("TakingDamage");
@@ -35,14 +36,16 @@ public class Enemy : MonoBehaviour
 
     }
 
-    private void CheckIfDead()
+    private bool IsAlive()
     {
-        if (health <= 0 && !isDead)
+        if (health <= 0)
         {
-            isDead = true;
             enemyAnim.SetTrigger("Dead");
             Invoke("DestroyGameObject", 0.8f);
+            return false;
         }
+        return true;
+
     }
 
     private void DestroyGameObject()
