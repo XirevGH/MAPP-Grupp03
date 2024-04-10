@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallSpawner : MonoBehaviour
+public class BeatSpawner : MonoBehaviour
 {
     [SerializeField] private float BPM;
     [SerializeField] GameObject note;

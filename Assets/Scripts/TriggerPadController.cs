@@ -10,7 +10,7 @@ public class TriggerPadController : MonoBehaviour
     [SerializeField] KeyCode keyCode;
 
     private Image image;
-    private GameObject ballz;
+    private GameObject beat;
     private bool isPressable;
 
     void Start()
@@ -29,7 +29,7 @@ public class TriggerPadController : MonoBehaviour
             image.color = Color.blue;
             if (isPressable) 
             {
-                Destroy(ballz);
+                Destroy(beat);
                 Debug.Log("Boogie Boogie");
             }
         }
@@ -42,8 +42,8 @@ public class TriggerPadController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        ballz = collider.GameObject();
-        if (collider.CompareTag("Ballz"))
+        beat = collider.GameObject();
+        if (collider.CompareTag("Beat"))
         {
            
             isPressable = true;
@@ -52,7 +52,7 @@ public class TriggerPadController : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collider)
     {
-        if (collider.CompareTag("Ballz"))
+        if (collider.CompareTag("Beat"))
         {
             isPressable = false;
         }

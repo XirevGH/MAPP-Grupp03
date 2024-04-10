@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 using static UnityEditor.PlayerSettings;
 
-public class Ballz : MonoBehaviour
+public class Beat : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
     private GameObject endPoint;
