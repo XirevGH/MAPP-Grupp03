@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -9,26 +10,49 @@ public class EnemySpawner : MonoBehaviour
     public Tilemap tilemap;
     public GameObject enemy;
     public GameObject parent;
+    private bool waveHasSpawned;
     void Start()
     {
         
-        BoundsInt bounds = GetBoundsFromCamera();
-        for (int x = bounds.min.x; x <= bounds.max.x; x++)
-        {
-            Vector3Int position = new Vector3Int(x, bounds.max.y, 0);
-            TileBase tile = tilemap.GetTile(position);
-            if (tile == null)
-            {
-                Instantiate(enemy, position, Quaternion.identity, parent.GetComponent<Transform>());
-            }
-            
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        SpawnEnemy();
+    }
+
+    void SpawnEnemy()
+    {
+        if (!waveHasSpawned) { 
+            waveHasSpawned = true;
+            Invoke("SpawnNextWave", 10);
+            BoundsInt bounds = GetBoundsFromCamera();
+            Debug.Log("");
+            
+            Debug.Log("bounds: " + bounds);
+            for (int x = bounds.min.x; x <= bounds.max.x; x++)
+            {
+                if (x == bounds.min.x || x == bounds.max.x) { 
+                    for (int y = bounds.min.y; y <= bounds.max.y; y++)
+                    {
+                        if (y == bounds.min.y || y == bounds.max.y) {
+                            Vector3Int position = new Vector3Int(x, y, 0);
+                            TileBase tile = tilemap.GetTile(position);
+                            if (tile == null)
+                            {
+                                Instantiate(enemy, position, Quaternion.identity, parent.GetComponent<Transform>());
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    void SpawnNextWave()
+    {
+        waveHasSpawned = false;
     }
 
     BoundsInt GetBoundsFromCamera()
