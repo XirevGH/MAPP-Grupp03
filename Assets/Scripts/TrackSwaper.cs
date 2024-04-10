@@ -6,6 +6,8 @@ public class TrackSwaper : MonoBehaviour
 {
 
     public GameObject soundManager;
+
+    int i = 0;
    
     private void Start()
     {
@@ -15,9 +17,15 @@ public class TrackSwaper : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
+            if (i >= 4)
+            {
+                i = 0;
+            }
+                soundManager.GetComponent<SoundManager>().ChangeTrack(i);
+                i = i + 1;
+            
 
-
-            soundManager.GetComponent<SoundManager>().ChangeTrack((int)Random.Range(0, 2));
+            
             
         }
     }

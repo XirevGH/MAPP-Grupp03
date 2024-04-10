@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd7955f7378e944aaea2180eba4f0bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 5
   pos: {fileID: 420424554}
   canMove: 0
 --- !u!212 &420424553
@@ -739,7 +739,7 @@ GameObject:
   - component: {fileID: 1419799009}
   - component: {fileID: 1419799008}
   m_Layer: 0
-  m_Name: 1
+  m_Name: soundManager
   m_TagString: SoundManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -757,14 +757,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc9a7210903a494bb3085de40ee11da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSource: {fileID: 942048235}
+  musicSource1: {fileID: 942048235}
   musicSource2: {fileID: 1795029333}
   ambeintSource: {fileID: 0}
   musicTracks:
   - {fileID: 8300000, guid: 02d9901bebe80f046bc215d9bdacfdb0, type: 3}
   - {fileID: 8300000, guid: 91e806c3ef88b284b877151a4e034727, type: 3}
+  - {fileID: 8300000, guid: 0a0ffa6e0719cc244b56cfbf9e137d59, type: 3}
   - {fileID: 8300000, guid: df774ad6dded7ad4794a74f0db936474, type: 3}
   slider: {fileID: 0}
+  timeToFade: 1.25
   currentScene: 0
 --- !u!4 &1419799009
 Transform:
@@ -1085,7 +1087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 056a0cf813522774d9d0839ebdbd7dc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundManager: {fileID: 0}
+  soundManager: {fileID: 1419799007}
 --- !u!1 &1947654044
 GameObject:
   m_ObjectHideFlags: 0

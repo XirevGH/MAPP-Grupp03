@@ -7,9 +7,10 @@ using UnityEngine.UI;
 public class SoundManager : MonoBehaviour
 {
 
-    [SerializeField] private AudioSource musicSource, musicSource2, ambeintSource;
+    [SerializeField] private AudioSource musicSource1, musicSource2, ambeintSource;
     [SerializeField] private AudioClip[] musicTracks;
     [SerializeField] public Slider slider;
+    [SerializeField] float timeToFade = 1f;
     //[SerializeField] public Slider slidertoFind;
     public static SoundManager Instance;
     public static int sliderValue;
@@ -35,7 +36,7 @@ public class SoundManager : MonoBehaviour
     void Start()
     {
         isOnePlaying = true;
-        musicSource = GetComponent<AudioSource>();
+        musicSource1 = GetComponent<AudioSource>();
         musicSource2 = GetComponent<AudioSource>();
 
         //AudioListener.volume = PlayerPrefs.GetFloat("volume1");
@@ -52,7 +53,7 @@ public class SoundManager : MonoBehaviour
 
         if (currentScene >= 4)
         {
-            musicSource.volume = 0;
+            musicSource1.volume = 0;
             ambeintSource.volume = 0;
             
 
@@ -85,22 +86,51 @@ public class SoundManager : MonoBehaviour
 
     public void ChangeTrack(int trackNumber)
     {
-        if (isOnePlaying)
-        {
-            musicSource.Stop();
-            musicSource2.clip = musicTracks[trackNumber];
-            musicSource2.Play();
-            
-        }
-        else {
-
-            musicSource2.Stop();
-            musicSource.clip = musicTracks[trackNumber];
-            musicSource.Play();
-        }
-
+       StopAllCoroutines();
+        StartCoroutine(FadeTrack(trackNumber));
         isOnePlaying = !isOnePlaying;
         
+    }
+
+    private IEnumerator FadeTrack(int trackNumber)
+    {
+       
+        float timeElapsed = 0;
+
+        if (isOnePlaying)
+        {
+            musicSource2.clip = musicTracks[trackNumber];
+            musicSource2.Play();
+            while (timeElapsed < timeToFade)
+            {
+                musicSource2.volume = Mathf.Lerp(0, 1, timeElapsed / timeToFade);
+                musicSource1.volume = Mathf.Lerp(1, 0, timeElapsed / timeToFade);
+                timeElapsed += Time.deltaTime;
+                yield return null;
+
+            }
+            musicSource1.Stop();
+            
+
+        }
+        else
+        {
+
+            musicSource1.clip = musicTracks[trackNumber];
+            musicSource1.Play();
+            while (timeElapsed < timeToFade)
+            {
+                musicSource1.volume = Mathf.Lerp(0, 1, timeElapsed / timeToFade);
+                musicSource2.volume = Mathf.Lerp(1, 0, timeElapsed / timeToFade);
+                timeElapsed += Time.deltaTime;
+                yield return null;
+
+            }
+            musicSource2.Stop();
+        }
+      
+    
+    
     }
 }
 
