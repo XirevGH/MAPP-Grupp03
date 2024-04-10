@@ -15,8 +15,8 @@ public class ManuController : MonoBehaviour
 
     private void Start()
     {
-       CloseAbout();
-        Closesetting();
+       CloseCredits();
+        CloseSetting();
     }
 
     public void Startgame()
@@ -24,13 +24,13 @@ public class ManuController : MonoBehaviour
         ChangeScene();
     }
 
-    public void ShowAbout()
+    public void ShowCredits()
     {
         creditPanel.SetActive(true);
 
     }
 
-    public void CloseAbout()
+    public void CloseCredits()
     {
         creditPanel.SetActive(false);
 
@@ -42,12 +42,12 @@ public class ManuController : MonoBehaviour
         SceneManager.LoadScene(levelToload);
     }
 
-    public void Showsetting()
+    public void ShowSetting()
     {
         settingPanel.SetActive(true);
 
     }
-    public void Closesetting()
+    public void CloseSetting()
     {
         settingPanel.SetActive(false);
 
