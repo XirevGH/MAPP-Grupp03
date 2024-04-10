@@ -30,6 +30,7 @@ public class TriggerPadController : MonoBehaviour
             if (isPressable) 
             {
                 Destroy(ballz);
+                Debug.Log("Boogie Boogie");
             }
         }
 
@@ -44,7 +45,7 @@ public class TriggerPadController : MonoBehaviour
         ballz = collider.GameObject();
         if (collider.CompareTag("Ballz"))
         {
-            Debug.Log("Boogie Boogie");
+           
             isPressable = true;
         }
     }
@@ -53,7 +54,6 @@ public class TriggerPadController : MonoBehaviour
     {
         if (collider.CompareTag("Ballz"))
         {
-            Debug.Log("Boogie Boogie");
             isPressable = false;
         }
     }
