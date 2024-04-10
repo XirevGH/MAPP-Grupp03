@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 324169419}
   - component: {fileID: 324169418}
   - component: {fileID: 324169417}
-  - component: {fileID: 324169416}
+  - component: {fileID: 324169420}
   m_Layer: 0
   m_Name: BassGuitar
   m_TagString: Untagged
@@ -243,19 +243,6 @@ Transform:
   - {fileID: 299629724}
   m_Father: {fileID: 420424554}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 58.6}
---- !u!114 &324169416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 324169414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19476edc09a67704db3b37bf7ac060ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 5
 --- !u!50 &324169417
 Rigidbody2D:
   serializedVersion: 4
@@ -349,6 +336,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &324169420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324169414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19476edc09a67704db3b37bf7ac060ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  weaponReady: 0
+  cooldownDuration: 0
 --- !u!1 &420424551
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +830,9 @@ MonoBehaviour:
   tilemap: {fileID: 1947654048}
   enemy: {fileID: 6536046719154458180, guid: e08403d79ea9a0046acfb2c680d5eb32, type: 3}
   parent: {fileID: 1707783737}
+  spawnLocations:
+  - {fileID: 1730046822}
+  waveHasSpawned: 0
 --- !u!1 &1707783737
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,7 +925,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
