@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BreakDanceAbility : MonoBehaviour
+public class BreakDance : Weapon
 {
     public float damage;
     public bool usedAbility = false;
