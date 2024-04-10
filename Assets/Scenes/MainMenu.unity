@@ -1162,7 +1162,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 173185688}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1792653752}
+        m_TargetAssemblyTypeName: UppgradeControler, Assembly-CSharp
+        m_MethodName: ByInvinsebiletyFrames
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &173185688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2356,7 +2368,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 459040259}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1792653752}
+        m_TargetAssemblyTypeName: UppgradeControler, Assembly-CSharp
+        m_MethodName: ByHP
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &459040259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4661,7 +4685,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 819595112}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1792653752}
+        m_TargetAssemblyTypeName: UppgradeControler, Assembly-CSharp
+        m_MethodName: ByDameg
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &819595112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6132,7 +6168,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1079181238}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1792653752}
+        m_TargetAssemblyTypeName: UppgradeControler, Assembly-CSharp
+        m_MethodName: ByXpMultiplayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1079181238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7699,7 +7747,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1195318406}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1792653752}
+        m_TargetAssemblyTypeName: UppgradeControler, Assembly-CSharp
+        m_MethodName: ByMovSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1195318406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9245,7 +9305,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1509360737}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1792653752}
+        m_TargetAssemblyTypeName: UppgradeControler, Assembly-CSharp
+        m_MethodName: BySize
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1509360737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10687,7 +10759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1712015239
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10930,7 +11002,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Defense
+  m_text: 'Defence
 
 '
   m_isRightToLeft: 0
@@ -11091,7 +11163,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1751431251}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1792653752}
+        m_TargetAssemblyTypeName: UppgradeControler, Assembly-CSharp
+        m_MethodName: ByBPM
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1751431251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11266,6 +11350,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759469072}
   m_CullTransparentMesh: 1
+--- !u!1 &1792653750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1792653751}
+  - component: {fileID: 1792653752}
+  m_Layer: 0
+  m_Name: UppgradeControler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1792653751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792653750}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1792653752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792653750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a67dba08b60622479d960d099a471b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mony: 1000
+  MonyText: {fileID: 368561307}
+  DamegCost: {fileID: 867063608}
+  DamegStats: {fileID: 196335105}
+  BPMCost: {fileID: 1501115216}
+  BPMStats: {fileID: 585347486}
+  SizeCost: {fileID: 32164608}
+  SizeStats: {fileID: 1759469074}
+  XpMultCost: {fileID: 58559367}
+  XpMultStats: {fileID: 1085229827}
+  HPCost: {fileID: 2095525472}
+  HPStats: {fileID: 433825374}
+  DefenceCost: {fileID: 1190857134}
+  DefenceStats: {fileID: 1176183250}
+  MovSpeedCost: {fileID: 1592540307}
+  MovSpeedStats: {fileID: 1970650726}
+  InvinsebliletyCost: {fileID: 877505038}
+  InvinsebliletyStats: {fileID: 1822014208}
+  perLevelPricIncreas: 100
 --- !u!1 &1800475113
 GameObject:
   m_ObjectHideFlags: 0
@@ -12545,7 +12692,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1984459175}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1792653752}
+        m_TargetAssemblyTypeName: UppgradeControler, Assembly-CSharp
+        m_MethodName: ByDefence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1984459175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13535,3 +13694,4 @@ SceneRoots:
   - {fileID: 61601750}
   - {fileID: 900829016}
   - {fileID: 1418972432}
+  - {fileID: 1792653751}
