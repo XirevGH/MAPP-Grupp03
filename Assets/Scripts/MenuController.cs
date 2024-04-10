@@ -6,17 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class ManuController : MonoBehaviour
 {
-
-    [SerializeField] private GameObject creditPanel;
+    [SerializeField] private GameObject exit;
+    [SerializeField] private GameObject play;
+    [SerializeField] private GameObject uppfrades;
     [SerializeField] private GameObject settingPanel;
+    [SerializeField] private GameObject creditPanel;
   
 
     [SerializeField] private int levelToload;
 
     private void Start()
     {
-       CloseCredits();
+        CloseCredits();
         CloseSetting();
+        CloseUppgrades();
     }
 
     public void Startgame()
@@ -36,10 +39,12 @@ public class ManuController : MonoBehaviour
 
     }
 
+    
+
 
     public void ChangeScene()
     {
-        SceneManager.LoadScene(levelToload);
+        SceneManager.LoadScene(levelToload); // by till spel scennens
     }
 
     public void ShowSetting()
@@ -52,6 +57,20 @@ public class ManuController : MonoBehaviour
         settingPanel.SetActive(false);
 
     }
+
+    public void ShowUppgrades()
+    {
+        settingPanel.SetActive(true);
+
+    }
+
+    public void CloseUppgrades()
+    {
+        uppfrades.SetActive(false);
+
+    }
+
+    
 
 
     public void Endgame()
