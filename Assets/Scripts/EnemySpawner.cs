@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class EnemySpawner : MonoBehaviour
     public Tilemap tilemap;
     public GameObject enemy;
     public GameObject parent;
+    public GameObject[] spawnLocations;
+
     private bool waveHasSpawned;
     void Start()
     {
@@ -19,29 +22,35 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpawnEnemy();
+        SpawnEnemiesInCircle();
     }
 
-    void SpawnEnemy()
+    void SpawnEnemy(Vector3Int position)
     {
-        if (!waveHasSpawned) { 
+        Instantiate(enemy, position, Quaternion.identity, parent.GetComponent<Transform>());
+    }
+
+    void SpawnEnemiesInCorners()
+    {
+        if (!waveHasSpawned)
+        {
             waveHasSpawned = true;
             Invoke("SpawnNextWave", 10);
             BoundsInt bounds = GetBoundsFromCamera();
-            Debug.Log("");
-            
-            Debug.Log("bounds: " + bounds);
+
             for (int x = bounds.min.x; x <= bounds.max.x; x++)
             {
-                if (x == bounds.min.x || x == bounds.max.x) { 
+                if (x == bounds.min.x || x == bounds.max.x)
+                {
                     for (int y = bounds.min.y; y <= bounds.max.y; y++)
                     {
-                        if (y == bounds.min.y || y == bounds.max.y) {
+                        if (y == bounds.min.y || y == bounds.max.y)
+                        {
                             Vector3Int position = new Vector3Int(x, y, 0);
                             TileBase tile = tilemap.GetTile(position);
                             if (tile == null)
                             {
-                                Instantiate(enemy, position, Quaternion.identity, parent.GetComponent<Transform>());
+                                SpawnEnemy(position);
                             }
                         }
                     }
@@ -49,7 +58,6 @@ public class EnemySpawner : MonoBehaviour
             }
         }
     }
-
     void SpawnNextWave()
     {
         waveHasSpawned = false;
@@ -64,5 +72,18 @@ public class EnemySpawner : MonoBehaviour
 
 
         return new BoundsInt(minPosition, maxPosition - minPosition);
+    }
+
+    void SpawnEnemiesInCircle()
+    {
+        Bounds bound = spawnLocations[0].GetComponent<CircleCollider2D>().bounds;
+        Vector3 randomPoint = new Vector3(
+            Random.Range(bound.min.x, bound.max.x),
+            Random.Range(bound.min.y, bound.max.y),
+            Random.Range(bound.min.z, bound.max.z)
+        );
+        SpawnEnemy(new Vector3Int((int)randomPoint.x, (int)randomPoint.y, (int)randomPoint.z));
+
+
     }
 }
