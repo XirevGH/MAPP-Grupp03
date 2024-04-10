@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BreakDanceAbility : MonoBehaviour
+public class BreakDance : Weapon
 {
     public float damage;
     public bool usedAbility = false;
@@ -15,15 +15,9 @@ public class BreakDanceAbility : MonoBehaviour
 
     void Update()
     {
-        if(dealDamage)
-        {
-            Debug.Log("You are dealing damage ->"); //checkar om dealDamage blir true 
-        }
-
         if (Input.GetKeyDown(KeyCode.E) && !usedAbility) //kräver att man klickar på knappen och att man inte har ability på cooldown
         {
             Attack();
-            Debug.Log("Yoinkers");
         }
     }
 
@@ -32,8 +26,7 @@ public class BreakDanceAbility : MonoBehaviour
         if (dealDamage && other.CompareTag("Enemy")) //checkar om det finns enemies inom collidern som kan göras skada på
         {
             // TODO lägg till så att man kan göra skada på enemies i collidern
-
-            Debug.Log("Hello");
+            other.GetComponent<Enemy>().TakeDamage(damage);
         }
   
     }
@@ -46,20 +39,18 @@ public class BreakDanceAbility : MonoBehaviour
         //TODO lägg till animation
         Invoke("BreakDanceTime", abilityTime);
         Invoke("CanUseAbility", abilityCooldown); //efter en viss stund gör den så att usedAbility blir false så man kan använda ability igen
-        Debug.Log("There");
        
     }
 
     private void CanUseAbility()
     {
+        Debug.Log("You can use ability");
         usedAbility = false;
-        Debug.Log("Yahallo");
     }
 
     private void BreakDanceTime()
     {
         dealDamage = false;
-        Debug.Log("Yoyoyoyoyoy");
     }
 
 }
