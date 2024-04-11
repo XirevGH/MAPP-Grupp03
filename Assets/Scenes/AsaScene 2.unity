@@ -485,7 +485,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   damage: 5
   weaponReady: 0
-  cooldownDuration: 3
+  cooldownDuration: 5
 --- !u!1 &420424551
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,7 +624,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 420424551}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -6006,6 +6006,10 @@ PrefabInstance:
       propertyPath: soundManager
       value: 
       objectReference: {fileID: 801683756}
+    - target: {fileID: 6568771322662530871, guid: 905d321b4c4c97240b7729490de2655f, type: 3}
+      propertyPath: currentWeapon
+      value: 
+      objectReference: {fileID: 324169414}
     - target: {fileID: 7201527174801042594, guid: 905d321b4c4c97240b7729490de2655f, type: 3}
       propertyPath: m_Name
       value: UI_Guitar Hero
@@ -6110,7 +6114,7 @@ GameObject:
   - component: {fileID: 1707783738}
   m_Layer: 0
   m_Name: Enemies
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

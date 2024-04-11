@@ -8,14 +8,17 @@ public class TriggerPadController : MonoBehaviour
 {
 
     [SerializeField] KeyCode keyCode;
+    [SerializeField] GameObject currentWeapon;
 
     private Image image;
     private GameObject beat;
     private bool isPressable;
+    private int totalHit;
 
     void Start()
     {
         image = GetComponent<Image>();
+        totalHit = 0;
 
     }
 
@@ -30,6 +33,10 @@ public class TriggerPadController : MonoBehaviour
             {
                 Destroy(beat);
                 Debug.Log("Boogie Boogie");
+                ++totalHit;
+                currentWeapon.GetComponent<Weapon>().SetCooldownDuration(0.5f);
+                //currentWeapon.GetComponent<Weapon>().GetCooldownDuration() - (totalHit)
+
             }
         }
 
