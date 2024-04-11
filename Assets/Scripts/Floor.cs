@@ -16,7 +16,19 @@ public class Floor : MonoBehaviour
         {
             tilemap.SetTile(position, tileToPlace);
             tilemap.SetTileFlags(position, TileFlags.None);
-            tilemap.SetColor(position, colors[Random.Range(0, colors.Length)]);
+            int colorChoice = Random.Range(0, colors.Length * 2);
+            if (colorChoice >= colors.Length)
+            {
+                if (colorChoice % 2 == 1)
+                {
+                    colorChoice = colors.Length - 1;
+                }
+                else
+                {
+                    colorChoice = colors.Length - 2;
+                }
+            }
+            tilemap.SetColor(position, colors[colorChoice]);
         } 
         else
         {

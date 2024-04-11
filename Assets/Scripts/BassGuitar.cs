@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BassGuitar : MonoBehaviour
+public class BassGuitar : Weapon
 {
-    public float damage;
-
-    public float DealDamage() 
+    HashSet<Collider2D> colliders = new HashSet<Collider2D>();
+    private void OnTriggerStay2D(Collider2D other)
     {
-        return damage; 
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.CompareTag("Enemy"))
+        
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("BassGuitarSwing") && !colliders.Contains(other)) 
         {
-            other.GetComponent<Enemy>().TakeDamage(DealDamage());
+            colliders.Add(other);
+            DealDamage(other);
+        }
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("BassGuitarIdle"))
+        {
+            colliders.Clear();
         }
     }
 }

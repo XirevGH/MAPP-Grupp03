@@ -12,17 +12,19 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemy;
     public GameObject parent;
     public GameObject[] spawnLocations;
-
+    
+    public int spawnRate;
     private bool waveHasSpawned;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
-        SpawnEnemiesInCircle();
+        if (!waveHasSpawned)
+        {
+            waveHasSpawned = true;
+            Invoke("SpawnNextWave", spawnRate);
+            SpawnEnemiesInCircle(10);
+            SpawnEnemiesInCorners();
+        }
     }
 
     void SpawnEnemy(Vector3Int position)
@@ -32,10 +34,6 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemiesInCorners()
     {
-        if (!waveHasSpawned)
-        {
-            waveHasSpawned = true;
-            Invoke("SpawnNextWave", 10);
             BoundsInt bounds = GetBoundsFromCamera();
 
             for (int x = bounds.min.x; x <= bounds.max.x; x++)
@@ -57,7 +55,7 @@ public class EnemySpawner : MonoBehaviour
                 }
             }
         }
-    }
+
     void SpawnNextWave()
     {
         waveHasSpawned = false;
@@ -74,16 +72,17 @@ public class EnemySpawner : MonoBehaviour
         return new BoundsInt(minPosition, maxPosition - minPosition);
     }
 
-    void SpawnEnemiesInCircle()
+    void SpawnEnemiesInCircle(int amount)
     {
-        Bounds bound = spawnLocations[0].GetComponent<CircleCollider2D>().bounds;
-        Vector3 randomPoint = new Vector3(
+        for (int i = 0; i < amount; i++) 
+        {
+            Bounds bound = spawnLocations[0].GetComponent<CircleCollider2D>().bounds;
+            Vector3 randomPoint = new Vector3(
             Random.Range(bound.min.x, bound.max.x),
             Random.Range(bound.min.y, bound.max.y),
             Random.Range(bound.min.z, bound.max.z)
-        );
-        SpawnEnemy(new Vector3Int((int)randomPoint.x, (int)randomPoint.y, (int)randomPoint.z));
-
-
+            );
+            SpawnEnemy(new Vector3Int((int)randomPoint.x, (int)randomPoint.y, (int)randomPoint.z));
+        }
     }
 }

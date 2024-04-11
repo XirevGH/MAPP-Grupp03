@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  movementSpeed: 4
+  movementSpeed: 50
   health: 5
   damageNumbers: {fileID: 287581913604085729}
   damageNumberAnim: {fileID: 2898152515693454215}
@@ -385,8 +385,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.84
-  m_fontSizeBase: 0.84
+  m_fontSize: 5.17
+  m_fontSizeBase: 5.17
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

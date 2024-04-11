@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,19 +15,6 @@ public class PlayerMovement : MonoBehaviour
 
     private float horizontalValue;
     private float verticalValue;
-    public bool canMove;
- 
-
-
-    void Start()
-    {
-        
-        canMove = true;
-        
-        
-    }
-
-   
 
     // Update is called once per frame
     void Update()
@@ -37,20 +25,13 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (!canMove) return;
-
         horizontalValue = Input.GetAxis("Horizontal");
         verticalValue = Input.GetAxis("Vertical");
   
     }
 
-
-
     private void FixedUpdate()
     {
-        if (!canMove)
-            return;
-
         pos.position = new Vector2(pos.position.x + horizontalValue * moveSpeed * Time.deltaTime, pos.position.y + verticalValue * moveSpeed * Time.deltaTime);
 
     }
