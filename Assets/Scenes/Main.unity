@@ -894,7 +894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0573ba55f499ce8418894d4824623359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followSpeed: 3
+  followSpeed: 6
   yOffset: 1
   target: {fileID: 420424554}
 --- !u!1 &591040674
