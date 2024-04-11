@@ -18,6 +18,9 @@ public class UppgradeControler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI SizeCost;
     [SerializeField] private TextMeshProUGUI SizeStats;
 
+    [SerializeField] private TextMeshProUGUI PirceCost;
+    [SerializeField] private TextMeshProUGUI PirceStats;
+
     [SerializeField] private TextMeshProUGUI XpMultCost;
     [SerializeField] private TextMeshProUGUI XpMultStats;
 
@@ -33,28 +36,41 @@ public class UppgradeControler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI InvinsebliletyCost;
     [SerializeField] private TextMeshProUGUI InvinsebliletyStats;
 
+     [SerializeField] private TextMeshProUGUI MoneyMultCost;
+    [SerializeField] private TextMeshProUGUI MoneyMultStats;
+
     public int perLevelPricIncreas;
     private int levelDamag;
     private int levelBPM;
     private int levelSize;
+    private int levelPirce;
      private int levelXpMultilapyer;
     private int levelHP;
     private int levelDefece;
     private int levelMoveSpeed;
     private int levelInvinsebiletyFrames;
+    private int levelMoneyMult;
     
 
-    private void Start()
+     private void Start()
     {
-    
+        InitalisingPannel();
+    }
+
+    public void InitalisingPannel(){
+
+            
     levelDamag = 0;
     levelBPM = 0;
     levelSize = 0;
+    levelPirce = 0;
     levelXpMultilapyer = 0;
     levelHP = 0;
     levelDefece = 0;
     levelMoveSpeed = 0;
     levelInvinsebiletyFrames = 0;
+    levelMoneyMult = 0;
+    
 
 
         MonyText1.SetText(mony.ToString());
@@ -68,6 +84,10 @@ public class UppgradeControler : MonoBehaviour
 
         SizeCost.SetText(((levelSize + 1) * perLevelPricIncreas).ToString());
         SizeStats.SetText(levelSize * 10 + "%");
+
+        
+        PirceCost.SetText(((levelPirce + 1) * perLevelPricIncreas).ToString());
+        PirceStats.SetText(levelPirce + "");
 
         XpMultCost.SetText(((levelXpMultilapyer + 1) * perLevelPricIncreas).ToString());
         XpMultStats.SetText(levelXpMultilapyer * 2.5 + "%");
@@ -84,7 +104,19 @@ public class UppgradeControler : MonoBehaviour
         InvinsebliletyCost.SetText(((levelInvinsebiletyFrames + 1) * perLevelPricIncreas).ToString());
         InvinsebliletyStats.SetText(levelInvinsebiletyFrames * 0.1 + "s");
 
+        MoneyMultCost.SetText(((levelMoneyMult + 1) * perLevelPricIncreas).ToString());
+        MoneyMultStats.SetText(levelMoneyMult * 2.5 + "%");
+
         
+    }
+
+    public void ResetUppgrades(){
+        /*for(){
+
+        }
+        mony = mony + (levelDamag * perLevelPricIncreas) + (levelBPM * perLevelPricIncreas) + (levelSize * perLevelPricIncreas) + (levelPirce * perLevelPricIncreas) + (levelXpMultilapyer * perLevelPricIncreas) + (levelHP * perLevelPricIncreas) + (levelDefece * perLevelPricIncreas) + (levelMoveSpeed * perLevelPricIncreas) + (    levelInvinsebiletyFrames 
+ * perLevelPricIncreas) + (levelMoneyMult * perLevelPricIncreas);
+        InitalisingPannel();*/
     }
     public void ByDameg()
     {
@@ -110,6 +142,15 @@ public class UppgradeControler : MonoBehaviour
             levelSize += 1;
             SizeCost.SetText(((levelSize + 1) * perLevelPricIncreas).ToString());
             SizeStats.SetText(levelSize * 10 + "%");
+        }
+    }
+
+    public void ByPirce()
+    {
+        if(EnothMoney((levelPirce + 1) * perLevelPricIncreas)){
+            levelPirce += 1;
+            PirceCost.SetText(((levelPirce + 1) * perLevelPricIncreas).ToString());
+            PirceStats.SetText(levelPirce + "");
         }
     }
 
@@ -156,6 +197,15 @@ public class UppgradeControler : MonoBehaviour
             levelInvinsebiletyFrames += 1;
             InvinsebliletyCost.SetText(((levelInvinsebiletyFrames + 1) * perLevelPricIncreas).ToString());
             InvinsebliletyStats.SetText(levelInvinsebiletyFrames * 0.1 + "s");
+        }
+    }
+
+    public void ByMoneyMult()
+    {
+       if(EnothMoney((levelMoneyMult + 1) * perLevelPricIncreas)){
+            levelMoneyMult += 1;
+            MoneyMultCost.SetText(((levelMoneyMult + 1) * perLevelPricIncreas).ToString());
+            MoneyMultStats.SetText(levelMoneyMult * 2.5 + "%");
         }
     }
 

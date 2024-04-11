@@ -34,7 +34,7 @@ public class TriggerPadController : MonoBehaviour
                 Destroy(beat);
                 Debug.Log("Boogie Boogie");
                 ++totalHit;
-                currentWeapon.GetComponent<Weapon>().SetCooldownDuration(0.5f);
+                currentWeapon.GetComponent<Weapon>().ChangeCooldownDuration(0.5f);
                 //currentWeapon.GetComponent<Weapon>().GetCooldownDuration() - (totalHit)
 
             }
