@@ -11,6 +11,7 @@ TagManager:
   - Ballz
   - Weapon
   - Music Collider
+  - XPDrop20
   layers:
   - Default
   - TransparentFX

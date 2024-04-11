@@ -26,6 +26,7 @@ public class GameObjectComparer : IComparer<GameObject>
 public class Enemy : MonoBehaviour
 {
     public GameObject player;
+    public GameObject xpDrop;
     public float movementSpeed;
 
     public float health;
@@ -37,13 +38,17 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        xpDrop = GameObject.FindGameObjectWithTag("XPDrop20");
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
     }
 
     void FixedUpdate()
     {
-        movementSpeed += 0.001f;
+        if (Vector3.Distance(player.transform.position, transform.position) < 0.5)
+        {
+            player.GetComponent<Player>().TakeDamage(1);
+        }
         if (IsAlive()) 
         {
             if (transform.position.x < player.GetComponent<Transform>().position.x)
@@ -66,9 +71,7 @@ public class Enemy : MonoBehaviour
             damageNumbers.text = damageTaken.ToString();
             damageNumberAnim.SetTrigger("TakingDamage");
             enemyAnim.SetTrigger("TakeDamage");
-
         }
-
     }
 
     public float GetHealth() 
@@ -85,11 +88,20 @@ public class Enemy : MonoBehaviour
             return false;
         }
         return true;
+    }
 
+    private void DropXP()
+    {
+        int random = UnityEngine.Random.Range(1, 3);
+        if(random == 1)
+        {
+            GameObject clone = Instantiate(xpDrop, transform.position, Quaternion.identity);
+        }
     }
 
     private void DestroyGameObject()
     {
+        DropXP();
         Destroy(gameObject);
     }
 
