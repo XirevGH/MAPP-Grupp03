@@ -6,7 +6,8 @@ using UnityEngine;
 public class UppgradeControler : MonoBehaviour
 {
     [SerializeField] private int mony;
-    [SerializeField] private TextMeshProUGUI MonyText;
+    [SerializeField] private TextMeshProUGUI MonyText1;
+    [SerializeField] private TextMeshProUGUI MonyText2;
     
     [SerializeField] private TextMeshProUGUI DamegCost;
     [SerializeField] private TextMeshProUGUI DamegStats;
@@ -56,7 +57,8 @@ public class UppgradeControler : MonoBehaviour
     levelInvinsebiletyFrames = 0;
 
 
-        MonyText.SetText(mony.ToString());
+        MonyText1.SetText(mony.ToString());
+        MonyText2.SetText(mony.ToString());
 
         DamegCost.SetText(((levelDamag + 1) * perLevelPricIncreas).ToString());
         DamegStats.SetText(levelDamag * 5 + "%");
@@ -161,7 +163,8 @@ public class UppgradeControler : MonoBehaviour
     {
         if(mony >= price){
             mony -= price;
-            MonyText.SetText(mony.ToString());
+            MonyText1.SetText(mony.ToString());
+            MonyText2.SetText(mony.ToString());
             return true;
         }
         return false;

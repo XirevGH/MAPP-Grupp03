@@ -10493,7 +10493,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +1012
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: -8542620725292600027, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
@@ -11395,7 +11395,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mony: 1000
-  MonyText: {fileID: 368561307}
+  MonyText1: {fileID: 1687503610}
+  MonyText2: {fileID: 368561307}
   DamegCost: {fileID: 867063608}
   DamegStats: {fileID: 196335105}
   BPMCost: {fileID: 1501115216}
