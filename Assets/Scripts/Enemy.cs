@@ -23,7 +23,7 @@ public class GameObjectComparer : IComparer<GameObject>
     }
 }
 
-public class Enemy : MonoBehaviour, IComparable<GameObject>
+public class Enemy : MonoBehaviour
 {
     public GameObject player;
     public float movementSpeed;
@@ -95,21 +95,5 @@ public class Enemy : MonoBehaviour, IComparable<GameObject>
     private void OnParticleCollision(GameObject particle)
     {
         TakeDamage(UnityEngine.Random.Range(1, 4));
-    }
-
-    public int CompareTo(GameObject other)
-    {
-        if(Vector3.Distance(transform.position, player.transform.position) < Vector3.Distance(other.transform.position, player.transform.position))
-        {
-            return -1;
-        }
-        else if (Vector3.Distance(transform.position, player.transform.position) > Vector3.Distance(other.transform.position, player.transform.position))
-        {
-            return 1;
-        }
-        else
-        {
-            return 0;
-        }
     }
 }
