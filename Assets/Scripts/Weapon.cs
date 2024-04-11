@@ -17,7 +17,7 @@ public abstract class Weapon : MonoBehaviour
         
     }
 
-    private void Update()
+    protected void Update()
     {
         if (!weaponReady)
         {
@@ -33,7 +33,7 @@ public abstract class Weapon : MonoBehaviour
         }
     }
 
-    public void Attack()
+    public virtual void Attack()
     {
         anim.SetTrigger("Attacking");
         StartCooldown();
