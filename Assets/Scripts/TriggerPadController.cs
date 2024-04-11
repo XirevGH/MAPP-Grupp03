@@ -7,18 +7,18 @@ using UnityEngine;
 public class TriggerPadController : MonoBehaviour
 {
 
-    [SerializeField] KeyCode keyCode;
+    //[SerializeField] KeyCode keyCode;
     [SerializeField] GameObject currentWeapon;
 
-    private SpriteRenderer spriteRenderer;
+    //private SpriteRenderer spriteRenderer;
     private GameObject beat;
-    private bool isPressable;
-    private int totalHit;
+    //private bool isPressable;
+    //private int totalHit;
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        totalHit = 0;
+       // spriteRenderer = GetComponent<SpriteRenderer>();
+        //totalHit = 0;
 
     }
 

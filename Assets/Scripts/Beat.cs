@@ -5,17 +5,18 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using static UnityEditor.PlayerSettings;
+using static BeatSpawnerController;
 
 public class Beat : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private GameObject circle;
     private GameObject endPoint, currentWeapon;
-    private RectTransform rectTransform;
+    //private RectTransform rectTransform;
     private float time;
     private void Start()
     {
-        rectTransform = GetComponent<RectTransform>();
+        //rectTransform = GetComponent<RectTransform>();
         //endPoint = GameObject.FindGameObjectWithTag("EndOfScreen");
         currentWeapon = GameObject.FindGameObjectWithTag("Weapon");
 
@@ -31,17 +32,26 @@ public class Beat : MonoBehaviour
         circle.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, time);
         
         circle.transform.localScale = Vector3.Lerp(new Vector3(10, 10, 10), new Vector3(1, 1, 1), time);
-        time += Time.deltaTime * 0.2f;
+        time += Time.deltaTime * 0.5f;
 
-        if (GetComponent<SpriteRenderer>().color == Color.red)
-        {
-            currentWeapon.GetComponent<Weapon>().ChangeCooldownDuration(+0.1f);
-           
-            Debug.Log("reduce attack speed");
-            Debug.Log(currentWeapon.GetComponent<Weapon>().GetCooldownDuration());
-            Destroy(this);
-        }
+        //if (GetComponent<SpriteRenderer>().color == Color.red)
+        //{
+        //    currentWeapon.GetComponent<Weapon>().ChangeCooldownDuration(+0.1f);
 
+        //    Debug.Log("reduce attack speed");
+        //    Debug.Log(currentWeapon.GetComponent<Weapon>().GetCooldownDuration());
+        //    Destroy(this);
+        //}
+
+    }
+
+    public void DestroyNote()
+    {
+        currentWeapon.GetComponent<Weapon>().ChangeCooldownDuration(+0.1f);
+
+        Debug.Log("reduce attack speed");
+        Debug.Log(currentWeapon.GetComponent<Weapon>().GetCooldownDuration());
+        Destroy(gameObject);
     }
 
 

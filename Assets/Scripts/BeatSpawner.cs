@@ -7,12 +7,7 @@ using static BeatSpawnerController;
 public class BeatSpawner : MonoBehaviour
 {
     [SerializeField] GameObject note;
-    RectTransform rectTransform;
-    private void Start()
-    {
-       rectTransform = GetComponent<RectTransform>();
-
-    }
+ 
     public void SpawnBeat()
     {
         Instantiate(note, this.transform.position, Quaternion.identity);
