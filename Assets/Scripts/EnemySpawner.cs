@@ -13,11 +13,12 @@ public class EnemySpawner : MonoBehaviour
     public GameObject parent;
     public GameObject[] spawnLocations;
     
-    public int spawnRate;
+    public float spawnRate;
     private bool waveHasSpawned;
 
     void Update()
     {
+        spawnRate -= 0.0001f;
         if (!waveHasSpawned)
         {
             waveHasSpawned = true;

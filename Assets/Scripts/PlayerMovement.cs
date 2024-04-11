@@ -43,7 +43,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void FlipSprite(bool flip)
     {
-        rend.flipX = flip;
+        if (flip) {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
     }
 
     private void FixedUpdate()
