@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class ElectricBolt : MonoBehaviour
 {
@@ -27,12 +28,14 @@ public class ElectricBolt : MonoBehaviour
 
     private void Update()
     {
+        length = Vector3.Distance(guitar.transform.position, enemy.transform.position);
         guitar = guitar.gameObject;
         enemy = guitar.GetComponent<ElectricGuitar>().getEnemy();
-        transform.position = guitar.transform.position;
+        transform.position = (guitar.transform.position + enemy.transform.position) / 2f;
         direction = enemy.transform.position - guitar.transform.position;
         angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
+        transform.localScale = new Vector3(length / 10.24f, transform.localScale.y, transform.localScale.z);
     }
 
     //private IEnumerator Shoot()
