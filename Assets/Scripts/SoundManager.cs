@@ -11,6 +11,7 @@ public class SoundManager : MonoBehaviour
     
     [SerializeField] private GameObject musicSource1, musicSource2;
     [SerializeField] private AudioClip[] musicTracks;
+    [SerializeField] public int[] BPMforTracks;
     [SerializeField] public Slider slider;
     [SerializeField] float timeToFade = 1f;
     //[SerializeField] public Slider slidertoFind;
