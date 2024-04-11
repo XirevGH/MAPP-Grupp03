@@ -19,5 +19,4 @@ public class GameController : MonoBehaviour
     {
         playerPrefab.GetComponent<Player>().SaveToString();
     }
-    
 }
