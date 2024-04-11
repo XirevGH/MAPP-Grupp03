@@ -23,8 +23,6 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-
-
         horizontalValue = Input.GetAxis("Horizontal");
         verticalValue = Input.GetAxis("Vertical");
   
@@ -35,15 +33,6 @@ public class PlayerMovement : MonoBehaviour
         pos.position = new Vector2(pos.position.x + horizontalValue * moveSpeed * Time.deltaTime, pos.position.y + verticalValue * moveSpeed * Time.deltaTime);
 
     }
-
-
-
-
-
-
-    
-
-
 }
 
 
