@@ -15,14 +15,15 @@ public class TrackSwaper : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.CompareTag("Player"))
+        if (collider.CompareTag("Music Collider"))
         {
+            ++i;
             if (i >= 4)
             {
                 i = 0;
             }
-                soundManager.GetComponent<SoundManager>().ChangeTrack(i + 1);
-                i = i + 1;
+                soundManager.GetComponent<SoundManager>().ChangeTrack(i);
+               
             
 
             

@@ -47,7 +47,7 @@ public class Beat : MonoBehaviour
 
     public void DestroyNote()
     {
-        currentWeapon.GetComponent<Weapon>().ChangeCooldownDuration(+0.1f);
+        currentWeapon.GetComponent<Weapon>().ChangeCooldownDuration(+0.05f);
 
         Debug.Log("reduce attack speed");
         Debug.Log(currentWeapon.GetComponent<Weapon>().GetCooldownDuration());
@@ -55,15 +55,12 @@ public class Beat : MonoBehaviour
     }
 
 
-    //private void Update()
-    //{
-    //    if (this.transform.position == endPoint.transform.position)
-    //    {
-    //        currentWeapon.GetComponent<Weapon>().ChangeCooldownDuration(+0.1f);
-    //        Debug.Log("reduce attack speed");
-    //        Debug.Log(currentWeapon.GetComponent<Weapon>().GetCooldownDuration());
-    //        Destroy(this);
-    //    }
-    //}
+    private void Update()
+    {
+        if (circle.transform.localScale == new Vector3(1, 1, 1))
+        {
+            DestroyNote();
+        }
+    }
 
 }

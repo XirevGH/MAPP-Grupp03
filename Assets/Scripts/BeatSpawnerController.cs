@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 public class BeatSpawnerController : MonoBehaviour
 {
     [SerializeField] private float BPM;
-    [SerializeField] GameObject soundManager, trackswaper, spawner, player;
+    [SerializeField] GameObject soundManager, trackswaper;
     [SerializeField] private Spawners[] spawners;
     [SerializeField] public bool isSpawning;
 
@@ -50,7 +50,7 @@ public class BeatSpawnerController : MonoBehaviour
     {
         isSpawning = true;
         audioSource = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
-
+       
 
     }
 
@@ -61,13 +61,14 @@ public class BeatSpawnerController : MonoBehaviour
 
         BPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswaper.GetComponent<TrackSwaper>().i];
         
-        if (isSpawning == true)
+        if (isSpawning)
         {
             foreach (Spawners spawners in spawners)
             {
                 float sampledTime = (audioSource.timeSamples / (audioSource.clip.frequency * spawners.GetIntervalLength(BPM)));
                 spawners.CheckForNewQuaterNote(sampledTime);
-          
+                
+
             }
 
         }
