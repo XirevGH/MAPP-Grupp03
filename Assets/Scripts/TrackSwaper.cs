@@ -7,7 +7,7 @@ public class TrackSwaper : MonoBehaviour
 
     public GameObject soundManager;
 
-    int i = 0;
+    public int i = 0;
    
     private void Start()
     {
@@ -21,7 +21,7 @@ public class TrackSwaper : MonoBehaviour
             {
                 i = 0;
             }
-                soundManager.GetComponent<SoundManager>().ChangeTrack(i);
+                soundManager.GetComponent<SoundManager>().ChangeTrack(i + 1);
                 i = i + 1;
             
 
