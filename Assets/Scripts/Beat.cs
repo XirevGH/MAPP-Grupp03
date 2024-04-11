@@ -9,13 +9,14 @@ using static UnityEditor.PlayerSettings;
 public class Beat : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
-    private GameObject endPoint;
+    private GameObject endPoint, currentWeapon;
     private RectTransform rectTransform;
 
     private void Start()
     {
         rectTransform = GetComponent<RectTransform>();
         endPoint = GameObject.FindGameObjectWithTag("EndOfScreen");
+        currentWeapon = GameObject.FindGameObjectWithTag("Weapon");
 
     }
 
@@ -35,9 +36,11 @@ public class Beat : MonoBehaviour
     {
         if (this.rectTransform.position == endPoint.transform.position)
         {
-            Debug.Log("Game Over?");
-
+            currentWeapon.GetComponent<Weapon>().ChangeCooldownDuration(+0.1f);
+            Debug.Log("reduce attack speed");
+            Debug.Log(currentWeapon.GetComponent<Weapon>().GetCooldownDuration());
+            Destroy(this);
         }
     }
-
+    
 }
