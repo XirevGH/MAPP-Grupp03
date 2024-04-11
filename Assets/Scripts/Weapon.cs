@@ -59,9 +59,9 @@ public abstract class Weapon : MonoBehaviour
         weaponReady = true;
     }
 
-    public void SetCooldownDuration(float duration)
+    public void ChangeCooldownDuration(float value)
     {
-        cooldownDuration = duration;
+        cooldownDuration += value;
     }
 
     public float GetCooldownDuration()
