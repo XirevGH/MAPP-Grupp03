@@ -44,6 +44,7 @@ public class ElectricGuitar : Weapon
         {
             GameObject clone = Instantiate(bolt);
             clone.SetActive(true);
+            clone.GetComponent<ElectricBolt>().startingUnit = gameObject;
             StartCooldown();
         }
     }
@@ -56,5 +57,10 @@ public class ElectricGuitar : Weapon
     public int getStartingBounces()
     {
         return bounces;
+    }
+
+    public float getLifetime()
+    {
+        return cooldownDuration;
     }
 }
