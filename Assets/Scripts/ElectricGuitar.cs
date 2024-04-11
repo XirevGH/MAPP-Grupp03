@@ -64,4 +64,9 @@ public class ElectricGuitar : Weapon
     {
         return damage;
     }
+
+    public void UpgradeTargetAmount(int amount)
+    {
+        amountOfTargets += amount;
+    }
 }

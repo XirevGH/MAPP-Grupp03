@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     private int xpToLevel = 300;
     private int level = 1;
 
+    private short burstAmount = 3;
+
     public string SaveToString()
     {
         return JsonUtility.ToJson(this);
@@ -88,6 +90,15 @@ public class Player : MonoBehaviour
         if(level == 3)
         {
             lightningAoe.SetActive(true);
+        }
+        if(level > 2)
+        {
+            electricGuitar.GetComponent<ElectricGuitar>().UpgradeTargetAmount(1);
+        }
+        if(level > 3)
+        {
+            burstAmount += 3;
+            lightningAoe.GetComponent<ParticleSystem>().emission.SetBursts(new ParticleSystem.Burst[] {new ParticleSystem.Burst(0.05f, burstAmount)});
         }
     }
 

@@ -28,7 +28,6 @@ public class Enemy : MonoBehaviour
     public GameObject player;
     public GameObject xpDrop;
     public float movementSpeed;
-
     public float health;
     public TMP_Text damageNumbers;
     public Animator damageNumberAnim;
@@ -45,12 +44,13 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Vector3.Distance(player.transform.position, transform.position) < 0.5)
-        {
-            player.GetComponent<Player>().TakeDamage(1);
-        }
+        movementSpeed += 0.001f;
         if (IsAlive()) 
         {
+            if (Vector3.Distance(player.transform.position, transform.position) < 0.5)
+            {
+                player.GetComponent<Player>().TakeDamage(1);
+            }
             if (transform.position.x < player.GetComponent<Transform>().position.x)
             {
                 sprite.flipX = false;
