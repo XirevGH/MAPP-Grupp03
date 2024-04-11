@@ -41,7 +41,7 @@ public abstract class Weapon : MonoBehaviour
 
     public void DealDamage(Collider2D other)
     {
-        if(other != null)
+        if(other.gameObject != null)
         {
             other.GetComponent<Enemy>().TakeDamage(damage);
         }

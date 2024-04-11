@@ -9,7 +9,7 @@ public class Floor : MonoBehaviour
     public Tilemap tilemap;
     public TileBase tileToPlace;
     public Color[] colors;
-
+    
     void PlaceTile(Vector3Int position)
     {
         if (tilemap != null && tileToPlace != null)
@@ -51,7 +51,6 @@ public class Floor : MonoBehaviour
                 }
             }
         }
-
     }
 
     BoundsInt GetBoundsFromCamera()
