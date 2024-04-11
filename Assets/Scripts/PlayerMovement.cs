@@ -16,7 +16,13 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalValue;
     private float verticalValue;
 
-    // Update is called once per frame
+    private SpriteRenderer rend;
+
+    private void Start()
+    {
+        rend = GetComponent<SpriteRenderer>(); 
+    }
+
     void Update()
     {
         if (Time.timeScale == 0f)
@@ -25,13 +31,24 @@ public class PlayerMovement : MonoBehaviour
         }
         horizontalValue = Input.GetAxis("Horizontal");
         verticalValue = Input.GetAxis("Vertical");
-  
+        if(horizontalValue < 0f)
+        {
+            FlipSprite(true);
+        }
+        if (horizontalValue > 0f)
+        {
+            FlipSprite(false);
+        }
+    }
+
+    private void FlipSprite(bool flip)
+    {
+        rend.flipX = flip;
     }
 
     private void FixedUpdate()
     {
         pos.position = new Vector2(pos.position.x + horizontalValue * moveSpeed * Time.deltaTime, pos.position.y + verticalValue * moveSpeed * Time.deltaTime);
-
     }
 }
 
