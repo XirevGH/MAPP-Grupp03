@@ -74,6 +74,7 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemiesInCircle(int amount)
     {
+        spawnLocations[0].transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Random.Range(0f, 361f));
         for (int i = 0; i < amount; i++) 
         {
             Bounds bound = spawnLocations[0].GetComponent<CircleCollider2D>().bounds;
