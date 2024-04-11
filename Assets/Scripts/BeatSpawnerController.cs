@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,8 +7,10 @@ using UnityEngine.Events;
 public class BeatSpawnerController : MonoBehaviour
 {
     [SerializeField] private float BPM;
-    [SerializeField] GameObject soundManager;
+    [SerializeField] GameObject soundManager, trackswaper;
     [SerializeField] private Spawners[] spawners;
+    [SerializeField] public bool isSpawning;
+ 
 
     private AudioSource audioSource;
 
@@ -38,23 +41,38 @@ public class BeatSpawnerController : MonoBehaviour
     
     }
 
-    // Start is called before the first frame update
+   
     void Start()
     {
+        isSpawning = true;
         audioSource = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
+
+   
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         audioSource = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
-        foreach (Spawners spawners in spawners)
+
+        BPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswaper.GetComponent<TrackSwaper>().i]; 
+
+        if (isSpawning == true)
         {
-            float sampledTime = (audioSource.timeSamples / (audioSource.clip.frequency * spawners.GetIntervalLength(BPM)));
-            spawners.CheckForNewInterval(sampledTime);
+            foreach (Spawners spawners in spawners)
+            {
+                float sampledTime = (audioSource.timeSamples / (audioSource.clip.frequency * spawners.GetIntervalLength(BPM)));
+                spawners.CheckForNewInterval(sampledTime);
+
+            }
 
         }
        
+    }
+
+    public void ToggleNoteSpawn()
+    {
+        isSpawning = !isSpawning;
     }
 
    
