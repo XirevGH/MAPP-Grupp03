@@ -6,16 +6,11 @@ using UnityEngine;
 
 public class ElectricGuitar : Weapon
 {
-    private Sprite bolt1;
-    private Sprite bolt2;
+    [SerializeField] private GameObject bolt;
+    [SerializeField] private int bounces;
 
     private LinkedList<GameObject> enemies = new LinkedList<GameObject>();
-
-    private void Update()
-    {
-        DrawClosestLine();
-        base.Update();
-    }
+    private GameObject closestEnemy;
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -30,10 +25,9 @@ public class ElectricGuitar : Weapon
         enemies.Remove(other.gameObject);
     }
 
-    private void DrawClosestLine()
+    public override void Attack()
     {
         float shortestDistance = Mathf.Infinity;
-        GameObject closestEnemy = null;
         foreach(GameObject enemy in enemies)
         {
             if(enemy != null)
@@ -45,21 +39,22 @@ public class ElectricGuitar : Weapon
                 }
             }
         }
+        Debug.Log("Attacked");
         if(closestEnemy != null)
         {
-            Debug.DrawLine(transform.position, closestEnemy.transform.position);
+            GameObject clone = Instantiate(bolt);
+            clone.SetActive(true);
+            StartCooldown();
         }
-        //ShootBolt(closestEnemy);
     }
 
-    private void ShootBolt(GameObject enemy)
+    public GameObject getEnemy()
     {
-
+        return closestEnemy;
     }
 
-    public override void Attack()
+    public int getStartingBounces()
     {
-        StartCooldown();
-        Debug.Log("Attacked");
+        return bounces;
     }
 }
