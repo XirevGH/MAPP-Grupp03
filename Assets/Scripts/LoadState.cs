@@ -10,10 +10,7 @@ public class LoadState : MonoBehaviour
     {
         using (StreamReader r = new StreamReader("file.json"))
         {
-            JsonUtility
             string json = r.ReadToEnd();
-            List<Item> items = JsonSerializer.DeserializeObject<List<Item>>(json);
         }
     }
-}
 }

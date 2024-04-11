@@ -14,4 +14,10 @@ public class GameController : MonoBehaviour
         playerPrefab = Instantiate(playerPrefab, new Vector3(0f, 0f), Quaternion.identity);
         playerPrefab = playerFromSave;
     }
+
+    public void GameOver()
+    {
+        playerPrefab.GetComponent<Player>().SaveToString();
+    }
+    
 }
