@@ -43,6 +43,7 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
+        movementSpeed += 0.001f;
         if (IsAlive()) 
         {
             if (transform.position.x < player.GetComponent<Transform>().position.x)

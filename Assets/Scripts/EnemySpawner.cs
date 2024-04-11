@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        spawnRate -= 0.0001f;
+        
         if (!waveHasSpawned)
         {
             waveHasSpawned = true;
@@ -28,6 +28,10 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        spawnRate -= 0.0001f;
+    }
     void SpawnEnemy(Vector3Int position)
     {
         Instantiate(enemy, position, Quaternion.identity, parent.GetComponent<Transform>());
