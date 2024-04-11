@@ -2,8 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
-public class Enemy : MonoBehaviour
+public class GameObjectComparer : IComparer<GameObject>
+{
+    public int Compare(GameObject obj1, GameObject obj2)
+    {
+        if (Vector3.Distance(obj1.transform.position, obj1.GetComponent<Enemy>().player.transform.position) < Vector3.Distance(obj2.transform.position, obj1.GetComponent<Enemy>().player.transform.position))
+        {
+            return -1;
+        }
+        else if (Vector3.Distance(obj1.transform.position, obj1.GetComponent<Enemy>().player.transform.position) > Vector3.Distance(obj2.transform.position, obj1.GetComponent<Enemy>().player.transform.position))
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+}
+
+public class Enemy : MonoBehaviour, IComparable<GameObject>
 {
     public GameObject player;
     public float movementSpeed;
@@ -50,6 +70,11 @@ public class Enemy : MonoBehaviour
 
     }
 
+    public float GetHealth() 
+    {
+        return health; 
+    }
+
     private bool IsAlive()
     {
         if (health <= 0)
@@ -69,6 +94,22 @@ public class Enemy : MonoBehaviour
 
     private void OnParticleCollision(GameObject particle)
     {
-        TakeDamage(Random.Range(1, 4));
+        TakeDamage(UnityEngine.Random.Range(1, 4));
+    }
+
+    public int CompareTo(GameObject other)
+    {
+        if(Vector3.Distance(transform.position, player.transform.position) < Vector3.Distance(other.transform.position, player.transform.position))
+        {
+            return -1;
+        }
+        else if (Vector3.Distance(transform.position, player.transform.position) > Vector3.Distance(other.transform.position, player.transform.position))
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
     }
 }

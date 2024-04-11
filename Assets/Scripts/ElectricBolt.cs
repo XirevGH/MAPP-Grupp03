@@ -8,40 +8,72 @@ using UnityEngine.UIElements;
 public class ElectricBolt : MonoBehaviour
 {
     [SerializeField] private Sprite bolt1, bolt2;
+    [SerializeField] private float lifetime;
+    [SerializeField] private GameObject player;
 
-    public GameObject startingUnit;
     private GameObject targetUnit;
-    private int bouncesLeft;
+    private float totalDamage;
 
     private float length;
     private float angle;
     private Vector3 direction;
     private float spriteChangeCooldown = 0.3f;
     private bool spriteChangeReady;
-    private float lifetime;
 
     private SpriteRenderer rend;
 
     private void Start()
     {
         rend = GetComponent<SpriteRenderer>();
-        targetUnit = startingUnit.GetComponent<ElectricGuitar>().getEnemy();
-        bouncesLeft = startingUnit.GetComponent<ElectricGuitar>().getStartingBounces();
+        totalDamage = player.GetComponent<ElectricGuitar>().GetDamage();
         spriteChangeReady = true;
-        lifetime = startingUnit.GetComponent<ElectricGuitar>().getLifetime();
+        StartCoroutine(DealDamage());
     }
 
     private void Update()
     {
-        length = Vector3.Distance(startingUnit.transform.position, targetUnit.transform.position);
-        startingUnit = startingUnit.gameObject;
-        targetUnit = startingUnit.GetComponent<ElectricGuitar>().getEnemy();
-        direction = targetUnit.transform.position - startingUnit.transform.position;
+        if(targetUnit == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        length = Vector3.Distance(player.transform.position, targetUnit.transform.position);
+        direction = targetUnit.transform.position - player.transform.position;
         angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        transform.position = startingUnit.transform.position;
+        transform.position = player.transform.position;
         transform.rotation = Quaternion.Euler(0, 0, angle);
         transform.localScale = new Vector3(length / 10.24f, transform.localScale.y, transform.localScale.z);
+    }
+
+    public void SetTargetUnit(GameObject target)
+    {
+        targetUnit = target;
+    }
+
+    private IEnumerator DealDamage()
+    {
+        float damageInterval = totalDamage / totalDamage;
+        float timeInterval = lifetime / totalDamage;
+        for(int i = 0; i < totalDamage; i++)
+        {
+            if(targetUnit != null)
+            {
+                if(targetUnit.GetComponent<Enemy>().GetHealth() > 0)
+                {
+                    targetUnit.GetComponent<Enemy>().TakeDamage(damageInterval);
+                }
+                else
+                {
+                    yield break;
+                }
+            }
+            else
+            {
+                yield break;
+            }
+            yield return new WaitForSeconds(timeInterval);
+        }
     }
 
     private void FixedUpdate()
@@ -77,6 +109,4 @@ public class ElectricBolt : MonoBehaviour
     {
         spriteChangeReady = true;
     }
-
-    //private IEnumerator Shoot()
 }

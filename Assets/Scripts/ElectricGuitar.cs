@@ -3,64 +3,65 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
+using System.Linq;
 
 public class ElectricGuitar : Weapon
 {
     [SerializeField] private GameObject bolt;
-    [SerializeField] private int bounces;
+    [SerializeField] private int amountOfTargets;
 
-    private LinkedList<GameObject> enemies = new LinkedList<GameObject>();
+    private HashSet<GameObject> enemies = new HashSet<GameObject>();
     private GameObject closestEnemy;
 
     private void OnTriggerStay2D(Collider2D other)
     {
         if(other.CompareTag("Enemy"))
         {
-            enemies.AddLast(other.gameObject);
+            enemies.Add(other.gameObject);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         enemies.Remove(other.gameObject);
     }
 
     public override void Attack()
     {
-        float shortestDistance = Mathf.Infinity;
-        foreach(GameObject enemy in enemies)
-        {
-            if(enemy != null)
-            {
-                if((enemy.transform.position - transform.position).sqrMagnitude < shortestDistance)
-                {
-                    shortestDistance = (enemy.transform.position - transform.position).sqrMagnitude;
-                    closestEnemy = enemy;
-                }
-            }
-        }
-        Debug.Log("Attacked");
-        if(closestEnemy != null)
+        GameObject[] targetEnemies = GetClosestEnemies(AdjustTargetOverflow(amountOfTargets));
+        for(int i = 0; i < targetEnemies.Length; i++)
         {
             GameObject clone = Instantiate(bolt);
+            clone.GetComponent<ElectricBolt>().SetTargetUnit(targetEnemies[i]);
             clone.SetActive(true);
-            clone.GetComponent<ElectricBolt>().startingUnit = gameObject;
-            StartCooldown();
+        }
+        StartCooldown();
+    }
+
+    private int AdjustTargetOverflow(int amountOfTargets)
+    {
+        if(enemies.Count < amountOfTargets)
+        {
+            return enemies.Count;
+        }
+        else
+        {
+            return amountOfTargets;
         }
     }
 
-    public GameObject getEnemy()
+    public GameObject[] GetClosestEnemies(int amountOfTargets)
     {
-        return closestEnemy;
+        SortedSet<GameObject> sortedEnemies = new SortedSet<GameObject>(new GameObjectComparer());
+        foreach(GameObject enemy in enemies)
+        {
+            sortedEnemies.Add(enemy);
+        }
+        return sortedEnemies.Take(amountOfTargets).ToArray();
     }
 
-    public int getStartingBounces()
+    public float GetDamage()
     {
-        return bounces;
-    }
-
-    public float getLifetime()
-    {
-        return cooldownDuration;
+        return damage;
     }
 }
