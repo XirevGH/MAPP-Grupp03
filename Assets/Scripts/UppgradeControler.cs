@@ -118,7 +118,7 @@ public class UppgradeControler : MonoBehaviour
 
             for (int i = 1; i <= level; ++i)
             {
-                money += i * perLevelPriceIncrease; // Add the cost of each level to 'mony'
+                money += i * perLevelPriceIncrease; 
             }
         }
         upgrades.Clear();
