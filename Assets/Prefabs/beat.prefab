@@ -222,6 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   circle: {fileID: 2807010619834201707}
+  particle: {fileID: 2506341979681168310, guid: 4eefcb67bfd2afe44beea10856d5040b, type: 3}
 --- !u!61 &4584299650944298638
 BoxCollider2D:
   m_ObjectHideFlags: 0

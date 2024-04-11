@@ -10,7 +10,7 @@ using static BeatSpawnerController;
 public class Beat : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
-    [SerializeField] private GameObject circle;
+    [SerializeField] private GameObject circle, particle;
     private GameObject currentWeapon;
     //private RectTransform rectTransform;
     private float time;
@@ -51,16 +51,17 @@ public class Beat : MonoBehaviour
 
         Debug.Log("reduce attack speed");
         Debug.Log(currentWeapon.GetComponent<Weapon>().GetCooldownDuration());
+        Instantiate(particle, this.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
 
     private void Update()
     {
-        if (circle.transform.localScale == new Vector3(1, 1, 1))
-        {
-            DestroyNote();
-        }
+        //if (circle.transform.localScale == new Vector3(1, 1, 1))
+        //{
+        //    DestroyNote();
+        //}
     }
 
 }
