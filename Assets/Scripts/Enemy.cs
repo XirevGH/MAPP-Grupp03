@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
             damageNumbers.text = damageTaken.ToString();
             damageNumberAnim.SetTrigger("TakingDamage");
             enemyAnim.SetTrigger("TakeDamage");
+
         }
 
     }
@@ -51,5 +52,10 @@ public class Enemy : MonoBehaviour
     private void DestroyGameObject()
     {
         Destroy(gameObject);
+    }
+
+    private void OnParticleCollision(GameObject particle)
+    {
+        TakeDamage(Random.Range(1, 4));
     }
 }

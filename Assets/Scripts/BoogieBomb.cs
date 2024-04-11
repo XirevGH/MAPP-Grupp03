@@ -38,7 +38,7 @@ public class BoogieBomb : MonoBehaviour
         {
 
             other.GetComponent<Enemy>().TakeDamage(damage);
-            Debug.Log("WTF");
+           
         }
     
 
