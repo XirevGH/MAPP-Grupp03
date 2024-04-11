@@ -6,15 +6,22 @@ using static BeatSpawnerController;
 
 public class BeatSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject note;
- 
+    [SerializeField] private GameObject beat;
+    [SerializeField] private GameObject parentForBeat;
+
+
+
     public void SpawnBeat()
     {
-        Instantiate(note, this.transform.position, Quaternion.identity);
+       Instantiate(beat, this.transform.position, Quaternion.identity, parentForBeat.GetComponent<Transform>());
 
 
 
     }
+
+    
+
+   
 
     public void SetSpawnPosition()
     {

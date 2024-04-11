@@ -19,18 +19,19 @@ public class Beat : MonoBehaviour
         //rectTransform = GetComponent<RectTransform>();
         //endPoint = GameObject.FindGameObjectWithTag("EndOfScreen");
         currentWeapon = GameObject.FindGameObjectWithTag("Weapon");
+      
 
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-       
+
         //rectTransform.position = Vector3.MoveTowards(this.rectTransform.position, endPoint.transform.position, moveSpeed);
 
         GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, time);
         circle.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, time);
-        
+
         circle.transform.localScale = Vector3.Lerp(new Vector3(10, 10, 10), new Vector3(1, 1, 1), time);
         time += Time.deltaTime * 0.5f;
 
@@ -54,6 +55,8 @@ public class Beat : MonoBehaviour
         Instantiate(particle, this.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
+
+ 
 
 
     private void Update()
