@@ -12146,7 +12146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a67dba08b60622479d960d099a471b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mony: 1000
+  money: 1000
   MonyText1: {fileID: 1687503610}
   MonyText2: {fileID: 368561307}
   DamegCost: {fileID: 867063608}
@@ -12169,7 +12169,7 @@ MonoBehaviour:
   InvinsebliletyStats: {fileID: 1822014208}
   MoneyMultCost: {fileID: 601540593}
   MoneyMultStats: {fileID: 1355780717}
-  perLevelPricIncreas: 100
+  perLevelPriceIncrease: 100
 --- !u!1 &1800475113
 GameObject:
   m_ObjectHideFlags: 0
