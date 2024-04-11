@@ -8,6 +8,8 @@ TagManager:
   - SoundManager
   - EndOfScreen
   - Beat
+  - Ballz
+  - Weapon
   layers:
   - Default
   - TransparentFX

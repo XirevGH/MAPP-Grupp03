@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class TriggerPadController : MonoBehaviour
 {
@@ -10,14 +10,14 @@ public class TriggerPadController : MonoBehaviour
     [SerializeField] KeyCode keyCode;
     [SerializeField] GameObject currentWeapon;
 
-    private Image image;
+    private SpriteRenderer spriteRenderer;
     private GameObject beat;
     private bool isPressable;
     private int totalHit;
 
     void Start()
     {
-        image = GetComponent<Image>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         totalHit = 0;
 
     }
@@ -26,25 +26,27 @@ public class TriggerPadController : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(keyCode))
-        {
-            image.color = Color.blue;
-            if (isPressable) 
-            {
-                Destroy(beat);
-                Debug.Log("Boogie Boogie");
-                ++totalHit;
-                currentWeapon.GetComponent<Weapon>().ChangeCooldownDuration(-0.0f);
+        currentWeapon = GameObject.FindGameObjectWithTag("Weapon");
 
-                Debug.Log(currentWeapon.GetComponent<Weapon>().GetCooldownDuration());
+        //    if (Input.GetKeyDown(keyCode))
+        //    {
+        //        spriteRenderer.color = Color.blue;
+        //        if (isPressable) 
+        //        {
+        //            Destroy(beat);
+        //            Debug.Log("Boogie Boogie");
+        //            ++totalHit;
+        //            currentWeapon.GetComponent<Weapon>().ChangeCooldownDuration(-0.0f);
 
-            }
-        }
+        //            Debug.Log(currentWeapon.GetComponent<Weapon>().GetCooldownDuration());
 
-        if (Input.GetKeyUp(keyCode))
-        {
-            image.color = Color.white;
-        }
+        //        }
+        //    }
+
+        //    if (Input.GetKeyUp(keyCode))
+        //    {
+        //        spriteRenderer.color = Color.white;
+        //    }
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -52,18 +54,20 @@ public class TriggerPadController : MonoBehaviour
         beat = collider.GameObject();
         if (collider.CompareTag("Beat"))
         {
-           
-            isPressable = true;
+            currentWeapon.GetComponent<Weapon>().ChangeCooldownDuration(-0.0f);
+            Debug.Log(currentWeapon.GetComponent<Weapon>().GetCooldownDuration());
+            Destroy(beat);
+            //isPressable = true;
         }
     }
 
-    void OnTriggerExit2D(Collider2D collider)
-    {
-        if (collider.CompareTag("Beat"))
-        {
-            isPressable = false;
-        }
-    }
+    //void OnTriggerExit2D(Collider2D collider)
+    //{
+    //    if (collider.CompareTag("Beat"))
+    //    {
+    //        isPressable = false;
+    //    }
+    //}
 
     
 }

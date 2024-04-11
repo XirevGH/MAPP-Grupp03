@@ -1,53 +1,56 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class BeatSpawnerController : MonoBehaviour
 {
     [SerializeField] private float BPM;
-    [SerializeField] GameObject soundManager, trackswaper;
+    [SerializeField] GameObject soundManager, trackswaper, spawner, player;
     [SerializeField] private Spawners[] spawners;
     [SerializeField] public bool isSpawning;
- 
+
 
     private AudioSource audioSource;
 
 
     [System.Serializable]
-    public class Spawners 
+    public class Spawners
     {
         [SerializeField] private float noteValue;
         [SerializeField] private UnityEvent trigger;
         private int lastInterval;
 
         public float GetIntervalLength(float BPM)
-        { 
-            
-            return 60f / (noteValue * BPM); 
-        
+        {
+
+            return 60f / (noteValue * BPM);
+
         }
 
         public void CheckForNewInterval(float interval)
-        { 
-            if(Mathf.FloorToInt(interval) != lastInterval)
-            { 
+        {
+            if (Mathf.FloorToInt(interval) != lastInterval)
+            {
                 lastInterval = Mathf.FloorToInt(interval);
                 trigger.Invoke();
+               
             }
-        
+
         }
-    
+
     }
 
-   
+
     void Start()
     {
         isSpawning = true;
         audioSource = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
 
-   
+
     }
 
 
@@ -55,7 +58,7 @@ public class BeatSpawnerController : MonoBehaviour
     {
         audioSource = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
 
-        BPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswaper.GetComponent<TrackSwaper>().i]; 
+        BPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswaper.GetComponent<TrackSwaper>().i];
 
         if (isSpawning == true)
         {
@@ -63,11 +66,11 @@ public class BeatSpawnerController : MonoBehaviour
             {
                 float sampledTime = (audioSource.timeSamples / (audioSource.clip.frequency * spawners.GetIntervalLength(BPM)));
                 spawners.CheckForNewInterval(sampledTime);
-
+            
             }
 
         }
-       
+
     }
 
     public void ToggleNoteSpawn()
@@ -75,5 +78,5 @@ public class BeatSpawnerController : MonoBehaviour
         isSpawning = !isSpawning;
     }
 
-   
+
 }
