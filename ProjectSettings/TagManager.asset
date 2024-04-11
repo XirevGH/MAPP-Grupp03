@@ -10,6 +10,7 @@ TagManager:
   - Beat
   - Ballz
   - Weapon
+  - Music Collider
   layers:
   - Default
   - TransparentFX
