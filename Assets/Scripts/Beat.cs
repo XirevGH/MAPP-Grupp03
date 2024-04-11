@@ -11,7 +11,7 @@ public class Beat : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private GameObject circle;
-    private GameObject endPoint, currentWeapon;
+    private GameObject currentWeapon;
     //private RectTransform rectTransform;
     private float time;
     private void Start()
