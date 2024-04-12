@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f40ad650baf3b84428ec00e710a93c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  note: {fileID: 7929235589256512294, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
+  beat: {fileID: 0}
+  parentForBeat: {fileID: 0}
 --- !u!1 &9222440558515588644
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,6 +114,22 @@ MonoBehaviour:
         - m_Target: {fileID: 1844900722253704777}
           m_TargetAssemblyTypeName: BeatSpawner, Assembly-CSharp
           m_MethodName: SpawnBeat
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - noteValue: 8
+    quaterNoteTrigger:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 365822639556173494, guid: 06a021f81aeca814ea0dbaade5d6a3de, type: 3}
+          m_TargetAssemblyTypeName: KillTheBeat, Assembly-CSharp
+          m_MethodName: DestroyFirstChild
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
