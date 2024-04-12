@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private Slider hpSlider, xpSlider;
     [SerializeField] private TMP_Text levelText;
-    [SerializeField] private GameObject electricGuitar, lightningAoe;
+    [SerializeField] private GameObject electricGuitar, lightningAoe, bassGuitar;
 
     public int money;
     public float moneyMultiplier;
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     private int xpHeld;
     private int xpToLevel = 300;
-    private int level = 1;
+    public int level = 1;
 
     private short burstAmount = 3;
 
@@ -99,6 +99,9 @@ public class Player : MonoBehaviour
         {
             burstAmount += 3;
             lightningAoe.GetComponent<ParticleSystem>().emission.SetBursts(new ParticleSystem.Burst[] {new ParticleSystem.Burst(0.05f, burstAmount)});
+            electricGuitar.GetComponent<Weapon>().ChangeCooldownDuration(0.2f);
+            bassGuitar.GetComponent<Weapon>().ChangeCooldownDuration(0.2f);
+            lightningAoe.GetComponent<Weapon>().ChangeCooldownDuration(0.2f);
         }
     }
 
