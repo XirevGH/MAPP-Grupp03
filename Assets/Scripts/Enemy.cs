@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
     public Animator enemyAnim;
     private Rigidbody2D rb; 
     private SpriteRenderer sprite;
+    [SerializeField] private Sprite bouncerSprite, dancerSprite;
 
     void Start()
     {
@@ -41,6 +42,13 @@ public class Enemy : MonoBehaviour
         xpDrop = GameObject.FindGameObjectWithTag("XPDrop20");
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        int random = GetRandomInt(1, 3);
+        if (random == 1) {
+            sprite.sprite = bouncerSprite;
+        } else
+        {
+            sprite.sprite = dancerSprite;
+        }
         movementSpeed = 4;
     }
 
@@ -110,4 +118,9 @@ public class Enemy : MonoBehaviour
     {
         TakeDamage(UnityEngine.Random.Range(1, 4));
     }
+
+    private int GetRandomInt (int a, int b)
+    {
+        return UnityEngine.Random.Range(a, b);
+}
 }
