@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private Slider hpSlider, xpSlider;
     [SerializeField] private TMP_Text levelText;
-    [SerializeField] private GameObject electricGuitar, lightningAoe, bassGuitar;
+    [SerializeField] private GameObject electricGuitar, lightningAoe, bassGuitar, saxophon;
 
     public int money;
     public float moneyMultiplier;
@@ -83,6 +83,7 @@ public class Player : MonoBehaviour
         level++;
         levelText.text = "Level: " + level;
         UpdateXPSlider();
+        
         if(level == 2)
         {
             electricGuitar.SetActive(true);
@@ -91,6 +92,10 @@ public class Player : MonoBehaviour
         {
             lightningAoe.SetActive(true);
         }
+        if(level == 4){
+            saxophon.SetActive(true);
+        }
+
         if(level > 2)
         {
             electricGuitar.GetComponent<ElectricGuitar>().UpgradeTargetAmount(1);
@@ -99,6 +104,10 @@ public class Player : MonoBehaviour
         {
             burstAmount += 3;
             lightningAoe.GetComponent<ParticleSystem>().emission.SetBursts(new ParticleSystem.Burst[] {new ParticleSystem.Burst(0.05f, burstAmount)});
+        }
+         if(level > 4)
+        {
+            saxophon.GetComponent<SaxophoneWeapon>().UpgradePirceAndSpeed(1,5);
         }
     }
 

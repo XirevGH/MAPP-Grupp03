@@ -123,6 +123,88 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &98184944
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 420424554}
+    m_Modifications:
+    - target: {fileID: 4858579046831841616, guid: ad2782b89278d5f4f9469790c4ed29c4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858579046831841616, guid: ad2782b89278d5f4f9469790c4ed29c4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858579046831841616, guid: ad2782b89278d5f4f9469790c4ed29c4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858579046831841616, guid: ad2782b89278d5f4f9469790c4ed29c4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858579046831841616, guid: ad2782b89278d5f4f9469790c4ed29c4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858579046831841616, guid: ad2782b89278d5f4f9469790c4ed29c4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858579046831841616, guid: ad2782b89278d5f4f9469790c4ed29c4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858579046831841616, guid: ad2782b89278d5f4f9469790c4ed29c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858579046831841616, guid: ad2782b89278d5f4f9469790c4ed29c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858579046831841616, guid: ad2782b89278d5f4f9469790c4ed29c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176280972334092257, guid: ad2782b89278d5f4f9469790c4ed29c4, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176280972334092257, guid: ad2782b89278d5f4f9469790c4ed29c4, type: 3}
+      propertyPath: notePrefab
+      value: 
+      objectReference: {fileID: 854551473}
+    - target: {fileID: 7176280972334092257, guid: ad2782b89278d5f4f9469790c4ed29c4, type: 3}
+      propertyPath: penetration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176280972334092257, guid: ad2782b89278d5f4f9469790c4ed29c4, type: 3}
+      propertyPath: cooldownTimer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220433570665924718, guid: ad2782b89278d5f4f9469790c4ed29c4, type: 3}
+      propertyPath: m_Name
+      value: SaxophoneWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220433570665924718, guid: ad2782b89278d5f4f9469790c4ed29c4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ad2782b89278d5f4f9469790c4ed29c4, type: 3}
+--- !u!4 &98184945 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4858579046831841616, guid: ad2782b89278d5f4f9469790c4ed29c4, type: 3}
+  m_PrefabInstance: {fileID: 98184944}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &105734539 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1843139789886664066, guid: 73e8c7fac64e160469ab7a30447b8bc1, type: 3}
@@ -1010,6 +1092,7 @@ Transform:
   - {fileID: 208422883}
   - {fileID: 6730709617577208773}
   - {fileID: 923565073116657584}
+  - {fileID: 98184945}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &420424555
@@ -1057,6 +1140,7 @@ MonoBehaviour:
   electricGuitar: {fileID: 208422880}
   lightningAoe: {fileID: 875929386}
   bassGuitar: {fileID: 0}
+  saxophon: {fileID: 775509300}
   money: 0
   moneyMultiplier: 0
   damage: 0
@@ -1639,6 +1723,77 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707771447}
   m_CullTransparentMesh: 1
+--- !u!1 &775509300 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8220433570665924718, guid: ad2782b89278d5f4f9469790c4ed29c4, type: 3}
+  m_PrefabInstance: {fileID: 98184944}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &854551472
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4804643130811201099, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804643130811201099, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804643130811201099, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804643130811201099, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804643130811201099, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804643130811201099, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804643130811201099, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804643130811201099, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804643130811201099, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804643130811201099, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730958551181348608, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
+      propertyPath: m_Name
+      value: NoteProjec
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730958551181348608, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
+--- !u!1 &854551473 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5730958551181348608, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
+  m_PrefabInstance: {fileID: 854551472}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &867326975
 GameObject:
   m_ObjectHideFlags: 0
@@ -8591,3 +8746,4 @@ SceneRoots:
   - {fileID: 5118049770592873863}
   - {fileID: 7617469065711567828}
   - {fileID: 2926742445463038897}
+  - {fileID: 854551472}

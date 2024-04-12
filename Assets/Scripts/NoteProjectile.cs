@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class NoteProjectile : MonoBehaviour
 {
-    public float speed = 5f;
-    public float damage = 5f;
-    public int penetration = 1; // Number of enemies this note can penetrate
+    private float damage;
+    private float speed;
+    
+    private int penetration; 
 
     private Vector3 direction;
 
-    public void Initialize(Vector3 direction, int startPenetration)
-    {
-        this.direction = direction;
-        this.penetration = startPenetration;
-    }
+   public void Initialize(float damage, float speed, int startPenetration, Vector3 direction)
+{
+    this.damage = damage;
+    this.speed = speed;
+    this.penetration = startPenetration;  
+    this.direction = direction;
+}
 
     private void Update()
     {
@@ -33,4 +36,5 @@ public class NoteProjectile : MonoBehaviour
             }
         }
     }
+    
 }

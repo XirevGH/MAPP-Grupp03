@@ -1,24 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SaxophoneWeapon : MonoBehaviour
+public class SaxophoneWeapon : Weapon
 {
     public Transform shootingPoint;
-    public GameObject notePrefab; // Prefab for the note projectile
-    public float shootingInterval = 2.0f; // Time between shots
+    public GameObject notePrefab; 
 
-    private float nextShotTime = 0f;
+    public float speed;
+    
+    public int penetration;  
+
     private List<GameObject> enemies = new List<GameObject>();
 
-    private void Update()
-    {
-        if (Time.time >= nextShotTime)
-        {
-            Attack();
-            nextShotTime = Time.time + shootingInterval;
-        }
-    }
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -36,14 +32,22 @@ public class SaxophoneWeapon : MonoBehaviour
         }
     }
 
-    private void Attack()
+    public override void Attack()
     {
         GameObject closestEnemy = FindClosestEnemy();
         if (closestEnemy != null)
         {
             ShootNoteAtEnemy(closestEnemy);
+            StartCooldown();
         }
     }
+
+    
+    public new void DealDamage(Collider2D other)
+    {
+       //do nothing
+    }
+    
 
     private GameObject FindClosestEnemy()
     {
@@ -72,8 +76,14 @@ public class SaxophoneWeapon : MonoBehaviour
             if (noteProjectile != null)
             {
                 Vector3 direction = (enemy.transform.position - shootingPoint.position).normalized;
-                noteProjectile.Initialize(direction, 1); // Assuming 1 is the initial penetration value
+                noteProjectile.Initialize( damage, speed, penetration, direction ); 
             }
         }
     }
+    public void UpgradePirceAndSpeed(float speedAdd, int penetrationAdd) 
+    {
+        speed += speedAdd;
+        penetration += penetrationAdd;
+    }
+    
 }
