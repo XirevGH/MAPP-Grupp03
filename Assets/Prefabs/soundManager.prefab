@@ -49,11 +49,11 @@ MonoBehaviour:
   musicSource1: {fileID: 7857219835047929276}
   musicSource2: {fileID: 3741921254953506729}
   musicTracks:
-  - {fileID: 8300000, guid: 02d9901bebe80f046bc215d9bdacfdb0, type: 3}
-  - {fileID: 8300000, guid: 91e806c3ef88b284b877151a4e034727, type: 3}
-  - {fileID: 8300000, guid: 0a0ffa6e0719cc244b56cfbf9e137d59, type: 3}
-  - {fileID: 8300000, guid: df774ad6dded7ad4794a74f0db936474, type: 3}
-  BPMforTracks: 630000008c0000006e00000078000000
+  - {fileID: 8300000, guid: 29724764eaafa6f4990213f9c89121e3, type: 3}
+  - {fileID: 8300000, guid: b54e97c3313d82a4e94f23db1cc7f428, type: 3}
+  - {fileID: 8300000, guid: 9624c5dbfdd7bf04e86024cdd7d5dcaf, type: 3}
+  - {fileID: 8300000, guid: edb1d27aa6922e149ab000a0ff9bcb9d, type: 3}
+  BPMforTracks: 640000008c0000006e00000078000000
   slider: {fileID: 0}
   timeToFade: 1.25
   currentScene: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5876676766751740285}
   - component: {fileID: 5091683513635909221}
   - component: {fileID: 7090562947763049702}
-  - component: {fileID: 8889706037100367088}
+  - component: {fileID: 6315503807056249870}
   m_Layer: 0
   m_Name: Beat Particle
   m_TagString: Untagged
@@ -4889,7 +4889,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &8889706037100367088
+--- !u!114 &6315503807056249870
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
