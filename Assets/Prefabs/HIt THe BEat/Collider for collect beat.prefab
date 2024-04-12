@@ -54,7 +54,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6960a9590e1931d428484af3c6459bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeapon: {fileID: 0}
+  weapons:
+  - {fileID: 8039643524354982756, guid: 317e7c3696e977948b27fa69c286e625, type: 3}
+  - {fileID: 7935674233594240109, guid: 1b57ae6af80705f4f8fd21f518bb36bb, type: 3}
+  reduceCooldownDuration: 0.1
 --- !u!61 &8625758083160169279
 BoxCollider2D:
   m_ObjectHideFlags: 0

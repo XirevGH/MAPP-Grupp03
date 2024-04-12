@@ -9,16 +9,17 @@ using static BeatSpawnerController;
 
 public class Beat : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
+    [SerializeField] private float moveSpeed, increaseCooldownDuration;
     [SerializeField] private GameObject circle, particle;
-    private GameObject currentWeapon;
+    //private GameObject currentWeapon;
+    [SerializeField] GameObject[] weapons;
     //private RectTransform rectTransform;
     private float time;
     private void Start()
     {
         //rectTransform = GetComponent<RectTransform>();
         //endPoint = GameObject.FindGameObjectWithTag("EndOfScreen");
-        currentWeapon = GameObject.FindGameObjectWithTag("Weapon");
+        //currentWeapon = GameObject.FindGameObjectWithTag("Weapon");
       
 
     }
@@ -26,6 +27,7 @@ public class Beat : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        
 
         //rectTransform.position = Vector3.MoveTowards(this.rectTransform.position, endPoint.transform.position, moveSpeed);
 
@@ -48,10 +50,20 @@ public class Beat : MonoBehaviour
 
     public void DestroyNote()
     {
-        currentWeapon.GetComponent<Weapon>().ChangeCooldownDuration(+0.05f);
+        //currentWeapon.GetComponent<Weapon>().ChangeCooldownDuration(+increaseCooldownDuration);
 
-        Debug.Log("reduce attack speed");
-        Debug.Log(currentWeapon.GetComponent<Weapon>().GetCooldownDuration());
+
+        foreach (GameObject weapon in weapons)
+        {
+            if (weapon.activeSelf)
+            {
+                weapon.GetComponent<Weapon>().ChangeCooldownDuration(+increaseCooldownDuration);
+                Debug.Log("reduce attack speed");
+                Debug.Log(weapon.GetComponent<Weapon>().GetCooldownDuration());
+            }
+
+        }
+        
         Instantiate(particle, this.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

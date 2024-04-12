@@ -8,7 +8,9 @@ public class TriggerPadController : MonoBehaviour
 {
 
     //[SerializeField] KeyCode keyCode;
-    [SerializeField] GameObject currentWeapon;
+    //[SerializeField] GameObject currentWeapon;
+    [SerializeField] GameObject[] weapons;
+    [SerializeField] float reduceCooldownDuration;
 
     //private SpriteRenderer spriteRenderer;
     private GameObject beat;
@@ -26,7 +28,7 @@ public class TriggerPadController : MonoBehaviour
     void Update()
     {
 
-        currentWeapon = GameObject.FindGameObjectWithTag("Weapon");
+       // currentWeapon = GameObject.FindGameObjectWithTag("Weapon");
 
         //    if (Input.GetKeyDown(keyCode))
         //    {
@@ -54,8 +56,18 @@ public class TriggerPadController : MonoBehaviour
         beat = collider.GameObject();
         if (collider.CompareTag("Beat"))
         {
-            currentWeapon.GetComponent<Weapon>().ChangeCooldownDuration(-0.0f);
-            Debug.Log(currentWeapon.GetComponent<Weapon>().GetCooldownDuration());
+            foreach (GameObject weapon in weapons)
+            {
+                if (weapon.activeSelf)
+                {
+                    weapon.GetComponent<Weapon>().ChangeCooldownDuration(-reduceCooldownDuration);
+                    Debug.Log(weapon.GetComponent<Weapon>().GetCooldownDuration());
+                }
+               
+            }
+
+
+           
             Destroy(beat);
             //isPressable = true;
         }
