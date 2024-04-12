@@ -859,7 +859,7 @@ GameObject:
   - component: {fileID: 72363132}
   - component: {fileID: 72363131}
   m_Layer: 5
-  m_Name: Uppgraeds_button
+  m_Name: Upgrades_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -991,7 +991,7 @@ GameObject:
   - component: {fileID: 84176429}
   - component: {fileID: 84176428}
   m_Layer: 5
-  m_Name: Player - Curensy (1)
+  m_Name: Player - Currency (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1581,7 +1581,7 @@ GameObject:
   - component: {fileID: 200948215}
   - component: {fileID: 200948214}
   m_Layer: 5
-  m_Name: Pirce - Stats
+  m_Name: Pierce - Stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1926,7 +1926,7 @@ GameObject:
   - component: {fileID: 360941152}
   - component: {fileID: 360941151}
   m_Layer: 5
-  m_Name: Player - Curensy
+  m_Name: Player - Currency
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4325,7 +4325,7 @@ GameObject:
   - component: {fileID: 685846508}
   - component: {fileID: 685846507}
   m_Layer: 5
-  m_Name: Exit Uppgrade - Botton
+  m_Name: Exit Upgrade - Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6079,7 +6079,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pirce
+  m_text: Pierce
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: -8542620725292600027, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
@@ -6710,7 +6710,7 @@ GameObject:
   - component: {fileID: 1084008216}
   - component: {fileID: 1084008215}
   m_Layer: 5
-  m_Name: Exit Credits - Botton
+  m_Name: Exit Credits - Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8188,7 +8188,7 @@ GameObject:
   - component: {fileID: 1209189074}
   - component: {fileID: 1209189073}
   m_Layer: 5
-  m_Name: 'Pirce - Price '
+  m_Name: 'Pierce - Price '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8477,7 +8477,7 @@ GameObject:
   - component: {fileID: 1240577650}
   - component: {fileID: 1240577649}
   m_Layer: 5
-  m_Name: Exit_botton
+  m_Name: Exit_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9470,7 +9470,7 @@ GameObject:
   - component: {fileID: 1418972432}
   - component: {fileID: 1418972433}
   m_Layer: 0
-  m_Name: MenuControler
+  m_Name: MenuController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9726,7 +9726,7 @@ GameObject:
   - component: {fileID: 1467500799}
   - component: {fileID: 1467500798}
   m_Layer: 5
-  m_Name: Pirce - Added
+  m_Name: Pierce - Added
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10654,7 +10654,7 @@ GameObject:
   - component: {fileID: 1620328845}
   - component: {fileID: 1620328844}
   m_Layer: 5
-  m_Name: Pirce - Button
+  m_Name: Pierce - Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11381,7 +11381,7 @@ GameObject:
   - component: {fileID: 1701141734}
   - component: {fileID: 1701141733}
   m_Layer: 5
-  m_Name: Saxophon
+  m_Name: Saxophone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11552,7 +11552,7 @@ GameObject:
   - component: {fileID: 1712015241}
   - component: {fileID: 1712015240}
   m_Layer: 5
-  m_Name: 'Uppgrades - Panel '
+  m_Name: 'Upgrades - Panel '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12113,7 +12113,7 @@ GameObject:
   - component: {fileID: 1792653751}
   - component: {fileID: 1792653752}
   m_Layer: 0
-  m_Name: UppgradeControler
+  m_Name: UpgradeController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12183,7 +12183,7 @@ GameObject:
   - component: {fileID: 1800475116}
   - component: {fileID: 1800475115}
   m_Layer: 5
-  m_Name: Bear
+  m_Name: Beer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12437,7 +12437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -22.049805, y: 260.3302}
+  m_AnchoredPosition: {x: -22.049805, y: 283.5}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1816883089
@@ -12460,7 +12460,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Name
+  m_text: Survivor on the Dancefloor
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: -8542620725292600027, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
@@ -12487,8 +12487,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 177.65
-  m_fontSizeBase: 177.65
+  m_fontSize: 124.2
+  m_fontSizeBase: 124.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12756,7 +12756,7 @@ GameObject:
   - component: {fileID: 1903768273}
   - component: {fileID: 1903768272}
   m_Layer: 5
-  m_Name: Exit Settings - Botton
+  m_Name: Exit Settings - Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13023,7 +13023,7 @@ GameObject:
   - component: {fileID: 1912058779}
   - component: {fileID: 1912058778}
   m_Layer: 5
-  m_Name: Play_botton
+  m_Name: Play_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14426,7 +14426,7 @@ GameObject:
   - component: {fileID: 2110078677}
   - component: {fileID: 2110078676}
   m_Layer: 5
-  m_Name: Electo gitar
+  m_Name: ElectricGuitar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14523,7 +14523,7 @@ GameObject:
   - component: {fileID: 2130827844}
   - component: {fileID: 2130827843}
   m_Layer: 5
-  m_Name: Setings_botton
+  m_Name: Settings_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14834,7 +14834,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Resett
+  m_text: Reset
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
