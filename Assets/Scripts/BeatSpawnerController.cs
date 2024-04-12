@@ -36,6 +36,7 @@ public class BeatSpawnerController : MonoBehaviour
             if (Mathf.FloorToInt(interval) != lastQuaterNote)
             {
                 lastQuaterNote = Mathf.FloorToInt(interval);
+                Debug.Log(lastQuaterNote);
                 quaterNoteTrigger.Invoke();
                
             }
@@ -63,15 +64,14 @@ public class BeatSpawnerController : MonoBehaviour
         
         if (isSpawning)
         {
-            foreach (Spawners spawners in spawners)
-            {
-                float sampledTime = (audioSource.timeSamples / (audioSource.clip.frequency * spawners.GetIntervalLength(BPM)));
-                spawners.CheckForNewQuaterNote(sampledTime);
+                float sampledTime = (audioSource.timeSamples / (audioSource.clip.frequency * spawners[0].GetIntervalLength(BPM)));
+            spawners[0].CheckForNewQuaterNote(sampledTime);
                 
 
-            }
+            
 
         }
+
 
     }
 
