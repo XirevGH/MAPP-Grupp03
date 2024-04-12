@@ -6869,6 +6869,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6934043509149133390, guid: 06a021f81aeca814ea0dbaade5d6a3de, type: 3}
   m_PrefabInstance: {fileID: 58926026}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1492959146 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 365822639556173494, guid: 06a021f81aeca814ea0dbaade5d6a3de, type: 3}
+  m_PrefabInstance: {fileID: 58926026}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492959145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0322321b1a88b784c89ca12fee88d249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1692601665
 GameObject:
   m_ObjectHideFlags: 0
@@ -7483,7 +7494,7 @@ PrefabInstance:
     - target: {fileID: 6521611349969491106, guid: 44c0d0ef63f22614aa730a210476cccb, type: 3}
       propertyPath: spawners.Array.data[1].quaterNoteTrigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1492959145}
+      objectReference: {fileID: 1492959146}
     - target: {fileID: 9222440558515588644, guid: 44c0d0ef63f22614aa730a210476cccb, type: 3}
       propertyPath: m_Name
       value: BeatSpawnerController
