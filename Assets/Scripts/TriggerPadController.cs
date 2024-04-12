@@ -58,12 +58,8 @@ public class TriggerPadController : MonoBehaviour
         {
             foreach (GameObject weapon in weapons)
             {
-                if (weapon.activeSelf)
-                {
                     weapon.GetComponent<Weapon>().ChangeCooldownDuration(-reduceCooldownDuration);
-                    Debug.Log(weapon.GetComponent<Weapon>().GetCooldownDuration());
-                }
-               
+                    Debug.Log(weapon.GetComponent<Weapon>().GetCooldownDuration());    
             }
 
 

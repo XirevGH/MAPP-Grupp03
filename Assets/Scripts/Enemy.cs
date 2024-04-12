@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
 {
     public GameObject player;
     public GameObject xpDrop;
-    public static float movementSpeed;
+    public static float movementSpeed = 4f;
     public float health;
     public TMP_Text damageNumbers;
     public Animator damageNumberAnim;
@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
         {
             sprite.sprite = dancerSprite;
         }
-        movementSpeed = 4;
+        
     }
 
     void FixedUpdate()

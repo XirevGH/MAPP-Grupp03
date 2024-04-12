@@ -1056,6 +1056,7 @@ MonoBehaviour:
   levelText: {fileID: 707771449}
   electricGuitar: {fileID: 208422880}
   lightningAoe: {fileID: 875929386}
+  bassGuitar: {fileID: 0}
   money: 0
   moneyMultiplier: 0
   damage: 0
@@ -1065,6 +1066,7 @@ MonoBehaviour:
   health: 100
   defence: 0
   movementSpeed: 0
+  level: 1
 --- !u!70 &420424558
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -7809,8 +7811,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.21133333}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.5390625, y: 2.5390625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -7910,7 +7912,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6274849602263825335, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 02d9901bebe80f046bc215d9bdacfdb0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 29724764eaafa6f4990213f9c89121e3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -8051,7 +8053,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5b49d983ae91e7c40818dbcfc206819c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8072,7 +8074,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6274849602263825335, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 02d9901bebe80f046bc215d9bdacfdb0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 29724764eaafa6f4990213f9c89121e3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -8253,7 +8255,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6960a9590e1931d428484af3c6459bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeapon: {fileID: 0}
+  weapons:
+  - {fileID: 324169414}
+  - {fileID: 208422880}
+  reduceCooldownDuration: 0.1
 --- !u!222 &4317650778182254323
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8323,7 +8328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db05540e51175fa4396ef5042848ff97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BPM: 99
+  BPM: 100
   soundManager: {fileID: 2780194736530583293}
   trackswaper: {fileID: 2662689527024895925}
   spawners:
@@ -8428,7 +8433,7 @@ Transform:
   m_GameObject: {fileID: 2662689527024895925}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2, y: -8.6, z: 0}
+  m_LocalPosition: {x: 0.13, y: -3.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8485,11 +8490,11 @@ MonoBehaviour:
   musicSource1: {fileID: 7857219835690268076}
   musicSource2: {fileID: 3741921255317243833}
   musicTracks:
-  - {fileID: 8300000, guid: 02d9901bebe80f046bc215d9bdacfdb0, type: 3}
-  - {fileID: 8300000, guid: 91e806c3ef88b284b877151a4e034727, type: 3}
-  - {fileID: 8300000, guid: 0a0ffa6e0719cc244b56cfbf9e137d59, type: 3}
-  - {fileID: 8300000, guid: df774ad6dded7ad4794a74f0db936474, type: 3}
-  BPMforTracks: 630000008c0000006e00000078000000
+  - {fileID: 8300000, guid: 29724764eaafa6f4990213f9c89121e3, type: 3}
+  - {fileID: 8300000, guid: b54e97c3313d82a4e94f23db1cc7f428, type: 3}
+  - {fileID: 8300000, guid: 9624c5dbfdd7bf04e86024cdd7d5dcaf, type: 3}
+  - {fileID: 8300000, guid: edb1d27aa6922e149ab000a0ff9bcb9d, type: 3}
+  BPMforTracks: 640000008c0000006e00000078000000
   slider: {fileID: 0}
   timeToFade: 1.25
   currentScene: 0

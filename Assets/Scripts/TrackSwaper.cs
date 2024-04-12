@@ -23,11 +23,6 @@ public class TrackSwaper : MonoBehaviour
                 i = 0;
             }
                 soundManager.GetComponent<SoundManager>().ChangeTrack(i);
-               
-            
-
-            
-            
         }
     }
 }

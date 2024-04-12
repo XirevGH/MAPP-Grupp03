@@ -36,7 +36,6 @@ public class BeatSpawnerController : MonoBehaviour
             if (Mathf.FloorToInt(interval) != lastQuaterNote)
             {
                 lastQuaterNote = Mathf.FloorToInt(interval);
-                Debug.Log(lastQuaterNote);
                 quaterNoteTrigger.Invoke();
                
             }

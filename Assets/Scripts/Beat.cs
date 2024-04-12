@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
-using static UnityEditor.PlayerSettings;
-using static BeatSpawnerController;
+
+
 
 public class Beat : MonoBehaviour
 {
@@ -58,13 +54,8 @@ public class Beat : MonoBehaviour
 
         foreach (GameObject weapon in weapons)
         {
-            if (weapon.activeSelf)
-            {
-                weapon.GetComponent<Weapon>().ChangeCooldownDuration(+increaseCooldownDuration);
-                Debug.Log("reduce attack speed");
-                Debug.Log(weapon.GetComponent<Weapon>().GetCooldownDuration());
-            }
-
+            weapon.GetComponent<Weapon>().ChangeCooldownDuration(+increaseCooldownDuration);
+            Debug.Log("reduce attack speed" + weapon.GetComponent<Weapon>().GetCooldownDuration());
         }
 
         Instantiate(particle, this.transform.position, Quaternion.identity);

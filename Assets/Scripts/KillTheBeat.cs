@@ -11,8 +11,6 @@ public class KillTheBeat : MonoBehaviour
         {
             return;
         }
-
-         
         transform.GetChild(0).gameObject.GetComponent<Beat>().DestroyNote();
     }
 }

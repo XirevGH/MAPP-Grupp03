@@ -99,15 +99,11 @@ public class Player : MonoBehaviour
         {
             burstAmount += 3;
             lightningAoe.GetComponent<ParticleSystem>().emission.SetBursts(new ParticleSystem.Burst[] {new ParticleSystem.Burst(0.05f, burstAmount)});
-            electricGuitar.GetComponent<Weapon>().ChangeCooldownDuration(0.2f);
-            bassGuitar.GetComponent<Weapon>().ChangeCooldownDuration(0.2f);
-            lightningAoe.GetComponent<Weapon>().ChangeCooldownDuration(0.2f);
         }
     }
 
     private void UpdateXPSlider()
     {
-        Debug.Log(xpHeld / xpToLevel);
         xpSlider.value = (float)xpHeld / xpToLevel;
     }
     #endregion
