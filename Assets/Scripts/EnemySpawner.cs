@@ -15,7 +15,10 @@ public class EnemySpawner : MonoBehaviour
     
     public float spawnRate;
     private bool waveHasSpawned;
+    private float spawnIncreaser;
 
+
+ 
     void Update()
     {
         
@@ -23,43 +26,44 @@ public class EnemySpawner : MonoBehaviour
         {
             waveHasSpawned = true;
             Invoke("SpawnNextWave", spawnRate);
-            SpawnEnemiesInCircle(10);
-            SpawnEnemiesInCorners();
+            SpawnEnemiesInCircle((1 + (int)spawnIncreaser));
         }
     }
 
     private void FixedUpdate()
     {
         spawnRate -= 0.0001f;
+        spawnIncreaser += 0.0005f;
     }
+
     void SpawnEnemy(Vector3Int position)
     {
         Instantiate(enemy, position, Quaternion.identity, parent.GetComponent<Transform>());
     }
 
-    void SpawnEnemiesInCorners()
+/*    void SpawnEnemiesInCorners()
     {
-            BoundsInt bounds = GetBoundsFromCamera();
+        BoundsInt bounds = GetBoundsFromCamera();
 
-            for (int x = bounds.min.x; x <= bounds.max.x; x++)
+        for (int x = bounds.min.x; x <= bounds.max.x; x++)
+        {
+            if (x == bounds.min.x || x == bounds.max.x)
             {
-                if (x == bounds.min.x || x == bounds.max.x)
+                for (int y = bounds.min.y; y <= bounds.max.y; y++)
                 {
-                    for (int y = bounds.min.y; y <= bounds.max.y; y++)
+                    if (y == bounds.min.y || y == bounds.max.y)
                     {
-                        if (y == bounds.min.y || y == bounds.max.y)
+                        Vector3Int position = new Vector3Int(x, y, 0);
+                        TileBase tile = tilemap.GetTile(position);
+                        if (tile == null)
                         {
-                            Vector3Int position = new Vector3Int(x, y, 0);
-                            TileBase tile = tilemap.GetTile(position);
-                            if (tile == null)
-                            {
-                                SpawnEnemy(position);
-                            }
+                            SpawnEnemy(position);
                         }
                     }
                 }
             }
         }
+    }*/
 
     void SpawnNextWave()
     {
@@ -82,7 +86,7 @@ public class EnemySpawner : MonoBehaviour
         spawnLocations[0].transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Random.Range(0f, 361f));
         for (int i = 0; i < amount; i++) 
         {
-            Bounds bound = spawnLocations[0].GetComponent<CircleCollider2D>().bounds;
+            Bounds bound = spawnLocations[Random.Range(0, spawnLocations.Length)].GetComponent<Collider2D>().bounds;
             Vector3 randomPoint = new Vector3(
             Random.Range(bound.min.x, bound.max.x),
             Random.Range(bound.min.y, bound.max.y),

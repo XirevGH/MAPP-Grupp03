@@ -6651,7 +6651,11 @@ MonoBehaviour:
   parent: {fileID: 1707783737}
   spawnLocations:
   - {fileID: 1730046822}
-  spawnRate: 10
+  - {fileID: 867326975}
+  - {fileID: 1877163159}
+  - {fileID: 260835526}
+  - {fileID: 274997314}
+  spawnRate: 3
 --- !u!1 &904416705
 GameObject:
   m_ObjectHideFlags: 0

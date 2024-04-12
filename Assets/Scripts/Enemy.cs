@@ -27,24 +27,25 @@ public class Enemy : MonoBehaviour
 {
     public GameObject player;
     public GameObject xpDrop;
-    public float movementSpeed;
+    public static float movementSpeed;
     public float health;
     public TMP_Text damageNumbers;
     public Animator damageNumberAnim;
     public Animator enemyAnim;
     private Rigidbody2D rb; 
     private SpriteRenderer sprite;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         xpDrop = GameObject.FindGameObjectWithTag("XPDrop20");
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        movementSpeed = 4;
     }
 
     void FixedUpdate()
     {
-        movementSpeed += 0.001f;
         if (IsAlive()) 
         {
             if (Vector3.Distance(player.transform.position, transform.position) < 0.5)

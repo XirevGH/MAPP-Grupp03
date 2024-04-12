@@ -15,6 +15,10 @@ public class GameController : MonoBehaviour
         ReadFile();
     }
 
+    private void FixedUpdate()
+    {
+        Enemy.movementSpeed += 0.001f;
+    }
     private void ReadFile()
     {
         if (File.Exists(saveFile))
