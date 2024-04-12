@@ -63,9 +63,9 @@ public class Beat : MonoBehaviour
             }
 
         }
-        
+
         Instantiate(particle, this.transform.position, Quaternion.identity);
-        Destroy(this);
+        Destroy(gameObject);
     }
 
  
