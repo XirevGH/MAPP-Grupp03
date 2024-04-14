@@ -97,7 +97,7 @@ public class SoundManager : MonoBehaviour
     {
        
         float timeElapsed = 0;
-        timeElapsed += Time.deltaTime;
+      
 
         if (isOnePlaying)
         {
@@ -109,11 +109,12 @@ public class SoundManager : MonoBehaviour
             {
                 musicSource2.GetComponent<AudioSource>().volume = Mathf.Lerp(0, 1, timeElapsed / timeToFade);
                 musicSource1.GetComponent<AudioSource>().volume = Mathf.Lerp(1, 0, timeElapsed / timeToFade);
-               
+                timeElapsed += Time.deltaTime;
                 yield return null;
 
             }
             musicSource1.GetComponent<AudioSource>().Stop();
+            Debug.Log("musicSource1 Stop");
             
 
         }
@@ -126,7 +127,7 @@ public class SoundManager : MonoBehaviour
             {
                 musicSource1.GetComponent<AudioSource>().volume = Mathf.Lerp(0, 1, timeElapsed / timeToFade);
                 musicSource2.GetComponent<AudioSource>().volume = Mathf.Lerp(1, 0, timeElapsed / timeToFade);
-               
+                timeElapsed += Time.deltaTime;
                 yield return null;
 
             }
