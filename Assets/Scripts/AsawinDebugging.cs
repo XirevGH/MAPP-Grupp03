@@ -10,13 +10,14 @@ public class AsawinDebugging : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        testingObj = GameObject.FindGameObjectWithTag("SoundManager");
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log("isRunning");
         
 
         if (Input.GetKeyDown(keyCode))
@@ -28,7 +29,8 @@ public class AsawinDebugging : MonoBehaviour
 
             testingObj.GetComponent<SoundManager>().Pause();
 
-          
+            
+
         }
 
         if (Input.GetKeyUp(keyCode))

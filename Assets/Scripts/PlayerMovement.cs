@@ -28,14 +28,14 @@ public class PlayerMovement : MonoBehaviour
         horizontalValue = Input.GetAxis("Horizontal");
         verticalValue = Input.GetAxis("Vertical");
 
-        /*Vector2 inputVector = new Vector2(horizontalValue, verticalValue);
+        Vector2 inputVector = new Vector2(horizontalValue, verticalValue);
         if (inputVector.magnitude > 1)
         {
             inputVector.Normalize();
             horizontalValue = inputVector.x;
             verticalValue = inputVector.y;
             
-        }*/
+        }
         if(horizontalValue < 0f)
         {
             FlipSprite(true);
