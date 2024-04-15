@@ -39,7 +39,7 @@ public class PauseMenu : MonoBehaviour
 
         //fixa så enemies, player och animationer pausas också
 
-        SoundManager.Instance.Pause();
+        //SoundManager.Instance.Pause();
     }
 
     public void LoadMenu()
