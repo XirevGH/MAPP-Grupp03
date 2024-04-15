@@ -13,39 +13,43 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject electricGuitar, lightningAoe, bassGuitar, saxophon;
     [SerializeField] private GameController gameController;
     [SerializeField] private Player player;
+    [SerializeField] private PlayerStats playerStats;
 
-    public int money;
-    public float moneyMultiplier;
-    public int damage;
-    public int areaOfEffectSize;
-    public int pierce;
-    public float xpMultiplier;
-    public int health;
-    public int defence;
-    public float movementSpeed;
+    private int money;
+    private float moneyMultiplier;
+    private int damage;
+    private int areaOfEffectSize;
+    private int pierce;
+    private float xpMultiplier;
+    private int health;
+    private int defence;
+    private float movementSpeed;
 
     private int xpHeld;
-    private int xpToLevel = 300;
-    public int level = 1;
+    private int xpToLevel;
+    private int level;
 
-    private short burstAmount = 3;
+    private short burstAmount;
 
-    public string SaveToString()
+    private void Start()
     {
-        return JsonUtility.ToJson(this);
+        money = playerStats.money; 
+        moneyMultiplier = playerStats.moneyMultiplier; 
+        damage = playerStats.damage;
+        areaOfEffectSize = playerStats.areaOfEffectSize;
+        pierce = playerStats.pierce;
+        xpMultiplier = playerStats.xpMultiplier;
+        health = playerStats.health; 
+        defence = playerStats.defence; 
+        movementSpeed = playerStats.movementSpeed; 
+        xpHeld = playerStats.xpHeld;  
     }
-
-    public void CreateFromJSON(string jsonString)
-    {
-        JsonUtility.FromJsonOverwrite(jsonString, player);
-    }
-
     #region HP Stuff
     public void TakeDamage(int damageAmount)
     {
-        health -= damageAmount;
+        playerStats.health -= damageAmount;
         UpdateHealthSlider();
-        if(health <= 0)
+        if(playerStats.health <= 0)
         {
             Die();
         }
@@ -53,7 +57,7 @@ public class Player : MonoBehaviour
 
     private void UpdateHealthSlider()
     {
-        hpSlider.value = health / 100f;
+        hpSlider.value = playerStats.health / 100f;
     }
 
     private void Die()
@@ -66,14 +70,14 @@ public class Player : MonoBehaviour
     #region XP Stuff
     public void AddXP(int amountToAdd)
     {
-        xpHeld += amountToAdd;
+        playerStats.xpHeld += amountToAdd;
         UpdateXPSlider();
         CheckForLevelUp();
     }
 
     private void CheckForLevelUp()
     {
-        if (xpHeld >= xpToLevel)
+        if (playerStats.xpHeld >= playerStats.xpToLevel)
         {
             LevelUp();
         }
@@ -81,34 +85,34 @@ public class Player : MonoBehaviour
 
     private void LevelUp()
     {
-        xpHeld -= xpToLevel;
-        xpToLevel *= (int)1.5;
-        level++;
-        levelText.text = "Level: " + level;
+        playerStats.xpHeld -= playerStats.xpToLevel;
+        playerStats.xpToLevel *= (int)1.5;
+        playerStats.level++;
+        levelText.text = "Level: " + playerStats.level;
         UpdateXPSlider();
         
-        if(level == 2)
+        if(playerStats.level == 2)
         {
             electricGuitar.SetActive(true);
         }
-        if(level == 3)
+        if(playerStats.level == 3)
         {
             lightningAoe.SetActive(true);
         }
-        if(level == 4){
+        if(playerStats.level == 4){
             saxophon.SetActive(true);
         }
 
-        if(level > 2)
+        if(playerStats.level > 2)
         {
             electricGuitar.GetComponent<ElectricGuitar>().UpgradeTargetAmount(1);
         }
-        if(level > 3)
+        if(playerStats.level > 3)
         {
-            burstAmount += 3;
-            lightningAoe.GetComponent<ParticleSystem>().emission.SetBursts(new ParticleSystem.Burst[] {new ParticleSystem.Burst(0.05f, burstAmount)});
+            playerStats.burstAmount += 3;
+            lightningAoe.GetComponent<ParticleSystem>().emission.SetBursts(new ParticleSystem.Burst[] {new ParticleSystem.Burst(0.05f, playerStats.burstAmount)});
         }
-         if(level > 4)
+         if(playerStats.level > 4)
         {
             saxophon.GetComponent<SaxophoneWeapon>().UpgradePirceAndSpeed(1,5);
         }
@@ -116,7 +120,7 @@ public class Player : MonoBehaviour
 
     private void UpdateXPSlider()
     {
-        xpSlider.value = (float)xpHeld / xpToLevel;
+        xpSlider.value = (float)playerStats.xpHeld / playerStats.xpToLevel;
     }
     #endregion
 }

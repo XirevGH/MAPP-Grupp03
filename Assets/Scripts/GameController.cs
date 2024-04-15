@@ -8,7 +8,7 @@ using UnityEngine.Tilemaps;
 public class GameController : MonoBehaviour
 {
     private string saveFile;
-    public GameObject player;
+    public PlayerStats playerStats;
     private GameObject playerFromSave;
     public Camera mainCamera;
     public Tilemap tilemap;
@@ -31,9 +31,7 @@ public class GameController : MonoBehaviour
         if (File.Exists(saveFile))
         {
             string fileContents = File.ReadAllText(saveFile);
-            player.GetComponent<Player>().CreateFromJSON(fileContents);
-            player = Instantiate(player, new Vector3(0f, 0f), Quaternion.identity);
-            player = playerFromSave;
+            playerStats.GetComponent<PlayerStats>().CreateFromJSON(fileContents);
         }
         else
         {
@@ -43,7 +41,7 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        File.WriteAllText(saveFile, player.GetComponent<Player>().SaveToString());
+        File.WriteAllText(saveFile, playerStats.SaveToString());
         SceneManager.LoadScene("MainMenu");
     }
 

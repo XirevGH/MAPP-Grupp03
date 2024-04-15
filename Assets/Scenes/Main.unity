@@ -619,7 +619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1778b5d485d3e494f8175ffdbfc30ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  playerStats: {fileID: 5436226366269919644}
   mainCamera: {fileID: 519420031}
   tilemap: {fileID: 1947654048}
 --- !u!4 &482028541
@@ -2938,16 +2938,7 @@ MonoBehaviour:
   saxophon: {fileID: 5929268495264575834}
   gameController: {fileID: 482028540}
   player: {fileID: 2554686454012362858}
-  money: 0
-  moneyMultiplier: 0
-  damage: 0
-  areaOfEffectSize: 0
-  pierce: 0
-  xpMultiplier: 0
-  health: 100
-  defence: 0
-  movementSpeed: 0
-  level: 1
+  playerStats: {fileID: 5436226366269919644}
 --- !u!82 &2577762078633648034
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3213,6 +3204,7 @@ GameObject:
   - component: {fileID: 619599178451160533}
   - component: {fileID: 3002987865988841894}
   - component: {fileID: 2554686454012362858}
+  - component: {fileID: 5436226366269919644}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3472,6 +3464,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5436226366269919644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3351724656273620173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a89c7dedefacc87448b53e5e4529ae80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStats: {fileID: 5436226366269919644}
+  money: 0
+  moneyMultiplier: 0
+  damage: 0
+  areaOfEffectSize: 0
+  pierce: 0
+  xpMultiplier: 0
+  health: 0
+  defence: 0
+  movementSpeed: 0
+  xpHeld: 0
+  xpToLevel: 300
+  level: 1
+  burstAmount: 3
 --- !u!212 &5454173696411798152
 SpriteRenderer:
   m_ObjectHideFlags: 0
