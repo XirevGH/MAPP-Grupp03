@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -13,7 +14,9 @@ public class BoogieBomb : MonoBehaviour
     public float abilityCooldown;
     public float bombRangeY;
     public float bombRangeX;
-    //public float bombSpeed;
+
+    [SerializeField] private GameObject bombParticles;
+    public bool hasExploded = false;
 
     [SerializeField] private Transform player;
     GameObject enemy;
@@ -23,28 +26,31 @@ public class BoogieBomb : MonoBehaviour
     {
      bombRangeY = UnityEngine.Random.Range(-6, 6);
      bombRangeX = UnityEngine.Random.Range(-6, 6);
-    } 
+    }
 
     void FixedUpdate()
     {
-        if(!bombMoving)
+        if (!bombMoving)
         {
             transform.position = player.position;
         }
-      
 
-        if (!usedAbility) //kräver att man klickar på knappen och att man inte har ability på cooldown
+
+        if (!usedAbility)
         {
 
-          
-        //    transform.position = UnityEngine.Vector3.MoveTowards(transform.position, new UnityEngine.Vector3(bombRangeX, bombRangeY, 0), 20 * Time.deltaTime);
-
-               transform.position = transform.position + new UnityEngine.Vector3(bombRangeX, bombRangeY, 0);
-
+            transform.position = transform.position + new UnityEngine.Vector3(bombRangeX, bombRangeY, 0);
 
             Attack();
         }
+
+        if (hasExploded)
+        {
+            Instantiate(bombParticles, transform.position, bombParticles.transform.localRotation);
+            hasExploded = false; 
+        }
     }
+
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -62,7 +68,6 @@ public class BoogieBomb : MonoBehaviour
     {
 
         //TODO lägg till animation
-       
         bombMoving = true;
         Invoke("TouchedGround", 0.5f); //gör så att abilityn gör damage och visar att abilityn har använts
         Invoke("CanUseAbility", abilityCooldown); //efter en viss stund gör den så att usedAbility blir false så man kan använda ability igen
@@ -70,6 +75,8 @@ public class BoogieBomb : MonoBehaviour
     }
     private void TouchedGround()
     {
+        hasExploded = true;
+        Invoke("Explosion", 0.015f);
         this.GetComponent<SpriteRenderer>().enabled = true;
         dealDamage = true;
         Invoke("BombTime", 0.06f); //gör så att bomben gör skada under en viss tid
@@ -79,6 +86,11 @@ public class BoogieBomb : MonoBehaviour
     private void BombTime()
     {
         dealDamage = false;
+    }
+
+    private void Explosion()
+    {
+        hasExploded = false;
     }
 
     private void CanUseAbility()
