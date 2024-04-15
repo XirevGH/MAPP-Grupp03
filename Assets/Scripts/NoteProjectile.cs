@@ -11,6 +11,8 @@ public class NoteProjectile : MonoBehaviour
 
     private Vector3 direction;
 
+    private float lifetime = 5f;
+
    public void Initialize(float damage, float speed, int startPenetration, Vector3 direction)
 {
     this.damage = damage;
@@ -22,13 +24,18 @@ public class NoteProjectile : MonoBehaviour
     private void Update()
     {
         transform.position += direction * speed * Time.deltaTime;
+        lifetime -= Time.deltaTime;
+        if (lifetime <= 0)
+        {
+            Destroy(gameObject); 
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy") && penetration > 0)
         {
-            other.GetComponent<Enemy>().TakeDamage(damage); // Assume Enemy has a TakeDamage method
+            other.GetComponent<Enemy>().TakeDamage(damage); 
             penetration--;
             if (penetration <= 0)
             {

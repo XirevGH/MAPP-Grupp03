@@ -51,8 +51,9 @@ MonoBehaviour:
   cooldownDuration: 4
   shootingPoint: {fileID: 4858579046831841616}
   notePrefab: {fileID: 0}
-  speed: 2
-  penetration: 2
+  speed: 4
+  penetration: 1
+  shoots: 1
 --- !u!61 &9117032354272068094
 BoxCollider2D:
   m_ObjectHideFlags: 0
