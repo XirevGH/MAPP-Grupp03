@@ -16,9 +16,9 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] public int defence;
     [SerializeField] public float movementSpeed;
 
-    [SerializeField] public int xpHeld;
-    [SerializeField] public int xpToLevel;
-    [SerializeField] public int level;
+    [SerializeField] public int xpHeld = 0;
+    [SerializeField] public int xpToLevel = 30;
+    [SerializeField] public int level = 1;
 
     [SerializeField] public short burstAmount;
 

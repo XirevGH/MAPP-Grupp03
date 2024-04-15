@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Text;
 using System;
 
 public class GameObjectComparer : IComparer<GameObject>
@@ -77,12 +78,39 @@ public class Enemy : MonoBehaviour
     {
         if (IsAlive()) { 
             health -= damageTaken;
-            damageNumbers.text = damageTaken.ToString();
+            damageNumbers.text = BuildDamageNumber(damageTaken);
             damageNumberAnim.SetTrigger("TakingDamage");
             enemyAnim.SetTrigger("TakeDamage");
         }
     }
 
+    public string Repeat(string text, uint n)
+    {
+        var textAsSpan = text.AsSpan();
+        var span = new Span<char>(new char[textAsSpan.Length * (int)n]);
+        for (var i = 0; i < n; i++)
+        {
+            textAsSpan.CopyTo(span.Slice((int)i * textAsSpan.Length, textAsSpan.Length));
+        }
+
+        return span.ToString();
+    }
+    private string BuildDamageNumber(float damage)
+    {
+        string source = damageNumbers.text;
+        int count = source.Length - source.Replace("/", "").Length;
+        StringBuilder builder = new StringBuilder(damageNumbers.text);
+        if (count > 0) { 
+            builder.Insert(0, Repeat(" ", (uint)count * 16));
+            builder.Insert(1, damage);
+            builder.Insert(2, "\n");
+        }
+        else
+        {
+            builder.Insert(0, damage + "\n");
+        }
+        return builder.ToString();
+    }
     public float GetHealth() 
     {
         return health; 
