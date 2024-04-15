@@ -1,11 +1,12 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 
 
 
 public class Beat : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed, increaseCooldownDuration;
+    [SerializeField] private float moveSpeed, increaseCooldownDuration, reduceCooldownDuration;
     [SerializeField] private GameObject circle, particle;
     //private GameObject currentWeapon;
     [SerializeField] GameObject[] weapons;
@@ -14,19 +15,11 @@ public class Beat : MonoBehaviour
     private void Start()
     {
         weapons = GameObject.FindGameObjectsWithTag("Weapon");
-        //rectTransform = GetComponent<RectTransform>();
-        //endPoint = GameObject.FindGameObjectWithTag("EndOfScreen");
-        //currentWeapon = GameObject.FindGameObjectWithTag("Weapon");
-
 
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        
-
-        //rectTransform.position = Vector3.MoveTowards(this.rectTransform.position, endPoint.transform.position, moveSpeed);
 
         GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, time);
         circle.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, time);
@@ -37,22 +30,11 @@ public class Beat : MonoBehaviour
         {
             DestroyNote();
         }
-        //if (GetComponent<SpriteRenderer>().color == Color.red)
-        //{
-        //    currentWeapon.GetComponent<Weapon>().ChangeCooldownDuration(+0.1f);
-
-        //    Debug.Log("reduce attack speed");
-        //    Debug.Log(currentWeapon.GetComponent<Weapon>().GetCooldownDuration());
-        //    Destroy(this);
-        //}
 
     }
 
     public void DestroyNote()
     {
-        //currentWeapon.GetComponent<Weapon>().ChangeCooldownDuration(+increaseCooldownDuration);
-
-
         foreach (GameObject weapon in weapons)
         {
             weapon.GetComponent<Weapon>().ChangeCooldownDuration(+increaseCooldownDuration);
@@ -63,15 +45,19 @@ public class Beat : MonoBehaviour
         Destroy(gameObject);
     }
 
- 
-
-
-    private void Update()
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        //if (circle.transform.localScale == new Vector3(1, 1, 1))
-        //{
-        //    DestroyNote();
-        //}
+        if (collider.CompareTag("Music Collider"))
+        {
+            foreach (GameObject weapon in weapons)
+            {
+                weapon.GetComponent<Weapon>().ChangeCooldownDuration(-reduceCooldownDuration);
+            }
+
+            Destroy(gameObject);
+        }
     }
+
+
 
 }
