@@ -8,7 +8,7 @@ public abstract class Weapon : MonoBehaviour
     public float damage;
     public bool weaponReady;
     public float cooldownDuration;
-    private float cooldownTimer;
+    private float cooldownTimer = 1;
 
     private void Start()
     {
