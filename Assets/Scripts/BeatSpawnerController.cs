@@ -9,9 +9,10 @@ using Random = UnityEngine.Random;
 public class BeatSpawnerController : MonoBehaviour
 {
     [SerializeField] private float BPM;
-    [SerializeField] GameObject soundManager, trackswaper;
+    [SerializeField] GameObject trackswaper;
     [SerializeField] private Spawners[] spawners;
     [SerializeField] public bool isSpawning;
+    public GameObject soundManager;
 
 
     private AudioSource audioSource;
@@ -49,6 +50,7 @@ public class BeatSpawnerController : MonoBehaviour
     void Start()
     {
         isSpawning = true;
+        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
         audioSource = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
        
 
