@@ -11,13 +11,20 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
+      
         string saveFile = Application.persistentDataPath + "/playerInfo.json";
         ReadFile();
+    }
+
+    private void Start()
+    {
+        Enemy.movementSpeed = 4f;
     }
 
     private void FixedUpdate()
     {
         Enemy.movementSpeed += 0.001f;
+        Debug.Log(Enemy.movementSpeed);
     }
     private void ReadFile()
     {
