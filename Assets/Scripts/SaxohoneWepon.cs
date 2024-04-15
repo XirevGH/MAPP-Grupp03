@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SaxophoneWeapon : Weapon
@@ -11,6 +12,12 @@ public class SaxophoneWeapon : Weapon
     public float speed;
     
     public int penetration;  
+
+    public int shoots;  
+
+    
+
+
 
     private List<GameObject> enemies = new List<GameObject>();
 
@@ -34,10 +41,14 @@ public class SaxophoneWeapon : Weapon
 
     public override void Attack()
     {
-        GameObject closestEnemy = FindClosestEnemy();
+        List<GameObject> closestEnemy = FindClosestEnemy(shoots);
         if (closestEnemy != null)
-        {
-            ShootNoteAtEnemy(closestEnemy);
+        {   
+            foreach(GameObject target in closestEnemy){
+                ShootNoteAtEnemy(target);
+                
+
+            }
             StartCooldown();
         }
     }
@@ -49,22 +60,35 @@ public class SaxophoneWeapon : Weapon
     }
     
 
-    private GameObject FindClosestEnemy()
+    private List<GameObject> FindClosestEnemy(int number)
     {
-        float shortestDistance = Mathf.Infinity;
-        GameObject closestEnemy = null;
+        if (enemies == null || enemies.Count == 0 || number <= 0)
+            return new List<GameObject>();  
+
+        
+        List<KeyValuePair<float, GameObject>> distances = new List<KeyValuePair<float, GameObject>>();
 
         foreach (GameObject enemy in enemies)
         {
-            float distance = (enemy.transform.position - shootingPoint.position).sqrMagnitude;
-            if (enemy != null && distance < shortestDistance)
+            if (enemy != null)
             {
-                shortestDistance = distance;
-                closestEnemy = enemy;
+                float distance = (enemy.transform.position - shootingPoint.position).sqrMagnitude;
+                distances.Add(new KeyValuePair<float, GameObject>(distance, enemy));
             }
         }
-        return closestEnemy;
-    }
+
+        
+        distances.Sort((a, b) => a.Key.CompareTo(b.Key));
+
+        
+        List<GameObject> enemiesToAttack = new List<GameObject>();
+        for (int i = 0; i < Math.Min(number, distances.Count); i++)
+        {
+            enemiesToAttack.Add(distances[i].Value);
+        }
+
+    return enemiesToAttack;
+}
 
     private void ShootNoteAtEnemy(GameObject enemy)
     {
@@ -80,10 +104,12 @@ public class SaxophoneWeapon : Weapon
             }
         }
     }
-    public void UpgradePirceAndSpeed(float speedAdd, int penetrationAdd) 
+    public void UpgradePirceAndSpeed(int damageAdd, float speedAdd, int penetrationAdd, int shootsAdd) 
     {
+        damage += damageAdd;
         speed += speedAdd;
         penetration += penetrationAdd;
+        shoots += shootsAdd;
     }
     
 }
