@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemy;
     public GameObject parent;
     public GameObject[] spawnLocations;
+    public GameObject player;
     
     public float spawnRate;
     private bool waveHasSpawned;
