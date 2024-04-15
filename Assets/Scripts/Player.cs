@@ -47,9 +47,9 @@ public class Player : MonoBehaviour
     #region HP Stuff
     public void TakeDamage(int damageAmount)
     {
-        playerStats.health -= damageAmount;
+        health -= damageAmount;
         UpdateHealthSlider();
-        if(playerStats.health <= 0)
+        if(health <= 0)
         {
             Die();
         }
@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
 
     private void UpdateHealthSlider()
     {
-        hpSlider.value = playerStats.health / 100f;
+        hpSlider.value = health / 100f;
     }
 
     private void Die()
@@ -70,14 +70,14 @@ public class Player : MonoBehaviour
     #region XP Stuff
     public void AddXP(int amountToAdd)
     {
-        playerStats.xpHeld += amountToAdd;
+        xpHeld += amountToAdd;
         UpdateXPSlider();
         CheckForLevelUp();
     }
 
     private void CheckForLevelUp()
     {
-        if (playerStats.xpHeld >= playerStats.xpToLevel)
+        if (xpHeld >= xpToLevel)
         {
             LevelUp();
         }
@@ -85,34 +85,34 @@ public class Player : MonoBehaviour
 
     private void LevelUp()
     {
-        playerStats.xpHeld -= playerStats.xpToLevel;
-        playerStats.xpToLevel *= (int)1.5;
-        playerStats.level++;
-        levelText.text = "Level: " + playerStats.level;
+        xpHeld -= xpToLevel;
+        xpToLevel *= (int)1.5;
+        level++;
+        levelText.text = "Level: " + level;
         UpdateXPSlider();
         
-        if(playerStats.level == 2)
+        if(level == 2)
         {
             electricGuitar.SetActive(true);
         }
-        if(playerStats.level == 3)
+        if(level == 3)
         {
             lightningAoe.SetActive(true);
         }
-        if(playerStats.level == 4){
+        if(level == 4){
             saxophon.SetActive(true);
         }
 
-        if(playerStats.level > 2)
+        if(level > 2)
         {
             electricGuitar.GetComponent<ElectricGuitar>().UpgradeTargetAmount(1);
         }
-        if(playerStats.level > 3)
+        if(level > 3)
         {
-            playerStats.burstAmount += 3;
-            lightningAoe.GetComponent<ParticleSystem>().emission.SetBursts(new ParticleSystem.Burst[] {new ParticleSystem.Burst(0.05f, playerStats.burstAmount)});
+            burstAmount += 3;
+            lightningAoe.GetComponent<ParticleSystem>().emission.SetBursts(new ParticleSystem.Burst[] {new ParticleSystem.Burst(0.05f, burstAmount)});
         }
-         if(playerStats.level > 4)
+         if(level > 4)
         {
             saxophon.GetComponent<SaxophoneWeapon>().UpgradePirceAndSpeed(1,5);
         }
@@ -120,7 +120,7 @@ public class Player : MonoBehaviour
 
     private void UpdateXPSlider()
     {
-        xpSlider.value = (float)playerStats.xpHeld / playerStats.xpToLevel;
+        xpSlider.value = (float)xpHeld / xpToLevel;
     }
     #endregion
 }
