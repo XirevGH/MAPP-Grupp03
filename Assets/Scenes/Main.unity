@@ -1951,8 +1951,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyCode: 32
-  testingObj: {fileID: 2780194736530583293}
-  gameObject: {fileID: 0}
+  testingObj1: {fileID: 2780194736530583293}
+  testingObj2: {fileID: 1128267155804970998}
 --- !u!212 &1192758156
 SpriteRenderer:
   m_ObjectHideFlags: 0
