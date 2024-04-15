@@ -2,29 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 
 public class GameController : MonoBehaviour
 {
     private string saveFile;
     public Player playerPrefab;
     private Player playerFromSave;
+    public Camera mainCamera;
+    public Tilemap tilemap;
 
     private void Awake()
     {
-      
-        string saveFile = Application.persistentDataPath + "/playerInfo.json";
+        saveFile = Application.persistentDataPath + "/playerInfo.json";
         ReadFile();
-    }
+        mainCamera = Camera.main;
 
-    private void Start()
-    {
-        Enemy.movementSpeed = 4f;
     }
 
     private void FixedUpdate()
     {
         Enemy.movementSpeed += 0.001f;
-        Debug.Log(Enemy.movementSpeed);
     }
     private void ReadFile()
     {
@@ -44,5 +43,15 @@ public class GameController : MonoBehaviour
     public void GameOver()
     {
         File.WriteAllText(saveFile, playerPrefab.GetComponent<Player>().SaveToString());
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public BoundsInt GetBoundsFromCamera()
+    {
+        float cameraSize = mainCamera.orthographicSize;
+        Vector3 cameraPosition = mainCamera.transform.position;
+        Vector3Int minPosition = tilemap.WorldToCell(cameraPosition - new Vector3(cameraSize * mainCamera.aspect, cameraSize, 0));
+        Vector3Int maxPosition = tilemap.WorldToCell(cameraPosition + new Vector3(cameraSize * mainCamera.aspect, cameraSize, 0));
+        return new BoundsInt(minPosition, maxPosition - minPosition);
     }
 }
