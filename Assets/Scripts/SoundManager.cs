@@ -62,9 +62,9 @@ public class SoundManager : MonoBehaviour
         currentScene = SceneManager.GetActiveScene().buildIndex;
         Debug.Log(currentScene);
 
-        if (currentScene != 1)
+        if (currentScene == 0)
         {
-            Pause();
+            LowPass();
 
 
         }

@@ -18,7 +18,7 @@ public class AsawinDebugging : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("isRunning");
+       
         
 
         if (Input.GetKeyDown(keyCode))
