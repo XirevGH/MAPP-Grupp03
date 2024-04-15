@@ -100,22 +100,23 @@ public class SoundManager : MonoBehaviour
 
     public void Pause()
     {
-        //Time.timeScale = Time.timeScale == 0 ? 1 : 0;
         LowPass();
+        Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+        isLowPass = !isLowPass;
     }
 
-    private void LowPass()
+    public void LowPass()
     {
-        //Time.timeScale == 0
+        
         if (!isLowPass)
         {
-            pause.TransitionTo(.01f);
+            pause.TransitionTo(.001f);
         }
         else 
         {
-            unPause.TransitionTo(.01f);
+            unPause.TransitionTo(.001f);
         }
-        isLowPass = !isLowPass;
+        
     }
 
 
