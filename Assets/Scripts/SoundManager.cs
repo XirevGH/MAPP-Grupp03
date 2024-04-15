@@ -18,10 +18,11 @@ public class SoundManager : MonoBehaviour
     //[SerializeField] public Slider slidertoFind;
     public static SoundManager Instance;
     public static int sliderValue;
-    public int currentScene;
+    [SerializeField]  private int currentScene;
     private bool isOnePlaying;
     public AudioMixerSnapshot pause;
     public AudioMixerSnapshot unPause;
+    public bool isLowPass;
 
 
 
@@ -44,6 +45,9 @@ public class SoundManager : MonoBehaviour
     void Start()
     {
         isOnePlaying = true;
+        isLowPass = false;
+        currentScene = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log(currentScene);
 
         //AudioListener.volume = PlayerPrefs.GetFloat("volume1");
         //slider.value = PlayerPrefs.GetFloat("volume");
@@ -56,11 +60,13 @@ public class SoundManager : MonoBehaviour
     void Update()
     {
         currentScene = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log(currentScene);
 
         if (currentScene != 1)
-        { 
-        
-        
+        {
+            Pause();
+
+
         }
        
 
@@ -81,7 +87,7 @@ public class SoundManager : MonoBehaviour
 
     }
 
-    private void LateUpdate()
+     void LateUpdate()
     {
         PlayerPrefs.SetFloat("volume", slider.value);
         PlayerPrefs.SetFloat("volume1", AudioListener.volume);
@@ -92,22 +98,24 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    private void Pause()
+    public void Pause()
     {
-        Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+        //Time.timeScale = Time.timeScale == 0 ? 1 : 0;
         LowPass();
     }
 
     private void LowPass()
     {
-        if (Time.timeScale == 0)
+        //Time.timeScale == 0
+        if (!isLowPass)
         {
-            pause.TransitionTo(0.1f);
+            pause.TransitionTo(.01f);
         }
         else 
         {
-            unPause.TransitionTo(0.1f);
+            unPause.TransitionTo(.01f);
         }
+        isLowPass = !isLowPass;
     }
 
 

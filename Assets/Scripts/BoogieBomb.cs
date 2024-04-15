@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,39 +10,57 @@ public class BoogieBomb : MonoBehaviour
     public float damage;
     public bool usedAbility = false;
     public bool dealDamage = false;
+    public bool bombMoving = false;
     public float abilityCooldown;
-    public float bombRangeY; //TODO fixa så att man kan sikta den
+    public float bombRangeY;
     public float bombRangeX;
+
+    [SerializeField] private GameObject bombParticles;
+    public bool hasExploded = false;
 
     [SerializeField] private Transform player;
     GameObject enemy;
 
 
-    void Update()
+    private void Start()
     {
+     bombRangeY = UnityEngine.Random.Range(-6, 6);
+     bombRangeX = UnityEngine.Random.Range(-6, 6);
+    }
 
-        transform.position = player.position;
-
-        if (Input.GetKeyDown(KeyCode.Q) && !usedAbility) //kräver att man klickar på knappen och att man inte har ability på cooldown
+    void FixedUpdate()
+    {
+        if (!bombMoving)
         {
-            UnityEngine.Vector2 currentPosition = transform.position;
+            transform.position = player.position;
+        }
 
-            this.GetComponent<CircleCollider2D>().offset = new UnityEngine.Vector2(bombRangeX, bombRangeY);
+
+        if (!usedAbility)
+        {
+
+            transform.position = transform.position + new UnityEngine.Vector3(bombRangeX, bombRangeY, 0);
 
             Attack();
         }
+
+        if (hasExploded)
+        {
+            Instantiate(bombParticles, transform.position, bombParticles.transform.localRotation);
+            hasExploded = false; 
+        }
     }
+
 
     private void OnTriggerStay2D(Collider2D other)
     {
+
         if (dealDamage && other.CompareTag("Enemy")) //checkar om det finns enemies inom collidern som kan göras skada på
         {
 
             other.GetComponent<Enemy>().TakeDamage(damage);
            
         }
-    
-
     }
 
 
@@ -49,15 +68,18 @@ public class BoogieBomb : MonoBehaviour
     {
 
         //TODO lägg till animation
+        bombMoving = true;
         Invoke("TouchedGround", 0.5f); //gör så att abilityn gör damage och visar att abilityn har använts
         Invoke("CanUseAbility", abilityCooldown); //efter en viss stund gör den så att usedAbility blir false så man kan använda ability igen
 
     }
     private void TouchedGround()
     {
-
+        hasExploded = true;
+        Invoke("Explosion", 0.015f);
+        this.GetComponent<SpriteRenderer>().enabled = true;
         dealDamage = true;
-        Invoke("BombTime", 0.5f); //gör så att bomben gör skada under en viss tid
+        Invoke("BombTime", 0.06f); //gör så att bomben gör skada under en viss tid
         usedAbility = true;
     }
 
@@ -66,12 +88,26 @@ public class BoogieBomb : MonoBehaviour
         dealDamage = false;
     }
 
+    private void Explosion()
+    {
+        hasExploded = false;
+    }
+
     private void CanUseAbility()
     {
+        this.GetComponent<SpriteRenderer>().enabled = false;
+        if (usedAbility)
+        {
+            bombRangeY = UnityEngine.Random.Range(-6, 6);
+            bombRangeX = UnityEngine.Random.Range(-6, 6);
+            usedAbility = false;
+        }
+        else
+        {
+            usedAbility = false;
+        }
         Debug.Log("You can use ability");
-        this.GetComponent<CircleCollider2D>().offset = new UnityEngine.Vector2(0, 0);
-
-        usedAbility = false;
+        bombMoving = false;
     }
 
 }
