@@ -38,7 +38,6 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        movementSpeed = 4f;
         player = GameObject.FindGameObjectWithTag("Player");
         xpDrop = GameObject.FindGameObjectWithTag("XPDrop20");
         rb = GetComponent<Rigidbody2D>();

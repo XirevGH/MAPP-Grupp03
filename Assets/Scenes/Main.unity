@@ -605,6 +605,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1489666856968360330, guid: 72a82f548761ed345b915aa197f62301, type: 3}
   m_PrefabInstance: {fileID: 6781145525935048979}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &458432097 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9038555294451255673, guid: 72a82f548761ed345b915aa197f62301, type: 3}
+  m_PrefabInstance: {fileID: 6781145525935048979}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea4ebdb01e86b5144ac9d6ddbcf4ba76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &482028539
 GameObject:
   m_ObjectHideFlags: 0
@@ -3004,6 +3015,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 9038555294451255673, guid: 72a82f548761ed345b915aa197f62301, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 458432097}
+    - target: {fileID: 9038555294451255673, guid: 72a82f548761ed345b915aa197f62301, type: 3}
       propertyPath: hpSlider
       value: 
       objectReference: {fileID: 1357175891}
@@ -3019,6 +3034,10 @@ PrefabInstance:
       propertyPath: bassGuitar
       value: 
       objectReference: {fileID: 324169414}
+    - target: {fileID: 9038555294451255673, guid: 72a82f548761ed345b915aa197f62301, type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 482028540}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -18,7 +18,8 @@ public class GameController : MonoBehaviour
         saveFile = Application.persistentDataPath + "/playerInfo.json";
         ReadFile();
         mainCamera = Camera.main;
-
+        Enemy.movementSpeed = 4f;
+        Debug.Log("Start");
     }
 
     private void FixedUpdate()
@@ -30,7 +31,7 @@ public class GameController : MonoBehaviour
         if (File.Exists(saveFile))
         {
             string fileContents = File.ReadAllText(saveFile);
-            playerFromSave = Player.CreateFromJSON(fileContents);
+            //playerFromSave = Player.CreateFromJSON(fileContents);
             playerPrefab = Instantiate(playerPrefab, new Vector3(0f, 0f), Quaternion.identity);
             playerPrefab = playerFromSave;
         }

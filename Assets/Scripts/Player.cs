@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private TMP_Text levelText;
     [SerializeField] private GameObject electricGuitar, lightningAoe, bassGuitar, saxophon;
     [SerializeField] private GameController gameController;
+    [SerializeField] private Player player;
 
     public int money;
     public float moneyMultiplier;
@@ -34,9 +35,9 @@ public class Player : MonoBehaviour
         return JsonUtility.ToJson(this);
     }
 
-    public static Player CreateFromJSON(string jsonString)
+    public void CreateFromJSON(string jsonString)
     {
-        return JsonUtility.FromJson<Player>(jsonString);
+        JsonUtility.FromJsonOverwrite(jsonString, player);
     }
 
     #region HP Stuff
