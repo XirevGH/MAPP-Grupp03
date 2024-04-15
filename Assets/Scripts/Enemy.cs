@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
 {
     public GameObject player;
     public GameObject xpDrop;
-    public static float movementSpeed = 4f;
+    public static float movementSpeed;
     public float health;
     public TMP_Text damageNumbers;
     public Animator damageNumberAnim;
@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        movementSpeed = 4f;
         player = GameObject.FindGameObjectWithTag("Player");
         xpDrop = GameObject.FindGameObjectWithTag("XPDrop20");
         rb = GetComponent<Rigidbody2D>();

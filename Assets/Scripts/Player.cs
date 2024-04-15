@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Slider hpSlider, xpSlider;
     [SerializeField] private TMP_Text levelText;
     [SerializeField] private GameObject electricGuitar, lightningAoe, bassGuitar, saxophon;
+    [SerializeField] private GameController gameController;
 
     public int money;
     public float moneyMultiplier;
@@ -56,7 +57,8 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-        SceneManager.LoadScene("MainMenu");
+
+        gameController.GameOver();
     }
     #endregion
 
