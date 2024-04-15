@@ -100,6 +100,7 @@ public class Enemy : MonoBehaviour
         if (count > 5 || damageNumberWindow <= 0)
         {
             damageNumbers.text = "";
+            count = 0;
         }
         StringBuilder builder = new StringBuilder(damageNumbers.text);
         if (count > 0)
