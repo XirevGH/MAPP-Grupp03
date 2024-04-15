@@ -54,7 +54,7 @@ public class SoundManager : MonoBehaviour
         //SoundMannerger.Instance.ChangeMasterVolume(slider.value);
         //slider.onValueChanged.AddListener(val => SoundMannerger.Instance.ChangeMasterVolume(val));
         AudioListener.volume = PlayerPrefs.GetFloat("volume1");
-        slider.value = PlayerPrefs.GetFloat("volume");
+        //slider.value = PlayerPrefs.GetFloat("volume");
     }
 
     void Update()
@@ -78,10 +78,10 @@ public class SoundManager : MonoBehaviour
 
         }
 
-        slider = GameObject.FindGameObjectWithTag("volumeSlider").GetComponent<Slider>();
+        //slider = GameObject.FindGameObjectWithTag("volumeSlider").GetComponent<Slider>();
 
-        slider.onValueChanged.AddListener(val => SoundManager.Instance.ChangeMasterVolume(val));
-        SoundManager.Instance.ChangeMasterVolume(slider.value);
+        //slider.onValueChanged.AddListener(val => SoundManager.Instance.ChangeMasterVolume(val));
+        //SoundManager.Instance.ChangeMasterVolume(slider.value);
 
        
 
@@ -89,7 +89,7 @@ public class SoundManager : MonoBehaviour
 
      void LateUpdate()
     {
-        PlayerPrefs.SetFloat("volume", slider.value);
+        //PlayerPrefs.SetFloat("volume", slider.value);
         PlayerPrefs.SetFloat("volume1", AudioListener.volume);
 
 
