@@ -8,8 +8,8 @@ using UnityEngine.Tilemaps;
 public class GameController : MonoBehaviour
 {
     private string saveFile;
-    public Player playerPrefab;
-    private Player playerFromSave;
+    public GameObject player;
+    private GameObject playerFromSave;
     public Camera mainCamera;
     public Tilemap tilemap;
 
