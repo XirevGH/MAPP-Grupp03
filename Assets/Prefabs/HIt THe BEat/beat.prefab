@@ -221,7 +221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  increaseCooldownDuration: 1
+  increaseCooldownDuration: 0.1
+  reduceCooldownDuration: 0.1
   circle: {fileID: 2807010619834201707}
   particle: {fileID: 2506341979681168310, guid: 4eefcb67bfd2afe44beea10856d5040b, type: 3}
   weapons: []
@@ -254,7 +255,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.36117554, y: -0.03807068}
