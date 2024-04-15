@@ -119,6 +119,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  increaseCooldownDuration: 0.1
+  circle: {fileID: 0}
+  particle: {fileID: 0}
+  weapons: []
 --- !u!114 &5527953164273948584
 MonoBehaviour:
   m_ObjectHideFlags: 0

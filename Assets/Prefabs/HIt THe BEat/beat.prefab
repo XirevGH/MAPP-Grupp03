@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  increaseCooldownDuration: 0.1
+  increaseCooldownDuration: 1
   circle: {fileID: 2807010619834201707}
   particle: {fileID: 2506341979681168310, guid: 4eefcb67bfd2afe44beea10856d5040b, type: 3}
   weapons: []

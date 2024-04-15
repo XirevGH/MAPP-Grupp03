@@ -56,7 +56,6 @@ public class Beat : MonoBehaviour
         foreach (GameObject weapon in weapons)
         {
             weapon.GetComponent<Weapon>().ChangeCooldownDuration(+increaseCooldownDuration);
-            Debug.Log("reduce attack speed" + weapon.GetComponent<Weapon>().GetCooldownDuration());
         }
 
         Instantiate(particle, this.transform.position, Quaternion.identity);
