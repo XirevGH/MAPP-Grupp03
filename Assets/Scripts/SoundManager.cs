@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,6 +20,10 @@ public class SoundManager : MonoBehaviour
     public static int sliderValue;
     public int currentScene;
     private bool isOnePlaying;
+    public AudioMixerSnapshot pause;
+    public AudioMixerSnapshot unPause;
+
+
 
     private void Awake()
     {
@@ -52,6 +57,13 @@ public class SoundManager : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene().buildIndex;
 
+        if (currentScene != 1)
+        { 
+        
+        
+        }
+       
+
         if (currentScene >= 4)
         {
             musicSource1.GetComponent<AudioSource>().volume = 0;
@@ -77,6 +89,25 @@ public class SoundManager : MonoBehaviour
 
 
 
+    }
+
+
+    private void Pause()
+    {
+        Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+        LowPass();
+    }
+
+    private void LowPass()
+    {
+        if (Time.timeScale == 0)
+        {
+            pause.TransitionTo(0.1f);
+        }
+        else 
+        {
+            unPause.TransitionTo(0.1f);
+        }
     }
 
 

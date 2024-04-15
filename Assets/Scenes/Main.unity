@@ -3857,6 +3857,8 @@ MonoBehaviour:
   slider: {fileID: 0}
   timeToFade: 1.25
   currentScene: 0
+  pause: {fileID: 6332697282471297084, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}
+  unPause: {fileID: 1782747323206729303, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}
 --- !u!4 &8336072371526926092
 Transform:
   m_ObjectHideFlags: 0
