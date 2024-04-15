@@ -224,9 +224,7 @@ MonoBehaviour:
   increaseCooldownDuration: 0.1
   circle: {fileID: 2807010619834201707}
   particle: {fileID: 2506341979681168310, guid: 4eefcb67bfd2afe44beea10856d5040b, type: 3}
-  weapons:
-  - {fileID: 8039643524354982756, guid: 317e7c3696e977948b27fa69c286e625, type: 3}
-  - {fileID: 7935674233594240109, guid: 1b57ae6af80705f4f8fd21f518bb36bb, type: 3}
+  weapons: []
 --- !u!61 &4584299650944298638
 BoxCollider2D:
   m_ObjectHideFlags: 0

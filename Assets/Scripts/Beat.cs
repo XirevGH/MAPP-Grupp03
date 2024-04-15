@@ -13,10 +13,11 @@ public class Beat : MonoBehaviour
     private float time;
     private void Start()
     {
+        weapons = GameObject.FindGameObjectsWithTag("Weapon");
         //rectTransform = GetComponent<RectTransform>();
         //endPoint = GameObject.FindGameObjectWithTag("EndOfScreen");
         //currentWeapon = GameObject.FindGameObjectWithTag("Weapon");
-      
+
 
     }
 

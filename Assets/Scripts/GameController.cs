@@ -32,8 +32,8 @@ public class GameController : MonoBehaviour
         {
             string fileContents = File.ReadAllText(saveFile);
             //playerFromSave = Player.CreateFromJSON(fileContents);
-            playerPrefab = Instantiate(playerPrefab, new Vector3(0f, 0f), Quaternion.identity);
-            playerPrefab = playerFromSave;
+            //playerPrefab = Instantiate(playerPrefab, new Vector3(0f, 0f), Quaternion.identity);
+            //playerPrefab = playerFromSave;
         }
         else
         {
@@ -43,7 +43,7 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        File.WriteAllText(saveFile, playerPrefab.GetComponent<Player>().SaveToString());
+        //File.WriteAllText(saveFile, playerPrefab.GetComponent<Player>().SaveToString());
         SceneManager.LoadScene("MainMenu");
     }
 
