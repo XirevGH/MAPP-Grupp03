@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System.Text;
 using System;
+using System.Linq;
 
 public class GameObjectComparer : IComparer<GameObject>
 {
@@ -38,6 +39,7 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb; 
     private SpriteRenderer sprite;
     [SerializeField] private Sprite bouncerSprite, dancerSprite;
+    private float damageNumberWindow = 3f;
 
     void Start()
     {
@@ -56,6 +58,7 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
+        damageNumberWindow -= Time.deltaTime;
         if (IsAlive()) 
         {
             if (Vector3.Distance(player.transform.position, transform.position) < 0.5)
@@ -80,38 +83,41 @@ public class Enemy : MonoBehaviour
         if (IsAlive()) { 
             health -= damageTaken;
             damageNumbers.text = BuildDamageNumber(damageTaken);
-            damageNumberAnim.SetTrigger("TakingDamage");
+            if (damageNumberWindow <= 0)
+            {
+                damageNumberWindow = 3f;
+                damageNumberAnim.SetTrigger("TakingDamage");
+            }
             enemyAnim.SetTrigger("TakeDamage");
+            
         }
     }
 
-    public string Repeat(string text, uint n)
-    {
-        var textAsSpan = text.AsSpan();
-        var span = new Span<char>(new char[textAsSpan.Length * (int)n]);
-        for (var i = 0; i < n; i++)
-        {
-            textAsSpan.CopyTo(span.Slice((int)i * textAsSpan.Length, textAsSpan.Length));
-        }
-
-        return span.ToString();
-    }
     private string BuildDamageNumber(float damage)
     {
         string source = damageNumbers.text;
-        int count = source.Length - source.Replace("/", "").Length;
+        int count = source.Split('\n').Length;
+        if (count > 4 || damageNumberWindow <= 0)
+        {
+            damageNumbers.text = "";
+            count = 0;
+        }
         StringBuilder builder = new StringBuilder(damageNumbers.text);
-        if (count > 0) { 
-            builder.Insert(0, Repeat(" ", (uint)count * 16));
-            builder.Insert(1, damage);
-            builder.Insert(2, "\n");
+        if (count > 0)
+        {
+            
+            builder.Insert(0, damage.ToString());
+            builder.Insert(0, " ", count);
+            builder.Insert(0, "\n");
         }
         else
         {
-            builder.Insert(0, damage + "\n");
+            builder.Append("\n");
+            builder.Append(damage.ToString());
         }
         return builder.ToString();
     }
+
     public float GetHealth() 
     {
         return health; 

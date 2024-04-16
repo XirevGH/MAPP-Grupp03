@@ -13,16 +13,14 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private GameObject musicSource1, musicSource2;
     [SerializeField] private AudioClip[] musicTracks;
     [SerializeField] public int[] BPMforTracks;
-    [SerializeField] public Slider slider;
+    //[SerializeField] public Slider slider;
     [SerializeField] float timeToFade = 1f;
     //[SerializeField] public Slider slidertoFind;
     public static SoundManager Instance;
     public static int sliderValue;
-    [SerializeField]  private int currentScene;
-    private bool isOnePlaying;
-    public AudioMixerSnapshot pause;
-    public AudioMixerSnapshot unPause;
-    public bool isLowPass;
+    public Scene currentScene;
+    public AudioMixerSnapshot lowPassSnapshots, normalSnapshots;
+    public bool isOnePlaying, isLowPassOn, isInMainMenu;
 
 
 
@@ -39,58 +37,63 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
         }
         //slider = GameObject.FindGameObjectWithTag("volumeSlider").GetComponent<Slider>();
+       
     }
 
 
     void Start()
     {
         isOnePlaying = true;
-        isLowPass = false;
-        currentScene = SceneManager.GetActiveScene().buildIndex;
-        Debug.Log(currentScene);
+        isLowPassOn = false;
+
+        if (currentScene.buildIndex == 0)
+        {
+            LowPassOn();
+
+          
+        }
+
+
 
         //AudioListener.volume = PlayerPrefs.GetFloat("volume1");
         //slider.value = PlayerPrefs.GetFloat("volume");
         //SoundMannerger.Instance.ChangeMasterVolume(slider.value);
         //slider.onValueChanged.AddListener(val => SoundMannerger.Instance.ChangeMasterVolume(val));
-        AudioListener.volume = PlayerPrefs.GetFloat("volume1");
+        //AudioListener.volume = PlayerPrefs.GetFloat("volume1");
         //slider.value = PlayerPrefs.GetFloat("volume");
     }
 
     void Update()
     {
-        currentScene = SceneManager.GetActiveScene().buildIndex;
-        Debug.Log(currentScene);
+        currentScene = SceneManager.GetActiveScene();
+        //if (currentScene.buildIndex == 0)
+        //{
+        //    LowPassOn();
 
-        if (currentScene != 1)
-        {
-            Pause();
+        //    isInMainMenu = !isInMainMenu;
+        //}
+        //else
+        //{
+        //    LowPassOff();
+
+        //}
 
 
-        }
-       
 
-        if (currentScene >= 4)
-        {
-            musicSource1.GetComponent<AudioSource>().volume = 0;
-           
-            
-
-        }
 
         //slider = GameObject.FindGameObjectWithTag("volumeSlider").GetComponent<Slider>();
 
         //slider.onValueChanged.AddListener(val => SoundManager.Instance.ChangeMasterVolume(val));
         //SoundManager.Instance.ChangeMasterVolume(slider.value);
 
-       
+
 
     }
 
      void LateUpdate()
     {
         //PlayerPrefs.SetFloat("volume", slider.value);
-        PlayerPrefs.SetFloat("volume1", AudioListener.volume);
+        //PlayerPrefs.SetFloat("volume1", AudioListener.volume);
 
 
 
@@ -98,25 +101,29 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    public void Pause()
+    public void ToggleMusicPause()
     {
-        LowPass();
-        Time.timeScale = Time.timeScale == 0 ? 1 : 0;
-        isLowPass = !isLowPass;
+        if (!isLowPassOn)
+        {
+            lowPassSnapshots.TransitionTo(.001f);
+        }
+        else
+        {
+            normalSnapshots.TransitionTo(.001f);
+        }
+        isLowPassOn = !isLowPassOn;
+        //Time.timeScale = Time.timeScale == 0 ? 1 : 0;
     }
 
-    public void LowPass()
+    public void LowPassOn()
     {
-        
-        if (!isLowPass)
-        {
-            pause.TransitionTo(.001f);
-        }
-        else 
-        {
-            unPause.TransitionTo(.001f);
-        }
-        
+        lowPassSnapshots.TransitionTo(.001f);
+
+    }
+
+    public void LowPassOff()
+    {
+        normalSnapshots.TransitionTo(.001f);
     }
 
 

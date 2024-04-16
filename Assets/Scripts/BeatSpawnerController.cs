@@ -65,7 +65,7 @@ public class BeatSpawnerController : MonoBehaviour
         
         if (isSpawning)
         {
-                float sampledTime = (audioSource.timeSamples / (audioSource.clip.frequency * spawners[0].GetIntervalLength(BPM)));
+            float sampledTime = (audioSource.timeSamples / (audioSource.clip.frequency * spawners[0].GetIntervalLength(BPM)));
             spawners[0].CheckForNewQuaterNote(sampledTime);
                 
 
@@ -76,7 +76,7 @@ public class BeatSpawnerController : MonoBehaviour
 
     }
 
-    public void ToggleNoteSpawn()
+    public void ToggleBeatSpawn()
     {
         isSpawning = !isSpawning;
     }

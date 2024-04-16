@@ -44,7 +44,7 @@ AudioMixerController:
     - 6f40cb855038d63448cd6e7e2eb63c27
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 1782747323206729303}
+  m_TargetSnapshot: {fileID: 6332697282471297084}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -86,7 +86,7 @@ AudioMixerSnapshotController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Snapshot
+  m_Name: Start
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 63090e595f83d9a4e903c04e27b2e1a3
   m_FloatValues:
@@ -101,7 +101,7 @@ AudioMixerSnapshotController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Unpause
+  m_Name: Normal
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 343ac950bc043134aba38ce1563797bf
   m_FloatValues:
@@ -137,7 +137,7 @@ AudioMixerSnapshotController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Pause
+  m_Name: LowPass
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 3abb9db1a1a825243b2aca0d71b5cc90
   m_FloatValues:

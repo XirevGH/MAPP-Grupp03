@@ -100,8 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bolt1: {fileID: 21300000, guid: 0acd2cc6adcd76e4c93d5d82c2dd8047, type: 3}
   bolt2: {fileID: 21300000, guid: ef6f99be616a7474c81a5083b39b26d9, type: 3}
-  lifetime: 2
-  startingUnit: {fileID: 0}
+  lifetime: 0.2
+  player: {fileID: 0}
 --- !u!61 &563254170990130544
 BoxCollider2D:
   m_ObjectHideFlags: 0

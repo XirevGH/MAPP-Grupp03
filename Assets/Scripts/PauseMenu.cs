@@ -8,19 +8,28 @@ public class PauseMenu : MonoBehaviour
 {
 
     public static bool GameIsPaused = false;
-    public GameObject pauseMenuUI;
+    public GameObject pauseMenuUI, BeatSpawnerController, soundManager;
 
- 
+    private void Start()
+    {
+        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) // fixa en paus knapp
         {
+            BeatSpawnerController.GetComponent<BeatSpawnerController>().ToggleBeatSpawn();
+            soundManager.GetComponent<SoundManager>().ToggleMusicPause();
             if (GameIsPaused)
             {
                 Resume();
-            }else
+                
+            }
+            else
             {
                 PauseGame();
+               
             }
         }
     }
@@ -39,7 +48,7 @@ public class PauseMenu : MonoBehaviour
 
         //fixa så enemies, player och animationer pausas också
 
-        SoundManager.Instance.Pause();
+        //SoundManager.Instance.Pause();
     }
 
     public void LoadMenu()
