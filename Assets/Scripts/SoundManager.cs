@@ -51,7 +51,8 @@ public class SoundManager : MonoBehaviour
         isOnePlaying = true;
         isLowPassOn = false;
         //menuMusic.Play();
-       // inGameMusic.Stop();
+        inGameMusic.Pause();
+        Debug.Log("work");
 
 
         //AudioListener.volume = PlayerPrefs.GetFloat("volume1");

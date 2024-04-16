@@ -6,7 +6,7 @@ using UnityEngine;
 public class AsawinDebugging : MonoBehaviour
 {
     public KeyCode keyCode;
-    [SerializeField] public GameObject testingObj1, testingObj2;
+    [SerializeField] public GameObject testingObj1;
     private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,6 @@ public class AsawinDebugging : MonoBehaviour
                 Debug.Log("Boogie Boogie");
 
             testingObj1.GetComponent<SoundManager>().ToggleMusicPause();
-            testingObj2.GetComponent<BeatSpawnerController>().ToggleBeatSpawn();
 
 
 
