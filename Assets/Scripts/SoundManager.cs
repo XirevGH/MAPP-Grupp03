@@ -102,7 +102,7 @@ public class SoundManager : MonoBehaviour
     {
         LowPass();
         Time.timeScale = Time.timeScale == 0 ? 1 : 0;
-        isLowPass = !isLowPass;
+        
     }
 
     public void LowPass()
@@ -116,7 +116,7 @@ public class SoundManager : MonoBehaviour
         {
             unPause.TransitionTo(.001f);
         }
-        
+        isLowPass = !isLowPass;
     }
 
 
