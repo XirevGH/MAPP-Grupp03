@@ -1,4 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
@@ -7,11 +11,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform pos;
     public DynamicJoystick dynamicJoystick;
 
+    private Rigidbody2D rb;
     private SpriteRenderer rend;
-    Vector2 axisInput;
+    private Animator anim;
+
     private void Awake()
     {
         rend = GetComponent<SpriteRenderer>(); 
+        rb = GetComponent<Rigidbody2D>(); 
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -20,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
+        anim.SetFloat("MoveSpeed", Mathf.Abs(dynamicJoystick.Horizontal + dynamicJoystick.Vertical / 2));
         if (dynamicJoystick.Horizontal < 0f)
         {
             FlipSprite(true);
@@ -35,18 +44,9 @@ public class PlayerMovement : MonoBehaviour
         rend.flipX = flip; 
     }
 
-    void FixedUpdate()
+    public void FixedUpdate()
     {
+        Debug.Log(dynamicJoystick.Horizontal);
         pos.position = new Vector2(pos.position.x + (dynamicJoystick.Horizontal / 100) * moveSpeed, pos.position.y + (dynamicJoystick.Vertical / 100) * moveSpeed);
     }
 }
-
-
-
-
-
-
-
-
-
-
