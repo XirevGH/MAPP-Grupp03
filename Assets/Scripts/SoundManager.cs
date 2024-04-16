@@ -19,10 +19,8 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance;
     public static int sliderValue;
     public Scene currentScene;
-    private bool isOnePlaying;
-    public AudioMixerSnapshot pause;
-    public AudioMixerSnapshot unPause;
-    public bool isLowPassOn;
+    public AudioMixerSnapshot lowPassSnapshots, normalSnapshots;
+    public bool isOnePlaying, isLowPassOn, isInMainMenu;
 
 
 
@@ -47,7 +45,13 @@ public class SoundManager : MonoBehaviour
     {
         isOnePlaying = true;
         isLowPassOn = false;
-        
+
+        if (currentScene.buildIndex == 0)
+        {
+            LowPassOn();
+
+          
+        }
 
 
 
@@ -62,18 +66,17 @@ public class SoundManager : MonoBehaviour
     void Update()
     {
         currentScene = SceneManager.GetActiveScene();
-        Debug.Log(currentScene.buildIndex);
-        if (currentScene.buildIndex == 0)
-        {
-            LowPassOn();
-           
+        //if (currentScene.buildIndex == 0)
+        //{
+        //    LowPassOn();
 
-        }
-        else
-        {
-            LowPassOff();
+        //    isInMainMenu = !isInMainMenu;
+        //}
+        //else
+        //{
+        //    LowPassOff();
 
-        }
+        //}
 
 
 
@@ -98,28 +101,29 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    public void Pause()
+    public void ToggleMusicPause()
     {
         if (!isLowPassOn)
         {
-            pause.TransitionTo(.001f);
+            lowPassSnapshots.TransitionTo(.001f);
         }
         else
         {
-            unPause.TransitionTo(.001f);
+            normalSnapshots.TransitionTo(.001f);
         }
-        Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+        isLowPassOn = !isLowPassOn;
+        //Time.timeScale = Time.timeScale == 0 ? 1 : 0;
     }
 
     public void LowPassOn()
     {
-            pause.TransitionTo(.001f);
+        lowPassSnapshots.TransitionTo(.001f);
 
     }
 
     public void LowPassOff()
     {
-        unPause.TransitionTo(.001f);
+        normalSnapshots.TransitionTo(.001f);
     }
 
 

@@ -28,8 +28,8 @@ public class AsawinDebugging : MonoBehaviour
              
                 Debug.Log("Boogie Boogie");
 
-            testingObj1.GetComponent<SoundManager>().Pause();
-            testingObj2.GetComponent<BeatSpawnerController>().ToggleNoteSpawn();
+            testingObj1.GetComponent<SoundManager>().ToggleMusicPause();
+            testingObj2.GetComponent<BeatSpawnerController>().ToggleBeatSpawn();
 
 
 

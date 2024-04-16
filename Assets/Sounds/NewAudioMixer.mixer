@@ -101,7 +101,7 @@ AudioMixerSnapshotController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Unpause
+  m_Name: Normal
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 343ac950bc043134aba38ce1563797bf
   m_FloatValues:
@@ -137,7 +137,7 @@ AudioMixerSnapshotController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Pause
+  m_Name: LowPass
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 3abb9db1a1a825243b2aca0d71b5cc90
   m_FloatValues:

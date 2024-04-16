@@ -620,6 +620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 5436226366269919644}
+  beatSpawnerController: {fileID: 1128267155804970998}
   mainCamera: {fileID: 519420031}
   tilemap: {fileID: 1947654048}
 --- !u!4 &482028541
@@ -1920,6 +1921,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1796234484}
+  BeatSpawnerController: {fileID: 1128267155804970998}
+  soundManager: {fileID: 1643369541035841079}
 --- !u!1 &1192758154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1937,7 +1940,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1192758155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4053,12 +4056,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9624c5dbfdd7bf04e86024cdd7d5dcaf, type: 3}
   - {fileID: 8300000, guid: edb1d27aa6922e149ab000a0ff9bcb9d, type: 3}
   BPMforTracks: 640000008c0000006e00000078000000
-  slider: {fileID: 0}
   timeToFade: 1.25
-  currentScene: 1
-  pause: {fileID: 6332697282471297084, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}
-  unPause: {fileID: 1782747323206729303, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}
-  isLowPass: 0
+  currentScene:
+    m_Handle: 0
+  lowPassSnapshots: {fileID: 6332697282471297084, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}
+  normalSnapshots: {fileID: 1782747323206729303, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}
+  isOnePlaying: 0
+  isLowPassOn: 0
+  isInMainMenu: 0
 --- !u!1 &1240528155988758017
 GameObject:
   m_ObjectHideFlags: 0
