@@ -25,7 +25,7 @@ public class Beat : MonoBehaviour
         circle.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, time);
 
         circle.transform.localScale = Vector3.Lerp(new Vector3(10, 10, 10), new Vector3(1, 1, 1), time);
-        time += Time.deltaTime * 0.4f;
+        time += Time.deltaTime * 0.2f;
         if (Mathf.FloorToInt(time) == 1)
         {
             DestroyNote();
