@@ -1898,7 +1898,7 @@ GameObject:
   - component: {fileID: 924896732}
   - component: {fileID: 924896731}
   m_Layer: 0
-  m_Name: Canvas (1)
+  m_Name: HealthBarCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2613,7 +2613,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 251786827020902282, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: m_Name
-      value: soundManager
+      value: SoundManager
       objectReference: {fileID: 0}
     - target: {fileID: 1355660591452939855, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4491,7 +4491,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.5390625, y: 2.5390625}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4570,7 +4570,7 @@ GameObject:
   - component: {fileID: 1715173000641118789}
   - component: {fileID: 8514340892785934715}
   m_Layer: 6
-  m_Name: Collider for collect beat
+  m_Name: BeatColliderCollector
   m_TagString: Music Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4687,7 +4687,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 5b49d983ae91e7c40818dbcfc206819c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 74b96ca573bd9a746af2170fd60d27bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5321,7 +5321,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.48938248, w: 0.8720693}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 386049784434814070}

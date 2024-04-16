@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1355660591452939855}
   - component: {fileID: 7112286554095411555}
   m_Layer: 0
-  m_Name: soundManager
+  m_Name: SoundManager
   m_TagString: SoundManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource1: {fileID: 4282401076657109252}
   musicSource2: {fileID: 1413303723989624773}
-  pauseMenuMusic: {fileID: 8419575893291496720}
+  menuMusic: {fileID: 0}
   musicTracks:
   - {fileID: 8300000, guid: 29724764eaafa6f4990213f9c89121e3, type: 3}
   - {fileID: 8300000, guid: b54e97c3313d82a4e94f23db1cc7f428, type: 3}
@@ -63,7 +63,8 @@ MonoBehaviour:
   normalSnapshots: {fileID: 1782747323206729303, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}
   isOnePlaying: 0
   isLowPassOn: 0
-  isInMainMenu: 0
+  isInMenu: 0
+  hasRun: 0
 --- !u!1 &786379661519232125
 GameObject:
   m_ObjectHideFlags: 0

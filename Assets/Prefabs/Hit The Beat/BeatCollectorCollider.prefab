@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4289899050305281112}
   - component: {fileID: 8625758083160169279}
   m_Layer: 6
-  m_Name: Collider for collect beat
+  m_Name: BeatCollectorCollider
   m_TagString: Music Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

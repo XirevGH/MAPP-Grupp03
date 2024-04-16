@@ -31,25 +31,25 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private GameObject xpMagnetPrefab;
     [SerializeField] private GameObject xpDropPrefab;
+    [SerializeField] private Sprite enemySprite;
+
+    private float damageNumberWindow = 3f;
+
+    private SpriteRenderer sprite;
+
     public static float movementSpeed;
     public static float healthProsenIncreas = 1f;
     public float health;
+
     public TMP_Text damageNumbers;
     public Animator damageNumberAnim;
     public Animator enemyAnim;
-    private Rigidbody2D rb; 
-    private SpriteRenderer sprite;
-    [SerializeField] private Sprite enemySprite;
-    private float damageNumberWindow = 3f;
 
     void Start()
     {
         health *= healthProsenIncreas;
         player = GameObject.FindGameObjectWithTag("Player");
-        rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-        int random = GetRandomInt(1, 3);
-        
     }
 
     void FixedUpdate()
@@ -85,7 +85,6 @@ public class Enemy : MonoBehaviour
                 damageNumberAnim.SetTrigger("TakingDamage");
             }
             enemyAnim.SetTrigger("TakeDamage");
-            
         }
     }
 
@@ -133,22 +132,20 @@ public class Enemy : MonoBehaviour
     private void DropXP()
     {
         int random = UnityEngine.Random.Range(1, 3);
-        
         if(random == 1)
         {   
             if (xpDropPrefab) {
                 GameObject xpDrop = Instantiate(xpDropPrefab, transform.position, Quaternion.identity);
-            xpDrop.SetActive(true);
+                xpDrop.SetActive(true);
             }
-        }else if(xpMagnetPrefab){
+        }
+        else if (xpMagnetPrefab) {
             int random2 = GetRandomInt(1,9);
             if(random2 == 1){
                 GameObject xpMagnet = Instantiate(xpMagnetPrefab, transform.position, Quaternion.identity);
-            xpMagnet.SetActive(true);
+                xpMagnet.SetActive(true);
             }
         }
-
-        
     }
 
     private void DestroyGameObject()
@@ -165,5 +162,5 @@ public class Enemy : MonoBehaviour
     private int GetRandomInt (int a, int b)
     {
         return UnityEngine.Random.Range(a, b);
-}
+    }
 }
