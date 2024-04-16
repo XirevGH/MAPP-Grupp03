@@ -42,7 +42,7 @@ public class GameController : MonoBehaviour
     public void GameOver()
     {
         File.WriteAllText(saveFile, playerStats.SaveToString());
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("ResultsScreen");
     }
 
     public BoundsInt GetBoundsFromCamera()
