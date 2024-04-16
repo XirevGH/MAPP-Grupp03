@@ -20,7 +20,7 @@ public class SoundManager : MonoBehaviour
     public static int sliderValue;
     public Scene currentScene;
     public AudioMixerSnapshot lowPassSnapshots, normalSnapshots;
-    public bool isOnePlaying, isLowPassOn, isInMainMenu;
+    public bool isOnePlaying, isLowPassOn, isInMainMenu, hasRun;
 
 
 
@@ -60,17 +60,6 @@ public class SoundManager : MonoBehaviour
     void Update()
     {
         currentScene = SceneManager.GetActiveScene();
-        //if (currentScene.buildIndex == 0)
-        //{
-        //    LowPassOn();
-
-        //    isInMainMenu = !isInMainMenu;
-        //}
-        //else
-        //{
-        //    LowPassOff();
-
-        //}
 
 
 
@@ -85,15 +74,29 @@ public class SoundManager : MonoBehaviour
     }
 
      void LateUpdate()
-    {
+        {
         //PlayerPrefs.SetFloat("volume", slider.value);
         //PlayerPrefs.SetFloat("volume1", AudioListener.volume);
 
 
 
 
-    }
+        }
+    public void ToggleInGameMusic()
+    {
+        if (!isLowPassOn)
+        {
+            pauseMenuMusic.Play();
+            lowPassSnapshots.TransitionTo(.001f);
+        }
+        else
+        {
+            pauseMenuMusic.Stop();
+            normalSnapshots.TransitionTo(.001f);
+        }
+        isLowPassOn = !isLowPassOn;
 
+    }
 
     public void ToggleMusicPause()
     {
