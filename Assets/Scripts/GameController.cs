@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -12,6 +13,8 @@ public class GameController : MonoBehaviour
     private GameObject playerFromSave;
     public Camera mainCamera;
     public Tilemap tilemap;
+
+    private HashSet<XPDrop> xpList = new HashSet<XPDrop>();
 
     private void Awake()
     {
@@ -53,4 +56,17 @@ public class GameController : MonoBehaviour
         Vector3Int maxPosition = tilemap.WorldToCell(cameraPosition + new Vector3(cameraSize * mainCamera.aspect, cameraSize, 0));
         return new BoundsInt(minPosition, maxPosition - minPosition);
     }
+
+    public void AddXpObject(XPDrop toAdd){
+        xpList.Add(toAdd);
+    }
+    public void RemoveXpObject(XPDrop toRemove){
+        xpList.Remove(toRemove);
+    }
+
+    public HashSet<XPDrop> GetXPDropObjects(){
+        return xpList;
+    }
+
+    
 }

@@ -27,7 +27,9 @@ public class GameObjectComparer : IComparer<GameObject>
 public class Enemy : MonoBehaviour
 {
     public GameObject player;
-    public GameObject xpDrop;
+
+    [SerializeField] private GameObject xpMagnetPrefab;
+    [SerializeField] private GameObject xpDropPrefab;
     public static float movementSpeed;
     public float health;
     public TMP_Text damageNumbers;
@@ -40,7 +42,6 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        xpDrop = GameObject.FindGameObjectWithTag("XPDrop20");
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         int random = GetRandomInt(1, 3);
@@ -130,10 +131,22 @@ public class Enemy : MonoBehaviour
     private void DropXP()
     {
         int random = UnityEngine.Random.Range(1, 3);
+        
         if(random == 1)
-        {
-            GameObject clone = Instantiate(xpDrop, transform.position, Quaternion.identity);
+        {   
+            if (xpDropPrefab) {
+                GameObject xpDrop = Instantiate(xpDropPrefab, transform.position, Quaternion.identity);
+            xpDrop.SetActive(true);
+            }
+        }else if(xpMagnetPrefab){
+            int random2 = GetRandomInt(1,9);
+            if(random2 == 1){
+                GameObject xpMagnet = Instantiate(xpMagnetPrefab, transform.position, Quaternion.identity);
+            xpMagnet.SetActive(true);
+            }
         }
+
+        
     }
 
     private void DestroyGameObject()
