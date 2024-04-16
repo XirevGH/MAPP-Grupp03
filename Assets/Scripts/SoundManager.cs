@@ -82,21 +82,21 @@ public class SoundManager : MonoBehaviour
 
 
         }
-    public void ToggleInGameMusic()
-    {
-        if (!isLowPassOn)
-        {
-            pauseMenuMusic.Play();
-            lowPassSnapshots.TransitionTo(.001f);
-        }
-        else
-        {
-            pauseMenuMusic.Stop();
-            normalSnapshots.TransitionTo(.001f);
-        }
-        isLowPassOn = !isLowPassOn;
+    //public void ToggleInGameMusic()
+    //{
+    //    if (!isLowPassOn)
+    //    {
+    //        pauseMenuMusic.Play();
+    //        lowPassSnapshots.TransitionTo(.001f);
+    //    }
+    //    else
+    //    {
+    //        pauseMenuMusic.Stop();
+    //        normalSnapshots.TransitionTo(.001f);
+    //    }
+    //    isLowPassOn = !isLowPassOn;
 
-    }
+    //}
 
     public void ToggleMusicPause()
     {
