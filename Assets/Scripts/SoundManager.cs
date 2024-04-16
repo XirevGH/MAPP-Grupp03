@@ -124,6 +124,8 @@ public class SoundManager : MonoBehaviour
         ToggleMusicPause();
         musicSource1.Stop();
         musicSource2.Stop();
+        musicSource1.clip = musicTracks[0];
+        musicSource2.clip = musicTracks[0];
         LowPassOn();
     }
     public void Die()
