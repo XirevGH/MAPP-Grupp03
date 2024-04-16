@@ -10,8 +10,9 @@ public class SoundManager : MonoBehaviour
 {
 
     
-    [SerializeField] private AudioSource musicSource1, musicSource2, pauseMenuMusic;
+    [SerializeField] private AudioSource musicSource1, musicSource2, menuMusic;
     [SerializeField] private AudioClip[] musicTracks;
+    private AudioSource inGameMusic;
     [SerializeField] public int[] BPMforTracks;
     //[SerializeField] public Slider slider;
     [SerializeField] float timeToFade = 1f;
@@ -45,8 +46,8 @@ public class SoundManager : MonoBehaviour
     {
         isOnePlaying = true;
         isLowPassOn = false;
-        pauseMenuMusic.Stop();
-
+        menuMusic.Play();
+        inGameMusic.Stop();
 
 
         //AudioListener.volume = PlayerPrefs.GetFloat("volume1");
@@ -60,7 +61,7 @@ public class SoundManager : MonoBehaviour
     void Update()
     {
         currentScene = SceneManager.GetActiveScene();
-
+        inGameMusic = transform.GetChild(0).GetComponent<AudioSource>();
 
 
 
@@ -82,32 +83,30 @@ public class SoundManager : MonoBehaviour
 
 
         }
-    //public void ToggleInGameMusic()
-    //{
-    //    if (!isLowPassOn)
-    //    {
-    //        pauseMenuMusic.Play();
-    //        lowPassSnapshots.TransitionTo(.001f);
-    //    }
-    //    else
-    //    {
-    //        pauseMenuMusic.Stop();
-    //        normalSnapshots.TransitionTo(.001f);
-    //    }
-    //    isLowPassOn = !isLowPassOn;
+    public void ToggleInGameMusic()
+    {
+        if(hasRun != !hasRun)
+        {
+            inGameMusic.Play();
+        }
+        else
+        {
+            inGameMusic.Stop();
+        }
+        isLowPassOn = !isLowPassOn;
 
-    //}
+    }
 
     public void ToggleMusicPause()
     {
         if (!isLowPassOn)
         {
-            pauseMenuMusic.Play();
+            menuMusic.Play();
             lowPassSnapshots.TransitionTo(.001f);
         }
         else
         {
-            pauseMenuMusic.Stop();
+            menuMusic.Stop();
             normalSnapshots.TransitionTo(.001f);
         }
         isLowPassOn = !isLowPassOn;
