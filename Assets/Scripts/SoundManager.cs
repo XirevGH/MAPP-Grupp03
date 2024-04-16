@@ -132,7 +132,8 @@ public class SoundManager : MonoBehaviour
     {
         musicSource1.Stop();
         musicSource2.Stop();
-        menuMusic.Play();
+        musicSource1.clip = musicTracks[0];
+        musicSource2.clip = musicTracks[0];
         LowPassOn();
     }
 
