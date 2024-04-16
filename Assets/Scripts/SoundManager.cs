@@ -55,7 +55,6 @@ public class SoundManager : MonoBehaviour
         isLowPassOn = true;
         //menuMusic.Play();
        
-        Debug.Log("work");
 
 
         //AudioListener.volume = PlayerPrefs.GetFloat("volume1");
