@@ -12,6 +12,7 @@ public class ManuController : MonoBehaviour
     [SerializeField] private GameObject uppgradesPanel;
     [SerializeField] private GameObject settingPanel;
     [SerializeField] private GameObject creditPanel;
+    private GameObject soundManager;
   
 
     [SerializeField] private int levelToload;
@@ -23,8 +24,14 @@ public class ManuController : MonoBehaviour
         CloseUppgrades();
     }
 
+    private void Update()
+    {
+        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
+    }
+
     public void Startgame()
     {
+        //soundManager.GetComponent<SoundManager>().ToggleMusicPause();
         ChangeScene();
     }
 

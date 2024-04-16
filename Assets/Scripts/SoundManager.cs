@@ -44,10 +44,14 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
+        inGameMusic = transform.GetChild(0).GetComponent<AudioSource>();
+
+
+
         isOnePlaying = true;
         isLowPassOn = false;
-        menuMusic.Play();
-        inGameMusic.Stop();
+        //menuMusic.Play();
+       // inGameMusic.Stop();
 
 
         //AudioListener.volume = PlayerPrefs.GetFloat("volume1");
@@ -102,11 +106,13 @@ public class SoundManager : MonoBehaviour
     {
         if (!isLowPassOn)
         {
+            inGameMusic.Pause();
             menuMusic.Play();
             lowPassSnapshots.TransitionTo(.001f);
         }
         else
         {
+            inGameMusic.UnPause();
             menuMusic.Stop();
             normalSnapshots.TransitionTo(.001f);
         }

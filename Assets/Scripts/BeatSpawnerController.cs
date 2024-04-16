@@ -85,19 +85,7 @@ public class BeatSpawnerController : MonoBehaviour
     {
         
         spawners[0].isSpawning = !isSpawning;
-      
-        if(isSpawning)
-        {
-            
-            inGameMusic.Pause();
-            Debug.Log("pause");
-        }
-        else
-        {
-           
-            inGameMusic.UnPause();
 
-        }
         isSpawning = !isSpawning;
     }
 
