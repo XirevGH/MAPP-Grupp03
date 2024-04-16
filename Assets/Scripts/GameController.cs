@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         saveFile = Application.persistentDataPath + "/playerInfo.json";
+        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
         ReadFile();
         mainCamera = Camera.main;
         Enemy.movementSpeed = 4f;
@@ -46,7 +47,7 @@ public class GameController : MonoBehaviour
     {
         File.WriteAllText(saveFile, playerStats.SaveToString());
         SceneManager.LoadScene("MainMenu");
-        soundManager.GetComponent<SoundManager>().GoBackToMain();
+        soundManager.GetComponent<SoundManager>().Die();
 
     }
 

@@ -114,6 +114,7 @@ public class SoundManager : MonoBehaviour
     public void StrartGame()
     {
         musicSource1.Play();
+        musicSource2.Play();
         menuMusic.Stop();
         LowPassOff();
     }
@@ -123,6 +124,13 @@ public class SoundManager : MonoBehaviour
         ToggleMusicPause();
         musicSource1.Stop();
         musicSource2.Stop();
+        LowPassOn();
+    }
+    public void Die()
+    {
+        musicSource1.Stop();
+        musicSource2.Stop();
+        menuMusic.Play();
         LowPassOn();
     }
 
