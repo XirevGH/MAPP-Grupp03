@@ -45,9 +45,9 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy(Vector3Int position)
     {   
-        if(waiveCount < 25){
+        if(waiveCount < 60){
             Instantiate(enemyDrunkerd, position, Quaternion.identity, parent.GetComponent<Transform>());
-        }else if(waiveCount < 50){
+        }else if(waiveCount < 120){
             Instantiate(enemyDanser, position, Quaternion.identity, parent.GetComponent<Transform>());
         }else{
             Instantiate(enemyBaunser, position, Quaternion.identity, parent.GetComponent<Transform>());

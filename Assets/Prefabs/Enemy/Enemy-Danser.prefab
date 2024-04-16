@@ -206,7 +206,7 @@ MonoBehaviour:
   player: {fileID: 0}
   xpMagnetPrefab: {fileID: 4857899130433156979, guid: 86fd765608c838c41ac970a87857d355, type: 3}
   xpDropPrefab: {fileID: 2322821042000343324, guid: 73e8c7fac64e160469ab7a30447b8bc1, type: 3}
-  health: 25
+  health: 10
   damageNumbers: {fileID: 287581913604085729}
   damageNumberAnim: {fileID: 2898152515693454215}
   enemyAnim: {fileID: -8718832928761771214}

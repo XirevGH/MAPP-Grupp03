@@ -114,8 +114,8 @@ public class Player : MonoBehaviour
         }
          if(level > 4)
         {
-            if(level % 4 == 0){
-                saxophon.GetComponent<SaxophoneWeapon>().UpgradePirceAndSpeed(5, 1 ,1 ,1);
+            if(level % 6 == 0){
+                saxophon.GetComponent<SaxophoneWeapon>().UpgradePirceAndSpeed(1, 0.1f ,1 ,1);
             }
             
         }
