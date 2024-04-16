@@ -19,8 +19,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape)) // fixa en paus knapp
         {
-            BeatSpawnerController.GetComponent<BeatSpawnerController>().ToggleBeatSpawn();
-            soundManager.GetComponent<SoundManager>().ToggleMusicPause();
+            
             if (GameIsPaused)
             {
                 Resume();
@@ -36,12 +35,16 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        BeatSpawnerController.GetComponent<BeatSpawnerController>().ToggleBeatSpawn();
+        soundManager.GetComponent<SoundManager>().ToggleMusicPause();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
     void PauseGame()
     {
+        BeatSpawnerController.GetComponent<BeatSpawnerController>().ToggleBeatSpawn();
+        soundManager.GetComponent<SoundManager>().ToggleMusicPause();
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
@@ -53,6 +56,7 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
+        soundManager.GetComponent<SoundManager>().ToggleMusicPause();
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu"); // fixa så det inte är hard coded in - gör en variabel
     }
