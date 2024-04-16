@@ -56,7 +56,7 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-        BeatSpawnerController.GetComponent<BeatSpawnerController>().ToggleBeatSpawn();
+        soundManager.GetComponent<SoundManager>().GoBackToMain();
         GameIsPaused = false;
         soundManager.GetComponent<SoundManager>().ToggleMusicPause();
         Time.timeScale = 1f;

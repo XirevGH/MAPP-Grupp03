@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class SoundManager : MonoBehaviour
 {
 
-    
+
     [SerializeField] public AudioSource musicSource1, musicSource2, menuMusic;
     [SerializeField] private AudioClip[] musicTracks;
     private AudioSource inGameMusic;
@@ -21,7 +21,7 @@ public class SoundManager : MonoBehaviour
     public static int sliderValue;
     public Scene currentScene;
     public AudioMixerSnapshot lowPassSnapshots, normalSnapshots;
-    public bool isOnePlaying, isLowPassOn, isInMainMenu, hasRun;
+    public bool isOnePlaying, isLowPassOn, isInMenu, hasRun;
 
 
 
@@ -45,16 +45,13 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
-        musicSource1.Pause();
-        musicSource2.Pause();
 
-
-
+        StopInGameMusic();
 
         isOnePlaying = true;
-        isLowPassOn = true;
+        isInMenu = false;
         //menuMusic.Play();
-       
+
         Debug.Log("work");
 
 
@@ -69,7 +66,7 @@ public class SoundManager : MonoBehaviour
     void Update()
     {
         currentScene = SceneManager.GetActiveScene();
-       
+
 
 
 
@@ -82,15 +79,21 @@ public class SoundManager : MonoBehaviour
 
     }
 
-     void LateUpdate()
-     {
+    void LateUpdate()
+    {
         //PlayerPrefs.SetFloat("volume", slider.value);
         //PlayerPrefs.SetFloat("volume1", AudioListener.volume);
 
 
 
 
-     }
+    }
+
+    private void StopInGameMusic()
+    {
+        musicSource1.Pause();
+        musicSource2.Pause();
+    }
 
     public void ToggleInGameMusic()
     {
@@ -108,23 +111,38 @@ public class SoundManager : MonoBehaviour
 
     }
 
+    public void StrartGame()
+    {
+        musicSource1.Play();
+        menuMusic.Stop();
+        LowPassOff();
+    }
+
+    public void GoBackToMain()
+    {
+        ToggleMusicPause();
+        musicSource1.Stop();
+        musicSource2.Stop();
+        LowPassOn();
+    }
+
     public void ToggleMusicPause()
     {
-        if (!isLowPassOn)
+        if (isInMenu == false)
         {
             musicSource1.Pause();
             musicSource2.Pause();
             menuMusic.Play();
-            lowPassSnapshots.TransitionTo(.001f);
+            LowPassOn();
         }
         else
         {
             musicSource1.UnPause();
             musicSource2.UnPause();
             menuMusic.Stop();
-            normalSnapshots.TransitionTo(.001f);
+            LowPassOff();
         }
-        isLowPassOn = !isLowPassOn;
+        isInMenu = !isInMenu;
         //Time.timeScale = Time.timeScale == 0 ? 1 : 0;
     }
 
