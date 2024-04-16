@@ -47,7 +47,7 @@ public class SoundManager : MonoBehaviour
     {
         isOnePlaying = true;
         isLowPassOn = false;
-        currentScene = SceneManager.GetActiveScene();
+        
 
 
 
@@ -61,11 +61,12 @@ public class SoundManager : MonoBehaviour
 
     void Update()
     {
-
+        currentScene = SceneManager.GetActiveScene();
+        Debug.Log(currentScene.buildIndex);
         if (currentScene.buildIndex == 0)
         {
             LowPassOn();
-            Debug.Log("works");
+           
 
         }
         else
