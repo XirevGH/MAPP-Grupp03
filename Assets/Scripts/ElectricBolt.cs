@@ -17,7 +17,7 @@ public class ElectricBolt : MonoBehaviour
     private float length;
     private float angle;
     private Vector3 direction;
-    private float spriteChangeCooldown = 0.3f;
+    private float spriteChangeCooldown = 0.1f;
     private bool spriteChangeReady;
 
     private SpriteRenderer rend;
@@ -27,7 +27,7 @@ public class ElectricBolt : MonoBehaviour
         rend = GetComponent<SpriteRenderer>();
         totalDamage = player.GetComponent<ElectricGuitar>().GetDamage();
         spriteChangeReady = true;
-        StartCoroutine(DealDamage());
+        DealDamage();
     }
 
     private void Update()
@@ -46,50 +46,30 @@ public class ElectricBolt : MonoBehaviour
         transform.localScale = new Vector3(length / 10.24f, transform.localScale.y, transform.localScale.z);
     }
 
-    public void SetTargetUnit(GameObject target)
-    {
-        targetUnit = target;
-    }
-
-    private IEnumerator DealDamage()
-    {
-        float damageInterval = totalDamage / totalDamage;
-        float timeInterval = lifetime / totalDamage;
-        for(int i = 0; i < totalDamage; i++)
-        {
-            if(targetUnit != null)
-            {
-                if(targetUnit.GetComponent<Enemy>().GetHealth() > 0)
-                {
-                    targetUnit.GetComponent<Enemy>().TakeDamage(damageInterval);
-                }
-                else
-                {
-                    yield break;
-                }
-            }
-            else
-            {
-                yield break;
-            }
-            yield return new WaitForSeconds(timeInterval);
-        }
-    }
-
     private void FixedUpdate()
     {
         lifetime -= Time.deltaTime;
-        if(lifetime < 0)
+        if (lifetime < 0)
         {
             Destroy(gameObject);
         }
 
-        if(spriteChangeReady)
+        if (spriteChangeReady)
         {
             ChangeSprite();
             spriteChangeReady = false;
             Invoke("SetSpriteReady", spriteChangeCooldown);
         }
+    }
+
+    public void SetTargetUnit(GameObject target)
+    {
+        targetUnit = target;
+    }
+
+    private void DealDamage()
+    {
+        targetUnit.GetComponent<Enemy>().TakeDamage(totalDamage);
     }
 
     private void ChangeSprite()
