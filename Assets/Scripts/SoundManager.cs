@@ -10,8 +10,9 @@ public class SoundManager : MonoBehaviour
 {
 
     
-    [SerializeField] private AudioSource musicSource1, musicSource2, pauseMenuMusic;
+    [SerializeField] private AudioSource musicSource1, musicSource2, menuMusic;
     [SerializeField] private AudioClip[] musicTracks;
+    private AudioSource inGameMusic;
     [SerializeField] public int[] BPMforTracks;
     //[SerializeField] public Slider slider;
     [SerializeField] float timeToFade = 1f;
@@ -45,8 +46,8 @@ public class SoundManager : MonoBehaviour
     {
         isOnePlaying = true;
         isLowPassOn = false;
-        pauseMenuMusic.Stop();
-
+        menuMusic.Play();
+        inGameMusic.Stop();
 
 
         //AudioListener.volume = PlayerPrefs.GetFloat("volume1");
@@ -60,7 +61,7 @@ public class SoundManager : MonoBehaviour
     void Update()
     {
         currentScene = SceneManager.GetActiveScene();
-
+        inGameMusic = transform.GetChild(0).GetComponent<AudioSource>();
 
 
 
@@ -74,25 +75,24 @@ public class SoundManager : MonoBehaviour
     }
 
      void LateUpdate()
-        {
+     {
         //PlayerPrefs.SetFloat("volume", slider.value);
         //PlayerPrefs.SetFloat("volume1", AudioListener.volume);
 
 
 
 
-        }
+     }
+
     public void ToggleInGameMusic()
     {
-        if (!isLowPassOn)
+        if(hasRun != !hasRun)
         {
-            pauseMenuMusic.Play();
-            lowPassSnapshots.TransitionTo(.001f);
+            inGameMusic.Play();
         }
         else
         {
-            pauseMenuMusic.Stop();
-            normalSnapshots.TransitionTo(.001f);
+            inGameMusic.Stop();
         }
         isLowPassOn = !isLowPassOn;
 
@@ -102,12 +102,12 @@ public class SoundManager : MonoBehaviour
     {
         if (!isLowPassOn)
         {
-            pauseMenuMusic.Play();
+            menuMusic.Play();
             lowPassSnapshots.TransitionTo(.001f);
         }
         else
         {
-            pauseMenuMusic.Stop();
+            menuMusic.Stop();
             normalSnapshots.TransitionTo(.001f);
         }
         isLowPassOn = !isLowPassOn;
