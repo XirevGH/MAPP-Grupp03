@@ -47,8 +47,7 @@ public class PlayerMovement : MonoBehaviour, Input_Actions.IPlayerActions
 
     void FixedUpdate()
     {
-        Vector2 velocity = new Vector2(_moveDirection.x * _moveSpeed, _moveDirection.y * _moveSpeed);
-        _rb.velocity = velocity;
+
     }
 
     public void OnMove(InputAction.CallbackContext context)
