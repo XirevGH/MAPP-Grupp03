@@ -3428,7 +3428,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735380183}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3438,7 +3438,7 @@ Transform:
   - {fileID: 8336072371526926092}
   - {fileID: 7147500035608189028}
   m_Father: {fileID: 5383820192035051673}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!114 &1735380185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3452,7 +3452,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dynamicJoystick: {fileID: 1440264127}
-  weapons: {fileID: 0}
 --- !u!224 &1792236042 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8135886326569738822, guid: 56fae09712773584fb63896d473a98ee, type: 3}
