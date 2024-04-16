@@ -15,7 +15,8 @@ public class BeatSpawnerController : MonoBehaviour
     public GameObject soundManager;
 
 
-    private AudioSource audioSource;
+    private AudioSource inGameMusic;
+        
 
 
     [System.Serializable]
@@ -56,21 +57,20 @@ public class BeatSpawnerController : MonoBehaviour
     {
         isSpawning = true;
         soundManager = GameObject.FindGameObjectWithTag("SoundManager");
-        audioSource = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
+        inGameMusic = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
         spawners[0].isSpawning = isSpawning;
-
     }
 
 
     void Update()
     {
-        audioSource = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
+        inGameMusic = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
 
         BPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswaper.GetComponent<TrackSwaper>().i];
         
         if (isSpawning)
         {
-            float sampledTime = (audioSource.timeSamples / (audioSource.clip.frequency * spawners[0].GetIntervalLength(BPM)));
+            float sampledTime = (inGameMusic.timeSamples / (inGameMusic.clip.frequency * spawners[0].GetIntervalLength(BPM)));
             spawners[0].CheckForNewQuaterNote(sampledTime);
                 
 
@@ -88,12 +88,14 @@ public class BeatSpawnerController : MonoBehaviour
       
         if(isSpawning)
         {
-            audioSource.Pause();
+            
+            inGameMusic.Pause();
             Debug.Log("pause");
         }
         else
         {
-            audioSource.UnPause();
+           
+            inGameMusic.UnPause();
 
         }
         isSpawning = !isSpawning;

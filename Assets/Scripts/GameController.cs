@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
 {
     private string saveFile;
     public PlayerStats playerStats;
-    [SerializeField] private GameObject beatSpawnerController;
+    [SerializeField] private GameObject beatSpawnerController,soundManager;
     public Camera mainCamera;
     public Tilemap tilemap;
 
@@ -47,6 +47,7 @@ public class GameController : MonoBehaviour
         File.WriteAllText(saveFile, playerStats.SaveToString());
         SceneManager.LoadScene("MainMenu");
         beatSpawnerController.GetComponent<BeatSpawnerController>().ToggleBeatSpawn();
+
     }
 
     public BoundsInt GetBoundsFromCamera()

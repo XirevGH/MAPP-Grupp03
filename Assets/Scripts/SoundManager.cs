@@ -10,7 +10,7 @@ public class SoundManager : MonoBehaviour
 {
 
     
-    [SerializeField] private GameObject musicSource1, musicSource2;
+    [SerializeField] private AudioSource musicSource1, musicSource2, pauseMenuMusic;
     [SerializeField] private AudioClip[] musicTracks;
     [SerializeField] public int[] BPMforTracks;
     //[SerializeField] public Slider slider;
@@ -45,6 +45,7 @@ public class SoundManager : MonoBehaviour
     {
         isOnePlaying = true;
         isLowPassOn = false;
+        pauseMenuMusic.Stop();
 
         if (currentScene.buildIndex == 0)
         {
@@ -105,10 +106,12 @@ public class SoundManager : MonoBehaviour
     {
         if (!isLowPassOn)
         {
+            pauseMenuMusic.Play();
             lowPassSnapshots.TransitionTo(.001f);
         }
         else
         {
+            pauseMenuMusic.Stop();
             normalSnapshots.TransitionTo(.001f);
         }
         isLowPassOn = !isLowPassOn;
