@@ -17,22 +17,25 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) // fixa en paus knapp
+        // Check if the game should be paused based on button input
+        if (Input.GetButtonDown("PauseButton"))
         {
-            
-            if (GameIsPaused)
-            {
-                Resume();
-                
-            }
-            else
-            {
-                PauseGame();
-               
-            }
+            PauseButton();
         }
     }
 
+    public void PauseButton()
+    {
+
+        if (GameIsPaused)
+        {
+            Resume();
+        }
+        else
+        {
+            PauseGame();
+        }
+    }
     public void Resume()
     {
         BeatSpawnerController.GetComponent<BeatSpawnerController>().ToggleBeatSpawn();
