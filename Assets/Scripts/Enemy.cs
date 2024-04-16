@@ -32,27 +32,23 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject xpMagnetPrefab;
     [SerializeField] private GameObject xpDropPrefab;
     public static float movementSpeed;
+    public static float healthProsenIncreas = 1f;
     public float health;
     public TMP_Text damageNumbers;
     public Animator damageNumberAnim;
     public Animator enemyAnim;
     private Rigidbody2D rb; 
     private SpriteRenderer sprite;
-    [SerializeField] private Sprite bouncerSprite, dancerSprite;
+    [SerializeField] private Sprite enemySprite;
     private float damageNumberWindow = 3f;
 
     void Start()
     {
+        health *= healthProsenIncreas;
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         int random = GetRandomInt(1, 3);
-        if (random == 1) {
-            sprite.sprite = bouncerSprite;
-        } else
-        {
-            sprite.sprite = dancerSprite;
-        }
         
     }
 

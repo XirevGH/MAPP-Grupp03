@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
+    {   Enemy.healthProsenIncreas += 0.001f;
         Enemy.movementSpeed += 0.001f;
     }
     private void ReadFile()

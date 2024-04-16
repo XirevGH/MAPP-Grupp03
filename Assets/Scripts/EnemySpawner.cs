@@ -9,10 +9,14 @@ public class EnemySpawner : MonoBehaviour
 {
     public Camera mainCamera;
     public Tilemap tilemap;
-    public GameObject enemy;
+    public GameObject enemyBaunser;
+    public GameObject enemyDanser;
+    public GameObject enemyDrunkerd;
     public GameObject parent;
     public GameObject[] spawnLocations;
     public GameObject player;
+
+    public int waiveCount = 0;
     
     public float spawnRate;
     private bool waveHasSpawned;
@@ -28,6 +32,8 @@ public class EnemySpawner : MonoBehaviour
             waveHasSpawned = true;
             Invoke("SpawnNextWave", spawnRate);
             SpawnEnemiesInCircle((1 + (int)spawnIncreaser));
+            waiveCount += 1; 
+
         }
     }
 
@@ -38,8 +44,15 @@ public class EnemySpawner : MonoBehaviour
     }
 
     void SpawnEnemy(Vector3Int position)
-    {
-        Instantiate(enemy, position, Quaternion.identity, parent.GetComponent<Transform>());
+    {   
+        if(waiveCount < 25){
+            Instantiate(enemyDrunkerd, position, Quaternion.identity, parent.GetComponent<Transform>());
+        }else if(waiveCount < 50){
+            Instantiate(enemyDanser, position, Quaternion.identity, parent.GetComponent<Transform>());
+        }else{
+            Instantiate(enemyBaunser, position, Quaternion.identity, parent.GetComponent<Transform>());
+        }
+        
     }
 
 /*    void SpawnEnemiesInCorners()

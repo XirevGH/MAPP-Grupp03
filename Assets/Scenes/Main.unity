@@ -1772,7 +1772,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 519420031}
   tilemap: {fileID: 1947654048}
-  enemy: {fileID: 6536046719154458180, guid: e08403d79ea9a0046acfb2c680d5eb32, type: 3}
+  enemyBaunser: {fileID: 6536046719154458180, guid: e08403d79ea9a0046acfb2c680d5eb32, type: 3}
+  enemyDanser: {fileID: 6536046719154458180, guid: 935a3a109fd200c4080657daa8c508d3, type: 3}
+  enemyDrunkerd: {fileID: 6536046719154458180, guid: 3ecd58846d80571498c5c49f0cba8ec3, type: 3}
   parent: {fileID: 1707783737}
   spawnLocations:
   - {fileID: 1730046822}
@@ -1781,6 +1783,7 @@ MonoBehaviour:
   - {fileID: 260835526}
   - {fileID: 274997314}
   player: {fileID: 3351724656273620173}
+  waiveCount: 0
   spawnRate: 3
 --- !u!1 &904416705
 GameObject:
