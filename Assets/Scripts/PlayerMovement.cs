@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour, Input_Actions.IPlayerActions
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private Transform pos;
-
+    private Rigidbody2D rb;
     private float horizontalValue;
     private float verticalValue;
 
@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour, Input_Actions.IPlayerActions
     private void Start()
     {
         rend = GetComponent<SpriteRenderer>(); 
+        rb = GetComponent<Rigidbody2D>(); 
     }
 
     void Update()
@@ -51,12 +52,15 @@ public class PlayerMovement : MonoBehaviour, Input_Actions.IPlayerActions
         rend.flipX = flip; 
     }
 
-
+    void FixedUpdate()
+    {
+        pos.position = new Vector2(pos.position.x + horizontalValue * moveSpeed * Time.deltaTime, pos.position.y + verticalValue * moveSpeed * Time.deltaTime);
+    }
 
     public void OnMove(InputAction.CallbackContext context)
     {
         Vector2 axisInput = context.ReadValue<Vector2>();
-        pos.position = new Vector2(pos.position.x + horizontalValue * moveSpeed * Time.deltaTime, pos.position.y + verticalValue * moveSpeed * Time.deltaTime);
+        rb.velocity = new Vector2(axisInput.x * moveSpeed, axisInput.y * moveSpeed);
     }
 
     public void OnLook(InputAction.CallbackContext context)
