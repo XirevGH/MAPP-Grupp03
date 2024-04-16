@@ -11661,7 +11661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1712015239
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12222,7 +12222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1792653751
 Transform:
   m_ObjectHideFlags: 0
@@ -12251,16 +12251,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 1000
-  MoneyText1: {fileID: 0}
-  MoneyText2: {fileID: 0}
-  DamageCost: {fileID: 0}
-  DamageStats: {fileID: 0}
+  MoneyText1: {fileID: 368561307}
+  MoneyText2: {fileID: 1687503610}
+  DamageCost: {fileID: 867063608}
+  DamageStats: {fileID: 196335105}
   BPMCost: {fileID: 1501115216}
   BPMStats: {fileID: 585347486}
   SizeCost: {fileID: 32164608}
   SizeStats: {fileID: 1759469074}
-  PierceCost: {fileID: 0}
-  PierceStats: {fileID: 0}
+  PierceCost: {fileID: 1572359726}
+  PierceStats: {fileID: 69021311}
   XpMultCost: {fileID: 58559367}
   XpMultStats: {fileID: 1085229827}
   HPCost: {fileID: 2095525472}
@@ -12269,8 +12269,8 @@ MonoBehaviour:
   DefenceStats: {fileID: 1176183250}
   MovSpeedCost: {fileID: 1592540307}
   MovSpeedStats: {fileID: 1970650726}
-  InvincibilityCost: {fileID: 0}
-  InvincibilityStats: {fileID: 0}
+  InvincibilityCost: {fileID: 877505038}
+  InvincibilityStats: {fileID: 1822014208}
   MoneyMultCost: {fileID: 601540593}
   MoneyMultStats: {fileID: 1355780717}
   perLevelPriceIncrease: 100
