@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour, Input_Actions.IPlayerActions
@@ -10,11 +11,14 @@ public class PlayerMovement : MonoBehaviour, Input_Actions.IPlayerActions
     [SerializeField] private Transform pos;
     private Rigidbody2D rb;
 
+    Input_Actions playerInputActions;
+
 
     private SpriteRenderer rend;
     Vector2 axisInput;
-    private void Start()
+    private void Awake()
     {
+        playerInputActions = new Input_Actions();
         rend = GetComponent<SpriteRenderer>(); 
         rb = GetComponent<Rigidbody2D>(); 
     }
@@ -41,6 +45,11 @@ public class PlayerMovement : MonoBehaviour, Input_Actions.IPlayerActions
         rend.flipX = flip; 
     }
 
+    void FixedUpdate()
+    {
+        Vector2 velocity = new Vector2(_moveDirection.x * _moveSpeed, _moveDirection.y * _moveSpeed);
+        _rb.velocity = velocity;
+    }
 
     public void OnMove(InputAction.CallbackContext context)
     {
