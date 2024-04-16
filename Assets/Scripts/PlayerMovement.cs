@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, Input_Actions.IPlayerActions
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private Transform pos;
@@ -48,18 +48,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void FlipSprite(bool flip)
     {
-        if (flip) {
-            transform.eulerAngles = new Vector3(0, 180, 0);
-        }
-        else
-        {
-            transform.eulerAngles = new Vector3(0, 0, 0);
-        }
+        rend.flipX = flip; 
     }
 
-    private void FixedUpdate()
+
+
+    public void OnMove(InputAction.CallbackContext context)
     {
+        Vector2 axisInput = context.ReadValue<Vector2>();
         pos.position = new Vector2(pos.position.x + horizontalValue * moveSpeed * Time.deltaTime, pos.position.y + verticalValue * moveSpeed * Time.deltaTime);
+    }
+
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        throw new System.NotImplementedException();
     }
 }
 
