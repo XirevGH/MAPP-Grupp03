@@ -1,29 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class XPDrop : MonoBehaviour
+public class ItemMagnet : MonoBehaviour
 {
     private GameObject gameControllerObject;
     private GameController gameController;
-    [SerializeField] private int XP;
+    private GameObject player;
 
     private void Awake(){
-        
+        player = GameObject.FindGameObjectWithTag("Player");
         gameControllerObject = GameObject.FindGameObjectWithTag("GameController");
         gameController = gameControllerObject.GetComponent<GameController>();
-        gameController.AddXpObject(this);
-        }
+        
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
         {
-            other.GetComponent<Player>().AddXP(XP);
-            gameController.RemoveXpObject(this);
+            HashSet<XPDrop> allXp = gameController.GetXPDropObjects();
+            foreach(XPDrop xp in allXp){
+                xp.GetComponent<MoveToPlayer>().StartMoving(player.transform);
+            }
             Destroy(gameObject);
-            
-           
         }
     }
 }
