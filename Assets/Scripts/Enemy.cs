@@ -140,7 +140,7 @@ public class Enemy : MonoBehaviour
             }
         }
         else if (xpMagnetPrefab) {
-            int random2 = GetRandomInt(1,9);
+            int random2 = GetRandomInt(1,21);
             if(random2 == 1){
                 GameObject xpMagnet = Instantiate(xpMagnetPrefab, transform.position, Quaternion.identity);
                 xpMagnet.SetActive(true);
