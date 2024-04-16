@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log(xpToLevel);
         xpHeld -= xpToLevel;
-        xpToLevel *= 1.5f;
+        xpToLevel *= 1.2f;
         level++;
         levelText.text = "Level: " + level;
         UpdateXPSlider();
