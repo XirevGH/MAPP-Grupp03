@@ -25,7 +25,6 @@ public class BeatSpawnerController : MonoBehaviour
         [SerializeField] private float noteValue;
         [SerializeField] private UnityEvent quaterNoteTrigger;
         private int lastQuaterNote;
-        public bool isSpawning;
         public float GetIntervalLength(float BPM)
         {
 
@@ -84,7 +83,7 @@ public class BeatSpawnerController : MonoBehaviour
     public void ToggleBeatSpawn()
     {
         
-        spawners[0].isSpawning = !isSpawning;
+        
 
         isSpawning = !isSpawning;
     }

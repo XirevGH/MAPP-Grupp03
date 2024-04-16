@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour
     {
         File.WriteAllText(saveFile, playerStats.SaveToString());
         SceneManager.LoadScene("MainMenu");
-        beatSpawnerController.GetComponent<BeatSpawnerController>().ToggleBeatSpawn();
+        soundManager.GetComponent<SoundManager>().GoBackToMain();
 
     }
 
