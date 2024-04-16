@@ -23,7 +23,6 @@ public class GameController : MonoBehaviour
         ReadFile();
         mainCamera = Camera.main;
         Enemy.movementSpeed = 4f;
-        Debug.Log("Start");
     }
 
     private void FixedUpdate()

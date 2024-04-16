@@ -55,8 +55,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void FixedUpdate()
     {
-        Debug.Log(horizontalValue);
-        Debug.Log(verticalValue);
         if (dynamicJoystick.Horizontal != 0f || dynamicJoystick.Vertical != 0f)
         {
             pos.position = new Vector2(pos.position.x + (dynamicJoystick.Horizontal / 100) * moveSpeed, pos.position.y + (dynamicJoystick.Vertical / 100) * moveSpeed);

@@ -25,8 +25,8 @@ public class Player : MonoBehaviour
     private int defence;
     private float movementSpeed;
 
-    private int xpHeld;
-    private int xpToLevel;
+    private float xpHeld;
+    private float xpToLevel;
     private int level;
 
     private short burstAmount;
@@ -42,7 +42,10 @@ public class Player : MonoBehaviour
         health = playerStats.health; 
         defence = playerStats.defence; 
         movementSpeed = playerStats.movementSpeed; 
-        xpHeld = playerStats.xpHeld;  
+        xpHeld = playerStats.xpHeld;
+        xpToLevel = playerStats.xpToLevel;
+        level = playerStats.level;
+        burstAmount = playerStats.burstAmount;
     }
     #region HP Stuff
     public void TakeDamage(int damageAmount)
@@ -85,8 +88,9 @@ public class Player : MonoBehaviour
 
     private void LevelUp()
     {
+        Debug.Log(xpToLevel);
         xpHeld -= xpToLevel;
-        xpToLevel *= (int)1.5;
+        xpToLevel *= 1.5f;
         level++;
         levelText.text = "Level: " + level;
         UpdateXPSlider();

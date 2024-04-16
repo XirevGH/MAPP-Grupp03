@@ -16,9 +16,9 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] public int defence;
     [SerializeField] public float movementSpeed;
 
-    [SerializeField] public int xpHeld = 0;
-    [SerializeField] public int xpToLevel = 30;
-    [SerializeField] public int level = 1;
+    [SerializeField] public float xpHeld;
+    [SerializeField] public float xpToLevel;
+    [SerializeField] public int level;
 
     [SerializeField] public short burstAmount;
 
@@ -30,7 +30,6 @@ public class PlayerStats : MonoBehaviour
 
     public void CreateFromJSON(string jsonString)
     {
-        Debug.Log(playerStats);
         JsonUtility.FromJsonOverwrite(jsonString, playerStats);
     }
 }
