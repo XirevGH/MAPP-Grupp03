@@ -24,7 +24,6 @@ public class Player : MonoBehaviour
     private int health;
     private int defence;
     private float movementSpeed;
-
     private float xpHeld;
     private float xpToLevel;
     private int level;
@@ -39,13 +38,13 @@ public class Player : MonoBehaviour
         areaOfEffectSize = playerStats.areaOfEffectSize;
         pierce = playerStats.pierce;
         xpMultiplier = playerStats.xpMultiplier;
-        health = playerStats.health; 
+        health = 100; 
         defence = playerStats.defence; 
         movementSpeed = playerStats.movementSpeed; 
-        xpHeld = playerStats.xpHeld;
-        xpToLevel = playerStats.xpToLevel;
-        level = playerStats.level;
+        xpToLevel = 100;
+        level = 1;
         burstAmount = playerStats.burstAmount;
+        xpHeld = 0;
     }
     #region HP Stuff
     public void TakeDamage(int damageAmount)

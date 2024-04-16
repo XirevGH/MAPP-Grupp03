@@ -5098,13 +5098,9 @@ MonoBehaviour:
   areaOfEffectSize: 0
   pierce: 0
   xpMultiplier: 0
-  health: 100
   defence: 0
   movementSpeed: 0
-  xpHeld: 0
-  xpToLevel: 100
-  level: 1
-  burstAmount: 3
+  burstAmount: 1
 --- !u!95 &5436226366269919645
 Animator:
   serializedVersion: 5

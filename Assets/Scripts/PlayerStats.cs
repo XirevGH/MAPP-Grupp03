@@ -12,14 +12,8 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] public int areaOfEffectSize;
     [SerializeField] public int pierce;
     [SerializeField] public float xpMultiplier;
-    [SerializeField] public int health;
     [SerializeField] public int defence;
     [SerializeField] public float movementSpeed;
-
-    [SerializeField] public float xpHeld;
-    [SerializeField] public float xpToLevel;
-    [SerializeField] public int level;
-
     [SerializeField] public short burstAmount;
 
 
