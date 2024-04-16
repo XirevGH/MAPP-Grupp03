@@ -12,4 +12,3 @@ public class Aiming : MonoBehaviour
         Debug.Log(dynamicJoystick.Horizontal + ", " + dynamicJoystick.Vertical);
     }
 }
-}
