@@ -112,12 +112,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4104584175501468764}
   - component: {fileID: 8944445440707182931}
-  - component: {fileID: -8762568189266718384}
+  - component: {fileID: 9195592930782303937}
   - component: {fileID: 4452318053238822982}
   - component: {fileID: 1244441984418440535}
   - component: {fileID: -8718832928761771214}
   m_Layer: 0
-  m_Name: Enemy-Drunkerd
+  m_Name: Enemy-Dancer
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,7 +180,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 9646ca466ea597a448a2e70c55acb027, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 29b8918923ac85341a22275f7aad2f64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -191,7 +191,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-8762568189266718384
+--- !u!114 &9195592930782303937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,11 +206,11 @@ MonoBehaviour:
   player: {fileID: 0}
   xpMagnetPrefab: {fileID: 4857899130433156979, guid: 86fd765608c838c41ac970a87857d355, type: 3}
   xpDropPrefab: {fileID: 2322821042000343324, guid: 73e8c7fac64e160469ab7a30447b8bc1, type: 3}
-  health: 5
+  health: 25
   damageNumbers: {fileID: 287581913604085729}
   damageNumberAnim: {fileID: 2898152515693454215}
   enemyAnim: {fileID: -8718832928761771214}
-  enemySprite: {fileID: 21300000, guid: 9646ca466ea597a448a2e70c55acb027, type: 3}
+  enemySprite: {fileID: 21300000, guid: 29b8918923ac85341a22275f7aad2f64, type: 3}
 --- !u!58 &4452318053238822982
 CircleCollider2D:
   m_ObjectHideFlags: 0
