@@ -90,8 +90,9 @@ public class Player : MonoBehaviour
         level++;
         levelText.text = "Level: " + level;
         UpdateXPSlider();
-        
-        if(level == 2)
+        MainManager.Instance.mainLevel = level;
+
+        if (level == 2)
         {
             electricGuitar.SetActive(true);
         }
