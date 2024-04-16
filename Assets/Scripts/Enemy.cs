@@ -113,6 +113,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            builder.Append("\n");
             builder.Append(damage.ToString());
         }
 
