@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class UppgradeControler : MonoBehaviour
+public class UpgradeController : MonoBehaviour
 {
     [SerializeField] private int money;
-    [SerializeField] private TextMeshProUGUI MonyText1;
-    [SerializeField] private TextMeshProUGUI MonyText2;
+    [SerializeField] private TextMeshProUGUI MoneyText1;
+    [SerializeField] private TextMeshProUGUI MoneyText2;
     
-    [SerializeField] private TextMeshProUGUI DamegCost;
-    [SerializeField] private TextMeshProUGUI DamegStats;
+    [SerializeField] private TextMeshProUGUI DamageCost;
+    [SerializeField] private TextMeshProUGUI DamageStats;
 
     [SerializeField] private TextMeshProUGUI BPMCost;
     [SerializeField] private TextMeshProUGUI BPMStats;
@@ -18,8 +18,8 @@ public class UppgradeControler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI SizeCost;
     [SerializeField] private TextMeshProUGUI SizeStats;
 
-    [SerializeField] private TextMeshProUGUI PirceCost;
-    [SerializeField] private TextMeshProUGUI PirceStats;
+    [SerializeField] private TextMeshProUGUI PierceCost;
+    [SerializeField] private TextMeshProUGUI PierceStats;
 
     [SerializeField] private TextMeshProUGUI XpMultCost;
     [SerializeField] private TextMeshProUGUI XpMultStats;
@@ -33,8 +33,8 @@ public class UppgradeControler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI MovSpeedCost;
     [SerializeField] private TextMeshProUGUI MovSpeedStats;
 
-    [SerializeField] private TextMeshProUGUI InvinsebliletyCost;
-    [SerializeField] private TextMeshProUGUI InvinsebliletyStats;
+    [SerializeField] private TextMeshProUGUI InvincibilityCost;
+    [SerializeField] private TextMeshProUGUI InvincibilityStats;
 
     [SerializeField] private TextMeshProUGUI MoneyMultCost;
     [SerializeField] private TextMeshProUGUI MoneyMultStats;
@@ -46,7 +46,7 @@ public class UppgradeControler : MonoBehaviour
     private int levelBPM;
     private int levelSize;
     private int levelPrice;
-     private int levelXpMultiplier;
+    private int levelXpMultiplier;
     private int levelHP;
     private int levelDefence;
     private int levelMoveSpeed;
@@ -56,10 +56,10 @@ public class UppgradeControler : MonoBehaviour
 
      private void Start()
     {
-        InitalisingPannel();
+        InitialisingPanel();
     }
 
-    public void InitalisingPannel(){
+    public void InitialisingPanel(){
     
     
     levelDamage = 0;
@@ -75,11 +75,11 @@ public class UppgradeControler : MonoBehaviour
     
 
 
-        MonyText1.SetText(money.ToString());
-        MonyText2.SetText(money.ToString());
+        MoneyText1.SetText(money.ToString());
+        MoneyText2.SetText(money.ToString());
 
-        DamegCost.SetText(((levelDamage + 1) * perLevelPriceIncrease).ToString());
-        DamegStats.SetText(levelDamage * 5 + "%");
+        DamageCost.SetText(((levelDamage + 1) * perLevelPriceIncrease).ToString());
+        DamageStats.SetText(levelDamage * 5 + "%");
 
         BPMCost.SetText(((levelBPM + 1) * perLevelPriceIncrease).ToString());
         BPMStats.SetText(levelBPM * 5 + "%");
@@ -88,8 +88,8 @@ public class UppgradeControler : MonoBehaviour
         SizeStats.SetText(levelSize * 10 + "%");
 
         
-        PirceCost.SetText(((levelPrice + 1) * perLevelPriceIncrease).ToString());
-        PirceStats.SetText(levelPrice + "");
+        PierceCost.SetText(((levelPrice + 1) * perLevelPriceIncrease).ToString());
+        PierceStats.SetText(levelPrice + "");
 
         XpMultCost.SetText(((levelXpMultiplier + 1) * perLevelPriceIncrease).ToString());
         XpMultStats.SetText(levelXpMultiplier * 2.5 + "%");
@@ -103,8 +103,8 @@ public class UppgradeControler : MonoBehaviour
         MovSpeedCost.SetText(((levelMoveSpeed + 1) * perLevelPriceIncrease).ToString());
         MovSpeedStats.SetText(levelMoveSpeed * 0.1 + "");
 
-        InvinsebliletyCost.SetText(((levelInvincibilityFrames + 1) * perLevelPriceIncrease).ToString());
-        InvinsebliletyStats.SetText(levelInvincibilityFrames * 0.1 + "s");
+        InvincibilityCost.SetText(((levelInvincibilityFrames + 1) * perLevelPriceIncrease).ToString());
+        InvincibilityStats.SetText(levelInvincibilityFrames * 0.1 + "s");
 
         MoneyMultCost.SetText(((levelMoneyMult + 1) * perLevelPriceIncrease).ToString());
         MoneyMultStats.SetText(levelMoneyMult * 2.5 + "%");
@@ -123,14 +123,14 @@ public class UppgradeControler : MonoBehaviour
         }
         upgrades.Clear();
         
-        InitalisingPannel();
+        InitialisingPanel();
     }
     public void ByDameg()
     {
         if(EnothMoney((levelDamage + 1) * perLevelPriceIncrease)){
             levelDamage += 1;
-            DamegCost.SetText(((levelDamage + 1) * perLevelPriceIncrease).ToString());
-            DamegStats.SetText(levelDamage * 5 + "%");
+            DamageCost.SetText(((levelDamage + 1) * perLevelPriceIncrease).ToString());
+            DamageStats.SetText(levelDamage * 5 + "%");
         }
     }
 
@@ -156,8 +156,8 @@ public class UppgradeControler : MonoBehaviour
     {
         if(EnothMoney((levelPrice + 1) * perLevelPriceIncrease)){
             levelPrice += 1;
-            PirceCost.SetText(((levelPrice + 1) * perLevelPriceIncrease).ToString());
-            PirceStats.SetText(levelPrice + "");
+            PierceCost.SetText(((levelPrice + 1) * perLevelPriceIncrease).ToString());
+            PierceStats.SetText(levelPrice + "");
         }
     }
 
@@ -202,8 +202,8 @@ public class UppgradeControler : MonoBehaviour
     {
        if(EnothMoney((levelInvincibilityFrames + 1) * perLevelPriceIncrease)){
             levelInvincibilityFrames += 1;
-            InvinsebliletyCost.SetText(((levelInvincibilityFrames + 1) * perLevelPriceIncrease).ToString());
-            InvinsebliletyStats.SetText(levelInvincibilityFrames * 0.1 + "s");
+            InvincibilityCost.SetText(((levelInvincibilityFrames + 1) * perLevelPriceIncrease).ToString());
+            InvincibilityStats.SetText(levelInvincibilityFrames * 0.1 + "s");
         }
     }
 
@@ -220,8 +220,8 @@ public class UppgradeControler : MonoBehaviour
     {
         if(money >= price){
             money -= price;
-            MonyText1.SetText(money.ToString());
-            MonyText2.SetText(money.ToString());
+            MoneyText1.SetText(money.ToString());
+            MoneyText2.SetText(money.ToString());
             return true;
         }
         return false;

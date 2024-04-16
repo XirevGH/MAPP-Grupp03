@@ -92,12 +92,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
     private string BuildDamageNumber(float damage)
     {
         string source = damageNumbers.text;
         int count = source.Split('\n').Length;
-        if (count > 5 || damageNumberWindow <= 0)
+        if (count > 4 || damageNumberWindow <= 0)
         {
             damageNumbers.text = "";
             count = 0;
@@ -109,16 +108,15 @@ public class Enemy : MonoBehaviour
             builder.Insert(0, damage.ToString());
             builder.Insert(0, " ", count);
             builder.Insert(0, "\n");
-
         }
         else
         {
             builder.Append("\n");
             builder.Append(damage.ToString());
         }
-
         return builder.ToString();
     }
+
     public float GetHealth() 
     {
         return health; 
