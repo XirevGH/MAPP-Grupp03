@@ -31,7 +31,7 @@ public class ManuController : MonoBehaviour
 
     public void Startgame()
     {
-        
+        soundManager.GetComponent<SoundManager>().musicSource1.Play();
         ChangeScene();
     }
 
@@ -48,12 +48,15 @@ public class ManuController : MonoBehaviour
 
     }
 
+
+
     
 
 
     public void ChangeScene()
     {
         soundManager.GetComponent<SoundManager>().ToggleMusicPause();
+       
         SceneManager.LoadScene(levelToload); // by till spel scennens
     }
 

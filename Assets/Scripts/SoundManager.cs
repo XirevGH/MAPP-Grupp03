@@ -10,7 +10,7 @@ public class SoundManager : MonoBehaviour
 {
 
     
-    [SerializeField] private AudioSource musicSource1, musicSource2, menuMusic;
+    [SerializeField] public AudioSource musicSource1, musicSource2, menuMusic;
     [SerializeField] private AudioClip[] musicTracks;
     private AudioSource inGameMusic;
     [SerializeField] public int[] BPMforTracks;
@@ -38,20 +38,23 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
         }
         //slider = GameObject.FindGameObjectWithTag("volumeSlider").GetComponent<Slider>();
-       
+        inGameMusic = transform.GetChild(0).GetComponent<AudioSource>();
+
     }
 
 
     void Start()
     {
-        inGameMusic = transform.GetChild(0).GetComponent<AudioSource>();
+        musicSource1.Pause();
+        musicSource2.Pause();
+
 
 
 
         isOnePlaying = true;
-        isLowPassOn = false;
+        isLowPassOn = true;
         //menuMusic.Play();
-        inGameMusic.Pause();
+       
         Debug.Log("work");
 
 
@@ -66,7 +69,7 @@ public class SoundManager : MonoBehaviour
     void Update()
     {
         currentScene = SceneManager.GetActiveScene();
-        inGameMusic = transform.GetChild(0).GetComponent<AudioSource>();
+       
 
 
 
@@ -93,11 +96,13 @@ public class SoundManager : MonoBehaviour
     {
         if(hasRun != !hasRun)
         {
-            inGameMusic.Play();
+            musicSource1.Play();
+            musicSource2.Play();
         }
         else
         {
-            inGameMusic.Stop();
+            musicSource1.Stop();
+            musicSource2.Stop();
         }
         isLowPassOn = !isLowPassOn;
 
@@ -107,13 +112,15 @@ public class SoundManager : MonoBehaviour
     {
         if (!isLowPassOn)
         {
-            inGameMusic.Pause();
+            musicSource1.Pause();
+            musicSource2.Pause();
             menuMusic.Play();
             lowPassSnapshots.TransitionTo(.001f);
         }
         else
         {
-            inGameMusic.UnPause();
+            musicSource1.UnPause();
+            musicSource2.UnPause();
             menuMusic.Stop();
             normalSnapshots.TransitionTo(.001f);
         }
