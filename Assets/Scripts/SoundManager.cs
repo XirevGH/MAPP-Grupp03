@@ -47,13 +47,6 @@ public class SoundManager : MonoBehaviour
         isLowPassOn = false;
         pauseMenuMusic.Stop();
 
-        if (currentScene.buildIndex == 0)
-        {
-            LowPassOn();
-
-          
-        }
-
 
 
         //AudioListener.volume = PlayerPrefs.GetFloat("volume1");
