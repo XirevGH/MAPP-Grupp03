@@ -75,14 +75,15 @@ public class SoundManager : MonoBehaviour
     }
 
      void LateUpdate()
-        {
+     {
         //PlayerPrefs.SetFloat("volume", slider.value);
         //PlayerPrefs.SetFloat("volume1", AudioListener.volume);
 
 
 
 
-        }
+     }
+
     public void ToggleInGameMusic()
     {
         if(hasRun != !hasRun)
