@@ -25,7 +25,6 @@ public class PlayerMovement : MonoBehaviour, Input_Actions.IPlayerActions
 
     void Update()
     {
-        Debug.Log(axisInput.x);
         if (Time.timeScale == 0f)
         {
             return;
@@ -52,8 +51,9 @@ public class PlayerMovement : MonoBehaviour, Input_Actions.IPlayerActions
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        Debug.Log("Hello");
         axisInput = context.ReadValue<Vector2>();
-        rb.velocity = new Vector2(axisInput.x * moveSpeed, axisInput.y * moveSpeed);
+        pos.position = new Vector2(pos.position.x + axisInput.x * moveSpeed, pos.position.y + axisInput.y * moveSpeed);
     }
 
     public void OnLook(InputAction.CallbackContext context)
