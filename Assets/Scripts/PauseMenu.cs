@@ -58,7 +58,6 @@ public class PauseMenu : MonoBehaviour
     {
         soundManager.GetComponent<SoundManager>().GoBackToMain();
         GameIsPaused = false;
-        soundManager.GetComponent<SoundManager>().ToggleMusicPause();
         Time.timeScale = 1f;
         SceneManager.LoadScene(mainMenuSceneName); 
     }

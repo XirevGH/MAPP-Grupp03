@@ -121,7 +121,10 @@ public class SoundManager : MonoBehaviour
 
     public void GoBackToMain()
     {
-        ToggleMusicPause();
+        if (menuMusic.isPlaying == false)
+        {
+            menuMusic.Play();
+        }
         musicSource1.Stop();
         musicSource2.Stop();
         musicSource1.clip = musicTracks[0];
@@ -130,6 +133,7 @@ public class SoundManager : MonoBehaviour
     }
     public void Die()
     {
+        menuMusic.Play();
         musicSource1.Stop();
         musicSource2.Stop();
         musicSource1.clip = musicTracks[0];
@@ -139,6 +143,7 @@ public class SoundManager : MonoBehaviour
 
     public void ToggleMusicPause()
     {
+        Debug.Log("isInMenuToggle");
         if (isInMenu == false)
         {
             musicSource1.Pause();
