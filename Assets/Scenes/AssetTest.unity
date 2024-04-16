@@ -673,6 +673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats: {fileID: 5436226366269919644}
   beatSpawnerController: {fileID: 1128267155804970998}
+  soundManager: {fileID: 0}
   mainCamera: {fileID: 519420031}
   tilemap: {fileID: 1947654048}
 --- !u!4 &482028541
@@ -4039,6 +4040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource1: {fileID: 1240528155988758017}
   musicSource2: {fileID: 2663074608551765361}
+  pauseMenuMusic: {fileID: 0}
   musicTracks:
   - {fileID: 8300000, guid: 29724764eaafa6f4990213f9c89121e3, type: 3}
   - {fileID: 8300000, guid: b54e97c3313d82a4e94f23db1cc7f428, type: 3}
@@ -4638,7 +4640,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: b444a8dfb00c4b24b8bd9332fbc2f448, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 61e7b1ed198974c4799f51b6761d370d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
