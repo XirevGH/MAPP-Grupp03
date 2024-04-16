@@ -10,6 +10,8 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI, BeatSpawnerController, soundManager;
 
+    public string mainMenuSceneName = "MainMenu";
+
     private void Start()
     {
         soundManager = GameObject.FindGameObjectWithTag("SoundManager");
@@ -17,44 +19,48 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) // fixa en paus knapp
+        if (Input.GetButtonDown("PauseButton"))
         {
-            BeatSpawnerController.GetComponent<BeatSpawnerController>().ToggleBeatSpawn();
-            soundManager.GetComponent<SoundManager>().ToggleMusicPause();
-            if (GameIsPaused)
-            {
-                Resume();
-                
-            }
-            else
-            {
-                PauseGame();
-               
-            }
+            PauseButton();
         }
     }
 
+    public void PauseButton()
+    {
+
+        if (GameIsPaused)
+        {
+            Resume();
+        }
+        else
+        {
+            PauseGame();
+        }
+    }
     public void Resume()
     {
+        BeatSpawnerController.GetComponent<BeatSpawnerController>().ToggleBeatSpawn();
+        soundManager.GetComponent<SoundManager>().ToggleMusicPause();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
     void PauseGame()
     {
+        BeatSpawnerController.GetComponent<BeatSpawnerController>().ToggleBeatSpawn();
+        soundManager.GetComponent<SoundManager>().ToggleMusicPause();
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
-
-        //fixa så enemies, player och animationer pausas också
-
-        //SoundManager.Instance.Pause();
     }
 
     public void LoadMenu()
     {
+        BeatSpawnerController.GetComponent<BeatSpawnerController>().ToggleBeatSpawn();
+        GameIsPaused = false;
+        soundManager.GetComponent<SoundManager>().ToggleMusicPause();
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu"); // fixa så det inte är hard coded in - gör en variabel
+        SceneManager.LoadScene(mainMenuSceneName); 
     }
 
     public void QuitGame()
