@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 228196729}
   - component: {fileID: 228196728}
   m_Layer: 0
-  m_Name: Arrow Sprite
+  m_Name: Direction Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2102,7 +2102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1045494686}
   m_Layer: 0
-  m_Name: Arrow
+  m_Name: Direction Arrow Rotation Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2122,7 +2122,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 228196727}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 5383820192035051673}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1046395237
 GameObject:
@@ -5214,6 +5214,7 @@ Transform:
   - {fileID: 9212900539271790044}
   - {fileID: 1735380184}
   - {fileID: 924896730}
+  - {fileID: 1045494686}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5436226366269919643
@@ -10520,7 +10521,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
-  - {fileID: 1045494686}
   - {fileID: 5383820192035051673}
   - {fileID: 1707783738}
   - {fileID: 591040676}
