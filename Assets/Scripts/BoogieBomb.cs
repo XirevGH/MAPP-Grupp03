@@ -74,8 +74,10 @@ public class BoogieBomb : Weapon
     {
         StartCooldown();
         //TODO lägg till animation
+        usedAbility = true;
         bombMoving = true;
         Invoke("TouchedGround", 0.5f); //gör så att abilityn gör damage och visar att abilityn har använts
+        Invoke("AbilityCooldown", abilityCooldown);
 
     }
     private void TouchedGround()
@@ -84,6 +86,12 @@ public class BoogieBomb : Weapon
         Invoke("Explosion", 0.015f);
         this.GetComponent<SpriteRenderer>().enabled = true;
         dealDamage = true;
+        Invoke("ReturnBomb", 1f);
+    }
+
+    private void ReturnBomb()
+    {
+        bombMoving = false;
     }
 
 
@@ -92,5 +100,9 @@ public class BoogieBomb : Weapon
         hasExploded = false;
     }
 
+    private void AbilityCooldown()
+    {
+        usedAbility = false; 
+    }
 
 }
