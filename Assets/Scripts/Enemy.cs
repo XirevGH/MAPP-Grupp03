@@ -151,6 +151,7 @@ public class Enemy : MonoBehaviour
     private void DestroyGameObject()
     {
         DropXP();
+        MainManager.Instance.enemiesDefeated += 1;
         Destroy(gameObject);
     }
 

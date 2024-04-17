@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
 {
     private string saveFile;
     public PlayerStats playerStats;
-    [SerializeField] private GameObject beatSpawnerController,soundManager;
+    [SerializeField] private GameObject beatSpawnerController;
     public Camera mainCamera;
     public Tilemap tilemap;
 
@@ -19,14 +19,14 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         saveFile = Application.persistentDataPath + "/playerInfo.json";
-        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
         ReadFile();
         mainCamera = Camera.main;
         Enemy.movementSpeed = 4f;
+        Debug.Log("Start");
     }
 
     private void FixedUpdate()
-    {   Enemy.healthProsenIncreas += 0.0000f;
+    {
         Enemy.movementSpeed += 0.001f;
     }
     private void ReadFile()
@@ -45,9 +45,8 @@ public class GameController : MonoBehaviour
     public void GameOver()
     {
         File.WriteAllText(saveFile, playerStats.SaveToString());
-        SceneManager.LoadScene("MainMenu");
-        soundManager.GetComponent<SoundManager>().Die();
-
+        SceneManager.LoadScene("ResultsScreen");
+        beatSpawnerController.GetComponent<BeatSpawnerController>().ToggleBeatSpawn();
     }
 
     public BoundsInt GetBoundsFromCamera()
