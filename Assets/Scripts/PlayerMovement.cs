@@ -25,8 +25,8 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        horizontalValue = Input.GetAxis("Horizontal");
-        verticalValue = Input.GetAxis("Vertical");
+        horizontalValue = Input.GetAxisRaw("Horizontal");
+        verticalValue = Input.GetAxisRaw("Vertical");
 
         anim.SetFloat("MoveSpeed", Mathf.Abs(dynamicJoystick.Horizontal + dynamicJoystick.Vertical / 2));
         Vector2 inputVector = new Vector2(horizontalValue, verticalValue);
