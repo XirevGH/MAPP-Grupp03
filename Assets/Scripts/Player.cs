@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
         areaOfEffectSize = playerStats.areaOfEffectSize;
         pierce = playerStats.pierce;
         xpMultiplier = playerStats.xpMultiplier;
-        health = 10000000; 
+        health = 100; 
         defence = playerStats.defence; 
         movementSpeed = playerStats.movementSpeed; 
         xpToLevel = 100;
