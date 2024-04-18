@@ -36,7 +36,7 @@ public abstract class Weapon : MonoBehaviour
 
     public virtual void Attack()
     {
-        Debug.Log("Attack in Weapon");
+        
         StartCooldown();
     }
 

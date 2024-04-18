@@ -16,7 +16,7 @@ public class BassGuitar : Weapon
 
     public override void Attack()
     {
-        Debug.Log("Attck in Bass");
+       
         anim.SetTrigger("Attacking");
         base.Attack();
     }
