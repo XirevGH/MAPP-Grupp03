@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour
     {
         File.WriteAllText(saveFile, playerStats.SaveToString());
         SceneManager.LoadScene("ResultsScreen");
-        beatSpawnerController.GetComponent<BeatSpawnerController>().ToggleBeatSpawn();
+        beatSpawnerController.GetComponent<TriggerController>().ToggleTrigger();
     }
 
     public BoundsInt GetBoundsFromCamera()

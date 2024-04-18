@@ -39,7 +39,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Resume()
     {
-        BeatSpawnerController.GetComponent<BeatSpawnerController>().ToggleBeatSpawn();
+        BeatSpawnerController.GetComponent<TriggerController>().ToggleTrigger();
         soundManager.GetComponent<SoundManager>().ToggleMusicPause();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
@@ -47,7 +47,7 @@ public class PauseMenu : MonoBehaviour
     }
     void PauseGame()
     {
-        BeatSpawnerController.GetComponent<BeatSpawnerController>().ToggleBeatSpawn();
+        BeatSpawnerController.GetComponent<TriggerController>().ToggleTrigger();
         soundManager.GetComponent<SoundManager>().ToggleMusicPause();
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
