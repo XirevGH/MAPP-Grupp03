@@ -4,14 +4,12 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SaxophoneWeapon : Weapon
+public class Saxophone : ProjectileWeapon
 {
     public Transform shootingPoint;
     public GameObject notePrefab; 
 
     public float speed;
-    
-    public int penetration;  
 
     public int shoots;  
 
@@ -104,12 +102,4 @@ public class SaxophoneWeapon : Weapon
             }
         }
     }
-    public void UpgradePirceAndSpeed(int damageAdd, float speedAdd, int penetrationAdd, int shootsAdd) 
-    {
-        damage += damageAdd;
-        speed += speedAdd;
-        penetration += penetrationAdd;
-        shoots += shootsAdd;
-    }
-    
 }

@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private Slider hpSlider, xpSlider;
     [SerializeField] private TMP_Text levelText;
-    [SerializeField] private GameObject electricGuitar, lightningAoe, bassGuitar, saxophon;
+    [SerializeField] private GameObject electricGuitar, lightningAoe, bassGuitar, saxophone;
     [SerializeField] private GameController gameController;
     [SerializeField] private Player player;
     [SerializeField] private PlayerStats playerStats;
@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
             lightningAoe.SetActive(true);
         }
         if(level == 4){
-            saxophon.SetActive(true);
+            saxophone.SetActive(true);
         }
 
         if(level > 2)
@@ -116,12 +116,14 @@ public class Player : MonoBehaviour
             burstAmount += 3;
             lightningAoe.GetComponent<ParticleSystem>().emission.SetBursts(new ParticleSystem.Burst[] {new ParticleSystem.Burst(0.05f, burstAmount)});
         }
-         if(level > 4)
+        if (level > 4)
         {
-            if(level % 6 == 0){
-                saxophon.GetComponent<SaxophoneWeapon>().UpgradePirceAndSpeed(1, 0.1f ,1 ,1);
+            if (level % 6 == 0)
+            {
+                saxophone.GetComponent<Saxophone>().IncreasePenetrationAmount(1);
+                saxophone.GetComponent<Saxophone>().IncreaseTargetCount(1);
+                saxophone.GetComponent<Saxophone>().IncreaseDamage(1.1f);
             }
-            
         }
     }
 

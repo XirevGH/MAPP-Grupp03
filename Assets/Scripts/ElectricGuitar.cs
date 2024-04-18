@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class ElectricGuitar : Weapon
+public class ElectricGuitar : ProjectileWeapon
 {
     [SerializeField] private GameObject bolt;
-    [SerializeField] private int amountOfTargets;
+    
 
     private HashSet<GameObject> enemies = new HashSet<GameObject>();
     private GameObject closestEnemy;

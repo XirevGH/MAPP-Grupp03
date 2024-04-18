@@ -71,4 +71,9 @@ public abstract class Weapon : MonoBehaviour
     {
         return cooldownDuration;
     }
+
+    public void IncreaseDamage(float percentageAmount)
+    {
+        damage *= percentageAmount;
+    }
 }
