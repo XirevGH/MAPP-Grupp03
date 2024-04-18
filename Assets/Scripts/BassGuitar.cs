@@ -14,7 +14,7 @@ public class BassGuitar : Weapon
         anim = GetComponent<Animator>();
     }
 
-    public new void Attack()
+    public override void Attack()
     {
         Debug.Log("Attck in Bass");
         anim.SetTrigger("Attacking");
