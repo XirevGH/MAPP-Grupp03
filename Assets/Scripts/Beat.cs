@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class Beat : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed, increaseCooldownDuration, reduceCooldownDuration;
-    [SerializeField] private GameObject circle, particle, gameController, TriggerController;
+    [SerializeField] private float moveSpeed, increaseCooldownDuration, reduceCooldownDuration, MusicSpeedChange;
+    [SerializeField] private GameObject circle, particle, gameController, TriggerController, soundManager;
     [SerializeField] private GameObject[] weapons;
     private float percentageComplete, elapsedTime, beatLife;
 
@@ -16,6 +16,7 @@ public class Beat : MonoBehaviour
     private void Start()
     {
         TriggerController = GameObject.FindGameObjectWithTag("TriggerController");
+        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
         weapons = GameObject.FindGameObjectsWithTag("Weapon");
         gameController = GameObject.FindGameObjectWithTag("GameController");
         circleStartingScale = circle.transform.localScale;
@@ -48,7 +49,7 @@ public class Beat : MonoBehaviour
         {
             weapon.GetComponent<Weapon>().ChangeCooldownDuration(+increaseCooldownDuration);
         }
-
+        soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch - MusicSpeedChange;
         Instantiate(particle, this.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
@@ -61,7 +62,7 @@ public class Beat : MonoBehaviour
             {
                 weapon.GetComponent<Weapon>().ChangeCooldownDuration(-reduceCooldownDuration);
             }
-
+            soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch + MusicSpeedChange;
             Destroy(gameObject);
         }
     }

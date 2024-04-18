@@ -223,10 +223,12 @@ MonoBehaviour:
   moveSpeed: 5
   increaseCooldownDuration: 0.1
   reduceCooldownDuration: 0.1
+  MusicSpeedChange: 0.01
   circle: {fileID: 2807010619834201707}
   particle: {fileID: 2506341979681168310, guid: 4eefcb67bfd2afe44beea10856d5040b, type: 3}
   gameController: {fileID: 0}
   TriggerController: {fileID: 0}
+  soundManager: {fileID: 0}
   weapons: []
 --- !u!58 &4867680817826248142
 CircleCollider2D:
