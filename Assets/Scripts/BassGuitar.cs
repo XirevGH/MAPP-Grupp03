@@ -7,6 +7,20 @@ using static UnityEngine.GraphicsBuffer;
 public class BassGuitar : Weapon
 {
     HashSet<Collider2D> colliders = new HashSet<Collider2D>();
+    public Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
+    public new void Attack()
+    {
+        Debug.Log("Attck in Bass");
+        anim.SetTrigger("Attacking");
+        base.Attack();
+    }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         

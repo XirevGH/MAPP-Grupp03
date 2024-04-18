@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-    public Animator anim;
+   
     public float damage;
     public bool weaponReady;
     public float cooldownDuration;
@@ -13,7 +13,7 @@ public abstract class Weapon : MonoBehaviour
     private void Start()
     {
         weaponReady = true;
-        anim = GetComponent<Animator>();
+      
         
     }
 
@@ -29,13 +29,14 @@ public abstract class Weapon : MonoBehaviour
         }
         else
         {
+            
             Attack();
         }
     }
 
     public virtual void Attack()
     {
-        anim.SetTrigger("Attacking");
+        Debug.Log("Attack in Weapon");
         StartCooldown();
     }
 
