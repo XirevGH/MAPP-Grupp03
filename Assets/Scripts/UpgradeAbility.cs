@@ -19,4 +19,10 @@ public class UpgradeAbility : MonoBehaviour
     {
         weapon.IncreasePenetrationAmount(penetrationAmount);
     }
+
+    public Weapon ChooseRandomWeapon()
+    {
+        int randomWeapon = Random.Range(0, weapons.Length);
+        return weapons[randomWeapon];
+    }
 }
