@@ -24,28 +24,9 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
+        
 
-        horizontalValue = Input.GetAxisRaw("Horizontal");
-        verticalValue = Input.GetAxisRaw("Vertical");
 
-        anim.SetFloat("MoveSpeed", Mathf.Abs(dynamicJoystick.Horizontal + dynamicJoystick.Vertical / 2));
-        Vector2 inputVector = new Vector2(horizontalValue, verticalValue);
-        if (inputVector.magnitude > 1)
-        {
-            inputVector.Normalize();
-            horizontalValue = inputVector.x;
-            verticalValue = inputVector.y;
-
-        }
-
-        if (dynamicJoystick.Horizontal < 0f)
-        {
-            FlipSprite(true);
-        }
-        if (dynamicJoystick.Horizontal > 0f)
-        {
-            FlipSprite(false);
-        }
     }
 
     private void FlipSprite(bool flip)
@@ -55,13 +36,36 @@ public class PlayerMovement : MonoBehaviour
 
     public void FixedUpdate()
     {
+        horizontalValue = Input.GetAxisRaw("Horizontal");
+        verticalValue = Input.GetAxisRaw("Vertical");
+        Vector2 inputVector = new Vector2(horizontalValue, verticalValue);
+        if (inputVector.magnitude > 1)
+        {
+            inputVector.Normalize();
+            horizontalValue = inputVector.x;
+            verticalValue = inputVector.y;
+
+        }
+
+        if (dynamicJoystick.Horizontal < 0f || horizontalValue < 0f)
+        {
+            FlipSprite(true);
+        }
+        if (dynamicJoystick.Horizontal > 0f || horizontalValue > 0f)
+        {
+            FlipSprite(false);
+        }
+        
+
         if (dynamicJoystick.Horizontal != 0f || dynamicJoystick.Vertical != 0f)
         {
-            pos.position = new Vector2(pos.position.x + (dynamicJoystick.Horizontal / 100) * moveSpeed, pos.position.y + (dynamicJoystick.Vertical / 100) * moveSpeed);
+            anim.SetFloat("MoveSpeed", Mathf.Abs(dynamicJoystick.Horizontal + dynamicJoystick.Vertical / 2));
+            pos.position = new Vector2(pos.position.x + dynamicJoystick.Horizontal * moveSpeed * Time.deltaTime, pos.position.y + dynamicJoystick.Vertical * moveSpeed * Time.deltaTime);
         }
         else
         {
-            pos.position = new Vector2(pos.position.x + horizontalValue * moveSpeed, pos.position.y + verticalValue * moveSpeed);
+            anim.SetFloat("MoveSpeed", Mathf.Abs(horizontalValue + verticalValue / 2));
+            pos.position = new Vector2(pos.position.x + horizontalValue * moveSpeed * Time.deltaTime, pos.position.y + verticalValue * moveSpeed * Time.deltaTime);
         }
 
     }
