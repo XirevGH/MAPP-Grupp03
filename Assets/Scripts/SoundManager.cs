@@ -121,7 +121,7 @@ public class SoundManager : MonoBehaviour
 
     public void GoBackToMain()
     {
-        if (menuMusic.isPlaying == false)
+        if (!menuMusic.isPlaying)
         {
             menuMusic.Play();
         }
@@ -159,7 +159,6 @@ public class SoundManager : MonoBehaviour
             LowPassOff();
         }
         isInMenu = !isInMenu;
-        //Time.timeScale = Time.timeScale == 0 ? 1 : 0;
     }
 
     public void LowPassOn()

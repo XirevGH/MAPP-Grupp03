@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class BeatSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject beat;
-    [SerializeField] private GameObject parentForBeat;
+    [SerializeField] private GameObject parentForBeat, beat;
 
 
 

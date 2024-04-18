@@ -10,24 +10,30 @@ public class GameController : MonoBehaviour
 {
     private string saveFile;
     public PlayerStats playerStats;
-    [SerializeField] private GameObject beatSpawnerController;
+    [SerializeField] private GameObject triggerController, soundManager, trackswaper;
     public Camera mainCamera;
     public Tilemap tilemap;
+    public int currentTrackBPM;
 
     private HashSet<XPDrop> xpList = new HashSet<XPDrop>();
 
     private void Awake()
     {
         saveFile = Application.persistentDataPath + "/playerInfo.json";
+        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
         ReadFile();
         mainCamera = Camera.main;
         Enemy.movementSpeed = 4f;
         Debug.Log("Start");
     }
-
+    private void Update()
+    {
+        currentTrackBPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswaper.GetComponent<TrackSwaper>().i];
+    }
     private void FixedUpdate()
     {
         Enemy.movementSpeed += 0.001f;
+       
     }
     private void ReadFile()
     {
@@ -46,7 +52,7 @@ public class GameController : MonoBehaviour
     {
         File.WriteAllText(saveFile, playerStats.SaveToString());
         SceneManager.LoadScene("ResultsScreen");
-        beatSpawnerController.GetComponent<TriggerController>().ToggleTrigger();
+        triggerController.GetComponent<TriggerController>().ToggleTrigger();
     }
 
     public BoundsInt GetBoundsFromCamera()
@@ -69,5 +75,9 @@ public class GameController : MonoBehaviour
         return xpList;
     }
 
+    public int GetCurrentTrackBPM()
+    {
+        return currentTrackBPM;
+    }
     
 }

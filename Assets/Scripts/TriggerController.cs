@@ -10,7 +10,7 @@ public class TriggerController : MonoBehaviour
 {
     [SerializeField] public float currentTrackBPM;
     [SerializeField] GameObject trackswaper;
-    [SerializeField] private Tringger[] trigger;
+    [SerializeField] public Trigger[] triggers;
     [SerializeField] public bool isTriggering;
     public GameObject soundManager;
 
@@ -20,9 +20,9 @@ public class TriggerController : MonoBehaviour
 
 
     [System.Serializable]
-    public class Tringger
+    public class Trigger
     {
-        [SerializeField] private float noteValue;
+        [SerializeField] public float noteValue;
         [SerializeField] private UnityEvent quaterNoteTrigger;
         private int lastQuaterNote;
         public bool isTriggering;
@@ -58,7 +58,7 @@ public class TriggerController : MonoBehaviour
         isTriggering = true;
         soundManager = GameObject.FindGameObjectWithTag("SoundManager");
         inGameMusic = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
-        trigger[0].isTriggering = isTriggering;
+        triggers[0].isTriggering = isTriggering;
     }
 
 
@@ -70,8 +70,8 @@ public class TriggerController : MonoBehaviour
         
         if (isTriggering)
         {
-            float sampledTime = (inGameMusic.timeSamples / (inGameMusic.clip.frequency * trigger[0].GetIntervalLength(currentTrackBPM)));
-            trigger[0].CheckForNewQuaterNote(sampledTime);
+            float sampledTime = (inGameMusic.timeSamples / (inGameMusic.clip.frequency * triggers[0].GetIntervalLength(currentTrackBPM)));
+            triggers[0].CheckForNewQuaterNote(sampledTime);
                 
 
             
@@ -83,11 +83,16 @@ public class TriggerController : MonoBehaviour
 
     public void ToggleTrigger()
     {
-        trigger[0].isTriggering = !trigger[0].isTriggering;
+        triggers[0].isTriggering = !triggers[0].isTriggering;
 
 
 
         isTriggering = !isTriggering;
+    }
+
+    public Trigger GetTrigger(int triggerNumber) 
+    {
+        return triggers[triggerNumber];
     }
 
 
