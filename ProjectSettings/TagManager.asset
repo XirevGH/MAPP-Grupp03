@@ -12,6 +12,7 @@ TagManager:
   - Weapon
   - Music Collider
   - XPDrop20
+  - TriggerController
   layers:
   - Default
   - TransparentFX

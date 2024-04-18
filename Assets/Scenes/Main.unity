@@ -739,9 +739,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 5436226366269919644}
-  beatSpawnerController: {fileID: 1128267155804970998}
+  triggerController: {fileID: 1128267155804970998}
+  soundManager: {fileID: 1431856008}
+  trackswaper: {fileID: 2662689527024895925}
   mainCamera: {fileID: 519420031}
   tilemap: {fileID: 1947654048}
+  currentTrackBPM: 0
 --- !u!4 &482028541
 Transform:
   m_ObjectHideFlags: 0
@@ -4788,8 +4791,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f40ad650baf3b84428ec00e710a93c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beat: {fileID: 7929235589256512294, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
   parentForBeat: {fileID: 6934043507771099633}
+  beat: {fileID: 7929235589256512294, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
 --- !u!1 &1128267155804970998
 GameObject:
   m_ObjectHideFlags: 0
@@ -4801,8 +4804,8 @@ GameObject:
   - component: {fileID: 9212900539271790044}
   - component: {fileID: 7983877748001515517}
   m_Layer: 0
-  m_Name: BeatSpawnerController
-  m_TagString: Untagged
+  m_Name: TriggerController
+  m_TagString: TriggerController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5616,9 +5619,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db05540e51175fa4396ef5042848ff97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BPM: 100
+  currentTrackBPM: 100
   trackswaper: {fileID: 2662689527024895925}
-  spawners:
+  triggers:
   - noteValue: 8
     quaterNoteTrigger:
       m_PersistentCalls:
@@ -5647,25 +5650,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    isSpawning: 0
-  - noteValue: 4
-    quaterNoteTrigger:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 365822640933944585}
-          m_TargetAssemblyTypeName: KillTheBeat, Assembly-CSharp
-          m_MethodName: DestroyFirstChild
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    isSpawning: 0
-  isSpawning: 1
+    isTriggering: 0
+  isTriggering: 0
   soundManager: {fileID: 1431856008}
 --- !u!4 &8336072371526926092
 Transform:
