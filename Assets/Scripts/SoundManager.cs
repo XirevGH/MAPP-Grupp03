@@ -207,6 +207,7 @@ public class SoundManager : MonoBehaviour
 
             }
             musicSource1.GetComponent<AudioSource>().Stop();
+            musicSource1.GetComponent<AudioSource>().pitch = 1;
             Debug.Log("musicSource1 Stop");
             
 
@@ -225,6 +226,7 @@ public class SoundManager : MonoBehaviour
 
             }
             musicSource2.GetComponent<AudioSource>().Stop();
+            musicSource2.GetComponent<AudioSource>().pitch = 1;
         }
       
     
