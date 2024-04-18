@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyBaunser;
     public GameObject enemyDanser;
     public GameObject enemyDrunkerd;
+    public GameObject enemyDrunkerdBOSS;
     public GameObject parent;
     public GameObject[] spawnLocations;
     public GameObject player;
@@ -49,9 +50,11 @@ public class EnemySpawner : MonoBehaviour
             Instantiate(enemyDrunkerd, position, Quaternion.identity, parent.GetComponent<Transform>());
         }else if(waiveCount < 120){
             Instantiate(enemyDanser, position, Quaternion.identity, parent.GetComponent<Transform>());
-        }else{
+        }else if(waiveCount < 160){
             Instantiate(enemyBaunser, position, Quaternion.identity, parent.GetComponent<Transform>());
-        }
+        }else{
+            Instantiate(enemyDanser, position, Quaternion.identity, parent.GetComponent<Transform>());
+        }   
         
     }
 
