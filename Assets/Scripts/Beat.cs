@@ -7,30 +7,37 @@ using UnityEngine;
 public class Beat : MonoBehaviour
 {
     [SerializeField] private float moveSpeed, increaseCooldownDuration, reduceCooldownDuration;
-    [SerializeField] private GameObject circle, particle;
-    //private GameObject currentWeapon;
-    [SerializeField] GameObject[] weapons;
-    //private RectTransform rectTransform;
-    private float time;
+    [SerializeField] private GameObject circle, particle, gameController;
+    [SerializeField] private GameObject[] weapons;
+    private float percentageComplete, elapsedTime, beatLife;
+    private int BPM;
+
+    private Vector3 circleStartingScale;
     private void Start()
     {
         weapons = GameObject.FindGameObjectsWithTag("Weapon");
+        gameController = GameObject.FindGameObjectWithTag("GameController");
+        circleStartingScale = circle.transform.localScale;
+        
 
     }
 
     void FixedUpdate()
     {
+        elapsedTime += Time.deltaTime;
+        percentageComplete = elapsedTime / beatLife;
+        GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, percentageComplete);
+        circle.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, percentageComplete);
 
-        GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, time);
-        circle.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, time);
+        circle.transform.localScale = Vector3.Lerp(circleStartingScale, new Vector3(0, 0, 0), percentageComplete);
 
-        circle.transform.localScale = Vector3.Lerp(new Vector3(10, 10, 10), new Vector3(1, 1, 1), time);
-        time += Time.deltaTime * 0.2f;
-        if (Mathf.FloorToInt(time) == 1)
+        
+      
+        if (Mathf.FloorToInt(percentageComplete) == 1)
         {
             DestroyNote();
         }
-
+       
     }
 
     public void DestroyNote()

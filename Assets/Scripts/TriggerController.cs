@@ -6,12 +6,12 @@ using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
-public class BeatSpawnerController : MonoBehaviour
+public class TriggerController : MonoBehaviour
 {
-    [SerializeField] private float BPM;
+    [SerializeField] public float currentTrackBPM;
     [SerializeField] GameObject trackswaper;
-    [SerializeField] private Spawners[] spawners;
-    [SerializeField] public bool isSpawning;
+    [SerializeField] private Tringger[] trigger;
+    [SerializeField] public bool isTriggering;
     public GameObject soundManager;
 
 
@@ -20,12 +20,12 @@ public class BeatSpawnerController : MonoBehaviour
 
 
     [System.Serializable]
-    public class Spawners
+    public class Tringger
     {
         [SerializeField] private float noteValue;
         [SerializeField] private UnityEvent quaterNoteTrigger;
         private int lastQuaterNote;
-        public bool isSpawning;
+        public bool isTriggering;
         public float GetIntervalLength(float BPM)
         {
 
@@ -40,7 +40,7 @@ public class BeatSpawnerController : MonoBehaviour
             {
                 lastQuaterNote = Mathf.FloorToInt(interval);
 
-                if(isSpawning)
+                if(isTriggering)
                 {
                     quaterNoteTrigger.Invoke();
                 } 
@@ -55,10 +55,10 @@ public class BeatSpawnerController : MonoBehaviour
 
     void Start()
     {
-        isSpawning = true;
+        isTriggering = true;
         soundManager = GameObject.FindGameObjectWithTag("SoundManager");
         inGameMusic = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
-        spawners[0].isSpawning = isSpawning;
+        trigger[0].isTriggering = isTriggering;
     }
 
 
@@ -66,12 +66,12 @@ public class BeatSpawnerController : MonoBehaviour
     {
         inGameMusic = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
 
-        BPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswaper.GetComponent<TrackSwaper>().i];
+        currentTrackBPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswaper.GetComponent<TrackSwaper>().i];
         
-        if (isSpawning)
+        if (isTriggering)
         {
-            float sampledTime = (inGameMusic.timeSamples / (inGameMusic.clip.frequency * spawners[0].GetIntervalLength(BPM)));
-            spawners[0].CheckForNewQuaterNote(sampledTime);
+            float sampledTime = (inGameMusic.timeSamples / (inGameMusic.clip.frequency * trigger[0].GetIntervalLength(currentTrackBPM)));
+            trigger[0].CheckForNewQuaterNote(sampledTime);
                 
 
             
@@ -81,13 +81,13 @@ public class BeatSpawnerController : MonoBehaviour
 
     }
 
-    public void ToggleBeatSpawn()
+    public void ToggleTrigger()
     {
-        spawners[0].isSpawning = !spawners[0].isSpawning;
+        trigger[0].isTriggering = !trigger[0].isTriggering;
 
 
 
-        isSpawning = !isSpawning;
+        isTriggering = !isTriggering;
     }
 
 
