@@ -6,7 +6,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class BassGuitar : Weapon
 {
-    HashSet<Collider2D> colliders = new HashSet<Collider2D>();
+   public  HashSet<Collider2D> colliders = new HashSet<Collider2D>();
     public Animator anim;
 
     private void Start()

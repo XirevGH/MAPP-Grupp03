@@ -6,7 +6,7 @@ using UnityEngine;
 public class Yoyo : Weapon
 {
 
-    private float angle;
+    public float angle;
   
     private void FixedUpdate()
     {
