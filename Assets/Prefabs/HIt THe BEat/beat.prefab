@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 1148268027497322974}
   - component: {fileID: 2085584343929549221}
   - component: {fileID: 3118479947898944213}
-  - component: {fileID: 4584299650944298638}
+  - component: {fileID: 4867680817826248142}
   m_Layer: 6
   m_Name: beat
   m_TagString: Beat
@@ -225,9 +225,11 @@ MonoBehaviour:
   reduceCooldownDuration: 0.1
   circle: {fileID: 2807010619834201707}
   particle: {fileID: 2506341979681168310, guid: 4eefcb67bfd2afe44beea10856d5040b, type: 3}
+  gameController: {fileID: 0}
+  TriggerController: {fileID: 0}
   weapons: []
---- !u!61 &4584299650944298638
-BoxCollider2D:
+--- !u!58 &4867680817826248142
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -255,19 +257,9 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.36117554, y: -0.03807068}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 3.9553833, y: 7.4147034}
-  m_EdgeRadius: 0
+  m_Radius: 1
