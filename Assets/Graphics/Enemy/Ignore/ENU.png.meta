@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 14a195ba32808f14b83fe171c1bedd10
+guid: 7cb9b49a373dff74baffbacd9cc13888
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,474 +123,390 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DrunkEnemy_2
+      name: ENU_3
       rect:
         serializedVersion: 2
-        x: 237
-        y: 749
-        width: 26
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 419474229597d47408d3731c95d31b49
-      internalID: 1430327228
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DrunkEnemy_3
-      rect:
-        serializedVersion: 2
-        x: 337
-        y: 749
+        x: 336
+        y: 448
         width: 25
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 50
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3793660c3632994ea5c9c6ae79d8f9f
-      internalID: 473657975
+      spriteID: 22af99ed96a822445bcc7a416dec7927
+      internalID: -92880308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DrunkEnemy_4
+      name: ENU_4
       rect:
         serializedVersion: 2
-        x: 438
-        y: 748
+        x: 436
+        y: 448
         width: 24
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 50
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a6669a9de5618e489fac94976c1d12a
-      internalID: 1583616789
+      spriteID: 158cae858d5e1f241aa81d317f3cea3a
+      internalID: 883418839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DrunkEnemy_5
+      name: ENU_8
       rect:
         serializedVersion: 2
-        x: 538
-        y: 749
-        width: 24
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e25a8734f9e5ba64a805f6ab77f9a21c
-      internalID: -1021862460
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DrunkEnemy_6
-      rect:
-        serializedVersion: 2
-        x: 639
-        y: 749
+        x: 38
+        y: 348
         width: 23
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a926baa8f8ee3364e9eed0a368e18286
-      internalID: 1912827005
+      spriteID: a7f2a6df4f66c0149961672c485714e5
+      internalID: -355622737
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DrunkEnemy_7
+      name: ENU_9
       rect:
         serializedVersion: 2
-        x: 740
-        y: 749
+        x: 138
+        y: 349
+        width: 23
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 284caedd255b0544abcaeb66de055e5a
+      internalID: -1539949433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENU_10
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 349
         width: 22
         height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 758aa4c699e06cb488be19a058420f8d
-      internalID: -1509318177
+      spriteID: 019d178ddac240f419cf9123f4d4958e
+      internalID: 1951597799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DrunkEnemy_10
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 650
-        width: 23
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f7771de1999c2d47a6e4f8795291ede
-      internalID: 57311494
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DrunkEnemy_11
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 650
-        width: 26
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36980e32a54cbe84ea4bc1894c2ea2fb
-      internalID: -1122321041
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DrunkEnemy_12
-      rect:
-        serializedVersion: 2
-        x: 237
-        y: 650
-        width: 28
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be81fe10232d2144b9064efc76677eb1
-      internalID: 446392157
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DrunkEnemy_13
+      name: ENU_11
       rect:
         serializedVersion: 2
         x: 338
-        y: 650
+        y: 350
+        width: 23
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76cbe92e0d9e15047978cd713e3dd9c6
+      internalID: 1332511227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENU_12
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 350
+        width: 26
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6208ea85ce5974489a71ca171d83094
+      internalID: -1124931227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENU_13
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 250
+        width: 29
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a535e9db7d477114fa9a16f2cbe36471
+      internalID: -1945193622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENU_14
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 250
         width: 25
         height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93ee8743e23b89b41a074d20d485e0c8
-      internalID: 41939547
+      spriteID: bc1ad2c108a2d1f4e817efc2753c5ef3
+      internalID: -56083074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DrunkEnemy_14
+      name: ENU_15
       rect:
         serializedVersion: 2
-        x: 440
-        y: 651
+        x: 239
+        y: 250
         width: 21
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac621a563935d2a46bde57d6fee4ef63
+      internalID: -1449081664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENU_16
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 251
+        width: 22
         height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b0829178104dec4786aa64f84506fd7
-      internalID: 1909745863
+      spriteID: a75792c78f746344ebf5cdf59cb3b4a7
+      internalID: -781772795
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DrunkEnemy_15
+      name: ENU_17
       rect:
         serializedVersion: 2
-        x: 540
-        y: 650
-        width: 21
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3fe71f0725becfa4aabac9e03c140b8c
-      internalID: 1157558700
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DrunkEnemy_16
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 650
-        width: 22
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b69f39be52fa0e45941e707e5587898
-      internalID: 449611006
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DrunkEnemy_17
-      rect:
-        serializedVersion: 2
-        x: 740
-        y: 650
-        width: 22
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 50077720f8c7b6949b8ba72efe3aa61e
-      internalID: -1340518804
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DrunkEnemy_18
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 550
+        x: 438
+        y: 250
         width: 23
         height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 168779fe19967e149a02def7f1449cc8
-      internalID: -1261277762
+      spriteID: c9817160ce0eced488c69b07ff861089
+      internalID: 455556887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DrunkEnemy_19
+      name: ENU_18
       rect:
         serializedVersion: 2
-        x: 140
-        y: 550
-        width: 22
+        x: 38
+        y: 150
+        width: 23
         height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 619533870660985409a7b022d4053624
-      internalID: 522465075
+      spriteID: b879558563a44854e9bd392e46e24d89
+      internalID: 18389467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DrunkEnemy_20
+      name: ENU_19
       rect:
         serializedVersion: 2
-        x: 240
-        y: 550
-        width: 22
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: df56fe5d1628e03419881beff8601b2c
-      internalID: -1541628742
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DrunkEnemy_21
-      rect:
-        serializedVersion: 2
-        x: 340
-        y: 550
-        width: 22
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b4800190cd4f47844af6e74909ffb67c
-      internalID: 1011796775
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DrunkEnemy_25
-      rect:
-        serializedVersion: 2
-        x: 739
-        y: 550
+        x: 138
+        y: 150
         width: 24
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65b4075cb693cc84e94f976e15b7f595
-      internalID: 174098738
+      spriteID: 0fe1b55bdc3ba3247bf163cd62c55295
+      internalID: -1728448720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DrunkEnemy_24
+      name: ENU_20
       rect:
         serializedVersion: 2
-        x: 640
-        y: 550
+        x: 239
+        y: 150
+        width: 22
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1d3aff60995af44da159e08ee216cde
+      internalID: 1091010179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENU_21
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 150
+        width: 23
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98eb2c8bb501ab84ea31d3507226623c
+      internalID: -1409183553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENU_22
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 149
         width: 23
         height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44521c70b7adeb9458e28fc44d6da05e
-      internalID: -72728870
+      spriteID: a43eb5078c382b64b8f649974433ab30
+      internalID: -736112463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DrunkEnemy_1
+      name: ENU_23
       rect:
         serializedVersion: 2
-        x: 440
-        y: 550
+        x: 39
+        y: 49
         width: 22
         height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5edefe61a986a054a9f06430d49b1e0c
-      internalID: -403236884
+      spriteID: 4feaec50eba0a7549aabe07d8f3169c3
+      internalID: 1121580039
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DrunkEnemy_9
+      name: ENU_0
       rect:
         serializedVersion: 2
-        x: 540
-        y: 550
-        width: 23
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 708e24cc642dda94e8c7e6fbf122128d
-      internalID: -488087532
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DrunkEnemy_22
-      rect:
-        serializedVersion: 2
-        x: 134
+        x: 32
         y: 449
-        width: 28
+        width: 29
         height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -599,18 +515,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfcba088b986aa045a14966ae2f45c06
-      internalID: 2092867731
+      spriteID: 4e53cf9a35b86034eab134ebfe251f31
+      internalID: 942710494
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DrunkEnemy_0
+      name: ENU_1
       rect:
         serializedVersion: 2
-        x: 137
-        y: 749
+        x: 135
+        y: 449
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6204cb299ef309742be8722b4a097797
+      internalID: 335836017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENU_2
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 449
         width: 26
         height: 50
       alignment: 0
@@ -620,19 +557,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69f40fcd6a5197048b2d0887093ec575
-      internalID: -513226384
+      spriteID: 4271c9e0c15fb3c45843ae9c6ce43c78
+      internalID: 2026247055
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DrunkEnemy_8
+      name: ENU_5
       rect:
         serializedVersion: 2
-        x: 37
-        y: 450
-        width: 25
+        x: 435
+        y: 49
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98d569d00a2c38c4d9a39f98fb8f2be9
+      internalID: 489045987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENU_6
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 50
+        width: 23
         height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -641,8 +599,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9119f6f7d29b27340bf02158873d941c
-      internalID: -969127072
+      spriteID: 5b166484735393b408438f7025ce3feb
+      internalID: 2129324964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENU_7
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 50
+        width: 23
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e81db5d347bb9934a9830a9def1e9759
+      internalID: 2124423230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENU_24
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 50
+        width: 22
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da2eb4833584f1046bcdf6e016585fa7
+      internalID: -1419034891
       vertices: []
       indices: 
       edges: []
@@ -658,41 +658,38 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DrunkEnemy_0: -513226384
-      DrunkEnemy_1: -403236884
-      DrunkEnemy_10: 57311494
-      DrunkEnemy_11: -1122321041
-      DrunkEnemy_12: 446392157
-      DrunkEnemy_13: 41939547
-      DrunkEnemy_14: 1909745863
-      DrunkEnemy_15: 1157558700
-      DrunkEnemy_16: 449611006
-      DrunkEnemy_17: -1340518804
-      DrunkEnemy_18: -1261277762
-      DrunkEnemy_19: 522465075
-      DrunkEnemy_2: 1430327228
-      DrunkEnemy_20: -1541628742
-      DrunkEnemy_21: 1011796775
-      DrunkEnemy_22: 2092867731
-      DrunkEnemy_23: 1893040218
-      DrunkEnemy_24: -72728870
-      DrunkEnemy_25: 174098738
-      DrunkEnemy_26: 229565529
-      DrunkEnemy_27: -1469915990
-      DrunkEnemy_28: 970087381
-      DrunkEnemy_29: -1266932855
-      DrunkEnemy_3: 473657975
-      DrunkEnemy_30: -725925201
-      DrunkEnemy_31: 1090116895
-      DrunkEnemy_32: -148887342
-      DrunkEnemy_33: 1217614122
-      DrunkEnemy_34: 1279843860
-      DrunkEnemy_4: 1583616789
-      DrunkEnemy_5: -1021862460
-      DrunkEnemy_6: 1912827005
-      DrunkEnemy_7: -1509318177
-      DrunkEnemy_8: -969127072
-      DrunkEnemy_9: -488087532
+      ENU_0: 942710494
+      ENU_1: 335836017
+      ENU_10: 1951597799
+      ENU_11: 1332511227
+      ENU_12: -1124931227
+      ENU_13: -1945193622
+      ENU_14: -56083074
+      ENU_15: -1449081664
+      ENU_16: -781772795
+      ENU_17: 455556887
+      ENU_18: 18389467
+      ENU_19: -1728448720
+      ENU_2: 2026247055
+      ENU_20: 1091010179
+      ENU_21: -1409183553
+      ENU_22: -736112463
+      ENU_23: 1121580039
+      ENU_24: -1419034891
+      ENU_25: 113873324
+      ENU_26: 2066104397
+      ENU_27: 1201351683
+      ENU_28: -1119527364
+      ENU_29: 1894525463
+      ENU_3: -92880308
+      ENU_30: -25100302
+      ENU_31: -1253453693
+      ENU_4: 883418839
+      ENU_5: 489045987
+      ENU_6: 2129324964
+      ENU_7: 2124423230
+      ENU_8: -355622737
+      ENU_9: -1539949433
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
