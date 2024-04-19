@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 1982550428750947484}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.35, y: 0, z: 0}
-  m_LocalScale: {x: 6.8544006, y: 0.0325, z: 1}
+  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalScale: {x: 4, y: 0.0325, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3913786379147310409}
@@ -135,6 +135,16 @@ MonoBehaviour:
   weaponReady: 0
   cooldownDuration: 10
   rotateSpeed: 1
+  colliderStartingOffset: 4
+  colliderSuperModeOffset: 7
+  ball: {fileID: 5725440702849570542}
+  yoyoString: {fileID: 1982550428750947484}
+  ballStartPosition: {x: 4, y: 0, z: 0}
+  ballSuperModePosition: {x: 7, y: 0, z: 0}
+  stringStartPosition: {x: 2, y: 0, z: 0}
+  stringSuperModePosition: {x: 3.5, y: 0, z: 0}
+  stringStartScale: {x: 4, y: 0.0325, z: 0}
+  stringSuperModeScale: {x: 7, y: 0.0325, z: 0}
   angle: 0
   superModeTime: 4
   elapsedTime: 0
@@ -172,7 +182,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 6.97, y: 0}
+  m_Offset: {x: 4, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
 --- !u!1 &5725440702849570542
@@ -201,7 +211,7 @@ Transform:
   m_GameObject: {fileID: 5725440702849570542}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7, y: 0, z: 0}
+  m_LocalPosition: {x: 4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

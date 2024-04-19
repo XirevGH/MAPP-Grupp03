@@ -5,16 +5,24 @@ using UnityEngine;
 
 public class Yoyo : Weapon
 {
-    [SerializeField] private float rotateSpeed;
+    [SerializeField] private float rotateSpeed, colliderStartingOffset, colliderSuperModeOffset;
+    [SerializeField] private GameObject ball, yoyoString;
+    [SerializeField] private Vector3 ballStartPosition, ballSuperModePosition, stringStartPosition, stringSuperModePosition, stringStartScale, stringSuperModeScale;
+
     public float angle, superModeTime, elapsedTime, percentageComplete, superModeMultiplier;
-    public Vector3 ballStartPosition, ballSuperModePosition, stringStartPosition, stringSuperModePosition;
+
     private bool superMode;
-    private GameObject ball, yoyoString;
+    private float lerpTime, lerpElapsedTime;
+
+    private CircleCollider2D circleColl;
 
     private void Start()
     {
         superMode = false;
+        lerpTime = superModeTime / 5;
+        circleColl = GetComponent<CircleCollider2D>();
     }
+
     private void FixedUpdate()
     {
         if (Time.timeScale == 0)
@@ -26,8 +34,7 @@ public class Yoyo : Weapon
         { 
          angle = 0;
         }
-        this.transform.eulerAngles = new Vector3(0, 0, angle);
-
+        transform.eulerAngles = new Vector3(0, 0, angle);
        
         if (superMode)
         {
@@ -38,46 +45,64 @@ public class Yoyo : Weapon
             angle += rotateSpeed;
             superMode = false;
         }
-        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-
         if (other.gameObject.CompareTag("Enemy"))
         {
             DealDamage(other);
         }
-       
     }
 
     public void SuperMode()
     {
-
         angle += rotateSpeed * superModeMultiplier;
         elapsedTime += Time.deltaTime;
         percentageComplete = elapsedTime / superModeTime;
+        if (percentageComplete < 0.8f)
+        {
+            ExtendYoyoDistance();
+        }
+        else if (percentageComplete >= 0.8f)
+        {
+            ResetYoyoDistance();
+        }
         if (Mathf.FloorToInt(percentageComplete) == 1)
         {
             ResetSuperMode();
         }
-
-        
     }
 
-    private IEnumerator IncreaseRadiasSuperMode()
+    private void ExtendYoyoDistance()
     {
-        //ball.transform.position = Vector3.Lerp(ballStartPosition, ballSuperModePosition, );
-
-        yield return null;
-
+        float percentageComplete = elapsedTime / lerpTime;
+        ball.transform.localPosition = Vector3.Lerp(ballStartPosition, ballSuperModePosition, percentageComplete);
+        yoyoString.transform.localPosition = Vector3.Lerp(stringStartPosition, stringSuperModePosition, percentageComplete);
+        yoyoString.transform.localScale = Vector3.Lerp(stringStartScale, stringSuperModeScale, percentageComplete);
+        circleColl.offset = new Vector2(Mathf.Lerp(colliderStartingOffset, colliderSuperModeOffset, percentageComplete), 0f);
     }
+
+    private void ResetYoyoDistance()
+    {
+        lerpElapsedTime += Time.deltaTime;
+        float percentageComplete = lerpElapsedTime / lerpTime;
+        ball.transform.localPosition = Vector3.Lerp(ballSuperModePosition, ballStartPosition, percentageComplete);
+        yoyoString.transform.localPosition = Vector3.Lerp(stringSuperModePosition, stringStartPosition, percentageComplete);
+        yoyoString.transform.localScale = Vector3.Lerp(stringSuperModeScale, stringStartScale, percentageComplete);
+        circleColl.offset = new Vector2(Mathf.Lerp(colliderSuperModeOffset, colliderStartingOffset, percentageComplete), 0f);
+    }
+
     public void ResetSuperMode()
     {
         percentageComplete = 0;
         elapsedTime = 0;
+        lerpElapsedTime = 0;
         superMode = false;
-
+        ball.transform.localPosition = ballStartPosition;
+        yoyoString.transform.localPosition = stringStartPosition;
+        yoyoString.transform.localScale = stringStartScale;
+        circleColl.offset = new Vector2(colliderStartingOffset, 0f);
     }
 
     public override void Attack()
