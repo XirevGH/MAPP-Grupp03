@@ -13,6 +13,7 @@ TagManager:
   - Music Collider
   - XPDrop20
   - TriggerController
+  - LeftJoyStick
   layers:
   - Default
   - TransparentFX
