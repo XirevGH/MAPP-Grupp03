@@ -7,6 +7,7 @@ public class Yoyo : Weapon
 {
     [SerializeField] private float rotateSpeed;
     public float angle, superModeTime, elapsedTime, percentageComplete, superModeMultiplier;
+    public Vector3 ballStartPosition, ballSuperModePosition, stringStartPosition, stringSuperModePosition;
     private bool superMode;
     private GameObject ball, yoyoString;
 
@@ -64,14 +65,14 @@ public class Yoyo : Weapon
         
     }
 
-    //private IEnumerator IncreaseRadiasSuperMode()
-    //{
-    //    //ball.transform.Move
+    private IEnumerator IncreaseRadiasSuperMode()
+    {
+        //ball.transform.position = Vector3.Lerp(ballStartPosition, ballSuperModePosition, );
 
-    //    //yield return null;
+        yield return null;
 
-    //}
-        public void ResetSuperMode()
+    }
+    public void ResetSuperMode()
     {
         percentageComplete = 0;
         elapsedTime = 0;
