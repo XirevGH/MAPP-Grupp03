@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private PlayerStats playerStats;
 
+    private Weapon[] currentWeapons;
     private int money;
     private float moneyMultiplier;
     private int damage;

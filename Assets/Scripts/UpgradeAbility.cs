@@ -5,6 +5,12 @@ using UnityEngine;
 public class UpgradeAbility : MonoBehaviour
 {
     public Weapon[] weapons;
+    List<Weapon> weaponList;
+
+    void Start()
+    {
+        weaponList = new List<Weapon>(weapons);
+    }
 
     public void UpgradeDamage(Weapon weapon, float percentageIncrease)
     {
@@ -22,7 +28,17 @@ public class UpgradeAbility : MonoBehaviour
 
     public Weapon ChooseRandomWeapon()
     {
-        int randomWeapon = Random.Range(0, weapons.Length);
-        return weapons[randomWeapon];
+        int randomWeapon = Random.Range(0, weaponList.Count);
+        return weaponList[randomWeapon];
+    }
+
+    public List<Weapon> GetAvailableWeapons()
+    {
+        return new List<Weapon>(weaponList);
+    }
+
+    public void ChooseWeapon(Weapon weapon)
+    {
+        weaponList.Remove(weapon);
     }
 }
