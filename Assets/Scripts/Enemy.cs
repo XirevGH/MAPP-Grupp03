@@ -42,6 +42,7 @@ public class Enemy : MonoBehaviour
     public float health;
 
     public float thisMovementSpeed;
+    public bool isSlow;
 
     public TMP_Text damageNumbers;
     public Animator damageNumberAnim;
@@ -53,12 +54,17 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         sprite = GetComponent<SpriteRenderer>();
         thisMovementSpeed = movementSpeed;
+        isSlow = false;
     }
 
     void FixedUpdate()
     {
         damageNumberWindow -= Time.deltaTime;
-     
+        if (!isSlow)
+        {
+            thisMovementSpeed = movementSpeed;
+        }
+
         if (IsAlive()) 
         {
             if (Vector3.Distance(player.transform.position, transform.position) < 0.5)

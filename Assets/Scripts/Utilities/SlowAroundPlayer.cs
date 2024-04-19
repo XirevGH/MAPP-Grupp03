@@ -5,32 +5,19 @@ using UnityEngine;
 
 public class SlowAroundPlayer : MonoBehaviour
 {
-    [SerializeField] private float slowSpeed;
+    [SerializeField] private float slowSpeedPercent;
     private HashSet<GameObject> enemies = new HashSet<GameObject>();
-    private Dictionary<GameObject, float> enemiesMoveSpeed = new Dictionary<GameObject, float>();
+    private Dictionary<GameObject, float> enemiesOriginalMoveSpeed = new Dictionary<GameObject, float>();
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        foreach (GameObject enemy in enemies)
-        {
-            enemy.GetComponent<Enemy>().thisMovementSpeed = slowSpeed;
-           
-        }
-    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
         {
+            other.gameObject.GetComponent<Enemy>().thisMovementSpeed = other.gameObject.GetComponent<Enemy>().thisMovementSpeed * slowSpeedPercent;
+            other.gameObject.GetComponent<Enemy>().isSlow = true;
             enemies.Add(other.gameObject);
-            enemiesMoveSpeed.Add(other.gameObject, other.gameObject.GetComponent<Enemy>().thisMovementSpeed);
-            
+            enemiesOriginalMoveSpeed.Add(other.gameObject, other.gameObject.GetComponent<Enemy>().thisMovementSpeed);
+           
         }
     }
 
@@ -38,9 +25,10 @@ public class SlowAroundPlayer : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<Enemy>().thisMovementSpeed = enemiesMoveSpeed[other.gameObject];
+            other.gameObject.GetComponent<Enemy>().isSlow = false;
+            other.gameObject.GetComponent<Enemy>().thisMovementSpeed = Enemy.movementSpeed;
             enemies.Remove(other.gameObject);
-            enemiesMoveSpeed.Remove(other.gameObject);
+            enemiesOriginalMoveSpeed.Remove(other.gameObject);
 
         }
     }
