@@ -40,7 +40,7 @@ public class BoogieBomb : Weapon
 
         if (!usedAbility)
         {
-
+            bombMoving = true;
             transform.position = transform.position + new UnityEngine.Vector3(bombRangeX, bombRangeY, 0);
             Attack();
 
@@ -75,7 +75,6 @@ public class BoogieBomb : Weapon
         StartCooldown();
         //TODO lägg till animation
         usedAbility = true;
-        bombMoving = true;
         Invoke("TouchedGround", 0.5f); //gör så att abilityn gör damage och visar att abilityn har använts
         Invoke("AbilityCooldown", abilityCooldown);
 
@@ -91,6 +90,8 @@ public class BoogieBomb : Weapon
 
     private void ReturnBomb()
     {
+        bombRangeY = UnityEngine.Random.Range(-6, 6);
+        bombRangeX = UnityEngine.Random.Range(-6, 6);
         bombMoving = false;
     }
 
@@ -102,7 +103,9 @@ public class BoogieBomb : Weapon
 
     private void AbilityCooldown()
     {
-        usedAbility = false; 
+
+        usedAbility = false;
+        this.GetComponent<SpriteRenderer>().enabled = false;
     }
 
 }

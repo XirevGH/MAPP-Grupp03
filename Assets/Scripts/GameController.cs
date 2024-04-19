@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
 {
     private string saveFile;
     public PlayerStats playerStats;
-    [SerializeField] private GameObject triggerController, soundManager, trackswaper;
+  //  [SerializeField] private GameObject triggerController, soundManager, trackswaper;
     public Camera mainCamera;
     public Tilemap tilemap;
     public int currentTrackBPM;
@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         saveFile = Application.persistentDataPath + "/playerInfo.json";
-        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
+    //    soundManager = GameObject.FindGameObjectWithTag("SoundManager");
         ReadFile();
         mainCamera = Camera.main;
         Enemy.movementSpeed = 4f;
@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour
     }
     private void Update()
     {
-        currentTrackBPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswaper.GetComponent<TrackSwaper>().i];
+   //     currentTrackBPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswaper.GetComponent<TrackSwaper>().i];
     }
     private void FixedUpdate()
     {
@@ -52,7 +52,7 @@ public class GameController : MonoBehaviour
     {
         File.WriteAllText(saveFile, playerStats.SaveToString());
         SceneManager.LoadScene("ResultsScreen");
-        triggerController.GetComponent<TriggerController>().ToggleTrigger();
+    //    triggerController.GetComponent<TriggerController>().ToggleTrigger();
     }
 
     public BoundsInt GetBoundsFromCamera()
