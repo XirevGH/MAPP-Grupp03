@@ -52,7 +52,7 @@ public class SoundManager : MonoBehaviour
         isInMenu = false;
         //menuMusic.Play();
 
-        Debug.Log("work");
+       
 
 
         //AudioListener.volume = PlayerPrefs.GetFloat("volume1");
