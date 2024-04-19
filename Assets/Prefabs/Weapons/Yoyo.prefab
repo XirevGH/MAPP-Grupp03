@@ -132,13 +132,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  weaponReady: 1
-  cooldownDuration: 5
+  weaponReady: 0
+  cooldownDuration: 10
   rotateSpeed: 1
   angle: 0
-  superModeTime: 2
+  superModeTime: 4
   elapsedTime: 0
   percentageComplete: 0
+  superModeMultiplier: 4
 --- !u!58 &6086935685895387194
 CircleCollider2D:
   m_ObjectHideFlags: 0

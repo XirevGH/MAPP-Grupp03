@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class YoyoController : MonoBehaviour
 {
-    public GameObject[] yoyoList;
+    public GameObject yoyo;
     private int childCount;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,38 +24,33 @@ public class YoyoController : MonoBehaviour
             //PutChildInList();
 
             SetYoyoPosition();
+            childCount = transform.childCount;
         }
         //yoyoList.ToString();
     }
 
     private void SetYoyoPosition()
     {
-        int totalYoyo = yoyoList.Length;
+        int totalYoyo = transform.childCount;
         float angle = 360f / totalYoyo;
         float nextAngle = 0;
 
-        for (int i = 0; i < yoyoList.Length; i++)
+        for (int i = 0; i < totalYoyo; i++)
         {
-            yoyoList[i].GetComponent<Yoyo>().angle = nextAngle;
+           transform.GetChild(i).GetComponent<Yoyo>().angle = nextAngle;
+            transform.GetChild(i).GetComponent<Yoyo>().ResetSuperMode();
+            transform.GetChild(i).GetComponent<Yoyo>().StartCooldown();
+
             nextAngle += angle;
         }
       
     }
 
-    //private void PutChildInList()
-    //{
-        
-    //    for (int i = 0; i < transform.childCount-1; i++)
-    //    {
-    //        yoyoList.Add(transform.GetChild(i).transform);
-    //    }
-
-    //}
-
     public void Upgrade()
-    { 
-    
-    
-    
+    {
+
+        Instantiate(yoyo, transform.position, Quaternion.identity, transform);
+  
+
     }
 }

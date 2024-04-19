@@ -11,7 +11,7 @@ public class AsawinDebugging : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        testingObj1 = GameObject.FindGameObjectWithTag("SoundManager");
+       
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -28,7 +28,7 @@ public class AsawinDebugging : MonoBehaviour
              
                 Debug.Log("Boogie Boogie");
 
-            testingObj1.GetComponent<SoundManager>().ToggleMusicPause();
+            testingObj1.GetComponent<YoyoController>().Upgrade();
 
 
 

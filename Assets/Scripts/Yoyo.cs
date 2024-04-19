@@ -8,6 +8,7 @@ public class Yoyo : Weapon
     [SerializeField] private float rotateSpeed;
     public float angle, superModeTime, elapsedTime, percentageComplete, superModeMultiplier;
     private bool superMode;
+    private GameObject ball, yoyoString;
 
     private void Start()
     {
@@ -15,6 +16,11 @@ public class Yoyo : Weapon
     }
     private void FixedUpdate()
     {
+        if (Time.timeScale == 0)
+        {
+            return;
+        }
+
         if (angle == 360)
         { 
          angle = 0;
@@ -24,23 +30,14 @@ public class Yoyo : Weapon
        
         if (superMode)
         {
-
-            angle += rotateSpeed * superModeMultiplier;
-            elapsedTime += Time.deltaTime;
-            percentageComplete = elapsedTime / superModeTime;
-            if (Mathf.FloorToInt(percentageComplete) == 1)
-            {
-                percentageComplete = 0;
-                elapsedTime = 0;
-                superMode = false;
-            }
+            SuperMode();
         }
         else
         {
             angle += rotateSpeed;
             superMode = false;
         }
-        Debug.Log(superMode + "Supermode");
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -51,6 +48,35 @@ public class Yoyo : Weapon
             DealDamage(other);
         }
        
+    }
+
+    public void SuperMode()
+    {
+
+        angle += rotateSpeed * superModeMultiplier;
+        elapsedTime += Time.deltaTime;
+        percentageComplete = elapsedTime / superModeTime;
+        if (Mathf.FloorToInt(percentageComplete) == 1)
+        {
+            ResetSuperMode();
+        }
+
+        
+    }
+
+    //private IEnumerator IncreaseRadiasSuperMode()
+    //{
+    //    //ball.transform.Move
+
+    //    //yield return null;
+
+    //}
+        public void ResetSuperMode()
+    {
+        percentageComplete = 0;
+        elapsedTime = 0;
+        superMode = false;
+
     }
 
     public override void Attack()
