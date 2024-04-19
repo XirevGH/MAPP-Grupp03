@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ProjectileWeapon : Weapon
@@ -9,6 +10,11 @@ public class ProjectileWeapon : Weapon
     public void IncreaseTargetCount(int targetIncrease)
     {
         amountOfTargets += targetIncrease;
+    }
+
+    protected override void Update()
+    { 
+    
     }
 
     public void IncreasePenetrationAmount(int penetrationAmount)

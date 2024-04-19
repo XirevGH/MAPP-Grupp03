@@ -14,7 +14,7 @@ public abstract class Weapon : MonoBehaviour
         weaponReady = true;
     }
 
-    protected void Update()
+    protected virtual void Update()
     {
         if (!weaponReady)
         {
