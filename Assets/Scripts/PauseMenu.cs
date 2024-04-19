@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-
+    public GameObject[] joysticks;
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI, BeatSpawnerController, soundManager;
 
@@ -39,6 +39,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Resume()
     {
+        ToggleJoysticks(true);
         BeatSpawnerController.GetComponent<TriggerController>().ToggleTrigger();
         soundManager.GetComponent<SoundManager>().ToggleMusicPause();
         pauseMenuUI.SetActive(false);
@@ -47,6 +48,7 @@ public class PauseMenu : MonoBehaviour
     }
     void PauseGame()
     {
+        ToggleJoysticks(false);
         BeatSpawnerController.GetComponent<TriggerController>().ToggleTrigger();
         soundManager.GetComponent<SoundManager>().ToggleMusicPause();
         pauseMenuUI.SetActive(true);
@@ -58,6 +60,7 @@ public class PauseMenu : MonoBehaviour
     {
         soundManager.GetComponent<SoundManager>().GoBackToMain();
         GameIsPaused = false;
+        ToggleJoysticks(true);
         Time.timeScale = 1f;
         SceneManager.LoadScene(mainMenuSceneName); 
     }
@@ -65,5 +68,13 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    private void ToggleJoysticks(bool state)
+    {
+        foreach (GameObject joystick in joysticks)
+        {
+            joystick.SetActive(state);
+        }
     }
 }
