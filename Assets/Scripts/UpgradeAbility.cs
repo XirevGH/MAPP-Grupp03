@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class UpgradeAbility : MonoBehaviour
 {
-    public Weapon[] weapons;
-    List<Weapon> weaponList;
+    [SerializeField] private Weapon[] weapons;
+    [SerializeField] private Player player;
+    private List<Weapon> weaponList;
 
     void Start()
     {
@@ -40,5 +42,10 @@ public class UpgradeAbility : MonoBehaviour
     public void ChooseWeapon(Weapon weapon)
     {
         weaponList.Remove(weapon);
+    }
+
+    public void RandomUpgrade()
+    {
+        
     }
 }

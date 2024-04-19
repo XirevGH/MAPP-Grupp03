@@ -14,8 +14,9 @@ public class Player : MonoBehaviour
     [SerializeField] private GameController gameController;
     [SerializeField] private Player player;
     [SerializeField] private PlayerStats playerStats;
+    [SerializeField] private UpgradeAbility upgrade;
 
-    private Weapon[] currentWeapons;
+    private List<Weapon> currentWeapons;
     private int money;
     private float moneyMultiplier;
     private int damage;
@@ -127,10 +128,22 @@ public class Player : MonoBehaviour
             }
         }
     }
-
     private void UpdateXPSlider()
     {
         xpSlider.value = (float)xpHeld / xpToLevel;
     }
+    #endregion
+
+    #region Weapon Stuff
+    private void AddWeapon(Weapon weapon)
+    {
+        currentWeapons.Add(weapon);
+    }
+
+    public List<Weapon> GetCurrentWeapons()
+    {
+        return new List<Weapon>(currentWeapons);
+    }
+    
     #endregion
 }
