@@ -41,6 +41,8 @@ public class Enemy : MonoBehaviour
     public static float healthProsenIncreas = 1f;
     public float health;
 
+    public float thisMovementSpeed;
+
     public TMP_Text damageNumbers;
     public Animator damageNumberAnim;
     public Animator enemyAnim;
@@ -50,11 +52,13 @@ public class Enemy : MonoBehaviour
         health *= healthProsenIncreas;
         player = GameObject.FindGameObjectWithTag("Player");
         sprite = GetComponent<SpriteRenderer>();
+        thisMovementSpeed = movementSpeed;
     }
 
     void FixedUpdate()
     {
         damageNumberWindow -= Time.deltaTime;
+     
         if (IsAlive()) 
         {
             if (Vector3.Distance(player.transform.position, transform.position) < 0.5)
@@ -70,8 +74,9 @@ public class Enemy : MonoBehaviour
                 sprite.flipX = true;
             }
             enemyAnim.SetTrigger("Walking");
-            transform.position = Vector3.MoveTowards(transform.position, player.GetComponent<Transform>().position, movementSpeed/200);
+            transform.position = Vector3.MoveTowards(transform.position, player.GetComponent<Transform>().position, thisMovementSpeed / 200);
         }
+      
     }
 
     public void TakeDamage(float damageTaken)
