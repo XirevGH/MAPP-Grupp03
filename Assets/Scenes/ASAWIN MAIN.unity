@@ -274,7 +274,7 @@ MonoBehaviour:
   damage: 0
   weaponReady: 0
   cooldownDuration: 1
-  discoBall: {fileID: 2005328289849877413, guid: ac418fb70688c8942bd03238ff9ba639, type: 3}
+  discoBall: {fileID: 2005328289849877413, guid: f92804d05bface3499e84240f1143431, type: 3}
 --- !u!1 &199362038
 GameObject:
   m_ObjectHideFlags: 0
@@ -2752,6 +2752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d638a777f8674749a8f881bbdd6d3b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  joysticks: []
   pauseMenuUI: {fileID: 1796234484}
   BeatSpawnerController: {fileID: 1128267155804970998}
   soundManager: {fileID: 0}
@@ -2972,11 +2973,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135886327475159579, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8135886327475159579, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8135886327475159579, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3699,6 +3700,7 @@ Transform:
   - {fileID: 8336072371526926092}
   - {fileID: 7147500035608189028}
   - {fileID: 67010379}
+  - {fileID: 1995093069}
   m_Father: {fileID: 5383820192035051673}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1735380185
@@ -4710,6 +4712,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1995093068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1995093069}
+  - component: {fileID: 1995093070}
+  m_Layer: 0
+  m_Name: DiscoBallController (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1995093069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995093068}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1735380184}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1995093070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995093068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899576dad5c4b5a40a0036a0f3a9d6b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  weaponReady: 0
+  cooldownDuration: 1
+  discoBall: {fileID: 2005328289849877413, guid: ac418fb70688c8942bd03238ff9ba639, type: 3}
 --- !u!1001 &139039864797057230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4720,11 +4770,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1785906646059724246, guid: ac418fb70688c8942bd03238ff9ba639, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.3
+      value: 6.24
       objectReference: {fileID: 0}
     - target: {fileID: 1785906646059724246, guid: ac418fb70688c8942bd03238ff9ba639, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3
+      value: -0.61
       objectReference: {fileID: 0}
     - target: {fileID: 1785906646059724246, guid: ac418fb70688c8942bd03238ff9ba639, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5116,6 +5166,7 @@ MonoBehaviour:
   gameController: {fileID: 482028540}
   player: {fileID: 2554686454012362858}
   playerStats: {fileID: 5436226366269919644}
+  upgrade: {fileID: 0}
   health: 100
 --- !u!1 &2662689527024895925
 GameObject:
@@ -5392,7 +5443,7 @@ Transform:
   m_GameObject: {fileID: 3351724656273620173}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.8, y: -5.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
