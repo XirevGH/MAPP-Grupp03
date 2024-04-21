@@ -8,18 +8,8 @@ public class Saxophone : ProjectileWeapon
 {
     public Transform shootingPoint;
     public GameObject notePrefab; 
-
     public float speed;
-
-    public int shoots;  
-
-    
-
-
-
     private List<GameObject> enemies = new List<GameObject>();
-
-    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -39,13 +29,12 @@ public class Saxophone : ProjectileWeapon
 
     public override void Attack()
     {
-        List<GameObject> closestEnemy = FindClosestEnemy(shoots);
+        Debug.Log("Attacking");
+        List<GameObject> closestEnemy = FindClosestEnemy(base.amountOfTargets);
         if (closestEnemy != null)
         {   
             foreach(GameObject target in closestEnemy){
                 ShootNoteAtEnemy(target);
-                
-
             }
             StartCooldown();
         }
@@ -63,7 +52,6 @@ public class Saxophone : ProjectileWeapon
         if (enemies == null || enemies.Count == 0 || number <= 0)
             return new List<GameObject>();  
 
-        
         List<KeyValuePair<float, GameObject>> distances = new List<KeyValuePair<float, GameObject>>();
 
         foreach (GameObject enemy in enemies)

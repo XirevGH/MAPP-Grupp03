@@ -5474,9 +5474,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5929268495264575834}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 526278f351aedea42b0648194f8a19d0, type: 3}
+  m_Script: {fileID: 11500000, guid: ac2b662e661ee9d478e61e8059282a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 3
+  weaponReady: 0
+  cooldownDuration: 3
+  amountOfTargets: 1
+  penetration: 1
+  shootingPoint: {fileID: 7147500035608189028}
+  notePrefab: {fileID: 5730958551181348608, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
+  speed: 1
 --- !u!4 &5383820192035051673
 Transform:
   m_ObjectHideFlags: 0
@@ -5657,7 +5665,7 @@ GameObject:
   - component: {fileID: 4885107118321678037}
   - component: {fileID: 6834795245410236618}
   m_Layer: 0
-  m_Name: SaxophoneWeapon
+  m_Name: Saxophone
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

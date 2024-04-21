@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Yoyo : Weapon
@@ -9,6 +8,7 @@ public class Yoyo : Weapon
     [SerializeField] private GameObject ball, yoyoString;
     [SerializeField] private Vector3 ballStartPosition, ballSuperModePosition, stringStartPosition, stringSuperModePosition, stringStartScale, stringSuperModeScale;
 
+    private List<string> upgradeOptions;
     public float angle, superModeTime, elapsedTime, percentageComplete, superModeMultiplier;
 
     private bool superMode;
@@ -18,6 +18,8 @@ public class Yoyo : Weapon
 
     private void Start()
     {
+        upgradeOptions.Add("SuperMode");
+        upgradeOptions.Add("PlusOneYoyo");
         superMode = false;
         lerpTime = superModeTime / 5;
         circleColl = GetComponent<CircleCollider2D>();
@@ -53,6 +55,11 @@ public class Yoyo : Weapon
         {
             DealDamage(other);
         }
+    }
+
+    public List<string> UpgradeOptions()
+    {
+        return upgradeOptions;
     }
 
     public void SuperMode()
