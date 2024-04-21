@@ -5214,7 +5214,7 @@ MonoBehaviour:
   electricGuitar: {fileID: 2375177962687765259}
   lightningAoe: {fileID: 6122891286048187429}
   bassGuitar: {fileID: 8983433644739611312}
-  saxophone: {fileID: 0}
+  saxophone: {fileID: 5929268495264575834}
   gameController: {fileID: 482028540}
   player: {fileID: 2554686454012362858}
   playerStats: {fileID: 5436226366269919644}

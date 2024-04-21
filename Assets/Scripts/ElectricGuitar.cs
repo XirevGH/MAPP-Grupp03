@@ -6,10 +6,8 @@ using System.Linq;
 public class ElectricGuitar : ProjectileWeapon
 {
     [SerializeField] private GameObject bolt;
-    
 
     private HashSet<GameObject> enemies = new HashSet<GameObject>();
-    private GameObject closestEnemy;
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -26,6 +24,7 @@ public class ElectricGuitar : ProjectileWeapon
 
     public override void Attack()
     {
+        Debug.Log("GuitarAttacked");
         GameObject[] targetEnemies = GetClosestEnemies(AdjustTargetOverflow(amountOfTargets));
         for(int i = 0; i < targetEnemies.Length; i++)
         {
@@ -48,7 +47,7 @@ public class ElectricGuitar : ProjectileWeapon
         }
     }
 
-    public GameObject[] GetClosestEnemies(int amountOfTargets)
+    private GameObject[] GetClosestEnemies(int amountOfTargets)
     {
         SortedSet<GameObject> sortedEnemies = new SortedSet<GameObject>(new GameObjectComparer());
         foreach(GameObject enemy in enemies)
