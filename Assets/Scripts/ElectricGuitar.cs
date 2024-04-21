@@ -24,7 +24,6 @@ public class ElectricGuitar : ProjectileWeapon
 
     public override void Attack()
     {
-        Debug.Log("GuitarAttacked");
         GameObject[] targetEnemies = GetClosestEnemies(AdjustTargetOverflow(amountOfTargets));
         for(int i = 0; i < targetEnemies.Length; i++)
         {
