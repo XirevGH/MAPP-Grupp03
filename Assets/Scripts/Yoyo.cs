@@ -18,8 +18,7 @@ public class Yoyo : Weapon
 
     private void Start()
     {
-        upgradeOptions.Add("SuperMode");
-        upgradeOptions.Add("PlusOneYoyo");
+        upgradeOptions = new List<string> {"SuperMode", "PlusOneYoyo"};
         superMode = false;
         lerpTime = superModeTime / 5;
         circleColl = GetComponent<CircleCollider2D>();
