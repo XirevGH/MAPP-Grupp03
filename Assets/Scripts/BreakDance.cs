@@ -5,7 +5,6 @@ using UnityEngine;
 public class BreakDance : Weapon
 {
     public bool dealDamage;
-    public float abilityTime;
     public int amountOfHits;
     private int hitsCounter;
     Collider2D other;   
@@ -33,8 +32,15 @@ public class BreakDance : Weapon
 
     private void BreakDanceDamage()
     {
+        this.GetComponent<SpriteRenderer>().enabled = true;
         DealDamage(other);
         hitsCounter--;
         dealDamage = false;
+        Invoke("RemoveIndicator", 0.5f);
+    }
+
+    private void RemoveIndicator()
+    {
+        this.GetComponent<SpriteRenderer>().enabled = false;
     }
 }
