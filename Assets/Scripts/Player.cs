@@ -89,7 +89,6 @@ public class Player : MonoBehaviour
 
     private void LevelUp()
     {
-        Debug.Log(xpToLevel);
         xpHeld -= xpToLevel;
         xpToLevel *= 1.2f;
         level++;
@@ -128,6 +127,7 @@ public class Player : MonoBehaviour
             }
         }
     }
+
     private void UpdateXPSlider()
     {
         xpSlider.value = (float)xpHeld / xpToLevel;
@@ -144,6 +144,5 @@ public class Player : MonoBehaviour
     {
         return new List<Weapon>(currentWeapons);
     }
-    
     #endregion
 }
