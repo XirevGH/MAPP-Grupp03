@@ -2,23 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NoteProjectile : MonoBehaviour
-{
-    private float damage;
-    private float speed;
+public class NoteProjectile : Projectile { 
     
-    private int penetration; 
-
     private Vector3 direction;
 
     [SerializeField] private Sprite sprite1, sprite2;
     private float lifetime = 5f;
 
-   public void Initialize(float damage, float speed, int startPenetration, Vector3 direction)
+   public void Initialize(float damage, float speed, int penetration, Vector3 direction)
     {
-        this.damage = damage;
-        this.speed = speed;
-        this.penetration = startPenetration;  
+        base.damage = damage;
+        base.speed = speed;
+        base.penetration = penetration;  
         this.direction = direction;
         
         GetComponent<SpriteRenderer>().sprite = randomSprite();
@@ -46,15 +41,8 @@ public class NoteProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy") && penetration > 0)
-        {
-            other.GetComponent<Enemy>().TakeDamage(damage); 
-            penetration--;
-            if (penetration <= 0)
-            {
-                Destroy(gameObject);
-            }
-        }
+        DealDamage(other, damage);
+        DestroyWhenMaxPenetration();
     }
     
 }

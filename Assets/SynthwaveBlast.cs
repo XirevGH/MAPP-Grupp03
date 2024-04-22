@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SynthwaveBlast : ProjectileWeapon
+public class SynthwaveBlast : PenetratingProjectileWeapon
 {
     public override void Attack()
     {
@@ -27,9 +27,9 @@ public class SynthwaveBlast : ProjectileWeapon
                 Collider2D enemy = (Collider2D) insideData.GetCollider(i, j);
             }
         }
-        Debug.Log(amountOfTargets);
-            amountOfTargets -= 1;
-        if (amountOfTargets == 0)
+        Debug.Log(amountOfProjectiles);
+            amountOfProjectiles -= 1;
+        if (amountOfProjectiles == 0)
         {
             Destroy(gameObject);
         }

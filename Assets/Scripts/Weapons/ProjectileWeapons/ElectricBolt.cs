@@ -12,7 +12,7 @@ public class ElectricBolt : MonoBehaviour
    
     private GameObject player;
     private GameObject targetUnit;
-    private float totalDamage;
+    private float damage;
 
     private float length;
     private float angle;
@@ -25,7 +25,7 @@ public class ElectricBolt : MonoBehaviour
     private void Start()
     {
         rend = GetComponent<SpriteRenderer>();
-        totalDamage = player.GetComponent<ElectricGuitar>().GetDamage();
+        damage = player.GetComponent<ElectricGuitar>().GetDamage();
         spriteChangeReady = true;
         DealDamage();
     }
@@ -74,7 +74,7 @@ public class ElectricBolt : MonoBehaviour
 
     private void DealDamage()
     {
-        targetUnit.GetComponent<Enemy>().TakeDamage(totalDamage);
+        targetUnit.GetComponent<Enemy>().TakeDamage(damage);
     }
 
     private void ChangeSprite()

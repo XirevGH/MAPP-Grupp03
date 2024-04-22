@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public abstract class ProjectileWeapon : Weapon
+public abstract class PenetratingProjectileWeapon : Weapon
 {
-    [SerializeField] protected int amountOfTargets;
+    [SerializeField] protected int amountOfProjectiles;
     [SerializeField] protected int penetration;
 
     public void IncreaseTargetCount(int targetIncrease)
     {
-        amountOfTargets += targetIncrease;
+        amountOfProjectiles += targetIncrease;
     }
 
     public void IncreasePenetrationAmount(int penetrationAmount)

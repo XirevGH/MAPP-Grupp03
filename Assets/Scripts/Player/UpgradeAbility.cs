@@ -25,12 +25,12 @@ public class UpgradeAbility : MonoBehaviour
     {
         weapon.IncreaseDamage(percentageIncrease);
     }
-    public void UpgradeTargetCount(ProjectileWeapon weapon, int targetIncrease)
+    public void UpgradeTargetCount(PenetratingProjectileWeapon weapon, int targetIncrease)
     {
         weapon.IncreaseTargetCount(targetIncrease);
     }
 
-    public void UpgradePenetrationAmount(ProjectileWeapon weapon, int penetrationAmount)
+    public void UpgradePenetrationAmount(PenetratingProjectileWeapon weapon, int penetrationAmount)
     {
         weapon.IncreasePenetrationAmount(penetrationAmount);
     }

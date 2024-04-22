@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class Yoyo : MonoBehaviour
+public class Yoyo : Projectile
 {
     [SerializeField] private float rotateSpeed, colliderStartingOffset, colliderSuperModeOffset;
     [SerializeField] private GameObject ball, yoyoString, triggerController, soundManager;
@@ -14,8 +14,6 @@ public class Yoyo : MonoBehaviour
 
     private bool superMode;
     private float lerpTime, lerpElapsedTime;
-
-    private float damage;
 
     private CircleCollider2D circleColl;
 
@@ -64,11 +62,7 @@ public class Yoyo : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            // TODO Replace this with DealDamage from future superclass projectile
-            other.GetComponent<Enemy>().TakeDamage(damage);
-        }
+        DealDamage(other, damage);
     }
 
     public List<string> UpgradeOptions()

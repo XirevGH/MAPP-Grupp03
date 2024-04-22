@@ -112,7 +112,7 @@ public class Player : MonoBehaviour
 
         if(level > 2)
         {
-            electricGuitar.GetComponent<ElectricGuitar>().UpgradeTargetAmount(1);
+            electricGuitar.GetComponent<ElectricGuitar>().UpgradeTetherAmount(1);
         }
         if(level > 3)
         {

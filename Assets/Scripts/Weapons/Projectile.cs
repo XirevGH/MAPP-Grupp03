@@ -4,13 +4,24 @@ using UnityEngine;
 
 public abstract class Projectile : MonoBehaviour
 {
-    public void DealDamage(Collider2D other)
+    protected float damage;
+    protected float speed;
+    protected int penetration;
+
+    public void DealDamage(Collider2D other, float damage)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-
-            other.GetComponent<Enemy>().TakeDamage(1);
+            other.GetComponent<Enemy>().TakeDamage(damage);
         }
+    }
 
+    public void DestroyWhenMaxPenetration()
+    {
+        penetration--;
+        if (penetration <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

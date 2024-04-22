@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class ElectricGuitar : ProjectileWeapon
+public class ElectricGuitar : TetheringWeapon
 {
     [SerializeField] private GameObject bolt;
 
@@ -24,7 +24,7 @@ public class ElectricGuitar : ProjectileWeapon
 
     public override void Attack()
     {
-        GameObject[] targetEnemies = GetClosestEnemies(AdjustTargetOverflow(amountOfTargets));
+        GameObject[] targetEnemies = GetClosestEnemies(AdjustTargetOverflow(amountOfTethers));
         for(int i = 0; i < targetEnemies.Length; i++)
         {
             GameObject clone = Instantiate(bolt);
@@ -60,10 +60,5 @@ public class ElectricGuitar : ProjectileWeapon
     public float GetDamage()
     {
         return damage;
-    }
-
-    public void UpgradeTargetAmount(int amount)
-    {
-        amountOfTargets += amount;
     }
 }
