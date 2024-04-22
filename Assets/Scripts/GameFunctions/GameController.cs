@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
 {
     private string saveFile;
     public PlayerStats playerStats;
-    [SerializeField] private GameObject triggerController, soundManager, trackswaper;
+    [SerializeField] private GameObject triggerController, soundManager, trackswapper;
     public Camera mainCamera;
     public Tilemap tilemap;
     public int currentTrackBPM;
@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour
     }
     private void Update()
     {
-        currentTrackBPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswaper.GetComponent<TrackSwaper>().i];
+        currentTrackBPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswapper.GetComponent<TrackSwapper>().i];
     }
     private void FixedUpdate()
     {

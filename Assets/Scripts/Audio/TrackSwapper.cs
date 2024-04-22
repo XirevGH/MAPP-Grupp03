@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrackSwaper : MonoBehaviour
+public class TrackSwapper : MonoBehaviour
 {
 
     public GameObject soundManager;

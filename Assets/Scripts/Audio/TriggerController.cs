@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 public class TriggerController : MonoBehaviour
 {
     [SerializeField] public float inGameCurrentTrackBPM;
-    [SerializeField] GameObject trackswaper;
+    [SerializeField] GameObject trackswapper;
     [SerializeField] public Trigger[] triggers;
     [SerializeField] public bool isTriggering;
     public GameObject soundManager;
@@ -66,7 +66,7 @@ public class TriggerController : MonoBehaviour
     {
         inGameMusic = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
 
-        inGameCurrentTrackBPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswaper.GetComponent<TrackSwaper>().i];
+        inGameCurrentTrackBPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswapper.GetComponent<TrackSwapper>().i];
         
         if (isTriggering)
         {

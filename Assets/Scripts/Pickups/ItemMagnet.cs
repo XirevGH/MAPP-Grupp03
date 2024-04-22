@@ -22,7 +22,7 @@ public class ItemMagnet : MonoBehaviour
             foreach(XPDrop xp in allXp){
                 if(xp != null)
                 {
-                    xp.GetComponent<MoveToPlayer>().StartMoving(player.transform);
+                    xp.GetComponent<XPDrop>().MoveToPlayer(player.transform);
                 }
             }
             Destroy(gameObject);
