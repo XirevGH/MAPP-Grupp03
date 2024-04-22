@@ -95,5 +95,11 @@ public class TriggerController : MonoBehaviour
         return triggers[triggerNumber];
     }
 
+    public float GetCurrentTrackBPM()
+    {
+        return currentTrackBPM;
+    }
+
+
 
 }

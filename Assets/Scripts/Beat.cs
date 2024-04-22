@@ -4,7 +4,7 @@ using UnityEngine;
 public class Beat : MonoBehaviour
 {
     [SerializeField] private float moveSpeed, increaseCooldownDuration, reduceCooldownDuration, MusicSpeedChange;
-    [SerializeField] private GameObject circle, particle, gameController, TriggerController, soundManager;
+    [SerializeField] private GameObject circle, particle, triggerController, soundManager;
     [SerializeField] private GameObject[] weapons;
 
     private float percentageComplete, elapsedTime, beatLife;
@@ -12,16 +12,15 @@ public class Beat : MonoBehaviour
 
     private void Start()
     {
-        TriggerController = GameObject.FindGameObjectWithTag("TriggerController");
+        triggerController = GameObject.FindGameObjectWithTag("TriggerController");
         soundManager = GameObject.FindGameObjectWithTag("SoundManager");
         weapons = GameObject.FindGameObjectsWithTag("Weapon");
-        gameController = GameObject.FindGameObjectWithTag("GameController");
         circleStartingScale = circle.transform.localScale;
     }
 
     void FixedUpdate()
     {
-        beatLife = 60f / (gameController.GetComponent<GameController>().GetCurrentTrackBPM() / TriggerController.GetComponent<TriggerController>().GetTrigger(0).noteValue);
+        beatLife = 60f / (triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM() / triggerController.GetComponent<TriggerController>().GetTrigger(0).noteValue);
         elapsedTime += Time.deltaTime;
         percentageComplete = elapsedTime / beatLife;
         GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, percentageComplete);

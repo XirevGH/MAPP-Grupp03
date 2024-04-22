@@ -75,9 +75,5 @@ public class GameController : MonoBehaviour
         return xpList;
     }
 
-    public int GetCurrentTrackBPM()
-    {
-        return currentTrackBPM;
-    }
-    
+   
 }
