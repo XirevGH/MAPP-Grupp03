@@ -49,7 +49,15 @@ public class Beat : MonoBehaviour
                 //weapon.GetComponent<Weapon>().ChangeCooldownDuration(+increaseCooldownDuration);
             }
         }
-        soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch - MusicSpeedChange;
+        if (soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch <= 0.5)
+        {
+            soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = 0.5f;
+        }
+        else
+        {
+            soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch - MusicSpeedChange;
+        }
+        
         totalChangedInBPM = totalChangedInBPM - MusicSpeedChange;
         Instantiate(particle, this.transform.position, Quaternion.identity);
         Destroy(gameObject);
@@ -66,6 +74,7 @@ public class Beat : MonoBehaviour
                     //weapon.GetComponent<Weapon>().ChangeCooldownDuration(-reduceCooldownDuration);
                 }
             }
+
             soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch + MusicSpeedChange;
             totalChangedInBPM = totalChangedInBPM + MusicSpeedChange;
             Destroy(gameObject);
