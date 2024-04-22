@@ -30,6 +30,7 @@ public class Yoyo : Weapon
     {
         rotateSpeed = ((triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM() / 60f));
         superModeTime = (60f / (triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM() / triggerController.GetComponent<TriggerController>().GetTrigger(0).noteValue));
+        lerpTime = superModeTime / 5;
     }
 
     private void FixedUpdate()
