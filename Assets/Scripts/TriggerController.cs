@@ -66,7 +66,7 @@ public class TriggerController : MonoBehaviour
     {
         inGameMusic = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
 
-        inGameCurrentTrackBPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswaper.GetComponent<TrackSwaper>().i] + Beat.totalChangedInBPM;
+        inGameCurrentTrackBPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswaper.GetComponent<TrackSwaper>().i];
         
         if (isTriggering)
         {
@@ -74,11 +74,15 @@ public class TriggerController : MonoBehaviour
             {
                 float sampledTime = (inGameMusic.timeSamples / (inGameMusic.clip.frequency * triggers.GetIntervalLength(inGameCurrentTrackBPM)));
                 triggers.CheckForNewQuaterNote(sampledTime);
-            }
-          
-                
+                //Debug.Log(Mathf.FloorToInt(sampledTime));
 
-            
+                //Debug.Log(Mathf.FloorToInt(inGameMusic.));
+            }
+           
+
+
+
+
 
         }
 
@@ -100,6 +104,7 @@ public class TriggerController : MonoBehaviour
         return inGameCurrentTrackBPM;
     }
 
+    //public float Get
 
 
 }
