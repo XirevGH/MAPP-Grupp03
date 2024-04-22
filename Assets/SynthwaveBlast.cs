@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SynthwaveBlast : PenetratingProjectileWeapon
+public class SynthwaveBlast : ProjectileWeapon
 {
     public override void Attack()
     {

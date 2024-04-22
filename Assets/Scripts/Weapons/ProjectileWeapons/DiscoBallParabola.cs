@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class DiscoBallParabola : PenetratingProjectileWeapon
+public class DiscoBallParabola : ProjectileWeapon
 {
     private Vector2 startPosition, endPosition;
     private GameObject player;
