@@ -70,11 +70,6 @@ public class Yoyo : Projectile
         return upgradeOptions;
     }
 
-    public void SetDamage(float amount)
-    {
-        damage = amount;
-    }
-
     public void ActivateSuperMode()
     {
         superMode = true;
