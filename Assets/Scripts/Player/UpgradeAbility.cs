@@ -25,9 +25,13 @@ public class UpgradeAbility : MonoBehaviour
     {
         weapon.IncreaseDamage(percentageIncrease);
     }
+<<<<<<< Updated upstream
     public void UpgradeTargetCount(PenetratingProjectileWeapon weapon, int targetIncrease)
+=======
+    public void UpgradeProjectileCount(ProjectileWeapon weapon, int targetIncrease)
+>>>>>>> Stashed changes
     {
-        weapon.IncreaseTargetCount(targetIncrease);
+        weapon.IncreaseProjectileCount(targetIncrease);
     }
 
     public void UpgradePenetrationAmount(PenetratingProjectileWeapon weapon, int penetrationAmount)

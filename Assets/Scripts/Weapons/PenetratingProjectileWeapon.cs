@@ -8,9 +8,9 @@ public abstract class PenetratingProjectileWeapon : Weapon
     [SerializeField] protected int amountOfProjectiles;
     [SerializeField] protected int penetration;
 
-    public void IncreaseTargetCount(int targetIncrease)
+    public void IncreaseProjectileCount(int projectileIncrease)
     {
-        amountOfProjectiles += targetIncrease;
+        amountOfProjectiles += projectileIncrease;
     }
 
     public void IncreasePenetrationAmount(int penetrationAmount)

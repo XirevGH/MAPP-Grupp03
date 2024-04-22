@@ -15,8 +15,9 @@ public class Player : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private PlayerStats playerStats;
     [SerializeField] private UpgradeAbility upgrade;
+    [SerializeField] private UpgradePanel upgradeScreen;
 
-    private List<Weapon> currentWeapons;
+    public List<Weapon> currentWeapons;
     private int money;
     private float moneyMultiplier;
     private int damage;
@@ -97,8 +98,8 @@ public class Player : MonoBehaviour
         levelText.text = "Level: " + level;
         UpdateXPSlider();
         MainManager.Instance.mainLevel = level;
-
-        if (level == 2)
+        upgradeScreen.OpenUpgradeWindow();
+        /*if (level == 2)
         {
             electricGuitar.SetActive(true);
         }
@@ -124,10 +125,10 @@ public class Player : MonoBehaviour
             if (level % 6 == 0)
             {
                 saxophone.GetComponent<Saxophone>().IncreasePenetrationAmount(1);
-                saxophone.GetComponent<Saxophone>().IncreaseTargetCount(1);
+                saxophone.GetComponent<Saxophone>().IncreaseProjectileCount(1);
                 saxophone.GetComponent<Saxophone>().IncreaseDamage(1.1f);
             }
-        }
+        }*/
     }
 
     private void UpdateXPSlider()
