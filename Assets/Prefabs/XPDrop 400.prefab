@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8449104146653439331}
   - component: {fileID: 4764066360738926745}
   - component: {fileID: 6728562833124184542}
-  - component: {fileID: 5135631985327845318}
   m_Layer: 0
   m_Name: XPDrop 400
   m_TagString: XPDrop20
@@ -135,16 +134,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   XP: 400
---- !u!114 &5135631985327845318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2322821042000343324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdb9bf34f2bad034789ad68fafdb915e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   speed: 20

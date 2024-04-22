@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ProjectileWeapon : Weapon
+public abstract class ProjectileWeapon : Weapon
 {
     [SerializeField] protected int amountOfTargets;
     [SerializeField] protected int penetration;

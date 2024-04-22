@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VinylDiscController : MonoBehaviour
+public class VinylDiscController : Weapon
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject vinylDisc;
 
-    // Update is called once per frame
-    void Update()
+    // Start is called before the first frame updat
+
+    public override void Attack()
     {
-        
+        Instantiate(vinylDisc, transform.position, Quaternion.identity);
+
     }
 }
