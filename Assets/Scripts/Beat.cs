@@ -17,11 +17,17 @@ public class Beat : MonoBehaviour
         soundManager = GameObject.FindGameObjectWithTag("SoundManager");
         weapons = GameObject.FindGameObjectsWithTag("Weapon");
         circleStartingScale = circle.transform.localScale;
+        beatLife = (60f / (triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM() / triggerController.GetComponent<TriggerController>().GetTrigger(0).noteValue)) / soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch;
+    }
+    private void Update()
+    {
+     
+        Debug.Log(beatLife); 
     }
 
     void FixedUpdate()
     {
-        beatLife = 60f / (triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM() / triggerController.GetComponent<TriggerController>().GetTrigger(0).noteValue);
+       
         elapsedTime += Time.deltaTime;
         percentageComplete = elapsedTime / beatLife;
         GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, percentageComplete);

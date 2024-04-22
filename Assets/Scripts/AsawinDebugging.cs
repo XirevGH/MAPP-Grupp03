@@ -40,7 +40,7 @@ public class AsawinDebugging : MonoBehaviour
              
                 Debug.Log("Boogie Boogie");
 
-           // testingObj1.GetComponent<YoyoController>().Upgrade();
+            testingObj1.GetComponent<YoyoController>().Upgrade();
             testingObj1.GetComponent<YoyoController>().YoYoSperMode();
 
 

@@ -4687,6 +4687,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8009434792270855696, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
   m_PrefabInstance: {fileID: 2678595683774558445}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2044913609 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+  m_PrefabInstance: {fileID: 2678595683774558445}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044913607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ac944594ea6d8e4ba0f9561b63b794e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2077687361 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9002697594610811920, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
@@ -5832,7 +5843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db05540e51175fa4396ef5042848ff97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTrackBPM: 100
+  inGameCurrentTrackBPM: 0
   trackswaper: {fileID: 2662689527024895925}
   triggers:
   - noteValue: 8
@@ -5864,7 +5875,24 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     isTriggering: 0
-  isTriggering: 0
+  - noteValue: 8
+    quaterNoteTrigger:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2044913609}
+          m_TargetAssemblyTypeName: YoyoController, Assembly-CSharp
+          m_MethodName: YoYoSperMode
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    isTriggering: 1
+  isTriggering: 1
   soundManager: {fileID: 1431856008}
 --- !u!4 &8336072371526926092
 Transform:
