@@ -9,10 +9,10 @@ public class EnemySpawner : MonoBehaviour
 {
     public Camera mainCamera;
     public Tilemap tilemap;
-    public GameObject enemyBaunser;
-    public GameObject enemyDanser;
-    public GameObject enemyDrunkerd;
-    public GameObject enemyDrunkerdBOSS;
+    public GameObject enemyBouncer;
+    public GameObject enemyDancer;
+    public GameObject enemyDrunkard;
+    public GameObject enemyDrunkardBOSS;
     public GameObject parent;
     public GameObject[] spawnLocations;
     public GameObject player;
@@ -47,13 +47,13 @@ public class EnemySpawner : MonoBehaviour
     void SpawnEnemy(Vector3Int position)
     {   
         if(waveCount < 60){
-            Instantiate(enemyDrunkerd, position, Quaternion.identity, parent.GetComponent<Transform>());
+            Instantiate(enemyDrunkard, position, Quaternion.identity, parent.GetComponent<Transform>());
         }else if(waveCount < 120){
-            Instantiate(enemyDanser, position, Quaternion.identity, parent.GetComponent<Transform>());
+            Instantiate(enemyDancer, position, Quaternion.identity, parent.GetComponent<Transform>());
         }else if(waveCount < 160){
-            Instantiate(enemyBaunser, position, Quaternion.identity, parent.GetComponent<Transform>());
+            Instantiate(enemyBouncer, position, Quaternion.identity, parent.GetComponent<Transform>());
         }else{
-            Instantiate(enemyDanser, position, Quaternion.identity, parent.GetComponent<Transform>());
+            Instantiate(enemyDancer, position, Quaternion.identity, parent.GetComponent<Transform>());
         }   
         
     }

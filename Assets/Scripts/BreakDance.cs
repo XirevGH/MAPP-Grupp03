@@ -7,19 +7,27 @@ public class BreakDance : Weapon
     public bool dealDamage;
     public float abilityTime;
     public int amountOfHits;
+
     private int hitsCounter;
-    Collider2D other;   
+    private bool canAttack;
+    private Collider2D other;   
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (WeaponIsReady()) {
+        if(canAttack)
+        {
             hitsCounter = amountOfHits;
             while (hitsCounter > 0)
-                {
-                    BreakDanceInterval();
-                }
-            //StartCooldown();
+            {
+                BreakDanceInterval();
+            }
+            canAttack = false;
         }
+    }
+     
+    public override void Attack()
+    {
+        canAttack = true;
     }
 
     private void BreakDanceInterval()
