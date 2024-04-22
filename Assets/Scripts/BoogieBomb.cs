@@ -26,14 +26,15 @@ public class BoogieBomb : Weapon
 
     private void Start()
     {
-     bombRangeY = UnityEngine.Random.Range(-6, 6);
-     bombRangeX = UnityEngine.Random.Range(-6, 6);
+     bombRangeY = UnityEngine.Random.Range(-5, 5);
+     bombRangeX = UnityEngine.Random.Range(-5, 5);
     }
 
     void FixedUpdate()
     {
         if (!bombMoving)
         {
+            this.GetComponent<SpriteRenderer>().enabled = false;
             transform.position = player.position;
         }
 
@@ -90,8 +91,8 @@ public class BoogieBomb : Weapon
 
     private void ReturnBomb()
     {
-        bombRangeY = UnityEngine.Random.Range(-6, 6);
-        bombRangeX = UnityEngine.Random.Range(-6, 6);
+        bombRangeY = UnityEngine.Random.Range(-5, 5);
+        bombRangeX = UnityEngine.Random.Range(-5, 5);
         bombMoving = false;
     }
 
@@ -105,7 +106,6 @@ public class BoogieBomb : Weapon
     {
 
         usedAbility = false;
-        this.GetComponent<SpriteRenderer>().enabled = false;
     }
 
 }
