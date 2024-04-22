@@ -22,7 +22,7 @@ public class Beat : MonoBehaviour
     private void Update()
     {
      
-        Debug.Log(beatLife); 
+        
     }
 
     void FixedUpdate()
