@@ -1120,7 +1120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &424510083
 Transform:
   m_ObjectHideFlags: 0
@@ -6008,8 +6008,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  amountOfTargets: 0
-  penetration: 0
+  amountOfTargets: 1
+  penetration: 1
 --- !u!1001 &553504012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7356,7 +7356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inGameCurrentTrackBPM: 0
-  trackswapper: {fileID: 0}
+  trackswapper: {fileID: 1770111364}
   triggers:
   - noteValue: 8
     quaterNoteTrigger:
@@ -9181,7 +9181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1509910513
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9724,7 +9724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-  - {fileID: 6401558557806053283, guid: 7e042dc8bfc144649a690f20259123b9, type: 3}
+  - {fileID: 0}
   - {fileID: 635767461}
   - {fileID: 1906168803}
   - {fileID: 2087042481}
@@ -11005,7 +11005,7 @@ MonoBehaviour:
   playerStats: {fileID: 1561011400}
   triggerController: {fileID: 1068788364}
   soundManager: {fileID: 2011814508}
-  trackswapper: {fileID: 0}
+  trackswapper: {fileID: 1770111364}
   mainCamera: {fileID: 916453220}
   tilemap: {fileID: 2142026995}
   currentTrackBPM: 0
