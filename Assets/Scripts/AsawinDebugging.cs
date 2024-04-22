@@ -37,6 +37,7 @@ public class AsawinDebugging : MonoBehaviour
 
             testingObj1.GetComponent<YoyoController>().Upgrade();
             testingObj1.GetComponent<YoyoController>().Attack();
+            //testingObj1.GetComponent<VinylDisc>().Attack();
         }
 
         if (Input.GetKeyUp(keyCode))
