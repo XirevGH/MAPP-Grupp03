@@ -14,6 +14,18 @@ public class AsawinDebugging : MonoBehaviour
        
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
+    public void Blink()
+    {
+        if (spriteRenderer.color != Color.blue)
+        {
+            spriteRenderer.color = Color.blue;
+        }
+        else
+        {
+            spriteRenderer.color = Color.white;
+
+        }
+    }
 
     // Update is called once per frame
     void Update()

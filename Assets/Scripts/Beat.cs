@@ -47,7 +47,7 @@ public class Beat : MonoBehaviour
     {
         foreach (GameObject weapon in weapons)
         {
-            weapon.GetComponent<Weapon>().ChangeCooldownDuration(+increaseCooldownDuration);
+            //weapon.GetComponent<Weapon>().ChangeCooldownDuration(+increaseCooldownDuration);
         }
         soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch - MusicSpeedChange;
         Instantiate(particle, this.transform.position, Quaternion.identity);
@@ -60,7 +60,7 @@ public class Beat : MonoBehaviour
         {
             foreach (GameObject weapon in weapons)
             {
-                weapon.GetComponent<Weapon>().ChangeCooldownDuration(-reduceCooldownDuration);
+                //weapon.GetComponent<Weapon>().ChangeCooldownDuration(-reduceCooldownDuration);
             }
             soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch + MusicSpeedChange;
             Destroy(gameObject);

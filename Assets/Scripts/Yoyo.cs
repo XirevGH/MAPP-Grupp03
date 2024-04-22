@@ -108,6 +108,6 @@ public class Yoyo : Weapon
     public override void Attack()
     {
         superMode = true;
-        StartCooldown();
+        //StartCooldown();
     }
 }

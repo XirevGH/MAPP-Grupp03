@@ -72,7 +72,7 @@ public class BoogieBomb : Weapon
 
     override public void Attack() //Gör så att man använder abilityn
     {
-        StartCooldown();
+        //StartCooldown();
         //TODO lägg till animation
         usedAbility = true;
         bombMoving = true;

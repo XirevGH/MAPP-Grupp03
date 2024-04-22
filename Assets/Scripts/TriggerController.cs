@@ -70,8 +70,12 @@ public class TriggerController : MonoBehaviour
         
         if (isTriggering)
         {
-            float sampledTime = (inGameMusic.timeSamples / (inGameMusic.clip.frequency * triggers[0].GetIntervalLength(currentTrackBPM)));
-            triggers[0].CheckForNewQuaterNote(sampledTime);
+            foreach (var triggers in triggers)
+            {
+                float sampledTime = (inGameMusic.timeSamples / (inGameMusic.clip.frequency * triggers.GetIntervalLength(currentTrackBPM)));
+                triggers.CheckForNewQuaterNote(sampledTime);
+            }
+          
                 
 
             
@@ -83,10 +87,6 @@ public class TriggerController : MonoBehaviour
 
     public void ToggleTrigger()
     {
-        triggers[0].isTriggering = !triggers[0].isTriggering;
-
-
-
         isTriggering = !isTriggering;
     }
 

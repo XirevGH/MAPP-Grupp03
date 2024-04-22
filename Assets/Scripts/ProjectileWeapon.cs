@@ -12,10 +12,10 @@ public class ProjectileWeapon : Weapon
         amountOfTargets += targetIncrease;
     }
 
-    protected override void Update()
-    { 
+    //protected override void Update()
+    //{ 
     
-    }
+    //}
 
     public void IncreasePenetrationAmount(int penetrationAmount)
     {

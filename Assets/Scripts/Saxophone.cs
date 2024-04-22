@@ -47,7 +47,7 @@ public class Saxophone : ProjectileWeapon
                 
 
             }
-            StartCooldown();
+            //StartCooldown();
         }
     }
 

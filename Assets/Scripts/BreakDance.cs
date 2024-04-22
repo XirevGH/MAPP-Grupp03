@@ -18,7 +18,7 @@ public class BreakDance : Weapon
                 {
                     BreakDanceInterval();
                 }
-            StartCooldown();
+            //StartCooldown();
         }
     }
 
