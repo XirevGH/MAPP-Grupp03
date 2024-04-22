@@ -5,7 +5,6 @@ public class Beat : MonoBehaviour
 {
     [SerializeField] private float moveSpeed, increaseCooldownDuration, reduceCooldownDuration, MusicSpeedChange;
     [SerializeField] private GameObject circle, particle, triggerController, soundManager;
-    [SerializeField] private GameObject[] weapons;
     public static float totalChangedInBPM = 0;
 
     private float percentageComplete, elapsedTime, beatLife;
@@ -42,13 +41,6 @@ public class Beat : MonoBehaviour
 
     public void DestroyNote()
     {
-        foreach (GameObject weapon in weapons)
-        {
-            if(weapon.GetComponent<Weapon>() != null)
-            {
-                //weapon.GetComponent<Weapon>().ChangeCooldownDuration(+increaseCooldownDuration);
-            }
-        }
         if (soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch <= 0.5)
         {
             soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = 0.5f;
@@ -67,13 +59,6 @@ public class Beat : MonoBehaviour
     {
         if (collider.CompareTag("Music Collider"))
         {
-            foreach (GameObject weapon in weapons)
-            {
-                if(weapon.GetComponent<Weapon>() != null)
-                {
-                    //weapon.GetComponent<Weapon>().ChangeCooldownDuration(-reduceCooldownDuration);
-                }
-            }
 
             soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch + MusicSpeedChange;
             totalChangedInBPM = totalChangedInBPM + MusicSpeedChange;
