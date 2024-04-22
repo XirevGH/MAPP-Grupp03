@@ -28,6 +28,7 @@ public class ElectricGuitar : ProjectileWeapon
         for(int i = 0; i < targetEnemies.Length; i++)
         {
             GameObject clone = Instantiate(bolt);
+            clone.GetComponent<ElectricBolt>().SetPlayerObject(gameObject);
             clone.GetComponent<ElectricBolt>().SetTargetUnit(targetEnemies[i]);
             clone.SetActive(true);
         }

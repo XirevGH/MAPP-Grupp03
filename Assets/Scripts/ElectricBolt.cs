@@ -9,8 +9,8 @@ public class ElectricBolt : MonoBehaviour
 {
     [SerializeField] private Sprite bolt1, bolt2;
     [SerializeField] private float lifetime;
-    [SerializeField] private GameObject player;
-
+   
+    private GameObject player;
     private GameObject targetUnit;
     private float totalDamage;
 
@@ -60,6 +60,11 @@ public class ElectricBolt : MonoBehaviour
             spriteChangeReady = false;
             Invoke("SetSpriteReady", spriteChangeCooldown);
         }
+    }
+
+    public void SetPlayerObject(GameObject playerObject)
+    {
+        player = playerObject;
     }
 
     public void SetTargetUnit(GameObject target)

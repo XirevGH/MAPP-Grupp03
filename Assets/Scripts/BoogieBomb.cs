@@ -16,18 +16,15 @@ public class BoogieBomb : Weapon
     public float bombRangeY;
     public float bombRangeX;
 
-
     [SerializeField] private GameObject bombParticles;
     public bool hasExploded = false;
 
     [SerializeField] private Transform player;
-    GameObject enemy;
-
 
     private void Start()
     {
-     bombRangeY = UnityEngine.Random.Range(-6, 6);
-     bombRangeX = UnityEngine.Random.Range(-6, 6);
+        bombRangeY = UnityEngine.Random.Range(-6, 6);
+        bombRangeX = UnityEngine.Random.Range(-6, 6);
     }
 
     void FixedUpdate()
@@ -40,11 +37,8 @@ public class BoogieBomb : Weapon
 
         if (!usedAbility)
         {
-
             transform.position = transform.position + new UnityEngine.Vector3(bombRangeX, bombRangeY, 0);
             Attack();
-
-            
         }
 
         if (hasExploded)
@@ -54,11 +48,9 @@ public class BoogieBomb : Weapon
         }
     }
 
-
     private void OnTriggerStay2D(Collider2D other)
     {
-
-        if (WeaponIsReady() && !colliders.Contains(other) && other.gameObject.CompareTag("Enemy")) //checkar om det finns enemies inom collidern som kan göras skada på
+        if (!colliders.Contains(other) && other.gameObject.CompareTag("Enemy")) //checkar om det finns enemies inom collidern som kan göras skada på
         {
             colliders.Add(other);
             DealDamage(other);
@@ -68,7 +60,6 @@ public class BoogieBomb : Weapon
             colliders.Clear();
         }
     }
-
 
     override public void Attack() //Gör så att man använder abilityn
     {
@@ -84,7 +75,7 @@ public class BoogieBomb : Weapon
     {
         hasExploded = true;
         Invoke("Explosion", 0.015f);
-        this.GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<SpriteRenderer>().enabled = true;
         dealDamage = true;
         Invoke("ReturnBomb", 1f);
     }
@@ -94,7 +85,6 @@ public class BoogieBomb : Weapon
         bombMoving = false;
     }
 
-
     private void Explosion()
     {
         hasExploded = false;
@@ -102,7 +92,6 @@ public class BoogieBomb : Weapon
 
     private void AbilityCooldown()
     {
-        usedAbility = false; 
+        usedAbility = false;
     }
-
 }
