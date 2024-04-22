@@ -49,6 +49,7 @@ public class YoyoController : Weapon
 
     public void Upgrade()
     {
-        Instantiate(yoyo, transform.position, Quaternion.identity, transform);
+        GameObject clone = Instantiate(yoyo, transform.position, Quaternion.identity, transform);
+        clone.GetComponent<Yoyo>().SetDamage(damage);
     }
 }
