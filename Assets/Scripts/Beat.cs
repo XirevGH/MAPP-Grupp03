@@ -14,7 +14,7 @@ public class Beat : MonoBehaviour
     {
         triggerController = GameObject.FindGameObjectWithTag("TriggerController");
         soundManager = GameObject.FindGameObjectWithTag("SoundManager");
-        weapons = GameObject.FindGameObjectsWithTag("Weapon");
+       
         circleStartingScale = circle.transform.localScale;
         beatLife = (60f / (triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM() / triggerController.GetComponent<TriggerController>().GetTrigger(0).noteValue)) / soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch;
     }
