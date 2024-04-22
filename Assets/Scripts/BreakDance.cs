@@ -12,14 +12,14 @@ public class BreakDance : Weapon
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (WeaponIsReady()) {
-            hitsCounter = amountOfHits;
-            while (hitsCounter > 0)
-                {
-                    BreakDanceInterval();
-                }
-            //StartCooldown();
-        }
+        //if (WeaponIsReady()) {
+        //    hitsCounter = amountOfHits;
+        //    while (hitsCounter > 0)
+        //        {
+        //            BreakDanceInterval();
+        //        }
+        //    //StartCooldown();
+        //}
     }
 
     private void BreakDanceInterval()

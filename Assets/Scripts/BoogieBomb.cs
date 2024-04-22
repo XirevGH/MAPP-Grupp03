@@ -58,15 +58,15 @@ public class BoogieBomb : Weapon
     private void OnTriggerStay2D(Collider2D other)
     {
 
-        if (WeaponIsReady() && !colliders.Contains(other) && other.gameObject.CompareTag("Enemy")) //checkar om det finns enemies inom collidern som kan göras skada på
-        {
-            colliders.Add(other);
-            DealDamage(other);
-        }
-        if (!dealDamage)
-        {
-            colliders.Clear();
-        }
+        //if (WeaponIsReady() && !colliders.Contains(other) && other.gameObject.CompareTag("Enemy")) //checkar om det finns enemies inom collidern som kan göras skada på
+        //{
+        //    colliders.Add(other);
+        //    DealDamage(other);
+        //}
+        //if (!dealDamage)
+        //{
+        //    colliders.Clear();
+        //}
     }
 
 
