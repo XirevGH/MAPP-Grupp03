@@ -5,14 +5,14 @@ using UnityEngine;
 public abstract class Weapon : MonoBehaviour
 {
     public float damage;
-    public bool weaponReady;
-    public float cooldownDuration;
-    private float cooldownTimer;
+    //public bool weaponReady;
+    //public float cooldownDuration;
+    //private float cooldownTimer;
 
-    private void Start()
-    {
-        weaponReady = true;
-    }
+    //private void Start()
+    //{
+    //    weaponReady = true;
+    //}
 
     //protected virtual void Update()
     //{
@@ -43,10 +43,10 @@ public abstract class Weapon : MonoBehaviour
         }
     }
 
-    public bool WeaponIsReady() 
-    {
-        return weaponReady; 
-    }
+    //public bool WeaponIsReady() 
+    //{
+    //    return weaponReady; 
+    //}
 
     //public void StartCooldown()
     //{

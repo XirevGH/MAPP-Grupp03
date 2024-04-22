@@ -1139,9 +1139,9 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591040674}
   m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
+  m_CellSize: {x: 1, y: 0.5, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
-  m_CellLayout: 0
+  m_CellLayout: 2
   m_CellSwizzle: 0
 --- !u!4 &591040676
 Transform:
@@ -1153,8 +1153,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1947654045}
   m_Father: {fileID: 0}
@@ -2008,7 +2008,7 @@ MonoBehaviour:
   - {fileID: 260835526}
   - {fileID: 274997314}
   player: {fileID: 3351724656273620173}
-  waiveCount: 0
+  waveCount: 1
   spawnRate: 3
 --- !u!1 &924896729
 GameObject:
@@ -4578,7 +4578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1947654048}
-  tileToPlace: {fileID: 11400000, guid: dfb972b0d23885c438acbf43cf0c40b6, type: 2}
+  tileToPlace: {fileID: 11400000, guid: 3f42d61ffd47d1a40aede7a4e2e84d5d, type: 2}
   colors:
   - {r: 1, g: 0.02745098, b: 0.5294118, a: 1}
   - {r: 0.4117647, g: 0.8666667, b: 0.36862746, a: 1}
@@ -4633,7 +4633,7 @@ TilemapRenderer:
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
-  m_SortOrder: 0
+  m_SortOrder: 3
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
