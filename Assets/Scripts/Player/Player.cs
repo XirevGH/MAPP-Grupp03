@@ -151,10 +151,12 @@ public class Player : MonoBehaviour
     public void IncreaseMovementSpeed(float percentageIncrease)
     {
         movementSpeed *= percentageIncrease;
+        Debug.Log("Movement Speed is now " + movementSpeed);
     }
 
     public void IncreaseHealth(float percentageIncrease)
     {
         health *= percentageIncrease;
+        Debug.Log("Health is now " + movementSpeed);
     }
 }
