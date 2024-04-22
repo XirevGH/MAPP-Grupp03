@@ -767,7 +767,7 @@ MonoBehaviour:
   playerStats: {fileID: 5436226366269919644}
   triggerController: {fileID: 1128267155804970998}
   soundManager: {fileID: 1431856008}
-  trackswapper: {fileID: 0}
+  trackswapper: {fileID: 2662689527024895925}
   mainCamera: {fileID: 519420031}
   tilemap: {fileID: 1947654048}
   currentTrackBPM: 0
@@ -5905,7 +5905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inGameCurrentTrackBPM: 0
-  trackswapper: {fileID: 0}
+  trackswapper: {fileID: 2662689527024895925}
   triggers:
   - noteValue: 8
     quaterNoteTrigger:
