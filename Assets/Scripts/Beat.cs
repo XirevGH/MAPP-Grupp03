@@ -40,7 +40,7 @@ public class Beat : MonoBehaviour
         {
             if(weapon.GetComponent<Weapon>() != null)
             {
-                weapon.GetComponent<Weapon>().ChangeCooldownDuration(+increaseCooldownDuration);
+                //weapon.GetComponent<Weapon>().ChangeCooldownDuration(+increaseCooldownDuration);
             }
         }
         soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch - MusicSpeedChange;
@@ -56,7 +56,7 @@ public class Beat : MonoBehaviour
             {
                 if(weapon.GetComponent<Weapon>() != null)
                 {
-                    weapon.GetComponent<Weapon>().ChangeCooldownDuration(-reduceCooldownDuration);
+                    //weapon.GetComponent<Weapon>().ChangeCooldownDuration(-reduceCooldownDuration);
                 }
             }
             soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch + MusicSpeedChange;
