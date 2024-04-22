@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 
 public class Floor : MonoBehaviour
 {
@@ -37,6 +38,9 @@ public class Floor : MonoBehaviour
         }
     }
 
+
+
+
     private void Update()
     {
         BoundsInt bounds = gameController.GetBoundsFromCamera();
@@ -49,6 +53,7 @@ public class Floor : MonoBehaviour
                 if (tile == null)
                 {
                     PlaceTile(position);
+                    
                 }
             }
         }

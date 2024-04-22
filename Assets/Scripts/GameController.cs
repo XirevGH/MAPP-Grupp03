@@ -59,8 +59,8 @@ public class GameController : MonoBehaviour
     {
         float cameraSize = mainCamera.orthographicSize;
         Vector3 cameraPosition = mainCamera.transform.position;
-        Vector3Int minPosition = tilemap.WorldToCell(cameraPosition - new Vector3(cameraSize * mainCamera.aspect, cameraSize, 0));
-        Vector3Int maxPosition = tilemap.WorldToCell(cameraPosition + new Vector3(cameraSize * mainCamera.aspect, cameraSize, 0));
+        Vector3Int minPosition = tilemap.WorldToCell(cameraPosition - new Vector3(cameraSize - 2 * mainCamera.aspect * 2.5f, cameraSize + 10, 0));
+        Vector3Int maxPosition = tilemap.WorldToCell(cameraPosition + new Vector3(cameraSize- 5 * mainCamera.aspect , cameraSize + 10, 0));
         return new BoundsInt(minPosition, maxPosition - minPosition);
     }
 
