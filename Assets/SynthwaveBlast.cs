@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.ParticleSystem;
 
-public class SynthwaveBlast : PenetratingProjectileWeapon
+public class SynthwaveBlast : ProjectileWeapon
 {
 
     

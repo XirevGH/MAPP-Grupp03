@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VinylDisc : PenetratingProjectileWeapon
+public class VinylDisc : ProjectileWeapon
 {
     private Transform playerPosition;
     private SoundManager soundManager;
