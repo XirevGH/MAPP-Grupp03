@@ -14,25 +14,25 @@ public abstract class Weapon : MonoBehaviour
         weaponReady = true;
     }
 
-    protected virtual void Update()
-    {
-        if (!weaponReady)
-        {
-            cooldownTimer -= Time.deltaTime;
-            if (cooldownTimer <= 0 )
-            {
-               SetWeaponReady();
-            }
-        }
-        else
-        {
-            Attack();
-        }
-    }
+    //protected virtual void Update()
+    //{
+    //    if (!weaponReady)
+    //    {
+    //        cooldownTimer -= Time.deltaTime;
+    //        if (cooldownTimer <= 0 )
+    //        {
+    //           SetWeaponReady();
+    //        }
+    //    }
+    //    else
+    //    {
+    //        Attack();
+    //    }
+    //}
 
     public virtual void Attack()
     {
-        StartCooldown();
+        //StartCooldown();
     }
 
     public void DealDamage(Collider2D other)
@@ -48,26 +48,26 @@ public abstract class Weapon : MonoBehaviour
         return weaponReady; 
     }
 
-    public void StartCooldown()
-    {
-        cooldownTimer = cooldownDuration;
-        weaponReady = false;
-    }
+    //public void StartCooldown()
+    //{
+    //    cooldownTimer = cooldownDuration;
+    //    weaponReady = false;
+    //}
 
-    private void SetWeaponReady()
-    {
-        weaponReady = true;
-    }
+    //private void SetWeaponReady()
+    //{
+    //    weaponReady = true;
+    //}
 
-    public void ChangeCooldownDuration(float value)
-    {
-        cooldownDuration += value;
-    }
+    //public void ChangeCooldownDuration(float value)
+    //{
+    //    cooldownDuration += value;
+    //}
 
-    public float GetCooldownDuration()
-    {
-        return cooldownDuration;
-    }
+    //public float GetCooldownDuration()
+    //{
+    //    return cooldownDuration;
+    //}
 
     public void IncreaseDamage(float percentageAmount)
     {

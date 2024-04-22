@@ -4,24 +4,29 @@ using UnityEngine;
 public class Beat : MonoBehaviour
 {
     [SerializeField] private float moveSpeed, increaseCooldownDuration, reduceCooldownDuration, MusicSpeedChange;
-    [SerializeField] private GameObject circle, particle, gameController, TriggerController, soundManager;
-    [SerializeField] private GameObject[] weapons;
+    [SerializeField] private GameObject circle, particle, triggerController, soundManager;
+    public static float totalChangedInBPM = 0;
 
     private float percentageComplete, elapsedTime, beatLife;
     private Vector3 circleStartingScale;
 
     private void Start()
     {
-        TriggerController = GameObject.FindGameObjectWithTag("TriggerController");
+        triggerController = GameObject.FindGameObjectWithTag("TriggerController");
         soundManager = GameObject.FindGameObjectWithTag("SoundManager");
-        weapons = GameObject.FindGameObjectsWithTag("Weapon");
-        gameController = GameObject.FindGameObjectWithTag("GameController");
+       
         circleStartingScale = circle.transform.localScale;
+        beatLife = (60f / (triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM() / triggerController.GetComponent<TriggerController>().GetTrigger(0).noteValue)) / soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch;
+    }
+    private void Update()
+    {
+     
+        
     }
 
     void FixedUpdate()
     {
-        beatLife = 60f / (gameController.GetComponent<GameController>().GetCurrentTrackBPM() / TriggerController.GetComponent<TriggerController>().GetTrigger(0).noteValue);
+       
         elapsedTime += Time.deltaTime;
         percentageComplete = elapsedTime / beatLife;
         GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, percentageComplete);
@@ -36,14 +41,16 @@ public class Beat : MonoBehaviour
 
     public void DestroyNote()
     {
-        foreach (GameObject weapon in weapons)
+        if (soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch <= 0.5)
         {
-            if(weapon.GetComponent<Weapon>() != null)
-            {
-                weapon.GetComponent<Weapon>().ChangeCooldownDuration(+increaseCooldownDuration);
-            }
+            soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = 0.5f;
         }
-        soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch - MusicSpeedChange;
+        else
+        {
+            soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch - MusicSpeedChange;
+        }
+        
+        totalChangedInBPM = totalChangedInBPM - MusicSpeedChange;
         Instantiate(particle, this.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
@@ -52,14 +59,9 @@ public class Beat : MonoBehaviour
     {
         if (collider.CompareTag("Music Collider"))
         {
-            foreach (GameObject weapon in weapons)
-            {
-                if(weapon.GetComponent<Weapon>() != null)
-                {
-                    weapon.GetComponent<Weapon>().ChangeCooldownDuration(-reduceCooldownDuration);
-                }
-            }
+
             soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch + MusicSpeedChange;
+            totalChangedInBPM = totalChangedInBPM + MusicSpeedChange;
             Destroy(gameObject);
         }
     }

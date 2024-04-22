@@ -17,7 +17,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject[] spawnLocations;
     public GameObject player;
 
-    public int waiveCount = 0;
+    public int waveCount = 0;
     
     public float spawnRate;
     private bool waveHasSpawned;
@@ -33,7 +33,7 @@ public class EnemySpawner : MonoBehaviour
             waveHasSpawned = true;
             Invoke("SpawnNextWave", spawnRate);
             SpawnEnemiesInCircle((1 + (int)spawnIncreaser));
-            waiveCount += 1; 
+            waveCount += 1; 
 
         }
     }
@@ -46,11 +46,11 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy(Vector3Int position)
     {   
-        if(waiveCount < 60){
+        if(waveCount < 60){
             Instantiate(enemyDrunkerd, position, Quaternion.identity, parent.GetComponent<Transform>());
-        }else if(waiveCount < 120){
+        }else if(waveCount < 120){
             Instantiate(enemyDanser, position, Quaternion.identity, parent.GetComponent<Transform>());
-        }else if(waiveCount < 160){
+        }else if(waveCount < 160){
             Instantiate(enemyBaunser, position, Quaternion.identity, parent.GetComponent<Transform>());
         }else{
             Instantiate(enemyDanser, position, Quaternion.identity, parent.GetComponent<Transform>());

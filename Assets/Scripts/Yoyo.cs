@@ -5,7 +5,7 @@ using UnityEngine;
 public class Yoyo : Weapon
 {
     [SerializeField] private float rotateSpeed, colliderStartingOffset, colliderSuperModeOffset;
-    [SerializeField] private GameObject ball, yoyoString;
+    [SerializeField] private GameObject ball, yoyoString, triggerController, soundManager;
     [SerializeField] private Vector3 ballStartPosition, ballSuperModePosition, stringStartPosition, stringSuperModePosition, stringStartScale, stringSuperModeScale;
 
     private List<string> upgradeOptions;
@@ -18,14 +18,26 @@ public class Yoyo : Weapon
 
     private void Start()
     {
+        triggerController = GameObject.FindGameObjectWithTag("TriggerController");
+        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
+        rotateSpeed = ((triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM()/ 60f));
+
         upgradeOptions = new List<string> {"SuperMode", "PlusOneYoyo"};
         superMode = false;
-        lerpTime = superModeTime / 5;
+        lerpTime = 0;
         circleColl = GetComponent<CircleCollider2D>();
+    }
+    private void Update()
+    {
+        rotateSpeed = ((triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM() / 60f));
+        superModeTime = ((60f / (triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM() / triggerController.GetComponent<TriggerController>().GetTrigger(0).noteValue)) / soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch) / 2;
+        lerpTime = superModeTime / 5;
     }
 
     private void FixedUpdate()
     {
+       
+
         if (Time.timeScale == 0)
         {
             return;
@@ -114,6 +126,6 @@ public class Yoyo : Weapon
     public override void Attack()
     {
         superMode = true;
-        StartCooldown();
+        //StartCooldown();
     }
 }

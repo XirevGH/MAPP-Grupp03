@@ -11,6 +11,6 @@ public class DiscoBallController : Weapon
     public override void Attack()
     {
         Instantiate(discoBall, transform.position, Quaternion.identity);
-        StartCooldown();
+        
     }
 }
