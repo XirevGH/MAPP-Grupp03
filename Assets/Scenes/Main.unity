@@ -5538,7 +5538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 3
-  amountOfTargets: 1
+  amountOfProjectiles: 0
   penetration: 1
   shootingPoint: {fileID: 7147500035608189028}
   notePrefab: {fileID: 5730958551181348608, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
@@ -5760,8 +5760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  amountOfTargets: 1
-  penetration: 0
+  amountOfTethers: 0
   bolt: {fileID: 8209966115709815941, guid: c89b4386ca74450468870cc3cee72ee5, type: 3}
 --- !u!95 &6747922250687069817
 Animator:
@@ -5942,7 +5941,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2044913609}
           m_TargetAssemblyTypeName: YoyoController, Assembly-CSharp
-          m_MethodName: YoyoSuperMode
+          m_MethodName: Attack
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
