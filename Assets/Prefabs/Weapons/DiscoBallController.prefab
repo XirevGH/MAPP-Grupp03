@@ -44,7 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899576dad5c4b5a40a0036a0f3a9d6b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  weaponReady: 0
-  cooldownDuration: 1
+  damage: 5
   discoBall: {fileID: 2005328289849877413, guid: f92804d05bface3499e84240f1143431, type: 3}

@@ -14,12 +14,10 @@ public class TriggerController : MonoBehaviour
     [SerializeField] public bool isTriggering;
     public GameObject soundManager;
 
-
     private AudioSource inGameMusic;
         
-
-
     [System.Serializable]
+
     public class Trigger
     {
         [SerializeField] public float noteValue;
@@ -28,11 +26,8 @@ public class TriggerController : MonoBehaviour
         public bool isTriggering;
         public float GetIntervalLength(float BPM)
         {
-
             return 60f / (BPM/ noteValue);
-
         }
-        
 
         public void CheckForNewQuaterNote(float interval)
         {
@@ -44,14 +39,9 @@ public class TriggerController : MonoBehaviour
                 {
                     quaterNoteTrigger.Invoke();
                 } 
-               
             }
-
         }
-
-
     }
-
 
     void Start()
     {
@@ -61,13 +51,10 @@ public class TriggerController : MonoBehaviour
         triggers[0].isTriggering = isTriggering;
     }
 
-
     void Update()
     {
         inGameMusic = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
-
         inGameCurrentTrackBPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswapper.GetComponent<TrackSwapper>().i];
-        
         if (isTriggering)
         {
             foreach (var triggers in triggers)
@@ -75,18 +62,9 @@ public class TriggerController : MonoBehaviour
                 float sampledTime = (inGameMusic.timeSamples / (inGameMusic.clip.frequency * triggers.GetIntervalLength(inGameCurrentTrackBPM)));
                 triggers.CheckForNewQuaterNote(sampledTime);
                 //Debug.Log(Mathf.FloorToInt(sampledTime));
-
                 //Debug.Log(Mathf.FloorToInt(inGameMusic.));
             }
-           
-
-
-
-
-
         }
-
-
     }
 
     public void ToggleTrigger()
@@ -103,8 +81,4 @@ public class TriggerController : MonoBehaviour
     {
         return inGameCurrentTrackBPM;
     }
-
-    //public float Get
-
-
 }
