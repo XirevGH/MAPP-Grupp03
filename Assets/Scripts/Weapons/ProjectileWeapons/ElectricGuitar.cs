@@ -7,8 +7,6 @@ public class ElectricGuitar : TetheringWeapon
 {
     [SerializeField] private GameObject bolt;
 
-    private HashSet<GameObject> enemies = new HashSet<GameObject>();
-
     private void OnTriggerStay2D(Collider2D other)
     {
         if(other.CompareTag("Enemy"))
@@ -33,28 +31,6 @@ public class ElectricGuitar : TetheringWeapon
             clone.SetActive(true);
         }
         //StartCooldown();
-    }
-
-    private int AdjustTargetOverflow(int amountOfTargets)
-    {
-        if(enemies.Count < amountOfTargets)
-        {
-            return enemies.Count;
-        }
-        else
-        {
-            return amountOfTargets;
-        }
-    }
-
-    private GameObject[] GetClosestEnemies(int amountOfTargets)
-    {
-        SortedSet<GameObject> sortedEnemies = new SortedSet<GameObject>(new GameObjectComparer());
-        foreach(GameObject enemy in enemies)
-        {
-            sortedEnemies.Add(enemy);
-        }
-        return sortedEnemies.Take(amountOfTargets).ToArray();
     }
 
     public float GetDamage()
