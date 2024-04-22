@@ -20,12 +20,6 @@ public class DiscoBall : ProjectileWeapon
 
         }
 
-        void FixedUpdate()
-        {
-         
-
-        }
-
         private void OnTriggerEnter2D(Collider2D other)
         {
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyAfterLife : MonoBehaviour
+public class ObjectDestroyer : MonoBehaviour
 {
     [SerializeField] private float lifeTime = 1f;
 
