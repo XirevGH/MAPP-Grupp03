@@ -25,6 +25,16 @@ public class YoyoController : MonoBehaviour
         }
     }
 
+    public void YoYoSperMode() 
+    {
+        int totalYoyo = transform.childCount;
+        for (int i = 0; i < totalYoyo; i++)
+        {
+             transform.GetChild(i).GetComponent<Yoyo>().Attack();
+          
+        }
+    }
+
     private void SetYoyoPosition()
     {
         int totalYoyo = transform.childCount;
@@ -35,15 +45,15 @@ public class YoyoController : MonoBehaviour
         {
             if(i == 0)
             {
-                cooldown = transform.GetChild(i).GetComponent<Yoyo>().cooldownDuration;
+                //cooldown = transform.GetChild(i).GetComponent<Yoyo>().cooldownDuration;
             } 
             else
             {
-                transform.GetChild(i).GetComponent<Yoyo>().cooldownDuration = cooldown;
+                //transform.GetChild(i).GetComponent<Yoyo>().cooldownDuration = cooldown;
             }
             transform.GetChild(i).GetComponent<Yoyo>().angle = nextAngle;
             transform.GetChild(i).GetComponent<Yoyo>().ResetSuperMode();
-            transform.GetChild(i).GetComponent<Yoyo>().StartCooldown();
+            //transform.GetChild(i).GetComponent<Yoyo>().StartCooldown();
             nextAngle += angle;
         }
     }

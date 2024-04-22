@@ -179,7 +179,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 1b40db17f2181064888d17ac69c34b04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -206,11 +206,13 @@ MonoBehaviour:
   player: {fileID: 0}
   xpMagnetPrefab: {fileID: 4857899130433156979, guid: 86fd765608c838c41ac970a87857d355, type: 3}
   xpDropPrefab: {fileID: 2322821042000343324, guid: 73e8c7fac64e160469ab7a30447b8bc1, type: 3}
+  enemySprite: {fileID: 21300000, guid: 1b40db17f2181064888d17ac69c34b04, type: 3}
   health: 25
+  thisMovementSpeed: 0
+  isSlow: 0
   damageNumbers: {fileID: 287581913604085729}
   damageNumberAnim: {fileID: 2898152515693454215}
   enemyAnim: {fileID: -8718832928761771214}
-  enemySprite: {fileID: 21300000, guid: 1b40db17f2181064888d17ac69c34b04, type: 3}
 --- !u!58 &4452318053238822982
 CircleCollider2D:
   m_ObjectHideFlags: 0

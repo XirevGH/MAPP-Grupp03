@@ -31,7 +31,7 @@ public class ElectricGuitar : ProjectileWeapon
             clone.GetComponent<ElectricBolt>().SetTargetUnit(targetEnemies[i]);
             clone.SetActive(true);
         }
-        StartCooldown();
+        //StartCooldown();
     }
 
     private int AdjustTargetOverflow(int amountOfTargets)

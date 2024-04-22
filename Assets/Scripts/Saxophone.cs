@@ -36,7 +36,7 @@ public class Saxophone : ProjectileWeapon
             foreach(GameObject target in closestEnemy){
                 ShootNoteAtEnemy(target);
             }
-            StartCooldown();
+            //StartCooldown();
         }
     }
 

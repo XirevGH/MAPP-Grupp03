@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 
 public class TriggerController : MonoBehaviour
 {
-    [SerializeField] public float currentTrackBPM;
+    [SerializeField] public float inGameCurrentTrackBPM;
     [SerializeField] GameObject trackswaper;
     [SerializeField] public Trigger[] triggers;
     [SerializeField] public bool isTriggering;
@@ -66,15 +66,23 @@ public class TriggerController : MonoBehaviour
     {
         inGameMusic = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
 
-        currentTrackBPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswaper.GetComponent<TrackSwaper>().i];
+        inGameCurrentTrackBPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswaper.GetComponent<TrackSwaper>().i];
         
         if (isTriggering)
         {
-            float sampledTime = (inGameMusic.timeSamples / (inGameMusic.clip.frequency * triggers[0].GetIntervalLength(currentTrackBPM)));
-            triggers[0].CheckForNewQuaterNote(sampledTime);
-                
+            foreach (var triggers in triggers)
+            {
+                float sampledTime = (inGameMusic.timeSamples / (inGameMusic.clip.frequency * triggers.GetIntervalLength(inGameCurrentTrackBPM)));
+                triggers.CheckForNewQuaterNote(sampledTime);
+                //Debug.Log(Mathf.FloorToInt(sampledTime));
 
-            
+                //Debug.Log(Mathf.FloorToInt(inGameMusic.));
+            }
+           
+
+
+
+
 
         }
 
@@ -83,10 +91,6 @@ public class TriggerController : MonoBehaviour
 
     public void ToggleTrigger()
     {
-        triggers[0].isTriggering = !triggers[0].isTriggering;
-
-
-
         isTriggering = !isTriggering;
     }
 
@@ -94,6 +98,13 @@ public class TriggerController : MonoBehaviour
     {
         return triggers[triggerNumber];
     }
+
+    public float GetCurrentTrackBPM()
+    {
+        return inGameCurrentTrackBPM;
+    }
+
+    //public float Get
 
 
 }

@@ -14,6 +14,18 @@ public class AsawinDebugging : MonoBehaviour
        
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
+    public void Blink()
+    {
+        if (spriteRenderer.color != Color.blue)
+        {
+            spriteRenderer.color = Color.blue;
+        }
+        else
+        {
+            spriteRenderer.color = Color.white;
+
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -29,6 +41,7 @@ public class AsawinDebugging : MonoBehaviour
                 Debug.Log("Boogie Boogie");
 
             testingObj1.GetComponent<YoyoController>().Upgrade();
+            testingObj1.GetComponent<YoyoController>().YoYoSperMode();
 
 
 
