@@ -2,36 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DiscoBall : ProjectileWeapon
+public class DiscoBall : MonoBehaviour
 { 
+    private Rigidbody2D rb;
+    public float height, distance;
 
-        private Rigidbody2D rb;
-      
-        public float height, distance;
-   
- 
+    private float damage;
 
-        private void Start()
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        rb.AddForce( new Vector2 (Random.Range(-distance, distance), height));
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
         {
-          
-            rb = GetComponent<Rigidbody2D>();
-            rb.AddForce( new Vector2 (Random.Range(-distance, distance), height));
-            
-
+            // TODO Replace this with DealDamage from future superclass projectile
+            other.GetComponent<Enemy>().TakeDamage(damage);
         }
+    }
 
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-
-            if (other.gameObject.CompareTag("Enemy"))
-            {
-                DealDamage(other);
-            }
-
-        }
-
-
-
+    public void SetDamage(float amount)
+    {
+        damage = amount;
+    }
 }
-
-

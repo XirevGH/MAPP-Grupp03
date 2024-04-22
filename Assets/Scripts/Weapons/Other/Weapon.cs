@@ -5,35 +5,8 @@ using UnityEngine;
 public abstract class Weapon : MonoBehaviour
 {
     public float damage;
-    //public bool weaponReady;
-    //public float cooldownDuration;
-    //private float cooldownTimer;
 
-    //private void Start()
-    //{
-    //    weaponReady = true;
-    //}
-
-    //protected virtual void Update()
-    //{
-    //    if (!weaponReady)
-    //    {
-    //        cooldownTimer -= Time.deltaTime;
-    //        if (cooldownTimer <= 0 )
-    //        {
-    //           SetWeaponReady();
-    //        }
-    //    }
-    //    else
-    //    {
-    //        Attack();
-    //    }
-    //}
-
-    public virtual void Attack()
-    {
-        //StartCooldown();
-    }
+    public abstract void Attack();
 
     public void DealDamage(Collider2D other)
     {
@@ -42,32 +15,6 @@ public abstract class Weapon : MonoBehaviour
             other.GetComponent<Enemy>().TakeDamage(damage);
         }
     }
-
-    //public bool WeaponIsReady() 
-    //{
-    //    return weaponReady; 
-    //}
-
-    //public void StartCooldown()
-    //{
-    //    cooldownTimer = cooldownDuration;
-    //    weaponReady = false;
-    //}
-
-    //private void SetWeaponReady()
-    //{
-    //    weaponReady = true;
-    //}
-
-    //public void ChangeCooldownDuration(float value)
-    //{
-    //    cooldownDuration += value;
-    //}
-
-    //public float GetCooldownDuration()
-    //{
-    //    return cooldownDuration;
-    //}
 
     public void IncreaseDamage(float percentageAmount)
     {

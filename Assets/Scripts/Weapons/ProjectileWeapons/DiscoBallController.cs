@@ -6,11 +6,9 @@ public class DiscoBallController : Weapon
 {    
     [SerializeField] private GameObject discoBall;
 
-    // Start is called before the first frame updat
-
     public override void Attack()
     {
-        Instantiate(discoBall, transform.position, Quaternion.identity);
-        
+        GameObject clone = Instantiate(discoBall, transform.position, Quaternion.identity);
+        clone.GetComponent<DiscoBall>().SetDamage(damage);
     }
 }

@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
 
-public class YoyoController : MonoBehaviour
+public class YoyoController : Weapon
 {
     public GameObject yoyo;
 
     private int childCount;
-    private float cooldown;
 
     void Start()
     {
@@ -25,13 +24,12 @@ public class YoyoController : MonoBehaviour
         }
     }
 
-    public void YoYoSperMode() 
+    public override void Attack() 
     {
         int totalYoyo = transform.childCount;
         for (int i = 0; i < totalYoyo; i++)
         {
-             transform.GetChild(i).GetComponent<Yoyo>().Attack();
-          
+             transform.GetChild(i).GetComponent<Yoyo>().ActivateSuperMode();
         }
     }
 
@@ -43,17 +41,8 @@ public class YoyoController : MonoBehaviour
 
         for (int i = 0; i < totalYoyo; i++)
         {
-            if(i == 0)
-            {
-                //cooldown = transform.GetChild(i).GetComponent<Yoyo>().cooldownDuration;
-            } 
-            else
-            {
-                //transform.GetChild(i).GetComponent<Yoyo>().cooldownDuration = cooldown;
-            }
             transform.GetChild(i).GetComponent<Yoyo>().angle = nextAngle;
             transform.GetChild(i).GetComponent<Yoyo>().ResetSuperMode();
-            //transform.GetChild(i).GetComponent<Yoyo>().StartCooldown();
             nextAngle += angle;
         }
     }

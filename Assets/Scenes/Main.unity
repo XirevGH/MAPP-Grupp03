@@ -2291,6 +2291,7 @@ Transform:
   - {fileID: 12629167}
   - {fileID: 1576904875}
   - {fileID: 844196509}
+  - {fileID: 1596628489}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1146128761
@@ -2997,7 +2998,6 @@ Transform:
   - {fileID: 7617469065711567828}
   - {fileID: 2926742445463038897}
   - {fileID: 1431856009}
-  - {fileID: 1596628489}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1485866956
@@ -3323,7 +3323,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1443899708}
+    m_TransformParent: {fileID: 1075120216}
     m_Modifications:
     - target: {fileID: 7929235589256512294, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
       propertyPath: m_Name
@@ -3331,15 +3331,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9148644223613276295, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.43
+      value: -5.907173
       objectReference: {fileID: 0}
     - target: {fileID: 9148644223613276295, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.03
+      value: 0.8013689
       objectReference: {fileID: 0}
     - target: {fileID: 9148644223613276295, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.21278323
       objectReference: {fileID: 0}
     - target: {fileID: 9148644223613276295, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5177,7 +5177,7 @@ GameObject:
   - component: {fileID: 404620838769689056}
   - component: {fileID: 8509905677515987296}
   m_Layer: 6
-  m_Name: TrackSwaper
+  m_Name: TrackSwapper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5942,7 +5942,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2044913609}
           m_TargetAssemblyTypeName: YoyoController, Assembly-CSharp
-          m_MethodName: YoYoSperMode
+          m_MethodName: YoyoSuperMode
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

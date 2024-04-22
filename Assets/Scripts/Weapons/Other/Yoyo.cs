@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
-public class Yoyo : Weapon
+public class Yoyo : MonoBehaviour
 {
     [SerializeField] private float rotateSpeed, colliderStartingOffset, colliderSuperModeOffset;
     [SerializeField] private GameObject ball, yoyoString, triggerController, soundManager;
@@ -13,6 +14,8 @@ public class Yoyo : Weapon
 
     private bool superMode;
     private float lerpTime, lerpElapsedTime;
+
+    private float damage;
 
     private CircleCollider2D circleColl;
 
@@ -27,6 +30,7 @@ public class Yoyo : Weapon
         lerpTime = 0;
         circleColl = GetComponent<CircleCollider2D>();
     }
+
     private void Update()
     {
         rotateSpeed = ((triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM() / 60f));
@@ -36,8 +40,6 @@ public class Yoyo : Weapon
 
     private void FixedUpdate()
     {
-       
-
         if (Time.timeScale == 0)
         {
             return;
@@ -64,13 +66,24 @@ public class Yoyo : Weapon
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            DealDamage(other);
+            // TODO Replace this with DealDamage from future superclass projectile
+            other.GetComponent<Enemy>().TakeDamage(damage);
         }
     }
 
     public List<string> UpgradeOptions()
     {
         return upgradeOptions;
+    }
+
+    public void SetDamage(float amount)
+    {
+        damage = amount;
+    }
+
+    public void ActivateSuperMode()
+    {
+        superMode = true;
     }
 
     public void SuperMode()
@@ -121,11 +134,5 @@ public class Yoyo : Weapon
         yoyoString.transform.localPosition = stringStartPosition;
         yoyoString.transform.localScale = stringStartScale;
         circleColl.offset = new Vector2(colliderStartingOffset, 0f);
-    }
-
-    public override void Attack()
-    {
-        superMode = true;
-        //StartCooldown();
     }
 }

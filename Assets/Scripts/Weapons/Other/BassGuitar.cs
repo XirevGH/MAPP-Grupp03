@@ -6,7 +6,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class BassGuitar : Weapon
 {
-   public  HashSet<Collider2D> colliders = new HashSet<Collider2D>();
+    public  HashSet<Collider2D> colliders = new HashSet<Collider2D>();
     public Animator anim;
 
     private void Start()
@@ -16,9 +16,7 @@ public class BassGuitar : Weapon
 
     public override void Attack()
     {
-       
         anim.SetTrigger("Attacking");
-        base.Attack();
     }
 
     private void OnTriggerStay2D(Collider2D other)
