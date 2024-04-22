@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ac944594ea6d8e4ba0f9561b63b794e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 3
   yoyo: {fileID: 3131863427772903305, guid: 7e042dc8bfc144649a690f20259123b9, type: 3}
