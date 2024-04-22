@@ -17,10 +17,7 @@ public class UpgradeAbility : MonoBehaviour
     {
         weaponOptions = new List<Weapon>(weapons);
         allowedAmountOfWeapons = 4;
-        typeOptions = new List<string>();
-        typeOptions.Add("Weapon");
-        typeOptions.Add("Upgrade");
-        typeOptions.Add("Utility");
+        typeOptions = new List<string> { "Weapon", "Utility"};
 
     }
 
@@ -28,12 +25,12 @@ public class UpgradeAbility : MonoBehaviour
     {
         weapon.IncreaseDamage(percentageIncrease);
     }
-    public void UpgradeTargetCount(ProjectileWeapon weapon, int targetIncrease)
+    public void UpgradeTargetCount(PenetratingProjectileWeapon weapon, int targetIncrease)
     {
         weapon.IncreaseTargetCount(targetIncrease);
     }
 
-    public void UpgradePenetrationAmount(ProjectileWeapon weapon, int penetrationAmount)
+    public void UpgradePenetrationAmount(PenetratingProjectileWeapon weapon, int penetrationAmount)
     {
         weapon.IncreasePenetrationAmount(penetrationAmount);
     }
@@ -71,10 +68,23 @@ public class UpgradeAbility : MonoBehaviour
     }
     private void ChooseOptions()
     {
+        if (player.GetCurrentWeapons().Count == 0) 
+        { 
+
+        }
         if (player.GetCurrentWeapons().Count < allowedAmountOfWeapons) { 
             int randomChoiceOne = Random.Range(0, typeOptions.Count);
             int randomChoiceTwo = Random.Range(0, typeOptions.Count);
             int randomChoiceThree = Random.Range(0, typeOptions.Count);
         }
+    }
+
+    private string ChooseUpgradeType(int randomChoice)
+    {
+        return typeOptions[randomChoice];
+    }
+
+    private void CheckForUpgradableItems()
+    {
     }
 }

@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     private int areaOfEffectSize;
     private int pierce;
     private float xpMultiplier;
-    public int health;
+    public float health;
     private int defence;
     private float movementSpeed;
     private float xpHeld;
@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        currentWeapons = new List<Weapon>();
+
         money = playerStats.money; 
         moneyMultiplier = playerStats.moneyMultiplier; 
         damage = playerStats.damage;
@@ -110,7 +112,7 @@ public class Player : MonoBehaviour
 
         if(level > 2)
         {
-            electricGuitar.GetComponent<ElectricGuitar>().UpgradeTargetAmount(1);
+            electricGuitar.GetComponent<ElectricGuitar>().UpgradeTetherAmount(1);
         }
         if(level > 3)
         {
@@ -145,4 +147,16 @@ public class Player : MonoBehaviour
         return new List<Weapon>(currentWeapons);
     }
     #endregion
+
+    public void IncreaseMovementSpeed(float percentageIncrease)
+    {
+        movementSpeed *= percentageIncrease;
+        Debug.Log("Movement Speed is now " + movementSpeed);
+    }
+
+    public void IncreaseHealth(float percentageIncrease)
+    {
+        health *= percentageIncrease;
+        Debug.Log("Health is now " + movementSpeed);
+    }
 }

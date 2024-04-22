@@ -166,11 +166,6 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnParticleCollision(GameObject particle)
-    {
-        TakeDamage(UnityEngine.Random.Range(1, 4));
-    }
-
     private int GetRandomInt (int a, int b)
     {
         return UnityEngine.Random.Range(a, b);

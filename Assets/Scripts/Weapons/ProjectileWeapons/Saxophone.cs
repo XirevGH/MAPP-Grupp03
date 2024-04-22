@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Saxophone : ProjectileWeapon
+public class Saxophone : PenetratingProjectileWeapon
 {
     public Transform shootingPoint;
     public GameObject notePrefab; 
     public float speed;
     private List<GameObject> enemies = new List<GameObject>();
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -30,7 +31,7 @@ public class Saxophone : ProjectileWeapon
     public override void Attack()
     {
         Debug.Log("Attacking");
-        List<GameObject> closestEnemy = FindClosestEnemy(base.amountOfTargets);
+        List<GameObject> closestEnemy = FindClosestEnemy(base.amountOfProjectiles);
         if (closestEnemy != null)
         {   
             foreach(GameObject target in closestEnemy){
