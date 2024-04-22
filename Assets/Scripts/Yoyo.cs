@@ -19,16 +19,22 @@ public class Yoyo : Weapon
     private void Start()
     {
         triggerController = GameObject.FindGameObjectWithTag("TriggerController");
+        rotateSpeed = ((triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM()/ 60f));
 
         upgradeOptions = new List<string> {"SuperMode", "PlusOneYoyo"};
         superMode = false;
-        lerpTime = superModeTime / 5;
+        lerpTime = 0;
         circleColl = GetComponent<CircleCollider2D>();
+    }
+    private void Update()
+    {
+        rotateSpeed = ((triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM() / 60f));
+        superModeTime = (60f / (triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM() / triggerController.GetComponent<TriggerController>().GetTrigger(0).noteValue));
     }
 
     private void FixedUpdate()
     {
-        superModeTime = 2; /*( 60f / (triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM() / triggerController.GetComponent<TriggerController>().GetTrigger(0).noteValue)) / 2;*/
+       
 
         if (Time.timeScale == 0)
         {

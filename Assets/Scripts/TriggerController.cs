@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 
 public class TriggerController : MonoBehaviour
 {
-    [SerializeField] public float currentTrackBPM;
+    [SerializeField] public float inGameCurrentTrackBPM;
     [SerializeField] GameObject trackswaper;
     [SerializeField] public Trigger[] triggers;
     [SerializeField] public bool isTriggering;
@@ -66,13 +66,13 @@ public class TriggerController : MonoBehaviour
     {
         inGameMusic = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
 
-        currentTrackBPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswaper.GetComponent<TrackSwaper>().i];
+        inGameCurrentTrackBPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswaper.GetComponent<TrackSwaper>().i] + Beat.totalChangedInBPM;
         
         if (isTriggering)
         {
             foreach (var triggers in triggers)
             {
-                float sampledTime = (inGameMusic.timeSamples / (inGameMusic.clip.frequency * triggers.GetIntervalLength(currentTrackBPM)));
+                float sampledTime = (inGameMusic.timeSamples / (inGameMusic.clip.frequency * triggers.GetIntervalLength(inGameCurrentTrackBPM)));
                 triggers.CheckForNewQuaterNote(sampledTime);
             }
           
@@ -97,7 +97,7 @@ public class TriggerController : MonoBehaviour
 
     public float GetCurrentTrackBPM()
     {
-        return currentTrackBPM;
+        return inGameCurrentTrackBPM;
     }
 
 

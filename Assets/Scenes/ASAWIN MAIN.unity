@@ -1239,6 +1239,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5918783432946780763, guid: 4c6ffbfdbd8d4984caa2586fce2b37a7, type: 3}
+      propertyPath: testingObj1
+      value: 
+      objectReference: {fileID: 2051435182}
     - target: {fileID: 6880885178429221876, guid: 4c6ffbfdbd8d4984caa2586fce2b37a7, type: 3}
       propertyPath: m_Name
       value: Circle (1)
@@ -1422,6 +1426,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707771447}
   m_CullTransparentMesh: 1
+--- !u!4 &772576924 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3913786379147310409, guid: 7e042dc8bfc144649a690f20259123b9, type: 3}
+  m_PrefabInstance: {fileID: 1163499794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &781003467
 GameObject:
   m_ObjectHideFlags: 0
@@ -2419,6 +2428,63 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1001 &1163499794
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2051435183}
+    m_Modifications:
+    - target: {fileID: 3131863427772903305, guid: 7e042dc8bfc144649a690f20259123b9, type: 3}
+      propertyPath: m_Name
+      value: Yoyo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913786379147310409, guid: 7e042dc8bfc144649a690f20259123b9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913786379147310409, guid: 7e042dc8bfc144649a690f20259123b9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913786379147310409, guid: 7e042dc8bfc144649a690f20259123b9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913786379147310409, guid: 7e042dc8bfc144649a690f20259123b9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913786379147310409, guid: 7e042dc8bfc144649a690f20259123b9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913786379147310409, guid: 7e042dc8bfc144649a690f20259123b9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913786379147310409, guid: 7e042dc8bfc144649a690f20259123b9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913786379147310409, guid: 7e042dc8bfc144649a690f20259123b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913786379147310409, guid: 7e042dc8bfc144649a690f20259123b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913786379147310409, guid: 7e042dc8bfc144649a690f20259123b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7e042dc8bfc144649a690f20259123b9, type: 3}
 --- !u!4 &1204117927 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9002697594610811920, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
@@ -3348,6 +3414,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629681509}
   m_CullTransparentMesh: 1
+--- !u!1001 &1667690243
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5383820192035051673}
+    m_Modifications:
+    - target: {fileID: 7772078910061721573, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+      propertyPath: m_Name
+      value: YoyoController
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009434792270855696, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009434792270855696, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009434792270855696, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009434792270855696, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009434792270855696, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009434792270855696, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009434792270855696, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009434792270855696, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009434792270855696, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009434792270855696, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8009434792270855696, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 772576924}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
 --- !u!1 &1692601665
 GameObject:
   m_ObjectHideFlags: 0
@@ -4636,6 +4762,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2051435182 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7772078910061721573, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+  m_PrefabInstance: {fileID: 1667690243}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2051435183 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8009434792270855696, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+  m_PrefabInstance: {fileID: 1667690243}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2051435184 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+  m_PrefabInstance: {fileID: 1667690243}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051435182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ac944594ea6d8e4ba0f9561b63b794e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &139039864797057230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5309,7 +5456,6 @@ MonoBehaviour:
   shootingPoint: {fileID: 7147500035608189028}
   notePrefab: {fileID: 1074340929}
   speed: 2
-  shoots: 2
 --- !u!4 &5383820192035051673
 Transform:
   m_ObjectHideFlags: 0
@@ -5329,6 +5475,7 @@ Transform:
   - {fileID: 924896730}
   - {fileID: 1045494686}
   - {fileID: 1204117927}
+  - {fileID: 2051435183}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5436226366269919643
@@ -5739,6 +5886,23 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     isTriggering: 0
+  - noteValue: 8
+    quaterNoteTrigger:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2051435184}
+          m_TargetAssemblyTypeName: YoyoController, Assembly-CSharp
+          m_MethodName: YoYoSperMode
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    isTriggering: 1
   isTriggering: 0
   soundManager: {fileID: 1431856008}
 --- !u!4 &8336072371526926092

@@ -6,6 +6,7 @@ public class Beat : MonoBehaviour
     [SerializeField] private float moveSpeed, increaseCooldownDuration, reduceCooldownDuration, MusicSpeedChange;
     [SerializeField] private GameObject circle, particle, triggerController, soundManager;
     [SerializeField] private GameObject[] weapons;
+    public static float totalChangedInBPM = 0;
 
     private float percentageComplete, elapsedTime, beatLife;
     private Vector3 circleStartingScale;
@@ -43,6 +44,7 @@ public class Beat : MonoBehaviour
             }
         }
         soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch - MusicSpeedChange;
+        totalChangedInBPM = totalChangedInBPM - MusicSpeedChange;
         Instantiate(particle, this.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
@@ -59,6 +61,7 @@ public class Beat : MonoBehaviour
                 }
             }
             soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch + MusicSpeedChange;
+            totalChangedInBPM = totalChangedInBPM + MusicSpeedChange;
             Destroy(gameObject);
         }
     }
