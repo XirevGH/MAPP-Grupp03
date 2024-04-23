@@ -16,29 +16,36 @@ public class BoogieBomb : Weapon
     public float bombRangeY;
     public float bombRangeX;
 
+
     [SerializeField] private GameObject bombParticles;
     public bool hasExploded = false;
 
     [SerializeField] private Transform player;
+    GameObject enemy;
+
 
     private void Start()
     {
-        bombRangeY = UnityEngine.Random.Range(-6, 6);
-        bombRangeX = UnityEngine.Random.Range(-6, 6);
+     bombRangeY = UnityEngine.Random.Range(-5, 5);
+     bombRangeX = UnityEngine.Random.Range(-5, 5);
     }
 
     void FixedUpdate()
     {
         if (!bombMoving)
         {
+            this.GetComponent<SpriteRenderer>().enabled = false;
             transform.position = player.position;
         }
 
 
         if (!usedAbility)
         {
+            bombMoving = true;
             transform.position = transform.position + new UnityEngine.Vector3(bombRangeX, bombRangeY, 0);
             Attack();
+
+            
         }
 
         if (hasExploded)
@@ -48,9 +55,11 @@ public class BoogieBomb : Weapon
         }
     }
 
+
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (!colliders.Contains(other) && other.gameObject.CompareTag("Enemy")) //checkar om det finns enemies inom collidern som kan göras skada på
+
+        if (usedAbility && !colliders.Contains(other) && other.gameObject.CompareTag("Enemy")) //checkar om det finns enemies inom collidern som kan göras skada på
         {
             colliders.Add(other);
             DealDamage(other);
@@ -61,12 +70,12 @@ public class BoogieBomb : Weapon
         }
     }
 
+
     override public void Attack() //Gör så att man använder abilityn
     {
-        //StartCooldown();
+        StartCooldown();
         //TODO lägg till animation
         usedAbility = true;
-        bombMoving = true;
         Invoke("TouchedGround", 0.5f); //gör så att abilityn gör damage och visar att abilityn har använts
         Invoke("AbilityCooldown", abilityCooldown);
 
@@ -75,15 +84,18 @@ public class BoogieBomb : Weapon
     {
         hasExploded = true;
         Invoke("Explosion", 0.015f);
-        GetComponent<SpriteRenderer>().enabled = true;
+        this.GetComponent<SpriteRenderer>().enabled = true;
         dealDamage = true;
         Invoke("ReturnBomb", 1f);
     }
 
     private void ReturnBomb()
     {
+        bombRangeY = UnityEngine.Random.Range(-5, 5);
+        bombRangeX = UnityEngine.Random.Range(-5, 5);
         bombMoving = false;
     }
+
 
     private void Explosion()
     {
@@ -92,6 +104,8 @@ public class BoogieBomb : Weapon
 
     private void AbilityCooldown()
     {
+
         usedAbility = false;
     }
+
 }
