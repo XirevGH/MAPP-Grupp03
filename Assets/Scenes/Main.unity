@@ -3179,6 +3179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f7969b6cc0e12444b2b9261cab1ef9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   damage: 1
   usedAbility: 0
   dealDamage: 0
@@ -5181,6 +5182,9 @@ MonoBehaviour:
   player: {fileID: 2554686454012362858}
   playerStats: {fileID: 5436226366269919644}
   upgrade: {fileID: 0}
+  upgradeScreen: {fileID: 0}
+  currentItems: []
+  maxHealth: 0
   health: 100
 --- !u!1 &2662689527024895925
 GameObject:
@@ -5363,7 +5367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd7955f7378e944aaea2180eba4f0bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  movementSpeed: 0
   pos: {fileID: 5383820192035051673}
   dynamicJoystick: {fileID: 1792236043}
 --- !u!1 &3351724656273620173
@@ -5401,6 +5405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19476edc09a67704db3b37bf7ac060ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   damage: 10
   anim: {fileID: 6747922250687069817}
 --- !u!1 &3593054911237702068
@@ -5558,6 +5563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2b662e661ee9d478e61e8059282a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   damage: 3
   amountOfProjectiles: 0
   penetration: 1
@@ -5659,6 +5665,7 @@ MonoBehaviour:
   defence: 0
   movementSpeed: 0
   burstAmount: 1
+  maxHealth: 0
 --- !u!95 &5436226366269919645
 Animator:
   serializedVersion: 5
@@ -5780,6 +5787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9577c52a733c8b042a79e7b59ea21e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   damage: 5
   amountOfTethers: 0
   bolt: {fileID: 8209966115709815941, guid: c89b4386ca74450468870cc3cee72ee5, type: 3}

@@ -8,19 +8,19 @@ public class XPDrop : MonoBehaviour
 {
     [SerializeField] private int XP;
 
-    private Transform target;
-    private bool move = false;
     public float speed = 20f;
 
-    private GameObject gameControllerObject;
+    private bool move = false;
+
+    private Transform target;
     private GameController gameController;
 
     private void Awake()
     {
-        gameControllerObject = GameObject.FindGameObjectWithTag("GameController");
-        gameController = gameControllerObject.GetComponent<GameController>();
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         gameController.AddXpObject(this);
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
