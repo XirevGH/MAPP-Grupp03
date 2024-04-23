@@ -15,14 +15,17 @@ public class Player : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private PlayerStats playerStats;
     [SerializeField] private UpgradeAbility upgrade;
+    [SerializeField] private UpgradePanel upgradeScreen;
 
-    private List<Weapon> currentWeapons;
+    public List<Item> currentItems = new List<Item>();
+
     private int money;
     private float moneyMultiplier;
     private int damage;
     private int areaOfEffectSize;
     private int pierce;
     private float xpMultiplier;
+    public float maxHealth;
     public float health;
     private int defence;
     private float movementSpeed;
@@ -34,15 +37,14 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        currentWeapons = new List<Weapon>();
-
         money = playerStats.money; 
         moneyMultiplier = playerStats.moneyMultiplier; 
         damage = playerStats.damage;
         areaOfEffectSize = playerStats.areaOfEffectSize;
         pierce = playerStats.pierce;
         xpMultiplier = playerStats.xpMultiplier;
-        health = 100; 
+        maxHealth = playerStats.maxHealth; 
+        health = maxHealth;
         defence = playerStats.defence; 
         movementSpeed = playerStats.movementSpeed; 
         xpToLevel = 100;
@@ -63,7 +65,7 @@ public class Player : MonoBehaviour
 
     private void UpdateHealthSlider()
     {
-        hpSlider.value = health / 100f;
+        hpSlider.value = health / maxHealth;
     }
 
     private void Die()
@@ -97,8 +99,8 @@ public class Player : MonoBehaviour
         levelText.text = "Level: " + level;
         UpdateXPSlider();
         MainManager.Instance.mainLevel = level;
-
-        if (level == 2)
+        upgradeScreen.OpenUpgradeWindow();
+        /*if (level == 2)
         {
             electricGuitar.SetActive(true);
         }
@@ -124,10 +126,10 @@ public class Player : MonoBehaviour
             if (level % 6 == 0)
             {
                 saxophone.GetComponent<Saxophone>().IncreasePenetrationAmount(1);
-                saxophone.GetComponent<Saxophone>().IncreaseTargetCount(1);
+                saxophone.GetComponent<Saxophone>().IncreaseProjectileCount(1);
                 saxophone.GetComponent<Saxophone>().IncreaseDamage(1.1f);
             }
-        }
+        }*/
     }
 
     private void UpdateXPSlider()
@@ -136,27 +138,23 @@ public class Player : MonoBehaviour
     }
     #endregion
 
-    #region Weapon Stuff
-    private void AddWeapon(Weapon weapon)
+
+    private void AddItem(Item item)
     {
-        currentWeapons.Add(weapon);
+        currentItems.Add(item);
     }
 
-    public List<Weapon> GetCurrentWeapons()
+    public List<Item> GetCurrentItems()
     {
-        return new List<Weapon>(currentWeapons);
-    }
-    #endregion
-
-    public void IncreaseMovementSpeed(float percentageIncrease)
-    {
-        movementSpeed *= percentageIncrease;
-        Debug.Log("Movement Speed is now " + movementSpeed);
+        return new List<Item>(currentItems);
     }
 
-    public void IncreaseHealth(float percentageIncrease)
+    public void IncreaseMaxHealth(float percentageIncrease)
     {
-        health *= percentageIncrease;
-        Debug.Log("Health is now " + movementSpeed);
+        float oldMaxHealth = maxHealth;
+        maxHealth *= percentageIncrease;
+        health += maxHealth - oldMaxHealth;
+        UpdateHealthSlider();
+        Debug.Log("Health is now " + maxHealth);
     }
 }

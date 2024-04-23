@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrooveArmor : UtilityItem
+public class GrooveArmor : Utility
 {
     public void UpgradeHealth() 
     { 
-        player.IncreaseHealth(GetStatPercentIncrease());
+        player.IncreaseMaxHealth(GetStatPercentIncrease());
     }
 }

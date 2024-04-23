@@ -15,6 +15,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] public int defence;
     [SerializeField] public float movementSpeed;
     [SerializeField] public short burstAmount;
+    [SerializeField] public float maxHealth;
 
 
     public string SaveToString()
