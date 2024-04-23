@@ -18,7 +18,6 @@ public class BoogieBomb : Weapon
 
 
     [SerializeField] private GameObject bombParticles;
-    public bool hasExploded = false;
 
     [SerializeField] private Transform player;
     GameObject enemy;
@@ -46,12 +45,6 @@ public class BoogieBomb : Weapon
             Attack();
 
             
-        }
-
-        if (hasExploded)
-        {
-            Instantiate(bombParticles, transform.position, bombParticles.transform.localRotation);
-            hasExploded = false; 
         }
     }
 
@@ -81,8 +74,7 @@ public class BoogieBomb : Weapon
     }
     private void TouchedGround()
     {
-        hasExploded = true;
-        Invoke("Explosion", 0.015f);
+        Instantiate(bombParticles, transform.position, bombParticles.transform.localRotation);
         this.GetComponent<SpriteRenderer>().enabled = true;
         dealDamage = true;
         Invoke("ReturnBomb", 1f);
@@ -93,12 +85,6 @@ public class BoogieBomb : Weapon
         bombRangeY = UnityEngine.Random.Range(-5, 5);
         bombRangeX = UnityEngine.Random.Range(-5, 5);
         bombMoving = false;
-    }
-
-
-    private void Explosion()
-    {
-        hasExploded = false;
     }
 
     private void AbilityCooldown()
