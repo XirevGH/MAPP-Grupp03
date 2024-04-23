@@ -6,9 +6,12 @@ using UnityEngine;
 public class UpgradeAbility : MonoBehaviour
 {
     [SerializeField] private Weapon[] weapons;
+    [SerializeField] private UtilityItem[] utilities;
     [SerializeField] private Player player;
+    [SerializeField] private PlayerMovement playerMovement;
+    
     private List<Weapon> weaponOptions;
-    private List<string> utilityOptions;
+    
     private Dictionary<Weapon, string> upgradeOptions;
     private List<string> typeOptions;
     private int allowedAmountOfWeapons;
@@ -88,5 +91,16 @@ public class UpgradeAbility : MonoBehaviour
 
     private void CheckForUpgradableItems()
     {
+    }
+
+    private void UpgradeRollerSkates()
+    {
+        RollerSkates rollerSkates = (RollerSkates)utilities[0];
+        rollerSkates.UpgradeMovementSpeed();
+    }
+
+    private void UpgradeGrooveArmor()
+    {
+        player.IncreaseHealth(1.1f);
     }
 }

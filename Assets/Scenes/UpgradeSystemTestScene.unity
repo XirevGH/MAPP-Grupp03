@@ -123,6 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &4280475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4280476}
+  - component: {fileID: 4280477}
+  m_Layer: 0
+  m_Name: GrooveArmor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4280476
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4280475}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 331528120}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4280477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4280475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df1d6a6f433b8b242a5e8bc0fdff68c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1561011401}
 --- !u!1 &24887101
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,7 +908,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1561011407}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: RollerSkates, Assembly-CSharp
           m_MethodName: UpgradeMovementSpeed
           m_Mode: 1
@@ -1054,6 +1099,40 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 2
   m_TargetDisplay: 0
+--- !u!1 &331528119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 331528120}
+  m_Layer: 0
+  m_Name: Utilities
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &331528120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331528119}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1672516154}
+  - {fileID: 4280476}
+  - {fileID: 1810355222}
+  m_Father: {fileID: 1561011399}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &352059114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1409,7 +1488,7 @@ GameObject:
   - component: {fileID: 424510084}
   - component: {fileID: 424510086}
   m_Layer: 0
-  m_Name: Synthwave Blast
+  m_Name: SynthwaveBlast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2452,7 +2531,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 3
+        scalar: 0
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -8441,7 +8520,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1561011408}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: GrooveArmor, Assembly-CSharp
           m_MethodName: UpgradeHealth
           m_Mode: 1
@@ -9481,6 +9560,7 @@ GameObject:
   - component: {fileID: 1509910513}
   - component: {fileID: 1509910515}
   - component: {fileID: 1509910514}
+  - component: {fileID: 1509910517}
   - component: {fileID: 1509910516}
   m_Layer: 0
   m_Name: UpgradeScreen
@@ -9561,6 +9641,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5616be4a33ee32b4195c4848c3b2294c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1509910517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509910512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07de8c147208481458b109040a08394e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 128322718}
+  - {fileID: 695703885}
+  - {fileID: 2087042481}
+  - {fileID: 424510086}
+  - {fileID: 635767461}
+  - {fileID: 1906168803}
+  utilities:
+  - {fileID: 1672516155}
+  - {fileID: 4280477}
+  - {fileID: 1810355224}
+  player: {fileID: 1561011401}
+  playerMovement: {fileID: 1561011402}
 --- !u!1 &1539793800
 GameObject:
   m_ObjectHideFlags: 0
@@ -9777,9 +9882,6 @@ GameObject:
   - component: {fileID: 1561011402}
   - component: {fileID: 1561011401}
   - component: {fileID: 1561011400}
-  - component: {fileID: 1561011407}
-  - component: {fileID: 1561011408}
-  - component: {fileID: 1561011409}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -9802,10 +9904,10 @@ Transform:
   m_Children:
   - {fileID: 1247136614}
   - {fileID: 1068788366}
+  - {fileID: 331528120}
   - {fileID: 1414131719}
   - {fileID: 1047327796}
   - {fileID: 2026705478}
-  - {fileID: 1810355222}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1561011400
@@ -9852,7 +9954,7 @@ MonoBehaviour:
   gameController: {fileID: 2047097353}
   player: {fileID: 1561011401}
   playerStats: {fileID: 1561011400}
-  upgrade: {fileID: 1561011409}
+  upgrade: {fileID: 0}
   upgradeScreen: {fileID: 1509910516}
   currentWeapons:
   - {fileID: 424510086}
@@ -9869,7 +9971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd7955f7378e944aaea2180eba4f0bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  movementSpeed: 0
   pos: {fileID: 1561011399}
   dynamicJoystick: {fileID: 188560448}
 --- !u!95 &1561011403
@@ -10007,51 +10109,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1561011407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561011398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b63fd0b6f7573c143af40ce3a5ef27f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1561011401}
---- !u!114 &1561011408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561011398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df1d6a6f433b8b242a5e8bc0fdff68c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1561011401}
---- !u!114 &1561011409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561011398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07de8c147208481458b109040a08394e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapons:
-  - {fileID: 0}
-  - {fileID: 635767461}
-  - {fileID: 1906168803}
-  - {fileID: 2087042481}
-  - {fileID: 0}
-  player: {fileID: 1561011401}
 --- !u!1 &1570882494
 GameObject:
   m_ObjectHideFlags: 0
@@ -10376,6 +10433,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1672516153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1672516154}
+  - component: {fileID: 1672516155}
+  m_Layer: 0
+  m_Name: RollerSkates
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1672516154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672516153}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 331528120}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1672516155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672516153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b63fd0b6f7573c143af40ce3a5ef27f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1561011401}
+  playerMovement: {fileID: 1561011402}
 --- !u!1 &1681639545
 GameObject:
   m_ObjectHideFlags: 0
@@ -10682,7 +10785,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1561011399}
+    m_TransformParent: {fileID: 331528120}
     m_Modifications:
     - target: {fileID: 3398288376994009385, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
       propertyPath: m_Color.a
@@ -10709,6 +10812,10 @@ PrefabInstance:
       value: SlowAround
       objectReference: {fileID: 0}
     - target: {fileID: 6851086163164186471, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1561011401}
+    - target: {fileID: 6851086163164186471, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
       propertyPath: slowSpeedPercent
       value: 0.5
       objectReference: {fileID: 0}
@@ -10730,15 +10837,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9002697594610811920, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9002697594610811920, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9002697594610811920, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9002697594610811920, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10766,6 +10873,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9002697594610811920, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
   m_PrefabInstance: {fileID: 1810355221}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1810355224 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6851086163164186471, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
+  m_PrefabInstance: {fileID: 1810355221}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa540f2b5e33674887409756e331824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1849432937
 GameObject:
   m_ObjectHideFlags: 0

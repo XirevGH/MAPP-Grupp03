@@ -5,20 +5,16 @@ using static UnityEngine.ParticleSystem;
 
 public class SynthwaveBlast : ProjectileWeapon
 {
-
-    
     ParticleSystem ps;
     List<ParticleSystem.Particle> enter = new List<ParticleSystem.Particle>();
     List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>();
-    ParticleSystem.Burst[] bursts;
+    ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[1];
     ParticleSystem.EmissionModule emissionModule;
 
     void Start()
     {
         ps = GetComponent<ParticleSystem>();
-        ParticleSystem.EmissionModule emissionModule = ps.emission;
-        ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[1];
-        
+        emissionModule = ps.emission;
     }
 
     void FixedUpdate()

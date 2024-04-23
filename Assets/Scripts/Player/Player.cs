@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     [SerializeField] private UpgradePanel upgradeScreen;
 
     public List<Weapon> currentWeapons;
+    public List<UtilityItem> currentUtilities;
+
     private int money;
     private float moneyMultiplier;
     private int damage;
@@ -149,15 +151,15 @@ public class Player : MonoBehaviour
     }
     #endregion
 
-    public void IncreaseMovementSpeed(float percentageIncrease)
+    #region Utility Stuff
+    public List<UtilityItem> GetCurrentUtilities()
     {
-        movementSpeed *= percentageIncrease;
-        Debug.Log("Movement Speed is now " + movementSpeed);
+        return new List<UtilityItem>(currentUtilities);
     }
-
+    #endregion
     public void IncreaseHealth(float percentageIncrease)
     {
         health *= percentageIncrease;
-        Debug.Log("Health is now " + movementSpeed);
+        Debug.Log("Health is now " + health);
     }
 }

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class RollerSkates : UtilityItem
 {
+    public PlayerMovement playerMovement;
     public void UpgradeMovementSpeed()
     {
-        player.IncreaseMovementSpeed(GetStatPercentIncrease());
+        playerMovement.IncreaseMovementSpeed(GetStatPercentIncrease());
     }
 }
