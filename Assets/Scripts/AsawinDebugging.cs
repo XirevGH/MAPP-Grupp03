@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -9,9 +10,11 @@ public class AsawinDebugging : MonoBehaviour
     [SerializeField] public GameObject testingObj1;
 
     private SpriteRenderer spriteRenderer;
+    private bool active;
 
     void Start()
     {
+        active = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -26,17 +29,21 @@ public class AsawinDebugging : MonoBehaviour
             spriteRenderer.color = Color.white;
         }
     }
-
-    void Update()
+    void FixedUpdate()
     {
+      
+
         if (Input.GetKeyDown(keyCode))
         {
             spriteRenderer.color = Color.blue;
 
             Debug.Log("Boogie Boogie");
 
-            testingObj1.GetComponent<YoyoController>().Upgrade();
-            testingObj1.GetComponent<YoyoController>().Attack();
+            //testingObj1.GetComponent<YoyoController>().Upgrade();
+            //testingObj1.GetComponent<YoyoController>().Attack();
+            testingObj1.GetComponent<VinylDiscController>().Attack();
+
+
         }
 
         if (Input.GetKeyUp(keyCode))

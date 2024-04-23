@@ -66,11 +66,6 @@ public class Yoyo : Projectile
     }
 
 
-    public void SetDamage(float amount)
-    {
-        damage = amount;
-    }
-
     public void ActivateSuperMode()
     {
         superMode = true;
@@ -123,6 +118,9 @@ public class Yoyo : Projectile
         ball.transform.localPosition = ballStartPosition;
         yoyoString.transform.localPosition = stringStartPosition;
         yoyoString.transform.localScale = stringStartScale;
-        circleColl.offset = new Vector2(colliderStartingOffset, 0f);
+        if(circleColl != null)
+        {
+            circleColl.offset = new Vector2(colliderStartingOffset, 0f);
+        }
     }
 }

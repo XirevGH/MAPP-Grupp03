@@ -12,45 +12,47 @@ public class BoogieBomb : PhysicalWeapon
     public bool usedAbility = false;
     public bool dealDamage = false;
     public bool bombMoving = false;
-    public float abilityCooldown;
+    public float abilityCooldown; //60f / (gameController.GetComponent<GameController>().GetCurrentTrackBPM() / TriggerController.GetComponent<TriggerController>().GetTrigger("den triggern som triggar objectet").noteValue);
     public float bombRangeY;
     public float bombRangeX;
 
+
     [SerializeField] private GameObject bombParticles;
-    public bool hasExploded = false;
 
     [SerializeField] private Transform player;
+    GameObject enemy;
+
 
     private void Start()
     {
-        bombRangeY = UnityEngine.Random.Range(-6, 6);
-        bombRangeX = UnityEngine.Random.Range(-6, 6);
+     bombRangeY = UnityEngine.Random.Range(-5, 5);
+     bombRangeX = UnityEngine.Random.Range(-5, 5);
     }
 
     void FixedUpdate()
     {
         if (!bombMoving)
         {
+            this.GetComponent<SpriteRenderer>().enabled = false;
             transform.position = player.position;
         }
 
 
         if (!usedAbility)
         {
+            bombMoving = true;
             transform.position = transform.position + new UnityEngine.Vector3(bombRangeX, bombRangeY, 0);
             Attack();
-        }
 
-        if (hasExploded)
-        {
-            Instantiate(bombParticles, transform.position, bombParticles.transform.localRotation);
-            hasExploded = false; 
+            
         }
     }
 
+
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (!colliders.Contains(other) && other.gameObject.CompareTag("Enemy")) //checkar om det finns enemies inom collidern som kan göras skada på
+
+        if (usedAbility && !colliders.Contains(other) && other.gameObject.CompareTag("Enemy")) //checkar om det finns enemies inom collidern som kan göras skada på
         {
             colliders.Add(other);
             DealDamage(other);
@@ -61,37 +63,34 @@ public class BoogieBomb : PhysicalWeapon
         }
     }
 
+
     override public void Attack() //Gör så att man använder abilityn
     {
-        //StartCooldown();
         //TODO lägg till animation
         usedAbility = true;
-        bombMoving = true;
         Invoke("TouchedGround", 0.5f); //gör så att abilityn gör damage och visar att abilityn har använts
         Invoke("AbilityCooldown", abilityCooldown);
 
     }
     private void TouchedGround()
     {
-        hasExploded = true;
-        Invoke("Explosion", 0.015f);
-        GetComponent<SpriteRenderer>().enabled = true;
+        Instantiate(bombParticles, transform.position, bombParticles.transform.localRotation);
+        this.GetComponent<SpriteRenderer>().enabled = true;
         dealDamage = true;
         Invoke("ReturnBomb", 1f);
     }
 
     private void ReturnBomb()
     {
+        bombRangeY = UnityEngine.Random.Range(-5, 5);
+        bombRangeX = UnityEngine.Random.Range(-5, 5);
         bombMoving = false;
-    }
-
-    private void Explosion()
-    {
-        hasExploded = false;
     }
 
     private void AbilityCooldown()
     {
+
         usedAbility = false;
     }
+
 }

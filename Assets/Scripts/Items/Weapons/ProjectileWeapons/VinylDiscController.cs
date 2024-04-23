@@ -6,11 +6,19 @@ public class VinylDiscController : Weapon
 {
     [SerializeField] private GameObject vinylDisc;
 
-    // Start is called before the first frame updat
+    private Transform playerTransform;
+    private Vector3 playerPosition;
+
+    void Start()
+    {
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     public override void Attack()
     {
-        Instantiate(vinylDisc, transform.position, Quaternion.identity);
-
+        playerPosition = playerTransform.position;
+        GameObject clone = Instantiate(vinylDisc, playerPosition, Quaternion.identity);
+        clone.GetComponent<Projectile>().SetDamage(damage);
+        clone.GetComponent<VinylDisc>().isAtPlayer = true;
     }
 }

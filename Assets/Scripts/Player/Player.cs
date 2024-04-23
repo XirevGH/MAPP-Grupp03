@@ -52,7 +52,18 @@ public class Player : MonoBehaviour
         burstAmount = playerStats.burstAmount;
         xpHeld = 0;
     }
+
     #region HP Stuff
+    public void RestoreHealth(float percent)
+    {
+        health += maxHealth * percent / 100;
+        if(health > maxHealth)
+        {
+            health = maxHealth;
+        }
+        UpdateHealthSlider();
+    }
+
     public void TakeDamage(int damageAmount)
     {
         health -= damageAmount;
@@ -137,7 +148,6 @@ public class Player : MonoBehaviour
         xpSlider.value = (float)xpHeld / xpToLevel;
     }
     #endregion
-
 
     private void AddItem(Item item)
     {

@@ -14,6 +14,7 @@ TagManager:
   - XPDrop20
   - TriggerController
   - LeftJoyStick
+  - AimingArrow
   layers:
   - Default
   - TransparentFX
