@@ -28,7 +28,7 @@ public class GameObjectComparer : IComparer<GameObject>
 public class Enemy : MonoBehaviour
 {
     public GameObject player;
-
+    [SerializeField] private SynthwaveBlast synthwaveBlast;
     [SerializeField] private GameObject xpMagnetPrefab;
     [SerializeField] private GameObject xpDropPrefab;
     [SerializeField] private Sprite enemySprite;

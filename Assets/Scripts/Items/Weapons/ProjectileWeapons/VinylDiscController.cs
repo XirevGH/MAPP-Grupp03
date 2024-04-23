@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VinylDiscController : Weapon
+public class VinylDiscController : ProjectileWeapon
 {
     [SerializeField] private GameObject vinylDisc;
 

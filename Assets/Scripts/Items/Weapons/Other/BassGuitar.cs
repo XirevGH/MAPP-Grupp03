@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class BassGuitar : Weapon
+public class BassGuitar : PhysicalWeapon
 {
     public  HashSet<Collider2D> colliders = new HashSet<Collider2D>();
     public Animator anim;

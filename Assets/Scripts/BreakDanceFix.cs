@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BreakDanceFix : Weapon
+public class BreakDanceFix : PhysicalWeapon
 {
     public bool dealDamage;
     public int amountOfHits;

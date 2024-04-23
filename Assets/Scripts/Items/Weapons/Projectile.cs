@@ -8,7 +8,7 @@ public abstract class Projectile : MonoBehaviour
     protected float speed;
     protected int penetration;
 
-    public void DealDamage(Collider2D other, float damage)
+    public void DealDamage(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
@@ -29,6 +29,11 @@ public abstract class Projectile : MonoBehaviour
     {
         damage = amount;
 
+    }
+
+    public void SetPenetration(int amount)
+    {
+        penetration = amount;
     }
 
 }

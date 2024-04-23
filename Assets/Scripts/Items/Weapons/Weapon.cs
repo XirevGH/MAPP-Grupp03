@@ -8,14 +8,6 @@ public abstract class Weapon : Item
 
     public abstract void Attack();
 
-    public void DealDamage(Collider2D other)
-    {
-        if(other.gameObject != null)
-        {
-            other.GetComponent<Enemy>().TakeDamage(damage);
-        }
-    }
-
     public void IncreaseDamage(float percentageAmount)
     {
         damage *= percentageAmount;

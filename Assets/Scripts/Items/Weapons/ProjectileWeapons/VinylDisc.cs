@@ -101,7 +101,7 @@ public class VinylDisc : Projectile
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        DealDamage(other, damage);
+        DealDamage(other);
     }
 
     private Vector2 QuadraticBezierCurve(Vector2 startPosition, Vector2 endPosition, Vector2 controlPoint, float time)
