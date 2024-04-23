@@ -4914,18 +4914,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 10
---- !u!114 &365822640933944585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6934043507771099633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0322321b1a88b784c89ca12fee88d249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &386049784434814070
 Transform:
   m_ObjectHideFlags: 0
@@ -5902,7 +5890,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2926742445463038897}
-  - component: {fileID: 365822640933944585}
   m_Layer: 0
   m_Name: Beat
   m_TagString: Untagged
