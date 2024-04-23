@@ -73,7 +73,6 @@ public class BoogieBomb : Weapon
 
     override public void Attack() //Gör så att man använder abilityn
     {
-        StartCooldown();
         //TODO lägg till animation
         usedAbility = true;
         Invoke("TouchedGround", 0.5f); //gör så att abilityn gör damage och visar att abilityn har använts

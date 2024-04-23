@@ -12,19 +12,18 @@ public class BreakDance : Weapon
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (WeaponIsReady()) {
-       //if(!usedAbility) { 
-            hitsCounter = amountOfHits;
-            while (hitsCounter > 0)
-                {
-                    BreakDanceInterval();
-                }
-            StartCooldown();
-            if (hitsCounter <= 0) 
-            {
-            usedAbility = true;
-            }
-        }
+        //if (WeaponIsReady()) {
+        //    hitsCounter = amountOfHits;
+        //    while (hitsCounter > 0)
+        //        {
+        //            BreakDanceInterval();
+        //        }
+        //    StartCooldown();
+        //    if (hitsCounter <= 0) 
+        //    {
+        //    usedAbility = true;
+        //    }
+        //}
     }
 
     private void BreakDanceInterval()
@@ -55,5 +54,10 @@ public class BreakDance : Weapon
     private void AbilityCooldown()
     {
       usedAbility = false;
+    }
+
+    public override void Attack()
+    {
+        throw new System.NotImplementedException();
     }
 }

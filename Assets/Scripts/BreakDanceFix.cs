@@ -12,14 +12,13 @@ public class BreakDanceFix : Weapon
 
     private void OnTriggerStay2D(Collider2D other)
     {
-            if(!usedAbility)
-            { 
+        if(!usedAbility)
+        { 
             hitsCounter = amountOfHits;
             while (hitsCounter > 0)
             {
                 BreakDanceInterval();
             }
-            StartCooldown();
             if (hitsCounter <= 0)
             {
                 usedAbility = true;
@@ -55,6 +54,11 @@ public class BreakDanceFix : Weapon
     private void AbilityCooldown()
     {
         usedAbility = false;
+    }
+
+    public override void Attack()
+    {
+        throw new System.NotImplementedException();
     }
 }
 
