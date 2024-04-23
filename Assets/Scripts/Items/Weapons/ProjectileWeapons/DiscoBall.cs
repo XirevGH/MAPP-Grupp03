@@ -16,11 +16,6 @@ public class DiscoBall : Projectile
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        DealDamage(other, damage);
-    }
-
-    public void SetDamage(float amount)
-    {
-        damage = amount;
+        DealDamage(other);
     }
 }

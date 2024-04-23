@@ -8,8 +8,6 @@ public abstract class Weapon : Item
 
     public abstract void Attack();
 
-    
-
     public void IncreaseDamage(float percentageAmount)
     {
         damage *= percentageAmount;

@@ -159,12 +159,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnParticleCollision(GameObject particle)
-    {
-        synthwaveBlast = particle.GetComponent<SynthwaveBlast>();
-        synthwaveBlast.CollisionDetected(particle, GetComponent<Collider2D>());
-    }
-
     private void DestroyGameObject()
     {
         DropXP();

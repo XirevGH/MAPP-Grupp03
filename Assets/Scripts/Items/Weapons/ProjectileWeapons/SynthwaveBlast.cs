@@ -1,10 +1,11 @@
-using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.ParticleSystem;
+
 
 public class SynthwaveBlast : ProjectileWeapon
 {
+    [SerializeField] GameObject synthwavePivotPrefab;
     private Collider2D enemy;
     Dictionary<GameObject, int> particleCollisions = new Dictionary<GameObject, int>();
 
@@ -39,9 +40,12 @@ public class SynthwaveBlast : ProjectileWeapon
 
     public override void Attack()
     {
-        DealDamage(enemy);
+        for (int i = 0; i < amountOfProjectiles; i++) {
+            float randomValue = Random.Range(0f, 360f);
+            GameObject clone = Instantiate(synthwavePivotPrefab, transform);
+            clone.transform.eulerAngles = new Vector3(0, 0, randomValue);
+            clone.transform.GetChild(0).GetComponent<SynthwaveBolt>().SetDamage(damage);
+            clone.transform.GetChild(0).GetComponent<SynthwaveBolt>().SetPenetration(penetration);
+        }
     }
-
-
-   
 }
