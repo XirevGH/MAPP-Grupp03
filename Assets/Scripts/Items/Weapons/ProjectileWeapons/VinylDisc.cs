@@ -6,14 +6,16 @@ using UnityEngine;
 
 public class VinylDisc : Projectile
 {
-    [SerializeField] private float travelTime, BPM, noteValue, pitch, travelDistance;
+    [SerializeField] private float travelTime, BPM, noteValue, pitch, travelDistance, rotateSpeed, angle, centerOffSet;
     [SerializeField] private int triggerNumber;
+    [SerializeField] private GameObject vinylDisc;
+    [SerializeField] private AnimationCurve curve;
 
     public float elapsedTime, percentageComplete, lerpElapsedTime;
     public bool attack, isAtPlayer, isHalfWay;
 
     private Transform playerPosition;
-    private Vector3 startingPosition, startPosition, halfWayPosition;
+    private Vector3 startingPosition, startPosition, endPosition, centerPivot;
     private Quaternion aimingArrowRotation;
     private SoundManager soundManager;
     private AudioSource source;
@@ -27,10 +29,24 @@ public class VinylDisc : Projectile
         aimingArrowRotation = GameObject.FindGameObjectWithTag("AimingArrow").transform.rotation;
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
         startPosition = transform.position;
-        halfWayPosition = new Vector3(
+        endPosition = new Vector3(
         Mathf.Cos(Mathf.Deg2Rad * aimingArrowRotation.eulerAngles.z) * travelDistance + startPosition.x,
         Mathf.Sin(Mathf.Deg2Rad * aimingArrowRotation.eulerAngles.z) * travelDistance + startPosition.y, startPosition.z);
-        attack = true;
+
+        centerPivot = (startPosition + endPosition) * 0.5f;
+
+        centerPivot -= new Vector3(0, -centerOffSet);
+
+        //if (aimingArrowRotation.eulerAngles.z <= 90f && aimingArrowRotation.eulerAngles.z >= -90f)
+        //{
+
+        //    rotateSpeed = +rotateSpeed;
+        //}
+        //else
+        //{
+        //    rotateSpeed = -rotateSpeed;
+        //}
+
     }
 
     void FixedUpdate()
@@ -41,26 +57,37 @@ public class VinylDisc : Projectile
         noteValue = triggerController.GetTrigger(triggerNumber).noteValue;
         pitch = source.pitch;
     
-        travelTime = (((60f / (BPM / noteValue)) / pitch) / 4f);
+        travelTime = (((60f / (BPM / noteValue)) / pitch) );
 
         if (isAtPlayer)
         {
             elapsedTime += Time.deltaTime;
             percentageComplete = elapsedTime / travelTime;
-            transform.position = Vector3.Lerp(startPosition, halfWayPosition, percentageComplete);
+            Debug.Log(centerOffSet);
+            transform.position = Vector3.Slerp(startPosition - centerPivot , endPosition - centerPivot, curve.Evaluate(percentageComplete)) + centerPivot;
+            angle -= rotateSpeed;
+            vinylDisc.transform.eulerAngles = new Vector3(0, 0, angle);
             if (percentageComplete >= 1)
             {
-                isAtPlayer = false;
-                isHalfWay = true;
                 elapsedTime = 0;
                 percentageComplete = 0;
+                centerOffSet = -centerOffSet;
+                centerPivot -= new Vector3(0, -centerOffSet);
+
+                isAtPlayer = false;
+                isHalfWay = true;
             }
         }
         else if (isHalfWay)
         {
             elapsedTime += Time.deltaTime;
             percentageComplete = elapsedTime / travelTime;
-            transform.position = Vector3.Lerp(halfWayPosition, startingPosition, percentageComplete);
+           
+           
+            transform.position = Vector3.Slerp(endPosition - centerPivot, startingPosition - centerPivot, curve.Evaluate(percentageComplete)) + centerPivot;
+            Debug.Log(centerOffSet);
+            angle += rotateSpeed;
+            vinylDisc.transform.eulerAngles = new Vector3(0, 0, angle);
             if (percentageComplete >= 1)
             {
                 Destroy(gameObject);

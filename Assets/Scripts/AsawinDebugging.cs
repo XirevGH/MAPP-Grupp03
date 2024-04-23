@@ -29,25 +29,19 @@ public class AsawinDebugging : MonoBehaviour
             spriteRenderer.color = Color.white;
         }
     }
-
     void FixedUpdate()
     {
-        
-        if (active)
-        {
-
-        }
+      
 
         if (Input.GetKeyDown(keyCode))
         {
-            active = true;
             spriteRenderer.color = Color.blue;
 
             Debug.Log("Boogie Boogie");
 
             //testingObj1.GetComponent<YoyoController>().Upgrade();
             //testingObj1.GetComponent<YoyoController>().Attack();
-            //testingObj1.GetComponent<VinylDisc>().Attack();
+            testingObj1.GetComponent<VinylDiscController>().Attack();
 
 
         }

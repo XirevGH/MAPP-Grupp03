@@ -46,12 +46,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 954605cbb36eb3647af1df21ca66b297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  travelTime: 4
+  travelTime: 0
   BPM: 0
   noteValue: 0
   pitch: 0
-  travelDistance: 7
-  triggerNumber: 0
+  travelDistance: 12
+  rotateSpeed: 30
+  angle: 0
+  centerOffSet: -5
+  triggerNumber: 5
+  vinylDisc: {fileID: 9146738647602952300}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   elapsedTime: 0
   percentageComplete: 0
   lerpElapsedTime: 0
