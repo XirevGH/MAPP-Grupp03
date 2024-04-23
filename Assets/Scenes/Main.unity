@@ -786,11 +786,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &485113747 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8419575893291496720, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
-  m_PrefabInstance: {fileID: 1431856007}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2760,18 +2755,6 @@ PrefabInstance:
       value: SoundManager
       objectReference: {fileID: 0}
     - target: {fileID: 1355660591452939855, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 74.856735
-      objectReference: {fileID: 0}
-    - target: {fileID: 1355660591452939855, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 75.69655
-      objectReference: {fileID: 0}
-    - target: {fileID: 1355660591452939855, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.906148
-      objectReference: {fileID: 0}
-    - target: {fileID: 1355660591452939855, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -2805,14 +2788,6 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 51626d5583f3bd345959fb1fd4a5550e, type: 3}
     - target: {fileID: 4282401076657109252, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 51626d5583f3bd345959fb1fd4a5550e, type: 3}
-    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
-      propertyPath: menuMusic
-      value: 
-      objectReference: {fileID: 485113747}
-    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
-      propertyPath: musicTracks.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 51626d5583f3bd345959fb1fd4a5550e, type: 3}
     m_RemovedComponents: []
