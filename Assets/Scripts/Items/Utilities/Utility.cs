@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UtilityItem : MonoBehaviour
+public class Utility : Item
 {
     public Player player;
     protected float percentageIncrease;
@@ -17,8 +17,14 @@ public class UtilityItem : MonoBehaviour
         percentageIncrease += amount;
     }
 
+
     protected float GetStatPercentIncrease()
     {
         return percentageIncrease;
+    }
+
+    public override List<string> GetUpgradeOptions()
+    {
+        throw new System.NotImplementedException();
     }
 }

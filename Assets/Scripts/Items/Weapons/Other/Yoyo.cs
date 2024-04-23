@@ -65,10 +65,6 @@ public class Yoyo : Projectile
         DealDamage(other, damage);
     }
 
-    public List<string> UpgradeOptions()
-    {
-        return upgradeOptions;
-    }
 
     public void SetDamage(float amount)
     {

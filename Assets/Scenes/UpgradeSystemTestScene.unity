@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df1d6a6f433b8b242a5e8bc0fdff68c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   player: {fileID: 1561011401}
 --- !u!1 &24887101
 GameObject:
@@ -528,6 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19476edc09a67704db3b37bf7ac060ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   damage: 10
   anim: {fileID: 128322717}
 --- !u!1 &138787948
@@ -908,7 +910,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1672516155}
           m_TargetAssemblyTypeName: RollerSkates, Assembly-CSharp
           m_MethodName: UpgradeMovementSpeed
           m_Mode: 1
@@ -6380,6 +6382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 281b7f74555262247999fef0c83e8fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   damage: 2
   amountOfProjectiles: 0
   penetration: 3
@@ -6565,6 +6568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9577c52a733c8b042a79e7b59ea21e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   damage: 5
   amountOfTethers: 0
   bolt: {fileID: 8209966115709815941, guid: c89b4386ca74450468870cc3cee72ee5, type: 3}
@@ -8520,7 +8524,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 4280477}
           m_TargetAssemblyTypeName: GrooveArmor, Assembly-CSharp
           m_MethodName: UpgradeHealth
           m_Mode: 1
@@ -9653,6 +9657,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07de8c147208481458b109040a08394e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panels:
+  - {fileID: 201029717}
+  - {fileID: 1168283941}
+  - {fileID: 352059114}
   weapons:
   - {fileID: 128322718}
   - {fileID: 695703885}
@@ -9932,6 +9940,7 @@ MonoBehaviour:
   defence: 0
   movementSpeed: 0
   burstAmount: 1
+  maxHealth: 100
 --- !u!114 &1561011401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9956,9 +9965,9 @@ MonoBehaviour:
   playerStats: {fileID: 1561011400}
   upgrade: {fileID: 0}
   upgradeScreen: {fileID: 1509910516}
-  currentWeapons:
-  - {fileID: 424510086}
-  health: 100
+  currentItems: []
+  maxHealth: 0
+  health: 0
 --- !u!114 &1561011402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9971,7 +9980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd7955f7378e944aaea2180eba4f0bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0
+  movementSpeed: 5
   pos: {fileID: 1561011399}
   dynamicJoystick: {fileID: 188560448}
 --- !u!95 &1561011403
@@ -10371,6 +10380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f7969b6cc0e12444b2b9261cab1ef9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   damage: 1
   usedAbility: 0
   dealDamage: 0
@@ -10477,6 +10487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b63fd0b6f7573c143af40ce3a5ef27f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   player: {fileID: 1561011401}
   playerMovement: {fileID: 1561011402}
 --- !u!1 &1681639545
@@ -11421,6 +11432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2b662e661ee9d478e61e8059282a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   damage: 3
   amountOfProjectiles: 0
   penetration: 1

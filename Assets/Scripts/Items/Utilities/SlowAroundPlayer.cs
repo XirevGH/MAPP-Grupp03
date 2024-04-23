@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
-public class SlowAroundPlayer : UtilityItem
+public class SlowAroundPlayer : Utility
 {
     [SerializeField] private float slowSpeedPercent;
     private HashSet<GameObject> enemies = new HashSet<GameObject>();

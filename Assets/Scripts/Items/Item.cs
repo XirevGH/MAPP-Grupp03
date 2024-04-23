@@ -1,0 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class Item : MonoBehaviour
+{
+    protected List<string> upgradeOptions = new List<string>();
+    public string itemName;
+
+    public abstract List<string> GetUpgradeOptions();
+}

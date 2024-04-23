@@ -2,26 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class UpgradeAbility : MonoBehaviour
 {
-    [SerializeField] private Weapon[] weapons;
-    [SerializeField] private UtilityItem[] utilities;
+    [SerializeField] private GameObject[] panels;
+    [SerializeField] private List<Weapon> weapons = new List<Weapon>();
+    [SerializeField] private List<Utility> utilities = new List<Utility>();
     [SerializeField] private Player player;
     [SerializeField] private PlayerMovement playerMovement;
-    
-    private List<Weapon> weaponOptions;
-    
-    private Dictionary<Weapon, string> upgradeOptions;
+    private List<Item> currentPlayerItems = new List<Item>();
+    private Dictionary<Item, List<string>> upgradeOptions;
     private List<string> typeOptions;
     private int allowedAmountOfWeapons;
+    private int allowedAmountOfUtility;
 
     void Start()
     {
-        weaponOptions = new List<Weapon>(weapons);
         allowedAmountOfWeapons = 4;
         typeOptions = new List<string> { "Weapon", "Utility"};
-
     }
 
     public void UpgradeDamage(Weapon weapon, float percentageIncrease)
@@ -42,24 +41,21 @@ public class UpgradeAbility : MonoBehaviour
 
     public Weapon ChooseRandomWeapon()
     {
-        int randomWeapon = Random.Range(0, weaponOptions.Count);
-        return weaponOptions[randomWeapon];
+        int randomWeapon = Random.Range(0, weapons.Count);
+        Weapon chosenWeapon = weapons[randomWeapon];
+        weapons.Remove(chosenWeapon);
+        return chosenWeapon;
     }
 
     public void ChooseRandomUpgrade()
     {
-        Weapon[] currentPlayerWeapons = player.GetCurrentWeapons().ToArray();
+        currentPlayerItems = player.GetCurrentItems();
         
 
     }
     public List<Weapon> GetAvailableWeapons()
     {
-        return new List<Weapon>(weaponOptions);
-    }
-
-    public void ChooseWeapon(Weapon weapon)
-    {
-        weaponOptions.Remove(weapon);
+        return new List<Weapon>(weapons);
     }
 
     public void RandomUpgrade()
@@ -73,11 +69,11 @@ public class UpgradeAbility : MonoBehaviour
     }
     private void ChooseOptions()
     {
-        if (player.GetCurrentWeapons().Count == 0) 
+        if (player.GetCurrentItems().Count == 0) 
         { 
 
         }
-        if (player.GetCurrentWeapons().Count < allowedAmountOfWeapons) { 
+        if (player.GetCurrentItems().Count < allowedAmountOfWeapons) { 
             int randomChoiceOne = Random.Range(0, typeOptions.Count);
             int randomChoiceTwo = Random.Range(0, typeOptions.Count);
             int randomChoiceThree = Random.Range(0, typeOptions.Count);
@@ -91,16 +87,28 @@ public class UpgradeAbility : MonoBehaviour
 
     private void CheckForUpgradableItems()
     {
+        player.GetCurrentItems();
     }
 
-    private void UpgradeRollerSkates()
+    public void UpgradeRollerSkates()
     {
         RollerSkates rollerSkates = (RollerSkates)utilities[0];
         rollerSkates.UpgradeMovementSpeed();
     }
 
-    private void UpgradeGrooveArmor()
+    public void UpgradeGrooveArmor()
     {
-        player.IncreaseHealth(1.1f);
+        player.IncreaseMaxHealth(1.1f);
+    }
+
+    private void InitializeAvailablePanels()
+    {
+        List<GameObject> panelList = new List<GameObject>(panels);
+    }
+    public void StartUpgradeSystem()
+    {
+        InitializeAvailablePanels();
+        CheckForUpgradableItems();
     }
 }
+
