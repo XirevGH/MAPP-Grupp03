@@ -5,7 +5,9 @@ using TMPro;
 using System.Text;
 using System;
 using System.Linq;
+using Unity.VisualScripting;
 
+[System.Serializable]  
 public class GameObjectComparer : IComparer<GameObject>
 {
     public int Compare(GameObject obj1, GameObject obj2)
@@ -25,17 +27,29 @@ public class GameObjectComparer : IComparer<GameObject>
     }
 }
 
+[System.Serializable]  
+public class DropItem
+{
+    //Prefaben som ska skapas
+    public GameObject item;
+
+    //chansen i int "%" hur stor changen är att den droppas
+    public int dropChance_0_To_100;
+}
 public class Enemy : MonoBehaviour
 {
-    public GameObject player;
-
-    [SerializeField] private GameObject xpMagnetPrefab;
-    [SerializeField] private GameObject xpDropPrefab;
     [SerializeField] private Sprite enemySprite;
 
-    private float damageNumberWindow = 3f;
+    [SerializeField] private List<DropItem> drops = new List<DropItem>();
 
-    private SpriteRenderer sprite;
+    //om den kan droppa ferla saker än en. Börja med först droppet i listan
+    public bool multiDrop;
+
+    public GameObject player;
+
+    protected float damageNumberWindow = 3f;
+
+    public SpriteRenderer sprite;
 
     public static float movementSpeed;
     public static float healthProsenIncreas = 1f;
@@ -48,8 +62,8 @@ public class Enemy : MonoBehaviour
     public Animator damageNumberAnim;
     public Animator enemyAnim;
 
-    void Start()
-    {
+    public void Start()
+    {   
         health *= healthProsenIncreas;
         player = GameObject.FindGameObjectWithTag("Player");
         sprite = GetComponent<SpriteRenderer>();
@@ -57,38 +71,10 @@ public class Enemy : MonoBehaviour
         isSlow = false;
     }
 
-    void FixedUpdate()
-    {
-        damageNumberWindow -= Time.deltaTime;
-        if (!isSlow)
-        {
-            thisMovementSpeed = movementSpeed;
-        }
-
-        if (IsAlive()) 
-        {
-            if (Vector3.Distance(player.transform.position, transform.position) < 0.5)
-            {
-                player.GetComponent<Player>().TakeDamage(1);
-            }
-            if (transform.position.x < player.GetComponent<Transform>().position.x)
-            {
-                sprite.flipX = false;
-            }
-            else
-            {
-                sprite.flipX = true;
-            }
-            enemyAnim.SetTrigger("Walking");
-            transform.position = Vector3.MoveTowards(transform.position, player.GetComponent<Transform>().position, thisMovementSpeed / 200);
-        }
-      
-    }
-
+    protected virtual void FixedUpdate(){}
     public void TakeDamage(float damageTaken)
-    {
-        if (IsAlive()) { 
-            health -= damageTaken;
+    {   if (IsAlive())
+        {   health -= damageTaken;
             damageNumbers.text = BuildDamageNumber(damageTaken);
             if (damageNumberWindow <= 0)
             {
@@ -99,7 +85,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private string BuildDamageNumber(float damage)
+    protected string BuildDamageNumber(float damage)
     {
         string source = damageNumbers.text;
         int count = source.Split('\n').Length;
@@ -129,7 +115,7 @@ public class Enemy : MonoBehaviour
         return health; 
     }
 
-    private bool IsAlive()
+    protected bool IsAlive()
     {
         if (health <= 0)
         {
@@ -140,34 +126,46 @@ public class Enemy : MonoBehaviour
         return true;
     }
 
-    private void DropXP()
-    {
-        int random = UnityEngine.Random.Range(1, 3);
-        if(random == 1)
+
+    protected bool Drop(GameObject drope, int dropeChans)
+    {   int random = UnityEngine.Random.Range(0, 101);
+        if(random <= dropeChans)
         {   
-            if (xpDropPrefab) {
-                GameObject xpDrop = Instantiate(xpDropPrefab, transform.position, Quaternion.identity);
-                xpDrop.SetActive(true);
+            if (drope) {
+                GameObject enemyDrop = Instantiate(drope, transform.position, Quaternion.identity);
+                enemyDrop.SetActive(true);
+                return true;
+            } else {
+            Debug.LogWarning("Drop item is null.");
             }
         }
-        else if (xpMagnetPrefab) {
-            int random2 = GetRandomInt(1,21);
-            if(random2 == 1){
-                GameObject xpMagnet = Instantiate(xpMagnetPrefab, transform.position, Quaternion.identity);
-                xpMagnet.SetActive(true);
+        return false;
+        
+    }
+    protected void Drops() {
+        foreach (DropItem drop in drops) { 
+            if (Drop(drop.item, drop.dropChance_0_To_100 )) {
+                if (!multiDrop) {
+                    break;
+                }
             }
         }
     }
 
-    private void DestroyGameObject()
+
+    
+
+    protected void DestroyGameObject()
     {
-        DropXP();
+        Drops();
         MainManager.Instance.enemiesDefeated += 1;
         Destroy(gameObject);
     }
 
-    private int GetRandomInt (int a, int b)
+    protected int GetRandomInt (int a, int b)
     {
         return UnityEngine.Random.Range(a, b);
     }
+
+    
 }
