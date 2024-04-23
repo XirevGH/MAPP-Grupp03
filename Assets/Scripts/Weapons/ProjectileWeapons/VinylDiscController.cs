@@ -5,25 +5,18 @@ using UnityEngine;
 public class VinylDiscController : Weapon
 {
     [SerializeField] private GameObject vinylDisc;
+
+    private Transform playerTransform;
     private Vector3 playerPosition;
-    // Start is called before the first frame updat
+
     void Start()
     {
-       
-        playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-      
-       
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    void FixedUpdate()
-    {
-        playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-      
-
-
-    }
     public override void Attack()
     {
+        playerPosition = playerTransform.position;
         GameObject clone = Instantiate(vinylDisc, playerPosition, Quaternion.identity);
         clone.GetComponent<Projectile>().SetDamage(damage);
         clone.GetComponent<VinylDisc>().isAtPlayer = true;
