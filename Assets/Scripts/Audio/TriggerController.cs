@@ -49,12 +49,12 @@ public class TriggerController : MonoBehaviour
         GameObject manager = GameObject.FindGameObjectWithTag("SoundManager");
         inGameMusic = manager.transform.GetChild(0).GetComponent<AudioSource>();
         soundManager = manager.GetComponent<SoundManager>();
-        triggers[0].isTriggering = isTriggering;
+      
     }
 
     void Update()
     {
-        //inGameMusic = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
+        inGameMusic = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
         inGameCurrentTrackBPM = soundManager.BPMforTracks[trackswapper.GetComponent<TrackSwapper>().i];
         if (isTriggering)
         {
