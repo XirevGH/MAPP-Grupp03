@@ -12,7 +12,7 @@ public class BoogieBomb : Weapon
     public bool usedAbility = false;
     public bool dealDamage = false;
     public bool bombMoving = false;
-    public float abilityCooldown;
+    public float abilityCooldown; //60f / (gameController.GetComponent<GameController>().GetCurrentTrackBPM() / TriggerController.GetComponent<TriggerController>().GetTrigger("den triggern som triggar objectet").noteValue);
     public float bombRangeY;
     public float bombRangeX;
 
