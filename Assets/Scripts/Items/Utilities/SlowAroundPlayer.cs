@@ -8,9 +8,9 @@ public class SlowAroundPlayer : Utility
     [SerializeField] private float slowSpeedPercent;
     private HashSet<GameObject> enemies = new HashSet<GameObject>();
 
-    public void UpgradeRradius( float radius)
+    public void UpgradeRradius( float percent)
     {
-        gameObject.transform.localScale.Scale(new Vector3());
+        gameObject.transform.localScale *= (1 + (percent / 100f));
     }
     public void UpgradeSlow(float percent)
     {

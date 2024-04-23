@@ -10,26 +10,13 @@ public class AsawinDebugging : MonoBehaviour
     [SerializeField] public GameObject testingObj1;
 
     private SpriteRenderer spriteRenderer;
-    private bool active;
-
     void Start()
     {
-        active = false;
+ 
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void Blink()
-    {
-        if (spriteRenderer.color != Color.blue)
-        {
-            spriteRenderer.color = Color.blue;
-        }
-        else
-        {
-            spriteRenderer.color = Color.white;
-        }
-    }
-    void FixedUpdate()
+    void Update()
     {
       
 
@@ -39,9 +26,8 @@ public class AsawinDebugging : MonoBehaviour
 
             Debug.Log("Boogie Boogie");
 
-            //testingObj1.GetComponent<YoyoController>().Upgrade();
-            //testingObj1.GetComponent<YoyoController>().Attack();
-            testingObj1.GetComponent<VinylDiscController>().Attack();
+
+            testingObj1.GetComponent<SlowAroundPlayer>().UpgradeRradius(10);
 
 
         }
