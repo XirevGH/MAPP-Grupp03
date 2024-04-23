@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField] private PlayerStats playerStats;
     [SerializeField] public int money;
     [SerializeField] public float moneyMultiplier;
     [SerializeField] public int damage;
@@ -25,6 +24,6 @@ public class PlayerStats : MonoBehaviour
 
     public void CreateFromJSON(string jsonString)
     {
-        JsonUtility.FromJsonOverwrite(jsonString, playerStats);
+        JsonUtility.FromJsonOverwrite(jsonString, this);
     }
 }

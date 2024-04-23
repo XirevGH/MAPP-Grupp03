@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BreakDance : Weapon
+public class BreakDance : PhysicalWeapon
 {
     public bool dealDamage;
     public float abilityTime;

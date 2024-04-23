@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DiscoBallController : Weapon
+public class DiscoBallController : ProjectileWeapon
 {    
     [SerializeField] private GameObject discoBall;
 

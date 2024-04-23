@@ -28,7 +28,7 @@ public class GameObjectComparer : IComparer<GameObject>
 public class Enemy : MonoBehaviour
 {
     public GameObject player;
-
+    [SerializeField] private SynthwaveBlast synthwaveBlast;
     [SerializeField] private GameObject xpMagnetPrefab;
     [SerializeField] private GameObject xpDropPrefab;
     [SerializeField] private Sprite enemySprite;
@@ -157,6 +157,12 @@ public class Enemy : MonoBehaviour
                 xpMagnet.SetActive(true);
             }
         }
+    }
+
+    private void OnParticleCollision(GameObject particle)
+    {
+        synthwaveBlast = particle.GetComponent<SynthwaveBlast>();
+        synthwaveBlast.CollisionDetected(particle, GetComponent<Collider2D>());
     }
 
     private void DestroyGameObject()

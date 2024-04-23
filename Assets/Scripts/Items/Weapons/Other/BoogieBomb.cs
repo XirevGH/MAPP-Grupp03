@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-public class BoogieBomb : Weapon
+public class BoogieBomb : PhysicalWeapon
 {
     HashSet<Collider2D> colliders = new HashSet<Collider2D>();
 
