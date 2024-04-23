@@ -37,15 +37,15 @@ public class VinylDisc : Projectile
 
         centerPivot1 -= new Vector3(0, -centerOffSet);
 
-        //if (aimingArrowRotation.eulerAngles.z <= 90f && aimingArrowRotation.eulerAngles.z >= -90f)
-        //{
+        if (aimingArrowRotation.eulerAngles.z <= 90f && aimingArrowRotation.eulerAngles.z >= -90f)
+        {
 
-        //    rotateSpeed = +rotateSpeed;
-        //}
-        //else
-        //{
-        //    rotateSpeed = -rotateSpeed;
-        //}
+            rotateSpeed = -rotateSpeed;
+        }
+        else
+        {
+            rotateSpeed = +rotateSpeed;
+        }
 
     }
 
@@ -56,7 +56,7 @@ public class VinylDisc : Projectile
         noteValue = triggerController.GetTrigger(triggerNumber).noteValue;
         pitch = source.pitch;
     
-        travelTime = (((60f / (BPM / noteValue)) / pitch) );
+        travelTime = (((60f / (BPM / noteValue)) / pitch) /4f);
 
         if (isAtPlayer)
         {
@@ -64,14 +64,13 @@ public class VinylDisc : Projectile
             percentageComplete = elapsedTime / travelTime;
             Debug.Log(centerOffSet);
             transform.position = QuadraticBezierCurve(startPosition, endPosition, centerPivot1,  curve.Evaluate(percentageComplete));
-            //transform.position = Vector3.Slerp(startPosition - centerPivot1 , endPosition - centerPivot1, curve.Evaluate(percentageComplete)) + centerPivot1;
             angle -= rotateSpeed;
             vinylDisc.transform.eulerAngles = new Vector3(0, 0, angle);
             if (percentageComplete >= 1)
             {
                 elapsedTime = 0;
                 percentageComplete = 0;
-                centerOffSet = -centerOffSet;
+                centerOffSet = -centerOffSet * 3;
                 centerPivot1 -= new Vector3(0, -centerOffSet);
 
                 isAtPlayer = false;
@@ -86,7 +85,7 @@ public class VinylDisc : Projectile
 
             transform.position = QuadraticBezierCurve(endPosition, playerPosition, centerPivot1, curve.Evaluate(percentageComplete));
             Debug.Log(centerOffSet);
-            angle += rotateSpeed;
+            angle -= rotateSpeed;
             vinylDisc.transform.eulerAngles = new Vector3(0, 0, angle);
             if (percentageComplete >= 1)
             {
