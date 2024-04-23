@@ -8,6 +8,15 @@ public class SlowAroundPlayer : Utility
     [SerializeField] private float slowSpeedPercent;
     private HashSet<GameObject> enemies = new HashSet<GameObject>();
 
+    public void UpgradeRradius( float radius)
+    {
+        gameObject.transform.localScale.Scale(new Vector3());
+    }
+    public void UpgradeSlow(float percent)
+    {
+        slowSpeedPercent *= (1 + (percent/100f));
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
