@@ -4,14 +4,18 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Timeline;
+
 public class EnemyBoss : Enemy
 {
     public float baseAblietyColdown;
     private float ablietyColdown;
+
+
     
     public EnemyBoss()
     {
         this.ablietyColdown = baseAblietyColdown;
+        EnemySpawner.bossAlive = true;
     }
 
    
@@ -27,12 +31,12 @@ public class EnemyBoss : Enemy
 
         if (IsAlive()) 
         {
-            if (Vector3.Distance(player.transform.position, transform.position) < 0.5)
+            if (Vector3.Distance(player.transform.position, transform.position) < 1)
             {
                 player.GetComponent<Player>().TakeDamage(1);
             }
              if (Vector3.Distance(player.transform.position, transform.position) < 15 && ablietyColdown <= 0)
-            {   
+            {   enemyAnim.SetTrigger("Attack");
                 GetComponent<DrunkerdBossAtack>().ShootNoteAttPalyer();
                 ablietyColdown = baseAblietyColdown;
             }
@@ -51,7 +55,13 @@ public class EnemyBoss : Enemy
         
     }
 
-
+    protected override void DestroyGameObject()
+    {
+        EnemySpawner.bossAlive = false;
+        Drops();
+        MainManager.Instance.enemiesDefeated += 1;
+        Destroy(gameObject);
+    }
     
 
     

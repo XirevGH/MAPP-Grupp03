@@ -155,7 +155,7 @@ public class Enemy : MonoBehaviour
 
     
 
-    protected void DestroyGameObject()
+    protected virtual void DestroyGameObject()
     {
         Drops();
         MainManager.Instance.enemiesDefeated += 1;

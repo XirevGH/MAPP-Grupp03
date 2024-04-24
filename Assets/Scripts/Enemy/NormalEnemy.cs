@@ -40,5 +40,10 @@ public class NormalEnemy : Enemy
         }
       
     }
-    
+    protected override void DestroyGameObject()
+    {
+        Drops();
+        MainManager.Instance.enemiesDefeated += 1;
+        Destroy(gameObject);
+    }
 }
