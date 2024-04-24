@@ -65,9 +65,9 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(mainMenuSceneName); 
     }
 
-    public void QuitGame()
+    public void Settings()
     {
-        Application.Quit();
+        Debug.Log("Settings meny");
     }
 
     private void ToggleJoysticks(bool state)
