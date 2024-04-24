@@ -8317,7 +8317,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 2044913608}
     m_Modifications:
     - target: {fileID: 3131863427772903305, guid: 7e042dc8bfc144649a690f20259123b9, type: 3}
-
+    
       propertyPath: m_Name
       value: Yoyo
       objectReference: {fileID: 0}
@@ -9342,7 +9342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd7955f7378e944aaea2180eba4f0bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  
+
   movementSpeed: 5
 
   pos: {fileID: 5383820192035051673}
