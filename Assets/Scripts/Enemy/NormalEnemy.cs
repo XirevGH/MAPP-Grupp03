@@ -13,7 +13,7 @@ public class NormalEnemy : Enemy
     {
     }
 
-    protected override void FixedUpdate()
+     void FixedUpdate()
     {
         damageNumberWindow -= Time.deltaTime;
         if (!isSlow)

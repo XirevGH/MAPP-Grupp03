@@ -26,7 +26,7 @@ public class EnemyBoss : Enemy
 
    
 
-    protected override void FixedUpdate()
+    void FixedUpdate()
     {
         attackColdown -= Time.deltaTime;
         damageNumberWindow -= Time.deltaTime;
