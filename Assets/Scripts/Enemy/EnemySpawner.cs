@@ -69,8 +69,8 @@ public class EnemySpawner : MonoBehaviour
     private void FixedUpdate()
     {
         if(!bossAlive){
-        spawnRate -= 0.0001f;
-        spawnIncreaser += 0.0005f;}
+        spawnRate -= 0.001f;
+        spawnIncreaser += 0.005f;}
     }
 
 
