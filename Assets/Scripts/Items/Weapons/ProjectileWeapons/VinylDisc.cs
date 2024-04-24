@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class VinylDisc : Projectile
 {
-    [SerializeField] private float travelTime, BPM, noteValue, pitch, travelDistance, rotateSpeed, angle, centerOffSet;
+    [SerializeField] private float travelTime, BPM, noteValue, pitch, travelDistance, rotateSpeed, angle, controlPointOffSet;
     [SerializeField] private int triggerNumber;
     [SerializeField] private GameObject vinylDisc;
     [SerializeField] private AnimationCurve curve;
@@ -15,7 +15,7 @@ public class VinylDisc : Projectile
     public float elapsedTime, percentageComplete, lerpElapsedTime;
     public bool attack, isAtPlayer, isHalfWay;
 
-    private Vector3  startPosition, endPosition, playerPosition, centerPivot1;
+    private Vector3  startPosition, endPosition, playerPosition, controlPoint;
     private Quaternion aimingArrowRotation;
     private SoundManager soundManager;
     private AudioSource source;
@@ -33,9 +33,7 @@ public class VinylDisc : Projectile
         Mathf.Cos(Mathf.Deg2Rad * aimingArrowRotation.eulerAngles.z) * travelDistance + startPosition.x,
         Mathf.Sin(Mathf.Deg2Rad * aimingArrowRotation.eulerAngles.z) * travelDistance + startPosition.y, startPosition.z);
 
-        centerPivot1 = (startPosition + endPosition) * 0.5f;
-
-        centerPivot1 -= new Vector3(0, -centerOffSet);
+        controlPoint = CalculateControlPoint(startPosition, endPosition, true);
 
         if (aimingArrowRotation.eulerAngles.z <= 90f && aimingArrowRotation.eulerAngles.z >= -90f)
         {
@@ -56,23 +54,21 @@ public class VinylDisc : Projectile
         noteValue = triggerController.GetTrigger(triggerNumber).noteValue;
         pitch = source.pitch;
     
-        travelTime = (((60f / (BPM / noteValue)) / pitch) /4f);
+        travelTime = (((60f / (BPM / noteValue)) / pitch) /2f);
 
         if (isAtPlayer)
         {
             elapsedTime += Time.deltaTime;
             percentageComplete = elapsedTime / travelTime;
-            Debug.Log(centerOffSet);
-            transform.position = Vector2.Lerp(startPosition, endPosition, curve.Evaluate(percentageComplete));
-            //transform.position = BezierCurve.QuadraticBezierCurve(startPosition, endPosition, centerPivot1,  curve.Evaluate(percentageComplete));
+            transform.position = BezierCurve.QuadraticBezierCurve(startPosition, endPosition, controlPoint, curve.Evaluate(percentageComplete));
+            
             angle -= rotateSpeed;
             vinylDisc.transform.eulerAngles = new Vector3(0, 0, angle);
             if (percentageComplete >= 1)
             {
                 elapsedTime = 0;
                 percentageComplete = 0;
-                centerOffSet = -centerOffSet * 2;
-                centerPivot1 -= new Vector3(0, -centerOffSet);
+                controlPoint = CalculateControlPoint(endPosition, playerPosition, false);
 
                 isAtPlayer = false;
                 isHalfWay = true;
@@ -82,10 +78,8 @@ public class VinylDisc : Projectile
         {
             elapsedTime += Time.deltaTime;
             percentageComplete = elapsedTime / travelTime;
-
-
-            transform.position = BezierCurve.QuadraticBezierCurve(endPosition, playerPosition, centerPivot1, curve.Evaluate(percentageComplete));
-            Debug.Log(centerOffSet);
+            transform.position = BezierCurve.QuadraticBezierCurve(endPosition, playerPosition, controlPoint, curve.Evaluate(percentageComplete));
+          
             angle -= rotateSpeed;
             vinylDisc.transform.eulerAngles = new Vector3(0, 0, angle);
             if (percentageComplete >= 1)
@@ -94,6 +88,18 @@ public class VinylDisc : Projectile
             }
         }
     }
+
+
+    private Vector2 CalculateControlPoint(Vector2 startPosition, Vector2 endPosition, bool aboveLine)
+    {
+        Vector2 controlPoint = startPosition - (startPosition + endPosition).normalized * 0.5f;
+        float sideMultiplier = aboveLine ? -1f : 1f;
+        controlPoint -= new Vector2(0, sideMultiplier * controlPointOffSet);
+
+        return controlPoint;
+    }
+
+
 
     public void Attack() 
     {

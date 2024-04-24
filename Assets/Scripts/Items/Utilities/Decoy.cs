@@ -6,7 +6,7 @@ public class Decoy : MonoBehaviour
 {
     public Vector2 landingSpot;
     private Vector2 startPosition, controlPoint;
-    [SerializeField] float travelTime, controlPointDistance, controlPointOffSet, decoyHealth;
+    [SerializeField] float travelTime, controlPointOffSet, decoyHealth;
     private float elapsedTime, percentageComplete;
 
     // Start is called before the first frame update
