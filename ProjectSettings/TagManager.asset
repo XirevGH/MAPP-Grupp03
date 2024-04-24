@@ -15,6 +15,7 @@ TagManager:
   - TriggerController
   - LeftJoyStick
   - AimingArrow
+  - Decoy
   layers:
   - Default
   - TransparentFX

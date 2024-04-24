@@ -27,7 +27,7 @@ public class AsawinDebugging : MonoBehaviour
             Debug.Log("Boogie Boogie");
 
 
-            testingObj1.GetComponent<SlowAroundPlayer>().UpgradeRradius(10);
+            testingObj1.GetComponent<DecoyController>().Throw();
 
 
         }

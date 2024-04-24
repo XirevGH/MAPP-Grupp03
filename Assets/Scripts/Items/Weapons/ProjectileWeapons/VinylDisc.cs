@@ -63,14 +63,15 @@ public class VinylDisc : Projectile
             elapsedTime += Time.deltaTime;
             percentageComplete = elapsedTime / travelTime;
             Debug.Log(centerOffSet);
-            transform.position = QuadraticBezierCurve(startPosition, endPosition, centerPivot1,  curve.Evaluate(percentageComplete));
+            transform.position = Vector2.Lerp(startPosition, endPosition, curve.Evaluate(percentageComplete));
+            //transform.position = BezierCurve.QuadraticBezierCurve(startPosition, endPosition, centerPivot1,  curve.Evaluate(percentageComplete));
             angle -= rotateSpeed;
             vinylDisc.transform.eulerAngles = new Vector3(0, 0, angle);
             if (percentageComplete >= 1)
             {
                 elapsedTime = 0;
                 percentageComplete = 0;
-                centerOffSet = -centerOffSet * 3;
+                centerOffSet = -centerOffSet * 2;
                 centerPivot1 -= new Vector3(0, -centerOffSet);
 
                 isAtPlayer = false;
@@ -83,7 +84,7 @@ public class VinylDisc : Projectile
             percentageComplete = elapsedTime / travelTime;
 
 
-            transform.position = QuadraticBezierCurve(endPosition, playerPosition, centerPivot1, curve.Evaluate(percentageComplete));
+            transform.position = BezierCurve.QuadraticBezierCurve(endPosition, playerPosition, centerPivot1, curve.Evaluate(percentageComplete));
             Debug.Log(centerOffSet);
             angle -= rotateSpeed;
             vinylDisc.transform.eulerAngles = new Vector3(0, 0, angle);
@@ -104,11 +105,4 @@ public class VinylDisc : Projectile
         DealDamage(other);
     }
 
-    private Vector2 QuadraticBezierCurve(Vector2 startPosition, Vector2 endPosition, Vector2 controlPoint, float time)
-    {
-        Vector2 p0 = Vector2.Lerp(startPosition, controlPoint, time);
-        Vector2 p1 = Vector2.Lerp(controlPoint, endPosition, time);
-
-        return Vector2.Lerp(p0, p1, time);
-    }
 }
