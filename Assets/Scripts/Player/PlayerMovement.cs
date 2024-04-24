@@ -9,8 +9,12 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalValue;
     private float verticalValue;
 
+    private float movementSpeedDecrease = 1f;
+
     private SpriteRenderer rend;
     private Animator anim;
+
+    public bool isSlowed;
 
     private void Awake()
     {
@@ -62,12 +66,17 @@ public class PlayerMovement : MonoBehaviour
         if (dynamicJoystick.Horizontal != 0f || dynamicJoystick.Vertical != 0f)
         {
             anim.SetFloat("MoveSpeed", Mathf.Abs(dynamicJoystick.Horizontal + dynamicJoystick.Vertical / 2));
-            pos.position = new Vector2(pos.position.x + dynamicJoystick.Horizontal * movementSpeed * Time.deltaTime, pos.position.y + dynamicJoystick.Vertical * movementSpeed * Time.deltaTime);
+            pos.position = new Vector2(pos.position.x + dynamicJoystick.Horizontal * movementSpeed * movementSpeedDecrease * Time.deltaTime, pos.position.y + dynamicJoystick.Vertical * movementSpeed * movementSpeedDecrease* Time.deltaTime);
         }
         else
         {
             anim.SetFloat("MoveSpeed", Mathf.Abs(horizontalValue + verticalValue / 2));
-            pos.position = new Vector2(pos.position.x + horizontalValue * movementSpeed * Time.deltaTime, pos.position.y + verticalValue * movementSpeed * Time.deltaTime);
+            pos.position = new Vector2(pos.position.x + horizontalValue * movementSpeed * movementSpeedDecrease * Time.deltaTime, pos.position.y + verticalValue * movementSpeed * movementSpeedDecrease * Time.deltaTime);
         }
+    }
+
+    public void DecreaseMovementSpeed(float percentageDecrease)
+    {   
+        movementSpeedDecrease = percentageDecrease;
     }
 }

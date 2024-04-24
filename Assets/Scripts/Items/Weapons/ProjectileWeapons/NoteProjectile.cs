@@ -44,5 +44,6 @@ public class NoteProjectile : Projectile {
         DealDamage(other);
         DestroyWhenMaxPenetration();
     }
+
     
 }
