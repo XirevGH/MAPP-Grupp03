@@ -5,7 +5,11 @@ using TMPro;
 using System.Text;
 using System;
 using System.Linq;
+<<<<<<< Updated upstream
 using Unity.VisualScripting;
+=======
+using static UnityEngine.GraphicsBuffer;
+>>>>>>> Stashed changes
 
 [System.Serializable]  
 public class GameObjectComparer : IComparer<GameObject>
@@ -43,6 +47,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private List<DropItem> drops = new List<DropItem>();
 
+<<<<<<< Updated upstream
     //om den kan droppa ferla saker än en. Börja med först droppet i listan
     public bool multiDrop;
 
@@ -51,6 +56,10 @@ public class Enemy : MonoBehaviour
     protected float damageNumberWindow = 3f;
 
     public SpriteRenderer sprite;
+=======
+    private SpriteRenderer sprite;
+    private Vector2 target;
+>>>>>>> Stashed changes
 
     public static float movementSpeed;
     public static float healthProsenIncreas = 1f;
@@ -70,9 +79,54 @@ public class Enemy : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         thisMovementSpeed = movementSpeed;
         isSlow = false;
+        target = GameObject.FindGameObjectWithTag("Player").transform.position;
     }
 
+<<<<<<< Updated upstream
     protected virtual void FixedUpdate(){}
+=======
+    void FixedUpdate()
+    {
+        damageNumberWindow -= Time.deltaTime;
+        if (!isSlow)
+        {
+            thisMovementSpeed = movementSpeed;
+        }
+
+        if (IsAlive()) 
+        {
+            if (Vector3.Distance(player.transform.position, transform.position) < 0.5)
+            {
+                player.GetComponent<Player>().TakeDamage(1);
+            }
+            if (transform.position.x < target.x)
+            {
+                sprite.flipX = false;
+            }
+            else
+            {
+                sprite.flipX = true;
+            }
+
+            enemyAnim.SetTrigger("Walking");
+            if (GameObject.FindGameObjectWithTag("Decoy") != null && GameObject.FindGameObjectWithTag("Decoy").activeInHierarchy)
+            {
+                target = GameObject.FindGameObjectWithTag("Decoy").transform.position;
+             
+            }
+            else 
+            {
+                target = GameObject.FindGameObjectWithTag("Player").transform.position;
+            }
+
+            transform.position = Vector3.MoveTowards(transform.position, target, thisMovementSpeed / 200);
+        }
+           
+        
+      
+    }
+
+>>>>>>> Stashed changes
     public void TakeDamage(float damageTaken)
     {   if (IsAlive())
         {   health -= damageTaken;
