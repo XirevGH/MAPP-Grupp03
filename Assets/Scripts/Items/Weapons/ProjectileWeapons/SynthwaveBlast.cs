@@ -35,9 +35,6 @@ public class SynthwaveBlast : ProjectileWeapon
         particleCollisions[particle]--;
     }
 
-
-    
-
     public override void Attack()
     {
         for (int i = 0; i < amountOfProjectiles; i++) {

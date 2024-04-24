@@ -110,6 +110,7 @@ public class Player : MonoBehaviour
         levelText.text = "Level: " + level;
         UpdateXPSlider();
         MainManager.Instance.mainLevel = level;
+        upgrade.StartUpgradeSystem();
         upgradeScreen.OpenUpgradeWindow();
         /*if (level == 2)
         {
