@@ -1940,7 +1940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossWaves:
   - enemyBOSS: {fileID: 6536046719154458180, guid: e9c853b6690eefb479ed71008c35e6bf, type: 3}
-    bossWave: 60
+    bossWave: 0
   spawnIncreaser: 1
   mainCamera: {fileID: 519420031}
   tilemap: {fileID: 1947654048}

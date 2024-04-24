@@ -217,7 +217,8 @@ MonoBehaviour:
   damageNumbers: {fileID: 287581913604085729}
   damageNumberAnim: {fileID: 2898152515693454215}
   enemyAnim: {fileID: -8718832928761771214}
-  baseAblietyColdown: 5
+  baseAttackColdown: 5
+  bossChargSpeed: 10
 --- !u!114 &-6179003319820616230
 MonoBehaviour:
   m_ObjectHideFlags: 0
