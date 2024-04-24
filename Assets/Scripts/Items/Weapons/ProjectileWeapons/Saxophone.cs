@@ -41,13 +41,6 @@ public class Saxophone : ProjectileWeapon
         }
     }
 
-    
-    public new void DealDamage(Collider2D other)
-    {
-       //do nothing
-    }
-    
-
     private List<GameObject> FindClosestEnemy(int number)
     {
         if (enemies == null || enemies.Count == 0 || number <= 0)

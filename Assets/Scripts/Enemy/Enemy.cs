@@ -38,6 +38,7 @@ public class DropItem
 }
 public class Enemy : MonoBehaviour
 {
+
     [SerializeField] private Sprite enemySprite;
 
     [SerializeField] private List<DropItem> drops = new List<DropItem>();

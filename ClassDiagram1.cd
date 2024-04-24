@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Aiming" Collapsed="true">
+    <Position X="33.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAEAAAAAAAAAIAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapons\Aiming.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AsawinDebugging" Collapsed="true">
+    <Position X="35" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQIACAAACAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\AsawinDebugging.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BassGuitar" Collapsed="true">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACBAAAAAAAAAAAAAAIAAAAAAAQAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapons\Other\BassGuitar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Beat" Collapsed="true">
+    <Position X="36.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAAAAAE2EADCAAAAiACAAAAEAAAABACAAAAAAAAAE=</HashCode>
+      <FileName>Assets\Scripts\Audio\Beat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BeatSpawner" Collapsed="true">
+    <Position X="38.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAASAAAAAAAAAAAAAIQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Audio\BeatSpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BoogieBomb" Collapsed="true">
+    <Position X="10.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BGAAAAAgAiBCIAAAAiAAAAAEAIAAAAABAAAAFAAAEgA=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapons\Other\BoogieBomb.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BreakDance" Collapsed="true">
+    <Position X="15" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAgABAAAAAAAAAACgAAIAAIAAAAAAAAAQAAAg=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapons\Other\BreakDance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CameraFollow" Collapsed="true">
+    <Position X="40.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAkAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\CameraFollow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiscoBall">
+    <Position X="0.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAACAAAAQEAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapons\ProjectileWeapons\DiscoBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiscoBallController" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapons\ProjectileWeapons\DiscoBallController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiscoBallParabola">
+    <Position X="19.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAgAAyAABBQAAAAAACAAAMAAAQBBAAQAAABEAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapons\ProjectileWeapons\DiscoBallParabola.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DynamicJoystick" Collapsed="true">
+    <Position X="5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAACAACAIAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAA=</HashCode>
+      <FileName>Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ElectricBolt" Collapsed="true">
+    <Position X="42" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABQQAAiAA4ABAAGAAAAQAAIAAAAAhAAAAAABIAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapons\ProjectileWeapons\ElectricBolt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ElectricGuitar" Collapsed="true">
+    <Position X="12.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACACAAAhBAAAAAAAAACAAAIAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapons\ProjectileWeapons\ElectricGuitar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy" Collapsed="true">
+    <Position X="33.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARAAAEgEAiAAAABAAAAWAAAAABAIgQAZRAAAwCAAAAg=</HashCode>
+      <FileName>Assets\Scripts\Enemy\Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemySpawner" Collapsed="true">
+    <Position X="35" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQQAAAAQgAACABAAAAAAAAAgBABEAIBQAACEAQYAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\EnemySpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FixedJoystick" Collapsed="true">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FloatingJoystick" Collapsed="true">
+    <Position X="2.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAACAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Floor" Collapsed="true">
+    <Position X="36.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAQAAAAAAAAgAAAAACAAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameFunctions\Floor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameController" Collapsed="true">
+    <Position X="38.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAgAQACgAAQAAACACEAAAAgBCEEAAACAAAAQAAAEA=</HashCode>
+      <FileName>Assets\Scripts\GameFunctions\GameController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameObjectComparer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="40.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\Enemy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GrooveArmor" Collapsed="true">
+    <Position X="30.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Utilities\GrooveArmor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Item" Collapsed="true">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAABAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemMagnet" Collapsed="true">
+    <Position X="42" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAEAAAAABAAAAAAAAAMA=</HashCode>
+      <FileName>Assets\Scripts\Pickups\ItemMagnet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Joystick" Collapsed="true">
+    <Position X="3.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACABACIACRICAAEACBAASICAAEAADAKAQQCCAEAIAA=</HashCode>
+      <FileName>Assets\Joystick Pack\Scripts\Base\Joystick.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="JoystickPlayerExample" Collapsed="true">
+    <Position X="33.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAEAAAAAAAAAAAAAQAAAAAAAAAEAAA=</HashCode>
+      <FileName>Assets\Joystick Pack\Examples\JoystickPlayerExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JoystickSetterExample" Collapsed="true">
+    <Position X="35" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAEAAAAAAAAAAAAAAAACAAAAAQAQAQAACAAEIAA=</HashCode>
+      <FileName>Assets\Joystick Pack\Examples\JoystickSetterExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainManager" Collapsed="true">
+    <Position X="36.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IARAAAAAAAAAgAAAAAAIAAAAAAAAAAAAQAAAAACAAEE=</HashCode>
+      <FileName>Assets\Scripts\Menu\MainManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ManuController" Collapsed="true">
+    <Position X="38.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAICEACAAAIAAAADAAAAkCBGCEAAAABAAACAAAgA=</HashCode>
+      <FileName>Assets\Scripts\Menu\MenuController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NoteProjectile">
+    <Position X="5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAIQAAABAAAAAAAEAAYAAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapons\ProjectileWeapons\NoteProjectile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObjectDestroyer" Collapsed="true">
+    <Position X="40.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameFunctions\ObjectDestroyer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PauseMenu" Collapsed="true">
+    <Position X="42" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAAAgAACEAAAAAAACAAMEAAAAAgAAgAAAAAAgAAAA=</HashCode>
+      <FileName>Assets\Scripts\Menu\PauseMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="33.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQMRWRAgAA0AkCIAUABoAkAAAAJAABEgACAsAo=</HashCode>
+      <FileName>Assets\Scripts\Player\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerMovement" Collapsed="true">
+    <Position X="35" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAgAQgAAAACAAAIAAACAAAEAIAQAAAAAACEA=</HashCode>
+      <FileName>Assets\Scripts\Player\PlayerMovement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerStats" Collapsed="true">
+    <Position X="36.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIBAAAgBAQAEAAACAAAAAAAAAIAABAAAAAkAI=</HashCode>
+      <FileName>Assets\Scripts\Player\PlayerStats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PositionGrups" Collapsed="true">
+    <Position X="38.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\PositionGrups.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projectile">
+    <Position X="2.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAgAAAAgAAAAAAAAAAAQAAAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapons\Projectile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectileWeapon" Collapsed="true">
+    <Position X="20.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAACAAAAAAAAAAAAAAAAAAAAAQAAAAAEAAABAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapons\ProjectileWeapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResultScreen" Collapsed="true">
+    <Position X="40.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAgAAAAAAAAAAAAAAQAAAAACAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Menu\ResultScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RollerSkates" Collapsed="true">
+    <Position X="26.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Utilities\RollerSkates.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Saxophone">
+    <Position X="17.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAASAAAAAAAAAAAAQAAAAAMAAAQABAgAAAAAgAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapons\ProjectileWeapons\Saxophone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SlowAroundPlayer" Collapsed="true">
+    <Position X="28.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAEAAAAABAAAAAAQAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Utilities\SlowAroundPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoundManager" Collapsed="true">
+    <Position X="42" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAAAJAAGCBMAogigAAIBAAEACAQAAAwAAICUQAAEA=</HashCode>
+      <FileName>Assets\Scripts\Audio\SoundManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SynthwaveBlast" Collapsed="true">
+    <Position X="21.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAIAAAAABAAAAAAIgAAAAAEAAAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapons\ProjectileWeapons\SynthwaveBlast.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TetheringWeapon" Collapsed="true">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapons\TetheringWeapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Timer" Collapsed="true">
+    <Position X="33.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAQAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameFunctions\Timer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TrackSwapper" Collapsed="true">
+    <Position X="35" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAAAAEAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Audio\TrackSwapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TriggerController" Collapsed="true">
+    <Position X="36.75" Y="4.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="TriggerController.Trigger" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Audio\TriggerController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAGCAABAAAAACIAAAAAACAAAAAAAAAAAECAAA=</HashCode>
+      <FileName>Assets\Scripts\Audio\TriggerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UpgradeAbility" Collapsed="true">
+    <Position X="38.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAgQEAACCgAABAAQEAoAASAkAEAAAABAFAAUQAAAIQ=</HashCode>
+      <FileName>Assets\Scripts\Player\UpgradeAbility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UpgradeController" Collapsed="true">
+    <Position X="40.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CIADCAhQgyggAEwCoDgAAAgAhCBDERGQAIGQAgBkEEA=</HashCode>
+      <FileName>Assets\Scripts\Player\UpgradeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UpgradePanel" Collapsed="true">
+    <Position X="42" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\UpgradePanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utility" Collapsed="true">
+    <Position X="28.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQACAAAKAAAAAAAAAAAAAAAAAAAAQBAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Utilities\Utility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VariableJoystick" Collapsed="true">
+    <Position X="7.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAKAACAIAgAAAAAAAAAAAAAAAgAAACIAAAAAAAA=</HashCode>
+      <FileName>Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VinylDisc">
+    <Position X="24" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYQAAAAAASAAAAAAAICAIAAAEcAAAEBCCAAAAAAAggA=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapons\ProjectileWeapons\VinylDisc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VinylDiscController" Collapsed="true">
+    <Position X="1.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapons\ProjectileWeapons\VinylDiscController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VolumeSettings" Collapsed="true">
+    <Position X="33.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAACAAAAAAAAAAAEAAAgAAAAgAAAAgAAAAAQA=</HashCode>
+      <FileName>Assets\Scripts\Audio\VolumeSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Weapon">
+    <Position X="12.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAQAAAAAgAAAAAAAAAAAAIAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapons\Weapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XPDrop" Collapsed="true">
+    <Position X="35" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAggAAAACQIAAAAAAAAEBAAQAAAAAAAAAAAMA=</HashCode>
+      <FileName>Assets\Scripts\Pickups\XPDrop.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Yoyo">
+    <Position X="2.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQIwQDAEyBAAAAQIAKAAAAAQEAAAEhAaEAAAMFIACA=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapons\Other\Yoyo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="YoyoController">
+    <Position X="8.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAgAACAAAAAAAAAgAAAAgIAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Items\Weapons\Other\YoyoController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="AxisOptions" Collapsed="true">
+    <Position X="33.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Joystick Pack\Scripts\Base\Joystick.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="JoystickType" Collapsed="true">
+    <Position X="35" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

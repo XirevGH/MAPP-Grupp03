@@ -9,6 +9,11 @@ public class PauseMenu : MonoBehaviour
     public GameObject[] joysticks;
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI, BeatSpawnerController, soundManager;
+    public GameObject pauseButton; 
+
+    [SerializeField] private GameObject settingPanel;
+ 
+
 
     public string mainMenuSceneName = "MainMenu";
 
@@ -23,6 +28,11 @@ public class PauseMenu : MonoBehaviour
         {
             PauseButton();
         }
+    }
+
+    public void UpdatePauseButtonPosition(Vector3 newPosition)
+    {
+        pauseButton.transform.localPosition = newPosition;
     }
 
     public void PauseButton()
@@ -65,9 +75,16 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(mainMenuSceneName); 
     }
 
-    public void QuitGame()
+    public void Settings()
     {
-        Application.Quit();
+        Debug.Log("Settings meny");
+        settingPanel.SetActive(true);
+    }
+
+    public void CloseSetting()
+    {
+        settingPanel.SetActive(false);
+
     }
 
     private void ToggleJoysticks(bool state)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
 
-public class YoyoController : Weapon
+public class YoyoController : ProjectileWeapon
 {
     public GameObject yoyo;
 
@@ -52,4 +52,5 @@ public class YoyoController : Weapon
         GameObject clone = Instantiate(yoyo, transform.position, Quaternion.identity, transform);
         clone.GetComponent<Yoyo>().SetDamage(damage);
     }
+
 }
