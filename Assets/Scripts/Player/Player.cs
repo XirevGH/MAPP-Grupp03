@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
 
     private short burstAmount;
 
+    
     private void Start()
     {
         money = playerStats.money; 

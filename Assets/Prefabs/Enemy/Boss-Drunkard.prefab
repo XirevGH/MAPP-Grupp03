@@ -113,11 +113,12 @@ GameObject:
   - component: {fileID: 4104584175501468764}
   - component: {fileID: 8944445440707182931}
   - component: {fileID: 6577417218064322984}
+  - component: {fileID: -6179003319820616230}
   - component: {fileID: 1244441984418440535}
   - component: {fileID: -8718832928761771214}
   - component: {fileID: 5789765322901318672}
   m_Layer: 0
-  m_Name: Enemy-Drunkard-Boss
+  m_Name: Boss-Drunkard
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,6 +225,26 @@ MonoBehaviour:
   damageNumbers: {fileID: 287581913604085729}
   damageNumberAnim: {fileID: 2898152515693454215}
   enemyAnim: {fileID: -8718832928761771214}
+  baseAblietyColdown: 5
+--- !u!114 &-6179003319820616230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6536046719154458180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8516b445a503f06449ea468cc62de5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abiletySpeed: 10
+  abiletyZise: 3
+  abiletySlow: 20
+  abiletyLifetime: 1
+  bossPosition: {fileID: 4104584175501468764}
+  bossAtckObject: {fileID: 2142423527954636700, guid: 996479ba723320345b83c66eb5e7b993, type: 3}
+  player: {fileID: 0}
 --- !u!50 &1244441984418440535
 Rigidbody2D:
   serializedVersion: 4
