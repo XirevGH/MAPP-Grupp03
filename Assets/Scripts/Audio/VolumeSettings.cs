@@ -47,11 +47,16 @@ public class VolumeSettings : MonoBehaviour
 
     public void OnLeftButtonClick()
     {
-        pauseButtonRectTransform.localPosition = new Vector3(0f, -31.45996f, 0f);
+        pauseButtonRectTransform.anchorMin = new Vector2(0f, pauseButtonRectTransform.anchorMin.y);
+        pauseButtonRectTransform.anchorMax = new Vector2(0f, pauseButtonRectTransform.anchorMax.y);
     }
 
     public void OnRightButtonClick()
     {
-        pauseButtonRectTransform.localPosition = new Vector3(1730f, -31.45996f, 0f);
+        float offset = 0.1f;
+        float newXAnchor = 1f - offset;
+        pauseButtonRectTransform.anchorMin = new Vector2(newXAnchor, pauseButtonRectTransform.anchorMin.y);
+        pauseButtonRectTransform.anchorMax = new Vector2(newXAnchor, pauseButtonRectTransform.anchorMax.y);
     }
+
 }
