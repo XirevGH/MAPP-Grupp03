@@ -8,6 +8,10 @@ public class VolumeSettings : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider SFXSlider;
 
+    public PauseMenu pauseMenu;
+    public Vector3 leftButtonPosition = new Vector3(0f, -31.45996f, 0f);
+    public Vector3 rightButtonPosition = new Vector3(1730f, -31.45996f, 0f);
+
     private void Start()
     {
    if (PlayerPrefs.HasKey("musicVolume"))
@@ -41,5 +45,15 @@ public class VolumeSettings : MonoBehaviour
 
         SetMusicVolume();
         SetSFXVolume();
+    }
+
+    public void OnLeftButtonClick()
+    {
+        pauseMenu.UpdatePauseButtonPosition(leftButtonPosition);
+    }
+
+    public void OnRightButtonClick()
+    {
+        pauseMenu.UpdatePauseButtonPosition(rightButtonPosition);
     }
 }

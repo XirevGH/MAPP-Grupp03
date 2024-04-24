@@ -25,6 +25,11 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    public void UpdatePauseButtonPosition(Vector3 newPosition)
+    {
+        pauseMenuUI.transform.localPosition = newPosition;
+    }
+
     public void PauseButton()
     {
 
