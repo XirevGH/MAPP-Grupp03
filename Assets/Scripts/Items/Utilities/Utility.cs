@@ -5,21 +5,18 @@ using UnityEngine;
 public abstract class Utility : Item
 {
     public Player player;
-    protected float percentageIncrease;
+    [SerializeField] protected float percentage;
+    [SerializeField] protected float percentageIncreasePerUpgrade;
 
-    private void Start()
-    {
-        percentageIncrease = 1.1f;
-    }
 
-    protected void UpgradeStat(float amount)
+    protected void UpgradeStat()
     {
-        percentageIncrease += amount;
+        percentage += percentageIncreasePerUpgrade;
     }
 
     protected float GetStatPercentIncrease()
     {
-        return percentageIncrease;
+        return percentage;
     }
 
     public override List<string> GetUpgradeOptions()
