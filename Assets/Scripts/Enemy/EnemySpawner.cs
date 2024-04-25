@@ -23,7 +23,13 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyBouncer;
     public GameObject enemyDancer;
     public GameObject enemyDrunkard;
-    public GameObject parent;
+
+    public GameObject enmemyParent;
+    public GameObject bossParent;
+
+    public static GameObject normalEnemiParent;
+    public static GameObject bossEnemiParent;
+
     public GameObject[] spawnLocations;
     public GameObject player;
 
@@ -34,6 +40,8 @@ public class EnemySpawner : MonoBehaviour
     private void Start() {
         waveHasSpawned = false;
         bossAlive = false;
+        normalEnemiParent = enmemyParent;
+        bossEnemiParent = bossParent;
     }
 
     
@@ -70,7 +78,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if(!bossAlive){
         spawnRate -= 0.001f;
-        spawnIncreaser += 0.005f;}
+        spawnIncreaser += 0.004f;}
     }
 
 
@@ -79,14 +87,14 @@ public class EnemySpawner : MonoBehaviour
     void SpawnEnemy(Vector3Int position)
     {   
         if(IsBossWave(waveCount)){
-            Instantiate(BossInWave(waveCount), position, Quaternion.identity, parent.GetComponent<Transform>());
+            Instantiate(BossInWave(waveCount), position, Quaternion.identity, bossEnemiParent.GetComponent<Transform>());
         }else{
             if(waveCount < 60){
-                Instantiate(enemyDrunkard, position, Quaternion.identity, parent.GetComponent<Transform>());
+                Instantiate(enemyDrunkard, position, Quaternion.identity, enmemyParent.GetComponent<Transform>());
             }else if(waveCount < 120){
-                Instantiate(enemyDancer, position, Quaternion.identity, parent.GetComponent<Transform>());
+                Instantiate(enemyDancer, position, Quaternion.identity, enmemyParent.GetComponent<Transform>());
             }else{
-                Instantiate(enemyBouncer, position, Quaternion.identity, parent.GetComponent<Transform>());
+                Instantiate(enemyBouncer, position, Quaternion.identity, enmemyParent.GetComponent<Transform>());
             }
         }
         

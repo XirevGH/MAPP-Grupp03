@@ -21,7 +21,7 @@ public class DrunkerdBossAtack : MonoBehaviour
     {
         if(bossAtckObject)
         {
-            GameObject clone = Instantiate(bossAtckObject, bossPosition.position, Quaternion.identity);
+            GameObject clone = Instantiate(bossAtckObject, bossPosition.position, Quaternion.identity, EnemySpawner.normalEnemiParent.GetComponent<Transform>());
             BossPrjektile bossAtckProjektile = clone.GetComponent<BossPrjektile>();
             if (bossAtckProjektile != null)
             {

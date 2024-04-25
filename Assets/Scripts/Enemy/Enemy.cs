@@ -59,9 +59,13 @@ public class Enemy : MonoBehaviour
     public static float movementSpeed;
     public static float healthProsenIncreas = 1f;
     public float health;
-
+     
     public float thisMovementSpeed;
+
+    public float baseMovementSpeed;
     public bool isSlow;
+
+    protected float startingHealth;
 
     public TMP_Text damageNumbers;
     public Animator damageNumberAnim;
@@ -70,9 +74,10 @@ public class Enemy : MonoBehaviour
     public void Start()
     {   
         health *= healthProsenIncreas;
+        startingHealth = health;
         player = GameObject.FindGameObjectWithTag("Player");
         sprite = GetComponent<SpriteRenderer>();
-        thisMovementSpeed = movementSpeed;
+        UppdateSpeed();
         isSlow = false;
         target = player;
     }
@@ -83,7 +88,7 @@ public class Enemy : MonoBehaviour
         damageNumberWindow -= Time.deltaTime;
         if (!isSlow)
         {
-            thisMovementSpeed = movementSpeed;
+            UppdateSpeed();
         }
 
         if (IsAlive()) 
@@ -199,6 +204,10 @@ public class Enemy : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void UppdateSpeed(){
+        thisMovementSpeed = movementSpeed * baseMovementSpeed;
     }
 
 

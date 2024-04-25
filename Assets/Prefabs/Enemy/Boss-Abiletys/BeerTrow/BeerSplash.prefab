@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3305189215547220179}
   - component: {fileID: 423212665928768161}
   m_Layer: 0
-  m_Name: PrimeryProjektile-SpachZone
+  m_Name: BeerSplash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3a74f678ee8f3bd49aacf3de1ae4bcaa, type: 3}
   m_Color: {r: 0.740548, g: 0.7924528, b: 0, a: 1}
   m_FlipX: 0

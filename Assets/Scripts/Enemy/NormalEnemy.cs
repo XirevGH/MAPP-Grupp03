@@ -19,7 +19,7 @@ public class NormalEnemy : Enemy
         damageNumberWindow -= Time.deltaTime;
         if (!isSlow)
         {
-            thisMovementSpeed = movementSpeed;
+            UppdateSpeed();
         }
 
        

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Timeline;
+using UnityEngine.UI;
 
 public class EnemyBoss : Enemy
 {
+    [SerializeField] private Slider hpSlider;
     public float baseAttackColdown;
     private float attackColdown;
 
     private bool bossChargActiv;
-    private float bossChargColdown;
+    public float baseChargDuration;
+    private float chargDuration;
 
-    public float bossChargSpeed;
+    public float chargAddetivSpeed;
 
 
     public EnemyBoss()
     {
-        this.bossChargColdown = baseAttackColdown/2;
+        this.chargDuration = baseChargDuration;
         this.attackColdown = baseAttackColdown;
         this.bossChargActiv = false;
         EnemySpawner.bossAlive = true;
@@ -31,13 +34,13 @@ public class EnemyBoss : Enemy
         attackColdown -= Time.deltaTime;
         damageNumberWindow -= Time.deltaTime;
         if(bossChargActiv){
-            bossChargColdown -= Time.deltaTime;
+            chargDuration -= Time.deltaTime;
         }
         if (!isSlow)
         {
-            thisMovementSpeed = movementSpeed;
+           UppdateSpeed();
         }
-
+        UpdateBossHp();
         if (IsAlive()) 
         {
             if (GameObject.FindGameObjectWithTag("Decoy") != null && GameObject.FindGameObjectWithTag("Decoy").activeInHierarchy)
@@ -62,9 +65,9 @@ public class EnemyBoss : Enemy
                 bossChargActiv = true;
             }
 
-            if(bossChargColdown <= 0){
+            if(chargDuration <= 0){
                 bossChargActiv = false;
-                bossChargColdown = baseAttackColdown/2;
+                chargDuration = baseChargDuration;
             }
 
 
@@ -77,15 +80,22 @@ public class EnemyBoss : Enemy
             {
                 sprite.flipX = true;
             }
-
-            enemyAnim.SetTrigger("Walking");
+            if(bossChargActiv){
+                enemyAnim.SetTrigger("Charg");
+                transform.position = Vector3.MoveTowards(transform.position, target.transform.position, (thisMovementSpeed + chargAddetivSpeed) / 200);
+            }else{
+                enemyAnim.SetTrigger("Walking");
+                transform.position = Vector3.MoveTowards(transform.position, target.transform.position, thisMovementSpeed / 200);
+            }
             
-
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, thisMovementSpeed / 200);
 
         }
       
         
+    }
+
+    private void UpdateBossHp(){
+        hpSlider.value = health / startingHealth;
     }
     protected override void DestroyGameObject()
     {

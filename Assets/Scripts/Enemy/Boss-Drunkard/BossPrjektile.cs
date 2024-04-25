@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class BossPrjektile : MonoBehaviour{
     
-     
+    
     private float abiletySpeed;
     private float abiletyZise;
 
@@ -17,9 +18,10 @@ public class BossPrjektile : MonoBehaviour{
 
     private Vector3 abiletyDirection;
     
+    private float privuisDirection;
     private GameObject player;
 
-    public GameObject spachArea;
+    public GameObject SecondaryObjekt;
 
     
 
@@ -34,25 +36,33 @@ public class BossPrjektile : MonoBehaviour{
         this.spachLifetime = time;
         this.player = player;
         
+        
        
         
     }
 
+    private void Start() {
+        privuisDirection = Vector3.Distance(player.transform.position, transform.position);
+    }
+
      private void Update()
-    {
+    {   
         transform.position += abiletyDirection * abiletySpeed * Time.deltaTime;
         abiletyLifetime -= Time.deltaTime;
-        if (abiletyLifetime <= 0 || Vector3.Distance(player.transform.position, transform.position) < 4)
+        if (abiletyLifetime <= 0 || Vector3.Distance(player.transform.position, transform.position) <= 0 || privuisDirection < Vector3.Distance(player.transform.position, transform.position))
         {
             BotelSplaschZone();
         }
+        privuisDirection = Vector3.Distance(player.transform.position, transform.position)* 1.01f;
+
     }
 
+//ärinte färdig Och är använd av alla bossar.
     private void BotelSplaschZone(){
-        if(spachArea)
+        if(SecondaryObjekt)
         {
-            spachArea = Instantiate(spachArea, transform.position, Quaternion.identity);
-            BossProjektilSplasch splasch = spachArea.GetComponent<BossProjektilSplasch>();
+            SecondaryObjekt = Instantiate(SecondaryObjekt, transform.position, Quaternion.identity);
+            BossProjektilSplasch splasch = SecondaryObjekt.GetComponent<BossProjektilSplasch>();
             if (splasch != null)
             {
                 splasch.Initialize( abiletyZise, abiletySlow, spachLifetime, player ); 

@@ -203,7 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77dd2effbcb5b94982211b3bb4118fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   enemySprite: {fileID: 21300000, guid: 29b8918923ac85341a22275f7aad2f64, type: 3}
   drops:
   - item: {fileID: 2322821042000343324, guid: 73e8c7fac64e160469ab7a30447b8bc1, type: 3}
@@ -211,9 +210,12 @@ MonoBehaviour:
   - item: {fileID: 4857899130433156979, guid: 86fd765608c838c41ac970a87857d355, type: 3}
     dropChance_0_To_100: 5
   multiDrop: 0
+  player: {fileID: 0}
+  target: {fileID: 0}
   sprite: {fileID: 0}
   health: 10
-  thisMovementSpeed: 3
+  thisMovementSpeed: 0
+  baseMovementSpeed: 5
   isSlow: 0
   damageNumbers: {fileID: 287581913604085729}
   damageNumberAnim: {fileID: 2898152515693454215}

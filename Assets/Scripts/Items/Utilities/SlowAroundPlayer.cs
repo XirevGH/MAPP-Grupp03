@@ -32,7 +32,7 @@ public class SlowAroundPlayer : Utility
         if (other.CompareTag("Enemy"))
         {
             other.gameObject.GetComponent<Enemy>().isSlow = false;
-            other.gameObject.GetComponent<Enemy>().thisMovementSpeed = Enemy.movementSpeed;
+            //other.gameObject.GetComponent<Enemy>().thisMovementSpeed = Enemy.movementSpeed + other.GetComponent<Enemy>().baseMovementSpeed ;
             enemies.Remove(other.gameObject);
         }
     }
