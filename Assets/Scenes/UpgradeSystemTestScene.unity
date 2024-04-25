@@ -169,6 +169,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Groove Armor
   player: {fileID: 1561011401}
+  percentage: 0
+  percentageIncreasePerUpgrade: 0
 --- !u!1 &24887101
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,6 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Bass Guitar
   damage: 10
+  damageIncreasePerUpgrade: 0
   anim: {fileID: 128322717}
 --- !u!1 &138787948
 GameObject:
@@ -1716,6 +1719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Electric Guitar
   damage: 5
+  damageIncreasePerUpgrade: 0
   amountOfTethers: 0
   bolt: {fileID: 8209966115709815941, guid: c89b4386ca74450468870cc3cee72ee5, type: 3}
 --- !u!58 &635767462
@@ -5725,6 +5729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   damage: 1
+  damageIncreasePerUpgrade: 0
   usedAbility: 0
   dealDamage: 0
   bombMoving: 0
@@ -5831,6 +5836,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Roller Skates
   player: {fileID: 1561011401}
+  percentage: 0
+  percentageIncreasePerUpgrade: 0
   playerMovement: {fileID: 1561011402}
 --- !u!1 &1681639545
 GameObject:
@@ -6779,8 +6786,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Saxophone
   damage: 3
+  damageIncreasePerUpgrade: 0
   amountOfProjectiles: 0
+  projectileIncreasePerUpgrade: 0
   penetration: 1
+  penetrationIncreaserPerUpgrade: 0
   shootingPoint: {fileID: 1906168801}
   notePrefab: {fileID: 5730958551181348608, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
   speed: 1
@@ -7789,6 +7799,22 @@ PrefabInstance:
     - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
       propertyPath: itemName
       value: Synthwave Blast
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+      propertyPath: amountOfProjectiles
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+      propertyPath: damageIncreasePerUpgrade
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+      propertyPath: projectileIncreasePerUpgrade
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+      propertyPath: penetrationIncreaserPerUpgrade
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

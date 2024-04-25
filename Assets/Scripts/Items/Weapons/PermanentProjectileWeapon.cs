@@ -5,10 +5,10 @@ using UnityEngine;
 public abstract class PermanentProjectileWeapon : Weapon
 {
     [SerializeField] protected int amountOfProjectiles;
-
-    public void IncreaseProjectileCount(int projectileIncrease)
+    [SerializeField] protected int projectileIncreasePerUpgrade;
+    public void IncreaseProjectileCount()
     {
-        amountOfProjectiles += projectileIncrease;
+        amountOfProjectiles += projectileIncreasePerUpgrade;
     }
 
     public override List<string> GetUpgradeOptions()

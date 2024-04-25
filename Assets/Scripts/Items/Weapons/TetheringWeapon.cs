@@ -6,11 +6,12 @@ using UnityEngine;
 public abstract class TetheringWeapon : Weapon
 {
     [SerializeField] protected int amountOfTethers;
+    [SerializeField] protected int tetherIncreasePerUpgrade;
     protected HashSet<GameObject> enemies = new HashSet<GameObject>();
 
-    public void IncreaseTetherAmount(int amount)
+    public void IncreaseTetherAmount()
     {
-        amountOfTethers += amount;
+        amountOfTethers += tetherIncreasePerUpgrade;
     }
 
     protected GameObject[] GetClosestEnemies(int amountOfTargets)
