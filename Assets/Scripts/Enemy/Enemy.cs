@@ -159,6 +159,34 @@ public class Enemy : MonoBehaviour
         return builder.ToString();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                StartCoroutine(RemoveForce(rb, 1f));
+            }
+        }
+    }
+
+
+    private System.Collections.IEnumerator RemoveForce(Rigidbody2D rb, float delay)
+    {
+      
+            yield return new WaitForSeconds(delay);
+        if (rb != null)
+        {
+            rb.velocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+        }
+      
+    }
+
+
     public float GetHealth() 
     {
         return health; 
