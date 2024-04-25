@@ -469,13 +469,13 @@ MonoBehaviour:
   enemySprite: {fileID: 0}
   drops:
   - item: {fileID: 2322821042000343324, guid: 0369a782efb602b49b7a7f02ad8b43ba, type: 3}
-    dropChance_0_To_100: 100
+    dropChance: 100
   - item: {fileID: 6536046719154458180, guid: e08403d79ea9a0046acfb2c680d5eb32, type: 3}
-    dropChance_0_To_100: 100
+    dropChance: 100
   - item: {fileID: 6536046719154458180}
-    dropChance_0_To_100: 100
+    dropChance: 100
   - item: {fileID: 6536046719154458180}
-    dropChance_0_To_100: 100
+    dropChance: 100
   multiDrop: 1
   player: {fileID: 0}
   target: {fileID: 0}
