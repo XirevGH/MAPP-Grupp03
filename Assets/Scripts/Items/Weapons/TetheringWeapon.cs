@@ -8,7 +8,7 @@ public abstract class TetheringWeapon : Weapon
     [SerializeField] protected int amountOfTethers;
     protected HashSet<GameObject> enemies = new HashSet<GameObject>();
 
-    public void UpgradeTetherAmount(int amount)
+    public void IncreaseTetherAmount(int amount)
     {
         amountOfTethers += amount;
     }

@@ -14,8 +14,20 @@ public class UpgradeButton : MonoBehaviour
         this.upgrade = upgrade;
         methodToBeCalled = typeof(UpgradeAbility).GetMethod(method);
     }
+    public void PrepareMethodToExecute(string method, Item item)
+    {
+        this.item = item;
+        methodToBeCalled = typeof(UpgradeAbility).GetMethod(method);
+    }
     public void ExecuteMethod()
     {
-        methodToBeCalled.Invoke(upgradeAbility, new object[] {item, upgrade});
+        if (methodToBeCalled.Name == "PerformRandomizedUpgrade") 
+        { 
+            methodToBeCalled.Invoke(upgradeAbility, new object[] {item, upgrade});
+        }
+        else
+        {
+            methodToBeCalled.Invoke(upgradeAbility, new object[] {item});
+        }
     }
 }

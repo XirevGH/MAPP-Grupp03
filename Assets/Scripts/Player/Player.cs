@@ -110,8 +110,9 @@ public class Player : MonoBehaviour
         levelText.text = "Level: " + level;
         UpdateXPSlider();
         MainManager.Instance.mainLevel = level;
-        upgrade.StartUpgradeSystem();
         upgradeScreen.OpenUpgradeWindow();
+        upgrade.StartUpgradeSystem();
+        
         /*if (level == 2)
         {
             electricGuitar.SetActive(true);
@@ -150,7 +151,7 @@ public class Player : MonoBehaviour
     }
     #endregion
 
-    private void AddItem(Item item)
+    public void AddItem(Item item)
     {
         currentItems.Add(item);
     }

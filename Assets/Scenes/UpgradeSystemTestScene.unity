@@ -339,7 +339,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Movement Speed Upgrade
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -822,6 +822,7 @@ GameObject:
   - component: {fileID: 201029721}
   - component: {fileID: 201029720}
   - component: {fileID: 201029719}
+  - component: {fileID: 201029723}
   m_Layer: 0
   m_Name: ChoiceButton
   m_TagString: Untagged
@@ -910,9 +911,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1672516155}
-          m_TargetAssemblyTypeName: RollerSkates, Assembly-CSharp
-          m_MethodName: UpgradeMovementSpeed
+        - m_Target: {fileID: 201029723}
+          m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
+          m_MethodName: ExecuteMethod
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -972,6 +973,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201029717}
   m_CullTransparentMesh: 1
+--- !u!114 &201029723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201029717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111f720c6bae44947aed118f8e1c351a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeAbility: {fileID: 1509910517}
 --- !u!1 &310060220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,6 +1162,7 @@ GameObject:
   - component: {fileID: 352059118}
   - component: {fileID: 352059117}
   - component: {fileID: 352059116}
+  - component: {fileID: 352059120}
   m_Layer: 0
   m_Name: ChoiceButton
   m_TagString: Untagged
@@ -1236,10 +1251,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 424510086}
-          m_TargetAssemblyTypeName: ProjectileWeapon, Assembly-CSharp
-          m_MethodName: IncreaseProjectileCount
-          m_Mode: 3
+        - m_Target: {fileID: 352059120}
+          m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
+          m_MethodName: ExecuteMethod
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1298,6 +1313,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352059114}
   m_CullTransparentMesh: 1
+--- !u!114 &352059120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352059114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111f720c6bae44947aed118f8e1c351a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeAbility: {fileID: 1509910517}
 --- !u!1 &356753003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,7 +1383,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Synthwave Blast Upgrade
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3568,6 +3596,7 @@ GameObject:
   - component: {fileID: 1168283945}
   - component: {fileID: 1168283944}
   - component: {fileID: 1168283943}
+  - component: {fileID: 1168283947}
   m_Layer: 0
   m_Name: ChoiceButton
   m_TagString: Untagged
@@ -3656,9 +3685,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4280477}
-          m_TargetAssemblyTypeName: GrooveArmor, Assembly-CSharp
-          m_MethodName: UpgradeHealth
+        - m_Target: {fileID: 1168283947}
+          m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
+          m_MethodName: ExecuteMethod
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3718,6 +3747,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168283941}
   m_CullTransparentMesh: 1
+--- !u!114 &1168283947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168283941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111f720c6bae44947aed118f8e1c351a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeAbility: {fileID: 1509910517}
 --- !u!1 &1183172518
 GameObject:
   m_ObjectHideFlags: 0
@@ -4793,17 +4835,17 @@ MonoBehaviour:
   - {fileID: 201029717}
   - {fileID: 1168283941}
   - {fileID: 352059114}
-  weapons:
+  panelList: []
+  items:
+  - {fileID: 1672516155}
+  - {fileID: 4280477}
+  - {fileID: 1810355224}
   - {fileID: 128322718}
   - {fileID: 695703885}
   - {fileID: 2087042481}
   - {fileID: 424510086}
   - {fileID: 635767461}
   - {fileID: 1906168803}
-  utilities:
-  - {fileID: 1672516155}
-  - {fileID: 4280477}
-  - {fileID: 1810355224}
   player: {fileID: 1561011401}
   playerMovement: {fileID: 1561011402}
 --- !u!1 &1524844439
@@ -5145,16 +5187,7 @@ MonoBehaviour:
   playerStats: {fileID: 1561011400}
   upgrade: {fileID: 1509910517}
   upgradeScreen: {fileID: 1509910516}
-  currentItems:
-  - {fileID: 1672516155}
-  - {fileID: 4280477}
-  - {fileID: 1810355224}
-  - {fileID: 128322718}
-  - {fileID: 695703885}
-  - {fileID: 2087042481}
-  - {fileID: 424510086}
-  - {fileID: 635767461}
-  - {fileID: 1906168803}
+  currentItems: []
   maxHealth: 0
   health: 0
 --- !u!114 &1561011402
@@ -5364,7 +5397,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Health Upgrade
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
