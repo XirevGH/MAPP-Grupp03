@@ -29,7 +29,7 @@ public class EnemyBoss : Enemy
 
    
 
-    void CustomSlowUpdate() //Slow uppdate 0.4s
+    protected override void CustomSlowUpdate() //Slow uppdate 0.4s
     {
          if (!isSlow)
         {

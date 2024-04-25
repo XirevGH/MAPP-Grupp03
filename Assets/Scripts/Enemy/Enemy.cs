@@ -76,7 +76,7 @@ public class Enemy : MonoBehaviour
         StaticUpdateManager.RegisterUpdate(CustomSlowUpdate);
     }
 
-    void CustomSlowUpdate() //Slow uppdate 0.4s
+    protected virtual void CustomSlowUpdate() //Slow uppdate 0.4s
     {
          if (!isSlow)
         {
