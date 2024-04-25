@@ -26,24 +26,12 @@ public class UpgradeAbility : MonoBehaviour
         allowedAmountOfUtility = 4;
     }
 
-    public void UpgradeDamage(Weapon weapon, float percentageIncrease)
-    {
-        weapon.IncreaseDamage(percentageIncrease);
-    }
-
-    public void UpgradeProjectileCount(ProjectileWeapon weapon, int targetIncrease)
-    {
-        weapon.IncreaseProjectileCount(targetIncrease);
-    }
-
-    public void UpgradePenetrationAmount(ProjectileWeapon weapon, int penetrationAmount)
-    {
-        weapon.IncreasePenetrationAmount(penetrationAmount);
-    }
-
     public void InitializeUpgradeOptions()
     {
-        //Loops over each item.
+        //Get the current items that the player has.
+        currentPlayerItems = GetItems();
+
+        //Loops over each item that the player has.
         foreach (Item item in currentPlayerItems)
         {
             //Adds each item as a key to a dictionary along with its list of upgrade options as values if it doesn't already exist.
@@ -53,9 +41,10 @@ public class UpgradeAbility : MonoBehaviour
             }
         }
     }
+
     private Tuple<Item, string> ChooseRandomUpgrade()
     {
-        //Get a random number based on the amount of items in the dictionary.
+        //Get a random number based on the amount of items in the dictionary of available upgrade options.
         int randomItemIndex = UnityEngine.Random.Range(0, upgradeOptions.Count);
 
         //Fetch the keys from the dictionary and put it in a list and use the random number as an index to get a random item.
@@ -70,6 +59,7 @@ public class UpgradeAbility : MonoBehaviour
         //Remove the upgrade option so that it cannot be chosen again for the remaining options.
         RemoveUpgradeOption(chosenItem, chosenUpgrade);
 
+        //Return the chosen item along with the chosen upgrade.
         return Tuple.Create(chosenItem, chosenUpgrade);
     }
 
@@ -115,17 +105,6 @@ public class UpgradeAbility : MonoBehaviour
     {
         //Gets the current items that the player has and adds them to the list.
         return player.GetCurrentItems();
-    }
-
-    /*public void UpgradeRollerSkates()
-    {
-        RollerSkates rollerSkates = (RollerSkates)utilities[0];
-        rollerSkates.UpgradeMovementSpeed();
-    }*/
-
-    public void UpgradeGrooveArmor()
-    {
-        player.IncreaseMaxHealth(1.1f);
     }
 
     private void InitializePanels()
@@ -209,9 +188,7 @@ public class UpgradeAbility : MonoBehaviour
 
     private void DetermineTypeOptions()
     {
-        
-        /*Debug.Log("Hello I am inside the determiner");
-        Debug.Log(allowedAmountOfWeapons);*/
+        //Only add the ability to upgrade items if the player has at least one item
         if (currentPlayerItems.Count > 0)
         {
             typeOptions.Add("Upgrade");
@@ -236,8 +213,6 @@ public class UpgradeAbility : MonoBehaviour
                 numberOfUtilities++;
             }
         }
-        /*Debug.Log("Amount of weapons " + numberOfWeapons);
-        Debug.Log("Amount of allowed Weapons " + allowedAmountOfWeapons);*/
         //Check if we're at the maximum allowed amount of weapons yet.
         if (numberOfWeapons < allowedAmountOfWeapons)
         {

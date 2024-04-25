@@ -169,6 +169,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Groove Armor
   player: {fileID: 1561011401}
+  percentage: 0
+  percentageIncreasePerUpgrade: 0
 --- !u!1 &24887101
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,6 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Bass Guitar
   damage: 10
+  damageIncreasePerUpgrade: 0
   anim: {fileID: 128322717}
 --- !u!1 &138787948
 GameObject:
@@ -1051,6 +1054,8 @@ MonoBehaviour:
   pauseMenuUI: {fileID: 1880770869}
   BeatSpawnerController: {fileID: 1068788364}
   soundManager: {fileID: 0}
+  pauseButton: {fileID: 0}
+  settingPanel: {fileID: 0}
   mainMenuSceneName: MainMenu
 --- !u!114 &310060223
 MonoBehaviour:
@@ -1710,6 +1715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Electric Guitar
   damage: 5
+  damageIncreasePerUpgrade: 0
   amountOfTethers: 0
   bolt: {fileID: 8209966115709815941, guid: c89b4386ca74450468870cc3cee72ee5, type: 3}
 --- !u!58 &635767462
@@ -4509,12 +4515,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe01b99186bb2e40b8746bb79e5d29b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossWaves: []
+  spawnIncreaser: 0
   mainCamera: {fileID: 916453220}
   tilemap: {fileID: 2142026995}
   enemyBouncer: {fileID: 6536046719154458180, guid: e08403d79ea9a0046acfb2c680d5eb32, type: 3}
   enemyDancer: {fileID: 6536046719154458180, guid: 935a3a109fd200c4080657daa8c508d3, type: 3}
   enemyDrunkard: {fileID: 6536046719154458180, guid: 3ecd58846d80571498c5c49f0cba8ec3, type: 3}
-  enemyDrunkardBOSS: {fileID: 0}
   parent: {fileID: 1219520225}
   spawnLocations:
   - {fileID: 1539793800}
@@ -4523,8 +4530,8 @@ MonoBehaviour:
   - {fileID: 1882704358}
   - {fileID: 1127430816}
   player: {fileID: 1561011398}
-  waveCount: 0
   spawnRate: 3
+  waveCount: 0
 --- !u!1 &1414131718
 GameObject:
   m_ObjectHideFlags: 0
@@ -5205,6 +5212,7 @@ MonoBehaviour:
   movementSpeed: 5
   pos: {fileID: 1561011399}
   dynamicJoystick: {fileID: 188560448}
+  isSlowed: 0
 --- !u!95 &1561011403
 Animator:
   serializedVersion: 5
@@ -5604,6 +5612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   damage: 1
+  damageIncreasePerUpgrade: 0
   usedAbility: 0
   dealDamage: 0
   bombMoving: 0
@@ -5710,6 +5719,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Roller Skates
   player: {fileID: 1561011401}
+  percentage: 0
+  percentageIncreasePerUpgrade: 0
   playerMovement: {fileID: 1561011402}
 --- !u!1 &1681639545
 GameObject:
@@ -6658,8 +6669,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Saxophone
   damage: 3
+  damageIncreasePerUpgrade: 0
   amountOfProjectiles: 0
+  projectileIncreasePerUpgrade: 0
   penetration: 1
+  penetrationIncreaserPerUpgrade: 0
   shootingPoint: {fileID: 1906168801}
   notePrefab: {fileID: 5730958551181348608, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
   speed: 1
@@ -7603,6 +7617,22 @@ PrefabInstance:
     - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
       propertyPath: itemName
       value: Synthwave Blast
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+      propertyPath: amountOfProjectiles
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+      propertyPath: damageIncreasePerUpgrade
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+      propertyPath: projectileIncreasePerUpgrade
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+      propertyPath: penetrationIncreaserPerUpgrade
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
