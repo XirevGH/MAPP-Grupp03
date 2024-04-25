@@ -4,35 +4,27 @@ using UnityEngine;
 
 public class Decoy : MonoBehaviour
 {
-    public Vector2 landingSpot;
+    public Vector2 endPosition;
     private Vector2 startPosition, controlPoint;
     [SerializeField] float travelTime, controlPointOffSet, decoyHealth;
     private float elapsedTime, percentageComplete;
 
-    // Start is called before the first frame update
     void Start()
     {
         startPosition = transform.position;
-        controlPoint = CalculateControlPoint();
-        
+        controlPoint = BezierCurve.CalculateControlPoint(startPosition, endPosition, controlPointOffSet, true);
+
         //Debug.Log(controlPoint);
     }
     private void FixedUpdate()
     {
         elapsedTime += Time.deltaTime;
         percentageComplete = elapsedTime / travelTime;
-        transform.position = BezierCurve.QuadraticBezierCurve(startPosition, landingSpot, controlPoint, percentageComplete);
+        transform.position = BezierCurve.QuadraticBezierCurve(startPosition, endPosition, controlPoint, percentageComplete);
        
     }
 
-    Vector2 CalculateControlPoint()
-    {
-        Vector2 controlPoint = startPosition - (startPosition + landingSpot).normalized * 0.5f;
-
-        controlPoint -= new Vector2(0, -controlPointOffSet);
-
-        return controlPoint;
-    }
+  
 
     private void OnTriggerStay2D(Collider2D other)
     {

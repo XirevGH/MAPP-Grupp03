@@ -641,7 +641,7 @@ RectTransform:
   m_Father: {fileID: 41218216}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -985,7 +985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111f720c6bae44947aed118f8e1c351a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeAbility: {fileID: 1509910517}
+  upgradeAbility: {fileID: 0}
 --- !u!1 &310060220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,7 +1005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &310060221
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1051,6 +1051,8 @@ MonoBehaviour:
   pauseMenuUI: {fileID: 1880770869}
   BeatSpawnerController: {fileID: 1068788364}
   soundManager: {fileID: 0}
+  pauseButton: {fileID: 0}
+  settingPanel: {fileID: 0}
   mainMenuSceneName: MainMenu
 --- !u!114 &310060223
 MonoBehaviour:
@@ -1325,7 +1327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111f720c6bae44947aed118f8e1c351a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeAbility: {fileID: 1509910517}
+  upgradeAbility: {fileID: 0}
 --- !u!1 &356753003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,6 +1891,67 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1068788366}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &708102286
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 708102288}
+  - component: {fileID: 708102287}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: UpgradeSystem
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &708102287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708102286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07de8c147208481458b109040a08394e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panels:
+  - {fileID: 201029717}
+  - {fileID: 1168283941}
+  - {fileID: 352059114}
+  panelList: []
+  items:
+  - {fileID: 1672516155}
+  - {fileID: 4280477}
+  - {fileID: 1810355224}
+  - {fileID: 128322718}
+  - {fileID: 695703885}
+  - {fileID: 2087042481}
+  - {fileID: 424510086}
+  - {fileID: 635767461}
+  - {fileID: 1906168803}
+  player: {fileID: 1561011401}
+  playerMovement: {fileID: 1561011402}
+--- !u!4 &708102288
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708102286}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 417.86624, y: 335.65112, z: -1.0266254}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &729949599
 GameObject:
@@ -3539,11 +3602,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135886327475159579, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8135886327475159579, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8135886327475159579, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3759,7 +3822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111f720c6bae44947aed118f8e1c351a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeAbility: {fileID: 1509910517}
+  upgradeAbility: {fileID: 0}
 --- !u!1 &1183172518
 GameObject:
   m_ObjectHideFlags: 0
@@ -4509,12 +4572,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe01b99186bb2e40b8746bb79e5d29b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossWaves: []
+  spawnIncreaser: 0
   mainCamera: {fileID: 916453220}
   tilemap: {fileID: 2142026995}
   enemyBouncer: {fileID: 6536046719154458180, guid: e08403d79ea9a0046acfb2c680d5eb32, type: 3}
   enemyDancer: {fileID: 6536046719154458180, guid: 935a3a109fd200c4080657daa8c508d3, type: 3}
   enemyDrunkard: {fileID: 6536046719154458180, guid: 3ecd58846d80571498c5c49f0cba8ec3, type: 3}
-  enemyDrunkardBOSS: {fileID: 0}
   parent: {fileID: 1219520225}
   spawnLocations:
   - {fileID: 1539793800}
@@ -4523,8 +4587,8 @@ MonoBehaviour:
   - {fileID: 1882704358}
   - {fileID: 1127430816}
   player: {fileID: 1561011398}
-  waveCount: 0
   spawnRate: 3
+  waveCount: 0
 --- !u!1 &1414131718
 GameObject:
   m_ObjectHideFlags: 0
@@ -4738,15 +4802,14 @@ GameObject:
   - component: {fileID: 1509910513}
   - component: {fileID: 1509910515}
   - component: {fileID: 1509910514}
-  - component: {fileID: 1509910517}
   - component: {fileID: 1509910516}
   m_Layer: 0
   m_Name: UpgradeScreen
-  m_TagString: Untagged
+  m_TagString: UpgradeSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1509910513
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4819,35 +4882,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5616be4a33ee32b4195c4848c3b2294c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1509910517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509910512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07de8c147208481458b109040a08394e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panels:
-  - {fileID: 201029717}
-  - {fileID: 1168283941}
-  - {fileID: 352059114}
-  panelList: []
-  items:
-  - {fileID: 1672516155}
-  - {fileID: 4280477}
-  - {fileID: 1810355224}
-  - {fileID: 128322718}
-  - {fileID: 695703885}
-  - {fileID: 2087042481}
-  - {fileID: 424510086}
-  - {fileID: 635767461}
-  - {fileID: 1906168803}
-  player: {fileID: 1561011401}
-  playerMovement: {fileID: 1561011402}
 --- !u!1 &1524844439
 GameObject:
   m_ObjectHideFlags: 0
@@ -5185,7 +5219,7 @@ MonoBehaviour:
   gameController: {fileID: 2047097353}
   player: {fileID: 1561011401}
   playerStats: {fileID: 1561011400}
-  upgrade: {fileID: 1509910517}
+  upgrade: {fileID: 0}
   upgradeScreen: {fileID: 1509910516}
   currentItems: []
   maxHealth: 0
@@ -5205,6 +5239,7 @@ MonoBehaviour:
   movementSpeed: 5
   pos: {fileID: 1561011399}
   dynamicJoystick: {fileID: 188560448}
+  isSlowed: 0
 --- !u!95 &1561011403
 Animator:
   serializedVersion: 5
@@ -7000,7 +7035,7 @@ RectTransform:
   m_Father: {fileID: 1849432938}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7625,3 +7660,4 @@ SceneRoots:
   - {fileID: 2047097354}
   - {fileID: 1873560449}
   - {fileID: 1524844441}
+  - {fileID: 708102288}

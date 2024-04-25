@@ -33,7 +33,7 @@ public class DecoyController : Utility
     public void Throw()
     {
         GameObject newDecoy = Instantiate(decoy, transform.position, Quaternion.identity);
-        newDecoy.GetComponent<Decoy>().landingSpot = FindLandingSpot();
+        newDecoy.GetComponent<Decoy>().endPosition = FindLandingSpot();
         newDecoy.GetComponent<Decoy>().SetHealth(1);
 
     }

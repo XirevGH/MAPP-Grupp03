@@ -29,11 +29,12 @@ public class VinylDisc : Projectile
         aimingArrowRotation = GameObject.FindGameObjectWithTag("AimingArrow").transform.rotation;
       
         startPosition = transform.position;
+        //find endPosition by using Trigonometry (angle of the aiming arrow and travelDistance).
         endPosition = new Vector3(
         Mathf.Cos(Mathf.Deg2Rad * aimingArrowRotation.eulerAngles.z) * travelDistance + startPosition.x,
         Mathf.Sin(Mathf.Deg2Rad * aimingArrowRotation.eulerAngles.z) * travelDistance + startPosition.y, startPosition.z);
 
-        controlPoint = CalculateControlPoint(startPosition, endPosition, true);
+        controlPoint = BezierCurve.CalculateControlPoint(startPosition, endPosition, controlPointOffSet, true);
 
         if (aimingArrowRotation.eulerAngles.z <= 90f && aimingArrowRotation.eulerAngles.z >= -90f)
         {
@@ -68,7 +69,7 @@ public class VinylDisc : Projectile
             {
                 elapsedTime = 0;
                 percentageComplete = 0;
-                controlPoint = CalculateControlPoint(endPosition, playerPosition, false);
+                controlPoint = BezierCurve.CalculateControlPoint(endPosition, playerPosition, controlPointOffSet, false);
 
                 isAtPlayer = false;
                 isHalfWay = true;
@@ -90,14 +91,7 @@ public class VinylDisc : Projectile
     }
 
 
-    private Vector2 CalculateControlPoint(Vector2 startPosition, Vector2 endPosition, bool aboveLine)
-    {
-        Vector2 controlPoint = startPosition - (startPosition + endPosition).normalized * 0.5f;
-        float sideMultiplier = aboveLine ? -1f : 1f;
-        controlPoint -= new Vector2(0, sideMultiplier * controlPointOffSet);
-
-        return controlPoint;
-    }
+   
 
 
 

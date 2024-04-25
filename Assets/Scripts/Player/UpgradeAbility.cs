@@ -53,7 +53,7 @@ public class UpgradeAbility : MonoBehaviour
             }
         }
     }
-    private Tuple<Item, string> ChooseRandomUpgrade()
+    public Tuple<Item, string> ChooseRandomUpgrade()
     {
         //Get a random number based on the amount of items in the dictionary.
         int randomItemIndex = UnityEngine.Random.Range(0, upgradeOptions.Count);
