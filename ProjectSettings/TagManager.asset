@@ -16,6 +16,7 @@ TagManager:
   - LeftJoyStick
   - AimingArrow
   - Decoy
+  - UpgradeSystem
   layers:
   - Default
   - TransparentFX
