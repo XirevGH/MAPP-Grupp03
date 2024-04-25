@@ -8,7 +8,7 @@ public abstract class TetheringWeapon : Weapon
     [SerializeField] protected int amountOfTethers;
     protected HashSet<GameObject> enemies = new HashSet<GameObject>();
 
-    public void UpgradeTetherAmount(int amount)
+    public void IncreaseTetherAmount(int amount)
     {
         amountOfTethers += amount;
     }
@@ -32,5 +32,12 @@ public abstract class TetheringWeapon : Weapon
         {
             return amountOfTargets;
         }
+    }
+
+    public override List<string> GetUpgradeOptions()
+    {
+        base.GetUpgradeOptions();
+        upgradeOptions.Add("IncreaseTetherAmount");
+        return upgradeOptions;
     }
 }

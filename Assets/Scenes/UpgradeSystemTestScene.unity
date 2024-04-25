@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df1d6a6f433b8b242a5e8bc0fdff68c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Groove Armor
   player: {fileID: 1561011401}
 --- !u!1 &24887101
 GameObject:
@@ -339,7 +339,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Movement Speed Upgrade
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19476edc09a67704db3b37bf7ac060ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Bass Guitar
   damage: 10
   anim: {fileID: 128322717}
 --- !u!1 &138787948
@@ -822,6 +822,7 @@ GameObject:
   - component: {fileID: 201029721}
   - component: {fileID: 201029720}
   - component: {fileID: 201029719}
+  - component: {fileID: 201029723}
   m_Layer: 0
   m_Name: ChoiceButton
   m_TagString: Untagged
@@ -910,9 +911,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1672516155}
-          m_TargetAssemblyTypeName: RollerSkates, Assembly-CSharp
-          m_MethodName: UpgradeMovementSpeed
+        - m_Target: {fileID: 201029723}
+          m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
+          m_MethodName: ExecuteMethod
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -972,6 +973,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201029717}
   m_CullTransparentMesh: 1
+--- !u!114 &201029723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201029717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111f720c6bae44947aed118f8e1c351a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeAbility: {fileID: 1509910517}
 --- !u!1 &310060220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,6 +1162,7 @@ GameObject:
   - component: {fileID: 352059118}
   - component: {fileID: 352059117}
   - component: {fileID: 352059116}
+  - component: {fileID: 352059120}
   m_Layer: 0
   m_Name: ChoiceButton
   m_TagString: Untagged
@@ -1236,10 +1251,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 424510086}
-          m_TargetAssemblyTypeName: ProjectileWeapon, Assembly-CSharp
-          m_MethodName: IncreaseProjectileCount
-          m_Mode: 3
+        - m_Target: {fileID: 352059120}
+          m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
+          m_MethodName: ExecuteMethod
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1298,6 +1313,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352059114}
   m_CullTransparentMesh: 1
+--- !u!114 &352059120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352059114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111f720c6bae44947aed118f8e1c351a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeAbility: {fileID: 1509910517}
 --- !u!1 &356753003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,7 +1383,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Synthwave Blast Upgrade
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1680,7 +1708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9577c52a733c8b042a79e7b59ea21e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Electric Guitar
   damage: 5
   amountOfTethers: 0
   bolt: {fileID: 8209966115709815941, guid: c89b4386ca74450468870cc3cee72ee5, type: 3}
@@ -1742,6 +1770,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 852507901}
     m_Modifications:
+    - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+      propertyPath: itemName
+      value: Yoyo
+      objectReference: {fileID: 0}
     - target: {fileID: 7772078910061721573, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: m_Name
       value: YoyoController
@@ -2279,7 +2311,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -3564,6 +3596,7 @@ GameObject:
   - component: {fileID: 1168283945}
   - component: {fileID: 1168283944}
   - component: {fileID: 1168283943}
+  - component: {fileID: 1168283947}
   m_Layer: 0
   m_Name: ChoiceButton
   m_TagString: Untagged
@@ -3652,9 +3685,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4280477}
-          m_TargetAssemblyTypeName: GrooveArmor, Assembly-CSharp
-          m_MethodName: UpgradeHealth
+        - m_Target: {fileID: 1168283947}
+          m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
+          m_MethodName: ExecuteMethod
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3714,6 +3747,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168283941}
   m_CullTransparentMesh: 1
+--- !u!114 &1168283947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168283941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111f720c6bae44947aed118f8e1c351a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeAbility: {fileID: 1509910517}
 --- !u!1 &1183172518
 GameObject:
   m_ObjectHideFlags: 0
@@ -4468,7 +4514,7 @@ MonoBehaviour:
   enemyBouncer: {fileID: 6536046719154458180, guid: e08403d79ea9a0046acfb2c680d5eb32, type: 3}
   enemyDancer: {fileID: 6536046719154458180, guid: 935a3a109fd200c4080657daa8c508d3, type: 3}
   enemyDrunkard: {fileID: 6536046719154458180, guid: 3ecd58846d80571498c5c49f0cba8ec3, type: 3}
-  enemyDrunkardBOSS: {fileID: 6536046719154458180, guid: e9c853b6690eefb479ed71008c35e6bf, type: 3}
+  enemyDrunkardBOSS: {fileID: 0}
   parent: {fileID: 1219520225}
   spawnLocations:
   - {fileID: 1539793800}
@@ -4789,19 +4835,68 @@ MonoBehaviour:
   - {fileID: 201029717}
   - {fileID: 1168283941}
   - {fileID: 352059114}
-  weapons:
+  panelList: []
+  items:
+  - {fileID: 1672516155}
+  - {fileID: 4280477}
+  - {fileID: 1810355224}
   - {fileID: 128322718}
   - {fileID: 695703885}
   - {fileID: 2087042481}
   - {fileID: 424510086}
   - {fileID: 635767461}
   - {fileID: 1906168803}
-  utilities:
-  - {fileID: 1672516155}
-  - {fileID: 4280477}
-  - {fileID: 1810355224}
   player: {fileID: 1561011401}
   playerMovement: {fileID: 1561011402}
+--- !u!1 &1524844439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1524844441}
+  - component: {fileID: 1524844440}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1524844440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524844439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 0.57
+  sharedProfile: {fileID: 11400000, guid: 7e8d28c4ecca5604ebc9c640d937cbb6, type: 2}
+--- !u!4 &1524844441
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524844439}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1539793800
 GameObject:
   m_ObjectHideFlags: 0
@@ -5090,7 +5185,7 @@ MonoBehaviour:
   gameController: {fileID: 2047097353}
   player: {fileID: 1561011401}
   playerStats: {fileID: 1561011400}
-  upgrade: {fileID: 0}
+  upgrade: {fileID: 1509910517}
   upgradeScreen: {fileID: 1509910516}
   currentItems: []
   maxHealth: 0
@@ -5302,7 +5397,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Health Upgrade
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5613,7 +5708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b63fd0b6f7573c143af40ce3a5ef27f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Roller Skates
   player: {fileID: 1561011401}
   playerMovement: {fileID: 1561011402}
 --- !u!1 &1681639545
@@ -5951,6 +6046,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1561011401}
+    - target: {fileID: 6851086163164186471, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
+      propertyPath: itemName
+      value: Chill Vibe
+      objectReference: {fileID: 0}
     - target: {fileID: 6851086163164186471, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
       propertyPath: slowSpeedPercent
       value: 0.5
@@ -6557,7 +6656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2b662e661ee9d478e61e8059282a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Saxophone
   damage: 3
   amountOfProjectiles: 0
   penetration: 1
@@ -6996,6 +7095,10 @@ PrefabInstance:
       value: DiscoBallController
       objectReference: {fileID: 0}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
+      propertyPath: itemName
+      value: Disco Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: cooldownDuration
       value: 0
       objectReference: {fileID: 0}
@@ -7374,13 +7477,12 @@ MonoBehaviour:
   tilemap: {fileID: 2142026995}
   tileToPlace: {fileID: 11400000, guid: 3f42d61ffd47d1a40aede7a4e2e84d5d, type: 2}
   colors:
-  - {r: 1, g: 0.02745098, b: 0.5294118, a: 1}
-  - {r: 0.4117647, g: 0.8666667, b: 0.36862746, a: 1}
-  - {r: 0.40392157, g: 0.7176471, b: 0.95686275, a: 1}
-  - {r: 0.9882353, g: 0.78039217, b: 0.34117648, a: 1}
-  - {r: 0.2, g: 0.12156863, b: 0.8784314, a: 1}
-  - {r: 0.68235296, g: 0.05882353, b: 1, a: 1}
-  - {r: 0.44313726, g: 0.011764706, b: 0.8784314, a: 1}
+  - {r: 0.50980395, g: 0.043137256, b: 0.8784314, a: 1}
+  - {r: 0.8784314, g: 0.11372549, b: 0.58431375, a: 1}
+  - {r: 0.7882353, g: 0.11372549, b: 0.8784314, a: 1}
+  - {r: 0.23529412, g: 0.043137256, b: 0.8784314, a: 1}
+  - {r: 0.8784314, g: 0.11372549, b: 0.1254902, a: 1}
+  - {r: 0.83137256, g: 0.46666667, b: 0.8784314, a: 1}
   gameController: {fileID: 2047097353}
 --- !u!483693784 &2142026997
 TilemapRenderer:
@@ -7498,6 +7600,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -27.47
       objectReference: {fileID: 0}
+    - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+      propertyPath: itemName
+      value: Synthwave Blast
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7518,3 +7624,4 @@ SceneRoots:
   - {fileID: 916453224}
   - {fileID: 2047097354}
   - {fileID: 1873560449}
+  - {fileID: 1524844441}

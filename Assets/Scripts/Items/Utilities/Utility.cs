@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Utility : Item
+public abstract class Utility : Item
 {
     public Player player;
     protected float percentageIncrease;
@@ -17,7 +17,6 @@ public class Utility : Item
         percentageIncrease += amount;
     }
 
-
     protected float GetStatPercentIncrease()
     {
         return percentageIncrease;
@@ -25,6 +24,7 @@ public class Utility : Item
 
     public override List<string> GetUpgradeOptions()
     {
-        throw new System.NotImplementedException();
+        upgradeOptions.Add("UpgradeStat");
+        return upgradeOptions;
     }
 }
