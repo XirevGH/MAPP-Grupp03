@@ -29,6 +29,18 @@ public class EnemyBoss : Enemy
 
    
 
+    void CustomSlowUpdate() //Slow uppdate 0.4s
+    {
+         if (!isSlow)
+        {
+            UppdateSpeed();
+            
+        }
+        SelectTarget();
+        UpdateBossHp();
+
+
+    }
     void FixedUpdate()
     {
         attackColdown -= Time.deltaTime;
@@ -36,22 +48,9 @@ public class EnemyBoss : Enemy
         if(bossChargActiv){
             chargDuration -= Time.deltaTime;
         }
-        if (!isSlow)
-        {
-           UppdateSpeed();
-        }
-        UpdateBossHp();
+        
         if (IsAlive()) 
         {
-            if (GameObject.FindGameObjectWithTag("Decoy") != null && GameObject.FindGameObjectWithTag("Decoy").activeInHierarchy)
-            {
-                target = GameObject.FindGameObjectWithTag("Decoy");
-
-            }
-            else
-            {
-                target = GameObject.FindGameObjectWithTag("Player");
-            }
 
             if (Vector3.Distance(player.transform.position, transform.position) < 1)
             {

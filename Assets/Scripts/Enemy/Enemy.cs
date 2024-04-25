@@ -42,25 +42,17 @@ public class Enemy : MonoBehaviour
 {
 
     [SerializeField] private Sprite enemySprite;
-
     [SerializeField] private List<DropItem> drops = new List<DropItem>();
-
     //om den kan droppa ferla saker än en. Börja med först droppet i listan
     public bool multiDrop;
-
     public GameObject player, target;
-
     protected float damageNumberWindow = 3f;
-
     public SpriteRenderer sprite;
-
-
-
-    public static float movementSpeed;
+    public static float movementSpeed;  // är % * till thisEnmey
     public static float healthProsenIncreas = 1f;
     public float health;
      
-    public float thisMovementSpeed;
+    public float thisMovementSpeed; 
 
     public float baseMovementSpeed;
     public bool isSlow;
@@ -71,6 +63,7 @@ public class Enemy : MonoBehaviour
     public Animator damageNumberAnim;
     public Animator enemyAnim;
 
+
     public void Start()
     {   
         health *= healthProsenIncreas;
@@ -80,28 +73,27 @@ public class Enemy : MonoBehaviour
         UppdateSpeed();
         isSlow = false;
         target = player;
+        StaticUpdateManager.RegisterUpdate(CustomSlowUpdate);
     }
 
+    void CustomSlowUpdate() //Slow uppdate 0.4s
+    {
+         if (!isSlow)
+        {
+            UppdateSpeed();
+            
+        }
+        SelectTarget();
+    }
 
     void FixedUpdate()
     {
         damageNumberWindow -= Time.deltaTime;
-        if (!isSlow)
-        {
-            UppdateSpeed();
-        }
+        
 
         if (IsAlive()) 
         {
-            if(GameObject.FindGameObjectWithTag("Decoy") != null && GameObject.FindGameObjectWithTag("Decoy").activeInHierarchy)
-            {
-                target = GameObject.FindGameObjectWithTag("Decoy");
-
-            }
-            else
-            {
-                target = GameObject.FindGameObjectWithTag("Player");
-            }
+           
 
             if (Vector3.Distance(target.transform.position, transform.position) < 0.5)
             {
@@ -117,13 +109,21 @@ public class Enemy : MonoBehaviour
             }
 
             enemyAnim.SetTrigger("Walking");
-            
-
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, thisMovementSpeed / 200);
         }
            
-        
-      
+    }
+
+    protected void SelectTarget(){
+         if(GameObject.FindGameObjectWithTag("Decoy") != null && GameObject.FindGameObjectWithTag("Decoy").activeInHierarchy)
+            {
+                target = GameObject.FindGameObjectWithTag("Decoy");
+
+            }
+            else
+            {
+                target = player;
+            }
     }
 
     public void TakeDamage(float damageTaken)

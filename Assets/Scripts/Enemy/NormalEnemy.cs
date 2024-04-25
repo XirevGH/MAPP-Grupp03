@@ -17,24 +17,11 @@ public class NormalEnemy : Enemy
     void FixedUpdate()
     {
         damageNumberWindow -= Time.deltaTime;
-        if (!isSlow)
-        {
-            UppdateSpeed();
-        }
+        
 
        
         if (IsAlive())
         {
-            if (GameObject.FindGameObjectWithTag("Decoy") != null && GameObject.FindGameObjectWithTag("Decoy").activeInHierarchy)
-            {
-                target = GameObject.FindGameObjectWithTag("Decoy");
-
-            }
-            else
-            {
-                target = GameObject.FindGameObjectWithTag("Player");
-            }
-
             if (Vector3.Distance(target.transform.position, transform.position) < 0.5)
             {
                 player.GetComponent<Player>().TakeDamage(1);

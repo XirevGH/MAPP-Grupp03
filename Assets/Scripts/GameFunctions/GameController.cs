@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
         soundManager = GameObject.FindGameObjectWithTag("SoundManager");
         ReadFile();
         mainCamera = Camera.main;
-        Enemy.movementSpeed = 1f;
+        Enemy.movementSpeed = 1f;        // är % * till thisEnmey
         Debug.Log("Start");
     }
     private void Update()
@@ -31,8 +31,8 @@ public class GameController : MonoBehaviour
         currentTrackBPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswapper.GetComponent<TrackSwapper>().i];
     }
     private void FixedUpdate()
-    {
-        Enemy.movementSpeed += 0.0001f;
+    {  
+        Enemy.movementSpeed += 0.0001f; // är % * till thisEnmey
        
     }
     private void ReadFile()
