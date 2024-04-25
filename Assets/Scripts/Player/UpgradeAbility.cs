@@ -172,7 +172,10 @@ public class UpgradeAbility : MonoBehaviour
     {
         currentPlayerItems = GetItems();
         DetermineTypeOptions();
-        InitializeUpgradeOptions();
+        if (currentPlayerItems.Count > 0) 
+        {
+            InitializeUpgradeOptions();
+        }
         InitializePanels();
         for (int i = 0; i < panels.Length; i++)
         {
