@@ -48,13 +48,12 @@ public class Enemy : MonoBehaviour
     //om den kan droppa ferla saker än en. Börja med först droppet i listan
     public bool multiDrop;
 
-    public GameObject player;
+    public GameObject player, target;
 
     protected float damageNumberWindow = 3f;
 
     public SpriteRenderer sprite;
 
-    private Vector2 target;
 
 
     public static float movementSpeed;
@@ -75,7 +74,7 @@ public class Enemy : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         thisMovementSpeed = movementSpeed;
         isSlow = false;
-        target = GameObject.FindGameObjectWithTag("Player").transform.position;
+        target = player;
     }
 
 
@@ -89,11 +88,21 @@ public class Enemy : MonoBehaviour
 
         if (IsAlive()) 
         {
-            if (Vector3.Distance(player.transform.position, transform.position) < 0.5)
+            if(GameObject.FindGameObjectWithTag("Decoy") != null && GameObject.FindGameObjectWithTag("Decoy").activeInHierarchy)
+            {
+                target = GameObject.FindGameObjectWithTag("Decoy");
+
+            }
+            else
+            {
+                target = GameObject.FindGameObjectWithTag("Player");
+            }
+
+            if (Vector3.Distance(target.transform.position, transform.position) < 0.5)
             {
                 player.GetComponent<Player>().TakeDamage(1);
             }
-            if (transform.position.x < target.x)
+            if (transform.position.x < target.transform.position.x)
             {
                 sprite.flipX = false;
             }
@@ -103,17 +112,9 @@ public class Enemy : MonoBehaviour
             }
 
             enemyAnim.SetTrigger("Walking");
-            if (GameObject.FindGameObjectWithTag("Decoy") != null && GameObject.FindGameObjectWithTag("Decoy").activeInHierarchy)
-            {
-                target = GameObject.FindGameObjectWithTag("Decoy").transform.position;
-             
-            }
-            else 
-            {
-                target = GameObject.FindGameObjectWithTag("Player").transform.position;
-            }
+            
 
-            transform.position = Vector3.MoveTowards(transform.position, target, thisMovementSpeed / 200);
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, thisMovementSpeed / 200);
         }
            
         

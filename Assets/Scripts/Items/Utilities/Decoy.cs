@@ -34,7 +34,7 @@ public class Decoy : MonoBehaviour
         return controlPoint;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
@@ -42,6 +42,7 @@ public class Decoy : MonoBehaviour
         }    
       
     }
+
     private  void TakeDamage(int damageAmount)
     {
         decoyHealth -= damageAmount;

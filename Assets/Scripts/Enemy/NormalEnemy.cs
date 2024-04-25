@@ -6,6 +6,7 @@ using System.Text;
 using System;
 using System.Linq;
 using System.Diagnostics;
+using static UnityEngine.GraphicsBuffer;
 
 public class NormalEnemy : Enemy
 {
@@ -13,7 +14,7 @@ public class NormalEnemy : Enemy
     {
     }
 
-     void FixedUpdate()
+    void FixedUpdate()
     {
         damageNumberWindow -= Time.deltaTime;
         if (!isSlow)
@@ -21,13 +22,24 @@ public class NormalEnemy : Enemy
             thisMovementSpeed = movementSpeed;
         }
 
-        if (IsAlive()) 
+       
+        if (IsAlive())
         {
-            if (Vector3.Distance(player.transform.position, transform.position) < 0.5)
+            if (GameObject.FindGameObjectWithTag("Decoy") != null && GameObject.FindGameObjectWithTag("Decoy").activeInHierarchy)
+            {
+                target = GameObject.FindGameObjectWithTag("Decoy");
+
+            }
+            else
+            {
+                target = GameObject.FindGameObjectWithTag("Player");
+            }
+
+            if (Vector3.Distance(target.transform.position, transform.position) < 0.5)
             {
                 player.GetComponent<Player>().TakeDamage(1);
             }
-            if (transform.position.x < player.GetComponent<Transform>().position.x)
+            if (transform.position.x < target.transform.position.x)
             {
                 sprite.flipX = false;
             }
@@ -35,10 +47,15 @@ public class NormalEnemy : Enemy
             {
                 sprite.flipX = true;
             }
+
             enemyAnim.SetTrigger("Walking");
-            transform.position = Vector3.MoveTowards(transform.position, player.GetComponent<Transform>().position, thisMovementSpeed / 200);
+           
+
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, thisMovementSpeed / 200);
         }
-      
+
+
+
     }
     protected override void DestroyGameObject()
     {

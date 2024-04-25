@@ -13,6 +13,7 @@ public abstract class Projectile : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             other.GetComponent<Enemy>().TakeDamage(damage);
+            DestroyWhenMaxPenetration();
         }
     }
 

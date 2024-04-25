@@ -100,9 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   landingSpot: {x: 0, y: 0}
   travelTime: 1
-  controlPointDistance: 1
   controlPointOffSet: 1
-  decoyHealth: 0
+  decoyHealth: 5
 --- !u!61 &-3957258335344319156
 BoxCollider2D:
   m_ObjectHideFlags: 0

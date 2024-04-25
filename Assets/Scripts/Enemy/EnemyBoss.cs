@@ -15,7 +15,7 @@ public class EnemyBoss : Enemy
 
     public float bossChargSpeed;
 
-    
+
     public EnemyBoss()
     {
         this.bossChargColdown = baseAttackColdown/2;
@@ -40,6 +40,16 @@ public class EnemyBoss : Enemy
 
         if (IsAlive()) 
         {
+            if (GameObject.FindGameObjectWithTag("Decoy") != null && GameObject.FindGameObjectWithTag("Decoy").activeInHierarchy)
+            {
+                target = GameObject.FindGameObjectWithTag("Decoy");
+
+            }
+            else
+            {
+                target = GameObject.FindGameObjectWithTag("Player");
+            }
+
             if (Vector3.Distance(player.transform.position, transform.position) < 1)
             {
                 player.GetComponent<Player>().TakeDamage(1);
@@ -56,10 +66,10 @@ public class EnemyBoss : Enemy
                 bossChargActiv = false;
                 bossChargColdown = baseAttackColdown/2;
             }
-                
 
-            
-            if (transform.position.x < player.GetComponent<Transform>().position.x)
+
+
+            if (transform.position.x < target.transform.position.x)
             {
                 sprite.flipX = false;
             }
@@ -67,15 +77,12 @@ public class EnemyBoss : Enemy
             {
                 sprite.flipX = true;
             }
-            if(bossChargActiv){
-                enemyAnim.SetTrigger("Charge");
-                Vector3 targetDirection = (player.transform.position - transform.position).normalized;
-                transform.position += targetDirection * (thisMovementSpeed * bossChargSpeed / 200);
-            }else{
-                enemyAnim.SetTrigger("Walking");
-                transform.position = Vector3.MoveTowards(transform.position, player.GetComponent<Transform>().position, thisMovementSpeed / 200);
-            }
+
+            enemyAnim.SetTrigger("Walking");
             
+
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, thisMovementSpeed / 200);
+
         }
       
         
