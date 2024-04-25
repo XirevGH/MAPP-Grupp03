@@ -207,9 +207,10 @@ MonoBehaviour:
   enemySprite: {fileID: -2132439104, guid: bde3438dd63ead34eb0411cc50f8c6bf, type: 3}
   drops:
   - item: {fileID: 2322821042000343324, guid: 0369a782efb602b49b7a7f02ad8b43ba, type: 3}
-    dropChance_0_To_100: 100
+    dropChance: 50
   multiDrop: 1
   player: {fileID: 0}
+  target: {fileID: 0}
   sprite: {fileID: 0}
   health: 300
   thisMovementSpeed: 1

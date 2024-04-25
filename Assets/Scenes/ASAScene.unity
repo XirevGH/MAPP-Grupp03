@@ -2010,12 +2010,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe01b99186bb2e40b8746bb79e5d29b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossWaves: []
+  spawnIncreaser: 0
   mainCamera: {fileID: 519420031}
   tilemap: {fileID: 1947654048}
   enemyBouncer: {fileID: 6536046719154458180, guid: e08403d79ea9a0046acfb2c680d5eb32, type: 3}
   enemyDancer: {fileID: 6536046719154458180, guid: 935a3a109fd200c4080657daa8c508d3, type: 3}
   enemyDrunkard: {fileID: 6536046719154458180, guid: 3ecd58846d80571498c5c49f0cba8ec3, type: 3}
-  enemyDrunkardBOSS: {fileID: 6536046719154458180, guid: e9c853b6690eefb479ed71008c35e6bf, type: 3}
   parent: {fileID: 1707783737}
   spawnLocations:
   - {fileID: 1730046822}
@@ -2024,8 +2025,8 @@ MonoBehaviour:
   - {fileID: 260835526}
   - {fileID: 274997314}
   player: {fileID: 3351724656273620173}
-  waveCount: 0
   spawnRate: 3
+  waveCount: 0
 --- !u!1 &910863356
 GameObject:
   m_ObjectHideFlags: 0
@@ -2874,6 +2875,8 @@ MonoBehaviour:
   pauseMenuUI: {fileID: 1796234484}
   BeatSpawnerController: {fileID: 1128267155804970998}
   soundManager: {fileID: 0}
+  pauseButton: {fileID: 0}
+  settingPanel: {fileID: 0}
   mainMenuSceneName: MainMenu
 --- !u!4 &1356857816 stripped
 Transform:
@@ -5589,6 +5592,7 @@ MonoBehaviour:
   movementSpeed: 5
   pos: {fileID: 5383820192035051673}
   dynamicJoystick: {fileID: 1792236043}
+  isSlowed: 0
 --- !u!1 &3351724656273620173
 GameObject:
   m_ObjectHideFlags: 0

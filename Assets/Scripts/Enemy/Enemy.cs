@@ -36,7 +36,7 @@ public class DropItem
     public GameObject item;
 
     //chansen i int "%" hur stor changen är att den droppas
-    public int dropChance_0_To_100;
+    public float dropChance;
 }
 public class Enemy : MonoBehaviour
 {
@@ -176,12 +176,12 @@ public class Enemy : MonoBehaviour
     }
 
 
-    protected bool Drop(GameObject drope, int dropeChans)
-    {   int random = UnityEngine.Random.Range(0, 101);
-        if(random <= dropeChans)
+    protected bool Drop(GameObject drop, float dropChance)
+    {   float random = (float)Math.Round(UnityEngine.Random.Range(0f, 100f), 4);
+        if (random <= dropChance)
         {   
-            if (drope) {
-                GameObject enemyDrop = Instantiate(drope, transform.position, Quaternion.identity);
+            if (drop) {
+                GameObject enemyDrop = Instantiate(drop, transform.position, Quaternion.identity);
                 enemyDrop.SetActive(true);
                 return true;
             } else {
@@ -193,7 +193,7 @@ public class Enemy : MonoBehaviour
     }
     protected void Drops() {
         foreach (DropItem drop in drops) { 
-            if (Drop(drop.item, drop.dropChance_0_To_100 )) {
+            if (Drop(drop.item, drop.dropChance )) {
                 if (!multiDrop) {
                     break;
                 }
