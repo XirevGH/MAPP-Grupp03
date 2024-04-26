@@ -532,8 +532,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Bass Guitar
-  damage: 10
-  damageIncreasePerUpgrade: 0
+  damage: 0
+  percentageDamageIncreasePerUpgrade: 0
   anim: {fileID: 128322717}
 --- !u!1 &138787948
 GameObject:
@@ -568,10 +568,10 @@ RectTransform:
   - {fileID: 201029718}
   m_Father: {fileID: 1509910513}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.33, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1033, y: 1440}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &138787950
 MonoBehaviour:
@@ -848,10 +848,10 @@ RectTransform:
   - {fileID: 122507406}
   m_Father: {fileID: 138787949}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.2, y: 0.33}
+  m_AnchorMax: {x: 0.8, y: 0.66}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 528, y: 582.8}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &201029719
 MonoBehaviour:
@@ -1190,10 +1190,10 @@ RectTransform:
   - {fileID: 356753004}
   m_Father: {fileID: 1207474351}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.2, y: 0.33}
+  m_AnchorMax: {x: 0.8, y: 0.66}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 528, y: 582.8}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &352059116
 MonoBehaviour:
@@ -1714,9 +1714,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Electric Guitar
-  damage: 5
-  damageIncreasePerUpgrade: 0
+  damage: 0
+  percentageDamageIncreasePerUpgrade: 0
   amountOfTethers: 0
+  tetherIncreasePerUpgrade: 0
   bolt: {fileID: 8209966115709815941, guid: c89b4386ca74450468870cc3cee72ee5, type: 3}
 --- !u!58 &635767462
 CircleCollider2D:
@@ -1779,6 +1780,18 @@ PrefabInstance:
     - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: itemName
       value: Yoyo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+      propertyPath: amountOfProjectiles
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+      propertyPath: projectileIncreasePerUpgrade
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+      propertyPath: percentageDamageIncreasePerUpgrade
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 7772078910061721573, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: m_Name
@@ -2912,14 +2925,14 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    isTriggering: 0
+    isTriggering: 1
   - noteValue: 8
     quaterNoteTrigger:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 695703885}
           m_TargetAssemblyTypeName: YoyoController, Assembly-CSharp
-          m_MethodName: YoYoSperMode
+          m_MethodName: Attack
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3048,10 +3061,10 @@ RectTransform:
   - {fileID: 1168283942}
   m_Father: {fileID: 1509910513}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0.33, y: 0}
+  m_AnchorMax: {x: 0.66, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 899, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1086112264
 MonoBehaviour:
@@ -3625,10 +3638,10 @@ RectTransform:
   - {fileID: 1570882495}
   m_Father: {fileID: 1086112263}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.2, y: 0.33}
+  m_AnchorMax: {x: 0.8, y: 0.66}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 528, y: 582.8}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1168283943
 MonoBehaviour:
@@ -4007,10 +4020,10 @@ RectTransform:
   - {fileID: 352059115}
   m_Father: {fileID: 1509910513}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMin: {x: 0.66, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1033, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1207474352
 MonoBehaviour:
@@ -4842,7 +4855,6 @@ MonoBehaviour:
   - {fileID: 201029717}
   - {fileID: 1168283941}
   - {fileID: 352059114}
-  panelList: []
   items:
   - {fileID: 1672516155}
   - {fileID: 4280477}
@@ -5611,8 +5623,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 
-  damage: 1
-  damageIncreasePerUpgrade: 0
+  damage: 0
+  percentageDamageIncreasePerUpgrade: 0
   usedAbility: 0
   dealDamage: 0
   bombMoving: 0
@@ -6668,8 +6680,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Saxophone
-  damage: 3
-  damageIncreasePerUpgrade: 0
+  damage: 0
+  percentageDamageIncreasePerUpgrade: 0
   amountOfProjectiles: 0
   projectileIncreasePerUpgrade: 0
   penetration: 1

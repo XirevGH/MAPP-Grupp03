@@ -3,17 +3,16 @@ using UnityEngine;
 using System;
 using TMPro;
 using System.Reflection;
-using static UnityEditor.Progress;
-using System.Linq;
 
 
 public class UpgradeAbility : MonoBehaviour
 {
     [SerializeField] private GameObject[] panels;
-    [SerializeField] private List<GameObject> panelList;
     [SerializeField] private List<Item> items = new List<Item>();
     [SerializeField] private Player player;
     [SerializeField] private PlayerMovement playerMovement;
+    private List<GameObject> choicePanels;
+    private List<Item> choiceItems;
     private List<Item> currentPlayerItems = new List<Item>();
     private Dictionary<Item, List<string>> upgradeOptions = new Dictionary<Item, List<string>>();
     private List<string> typeOptions = new List<string>();
@@ -23,11 +22,12 @@ public class UpgradeAbility : MonoBehaviour
     private void Awake()
     {
         allowedAmountOfWeapons = 4;
-        allowedAmountOfUtility = 4;
+        allowedAmountOfUtility = 3;
     }
 
     public void InitializeUpgradeOptions()
     {
+        upgradeOptions = new Dictionary<Item, List<string>>();
         //Get the current items that the player has.
         currentPlayerItems = GetItems();
 
@@ -50,11 +50,11 @@ public class UpgradeAbility : MonoBehaviour
         //Fetch the keys from the dictionary and put it in a list and use the random number as an index to get a random item.
         Item chosenItem = new List<Item>(upgradeOptions.Keys)[randomItemIndex];
 
-        //Get a random number based on the amount of upgrade options that the chosen item has.
-        int randomUpgradeIndex = UnityEngine.Random.Range(0, chosenItem.GetUpgradeOptions().Count);
+        //Get a random number based on the amount of upgrade options that the chosen item currently has.
+        int randomUpgradeIndex = UnityEngine.Random.Range(0, upgradeOptions[chosenItem].Count);
 
         //Fetch the upgrade option at the index of the random number.
-        string chosenUpgrade = chosenItem.GetUpgradeOptions()[randomUpgradeIndex];
+        string chosenUpgrade = upgradeOptions[chosenItem][randomUpgradeIndex];
 
         //Remove the upgrade option so that it cannot be chosen again for the remaining options.
         RemoveUpgradeOption(chosenItem, chosenUpgrade);
@@ -66,13 +66,13 @@ public class UpgradeAbility : MonoBehaviour
     private Tuple<Item, string> ChooseRandomItem()
     {
         //Get a random number based on the amount of items available.
-        int randomItemIndex = UnityEngine.Random.Range(0, items.Count);
+        int randomItemIndex = UnityEngine.Random.Range(0, choiceItems.Count);
 
         //Get the item that is at the random index.
-        Item chosenItem = items[randomItemIndex];
+        Item chosenItem = choiceItems[randomItemIndex];
 
-        //Remove the item so it cannot be received again.
-        RemoveItem(chosenItem);
+        //Remove the item so it cannot be received again as a choice during the current upgrade session.
+        RemoveItemAsChoice(chosenItem, choiceItems);
 
         //Return the item along with its name.
         return Tuple.Create(chosenItem, chosenItem.GetName());
@@ -81,22 +81,22 @@ public class UpgradeAbility : MonoBehaviour
     private void RemoveUpgradeOption(Item item, string upgradeOption)
     {
         upgradeOptions[item].Remove(upgradeOption);
+        if (upgradeOptions[item].Count == 0)
+        {
+            upgradeOptions.Remove(item);
+        }
     }
 
-    private void RemoveItem(Item item)
+    private void RemoveItemAsChoice(Item item, List<Item> choiceItems)
     {
-        items.Remove(item);
+        choiceItems.Remove(item);
     }
+
     private string ChooseUpgradeType()
     {
+        
         //Get a random number based on the length of the typeOptions list.
         int randomTypeIndex = UnityEngine.Random.Range(0, typeOptions.Count);
-        Debug.Log(randomTypeIndex);
-        Debug.Log(typeOptions.Count);
-        foreach (string type in typeOptions)
-        {
-            Debug.Log(type);
-        }
         //Return the type of upgrade using the random index.
         return typeOptions[randomTypeIndex];
     }
@@ -109,16 +109,23 @@ public class UpgradeAbility : MonoBehaviour
 
     private void InitializePanels()
     {
-        panelList = new List<GameObject>(panels);
+        choicePanels = new List<GameObject>(panels);
+    }
+
+    private void InitializeItems()
+    {
+        //Prepare all available items in order to be able to remove from the random choices from the list 
+        // during the current upgrade session without it affecting the available items.
+        choiceItems = new List<Item>(items);
     }
 
     private GameObject ChooseRandomPanel()
     {
         //Get a random number based on the amount of panels in the panel list.
-        int randomPanel = UnityEngine.Random.Range(0, panelList.Count);
+        int randomPanel = UnityEngine.Random.Range(0, choicePanels.Count);
 
         //Save the Game Object of the chosen panel.
-        GameObject chosenPanel = panelList[randomPanel];
+        GameObject chosenPanel = choicePanels[randomPanel];
 
         //Remove the chosen panel so it cannot be chosen for the remaining upgrades.
         RemovePanelAsOption(chosenPanel);
@@ -133,7 +140,7 @@ public class UpgradeAbility : MonoBehaviour
     }
     private void RemovePanelAsOption(GameObject chosenPanel)
     {
-        panelList.Remove(chosenPanel);
+        choicePanels.Remove(chosenPanel);
     }
     private void SetPanelMethod(GameObject panel, string typeOfUpgrade, Item item, string upgrade)
     {
@@ -149,19 +156,21 @@ public class UpgradeAbility : MonoBehaviour
 
     public void StartUpgradeSystem()
     {
+        InitializeItems();
+        InitializePanels();
         currentPlayerItems = GetItems();
-        DetermineTypeOptions();
         if (currentPlayerItems.Count > 0) 
         {
             InitializeUpgradeOptions();
         }
-        InitializePanels();
         for (int i = 0; i < panels.Length; i++)
         {
             Item item;
             string upgradeText;
+
+            DetermineTypeOptions();
             string typeOfUpgrade = ChooseUpgradeType();
-            GameObject chosenPanel = ChooseRandomPanel();
+            
             if (typeOfUpgrade.Equals("Upgrade"))
             {
                 (item, upgradeText) = ChooseRandomUpgrade();
@@ -170,6 +179,7 @@ public class UpgradeAbility : MonoBehaviour
             {
                 (item, upgradeText) = ChooseRandomItem();
             }
+            GameObject chosenPanel = ChooseRandomPanel();
             SetPanelText(chosenPanel, upgradeText);
             SetPanelMethod(chosenPanel, typeOfUpgrade, item, upgradeText);
         }
@@ -184,15 +194,31 @@ public class UpgradeAbility : MonoBehaviour
     public void GiveRandomizedItem(Item item)
     {
         player.AddItem(item);
+        items.Remove(item);
+
     }
 
     private void DetermineTypeOptions()
     {
-        //Only add the ability to upgrade items if the player has at least one item
-        if (currentPlayerItems.Count > 0)
+        //Only add the ability to upgrade items if the player has more than one item or if the single available item has at least one available upgrade.
+        if (!typeOptions.Contains("Upgrade"))
         {
             typeOptions.Add("Upgrade");
         }
+        int options = 0;
+        foreach (Item key in upgradeOptions.Keys)
+        {
+            options += upgradeOptions[key].Count;
+        }
+        if (options == 0)
+        {
+            //If we do not have any items that can be upgraded and it currently exists in the list then remove it.
+            if (typeOptions.Contains("Upgrade"))
+            {
+                typeOptions.Remove("Upgrade");
+            }
+        }
+
         //Start two counters that will keep track of how many weapons and utilities the player has.
         int numberOfWeapons = 0;
         int numberOfUtilities = 0;
@@ -216,7 +242,6 @@ public class UpgradeAbility : MonoBehaviour
         //Check if we're at the maximum allowed amount of weapons yet.
         if (numberOfWeapons < allowedAmountOfWeapons)
         {
-            Debug.Log("I don't have any weapons so I should get inside of here");
             //If we aren't at the max then add "Weapon" to the list so that it can be chosen as an option unless it is already in there.
             if (!typeOptions.Contains("Weapon"))
             { 

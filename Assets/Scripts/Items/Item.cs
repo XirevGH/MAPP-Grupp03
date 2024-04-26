@@ -11,5 +11,15 @@ public abstract class Item : MonoBehaviour
         return itemName;
     }
 
-    public abstract List<string> GetUpgradeOptions();
+    public List<string> GetUpgradeOptions()
+    {
+        if (upgradeOptions.Count == 0)
+        {
+            CreateUpgradeOptions();
+        }
+        return new List<string>(upgradeOptions);
+    }
+
+    protected abstract void CreateUpgradeOptions();
+
 }

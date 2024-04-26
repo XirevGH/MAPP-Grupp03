@@ -35,10 +35,9 @@ public abstract class TetheringWeapon : Weapon
         }
     }
 
-    public override List<string> GetUpgradeOptions()
+    protected override void CreateUpgradeOptions()
     {
-        base.GetUpgradeOptions();
+        base.CreateUpgradeOptions();
         upgradeOptions.Add("IncreaseTetherAmount");
-        return upgradeOptions;
     }
 }

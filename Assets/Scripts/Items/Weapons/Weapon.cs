@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System;
 
 public abstract class Weapon : Item
 {
@@ -8,14 +6,13 @@ public abstract class Weapon : Item
 
     public abstract void Attack();
 
-    public void IncreaseDamage()
+    public virtual void IncreaseDamage()
     {
         damage *= percentageDamageIncreasePerUpgrade;
     }
 
-    public override List<string> GetUpgradeOptions()
+    protected override void CreateUpgradeOptions()
     {
         upgradeOptions.Add("IncreaseDamage");
-        return upgradeOptions;
     }
 }

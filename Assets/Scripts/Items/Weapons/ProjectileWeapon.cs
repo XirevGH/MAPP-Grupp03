@@ -20,13 +20,11 @@ public abstract class ProjectileWeapon : Weapon
         penetration += penetrationIncreaserPerUpgrade;
     }
 
-    public override List<string> GetUpgradeOptions()
+    protected override void CreateUpgradeOptions()
     {
-
-        base.GetUpgradeOptions();
+        base.CreateUpgradeOptions();
 
         upgradeOptions.Add("IncreaseProjectileCount");
         upgradeOptions.Add("IncreasePenetrationAmount");
-        return upgradeOptions;
     }
 }
