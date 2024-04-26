@@ -48,8 +48,11 @@ public class PushAwayAbility : MonoBehaviour
     private System.Collections.IEnumerator RemoveForce(Rigidbody2D rb, float delay)
     {
         yield return new WaitForSeconds(delay);
-        rb.velocity = Vector2.zero;
-        rb.angularVelocity = 0f;
+        if(rb != null)
+        {
+            rb.velocity = Vector2.zero;
+        }
+       
     }
 
 }
