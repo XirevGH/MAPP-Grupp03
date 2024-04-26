@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class TrackSwapper : MonoBehaviour
 {
-    private SoundManager soundManager;
 
     public int i = 0;
-   
-    private void Start()
-    {
-        soundManager = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>();
-    }
+
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -22,7 +17,7 @@ public class TrackSwapper : MonoBehaviour
             {
                 i = 0;
             }
-            soundManager.ChangeTrack(i);
+            SoundManager.instance.ChangeTrack(i);
         }
     }
 }

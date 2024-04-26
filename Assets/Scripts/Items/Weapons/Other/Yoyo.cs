@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using static Unity.VisualScripting.Member;
 
 public class Yoyo : Projectile
 {
     [SerializeField] private float rotateSpeed, colliderStartingOffset, colliderSuperModeOffset;
-    [SerializeField] private GameObject ball, yoyoString, triggerController, soundManager;
+    [SerializeField] private int triggerNumber;
+    [SerializeField] private GameObject ball, yoyoString;
     [SerializeField] private Vector3 ballStartPosition, ballSuperModePosition, stringStartPosition, stringSuperModePosition, stringStartScale, stringSuperModeScale;
 
     private List<string> upgradeOptions;
@@ -15,14 +17,12 @@ public class Yoyo : Projectile
     private bool superMode;
     private float lerpTime, lerpElapsedTime;
 
+    private float BPM, noteValue, pitch;
+
     private CircleCollider2D circleColl;
 
     private void Start()
     {
-        triggerController = GameObject.FindGameObjectWithTag("TriggerController");
-        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
-        rotateSpeed = ((triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM()/ 60f));
-
         upgradeOptions = new List<string> {"SuperMode", "PlusOneYoyo"};
         superMode = false;
         lerpTime = 0;
@@ -31,8 +31,13 @@ public class Yoyo : Projectile
 
     private void Update()
     {
-        rotateSpeed = ((triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM() / 60f));
-        superModeTime = ((60f / (triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM() / triggerController.GetComponent<TriggerController>().GetTrigger(1).noteValue)) / soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch) / 2;
+        BPM = TriggerController.instance.GetCurrentTrackBPM();
+        noteValue = TriggerController.instance.GetTrigger(triggerNumber).noteValue;
+        pitch = SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>().pitch;
+       
+
+        rotateSpeed = BPM / 60;
+        superModeTime = ((60f / (BPM / noteValue)) / pitch) / 2;
         lerpTime = superModeTime / 5;
     }
 

@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject[] joysticks;
     public static bool GameIsPaused = false;
-    public GameObject pauseMenuUI, BeatSpawnerController, soundManager;
+    public GameObject pauseMenuUI, BeatSpawnerController;
     public GameObject pauseButton; 
 
     [SerializeField] private GameObject settingPanel;
@@ -21,7 +21,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
+       
     }
 
     void Update()
@@ -53,7 +53,7 @@ public class PauseMenu : MonoBehaviour
     {
         ToggleJoysticks(true);
         BeatSpawnerController.GetComponent<TriggerController>().ToggleTrigger();
-        soundManager.GetComponent<SoundManager>().ToggleMusicPause();
+        SoundManager.instance.GetComponent<SoundManager>().ToggleMusicPause();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -62,7 +62,7 @@ public class PauseMenu : MonoBehaviour
     {
         ToggleJoysticks(false);
         BeatSpawnerController.GetComponent<TriggerController>().ToggleTrigger();
-        soundManager.GetComponent<SoundManager>().ToggleMusicPause();
+        SoundManager.instance.GetComponent<SoundManager>().ToggleMusicPause();
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
@@ -71,7 +71,7 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-        soundManager.GetComponent<SoundManager>().GoBackToMain();
+        SoundManager.instance.GetComponent<SoundManager>().GoBackToMain();
         GameIsPaused = false;
         ToggleJoysticks(true);
         Time.timeScale = 1f;

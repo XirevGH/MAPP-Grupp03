@@ -21,11 +21,16 @@ public class SoundManager : MonoBehaviour
     public AudioMixerSnapshot lowPassSnapshots, normalSnapshots;
     public bool isOnePlaying, isLowPassOn, isInMenu, hasRun;
 
+    public static SoundManager instance
+    {
+        get; private set;
+    }
+
     private void Awake()
     {
-        if (Instance == null)
+        if (instance == null)
         {
-            Instance = this;
+            instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -85,7 +90,7 @@ public class SoundManager : MonoBehaviour
         isLowPassOn = !isLowPassOn;
     }
 
-    public void StrartGame()
+    public void StartGame()
     {
         musicSource1.Play();
         musicSource2.Play();

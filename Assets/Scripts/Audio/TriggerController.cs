@@ -12,7 +12,6 @@ public class TriggerController : MonoBehaviour
     [SerializeField] GameObject trackswapper;
     [SerializeField] public Trigger[] triggers;
     [SerializeField] public bool isTriggering;
-    private SoundManager soundManager;
 
     private AudioSource inGameMusic;
         
@@ -43,19 +42,37 @@ public class TriggerController : MonoBehaviour
         }
     }
 
+    public static TriggerController instance
+    {
+        get; private set;
+    }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+       
+    }
+
     void Start()
     {
         isTriggering = true;
-        GameObject manager = GameObject.FindGameObjectWithTag("SoundManager");
-        inGameMusic = manager.transform.GetChild(0).GetComponent<AudioSource>();
-        soundManager = manager.GetComponent<SoundManager>();
-      
+
+        inGameMusic = SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>();
+
     }
 
     void Update()
     {
-        inGameMusic = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
-        inGameCurrentTrackBPM = soundManager.BPMforTracks[trackswapper.GetComponent<TrackSwapper>().i];
+        inGameMusic = SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>();
+        inGameCurrentTrackBPM = SoundManager.instance.BPMforTracks[trackswapper.GetComponent<TrackSwapper>().i];
         if (isTriggering)
         {
             foreach (Trigger trigger in triggers)
