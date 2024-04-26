@@ -11,14 +11,13 @@ public abstract class Projectile : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             other.GetComponent<Enemy>().TakeDamage(damage);
-            DestroyWhenMaxPenetration();
         }
     }
 
     public void DestroyWhenMaxPenetration()
     {
         penetration--;
-        if (penetration <= 0)
+        if (penetration == 0)
         {
             Destroy(gameObject);
         }

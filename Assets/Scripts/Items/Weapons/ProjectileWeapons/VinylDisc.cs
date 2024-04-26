@@ -86,11 +86,6 @@ public class VinylDisc : Projectile
         }
     }
 
-
-   
-
-
-
     public void Attack() 
     {
         isAtPlayer = true;
@@ -99,6 +94,7 @@ public class VinylDisc : Projectile
     private void OnTriggerEnter2D(Collider2D other)
     {
         DealDamage(other);
+        DestroyWhenMaxPenetration();
     }
 
 }

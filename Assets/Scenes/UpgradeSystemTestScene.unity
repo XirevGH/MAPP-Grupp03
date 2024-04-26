@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &3764712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3764713}
+  m_Layer: 0
+  m_Name: Bosses
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3764713
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3764712}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 841989412}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4280475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,7 +1084,6 @@ MonoBehaviour:
   - {fileID: 1164316155}
   pauseMenuUI: {fileID: 1880770869}
   BeatSpawnerController: {fileID: 1068788364}
-  soundManager: {fileID: 0}
   pauseButton: {fileID: 0}
   settingPanel: {fileID: 0}
   mainMenuSceneName: MainMenu
@@ -2051,6 +2081,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3764713}
   - {fileID: 1219520226}
   - {fileID: 1385452494}
   m_Father: {fileID: 0}
@@ -4539,7 +4570,8 @@ MonoBehaviour:
   enemyBouncer: {fileID: 6536046719154458180, guid: e08403d79ea9a0046acfb2c680d5eb32, type: 3}
   enemyDancer: {fileID: 6536046719154458180, guid: 935a3a109fd200c4080657daa8c508d3, type: 3}
   enemyDrunkard: {fileID: 6536046719154458180, guid: 3ecd58846d80571498c5c49f0cba8ec3, type: 3}
-  parent: {fileID: 1219520225}
+  enmemyParent: {fileID: 1219520225}
+  bossParent: {fileID: 3764712}
   spawnLocations:
   - {fileID: 1539793800}
   - {fileID: 24887101}
@@ -4641,8 +4673,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Level: 1'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3b36c45194643a4d8fb6a32a19526e8, type: 2}
+  m_sharedMaterial: {fileID: 2481100012679649707, guid: c3b36c45194643a4d8fb6a32a19526e8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6780,11 +6812,6 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 8419575893291496720, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
   m_PrefabInstance: {fileID: 2011814505}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2011814508 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 251786827020902282, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
-  m_PrefabInstance: {fileID: 2011814505}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2026705477
 GameObject:
   m_ObjectHideFlags: 0
@@ -6847,8 +6874,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1561011400}
-  triggerController: {fileID: 1068788364}
-  soundManager: {fileID: 2011814508}
   trackswapper: {fileID: 1770111364}
   mainCamera: {fileID: 916453220}
   tilemap: {fileID: 2142026995}
@@ -7254,8 +7279,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Timer
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3b36c45194643a4d8fb6a32a19526e8, type: 2}
+  m_sharedMaterial: {fileID: 2481100012679649707, guid: c3b36c45194643a4d8fb6a32a19526e8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

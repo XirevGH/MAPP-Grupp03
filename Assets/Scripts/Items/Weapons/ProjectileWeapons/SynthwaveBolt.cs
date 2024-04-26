@@ -33,15 +33,8 @@ public class SynthwaveBolt : Projectile
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (penetration > 0)
-        {
-            penetration--;
-            DealDamage(other);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        DealDamage(other);
+        DestroyWhenMaxPenetration();
     }
 
 }

@@ -134,10 +134,9 @@ MonoBehaviour:
   rotateSpeed: 1
   colliderStartingOffset: 4
   colliderSuperModeOffset: 7
+  triggerNumber: 0
   ball: {fileID: 5725440702849570542}
   yoyoString: {fileID: 1982550428750947484}
-  triggerController: {fileID: 0}
-  soundManager: {fileID: 0}
   ballStartPosition: {x: 4, y: 0, z: 0}
   ballSuperModePosition: {x: 7, y: 0, z: 0}
   stringStartPosition: {x: 2, y: 0, z: 0}
