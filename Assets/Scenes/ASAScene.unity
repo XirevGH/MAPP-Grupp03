@@ -2015,8 +2015,8 @@ MonoBehaviour:
   enemyBouncer: {fileID: 6536046719154458180, guid: e08403d79ea9a0046acfb2c680d5eb32, type: 3}
   enemyDancer: {fileID: 6536046719154458180, guid: 935a3a109fd200c4080657daa8c508d3, type: 3}
   enemyDrunkard: {fileID: 6536046719154458180, guid: 3ecd58846d80571498c5c49f0cba8ec3, type: 3}
-  enmemyParent: {fileID: 0}
-  bossParent: {fileID: 0}
+  enmemyParent: {fileID: 1707783737}
+  bossParent: {fileID: 1707783737}
   spawnLocations:
   - {fileID: 1730046822}
   - {fileID: 867326975}
