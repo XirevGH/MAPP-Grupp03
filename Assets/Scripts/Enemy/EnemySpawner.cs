@@ -5,58 +5,103 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
 
+[System.Serializable]  
+public class BossWaves
+{
+    public GameObject enemyBOSS;
+    public int bossWave;
+}
+
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] private List<BossWaves> bossWaves = new List<BossWaves>();
+    private bool waveHasSpawned;
+    public float spawnIncreaser;
+    public static bool bossAlive;
     public Camera mainCamera;
     public Tilemap tilemap;
     public GameObject enemyBouncer;
     public GameObject enemyDancer;
     public GameObject enemyDrunkard;
-    public GameObject enemyDrunkardBOSS;
-    public GameObject parent;
+
+    public GameObject enmemyParent;
+    public GameObject bossParent;
+
+    public static GameObject normalEnemiParent;
+    public static GameObject bossEnemiParent;
+
     public GameObject[] spawnLocations;
     public GameObject player;
 
-    public int waveCount = 0;
-    
     public float spawnRate;
-    private bool waveHasSpawned;
-    private float spawnIncreaser;
 
+    public int waveCount = 0;
 
- 
-    void Update()
+    private void Start() {
+        waveHasSpawned = false;
+        bossAlive = false;
+        normalEnemiParent = enmemyParent;
+        bossEnemiParent = bossParent;
+    }
+
+    
+   void Update()
     {
-        
-        if (!waveHasSpawned)
-        {
-            waveHasSpawned = true;
-            Invoke("SpawnNextWave", spawnRate);
-            SpawnEnemiesInCircle((1 + (int)spawnIncreaser));
-            waveCount += 1; 
-
+        if(!bossAlive){
+            if(!waveHasSpawned){
+                SpawnWave();
+                waveHasSpawned = true;
+                Invoke("SpawnNextWave", spawnRate);
+            }
+            
         }
+    }
+
+    void SpawnWave()
+    {
+        if (IsBossWave(waveCount)) {
+            SpawnEnemiesInCircle(1);
+            
+        } else {
+            SpawnEnemiesInCircle(1 + (int)spawnIncreaser);
+            
+        }
+        waveCount += 1;
+    }
+
+    void SpawnNextWave()
+    {
+        waveHasSpawned = false;
     }
 
     private void FixedUpdate()
     {
-        spawnRate -= 0.0001f;
-        spawnIncreaser += 0.0005f;
+        if(!bossAlive){
+        spawnRate -= 0.001f;
+        spawnIncreaser += 0.004f;}
     }
+
+
+    
 
     void SpawnEnemy(Vector3Int position)
     {   
-        if(waveCount < 60){
-            Instantiate(enemyDrunkard, position, Quaternion.identity, parent.GetComponent<Transform>());
-        }else if(waveCount < 120){
-            Instantiate(enemyDancer, position, Quaternion.identity, parent.GetComponent<Transform>());
-        }else if(waveCount < 160){
-            Instantiate(enemyBouncer, position, Quaternion.identity, parent.GetComponent<Transform>());
+        if(IsBossWave(waveCount)){
+            Instantiate(BossInWave(waveCount), position, Quaternion.identity, bossEnemiParent.GetComponent<Transform>());
         }else{
-            Instantiate(enemyDancer, position, Quaternion.identity, parent.GetComponent<Transform>());
-        }   
+            if(waveCount < 60){
+                Instantiate(enemyDrunkard, position, Quaternion.identity, enmemyParent.GetComponent<Transform>());
+            }else if(waveCount < 120){
+                Instantiate(enemyDancer, position, Quaternion.identity, enmemyParent.GetComponent<Transform>());
+            }else{
+                Instantiate(enemyBouncer, position, Quaternion.identity, enmemyParent.GetComponent<Transform>());
+            }
+        }
+        
         
     }
+
+    
 
 /*    void SpawnEnemiesInCorners()
     {
@@ -82,11 +127,6 @@ public class EnemySpawner : MonoBehaviour
         }
     }*/
 
-    void SpawnNextWave()
-    {
-        waveHasSpawned = false;
-    }
-
     BoundsInt GetBoundsFromCamera()
     {
         float cameraSize = mainCamera.orthographicSize * 2;
@@ -110,6 +150,25 @@ public class EnemySpawner : MonoBehaviour
             Random.Range(bound.min.z, bound.max.z)
             );
             SpawnEnemy(new Vector3Int((int)randomPoint.x, (int)randomPoint.y, (int)randomPoint.z));
+            
         }
+    }
+
+    private bool IsBossWave(int CurentWave){
+        foreach (BossWaves boss in bossWaves){
+            if(CurentWave == boss.bossWave){
+                return true;
+            }
+        }
+        return false;
+    }
+    private GameObject BossInWave(int CurentWave){
+        foreach (BossWaves boss in bossWaves){
+            if(CurentWave == boss.bossWave){
+                return boss.enemyBOSS;
+                
+            }
+        }
+        return null;
     }
 }

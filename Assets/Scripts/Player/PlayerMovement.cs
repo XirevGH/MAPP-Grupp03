@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
+    [SerializeField] private float movementSpeed;
     [SerializeField] private Transform pos;
     public DynamicJoystick dynamicJoystick;
 
     private float horizontalValue;
     private float verticalValue;
 
+    private float movementSpeedDecrease = 1f;
+
     private SpriteRenderer rend;
     private Animator anim;
+
+    public bool isSlowed;
 
     private void Awake()
     {
@@ -24,10 +28,11 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
+    }
 
-      
-
-
+    public void IncreaseMovementSpeed(float percentageIncrease)
+    {
+        movementSpeed *= percentageIncrease;
     }
 
     private void FlipSprite(bool flip)
@@ -61,13 +66,17 @@ public class PlayerMovement : MonoBehaviour
         if (dynamicJoystick.Horizontal != 0f || dynamicJoystick.Vertical != 0f)
         {
             anim.SetFloat("MoveSpeed", Mathf.Abs(dynamicJoystick.Horizontal + dynamicJoystick.Vertical / 2));
-            pos.position = new Vector2(pos.position.x + dynamicJoystick.Horizontal * moveSpeed * Time.deltaTime, pos.position.y + dynamicJoystick.Vertical * moveSpeed * Time.deltaTime);
+            pos.position = new Vector2(pos.position.x + dynamicJoystick.Horizontal * movementSpeed * movementSpeedDecrease * Time.deltaTime, pos.position.y + dynamicJoystick.Vertical * movementSpeed * movementSpeedDecrease* Time.deltaTime);
         }
         else
         {
             anim.SetFloat("MoveSpeed", Mathf.Abs(horizontalValue + verticalValue / 2));
-            pos.position = new Vector2(pos.position.x + horizontalValue * moveSpeed * Time.deltaTime, pos.position.y + verticalValue * moveSpeed * Time.deltaTime);
+            pos.position = new Vector2(pos.position.x + horizontalValue * movementSpeed * movementSpeedDecrease * Time.deltaTime, pos.position.y + verticalValue * movementSpeed * movementSpeedDecrease * Time.deltaTime);
         }
+    }
 
+    public void DecreaseMovementSpeed(float percentageDecrease)
+    {   
+        movementSpeedDecrease = percentageDecrease;
     }
 }

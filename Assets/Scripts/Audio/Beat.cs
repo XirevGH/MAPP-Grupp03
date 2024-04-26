@@ -4,7 +4,7 @@ using UnityEngine;
 public class Beat : MonoBehaviour
 {
     [SerializeField] private float moveSpeed, increaseCooldownDuration, reduceCooldownDuration, MusicSpeedChange;
-    [SerializeField] private GameObject circle, particle, triggerController, soundManager;
+    [SerializeField] private GameObject circle, particle;
     public static float totalChangedInBPM = 0;
 
     private float percentageComplete, elapsedTime, beatLife;
@@ -12,16 +12,9 @@ public class Beat : MonoBehaviour
 
     private void Start()
     {
-        triggerController = GameObject.FindGameObjectWithTag("TriggerController");
-        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
-       
         circleStartingScale = circle.transform.localScale;
-        beatLife = (60f / (triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM() / triggerController.GetComponent<TriggerController>().GetTrigger(0).noteValue)) / soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch;
-    }
-    private void Update()
-    {
-     
-        
+        beatLife = (60f / (TriggerController.instance.GetComponent<TriggerController>().GetCurrentTrackBPM() / TriggerController.instance.GetComponent<TriggerController>().GetTrigger(0).noteValue))
+        / SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>().pitch;
     }
 
     void FixedUpdate()
@@ -41,13 +34,13 @@ public class Beat : MonoBehaviour
 
     public void DestroyNote()
     {
-        if (soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch <= 0.5)
+        if (SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>().pitch <= 0.5)
         {
-            soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = 0.5f;
+            SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>().pitch = 0.5f;
         }
         else
         {
-            soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch - MusicSpeedChange;
+            SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>().pitch = SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>().pitch - MusicSpeedChange;
         }
         
         totalChangedInBPM = totalChangedInBPM - MusicSpeedChange;
@@ -60,7 +53,7 @@ public class Beat : MonoBehaviour
         if (collider.CompareTag("Music Collider"))
         {
 
-            soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch + MusicSpeedChange;
+            SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>().pitch = SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>().pitch + MusicSpeedChange;
             totalChangedInBPM = totalChangedInBPM + MusicSpeedChange;
             Destroy(gameObject);
         }

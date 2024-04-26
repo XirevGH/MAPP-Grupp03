@@ -12,7 +12,6 @@ public class TriggerController : MonoBehaviour
     [SerializeField] GameObject trackswapper;
     [SerializeField] public Trigger[] triggers;
     [SerializeField] public bool isTriggering;
-    public GameObject soundManager;
 
     private AudioSource inGameMusic;
         
@@ -43,24 +42,43 @@ public class TriggerController : MonoBehaviour
         }
     }
 
+    public static TriggerController instance
+    {
+        get; private set;
+    }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+       
+    }
+
     void Start()
     {
         isTriggering = true;
-        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
-        inGameMusic = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
-        triggers[0].isTriggering = isTriggering;
+
+        inGameMusic = SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>();
+
     }
 
     void Update()
     {
-        inGameMusic = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
-        inGameCurrentTrackBPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswapper.GetComponent<TrackSwapper>().i];
+        inGameMusic = SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>();
+        inGameCurrentTrackBPM = SoundManager.instance.BPMforTracks[trackswapper.GetComponent<TrackSwapper>().i];
         if (isTriggering)
         {
-            foreach (var triggers in triggers)
+            foreach (Trigger trigger in triggers)
             {
-                float sampledTime = (inGameMusic.timeSamples / (inGameMusic.clip.frequency * triggers.GetIntervalLength(inGameCurrentTrackBPM)));
-                triggers.CheckForNewQuaterNote(sampledTime);
+                float sampledTime = (inGameMusic.timeSamples / (inGameMusic.clip.frequency * trigger.GetIntervalLength(inGameCurrentTrackBPM)));
+                trigger.CheckForNewQuaterNote(sampledTime);
                 //Debug.Log(Mathf.FloorToInt(sampledTime));
                 //Debug.Log(Mathf.FloorToInt(inGameMusic.));
             }

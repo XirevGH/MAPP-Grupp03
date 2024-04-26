@@ -8,13 +8,20 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject[] joysticks;
     public static bool GameIsPaused = false;
-    public GameObject pauseMenuUI, BeatSpawnerController, soundManager;
+    public GameObject pauseMenuUI, BeatSpawnerController;
+    public GameObject pauseButton; 
+
+    [SerializeField] private GameObject settingPanel;
+    private AudioSource audioSource;
+    private AudioClip clickSound;
+
+
 
     public string mainMenuSceneName = "MainMenu";
 
     private void Start()
     {
-        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
+       
     }
 
     void Update()
@@ -23,6 +30,11 @@ public class PauseMenu : MonoBehaviour
         {
             PauseButton();
         }
+    }
+
+    public void UpdatePauseButtonPosition(Vector3 newPosition)
+    {
+        pauseButton.transform.localPosition = newPosition;
     }
 
     public void PauseButton()
@@ -41,7 +53,7 @@ public class PauseMenu : MonoBehaviour
     {
         ToggleJoysticks(true);
         BeatSpawnerController.GetComponent<TriggerController>().ToggleTrigger();
-        soundManager.GetComponent<SoundManager>().ToggleMusicPause();
+        SoundManager.instance.GetComponent<SoundManager>().ToggleMusicPause();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -50,24 +62,34 @@ public class PauseMenu : MonoBehaviour
     {
         ToggleJoysticks(false);
         BeatSpawnerController.GetComponent<TriggerController>().ToggleTrigger();
-        soundManager.GetComponent<SoundManager>().ToggleMusicPause();
+        SoundManager.instance.GetComponent<SoundManager>().ToggleMusicPause();
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        audioSource.PlayOneShot(clickSound);
     }
 
     public void LoadMenu()
     {
-        soundManager.GetComponent<SoundManager>().GoBackToMain();
+        SoundManager.instance.GetComponent<SoundManager>().GoBackToMain();
         GameIsPaused = false;
         ToggleJoysticks(true);
         Time.timeScale = 1f;
         SceneManager.LoadScene(mainMenuSceneName); 
     }
 
-    public void QuitGame()
+    public void Settings()
     {
-        Application.Quit();
+        Debug.Log("Settings meny");
+        settingPanel.SetActive(true);
+        audioSource.PlayOneShot(clickSound);
+    }
+
+    public void CloseSetting()
+    {
+        settingPanel.SetActive(false);
+        audioSource.PlayOneShot(clickSound);
+
     }
 
     private void ToggleJoysticks(bool state)
