@@ -7,7 +7,7 @@ public abstract class Weapon : Item
 
     public abstract void Attack();
 
-    public void IncreaseDamage()
+    public void IncreaseDamage(float damageIncreasePerUpgrade)
     {
         damage *= damageIncreasePerUpgrade;
     }

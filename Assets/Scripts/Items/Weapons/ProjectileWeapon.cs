@@ -10,12 +10,12 @@ public abstract class ProjectileWeapon : Weapon
     [SerializeField] protected int penetration;
     [SerializeField] protected int penetrationIncreaserPerUpgrade;
 
-    public void IncreaseProjectileCount()
+    public void IncreaseProjectileCount(int projectileIncreasePerUpgrade)
     {
         amountOfProjectiles += projectileIncreasePerUpgrade;
     }
 
-    public void IncreasePenetrationAmount()
+    public void IncreasePenetrationAmount(int penetrationIncreaserPerUpgrade)
     {
         penetration += penetrationIncreaserPerUpgrade;
     }
