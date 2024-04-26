@@ -2,29 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Utility : Item
+public abstract class Utility : Item
 {
     public Player player;
-    protected float percentageIncrease;
+    [SerializeField] protected float percentage;
+    [SerializeField] protected float percentageIncreasePerUpgrade;
 
-    private void Start()
+
+    protected void UpgradeStat()
     {
-        percentageIncrease = 1.1f;
+        percentage += percentageIncreasePerUpgrade;
     }
-
-    protected void UpgradeStat(float amount)
-    {
-        percentageIncrease += amount;
-    }
-
 
     protected float GetStatPercentIncrease()
     {
-        return percentageIncrease;
+        return percentage;
     }
 
     public override List<string> GetUpgradeOptions()
     {
-        throw new System.NotImplementedException();
+        upgradeOptions.Add("UpgradeStat");
+        return upgradeOptions;
     }
 }

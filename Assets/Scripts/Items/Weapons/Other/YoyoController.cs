@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
 
-public class YoyoController : ProjectileWeapon
+public class YoyoController : PermanentProjectileWeapon
 {
     public GameObject yoyo;
 

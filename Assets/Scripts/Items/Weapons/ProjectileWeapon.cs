@@ -6,16 +6,18 @@ using UnityEngine;
 public abstract class ProjectileWeapon : Weapon
 {
     [SerializeField] protected int amountOfProjectiles;
+    [SerializeField] protected int projectileIncreasePerUpgrade;
     [SerializeField] protected int penetration;
+    [SerializeField] protected int penetrationIncreaserPerUpgrade;
 
-    public void IncreaseProjectileCount(int projectileIncrease)
+    public void IncreaseProjectileCount(int projectileIncreasePerUpgrade)
     {
-        amountOfProjectiles += projectileIncrease;
+        amountOfProjectiles += projectileIncreasePerUpgrade;
     }
 
-    public void IncreasePenetrationAmount(int penetrationAmount)
+    public void IncreasePenetrationAmount(int penetrationIncreaserPerUpgrade)
     {
-        penetration += penetrationAmount;
+        penetration += penetrationIncreaserPerUpgrade;
     }
 
     public override List<string> GetUpgradeOptions()

@@ -118,7 +118,7 @@ public class SoundManager : MonoBehaviour
 
     public void ToggleMusicPause()
     {
-        Debug.Log("isInMenuToggle");
+     
         if (isInMenu == false)
         {
             musicSource1.Pause();
@@ -164,7 +164,7 @@ public class SoundManager : MonoBehaviour
 
         if (isOnePlaying)
         {
-            musicSource2.GetComponent<Transform>().SetAsFirstSibling();
+            musicSource2.transform.SetAsFirstSibling();
             musicSource2.clip = musicTracks[trackNumber];
 
             musicSource2.Play();
@@ -178,11 +178,11 @@ public class SoundManager : MonoBehaviour
             }
             musicSource1.Stop();
             musicSource1.pitch = 1;
-            Debug.Log("musicSource1 Stop");
+          
         }
         else
         {
-            musicSource1.GetComponent<Transform>().SetAsFirstSibling();
+            musicSource1.transform.SetAsFirstSibling();
             musicSource1.clip = musicTracks[trackNumber];
             musicSource1.Play();
             while (timeElapsed < timeToFade)

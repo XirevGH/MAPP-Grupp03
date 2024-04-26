@@ -167,8 +167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df1d6a6f433b8b242a5e8bc0fdff68c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Groove Armor
   player: {fileID: 1561011401}
+  percentage: 0
+  percentageIncreasePerUpgrade: 0
 --- !u!1 &24887101
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &41218216
 RectTransform:
   m_ObjectHideFlags: 0
@@ -339,7 +341,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Movement Speed Upgrade
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -529,8 +531,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19476edc09a67704db3b37bf7ac060ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Bass Guitar
   damage: 10
+  damageIncreasePerUpgrade: 0
   anim: {fileID: 128322717}
 --- !u!1 &138787948
 GameObject:
@@ -549,7 +552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &138787949
 RectTransform:
   m_ObjectHideFlags: 0
@@ -775,6 +778,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dynamic Joystick Left Moving
       objectReference: {fileID: 0}
+    - target: {fileID: 8135886326569738825, guid: 56fae09712773584fb63896d473a98ee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8135886327475159579, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 256
@@ -822,13 +829,14 @@ GameObject:
   - component: {fileID: 201029721}
   - component: {fileID: 201029720}
   - component: {fileID: 201029719}
+  - component: {fileID: 201029723}
   m_Layer: 0
   m_Name: ChoiceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &201029718
 RectTransform:
   m_ObjectHideFlags: 0
@@ -910,9 +918,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1672516155}
-          m_TargetAssemblyTypeName: RollerSkates, Assembly-CSharp
-          m_MethodName: UpgradeMovementSpeed
+        - m_Target: {fileID: 201029723}
+          m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
+          m_MethodName: ExecuteMethod
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -972,6 +980,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201029717}
   m_CullTransparentMesh: 1
+--- !u!114 &201029723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201029717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111f720c6bae44947aed118f8e1c351a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeAbility: {fileID: 0}
 --- !u!1 &310060220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,6 +1058,8 @@ MonoBehaviour:
   pauseMenuUI: {fileID: 1880770869}
   BeatSpawnerController: {fileID: 1068788364}
   soundManager: {fileID: 0}
+  pauseButton: {fileID: 0}
+  settingPanel: {fileID: 0}
   mainMenuSceneName: MainMenu
 --- !u!114 &310060223
 MonoBehaviour:
@@ -1148,6 +1171,7 @@ GameObject:
   - component: {fileID: 352059118}
   - component: {fileID: 352059117}
   - component: {fileID: 352059116}
+  - component: {fileID: 352059120}
   m_Layer: 0
   m_Name: ChoiceButton
   m_TagString: Untagged
@@ -1236,10 +1260,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 424510086}
-          m_TargetAssemblyTypeName: ProjectileWeapon, Assembly-CSharp
-          m_MethodName: IncreaseProjectileCount
-          m_Mode: 3
+        - m_Target: {fileID: 352059120}
+          m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
+          m_MethodName: ExecuteMethod
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1298,6 +1322,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352059114}
   m_CullTransparentMesh: 1
+--- !u!114 &352059120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352059114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111f720c6bae44947aed118f8e1c351a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeAbility: {fileID: 0}
 --- !u!1 &356753003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,7 +1392,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Synthwave Blast Upgrade
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1680,8 +1717,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9577c52a733c8b042a79e7b59ea21e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Electric Guitar
   damage: 5
+  damageIncreasePerUpgrade: 0
   amountOfTethers: 0
   bolt: {fileID: 8209966115709815941, guid: c89b4386ca74450468870cc3cee72ee5, type: 3}
 --- !u!58 &635767462
@@ -1742,6 +1780,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 852507901}
     m_Modifications:
+    - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+      propertyPath: itemName
+      value: Yoyo
+      objectReference: {fileID: 0}
     - target: {fileID: 7772078910061721573, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: m_Name
       value: YoyoController
@@ -1857,6 +1899,70 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1068788366}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &708102286
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 708102288}
+  - component: {fileID: 708102287}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: UpgradeSystem
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &708102287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708102286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07de8c147208481458b109040a08394e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panels:
+  - {fileID: 201029717}
+  - {fileID: 1168283941}
+  - {fileID: 352059114}
+  panelList:
+  - {fileID: 138787948}
+  - {fileID: 1086112262}
+  - {fileID: 1207474350}
+  items:
+  - {fileID: 1672516155}
+  - {fileID: 4280477}
+  - {fileID: 1810355224}
+  - {fileID: 128322718}
+  - {fileID: 695703885}
+  - {fileID: 2087042481}
+  - {fileID: 424510086}
+  - {fileID: 635767461}
+  - {fileID: 1906168803}
+  player: {fileID: 1561011401}
+  playerMovement: {fileID: 1561011402}
+--- !u!4 &708102288
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708102286}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 417.86624, y: 335.65112, z: -1.0266254}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &729949599
 GameObject:
@@ -2279,7 +2385,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -2646,6 +2752,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998947122}
   m_CullTransparentMesh: 1
+--- !u!1001 &1009745155
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 184678747777753593, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 6147471048923451102, guid: 2cb7b88d5667a854d9cc7f2844ab1bab, type: 3}
+    - target: {fileID: 1097146257069736885, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 324
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097146257069736885, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1097146257069736885, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171190855158211638, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171190855158211638, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171190855158211638, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171190855158211638, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171190855158211638, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171190855158211638, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171190855158211638, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171190855158211638, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171190855158211638, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171190855158211638, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917292742459662858, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_Name
+      value: Purse
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 4648072168913425530, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
 --- !u!1 &1047327795
 GameObject:
   m_ObjectHideFlags: 0
@@ -3497,6 +3677,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dynamic Joystick Right Aiming
       objectReference: {fileID: 0}
+    - target: {fileID: 8135886326569738825, guid: 56fae09712773584fb63896d473a98ee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8135886327475159579, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3507,11 +3691,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135886327475159579, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8135886327475159579, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8135886327475159579, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3564,6 +3748,7 @@ GameObject:
   - component: {fileID: 1168283945}
   - component: {fileID: 1168283944}
   - component: {fileID: 1168283943}
+  - component: {fileID: 1168283947}
   m_Layer: 0
   m_Name: ChoiceButton
   m_TagString: Untagged
@@ -3652,9 +3837,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4280477}
-          m_TargetAssemblyTypeName: GrooveArmor, Assembly-CSharp
-          m_MethodName: UpgradeHealth
+        - m_Target: {fileID: 1168283947}
+          m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
+          m_MethodName: ExecuteMethod
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3714,6 +3899,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168283941}
   m_CullTransparentMesh: 1
+--- !u!114 &1168283947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168283941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111f720c6bae44947aed118f8e1c351a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeAbility: {fileID: 0}
 --- !u!1 &1183172518
 GameObject:
   m_ObjectHideFlags: 0
@@ -3731,7 +3929,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1183172519
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3807,7 +4005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1198481311
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3939,7 +4137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1207474351
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4463,13 +4661,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe01b99186bb2e40b8746bb79e5d29b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossWaves: []
+  spawnIncreaser: 0
   mainCamera: {fileID: 916453220}
   tilemap: {fileID: 2142026995}
   enemyBouncer: {fileID: 6536046719154458180, guid: e08403d79ea9a0046acfb2c680d5eb32, type: 3}
   enemyDancer: {fileID: 6536046719154458180, guid: 935a3a109fd200c4080657daa8c508d3, type: 3}
   enemyDrunkard: {fileID: 6536046719154458180, guid: 3ecd58846d80571498c5c49f0cba8ec3, type: 3}
-  enemyDrunkardBOSS: {fileID: 6536046719154458180, guid: e9c853b6690eefb479ed71008c35e6bf, type: 3}
-  parent: {fileID: 1219520225}
+  enmemyParent: {fileID: 1219520225}
+  bossParent: {fileID: 1219520225}
   spawnLocations:
   - {fileID: 1539793800}
   - {fileID: 24887101}
@@ -4477,8 +4677,8 @@ MonoBehaviour:
   - {fileID: 1882704358}
   - {fileID: 1127430816}
   player: {fileID: 1561011398}
-  waveCount: 0
   spawnRate: 3
+  waveCount: 0
 --- !u!1 &1414131718
 GameObject:
   m_ObjectHideFlags: 0
@@ -4529,7 +4729,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1442561204
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4692,11 +4892,10 @@ GameObject:
   - component: {fileID: 1509910513}
   - component: {fileID: 1509910515}
   - component: {fileID: 1509910514}
-  - component: {fileID: 1509910517}
   - component: {fileID: 1509910516}
   m_Layer: 0
   m_Name: UpgradeScreen
-  m_TagString: Untagged
+  m_TagString: UpgradeSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4773,35 +4972,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5616be4a33ee32b4195c4848c3b2294c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1509910517
+--- !u!1 &1524844439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1524844441}
+  - component: {fileID: 1524844440}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1524844440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509910512}
+  m_GameObject: {fileID: 1524844439}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07de8c147208481458b109040a08394e, type: 3}
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panels:
-  - {fileID: 201029717}
-  - {fileID: 1168283941}
-  - {fileID: 352059114}
-  weapons:
-  - {fileID: 128322718}
-  - {fileID: 695703885}
-  - {fileID: 2087042481}
-  - {fileID: 424510086}
-  - {fileID: 635767461}
-  - {fileID: 1906168803}
-  utilities:
-  - {fileID: 1672516155}
-  - {fileID: 4280477}
-  - {fileID: 1810355224}
-  player: {fileID: 1561011401}
-  playerMovement: {fileID: 1561011402}
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 0.57
+  sharedProfile: {fileID: 11400000, guid: 7e8d28c4ecca5604ebc9c640d937cbb6, type: 2}
+--- !u!4 &1524844441
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524844439}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1539793800
 GameObject:
   m_ObjectHideFlags: 0
@@ -5110,6 +5329,7 @@ MonoBehaviour:
   movementSpeed: 5
   pos: {fileID: 1561011399}
   dynamicJoystick: {fileID: 188560448}
+  isSlowed: 0
 --- !u!95 &1561011403
 Animator:
   serializedVersion: 5
@@ -5302,7 +5522,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Health Upgrade
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5509,6 +5729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   damage: 1
+  damageIncreasePerUpgrade: 0
   usedAbility: 0
   dealDamage: 0
   bombMoving: 0
@@ -5613,8 +5834,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b63fd0b6f7573c143af40ce3a5ef27f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Roller Skates
   player: {fileID: 1561011401}
+  percentage: 0
+  percentageIncreasePerUpgrade: 0
   playerMovement: {fileID: 1561011402}
 --- !u!1 &1681639545
 GameObject:
@@ -5951,6 +6174,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1561011401}
+    - target: {fileID: 6851086163164186471, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
+      propertyPath: itemName
+      value: Chill Vibe
+      objectReference: {fileID: 0}
     - target: {fileID: 6851086163164186471, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
       propertyPath: slowSpeedPercent
       value: 0.5
@@ -6557,10 +6784,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac2b662e661ee9d478e61e8059282a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Saxophone
   damage: 3
+  damageIncreasePerUpgrade: 0
   amountOfProjectiles: 0
+  projectileIncreasePerUpgrade: 0
   penetration: 1
+  penetrationIncreaserPerUpgrade: 0
   shootingPoint: {fileID: 1906168801}
   notePrefab: {fileID: 5730958551181348608, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
   speed: 1
@@ -6996,6 +7226,10 @@ PrefabInstance:
       value: DiscoBallController
       objectReference: {fileID: 0}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
+      propertyPath: itemName
+      value: Disco Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: cooldownDuration
       value: 0
       objectReference: {fileID: 0}
@@ -7038,7 +7272,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2118340406
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7374,13 +7608,12 @@ MonoBehaviour:
   tilemap: {fileID: 2142026995}
   tileToPlace: {fileID: 11400000, guid: 3f42d61ffd47d1a40aede7a4e2e84d5d, type: 2}
   colors:
-  - {r: 1, g: 0.02745098, b: 0.5294118, a: 1}
-  - {r: 0.4117647, g: 0.8666667, b: 0.36862746, a: 1}
-  - {r: 0.40392157, g: 0.7176471, b: 0.95686275, a: 1}
-  - {r: 0.9882353, g: 0.78039217, b: 0.34117648, a: 1}
-  - {r: 0.2, g: 0.12156863, b: 0.8784314, a: 1}
-  - {r: 0.68235296, g: 0.05882353, b: 1, a: 1}
-  - {r: 0.44313726, g: 0.011764706, b: 0.8784314, a: 1}
+  - {r: 0.50980395, g: 0.043137256, b: 0.8784314, a: 1}
+  - {r: 0.8784314, g: 0.11372549, b: 0.58431375, a: 1}
+  - {r: 0.7882353, g: 0.11372549, b: 0.8784314, a: 1}
+  - {r: 0.23529412, g: 0.043137256, b: 0.8784314, a: 1}
+  - {r: 0.8784314, g: 0.11372549, b: 0.1254902, a: 1}
+  - {r: 0.83137256, g: 0.46666667, b: 0.8784314, a: 1}
   gameController: {fileID: 2047097353}
 --- !u!483693784 &2142026997
 TilemapRenderer:
@@ -7446,6 +7679,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 368175600}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2751250355446586342
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5080476438742115367, guid: 2cb7b88d5667a854d9cc7f2844ab1bab, type: 3}
+      propertyPath: lifeTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6147471048923451102, guid: 2cb7b88d5667a854d9cc7f2844ab1bab, type: 3}
+      propertyPath: m_Name
+      value: PurseContentText
+      objectReference: {fileID: 0}
+    - target: {fileID: 6147471048923451102, guid: 2cb7b88d5667a854d9cc7f2844ab1bab, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174684133495140923, guid: 2cb7b88d5667a854d9cc7f2844ab1bab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174684133495140923, guid: 2cb7b88d5667a854d9cc7f2844ab1bab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174684133495140923, guid: 2cb7b88d5667a854d9cc7f2844ab1bab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174684133495140923, guid: 2cb7b88d5667a854d9cc7f2844ab1bab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174684133495140923, guid: 2cb7b88d5667a854d9cc7f2844ab1bab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174684133495140923, guid: 2cb7b88d5667a854d9cc7f2844ab1bab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174684133495140923, guid: 2cb7b88d5667a854d9cc7f2844ab1bab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174684133495140923, guid: 2cb7b88d5667a854d9cc7f2844ab1bab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174684133495140923, guid: 2cb7b88d5667a854d9cc7f2844ab1bab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174684133495140923, guid: 2cb7b88d5667a854d9cc7f2844ab1bab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2cb7b88d5667a854d9cc7f2844ab1bab, type: 3}
 --- !u!1001 &3966822992307661881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7498,6 +7796,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -27.47
       objectReference: {fileID: 0}
+    - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+      propertyPath: itemName
+      value: Synthwave Blast
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+      propertyPath: amountOfProjectiles
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+      propertyPath: damageIncreasePerUpgrade
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+      propertyPath: projectileIncreasePerUpgrade
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+      propertyPath: penetrationIncreaserPerUpgrade
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7518,3 +7836,7 @@ SceneRoots:
   - {fileID: 916453224}
   - {fileID: 2047097354}
   - {fileID: 1873560449}
+  - {fileID: 1524844441}
+  - {fileID: 708102288}
+  - {fileID: 1009745155}
+  - {fileID: 2751250355446586342}

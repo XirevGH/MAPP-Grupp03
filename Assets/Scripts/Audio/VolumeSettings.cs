@@ -8,9 +8,15 @@ public class VolumeSettings : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider SFXSlider;
 
+    public PauseMenu pauseMenu;
+    public RectTransform pauseButtonRectTransform;
+
+    private AudioSource audioSource;
+    private AudioClip clickSound;
     private void Start()
     {
-   if (PlayerPrefs.HasKey("musicVolume"))
+        audioSource = GetComponent<AudioSource>();
+        if (PlayerPrefs.HasKey("musicVolume"))
         {
             LoadVolume();
         } else
@@ -42,4 +48,21 @@ public class VolumeSettings : MonoBehaviour
         SetMusicVolume();
         SetSFXVolume();
     }
+
+    public void OnLeftButtonClick()
+    {
+        pauseButtonRectTransform.anchorMin = new Vector2(0f, pauseButtonRectTransform.anchorMin.y);
+        pauseButtonRectTransform.anchorMax = new Vector2(0f, pauseButtonRectTransform.anchorMax.y);
+        audioSource.PlayOneShot(clickSound);
+    }
+
+    public void OnRightButtonClick()
+    {
+        float offset = 0.1f;
+        float newXAnchor = 1f - offset;
+        pauseButtonRectTransform.anchorMin = new Vector2(newXAnchor, pauseButtonRectTransform.anchorMin.y);
+        pauseButtonRectTransform.anchorMax = new Vector2(newXAnchor, pauseButtonRectTransform.anchorMax.y);
+        audioSource.PlayOneShot(clickSound);
+    }
+
 }

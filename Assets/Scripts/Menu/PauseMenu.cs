@@ -9,6 +9,13 @@ public class PauseMenu : MonoBehaviour
     public GameObject[] joysticks;
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI, BeatSpawnerController, soundManager;
+    public GameObject pauseButton; 
+
+    [SerializeField] private GameObject settingPanel;
+    private AudioSource audioSource;
+    private AudioClip clickSound;
+
+
 
     public string mainMenuSceneName = "MainMenu";
 
@@ -23,6 +30,11 @@ public class PauseMenu : MonoBehaviour
         {
             PauseButton();
         }
+    }
+
+    public void UpdatePauseButtonPosition(Vector3 newPosition)
+    {
+        pauseButton.transform.localPosition = newPosition;
     }
 
     public void PauseButton()
@@ -54,6 +66,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        audioSource.PlayOneShot(clickSound);
     }
 
     public void LoadMenu()
@@ -68,6 +81,15 @@ public class PauseMenu : MonoBehaviour
     public void Settings()
     {
         Debug.Log("Settings meny");
+        settingPanel.SetActive(true);
+        audioSource.PlayOneShot(clickSound);
+    }
+
+    public void CloseSetting()
+    {
+        settingPanel.SetActive(false);
+        audioSource.PlayOneShot(clickSound);
+
     }
 
     private void ToggleJoysticks(bool state)

@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NoteProjectile : Projectile { 
+public class NoteProjectile : Projectile 
+{ 
     
     private Vector3 direction;
 
@@ -44,5 +45,6 @@ public class NoteProjectile : Projectile {
         DealDamage(other);
         DestroyWhenMaxPenetration();
     }
+
     
 }

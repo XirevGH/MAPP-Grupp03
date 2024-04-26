@@ -23,11 +23,11 @@ public class AsawinDebugging : MonoBehaviour
         if (Input.GetKeyDown(keyCode))
         {
             spriteRenderer.color = Color.blue;
+            //float random = UnityEngine.Random.Range(0f, 101f);
+            //Debug.Log(random);
 
-            Debug.Log("Boogie Boogie");
 
-
-            testingObj1.GetComponent<SlowAroundPlayer>().UpgradeRradius(10);
+            testingObj1.GetComponent<DecoyController>().Throw();
 
 
         }

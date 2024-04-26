@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class VinylDisc : Projectile
 {
-    [SerializeField] private float travelTime, BPM, noteValue, pitch, travelDistance, rotateSpeed, angle, centerOffSet;
+    [SerializeField] private float travelTime, BPM, noteValue, pitch, travelDistance, rotateSpeed, angle, controlPointOffSet;
     [SerializeField] private int triggerNumber;
     [SerializeField] private GameObject vinylDisc;
     [SerializeField] private AnimationCurve curve;
@@ -15,7 +15,7 @@ public class VinylDisc : Projectile
     public float elapsedTime, percentageComplete, lerpElapsedTime;
     public bool attack, isAtPlayer, isHalfWay;
 
-    private Vector3  startPosition, endPosition, playerPosition, centerPivot1;
+    private Vector3  startPosition, endPosition, playerPosition, controlPoint;
     private Quaternion aimingArrowRotation;
     private SoundManager soundManager;
     private AudioSource source;
@@ -29,13 +29,12 @@ public class VinylDisc : Projectile
         aimingArrowRotation = GameObject.FindGameObjectWithTag("AimingArrow").transform.rotation;
       
         startPosition = transform.position;
+        //find endPosition by using Trigonometry (angle of the aiming arrow and travelDistance).
         endPosition = new Vector3(
         Mathf.Cos(Mathf.Deg2Rad * aimingArrowRotation.eulerAngles.z) * travelDistance + startPosition.x,
         Mathf.Sin(Mathf.Deg2Rad * aimingArrowRotation.eulerAngles.z) * travelDistance + startPosition.y, startPosition.z);
 
-        centerPivot1 = (startPosition + endPosition) * 0.5f;
-
-        centerPivot1 -= new Vector3(0, -centerOffSet);
+        controlPoint = BezierCurve.CalculateControlPoint(startPosition, endPosition, controlPointOffSet, true);
 
         if (aimingArrowRotation.eulerAngles.z <= 90f && aimingArrowRotation.eulerAngles.z >= -90f)
         {
@@ -56,22 +55,21 @@ public class VinylDisc : Projectile
         noteValue = triggerController.GetTrigger(triggerNumber).noteValue;
         pitch = source.pitch;
     
-        travelTime = (((60f / (BPM / noteValue)) / pitch) /4f);
+        travelTime = (((60f / (BPM / noteValue)) / pitch) /2f);
 
         if (isAtPlayer)
         {
             elapsedTime += Time.deltaTime;
             percentageComplete = elapsedTime / travelTime;
-            Debug.Log(centerOffSet);
-            transform.position = QuadraticBezierCurve(startPosition, endPosition, centerPivot1,  curve.Evaluate(percentageComplete));
+            transform.position = BezierCurve.QuadraticBezierCurve(startPosition, endPosition, controlPoint, curve.Evaluate(percentageComplete));
+            
             angle -= rotateSpeed;
             vinylDisc.transform.eulerAngles = new Vector3(0, 0, angle);
             if (percentageComplete >= 1)
             {
                 elapsedTime = 0;
                 percentageComplete = 0;
-                centerOffSet = -centerOffSet * 3;
-                centerPivot1 -= new Vector3(0, -centerOffSet);
+                controlPoint = BezierCurve.CalculateControlPoint(endPosition, playerPosition, controlPointOffSet, false);
 
                 isAtPlayer = false;
                 isHalfWay = true;
@@ -81,10 +79,8 @@ public class VinylDisc : Projectile
         {
             elapsedTime += Time.deltaTime;
             percentageComplete = elapsedTime / travelTime;
-
-
-            transform.position = QuadraticBezierCurve(endPosition, playerPosition, centerPivot1, curve.Evaluate(percentageComplete));
-            Debug.Log(centerOffSet);
+            transform.position = BezierCurve.QuadraticBezierCurve(endPosition, playerPosition, controlPoint, curve.Evaluate(percentageComplete));
+          
             angle -= rotateSpeed;
             vinylDisc.transform.eulerAngles = new Vector3(0, 0, angle);
             if (percentageComplete >= 1)
@@ -93,6 +89,11 @@ public class VinylDisc : Projectile
             }
         }
     }
+
+
+   
+
+
 
     public void Attack() 
     {
@@ -104,11 +105,4 @@ public class VinylDisc : Projectile
         DealDamage(other);
     }
 
-    private Vector2 QuadraticBezierCurve(Vector2 startPosition, Vector2 endPosition, Vector2 controlPoint, float time)
-    {
-        Vector2 p0 = Vector2.Lerp(startPosition, controlPoint, time);
-        Vector2 p1 = Vector2.Lerp(controlPoint, endPosition, time);
-
-        return Vector2.Lerp(p0, p1, time);
-    }
 }

@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
 
     private short burstAmount;
 
+    
     private void Start()
     {
         money = playerStats.money; 
@@ -111,6 +112,8 @@ public class Player : MonoBehaviour
         UpdateXPSlider();
         MainManager.Instance.mainLevel = level;
         upgradeScreen.OpenUpgradeWindow();
+        upgrade.StartUpgradeSystem();
+        
         /*if (level == 2)
         {
             electricGuitar.SetActive(true);
@@ -149,7 +152,7 @@ public class Player : MonoBehaviour
     }
     #endregion
 
-    private void AddItem(Item item)
+    public void AddItem(Item item)
     {
         currentItems.Add(item);
     }

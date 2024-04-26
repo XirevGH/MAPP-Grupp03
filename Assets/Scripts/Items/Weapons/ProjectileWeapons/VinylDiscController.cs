@@ -16,9 +16,13 @@ public class VinylDiscController : ProjectileWeapon
 
     public override void Attack()
     {
-        playerPosition = playerTransform.position;
-        GameObject clone = Instantiate(vinylDisc, playerPosition, Quaternion.identity);
-        clone.GetComponent<Projectile>().SetDamage(damage);
-        clone.GetComponent<VinylDisc>().isAtPlayer = true;
+        for (int i = 0; i < amountOfProjectiles; i++)
+        {
+            playerPosition = playerTransform.position;
+            GameObject clone = Instantiate(vinylDisc, playerPosition, Quaternion.identity);
+            clone.GetComponent<Projectile>().SetDamage(damage);
+            clone.GetComponent<Projectile>().SetPenetration(penetration);
+            clone.GetComponent<VinylDisc>().isAtPlayer = true;
+        }
     }
 }

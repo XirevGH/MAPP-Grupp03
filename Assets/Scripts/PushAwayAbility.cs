@@ -52,7 +52,6 @@ public class PushAwayAbility : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
-       
     }
 
 }
