@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5098172786326807085}
   - component: {fileID: 7604781593359741280}
   - component: {fileID: 4141646278512233401}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vinyl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 179463521337691585}
   - component: {fileID: 3199626623239958542}
   - component: {fileID: 252713100262256615}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}

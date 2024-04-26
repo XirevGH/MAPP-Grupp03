@@ -1,20 +1,18 @@
-using System.Collections.Generic;
 
 public abstract class Weapon : Item
 {
     public float damage;
-    public float damageIncreasePerUpgrade;
+    public float percentageDamageIncreasePerUpgrade;
 
     public abstract void Attack();
 
-    public void IncreaseDamage(float damageIncreasePerUpgrade)
+    public virtual void IncreaseDamage()
     {
-        damage *= damageIncreasePerUpgrade;
+        damage *= percentageDamageIncreasePerUpgrade;
     }
 
-    public override List<string> GetUpgradeOptions()
+    protected override void CreateUpgradeOptions()
     {
         upgradeOptions.Add("IncreaseDamage");
-        return upgradeOptions;
     }
 }

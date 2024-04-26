@@ -8,7 +8,12 @@ public class DiscoBallController : ProjectileWeapon
 
     public override void Attack()
     {
-        GameObject clone = Instantiate(discoBall, transform.position, Quaternion.identity);
-        clone.GetComponent<DiscoBall>().SetDamage(damage);
+        
+        for (int i = 0; i < amountOfProjectiles; i++) 
+        {
+            GameObject clone = Instantiate(discoBall, transform.position, Quaternion.identity);
+            clone.GetComponent<DiscoBall>().SetDamage(damage);
+            clone.GetComponent<DiscoBall>().SetPenetration(penetration);
+        }
     }
 }

@@ -21,15 +21,15 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - guitar hero
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Projectile
+  - MusicNotes
+  - Utility
+  - Weapon
+  - Pickups
   - 
   - 
   - 

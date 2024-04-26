@@ -9,7 +9,7 @@ public abstract class Utility : Item
     [SerializeField] protected float percentageIncreasePerUpgrade;
 
 
-    protected void UpgradeStat()
+    public void UpgradeStat()
     {
         percentage += percentageIncreasePerUpgrade;
     }
@@ -19,9 +19,8 @@ public abstract class Utility : Item
         return percentage;
     }
 
-    public override List<string> GetUpgradeOptions()
+    protected override void CreateUpgradeOptions()
     {
         upgradeOptions.Add("UpgradeStat");
-        return upgradeOptions;
     }
 }

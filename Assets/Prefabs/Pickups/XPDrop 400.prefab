@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8449104146653439331}
   - component: {fileID: 4764066360738926745}
   - component: {fileID: 6728562833124184542}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: XPDrop 400
   m_TagString: XPDrop20
   m_Icon: {fileID: 0}

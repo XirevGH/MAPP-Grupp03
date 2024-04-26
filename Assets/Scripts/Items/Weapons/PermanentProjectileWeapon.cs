@@ -6,15 +6,24 @@ public abstract class PermanentProjectileWeapon : Weapon
 {
     [SerializeField] protected int amountOfProjectiles;
     [SerializeField] protected int projectileIncreasePerUpgrade;
+
+    public override void IncreaseDamage()
+    {
+        base.IncreaseDamage();
+        foreach(Projectile projectile in gameObject.GetComponentsInChildren<Projectile>())
+        {
+            projectile.SetDamage(damage);
+        }
+    }
+
     public void IncreaseProjectileCount()
     {
         amountOfProjectiles += projectileIncreasePerUpgrade;
     }
 
-    public override List<string> GetUpgradeOptions()
+    protected override void CreateUpgradeOptions()
     {
-        base.GetUpgradeOptions();
+        base.CreateUpgradeOptions();
         upgradeOptions.Add("IncreaseProjectileCount");
-        return upgradeOptions;
     }
 }

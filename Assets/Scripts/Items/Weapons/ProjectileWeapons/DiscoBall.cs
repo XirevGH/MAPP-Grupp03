@@ -17,5 +17,6 @@ public class DiscoBall : Projectile
     private void OnTriggerEnter2D(Collider2D other)
     {
         DealDamage(other);
+        DestroyWhenMaxPenetration();
     }
 }

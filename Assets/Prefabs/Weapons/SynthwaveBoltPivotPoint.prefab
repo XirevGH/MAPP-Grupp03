@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8395298064843207795}
   - component: {fileID: -4737422842211171912}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SynthwaveBoltPivotPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 6706588759494455081}
   - component: {fileID: 5742742297498705844}
   - component: {fileID: 2340184760222946023}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SynthwaveBolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}

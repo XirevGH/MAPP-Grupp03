@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4150572735521592843}
   - component: {fileID: 708104104445463441}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 2085584343929549221}
   - component: {fileID: 3118479947898944213}
   - component: {fileID: 4867680817826248142}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: beat
   m_TagString: Beat
   m_Icon: {fileID: 0}
@@ -228,7 +228,6 @@ MonoBehaviour:
   particle: {fileID: 2506341979681168310, guid: 4eefcb67bfd2afe44beea10856d5040b, type: 3}
   triggerController: {fileID: 0}
   soundManager: {fileID: 0}
-  weapons: []
 --- !u!58 &4867680817826248142
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 8952015041370688503}
   - component: {fileID: 8283433590032857020}
   - component: {fileID: 5618277646040145595}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 1244441984418440535}
   - component: {fileID: -8718832928761771214}
   - component: {fileID: 5789765322901318672}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boss-Drunkard
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -560,7 +560,7 @@ GameObject:
   - component: {fileID: 6468836483505505757}
   - component: {fileID: 287581913604085729}
   - component: {fileID: 2898152515693454215}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

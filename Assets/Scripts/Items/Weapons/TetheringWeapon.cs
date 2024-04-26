@@ -14,31 +14,30 @@ public abstract class TetheringWeapon : Weapon
         amountOfTethers += tetherIncreasePerUpgrade;
     }
 
-    protected GameObject[] GetClosestEnemies(int amountOfTargets)
+    protected GameObject[] GetClosestEnemies(int amountOfTethers)
     {
         SortedSet<GameObject> sortedEnemies = new SortedSet<GameObject>(new GameObjectComparer());
         foreach (GameObject enemy in enemies)
         {
             sortedEnemies.Add(enemy);
         }
-        return sortedEnemies.Take(amountOfTargets).ToArray();
+        return sortedEnemies.Take(amountOfTethers).ToArray();
     }
-    protected int AdjustTargetOverflow(int amountOfTargets)
+    protected int AdjustTargetOverflow(int amountOfTethers)
     {
-        if (enemies.Count < amountOfTargets)
+        if (enemies.Count < amountOfTethers)
         {
             return enemies.Count;
         }
         else
         {
-            return amountOfTargets;
+            return amountOfTethers;
         }
     }
 
-    public override List<string> GetUpgradeOptions()
+    protected override void CreateUpgradeOptions()
     {
-        base.GetUpgradeOptions();
+        base.CreateUpgradeOptions();
         upgradeOptions.Add("IncreaseTetherAmount");
-        return upgradeOptions;
     }
 }
