@@ -12,7 +12,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseButton; 
 
     [SerializeField] private GameObject settingPanel;
- 
+    private AudioSource audioSource;
+    private AudioClip clickSound;
+
 
 
     public string mainMenuSceneName = "MainMenu";
@@ -64,6 +66,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        audioSource.PlayOneShot(clickSound);
     }
 
     public void LoadMenu()
@@ -79,11 +82,13 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Settings meny");
         settingPanel.SetActive(true);
+        audioSource.PlayOneShot(clickSound);
     }
 
     public void CloseSetting()
     {
         settingPanel.SetActive(false);
+        audioSource.PlayOneShot(clickSound);
 
     }
 
