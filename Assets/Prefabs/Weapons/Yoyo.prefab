@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7388080915232641962}
   - component: {fileID: 6679890137627965694}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: string
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3913786379147310409}
   - component: {fileID: 6401558557806053283}
   - component: {fileID: 6086935685895387194}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Yoyo
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -131,14 +131,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe35c0941351f294f9da002e8ea6de7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
-  weaponReady: 0
-  cooldownDuration: 10
   rotateSpeed: 1
   colliderStartingOffset: 4
   colliderSuperModeOffset: 7
   ball: {fileID: 5725440702849570542}
   yoyoString: {fileID: 1982550428750947484}
+  triggerController: {fileID: 0}
+  soundManager: {fileID: 0}
   ballStartPosition: {x: 4, y: 0, z: 0}
   ballSuperModePosition: {x: 7, y: 0, z: 0}
   stringStartPosition: {x: 2, y: 0, z: 0}
@@ -195,7 +194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1626674097939808569}
   - component: {fileID: 6078316184561116702}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bollz
   m_TagString: Untagged
   m_Icon: {fileID: 0}

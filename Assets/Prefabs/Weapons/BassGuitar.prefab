@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3925303190944728684}
   - component: {fileID: 2660508650626073481}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8222904420854671663}
   - component: {fileID: 1028507665460608777}
   - component: {fileID: 6884054059474098494}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BassGuitar
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19476edc09a67704db3b37bf7ac060ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  itemName: 
   damage: 5
-  weaponReady: 0
-  cooldownDuration: 3
+  percentageDamageIncreasePerUpgrade: 0
+  anim: {fileID: 0}

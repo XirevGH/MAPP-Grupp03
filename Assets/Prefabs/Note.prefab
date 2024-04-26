@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3118479947898944213}
   - component: {fileID: 5527953164273948584}
   - component: {fileID: 4584299650944298638}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Note
   m_TagString: Beat
   m_Icon: {fileID: 0}
@@ -120,9 +120,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   increaseCooldownDuration: 0.1
+  reduceCooldownDuration: 0
+  MusicSpeedChange: 0
   circle: {fileID: 0}
   particle: {fileID: 0}
-  weapons: []
+  triggerController: {fileID: 0}
+  soundManager: {fileID: 0}
 --- !u!114 &5527953164273948584
 MonoBehaviour:
   m_ObjectHideFlags: 0
