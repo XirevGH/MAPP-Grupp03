@@ -532,8 +532,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Bass Guitar
-  damage: 0
-  percentageDamageIncreasePerUpgrade: 0
+  damage: 5
+  percentageDamageIncreasePerUpgrade: 1.1
   anim: {fileID: 128322717}
 --- !u!1 &138787948
 GameObject:
@@ -1714,10 +1714,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Electric Guitar
-  damage: 0
-  percentageDamageIncreasePerUpgrade: 0
-  amountOfTethers: 0
-  tetherIncreasePerUpgrade: 0
+  damage: 2
+  percentageDamageIncreasePerUpgrade: 1.1
+  amountOfTethers: 1
+  tetherIncreasePerUpgrade: 2
   bolt: {fileID: 8209966115709815941, guid: c89b4386ca74450468870cc3cee72ee5, type: 3}
 --- !u!58 &635767462
 CircleCollider2D:
@@ -5132,7 +5132,7 @@ GameObject:
   - component: {fileID: 1561011402}
   - component: {fileID: 1561011401}
   - component: {fileID: 1561011400}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6680,12 +6680,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Saxophone
-  damage: 0
-  percentageDamageIncreasePerUpgrade: 0
-  amountOfProjectiles: 0
-  projectileIncreasePerUpgrade: 0
+  damage: 1
+  percentageDamageIncreasePerUpgrade: 1.1
+  amountOfProjectiles: 1
+  projectileIncreasePerUpgrade: 1
   penetration: 1
-  penetrationIncreaserPerUpgrade: 0
+  penetrationIncreaserPerUpgrade: 1
   shootingPoint: {fileID: 1906168801}
   notePrefab: {fileID: 5730958551181348608, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
   speed: 1
@@ -7125,8 +7125,28 @@ PrefabInstance:
       value: Disco Ball
       objectReference: {fileID: 0}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
+      propertyPath: penetration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: cooldownDuration
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
+      propertyPath: amountOfProjectiles
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
+      propertyPath: projectileIncreasePerUpgrade
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
+      propertyPath: penetrationIncreaserPerUpgrade
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
+      propertyPath: percentageDamageIncreasePerUpgrade
+      value: 1.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7645,6 +7665,10 @@ PrefabInstance:
     - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
       propertyPath: penetrationIncreaserPerUpgrade
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+      propertyPath: percentageDamageIncreasePerUpgrade
+      value: 1.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -14,6 +14,7 @@ public class DiscoBallController : ProjectileWeapon
             Debug.Log("Discoball attack " + i);
             GameObject clone = Instantiate(discoBall, transform.position, Quaternion.identity);
             clone.GetComponent<DiscoBall>().SetDamage(damage);
+            clone.GetComponent<DiscoBall>().SetPenetration(penetration);
         }
     }
 }

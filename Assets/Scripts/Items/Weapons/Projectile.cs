@@ -33,5 +33,4 @@ public abstract class Projectile : MonoBehaviour
     {
         penetration = amount;
     }
-
 }
