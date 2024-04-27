@@ -44,7 +44,8 @@ public class Purse : MonoBehaviour
 
     private void UpgradeRandomItem()
     {
-        upgradeAbility.InitializeUpgradeOptions();
+        List<Item> currentPlayerItems = upgradeAbility.GetItems();
+        upgradeAbility.InitializeUpgradeOptions(currentPlayerItems);
         (item, upgradeText) = upgradeAbility.ChooseRandomUpgrade();
         upgradeAbility.PerformRandomizedUpgrade(item, upgradeText);
     }

@@ -11,11 +11,13 @@ public class UpgradeAbility : MonoBehaviour
     [SerializeField] private List<Item> items = new List<Item>();
     [SerializeField] private Player player;
     [SerializeField] private PlayerMovement playerMovement;
+
+    private Dictionary<Item, List<string>> upgradeOptions = new Dictionary<Item, List<string>>();
     private List<GameObject> choicePanels;
     private List<Item> choiceItems;
     private List<Item> currentPlayerItems = new List<Item>();
-    private Dictionary<Item, List<string>> upgradeOptions = new Dictionary<Item, List<string>>();
     private List<string> typeOptions = new List<string>();
+    
     private int allowedAmountOfWeapons;
     private int allowedAmountOfUtility;
 
@@ -25,14 +27,12 @@ public class UpgradeAbility : MonoBehaviour
         allowedAmountOfUtility = 3;
     }
 
-    public void InitializeUpgradeOptions()
+    public void InitializeUpgradeOptions(List<Item> playerItems)
     {
         upgradeOptions = new Dictionary<Item, List<string>>();
-        //Get the current items that the player has.
-        currentPlayerItems = GetItems();
 
         //Loops over each item that the player has.
-        foreach (Item item in currentPlayerItems)
+        foreach (Item item in playerItems)
         {
             //Adds each item as a key to a dictionary along with its list of upgrade options as values if it doesn't already exist.
             if (!upgradeOptions.ContainsKey(item)) 
@@ -56,25 +56,27 @@ public class UpgradeAbility : MonoBehaviour
         //Fetch the upgrade option at the index of the random number.
         string chosenUpgrade = upgradeOptions[chosenItem][randomUpgradeIndex];
 
-        //Remove the upgrade option so that it cannot be chosen again for the remaining options.
-        RemoveUpgradeOption(chosenItem, chosenUpgrade);
-
         //Return the chosen item along with the chosen upgrade.
         return Tuple.Create(chosenItem, chosenUpgrade);
     }
 
-    private Tuple<Item, string> ChooseRandomItem()
+    private Tuple<Item, string> ChooseRandomItem(string typeOfItem)
     {
-        //Get a random number based on the amount of items available.
-        int randomItemIndex = UnityEngine.Random.Range(0, choiceItems.Count);
+        List<Item> itemsOfType = new List<Item>();
 
-        //Get the item that is at the random index.
-        Item chosenItem = choiceItems[randomItemIndex];
-
-        //Remove the item so it cannot be received again as a choice during the current upgrade session.
-        RemoveItemAsChoice(chosenItem, choiceItems);
-
-        //Return the item along with its name.
+        foreach (Item item in choiceItems)
+        {
+            if (item is Weapon && typeOfItem.Equals("Weapon"))
+            {
+                itemsOfType.Add((Weapon)item);
+            }
+            if (item is Utility && typeOfItem.Equals("Utility"))
+            {
+                itemsOfType.Add((Utility)item);
+            }
+        }
+        int randomItemIndex = UnityEngine.Random.Range(0, itemsOfType.Count);
+        Item chosenItem = itemsOfType[randomItemIndex];
         return Tuple.Create(chosenItem, chosenItem.GetName());
     }
 
@@ -92,16 +94,15 @@ public class UpgradeAbility : MonoBehaviour
         choiceItems.Remove(item);
     }
 
-    private string ChooseUpgradeType()
+    private string ChooseUpgradeType(List<string> typeOptions)
     {
-        
         //Get a random number based on the length of the typeOptions list.
         int randomTypeIndex = UnityEngine.Random.Range(0, typeOptions.Count);
         //Return the type of upgrade using the random index.
         return typeOptions[randomTypeIndex];
     }
 
-    private List<Item> GetItems()
+    public List<Item> GetItems()
     {
         //Gets the current items that the player has and adds them to the list.
         return player.GetCurrentItems();
@@ -144,6 +145,7 @@ public class UpgradeAbility : MonoBehaviour
     }
     private void SetPanelMethod(GameObject panel, string typeOfUpgrade, Item item, string upgrade)
     {
+        //Depending on if it is an item or an upgrade, the button gets told to call a different method along with the necessary information.
         if (typeOfUpgrade.Equals("Upgrade"))
         { 
             panel.GetComponent<UpgradeButton>().PrepareMethodToExecute("PerformRandomizedUpgrade", item, upgrade);
@@ -156,49 +158,84 @@ public class UpgradeAbility : MonoBehaviour
 
     public void StartUpgradeSystem()
     {
+        //Takes the list of items that the upgrade system is currently holding
+        //and places them inside of a new list so that the new list can
+        //be modified inside of the loop without it affecting the original list.
         InitializeItems();
+
+        //Does the same thing as with the items above but for the available panels.
         InitializePanels();
+
+        //Gets all of the items that the player is currently holding.
         currentPlayerItems = GetItems();
+
+        //If player has at least one item then we get all of the upgrades that are possible to present to the player.
         if (currentPlayerItems.Count > 0) 
         {
-            InitializeUpgradeOptions();
+            //Sends in the items that the player has which get put into a dictionary that connects each item to its list of upgrade options.
+            InitializeUpgradeOptions(currentPlayerItems);
         }
+
+        // Chooses a random item or upgrade based on the amount of panels the upgrade system has.
         for (int i = 0; i < panels.Length; i++)
         {
             Item item;
             string upgradeText;
 
-            DetermineTypeOptions();
-            string typeOfUpgrade = ChooseUpgradeType();
+            //Figure out what is possible to present to the player based on what they currently have.
+            typeOptions = DetermineTypeOptions();
+
+            //Randomly choose one type.
+            string typeOfUpgrade = ChooseUpgradeType(typeOptions);
             
+            //Depending on which type was chosen, we execute different methods to either get an upgrade or an item.
             if (typeOfUpgrade.Equals("Upgrade"))
             {
+                //Select a random item that the player has, and then choose a random upgrade from that item.
                 (item, upgradeText) = ChooseRandomUpgrade();
+
+                //Remove the upgrade option so that it cannot be chosen again for the remaining loops.
+                RemoveUpgradeOption(item, upgradeText);
             }
             else
             {
-                (item, upgradeText) = ChooseRandomItem();
+                //Choose an item based on the random type, which at this point can only be Weapon or Utility.
+                (item, upgradeText) = ChooseRandomItem(typeOfUpgrade);
+
+                //Remove the item so it cannot be received again as a choice for the remaining loops.
+                RemoveItemAsChoice(item, choiceItems);
             }
+            //Chooses a random panel, bit redundant. Might remove.
             GameObject chosenPanel = ChooseRandomPanel();
+
+            //Sets the text on the panel for the type of item or upgrade chosen.
             SetPanelText(chosenPanel, upgradeText);
+
+            //Prepares the button with the method to call in case that button is pressed.
             SetPanelMethod(chosenPanel, typeOfUpgrade, item, upgradeText);
         }
     }
 
     public void PerformRandomizedUpgrade(Item item, string upgradeText)
     {
+        //Uses reflection to dynamically get the correct type and method to call.
         MethodInfo methodInfo = item.GetType().GetMethod(upgradeText);
+
+        //Calls the upgrade method on the given item.
         methodInfo.Invoke(item, null);
     }
 
     public void GiveRandomizedItem(Item item)
     {
+        //Provides the player with the item.
         player.AddItem(item);
+
+        //Removes the item from the UpgradeAbility class so that it cannot be given again.
         items.Remove(item);
 
     }
 
-    private void DetermineTypeOptions()
+    private List<string> DetermineTypeOptions()
     {
         //Only add the ability to upgrade items if the player has more than one item or if the single available item has at least one available upgrade.
         if (!typeOptions.Contains("Upgrade"))
@@ -269,5 +306,7 @@ public class UpgradeAbility : MonoBehaviour
             //Remove the string from the list so that it cannot be chosen as an option.
             typeOptions.Remove("Utility");
         }
+
+        return typeOptions;
     }
 }

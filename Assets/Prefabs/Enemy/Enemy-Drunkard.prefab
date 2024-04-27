@@ -60,7 +60,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &8283433590032857020
 MonoBehaviour:
@@ -206,7 +206,7 @@ MonoBehaviour:
   enemySprite: {fileID: 21300000, guid: 9646ca466ea597a448a2e70c55acb027, type: 3}
   drops:
   - item: {fileID: 2322821042000343324, guid: 73e8c7fac64e160469ab7a30447b8bc1, type: 3}
-    dropChance: 0
+    dropChance: 100
   - item: {fileID: 4857899130433156979, guid: 86fd765608c838c41ac970a87857d355, type: 3}
     dropChance: 0
   multiDrop: 0

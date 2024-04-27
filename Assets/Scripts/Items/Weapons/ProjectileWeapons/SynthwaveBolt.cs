@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SynthwaveBolt : Projectile
 {
     private void Start()
     {
-        Shoot();
+        SquishBolt();
     }
 
-    void Shoot()
+    void SquishBolt()
     {
         transform.localScale = new Vector2(0, transform.localScale.y);
     }
@@ -36,5 +34,4 @@ public class SynthwaveBolt : Projectile
         DealDamage(other);
         DestroyWhenMaxPenetration();
     }
-
 }
