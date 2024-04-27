@@ -52,3 +52,4 @@ MonoBehaviour:
   penetration: 1
   penetrationIncreasePerUpgrade: 1
   vinylDisc: {fileID: 4049775820849989704, guid: 43d4212d805fae44f931e63efdc014c8, type: 3}
+  attackDelayTime: 0.2

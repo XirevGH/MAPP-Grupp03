@@ -54,7 +54,7 @@ MonoBehaviour:
   rotateSpeed: 30
   angle: 0
   controlPointOffSet: 5
-  triggerNumber: 7
+  triggerNumber: 5
   vinylDisc: {fileID: 9146738647602952300}
   curve:
     serializedVersion: 2
