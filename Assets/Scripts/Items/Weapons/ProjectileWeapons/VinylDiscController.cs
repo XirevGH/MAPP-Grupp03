@@ -5,6 +5,7 @@ using UnityEngine;
 public class VinylDiscController : ProjectileWeapon
 {
     [SerializeField] private GameObject vinylDisc;
+    [SerializeField] private float attackDelayTime;
 
     private Transform playerTransform;
     private Vector3 playerPosition;
@@ -16,13 +17,21 @@ public class VinylDiscController : ProjectileWeapon
 
     public override void Attack()
     {
+        StartCoroutine("AttackDelay");
+    }
+
+    private IEnumerator AttackDelay()
+    {
         for (int i = 0; i < amountOfProjectiles; i++)
         {
+            yield return new WaitForSeconds(attackDelayTime);
+
             playerPosition = playerTransform.position;
             GameObject clone = Instantiate(vinylDisc, playerPosition, Quaternion.identity);
             clone.GetComponent<Projectile>().SetDamage(damage);
             clone.GetComponent<Projectile>().SetPenetration(penetration);
             clone.GetComponent<VinylDisc>().isAtPlayer = true;
         }
+
     }
 }

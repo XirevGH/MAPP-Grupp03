@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class DecoyController : Utility
 {
-    public float decoyHealth, throwDistance;
+    public float decoyHealth, throwDistance, throwDelayTime;
     [SerializeField] private GameObject decoy;
+    [SerializeField] protected int amountOfDecoy;
 
     public DynamicJoystick dynamicJoystick;
     private Vector2 playerDirection, throwigDirection, playerPosition;
@@ -18,7 +19,7 @@ public class DecoyController : Utility
 
     void Update()
     {
-        playerDirection = new Vector2 (dynamicJoystick.Horizontal, dynamicJoystick.Vertical).normalized;
+        playerDirection = new Vector2(dynamicJoystick.Horizontal, dynamicJoystick.Vertical).normalized;
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
 
     }
@@ -32,9 +33,36 @@ public class DecoyController : Utility
 
     public void Throw()
     {
-        GameObject newDecoy = Instantiate(decoy, transform.position, Quaternion.identity);
-        newDecoy.GetComponent<Decoy>().endPosition = FindLandingSpot();
-        newDecoy.GetComponent<Decoy>().SetHealth(1);
+            StartCoroutine("ThrowDelay");
+    }
 
+     private IEnumerator ThrowDelay()
+     {
+        for (int i = 0; i < amountOfDecoy; i++)
+        {
+            yield return new WaitForSeconds(throwDelayTime);
+            
+            GameObject newDecoy = Instantiate(decoy, transform.position, Quaternion.identity);
+            newDecoy.GetComponent<Decoy>().endPosition = FindLandingSpot();
+            newDecoy.GetComponent<Decoy>().SetHealth(1);
+        }  
+        
+     }
+
+    public void IncreaseDecoyCount()
+    {
+
+    }
+
+    public void IncreaseDecoyhealth()
+    {
+    
+    }
+
+
+    protected override void CreateUpgradeOptions()
+    {
+        upgradeOptions.Add("IncreaseDecoyhealth");
+        upgradeOptions.Add("IncreaseDecoyCount");
     }
 }

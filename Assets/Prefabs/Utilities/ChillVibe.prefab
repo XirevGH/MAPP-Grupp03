@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6851086163164186471}
   - component: {fileID: 9123116555879062664}
   m_Layer: 0
-  m_Name: SlowAround
+  m_Name: ChillVibe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,10 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa540f2b5e33674887409756e331824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Chill Vibe
   player: {fileID: 0}
-  percentage: 5
-  percentageIncreasePerUpgrade: 5
+  percentage: 10
+  percentageIncreasePerUpgrade: 10
   slowSpeedPercent: 0.9
 --- !u!58 &9123116555879062664
 CircleCollider2D:

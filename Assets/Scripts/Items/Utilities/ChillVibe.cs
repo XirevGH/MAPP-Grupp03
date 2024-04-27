@@ -2,18 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlowAroundPlayer : Utility
+public class ChillVibe : Utility
 {
     [SerializeField] private float slowSpeedPercent;
-    private HashSet<GameObject> enemies = new HashSet<GameObject>();
 
-    public void UpgradeRradius( float percent)
+
+    public void UpgradeRradius()
     {
-        gameObject.transform.localScale *= (1 + (percent / 100f));
+        gameObject.transform.localScale *= (1 + (percentage / 100f));
     }
-    public void UpgradeSlow(float percent)
+
+    public void UpgradeSlow()
     {
-        slowSpeedPercent *= (1 + (percent/100f));
+        slowSpeedPercent *= (1 - (percentage / 100f));
+    }
+
+    protected override void CreateUpgradeOptions()
+    {
+        upgradeOptions.Add("UpgradeRradius");
+        upgradeOptions.Add("UpgradeSlow");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -22,7 +29,7 @@ public class SlowAroundPlayer : Utility
         {
             other.gameObject.GetComponent<Enemy>().thisMovementSpeed = other.gameObject.GetComponent<Enemy>().thisMovementSpeed * slowSpeedPercent;
             other.gameObject.GetComponent<Enemy>().isSlow = true;
-            enemies.Add(other.gameObject);  
+          
         }
     }
 
@@ -32,7 +39,7 @@ public class SlowAroundPlayer : Utility
         {
             other.gameObject.GetComponent<Enemy>().isSlow = false;
             //other.gameObject.GetComponent<Enemy>().thisMovementSpeed = Enemy.movementSpeed + other.GetComponent<Enemy>().baseMovementSpeed ;
-            enemies.Remove(other.gameObject);
+           
         }
     }
 }
