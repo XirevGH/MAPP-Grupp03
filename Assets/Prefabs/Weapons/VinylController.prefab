@@ -46,9 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   damage: 2
-  percentageDamageIncreasePerUpgrade: 0
-  amountOfProjectiles: 0
-  projectileIncreasePerUpgrade: 0
-  penetration: 0
-  penetrationIncreaserPerUpgrade: 0
+  percentageDamageIncreasePerUpgrade: 2
+  amountOfProjectiles: 1
+  projectileIncreasePerUpgrade: 1
+  penetration: 1
+  penetrationIncreasePerUpgrade: 1
   vinylDisc: {fileID: 4049775820849989704, guid: 43d4212d805fae44f931e63efdc014c8, type: 3}

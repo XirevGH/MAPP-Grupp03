@@ -46,7 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   player: {fileID: 0}
-  decoyHealth: 0
+  percentage: 10
+  percentageIncreasePerUpgrade: 10
+  decoyHealth: 2
   throwDistance: 2
   decoy: {fileID: 4393732222355668112, guid: 40ed4233f1695c940bb5b18f146d7603, type: 3}
   dynamicJoystick: {fileID: 0}

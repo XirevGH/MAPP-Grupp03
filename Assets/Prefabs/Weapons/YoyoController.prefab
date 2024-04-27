@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   damage: 3
-  percentageDamageIncreasePerUpgrade: 0
-  amountOfProjectiles: 0
-  projectileIncreasePerUpgrade: 0
+  percentageDamageIncreasePerUpgrade: 3
+  amountOfProjectiles: 1
+  projectileIncreasePerUpgrade: 1
   yoyo: {fileID: 3131863427772903305, guid: 7e042dc8bfc144649a690f20259123b9, type: 3}

@@ -24,7 +24,7 @@ public class Purse : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerStats>().money += moneyAmount;
-            //UpgradeRandomItem();
+            UpgradeRandomItem();
             Debug.Log(item + upgradeText);
             GameObject textClone = Instantiate(text, new Vector3(transform.position.x, transform.position.y +2, -0.5f), Quaternion.identity, transform);
             textClone.GetComponent<TextMesh>().text = GetTestPopup();
@@ -45,6 +45,7 @@ public class Purse : MonoBehaviour
     private void UpgradeRandomItem()
     {
         List<Item> currentPlayerItems = upgradeAbility.GetItems();
+        Debug.Log(currentPlayerItems);
         upgradeAbility.InitializeUpgradeOptions(currentPlayerItems);
         (item, upgradeText) = upgradeAbility.ChooseRandomUpgrade();
         upgradeAbility.PerformRandomizedUpgrade(item, upgradeText);

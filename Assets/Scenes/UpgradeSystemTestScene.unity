@@ -974,7 +974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111f720c6bae44947aed118f8e1c351a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeAbility: {fileID: 1509910517}
+  upgradeAbility: {fileID: 0}
 --- !u!1 &310060220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,7 +1270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111f720c6bae44947aed118f8e1c351a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeAbility: {fileID: 1509910517}
+  upgradeAbility: {fileID: 0}
 --- !u!1 &356753003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,6 +1471,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 281b7f74555262247999fef0c83e8fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &546505859
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2171190855158211638, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171190855158211638, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171190855158211638, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171190855158211638, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171190855158211638, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171190855158211638, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171190855158211638, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171190855158211638, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171190855158211638, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171190855158211638, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917292742459662858, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_Name
+      value: Purse
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
 --- !u!1001 &553504012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3695,7 +3752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111f720c6bae44947aed118f8e1c351a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeAbility: {fileID: 1509910517}
+  upgradeAbility: {fileID: 0}
 --- !u!1 &1183172518
 GameObject:
   m_ObjectHideFlags: 0
@@ -4630,6 +4687,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442561203}
   m_CullTransparentMesh: 1
+--- !u!1 &1469697242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1469697244}
+  - component: {fileID: 1469697243}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: UpgradeSystem
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1469697243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469697242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07de8c147208481458b109040a08394e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panels:
+  - {fileID: 201029717}
+  - {fileID: 1168283941}
+  - {fileID: 352059114}
+  items:
+  - {fileID: 1672516155}
+  - {fileID: 4280477}
+  - {fileID: 1810355224}
+  - {fileID: 128322718}
+  - {fileID: 695703885}
+  - {fileID: 2087042481}
+  - {fileID: 424510086}
+  - {fileID: 635767461}
+  - {fileID: 1906168803}
+  player: {fileID: 1561011401}
+  playerMovement: {fileID: 1561011402}
+--- !u!4 &1469697244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469697242}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 30.689913, y: 21.91445, z: -0.34088212}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1496829820
 GameObject:
   m_ObjectHideFlags: 0
@@ -4676,7 +4793,6 @@ GameObject:
   - component: {fileID: 1509910513}
   - component: {fileID: 1509910515}
   - component: {fileID: 1509910514}
-  - component: {fileID: 1509910517}
   - component: {fileID: 1509910516}
   m_Layer: 0
   m_Name: UpgradeScreen
@@ -4757,34 +4873,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5616be4a33ee32b4195c4848c3b2294c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1509910517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509910512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07de8c147208481458b109040a08394e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panels:
-  - {fileID: 201029717}
-  - {fileID: 1168283941}
-  - {fileID: 352059114}
-  items:
-  - {fileID: 1672516155}
-  - {fileID: 4280477}
-  - {fileID: 1810355224}
-  - {fileID: 128322718}
-  - {fileID: 695703885}
-  - {fileID: 2087042481}
-  - {fileID: 424510086}
-  - {fileID: 635767461}
-  - {fileID: 1906168803}
-  player: {fileID: 1561011401}
-  playerMovement: {fileID: 1561011402}
 --- !u!1 &1524844439
 GameObject:
   m_ObjectHideFlags: 0
@@ -5122,7 +5210,7 @@ MonoBehaviour:
   gameController: {fileID: 2047097353}
   player: {fileID: 1561011401}
   playerStats: {fileID: 1561011400}
-  upgrade: {fileID: 1509910517}
+  upgrade: {fileID: 0}
   upgradeScreen: {fileID: 1509910516}
   currentItems: []
   maxHealth: 0
@@ -7626,3 +7714,5 @@ SceneRoots:
   - {fileID: 2047097354}
   - {fileID: 1873560449}
   - {fileID: 1524844441}
+  - {fileID: 546505859}
+  - {fileID: 1469697244}
