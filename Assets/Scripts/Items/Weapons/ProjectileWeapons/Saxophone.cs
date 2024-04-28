@@ -30,7 +30,7 @@ public class Saxophone : ProjectileWeapon
 
     public override void Attack()
     {
-        Debug.Log("Attacking");
+      
         List<GameObject> closestEnemy = FindClosestEnemy(base.amountOfProjectiles);
         if (closestEnemy != null)
         {   
