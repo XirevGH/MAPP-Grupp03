@@ -8,18 +8,19 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] public AudioSource musicSource1, musicSource2, menuMusic;
+    [SerializeField] public AudioSource musicSource1, musicSource2, menuMusic, currentSource;
     [SerializeField] private AudioClip[] musicTracks;
     private AudioSource inGameMusic;
-    [SerializeField] public int[] BPMforTracks;
+    //private Dictionary<int , AudioClip> BPMforTracks = new  Dictionary<int, AudioClip>();
+    [SerializeField] private int[] BPMforTracks;
     //[SerializeField] public Slider slider;
     [SerializeField] float timeToFade = 1f;
     //[SerializeField] public Slider slidertoFind;
     public static SoundManager Instance;
-    public static int sliderValue;
     public Scene currentScene;
     public AudioMixerSnapshot lowPassSnapshots, normalSnapshots;
     public bool isOnePlaying, isLowPassOn, isInMenu, hasRun;
+    public int currentTrackNumber, currentBPM;
 
     public static SoundManager instance
     {
@@ -39,6 +40,7 @@ public class SoundManager : MonoBehaviour
         }
         //slider = GameObject.FindGameObjectWithTag("volumeSlider").GetComponent<Slider>();
         inGameMusic = transform.GetChild(0).GetComponent<AudioSource>();
+        currentTrackNumber = 0;
     }
 
     void Start()
@@ -46,27 +48,30 @@ public class SoundManager : MonoBehaviour
         StopInGameMusic();
         isOnePlaying = true;
         isInMenu = false;
-        //menuMusic.Play();
-        //AudioListener.volume = PlayerPrefs.GetFloat("volume1");
-        //slider.value = PlayerPrefs.GetFloat("volume");
-        //SoundMannerger.Instance.ChangeMasterVolume(slider.value);
-        //slider.onValueChanged.AddListener(val => SoundMannerger.Instance.ChangeMasterVolume(val));
-        //AudioListener.volume = PlayerPrefs.GetFloat("volume1");
-        //slider.value = PlayerPrefs.GetFloat("volume");
+        currentSource = musicSource1;
     }
 
     void Update()
     {
         currentScene = SceneManager.GetActiveScene();
-        //slider = GameObject.FindGameObjectWithTag("volumeSlider").GetComponent<Slider>();
-        //slider.onValueChanged.AddListener(val => SoundManager.Instance.ChangeMasterVolume(val));
-        //SoundManager.Instance.ChangeMasterVolume(slider.value);
-    }
+        if (currentTrackNumber != 0)
+        {
+            if (currentSource.pitch <= 0.9f)
+            {
+                ChangeTrack(--currentTrackNumber);
+            }
 
-    void LateUpdate()
-    {
-        //PlayerPrefs.SetFloat("volume", slider.value);
-        //PlayerPrefs.SetFloat("volume1", AudioListener.volume);
+        }
+
+        if (currentTrackNumber != musicTracks.Length - 1)
+        {
+            if (currentSource.pitch >= 1.1f)
+            {
+                ChangeTrack(++currentTrackNumber);
+            }
+        }
+       
+       
     }
 
     private void StopInGameMusic()
@@ -150,11 +155,12 @@ public class SoundManager : MonoBehaviour
     {
         normalSnapshots.TransitionTo(.001f);
     }
-
-    public void ChangeMasterVolume(float masterVolume)
+    public int GetCurrentBPM()
     {
-        AudioListener.volume = masterVolume;
+        return currentBPM;
     }
+
+
 
     public void ChangeTrack(int trackNumber)
     {
@@ -166,12 +172,12 @@ public class SoundManager : MonoBehaviour
     private IEnumerator FadeTrack(int trackNumber)
     {
         float timeElapsed = 0;
-
+        currentBPM = BPMforTracks[trackNumber];
         if (isOnePlaying)
         {
             musicSource2.transform.SetAsFirstSibling();
             musicSource2.clip = musicTracks[trackNumber];
-
+            currentSource = musicSource2;
             musicSource2.Play();
             while (timeElapsed < timeToFade)
             {
@@ -189,6 +195,7 @@ public class SoundManager : MonoBehaviour
         {
             musicSource1.transform.SetAsFirstSibling();
             musicSource1.clip = musicTracks[trackNumber];
+            currentSource = musicSource1;
             musicSource1.Play();
             while (timeElapsed < timeToFade)
             {
