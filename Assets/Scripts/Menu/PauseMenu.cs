@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject[] joysticks;
     public static bool GameIsPaused = false;
-    public GameObject pauseMenuUI, BeatSpawnerController;
+    public GameObject pauseMenuUI;
     public GameObject pauseButton; 
 
     [SerializeField] private GameObject settingPanel;
@@ -52,7 +52,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         ToggleJoysticks(true);
-        BeatSpawnerController.GetComponent<TriggerController>().ToggleTrigger();
+        TriggerController.instance.GetComponent<TriggerController>().ToggleTrigger();
         SoundManager.instance.GetComponent<SoundManager>().ToggleMusicPause();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
@@ -61,7 +61,7 @@ public class PauseMenu : MonoBehaviour
     void PauseGame()
     {
         ToggleJoysticks(false);
-        BeatSpawnerController.GetComponent<TriggerController>().ToggleTrigger();
+        TriggerController.instance.GetComponent<TriggerController>().ToggleTrigger();
         SoundManager.instance.GetComponent<SoundManager>().ToggleMusicPause();
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;

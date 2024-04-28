@@ -53,6 +53,7 @@ public class GameController : MonoBehaviour
         File.WriteAllText(saveFile, playerStats.SaveToString());
         SceneManager.LoadScene("ResultsScreen");
         TriggerController.instance.GetComponent<TriggerController>().ToggleTrigger();
+        SoundManager.instance.GetComponent<SoundManager>().ToggleMusicPause();
     }
 
     public BoundsInt GetBoundsFromCamera()

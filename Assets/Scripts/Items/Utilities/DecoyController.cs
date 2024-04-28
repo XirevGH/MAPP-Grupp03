@@ -37,18 +37,27 @@ public class DecoyController : Utility
 
     public void Throw()
     {
+        if (gameObject.activeSelf)
+        {
             StartCoroutine("ThrowDelay");
+        }
+           
     }
 
      private IEnumerator ThrowDelay()
      {
         for (int i = 0; i < amountOfDecoy; i++)
         {
-            yield return new WaitForSeconds(throwDelayTime);
-            
+
             GameObject newDecoy = Instantiate(decoy, transform.position, Quaternion.identity);
             newDecoy.GetComponent<Decoy>().endPosition = FindLandingSpot();
             newDecoy.GetComponent<Decoy>().SetHealth(decoyHealth);
+
+            yield return new WaitForSeconds(throwDelayTime);
+            
+            GameObject newDecoy1 = Instantiate(decoy, transform.position, Quaternion.identity);
+            newDecoy1.GetComponent<Decoy>().endPosition = FindLandingSpot();
+            newDecoy1.GetComponent<Decoy>().SetHealth(decoyHealth);
         }  
         
      }
