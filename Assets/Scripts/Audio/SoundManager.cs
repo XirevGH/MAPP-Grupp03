@@ -40,7 +40,7 @@ public class SoundManager : MonoBehaviour
         }
         //slider = GameObject.FindGameObjectWithTag("volumeSlider").GetComponent<Slider>();
         inGameMusic = transform.GetChild(0).GetComponent<AudioSource>();
-        currentTrackNumber = 0;
+      
     }
 
     void Start()
@@ -50,6 +50,7 @@ public class SoundManager : MonoBehaviour
         isInMenu = false;
         currentSource = musicSource1;
         currentBPM = BPMforTracks[0];
+        currentTrackNumber = 0;
     }
 
     void Update()
@@ -99,7 +100,7 @@ public class SoundManager : MonoBehaviour
     public void StartGame()
     {
         musicSource1.Play();
-        musicSource2.Play();
+        musicSource2.Stop();
         menuMusic.Stop();
         LowPassOff();
     }
