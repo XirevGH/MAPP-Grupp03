@@ -28,6 +28,7 @@ public class Purse : MonoBehaviour
             Debug.Log(item + upgradeText);
             GameObject textClone = Instantiate(text, new Vector3(transform.position.x, transform.position.y +2, -0.5f), Quaternion.identity, transform);
             textClone.GetComponent<TextMesh>().text = GetTestPopup();
+            Destroy(gameObject);
         }
     }
     private String GetTestPopup()

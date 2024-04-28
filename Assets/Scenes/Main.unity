@@ -3464,29 +3464,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2554686454012362858}
     - target: {fileID: 6050468577649203368, guid: c700b16655ade9b4a866c1c987d323e1, type: 3}
-      propertyPath: itemName
-      value: Decoy
-      objectReference: {fileID: 0}
-    - target: {fileID: 6050468577649203368, guid: c700b16655ade9b4a866c1c987d323e1, type: 3}
-      propertyPath: amountOfDecoy
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6050468577649203368, guid: c700b16655ade9b4a866c1c987d323e1, type: 3}
-      propertyPath: throwDelayTime
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6050468577649203368, guid: c700b16655ade9b4a866c1c987d323e1, type: 3}
       propertyPath: dynamicJoystick
       value: 
       objectReference: {fileID: 1440264127}
-    - target: {fileID: 6050468577649203368, guid: c700b16655ade9b4a866c1c987d323e1, type: 3}
-      propertyPath: decoyIncreasePerUpgrade
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6050468577649203368, guid: c700b16655ade9b4a866c1c987d323e1, type: 3}
-      propertyPath: decoyHealthIncreasePerUpgrade
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5157,6 +5137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Purse
       objectReference: {fileID: 0}
+    - target: {fileID: 4917292742459662858, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5475,7 +5459,6 @@ Transform:
   - {fileID: 12629167}
   - {fileID: 1576904875}
   - {fileID: 844196509}
-  - {fileID: 1596628489}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1077478085
@@ -6583,7 +6566,6 @@ MonoBehaviour:
   - {fileID: 1487864822}
   - {fileID: 303113334}
   pauseMenuUI: {fileID: 1796234484}
-  BeatSpawnerController: {fileID: 1128267155804970998}
   pauseButton: {fileID: 1046395237}
   settingPanel: {fileID: 1026943781}
   mainMenuSceneName: MainMenu
@@ -7237,11 +7219,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135886327475159579, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8135886327475159579, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8135886327475159579, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_SizeDelta.x
@@ -7993,68 +7975,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593893634}
   m_CullTransparentMesh: 1
---- !u!1001 &1596628488
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1075120216}
-    m_Modifications:
-    - target: {fileID: 7929235589256512294, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
-      propertyPath: m_Name
-      value: beat
-      objectReference: {fileID: 0}
-    - target: {fileID: 9148644223613276295, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.907173
-      objectReference: {fileID: 0}
-    - target: {fileID: 9148644223613276295, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.8013689
-      objectReference: {fileID: 0}
-    - target: {fileID: 9148644223613276295, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.21278323
-      objectReference: {fileID: 0}
-    - target: {fileID: 9148644223613276295, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9148644223613276295, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9148644223613276295, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9148644223613276295, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9148644223613276295, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9148644223613276295, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9148644223613276295, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
---- !u!4 &1596628489 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9148644223613276295, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
-  m_PrefabInstance: {fileID: 1596628488}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1607291700
 GameObject:
   m_ObjectHideFlags: 0
@@ -11292,6 +11212,10 @@ PrefabInstance:
     - target: {fileID: 6880885178429221876, guid: 4c6ffbfdbd8d4984caa2586fce2b37a7, type: 3}
       propertyPath: m_Name
       value: Circle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6880885178429221876, guid: 4c6ffbfdbd8d4984caa2586fce2b37a7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9003396223301259881, guid: 4c6ffbfdbd8d4984caa2586fce2b37a7, type: 3}
       propertyPath: m_LocalPosition.x

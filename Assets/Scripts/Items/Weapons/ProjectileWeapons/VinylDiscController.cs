@@ -26,13 +26,19 @@ public class VinylDiscController : ProjectileWeapon
     {
         for (int i = 0; i < amountOfProjectiles; i++)
         {
-            yield return new WaitForSeconds(attackDelayTime);
-
             playerPosition = playerTransform.position;
             GameObject clone = Instantiate(vinylDisc, playerPosition, Quaternion.identity);
             clone.GetComponent<Projectile>().SetDamage(damage);
             clone.GetComponent<Projectile>().SetPenetration(penetration);
             clone.GetComponent<VinylDisc>().isAtPlayer = true;
+
+            yield return new WaitForSeconds(attackDelayTime);
+
+            playerPosition = playerTransform.position;
+            GameObject clone1 = Instantiate(vinylDisc, playerPosition, Quaternion.identity);
+            clone1.GetComponent<Projectile>().SetDamage(damage);
+            clone1.GetComponent<Projectile>().SetPenetration(penetration);
+            clone1.GetComponent<VinylDisc>().isAtPlayer = true;
         }
 
     }

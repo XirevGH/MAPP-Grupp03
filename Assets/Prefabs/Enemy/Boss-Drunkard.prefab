@@ -431,6 +431,8 @@ MonoBehaviour:
   drops:
   - item: {fileID: 2322821042000343324, guid: 0369a782efb602b49b7a7f02ad8b43ba, type: 3}
     dropChance: 100
+  - item: {fileID: 4917292742459662858, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+    dropChance: 100
   multiDrop: 1
   player: {fileID: 0}
   target: {fileID: 0}
