@@ -12,8 +12,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseButton; 
 
     [SerializeField] private GameObject settingPanel;
-    private AudioSource audioSource;
-    private AudioClip clickSound;
+ //   private AudioSource audioSource;
+   // private AudioClip clickSound;
 
 
 
@@ -66,7 +66,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
-        audioSource.PlayOneShot(clickSound);
+       // audioSource.PlayOneShot(clickSound);
     }
 
     public void LoadMenu()
