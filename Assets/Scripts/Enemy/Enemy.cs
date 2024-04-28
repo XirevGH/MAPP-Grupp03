@@ -83,11 +83,12 @@ public class Enemy : MonoBehaviour
             UppdateSpeed();
             
         }
-        SelectTarget();
+        
     }
 
     void FixedUpdate()
     {
+        SelectTarget();
         damageNumberWindow -= Time.deltaTime;
         
 

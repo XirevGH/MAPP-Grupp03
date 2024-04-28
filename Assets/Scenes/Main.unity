@@ -11909,6 +11909,23 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     isTriggering: 1
+  - noteValue: 8
+    quaterNoteTrigger:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 737923058}
+          m_TargetAssemblyTypeName: DecoyController, Assembly-CSharp
+          m_MethodName: Throw
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    isTriggering: 1
   isTriggering: 1
 --- !u!4 &8336072371526926092
 Transform:

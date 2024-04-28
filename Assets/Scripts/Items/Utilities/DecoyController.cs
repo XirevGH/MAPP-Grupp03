@@ -37,7 +37,10 @@ public class DecoyController : Utility
 
     public void Throw()
     {
+        if (gameObject.activeSelf)
+        {
             StartCoroutine("ThrowDelay");
+        }
     }
 
      private IEnumerator ThrowDelay()

@@ -1,12 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using System.Text;
-using System;
-using System.Linq;
-using System.Diagnostics;
-using static UnityEngine.GraphicsBuffer;
+
 
 public class NormalEnemy : Enemy
 {
@@ -40,9 +33,6 @@ public class NormalEnemy : Enemy
 
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, thisMovementSpeed / 200);
         }
-
-
-
     }
     protected override void DestroyGameObject()
     {
