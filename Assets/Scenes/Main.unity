@@ -334,7 +334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4845860124362309007, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6851086163164186471, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
       propertyPath: player
@@ -3457,36 +3457,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3584226290686964480, guid: c700b16655ade9b4a866c1c987d323e1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6050468577649203368, guid: c700b16655ade9b4a866c1c987d323e1, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 2554686454012362858}
     - target: {fileID: 6050468577649203368, guid: c700b16655ade9b4a866c1c987d323e1, type: 3}
-      propertyPath: itemName
-      value: Decoy
-      objectReference: {fileID: 0}
-    - target: {fileID: 6050468577649203368, guid: c700b16655ade9b4a866c1c987d323e1, type: 3}
-      propertyPath: amountOfDecoy
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6050468577649203368, guid: c700b16655ade9b4a866c1c987d323e1, type: 3}
-      propertyPath: throwDelayTime
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6050468577649203368, guid: c700b16655ade9b4a866c1c987d323e1, type: 3}
       propertyPath: dynamicJoystick
       value: 
       objectReference: {fileID: 1440264127}
-    - target: {fileID: 6050468577649203368, guid: c700b16655ade9b4a866c1c987d323e1, type: 3}
-      propertyPath: decoyIncreasePerUpgrade
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6050468577649203368, guid: c700b16655ade9b4a866c1c987d323e1, type: 3}
-      propertyPath: decoyHealthIncreasePerUpgrade
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5157,6 +5137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Purse
       objectReference: {fileID: 0}
+    - target: {fileID: 4917292742459662858, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6582,7 +6566,6 @@ MonoBehaviour:
   - {fileID: 1487864822}
   - {fileID: 303113334}
   pauseMenuUI: {fileID: 1796234484}
-  BeatSpawnerController: {fileID: 1128267155804970998}
   pauseButton: {fileID: 1046395237}
   settingPanel: {fileID: 1026943781}
   mainMenuSceneName: MainMenu
@@ -7236,11 +7219,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135886327475159579, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8135886327475159579, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8135886327475159579, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_SizeDelta.x
