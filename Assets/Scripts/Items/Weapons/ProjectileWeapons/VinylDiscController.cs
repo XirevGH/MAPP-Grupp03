@@ -17,7 +17,9 @@ public class VinylDiscController : ProjectileWeapon
 
     public override void Attack()
     {
-        StartCoroutine("AttackDelay");
+        if (gameObject.activeSelf) { 
+            StartCoroutine("AttackDelay");
+        }
     }
 
     private IEnumerator AttackDelay()

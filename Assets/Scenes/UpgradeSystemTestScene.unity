@@ -974,7 +974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111f720c6bae44947aed118f8e1c351a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeAbility: {fileID: 0}
+  upgradeAbility: {fileID: 1469697243}
 --- !u!1 &210704566 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3584226290686964480, guid: c700b16655ade9b4a866c1c987d323e1, type: 3}
@@ -1281,7 +1281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111f720c6bae44947aed118f8e1c351a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeAbility: {fileID: 0}
+  upgradeAbility: {fileID: 1469697243}
 --- !u!1 &356753003
 GameObject:
   m_ObjectHideFlags: 0
@@ -3860,7 +3860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111f720c6bae44947aed118f8e1c351a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeAbility: {fileID: 0}
+  upgradeAbility: {fileID: 1469697243}
 --- !u!1 &1183172518
 GameObject:
   m_ObjectHideFlags: 0
@@ -4806,7 +4806,7 @@ GameObject:
   - component: {fileID: 1469697244}
   - component: {fileID: 1469697243}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: UpgradeSystem
   m_TagString: UpgradeSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4973,7 +4973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1509910513
 RectTransform:
   m_ObjectHideFlags: 0

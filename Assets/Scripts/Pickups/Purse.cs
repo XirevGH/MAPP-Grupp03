@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class Purse : MonoBehaviour
 {
-    private UpgradeAbility upgradeAbility;
+    private UpgradeSystem upgradeAbility;
     private Item item;
     private string upgradeText = "";
     private int moneyAmount;
@@ -15,7 +15,7 @@ public class Purse : MonoBehaviour
 
     private void Start()
     {
-        upgradeAbility = GameObject.FindGameObjectWithTag("UpgradeSystem").GetComponent<UpgradeAbility>();
+        upgradeAbility = GameObject.FindGameObjectWithTag("UpgradeSystem").GetComponent<UpgradeSystem>();
         moneyAmount = GiveRandomAmountOfMoney();
     }
 

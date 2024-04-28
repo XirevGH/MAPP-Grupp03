@@ -7,7 +7,11 @@ public class DecoyController : Utility
 {
     public float decoyHealth, throwDistance, throwDelayTime;
     [SerializeField] private GameObject decoy;
-    [SerializeField] protected int amountOfDecoy;
+    [SerializeField] private int amountOfDecoy;
+    [SerializeField] private int decoyIncreasePerUpgrade;
+    [SerializeField] private int decoyHealthIncreasePerUpgrade;
+
+
 
     public DynamicJoystick dynamicJoystick;
     private Vector2 playerDirection, throwigDirection, playerPosition;
@@ -44,25 +48,33 @@ public class DecoyController : Utility
             
             GameObject newDecoy = Instantiate(decoy, transform.position, Quaternion.identity);
             newDecoy.GetComponent<Decoy>().endPosition = FindLandingSpot();
-            newDecoy.GetComponent<Decoy>().SetHealth(1);
+            newDecoy.GetComponent<Decoy>().SetHealth(decoyHealth);
         }  
         
      }
 
-    public void IncreaseDecoyCount()
+    public void IncreaseDecoyAmount()
     {
-
+        amountOfDecoy += decoyIncreasePerUpgrade;
     }
 
-    public void IncreaseDecoyhealth()
+    public void IncreaseDecoyHealth()
     {
-    
+        decoyHealth += decoyIncreasePerUpgrade;
     }
 
+    public int GetDecoyHealthIncreasePerUpgrade()
+    {
+        return decoyHealthIncreasePerUpgrade;
+    }
+    public int GetDecoyIncreasePerUpgrade()
+    {
+        return decoyIncreasePerUpgrade;
+    }
 
     protected override void CreateUpgradeOptions()
     {
-        upgradeOptions.Add("IncreaseDecoyhealth");
-        upgradeOptions.Add("IncreaseDecoyCount");
+        upgradeOptions.Add("IncreaseDecoyHealth");
+        upgradeOptions.Add("IncreaseDecoyAmount");
     }
 }

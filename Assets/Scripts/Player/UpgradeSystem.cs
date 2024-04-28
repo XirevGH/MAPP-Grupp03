@@ -3,14 +3,13 @@ using UnityEngine;
 using System;
 using TMPro;
 using System.Reflection;
+using System.IO;
 
-
-public class UpgradeAbility : MonoBehaviour
+public class UpgradeSystem : MonoBehaviour
 {
     [SerializeField] private GameObject[] panels;
     [SerializeField] private List<Item> items = new List<Item>();
     [SerializeField] private Player player;
-    [SerializeField] private PlayerMovement playerMovement;
 
     private Dictionary<Item, List<string>> upgradeOptions = new Dictionary<Item, List<string>>();
     private List<GameObject> choicePanels;
@@ -42,6 +41,35 @@ public class UpgradeAbility : MonoBehaviour
         }
     }
 
+    private string GetUpgradeDescription(Item item, string typeOfChoice, string upgrade)
+    {
+        var file = Resources.Load<TextAsset>("Text/UpgradeDescriptions");
+        foreach (string line in file.text.Split("\n")) {
+            string[] fields = line.Split(',');
+            string type = fields[0];
+            string name = fields[1];
+            string upgradeMethodName = fields[2];
+            if (typeOfChoice == "Upgrade") {
+                if (type.Equals("Upgrade") && name.Equals(item.GetName()) && upgradeMethodName.Equals(upgrade))
+                {
+                    string description = fields[3];
+                    string getStatIncrease = fields[4];
+                    string symbol = fields[5];
+
+                    return description + " " + item.GetType().GetMethod(getStatIncrease).Invoke(item, null) + symbol;
+                }
+            }
+            else
+            {
+                string description = fields[2];
+                if (name.Equals(item.GetName()))
+                {
+                    return description;
+                }
+            }
+        }
+        return "Item Missing or Upgrade Missing or Text Missing";
+    }
     public Tuple<Item, string> ChooseRandomUpgrade()
     {
         //Get a random number based on the amount of items in the dictionary of available upgrade options.
@@ -52,6 +80,10 @@ public class UpgradeAbility : MonoBehaviour
 
         //Get a random number based on the amount of upgrade options that the chosen item currently has.
         int randomUpgradeIndex = UnityEngine.Random.Range(0, upgradeOptions[chosenItem].Count);
+
+        Debug.Log("chosen item: " + chosenItem.GetName());
+        Debug.Log("size of options list: " + upgradeOptions[chosenItem].Count);
+        Debug.Log("random Upgrade Index: " + randomUpgradeIndex);
 
         //Fetch the upgrade option at the index of the random number.
         string chosenUpgrade = upgradeOptions[chosenItem][randomUpgradeIndex];
@@ -75,7 +107,13 @@ public class UpgradeAbility : MonoBehaviour
                 itemsOfType.Add((Utility)item);
             }
         }
+        
         int randomItemIndex = UnityEngine.Random.Range(0, itemsOfType.Count);
+
+        Debug.Log("type of item: " + typeOfItem);
+        Debug.Log("size of list: " + itemsOfType.Count);
+        Debug.Log("random item index: " + randomItemIndex);
+
         Item chosenItem = itemsOfType[randomItemIndex];
         return Tuple.Create(chosenItem, chosenItem.GetName());
     }
@@ -135,18 +173,18 @@ public class UpgradeAbility : MonoBehaviour
         return chosenPanel;
     }
 
-    private void SetPanelText(GameObject panel, string upgrade)
+    private void SetPanelText(GameObject panel, string itemName, string textDescription)
     {
-        panel.GetComponentInChildren<TMP_Text>().text = upgrade;
+        panel.GetComponentInChildren<TMP_Text>().text = itemName + "\n\n" + textDescription;
     }
     private void RemovePanelAsOption(GameObject chosenPanel)
     {
         choicePanels.Remove(chosenPanel);
     }
-    private void SetPanelMethod(GameObject panel, string typeOfUpgrade, Item item, string upgrade)
+    private void SetPanelMethod(GameObject panel, string typeOfChoice, Item item, string upgrade)
     {
         //Depending on if it is an item or an upgrade, the button gets told to call a different method along with the necessary information.
-        if (typeOfUpgrade.Equals("Upgrade"))
+        if (typeOfChoice.Equals("Upgrade"))
         { 
             panel.GetComponent<UpgradeButton>().PrepareMethodToExecute("PerformRandomizedUpgrade", item, upgrade);
         }
@@ -186,10 +224,10 @@ public class UpgradeAbility : MonoBehaviour
             typeOptions = DetermineTypeOptions();
 
             //Randomly choose one type.
-            string typeOfUpgrade = ChooseUpgradeType(typeOptions);
+            string typeOfChoice = ChooseUpgradeType(typeOptions);
             
             //Depending on which type was chosen, we execute different methods to either get an upgrade or an item.
-            if (typeOfUpgrade.Equals("Upgrade"))
+            if (typeOfChoice.Equals("Upgrade"))
             {
                 //Select a random item that the player has, and then choose a random upgrade from that item.
                 (item, upgradeText) = ChooseRandomUpgrade();
@@ -200,7 +238,7 @@ public class UpgradeAbility : MonoBehaviour
             else
             {
                 //Choose an item based on the random type, which at this point can only be Weapon or Utility.
-                (item, upgradeText) = ChooseRandomItem(typeOfUpgrade);
+                (item, upgradeText) = ChooseRandomItem(typeOfChoice);
 
                 //Remove the item so it cannot be received again as a choice for the remaining loops.
                 RemoveItemAsChoice(item, choiceItems);
@@ -209,10 +247,10 @@ public class UpgradeAbility : MonoBehaviour
             GameObject chosenPanel = ChooseRandomPanel();
 
             //Sets the text on the panel for the type of item or upgrade chosen.
-            SetPanelText(chosenPanel, upgradeText);
-
+            SetPanelText(chosenPanel, item.GetName(), GetUpgradeDescription(item, typeOfChoice, upgradeText));
+            Debug.Log(item.GetName());
             //Prepares the button with the method to call in case that button is pressed.
-            SetPanelMethod(chosenPanel, typeOfUpgrade, item, upgradeText);
+            SetPanelMethod(chosenPanel, typeOfChoice, item, upgradeText);
         }
     }
 
@@ -229,7 +267,8 @@ public class UpgradeAbility : MonoBehaviour
     {
         //Provides the player with the item.
         player.AddItem(item);
-
+        MethodInfo methodInfo = item.GetType().GetMethod("EnableGameObject");
+        methodInfo.Invoke(item, null);
         //Removes the item from the UpgradeAbility class so that it cannot be given again.
         items.Remove(item);
 

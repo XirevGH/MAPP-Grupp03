@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UpgradeButton : MonoBehaviour
 {
-    [SerializeField] private UpgradeAbility upgradeAbility;
+    [SerializeField] private UpgradeSystem upgradeSystem;
     
     private Item item;
     private string upgrade;
@@ -29,12 +29,12 @@ public class UpgradeButton : MonoBehaviour
         if (method == "PerformRandomizedUpgrade") 
         {
             //Calls the appropriate method in the UpgradeAbility class for providing the upgrade.
-            upgradeAbility.PerformRandomizedUpgrade(item, upgrade);
+            upgradeSystem.PerformRandomizedUpgrade(item, upgrade);
         }
         if (method == "GiveRandomizedItem")
         {
             //Calls the appropriate method in the UpgradeAbility class for providing the item.
-            upgradeAbility.GiveRandomizedItem(item);
+            upgradeSystem.GiveRandomizedItem(item);
         }
     }
 }

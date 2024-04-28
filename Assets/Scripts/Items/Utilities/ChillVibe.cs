@@ -5,22 +5,31 @@ using UnityEngine;
 public class ChillVibe : Utility
 {
     [SerializeField] private float slowSpeedPercent;
+    [SerializeField] private float radiusIncreasePercentage;
+    [SerializeField] private float slowIncreasePercentage;
 
-
-    public void UpgradeRradius()
+    public void IncreaseRadius()
     {
-        gameObject.transform.localScale *= (1 + (percentage / 100f));
+        gameObject.transform.localScale *= (1 + (radiusIncreasePercentage / 100f));
     }
 
-    public void UpgradeSlow()
+    public void IncreaseSlow()
     {
-        slowSpeedPercent *= (1 - (percentage / 100f));
+        slowSpeedPercent *= (1 - (slowIncreasePercentage / 100f));
     }
 
+    public float GetRadiusIncreasePercentage()
+    {
+        return radiusIncreasePercentage;
+    }
+    public float GetSlowIncreasePercentage()
+    {
+        return slowIncreasePercentage;
+    }
     protected override void CreateUpgradeOptions()
     {
-        upgradeOptions.Add("UpgradeRradius");
-        upgradeOptions.Add("UpgradeSlow");
+        upgradeOptions.Add("IncreaseRadius");
+        upgradeOptions.Add("IncreaseSlow");
     }
 
     private void OnTriggerEnter2D(Collider2D other)

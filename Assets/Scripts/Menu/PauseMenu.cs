@@ -82,13 +82,13 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Settings meny");
         settingPanel.SetActive(true);
-        audioSource.PlayOneShot(clickSound);
+        //audioSource.PlayOneShot(clickSound);
     }
 
     public void CloseSetting()
     {
         settingPanel.SetActive(false);
-        audioSource.PlayOneShot(clickSound);
+        //audioSource.PlayOneShot(clickSound);
 
     }
 

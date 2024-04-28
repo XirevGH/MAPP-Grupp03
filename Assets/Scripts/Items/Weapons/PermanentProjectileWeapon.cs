@@ -21,6 +21,11 @@ public abstract class PermanentProjectileWeapon : Weapon
         amountOfProjectiles += projectileIncreasePerUpgrade;
     }
 
+    public int GetProjectileIncreasePerUpgrade()
+    {
+        return projectileIncreasePerUpgrade;
+    }
+
     protected override void CreateUpgradeOptions()
     {
         base.CreateUpgradeOptions();

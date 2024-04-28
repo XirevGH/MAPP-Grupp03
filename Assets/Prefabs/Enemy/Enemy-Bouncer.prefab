@@ -214,8 +214,8 @@ MonoBehaviour:
   target: {fileID: 0}
   sprite: {fileID: 0}
   health: 25
-  thisMovementSpeed: 1
-  baseMovementSpeed: 1
+  thisMovementSpeed: 2
+  baseMovementSpeed: 2
   isSlow: 0
   damageNumbers: {fileID: 287581913604085729}
   damageNumberAnim: {fileID: 2898152515693454215}
@@ -281,7 +281,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &-8718832928761771214
 Animator:
   serializedVersion: 5

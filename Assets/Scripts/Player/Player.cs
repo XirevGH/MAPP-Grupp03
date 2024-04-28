@@ -10,11 +10,10 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private Slider hpSlider, xpSlider;
     [SerializeField] private TMP_Text levelText;
-    [SerializeField] private GameObject electricGuitar, lightningAoe, bassGuitar, saxophone;
     [SerializeField] private GameController gameController;
     [SerializeField] private Player player;
     [SerializeField] private PlayerStats playerStats;
-    [SerializeField] private UpgradeAbility upgrade;
+    [SerializeField] private UpgradeSystem upgradeSystem;
     [SerializeField] private UpgradePanel upgradeScreen;
 
     public List<Item> currentItems = new List<Item>();
@@ -112,38 +111,7 @@ public class Player : MonoBehaviour
         UpdateXPSlider();
         MainManager.Instance.mainLevel = level;
         upgradeScreen.OpenUpgradeWindow();
-        upgrade.StartUpgradeSystem();
-        
-        /*if (level == 2)
-        {
-            electricGuitar.SetActive(true);
-        }
-        if(level == 3)
-        {
-            lightningAoe.SetActive(true);
-        }
-        if(level == 4){
-            saxophone.SetActive(true);
-        }
-
-        if(level > 2)
-        {
-            electricGuitar.GetComponent<ElectricGuitar>().UpgradeTetherAmount(1);
-        }
-        if(level > 3)
-        {
-            burstAmount += 3;
-            lightningAoe.GetComponent<ParticleSystem>().emission.SetBursts(new ParticleSystem.Burst[] {new ParticleSystem.Burst(0.05f, burstAmount)});
-        }
-        if (level > 4)
-        {
-            if (level % 6 == 0)
-            {
-                saxophone.GetComponent<Saxophone>().IncreasePenetrationAmount(1);
-                saxophone.GetComponent<Saxophone>().IncreaseProjectileCount(1);
-                saxophone.GetComponent<Saxophone>().IncreaseDamage(1.1f);
-            }
-        }*/
+        upgradeSystem.StartUpgradeSystem();
     }
 
     private void UpdateXPSlider()
