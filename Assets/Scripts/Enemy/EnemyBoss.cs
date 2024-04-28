@@ -36,13 +36,13 @@ public class EnemyBoss : Enemy
             UppdateSpeed();
             
         }
-        SelectTarget();
         UpdateBossHp();
 
 
     }
     void FixedUpdate()
     {
+        SelectTarget();
         attackColdown -= Time.deltaTime;
         damageNumberWindow -= Time.deltaTime;
         if(bossChargActiv){

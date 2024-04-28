@@ -10,9 +10,7 @@ public class NormalEnemy : Enemy
     void FixedUpdate()
     {
         damageNumberWindow -= Time.deltaTime;
-        
-
-       
+        SelectTarget();
         if (IsAlive())
         {
             if (Vector3.Distance(target.transform.position, transform.position) < 0.5)
