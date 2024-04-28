@@ -11665,7 +11665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db05540e51175fa4396ef5042848ff97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inGameCurrentTrackBPM: -0.03
+  inGameCurrentTrackBPM: 0
   trackswapper: {fileID: 2662689527024895925}
   triggers:
   - noteValue: 8
