@@ -1846,7 +1846,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: X
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1910,7 +1910,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &495084004
@@ -11665,7 +11665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db05540e51175fa4396ef5042848ff97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inGameCurrentTrackBPM: 0
+  inGameCurrentTrackBPM: -0.03
   trackswapper: {fileID: 2662689527024895925}
   triggers:
   - noteValue: 8

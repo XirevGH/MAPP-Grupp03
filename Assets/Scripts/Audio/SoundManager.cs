@@ -49,6 +49,7 @@ public class SoundManager : MonoBehaviour
         isOnePlaying = true;
         isInMenu = false;
         currentSource = musicSource1;
+        currentBPM = BPMforTracks[0];
     }
 
     void Update()
