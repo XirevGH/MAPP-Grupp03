@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour
     }
     private void Update()
     {
-        currentTrackBPM = SoundManager.instance.GetComponent<SoundManager>().BPMforTracks[trackswapper.GetComponent<TrackSwapper>().i];
+        currentTrackBPM = SoundManager.instance.GetComponent<SoundManager>().GetCurrentBPM();
     }
     private void FixedUpdate()
     {  

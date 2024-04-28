@@ -11,11 +11,11 @@ public class VolumeSettings : MonoBehaviour
     public PauseMenu pauseMenu;
     public RectTransform pauseButtonRectTransform;
 
-    private AudioSource audioSource;
-    private AudioClip clickSound;
+   // private AudioSource audioSource;
+   // private AudioClip clickSound;
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
         if (PlayerPrefs.HasKey("musicVolume"))
         {
             LoadVolume();
@@ -53,7 +53,7 @@ public class VolumeSettings : MonoBehaviour
     {
         pauseButtonRectTransform.anchorMin = new Vector2(0f, pauseButtonRectTransform.anchorMin.y);
         pauseButtonRectTransform.anchorMax = new Vector2(0f, pauseButtonRectTransform.anchorMax.y);
-        audioSource.PlayOneShot(clickSound);
+      //  audioSource.PlayOneShot(clickSound);
     }
 
     public void OnRightButtonClick()
@@ -62,7 +62,7 @@ public class VolumeSettings : MonoBehaviour
         float newXAnchor = 1f - offset;
         pauseButtonRectTransform.anchorMin = new Vector2(newXAnchor, pauseButtonRectTransform.anchorMin.y);
         pauseButtonRectTransform.anchorMax = new Vector2(newXAnchor, pauseButtonRectTransform.anchorMax.y);
-        audioSource.PlayOneShot(clickSound);
+       // audioSource.PlayOneShot(clickSound);
     }
 
 }

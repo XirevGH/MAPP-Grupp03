@@ -72,7 +72,7 @@ public class TriggerController : MonoBehaviour
     void Update()
     {
         inGameMusic = SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>();
-        inGameCurrentTrackBPM = SoundManager.instance.BPMforTracks[trackswapper.GetComponent<TrackSwapper>().i];
+        inGameCurrentTrackBPM = SoundManager.instance.GetCurrentBPM();
         if (isTriggering)
         {
             foreach (Trigger trigger in triggers)
