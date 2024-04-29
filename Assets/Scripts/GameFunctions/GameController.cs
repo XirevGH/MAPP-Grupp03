@@ -50,10 +50,11 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        File.WriteAllText(saveFile, playerStats.SaveToString());
-        SceneManager.LoadScene("ResultsScreen");
         TriggerController.instance.GetComponent<TriggerController>().ToggleTrigger();
         SoundManager.instance.GetComponent<SoundManager>().ToggleMusicPause();
+        File.WriteAllText(saveFile, playerStats.SaveToString());
+        SceneManager.LoadScene("ResultsScreen");
+       
     }
 
     public BoundsInt GetBoundsFromCamera()
