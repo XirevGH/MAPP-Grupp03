@@ -4840,7 +4840,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 997836855}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1292167187}
+        m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
+        m_MethodName: TurnOnHealthBar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &997836855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6509,6 +6521,7 @@ MonoBehaviour:
   myMixer: {fileID: 24100000, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}
   musicSlider: {fileID: 1645178825}
   SFXSlider: {fileID: 1189365319}
+  healthBar: {fileID: 924896729}
   pauseMenu: {fileID: 1292167186}
   pauseButtonRectTransform: {fileID: 1046395238}
 --- !u!1 &1320764027
@@ -8690,7 +8703,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1804307803}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1292167187}
+        m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
+        m_MethodName: TurnOffHealthBar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1804307803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9184,11 +9209,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135886327475159579, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_Pivot.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8135886327475159579, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_Pivot.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8135886327475159579, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_AnchoredPosition.x

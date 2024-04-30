@@ -56,6 +56,7 @@ public class SoundManager : MonoBehaviour
     void Update()
     {
         currentScene = SceneManager.GetActiveScene();
+      
         if (currentTrackNumber != 0)
         {
             if (currentSource.pitch <= 0.9f)

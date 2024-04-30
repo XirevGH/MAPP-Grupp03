@@ -12,7 +12,9 @@ public class ManuController : MonoBehaviour
     [SerializeField] private GameObject uppgradesPanel;
     [SerializeField] private GameObject settingPanel;
     [SerializeField] private GameObject creditPanel;
-  
+   //  [SerializeField] private AudioSource audioSource;
+   // [SerializeField] private AudioClip clickSound;
+
 
     [SerializeField] private int levelToload;
 
@@ -21,6 +23,7 @@ public class ManuController : MonoBehaviour
         CloseCredits();
         CloseSetting();
         CloseUppgrades();
+
     }
 
     private void Update()
@@ -30,7 +33,7 @@ public class ManuController : MonoBehaviour
 
     public void Startgame()
     {
-        
+      
         ChangeScene();
         SoundManager.instance.GetComponent<SoundManager>().StartGame();
     }
@@ -45,6 +48,7 @@ public class ManuController : MonoBehaviour
     {
         creditPanel.SetActive(false);
         mainMenu.SetActive(true);
+ 
 
     }
 
@@ -64,11 +68,13 @@ public class ManuController : MonoBehaviour
     {
         settingPanel.SetActive(true);
         mainMenu.SetActive(false);
+    
     }
     public void CloseSetting()
     {
         settingPanel.SetActive(false);
         mainMenu.SetActive(true);
+
 
     }
 
@@ -76,14 +82,14 @@ public class ManuController : MonoBehaviour
     {
         uppgradesPanel.SetActive(true);
         mainMenu.SetActive(false);
-
+     
     }
 
     public void CloseUppgrades()
     {
         uppgradesPanel.SetActive(false);
         mainMenu.SetActive(true);
-
+      
     }
 
     
@@ -93,6 +99,7 @@ public class ManuController : MonoBehaviour
 
     {
         Application.Quit();
+       
     }
 
 
