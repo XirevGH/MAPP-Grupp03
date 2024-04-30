@@ -220,7 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd618e034531c9640bf44b88389c60e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
   increaseCooldownDuration: 0.1
   reduceCooldownDuration: 0.1
   MusicSpeedChange: 0.05
