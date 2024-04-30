@@ -12,8 +12,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseButton; 
 
     [SerializeField] private GameObject settingPanel;
- //   private AudioSource audioSource;
-   // private AudioClip clickSound;
+  //  [SerializeField] private AudioSource audioSource;
+  //  [SerializeField] private AudioClip clickSound;
 
 
 
@@ -57,6 +57,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+
     }
     void PauseGame()
     {
@@ -82,13 +83,13 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Settings meny");
         settingPanel.SetActive(true);
-        //audioSource.PlayOneShot(clickSound);
+    
     }
 
     public void CloseSetting()
     {
         settingPanel.SetActive(false);
-        //audioSource.PlayOneShot(clickSound);
+      //  audioSource.PlayOneShot(clickSound);
 
     }
 
