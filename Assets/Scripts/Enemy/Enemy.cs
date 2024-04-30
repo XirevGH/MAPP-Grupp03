@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
     public GameObject player, target;
     protected float damageNumberWindow = 3f;
     public SpriteRenderer sprite;
-    public static float movementSpeed;  // är % * till thisEnmey
+    public static float movementSpeed;  // Global % enemy movespeed increase.  
     public static float healthProsenIncreas = 1f;
     public float health;
      
@@ -64,13 +64,13 @@ public class Enemy : MonoBehaviour
     public Animator enemyAnim;
 
 
-    public void Start()
-    {   
+    protected virtual void Start()
+    {    
         health *= healthProsenIncreas;
         startingHealth = health;
         player = GameObject.FindGameObjectWithTag("Player");
         sprite = GetComponent<SpriteRenderer>();
-        UppdateSpeed();
+        UpdateSpeed();
         isSlow = false;
         target = player;
         StaticUpdateManager.RegisterUpdate(CustomSlowUpdate);
@@ -80,7 +80,7 @@ public class Enemy : MonoBehaviour
     {
          if (!isSlow)
         {
-            UppdateSpeed();
+            UpdateSpeed();
             
         }
         
@@ -235,7 +235,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void UppdateSpeed(){
+    public void UpdateSpeed(){
         thisMovementSpeed = movementSpeed * baseMovementSpeed;
     }
 

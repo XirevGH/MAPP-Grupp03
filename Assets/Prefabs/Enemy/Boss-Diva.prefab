@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 4104584175501468764}
   - component: {fileID: 8944445440707182931}
   - component: {fileID: 6577417218064322984}
-  - component: {fileID: -2654862787268865128}
+  - component: {fileID: 926424555148297464}
   - component: {fileID: 1244441984418440535}
   - component: {fileID: -8718832928761771214}
   - component: {fileID: 5789765322901318672}
@@ -470,11 +470,11 @@ MonoBehaviour:
   drops:
   - item: {fileID: 2322821042000343324, guid: 0369a782efb602b49b7a7f02ad8b43ba, type: 3}
     dropChance: 100
-  - item: {fileID: 6536046719154458180, guid: e08403d79ea9a0046acfb2c680d5eb32, type: 3}
+  - item: {fileID: 6536046719154458180, guid: 3ecd58846d80571498c5c49f0cba8ec3, type: 3}
     dropChance: 100
-  - item: {fileID: 6536046719154458180}
+  - item: {fileID: 6536046719154458180, guid: e9c853b6690eefb479ed71008c35e6bf, type: 3}
     dropChance: 100
-  - item: {fileID: 6536046719154458180}
+  - item: {fileID: 6536046719154458180, guid: e9c853b6690eefb479ed71008c35e6bf, type: 3}
     dropChance: 100
   - item: {fileID: 4917292742459662858, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
     dropChance: 100
@@ -490,10 +490,13 @@ MonoBehaviour:
   damageNumberAnim: {fileID: 2898152515693454215}
   enemyAnim: {fileID: -8718832928761771214}
   hpSlider: {fileID: 3594618356281960518}
-  baseAttackColdown: 6
-  baseChargDuration: 4
-  chargAddetivSpeed: 10
---- !u!114 &-2654862787268865128
+  bossCharge:
+    chargeEnabled: 0
+    chargeDuration: 0
+    chargeAdditiveSpeed: 0
+    bossChargeActive: 0
+  baseAttackCooldown: 5
+--- !u!114 &926424555148297464
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -502,16 +505,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6536046719154458180}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8516b445a503f06449ea468cc62de5d7, type: 3}
+  m_Script: {fileID: 11500000, guid: ff74d8e955890714b9f53ad3cbc92466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abiletySpeed: 10
-  abiletyZise: 0
-  abiletySlow: 0
-  abiletyLifetime: 10
+  projectileLifetime: 4
+  projectileSpeed: 20
   bossPosition: {fileID: 4104584175501468764}
-  bossAtckObject: {fileID: 2142423527954636700, guid: a332442d40ef84f47b85999ab2f4eaf8, type: 3}
-  player: {fileID: 0}
+  bossProjectileObject: {fileID: 2142423527954636700, guid: a332442d40ef84f47b85999ab2f4eaf8, type: 3}
 --- !u!50 &1244441984418440535
 Rigidbody2D:
   serializedVersion: 4
@@ -524,7 +524,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
