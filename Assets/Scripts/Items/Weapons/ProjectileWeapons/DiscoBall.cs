@@ -23,9 +23,7 @@ public class DiscoBall : Projectile
 
     public void Blink() 
     {
-        
-          spriteRenderer.color = Color.HSVToRGB(Random.Range(0f, 1f), 0.7f, 1);
-       
+          spriteRenderer.color = Color.HSVToRGB(Random.Range(0f, 1f), 0.7f, 1); 
     }
 
     private void OnTriggerEnter2D(Collider2D other)
