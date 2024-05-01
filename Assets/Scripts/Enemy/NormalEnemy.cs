@@ -17,6 +17,11 @@ public class NormalEnemy : Enemy
             {
                 player.GetComponent<Player>().TakeDamage(1);
             }
+
+            if (Vector3.Distance(player.transform.position, transform.position) < 1)
+            {
+                player.GetComponent<Player>().TakeDamage(1);
+            }
             if (transform.position.x < target.transform.position.x)
             {
                 sprite.flipX = false;
