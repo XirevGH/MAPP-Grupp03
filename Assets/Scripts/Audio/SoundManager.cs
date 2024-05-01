@@ -104,6 +104,8 @@ public class SoundManager : MonoBehaviour
         musicSource2.Stop();
         menuMusic.Stop();
         LowPassOff();
+        musicSource1.pitch = 1;
+        musicSource2.pitch = 1;
     }
 
     public void GoBackToMain()
