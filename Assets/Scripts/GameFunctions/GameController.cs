@@ -50,8 +50,7 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        TriggerController.instance.GetComponent<TriggerController>().ToggleTrigger();
-        SoundManager.instance.GetComponent<SoundManager>().ToggleMusicPause();
+        SoundManager.instance.GetComponent<SoundManager>().Die();
         File.WriteAllText(saveFile, playerStats.SaveToString());
         SceneManager.LoadScene("ResultsScreen");
        
