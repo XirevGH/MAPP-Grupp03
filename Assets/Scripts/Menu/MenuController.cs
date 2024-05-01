@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
+
 public class ManuController : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenu;
@@ -53,7 +54,7 @@ public class ManuController : MonoBehaviour
     }
 
 
-
+   
     
 
 
