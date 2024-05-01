@@ -56,6 +56,7 @@ public class SoundManager : MonoBehaviour
     void Update()
     {
         currentScene = SceneManager.GetActiveScene();
+      
         if (currentTrackNumber != 0)
         {
             if (currentSource.pitch <= 0.9f)
@@ -103,6 +104,8 @@ public class SoundManager : MonoBehaviour
         musicSource2.Stop();
         menuMusic.Stop();
         LowPassOff();
+        musicSource1.pitch = 1;
+        musicSource2.pitch = 1;
     }
 
     public void GoBackToMain()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
 
-public class BossProjektilSplasch : MonoBehaviour
+public class Boss_AOE_Slow : MonoBehaviour
 {
     private float abiletyZise;
     private float abiletyLifetime;
@@ -13,19 +13,16 @@ public class BossProjektilSplasch : MonoBehaviour
     
     public void Initialize(float zise, float slow, float time, GameObject player)
     {
-        
-        
         this.abiletyZise = zise;  
         this.abiletySlow = slow /100;  
-        this.abiletyLifetime = time*2;
+        this.abiletyLifetime = time;
         this.player = player;
-        
-       
-        
     }
 
+
     public void Start(){
-        transform.localScale = new Vector3(abiletyZise, abiletyZise, abiletyZise); //inces the obekets scale by zise
+
+        transform.localScale = new Vector3(abiletyZise, abiletyZise, abiletyZise); 
     }
     private void FixedUpdate(){
         abiletyLifetime -= Time.deltaTime;

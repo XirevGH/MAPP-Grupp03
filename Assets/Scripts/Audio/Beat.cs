@@ -1,12 +1,11 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Beat : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed, increaseCooldownDuration, reduceCooldownDuration, MusicSpeedChange;
+    [SerializeField] private float increaseCooldownDuration, reduceCooldownDuration, MusicSpeedChange, timeToIncrease;
     [SerializeField] private GameObject circle, particle;
-    public static float totalChangedInBPM = 0;
-
     private float percentageComplete, elapsedTime, beatLife;
     private Vector3 circleStartingScale;
 
@@ -34,27 +33,42 @@ public class Beat : MonoBehaviour
 
     public void DestroyNote()
     {
+
         if (SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>().pitch <= 0.5)
         {
             SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>().pitch = 0.5f;
         }
         else
         {
-            SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>().pitch = SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>().pitch - MusicSpeedChange;
+            StartCoroutine(ChangePitch(false));
         }
         
-        totalChangedInBPM = totalChangedInBPM - MusicSpeedChange;
+       
         Instantiate(particle, this.transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    private IEnumerator ChangePitch(bool increasePitch)
+    {
+        int direction = increasePitch ? 1 : -1;
+        float timeElapsed = 0;
+        AudioSource audioSource = SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>();
+
+        while (timeElapsed < timeToIncrease)
+        {
+            audioSource.pitch = Mathf.Lerp(audioSource.pitch, audioSource.pitch + (MusicSpeedChange * direction), timeElapsed / timeToIncrease);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Music Collider"))
         {
+            StartCoroutine(ChangePitch(true));
 
-            SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>().pitch = SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>().pitch + MusicSpeedChange;
-            totalChangedInBPM = totalChangedInBPM + MusicSpeedChange;
             Destroy(gameObject);
         }
     }

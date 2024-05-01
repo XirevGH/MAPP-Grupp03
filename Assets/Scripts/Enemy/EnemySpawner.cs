@@ -12,6 +12,8 @@ public class BossWaves
     public int bossWave;
 }
 
+
+
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private List<BossWaves> bossWaves = new List<BossWaves>();
@@ -24,11 +26,11 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyDancer;
     public GameObject enemyDrunkard;
 
-    public GameObject enmemyParent;
-    public GameObject bossParent;
+    public GameObject setNormalEnemyParent;
+    public GameObject setBossEnemyParent;
 
-    public static GameObject normalEnemiParent;
-    public static GameObject bossEnemiParent;
+    public static GameObject normalEnemyParent;
+    public static GameObject bossEnemyParent;
 
     public GameObject[] spawnLocations;
     public GameObject player;
@@ -40,14 +42,14 @@ public class EnemySpawner : MonoBehaviour
     private void Start() {
         waveHasSpawned = false;
         bossAlive = false;
-        normalEnemiParent = enmemyParent;
-        bossEnemiParent = bossParent;
+        normalEnemyParent = setNormalEnemyParent;
+        bossEnemyParent = setBossEnemyParent;
     }
 
     
    void Update()
-    {
-        if(!bossAlive){
+    {   
+        if(!bossAlive){ //Stops vave spwaning if ther is a boss alive
             if(!waveHasSpawned){
                 SpawnWave();
                 waveHasSpawned = true;
@@ -58,8 +60,9 @@ public class EnemySpawner : MonoBehaviour
     }
 
     void SpawnWave()
-    {
-        if (IsBossWave(waveCount)) {
+    {       
+        if (IsBossWave()) {
+            //1 is how meny bosses spawn
             SpawnEnemiesInCircle(1);
             
         } else {
@@ -80,21 +83,18 @@ public class EnemySpawner : MonoBehaviour
             spawnRate -= 0.0001f;
             spawnIncreaser += 0.0004f;}
     }
-
-
-    
-
     void SpawnEnemy(Vector3Int position)
     {   
-        if(IsBossWave(waveCount)){
-            Instantiate(BossInWave(waveCount), position, Quaternion.identity, bossEnemiParent.GetComponent<Transform>());
+         
+        if(IsBossWave()){
+            Instantiate(GetBossToSpawn(), position, Quaternion.identity, bossEnemyParent.GetComponent<Transform>());
         }else{
             if(waveCount < 60){
-                Instantiate(enemyDrunkard, position, Quaternion.identity, enmemyParent.GetComponent<Transform>());
+                Instantiate(enemyDrunkard, position, Quaternion.identity, normalEnemyParent.GetComponent<Transform>());
             }else if(waveCount < 120){
-                Instantiate(enemyDancer, position, Quaternion.identity, enmemyParent.GetComponent<Transform>());
+                Instantiate(enemyDancer, position, Quaternion.identity, normalEnemyParent.GetComponent<Transform>());
             }else{
-                Instantiate(enemyBouncer, position, Quaternion.identity, enmemyParent.GetComponent<Transform>());
+                Instantiate(enemyBouncer, position, Quaternion.identity, normalEnemyParent.GetComponent<Transform>());
             }
         }
         
@@ -154,17 +154,20 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private bool IsBossWave(int CurentWave){
+    //checks is it is a boss wave
+    public bool IsBossWave(){
         foreach (BossWaves boss in bossWaves){
-            if(CurentWave == boss.bossWave){
+            if(waveCount == boss.bossWave){
                 return true;
             }
         }
         return false;
     }
-    private GameObject BossInWave(int CurentWave){
+
+    //returns the Boss a prefab if it is its bossWave 
+    private GameObject GetBossToSpawn(){
         foreach (BossWaves boss in bossWaves){
-            if(CurentWave == boss.bossWave){
+            if(waveCount == boss.bossWave){
                 return boss.enemyBOSS;
                 
             }

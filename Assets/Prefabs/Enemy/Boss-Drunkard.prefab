@@ -445,9 +445,12 @@ MonoBehaviour:
   damageNumberAnim: {fileID: 2898152515693454215}
   enemyAnim: {fileID: -8718832928761771214}
   hpSlider: {fileID: 8914765566047444305}
-  baseAttackColdown: 10
-  baseChargDuration: 4
-  chargAddetivSpeed: 10
+  bossCharge:
+    chargeEnabled: 1
+    chargeDuration: 3
+    chargeAdditiveSpeed: 10
+    bossChargeActive: 0
+  baseAttackCooldown: 12
 --- !u!114 &-6179003319820616230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,13 +463,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8516b445a503f06449ea468cc62de5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abiletySpeed: 10
-  abiletyZise: 3
-  abiletySlow: 20
-  abiletyLifetime: 1
+  projectileLifetime: 10
+  projectileSpeed: 10
   bossPosition: {fileID: 4104584175501468764}
-  bossAtckObject: {fileID: 2142423527954636700, guid: 996479ba723320345b83c66eb5e7b993, type: 3}
-  player: {fileID: 0}
+  bossProjectileObject: {fileID: 2142423527954636700, guid: 996479ba723320345b83c66eb5e7b993, type: 3}
+  abilitySize: 2.5
+  abilitySlow: 20
+  abilityLifetime: 1.5
 --- !u!50 &1244441984418440535
 Rigidbody2D:
   serializedVersion: 4
@@ -479,7 +482,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0

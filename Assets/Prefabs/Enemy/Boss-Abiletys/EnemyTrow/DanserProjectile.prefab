@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4826713973374504921}
-  - component: {fileID: -5534879102175358699}
   - component: {fileID: 7047443232661532637}
+  - component: {fileID: 3416652702769397898}
   - component: {fileID: 2232142688384278301}
   m_Layer: 0
-  m_Name: TrowBeerAttPlayer
+  m_Name: DanserProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,24 +29,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-5534879102175358699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2142423527954636700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d4c66f5c8198be45801b5de40921721, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SecondaryObjekt: {fileID: 7556969414854297558, guid: 8885e4b646f133e4696fa6612988bbd9, type: 3}
 --- !u!50 &7047443232661532637
 Rigidbody2D:
   serializedVersion: 4
@@ -74,6 +61,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3416652702769397898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142423527954636700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4c66f5c8198be45801b5de40921721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondaryObjectPrefab: {fileID: 6536046719154458180, guid: 935a3a109fd200c4080657daa8c508d3, type: 3}
 --- !u!212 &2232142688384278301
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 61b76e98ac1272d47ab597294b382bf5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 29b8918923ac85341a22275f7aad2f64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

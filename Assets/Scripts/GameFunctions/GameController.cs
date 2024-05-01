@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
       
         ReadFile();
         mainCamera = Camera.main;
-        Enemy.movementSpeed = 1f;        // är % * till thisEnmey
+        Enemy.movementSpeed = 1f;        // Global % enemy movespeed increase.  
         Debug.Log("Start");
     }
     private void Update()
@@ -32,7 +32,7 @@ public class GameController : MonoBehaviour
     }
     private void FixedUpdate()
     {  
-        Enemy.movementSpeed += 0.0001f; // är % * till thisEnmey
+        Enemy.movementSpeed += 0.0001f; // Global % enemy movespeed increase.  
        
     }
     private void ReadFile()
@@ -50,10 +50,11 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        File.WriteAllText(saveFile, playerStats.SaveToString());
-        SceneManager.LoadScene("ResultsScreen");
         TriggerController.instance.GetComponent<TriggerController>().ToggleTrigger();
         SoundManager.instance.GetComponent<SoundManager>().ToggleMusicPause();
+        File.WriteAllText(saveFile, playerStats.SaveToString());
+        SceneManager.LoadScene("ResultsScreen");
+       
     }
 
     public BoundsInt GetBoundsFromCamera()
