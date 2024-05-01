@@ -27,6 +27,18 @@ MonoBehaviour:
     m_Key: UpgradeButton
     m_Metadata:
       m_Items: []
+  - m_Id: 10311415898112
+    m_Key: LanguageText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10456714977280
+    m_Key: Audiotext
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10553506930688
+    m_Key: MusicText
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

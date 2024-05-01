@@ -30,6 +30,18 @@ MonoBehaviour:
     m_Localized: Uppgraderingar
     m_Metadata:
       m_Items: []
+  - m_Id: 10311415898112
+    m_Localized: "Spr\xE5k"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10456714977280
+    m_Localized: Ljud
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10553506930688
+    m_Localized: Musik
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
