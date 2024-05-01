@@ -2557,7 +2557,6 @@ MonoBehaviour:
   - {fileID: 1320764029}
   - {fileID: 692060840}
   player: {fileID: 2554686454012362858}
-  sessionItems: []
 --- !u!4 &599903641
 Transform:
   m_ObjectHideFlags: 0
@@ -5396,7 +5395,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1258233771}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1077478085
@@ -6102,6 +6102,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
+      propertyPath: amountOfProjectiles
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: percentageDamageIncrease
       value: 10
       objectReference: {fileID: 0}
@@ -6253,13 +6257,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1258233771}
   - component: {fileID: 1258233770}
+  - component: {fileID: 1258233772}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: StartGame With F1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1258233770
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6320,13 +6325,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258233769}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 36.8, y: 36.8, z: 36.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1075120216}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1258233772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258233769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d1c48923f10fd4eba231fd44b8ed50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyCode: 282
+  a: {fileID: 0}
+  testingObj1: {fileID: 0}
 --- !u!1 &1259248880
 GameObject:
   m_ObjectHideFlags: 0
@@ -11646,6 +11666,23 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     isTriggering: 1
+  - noteValue: 1
+    quaterNoteTrigger:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1600751}
+          m_TargetAssemblyTypeName: DiscoBallController, Assembly-CSharp
+          m_MethodName: Blink
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    isTriggering: 1
   isTriggering: 1
 --- !u!1 &8135886327338831348 stripped
 GameObject:
@@ -11831,4 +11868,3 @@ SceneRoots:
   - {fileID: 599903641}
   - {fileID: 627292949}
   - {fileID: 1021889678}
-  - {fileID: 1258233771}
