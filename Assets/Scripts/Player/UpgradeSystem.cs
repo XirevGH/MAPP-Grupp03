@@ -4,15 +4,17 @@ using System;
 using TMPro;
 using System.Reflection;
 using System.IO;
+using System.Linq;
 
 public class UpgradeSystem : MonoBehaviour
 {
     [SerializeField] private GameObject[] panels;
-    [SerializeField] private List<Item> items = new List<Item>();
+    [SerializeField] private Item[] startingItems;
     [SerializeField] private Player player;
 
     private Dictionary<Item, List<string>> upgradeOptions = new Dictionary<Item, List<string>>();
     private List<GameObject> choicePanels;
+    private List<Item> sessionItems = new List<Item>();
     private List<Item> choiceItems;
     private List<Item> currentPlayerItems = new List<Item>();
     private List<string> typeOptions = new List<string>();
@@ -24,6 +26,7 @@ public class UpgradeSystem : MonoBehaviour
     {
         allowedAmountOfWeapons = 4;
         allowedAmountOfUtility = 3;
+        sessionItems = new List<Item>(startingItems);
     }
 
     public void InitializeUpgradeOptions(List<Item> playerItems)
@@ -81,10 +84,6 @@ public class UpgradeSystem : MonoBehaviour
         //Get a random number based on the amount of upgrade options that the chosen item currently has.
         int randomUpgradeIndex = UnityEngine.Random.Range(0, upgradeOptions[chosenItem].Count);
 
-        Debug.Log("chosen item: " + chosenItem.GetName());
-        Debug.Log("size of options list: " + upgradeOptions[chosenItem].Count);
-        Debug.Log("random Upgrade Index: " + randomUpgradeIndex);
-
         //Fetch the upgrade option at the index of the random number.
         string chosenUpgrade = upgradeOptions[chosenItem][randomUpgradeIndex];
 
@@ -109,10 +108,6 @@ public class UpgradeSystem : MonoBehaviour
         }
         
         int randomItemIndex = UnityEngine.Random.Range(0, itemsOfType.Count);
-
-        Debug.Log("type of item: " + typeOfItem);
-        Debug.Log("size of list: " + itemsOfType.Count);
-        Debug.Log("random item index: " + randomItemIndex);
 
         Item chosenItem = itemsOfType[randomItemIndex];
         return Tuple.Create(chosenItem, chosenItem.GetName());
@@ -155,7 +150,7 @@ public class UpgradeSystem : MonoBehaviour
     {
         //Prepare all available items in order to be able to remove from the random choices from the list 
         // during the current upgrade session without it affecting the available items.
-        choiceItems = new List<Item>(items);
+        choiceItems = new List<Item>(sessionItems);
     }
 
     private GameObject ChooseRandomPanel()
@@ -186,11 +181,11 @@ public class UpgradeSystem : MonoBehaviour
         //Depending on if it is an item or an upgrade, the button gets told to call a different method along with the necessary information.
         if (typeOfChoice.Equals("Upgrade"))
         { 
-            panel.GetComponent<UpgradeButton>().PrepareMethodToExecute("PerformRandomizedUpgrade", item, upgrade);
+            panel.GetComponent<UpgradeButton>().PrepareMethodToExecute(nameof(PerformRandomizedUpgrade), item, upgrade);
         }
         else
         {
-            panel.GetComponent<UpgradeButton>().PrepareMethodToExecute("GiveRandomizedItem", item);
+            panel.GetComponent<UpgradeButton>().PrepareMethodToExecute(nameof(GiveRandomizedItem), item);
         }
     }
 
@@ -248,7 +243,7 @@ public class UpgradeSystem : MonoBehaviour
 
             //Sets the text on the panel for the type of item or upgrade chosen.
             SetPanelText(chosenPanel, item.GetName(), GetUpgradeDescription(item, typeOfChoice, upgradeText));
-            Debug.Log(item.GetName());
+
             //Prepares the button with the method to call in case that button is pressed.
             SetPanelMethod(chosenPanel, typeOfChoice, item, upgradeText);
         }
@@ -270,8 +265,7 @@ public class UpgradeSystem : MonoBehaviour
         MethodInfo methodInfo = item.GetType().GetMethod("EnableGameObject");
         methodInfo.Invoke(item, null);
         //Removes the item from the UpgradeAbility class so that it cannot be given again.
-        items.Remove(item);
-
+        sessionItems.Remove(item);
     }
 
     private List<string> DetermineTypeOptions()
