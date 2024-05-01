@@ -53,6 +53,13 @@ public class Player : MonoBehaviour
         xpHeld = 0;
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.L)) 
+        {
+            LevelUp();
+        }
+    }
     #region HP Stuff
     public void RestoreHealth(float percent)
     {
