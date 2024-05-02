@@ -14,7 +14,7 @@ public abstract class Projectile : MonoBehaviour
         }
     }
 
-    public void DestroyWhenMaxPenetration()
+    public virtual void DestroyWhenMaxPenetration()
     {
         penetration--;
         if (penetration == 0)

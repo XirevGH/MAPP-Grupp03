@@ -16,8 +16,8 @@ public class BezierCurve : MonoBehaviour
     public static Vector2 CalculateControlPoint(Vector2 startPosition, Vector2 endPosition, float controlPointOffSet, bool aboveLine)
     {
         Vector2 controlPoint = startPosition + (startPosition + endPosition).normalized * 0.5f;
-        float sideMultiplier = aboveLine ? -1f : 1f;
-        controlPoint -= new Vector2(0, sideMultiplier * controlPointOffSet);
+        float sign = aboveLine ? -1f : 1f;
+        controlPoint -= new Vector2(0, sign * controlPointOffSet);
 
         return controlPoint;
     }

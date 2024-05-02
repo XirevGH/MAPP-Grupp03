@@ -21,7 +21,7 @@ public class VinylDisc : Projectile
 
     void Awake()
     {
-        source = SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>();
+        
         aimingArrowRotation = GameObject.FindGameObjectWithTag("AimingArrow").transform.rotation;
         startPosition = transform.position;
 
@@ -49,6 +49,7 @@ public class VinylDisc : Projectile
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
         BPM = TriggerController.instance.GetCurrentTrackBPM();
         noteValue = TriggerController.instance.GetTrigger(triggerNumber).noteValue;
+        source = SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>();
         pitch = source.pitch;
     
         travelTime = (((60f / (BPM / noteValue)) / pitch) /2f);

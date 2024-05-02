@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -372362077161100626}
   - component: {fileID: 5430796995634872154}
   m_Layer: 7
-  m_Name: DiscoBall
+  m_Name: DiscoBAll
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: d237ef4923b2f1440a6a2d9d9d171fb5, type: 3}
+  m_Color: {r: 1, g: 0.305, b: 0.9421757, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -176,4 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 500
-  distance: 100
+  distance: 200
+  torque: 50
+  blinkTime: 0.5
