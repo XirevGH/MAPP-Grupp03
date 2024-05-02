@@ -9,13 +9,19 @@ public class DiscoBall : Projectile
     private SpriteRenderer spriteRenderer;
     [SerializeField] private float height, distance, torque;
 
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
+    }
+
     private void Start()
     {
         distance = Random.Range(-distance, distance);
-        rb = GetComponent<Rigidbody2D>();
+       
         rb.AddForce( new Vector2 (distance, height - Mathf.Abs(distance)));
         rb.AddTorque(torque * Mathf.Sign(distance));
-        spriteRenderer = GetComponent<SpriteRenderer>();
+       
         spriteRenderer.color = Color.HSVToRGB(Random.Range(0f, 1f), 0.7f, 1 );
        
 
@@ -23,7 +29,8 @@ public class DiscoBall : Projectile
 
     public void Blink() 
     {
-          spriteRenderer.color = Color.HSVToRGB(Random.Range(0f, 1f), 0.7f, 1); 
+        //spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.color = Color.HSVToRGB(Random.Range(0f, 1f), 0.7f, 1); 
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -35,8 +42,15 @@ public class DiscoBall : Projectile
     public override void DestroyWhenMaxPenetration()
     {
         DiscoBallController.instance.activeDiscoBalls.Remove(gameObject);
-        Debug.Log("remove");
         base.DestroyWhenMaxPenetration();
 
+    }
+
+    public void RemoveFromSetIfNotAlive()
+    {
+        if (this == null && ReferenceEquals(this, null))
+        {
+            DiscoBallController.instance.activeDiscoBalls.Remove(gameObject);
+        }
     }
 }

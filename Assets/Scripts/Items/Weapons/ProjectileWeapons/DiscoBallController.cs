@@ -31,12 +31,25 @@ public class DiscoBallController : ProjectileWeapon
 
     public void Blink()
     {
-        Debug.Log(activeDiscoBalls.Count);
-        if (activeDiscoBalls.Count != 0) 
+
+        if (activeDiscoBalls.Count == 0)
         {
+            return;
+        }
+        else
+        {
+            
             foreach (GameObject discoBall in activeDiscoBalls)
             {
-                discoBall.GetComponent<DiscoBall>().Blink();
+              
+                if (discoBall == null)
+                {
+                    discoBall.GetComponent<DiscoBall>().RemoveFromSetIfNotAlive();
+                }
+                else
+                {
+                    discoBall.GetComponent<DiscoBall>().Blink();
+                }
             }
         }
         
