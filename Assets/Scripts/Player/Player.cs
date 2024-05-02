@@ -20,8 +20,8 @@ public class Player : MonoBehaviour
 
     private int money;
     private float moneyMultiplier;
-    private int damage;
-    private int areaOfEffectSize;
+    private float damage;
+    private float areaOfEffectSize;
     private int pierce;
     private float xpMultiplier;
     public float maxHealth;
@@ -32,24 +32,24 @@ public class Player : MonoBehaviour
     private float xpToLevel;
     private int level;
 
-    private short burstAmount;
+    private int burstAmount;
 
     
     private void Start()
     {
-        money = playerStats.money; 
-        moneyMultiplier = playerStats.moneyMultiplier; 
-        damage = playerStats.damage;
-        areaOfEffectSize = playerStats.areaOfEffectSize;
-        pierce = playerStats.pierce;
-        xpMultiplier = playerStats.xpMultiplier;
-        maxHealth = playerStats.maxHealth; 
-        health = maxHealth;
-        defence = playerStats.defence; 
-        movementSpeed = playerStats.movementSpeed; 
+        money = playerStats.stats.money; 
+        moneyMultiplier = playerStats.stats.moneyMultiplier; 
+        damage = playerStats.stats.damage;
+        areaOfEffectSize = playerStats.stats.areaOfEffectSize;
+        pierce = playerStats.stats.pierce;
+        xpMultiplier = playerStats.stats.xpMultiplier;
+        maxHealth = xpMultiplier * playerStats.stats.baseHealth; 
+        health =  maxHealth;
+        defence = playerStats.stats.defence; 
+        movementSpeed = playerStats.stats.movementSpeed; 
         xpToLevel = 100;
         level = 1;
-        burstAmount = playerStats.burstAmount;
+        burstAmount = playerStats.stats.burstAmount;
         xpHeld = 0;
     }
 

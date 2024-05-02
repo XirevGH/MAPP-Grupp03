@@ -11031,6 +11031,63 @@ MonoBehaviour:
   shootingPoint: {fileID: 7147500035608189028}
   notePrefab: {fileID: 5730958551181348608, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
   speed: 10
+--- !u!1001 &5122684446331348380
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4602089479282124509, guid: 0aee69d8627884c46bc292204382bce8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602089479282124509, guid: 0aee69d8627884c46bc292204382bce8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602089479282124509, guid: 0aee69d8627884c46bc292204382bce8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602089479282124509, guid: 0aee69d8627884c46bc292204382bce8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602089479282124509, guid: 0aee69d8627884c46bc292204382bce8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602089479282124509, guid: 0aee69d8627884c46bc292204382bce8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602089479282124509, guid: 0aee69d8627884c46bc292204382bce8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602089479282124509, guid: 0aee69d8627884c46bc292204382bce8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602089479282124509, guid: 0aee69d8627884c46bc292204382bce8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602089479282124509, guid: 0aee69d8627884c46bc292204382bce8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4937356482481230933, guid: 0aee69d8627884c46bc292204382bce8, type: 3}
+      propertyPath: m_Name
+      value: TestPlayer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0aee69d8627884c46bc292204382bce8, type: 3}
 --- !u!4 &5383820192035051673
 Transform:
   m_ObjectHideFlags: 0
@@ -11117,15 +11174,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 0
-  moneyMultiplier: 0
+  pierce: 0
+  burstAmount: 1
+  defence: 0
+  regeneration: 0
   damage: 0
   areaOfEffectSize: 0
-  pierce: 0
-  xpMultiplier: 0
-  defence: 0
   movementSpeed: 0
-  burstAmount: 1
-  maxHealth: 0
+  duration: 0
+  objectSpeed: 0
+  baseHealth: 0
+  healthMultiplier: 0
+  moneyMultiplier: 0
+  xpMultiplier: 0
+  stats:
+    baseHealth: 100
+    damage: 1
+    projectileSpeed: 1
+    healthMultiplier: 1
+    movementSpeed: 1
+    areaOfEffectSize: 1
+    duration: 1
+    moneyMultiplier: 1
+    xpMultiplier: 1
+    defence: 0
+    regeneration: 0
+    pierce: 0
+    burstAmount: 0
 --- !u!95 &5436226366269919645
 Animator:
   serializedVersion: 5
@@ -11746,3 +11821,4 @@ SceneRoots:
   - {fileID: 599903641}
   - {fileID: 627292949}
   - {fileID: 1021889678}
+  - {fileID: 5122684446331348380}

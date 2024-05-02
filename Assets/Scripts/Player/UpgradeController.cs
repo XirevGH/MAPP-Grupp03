@@ -3,230 +3,150 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+[System.Serializable]
+public struct UpgradeStats
+{
+    public int defence, regeneration, pierce, burstAmount;
+    public float damage, projectileSpeed, healthMultiplier, movementSpeed, areaOfEffectSize, duration, moneyMultiplier, xpMultiplier;
+    public int[] savedLevels;
+    public int savedMony;
+
+}
+
 public class UpgradeController : MonoBehaviour
 {
+    [SerializeField] public UpgradeStats upgradeStats;
     [SerializeField] private int money;
     [SerializeField] private TextMeshProUGUI MoneyText1;
     [SerializeField] private TextMeshProUGUI MoneyText2;
+
+    [SerializeField] private TextMeshProUGUI[] statCostTexts;
+    [SerializeField] private TextMeshProUGUI[] statNameTexts; 
+    [SerializeField] private TextMeshProUGUI[] statIncreaseTexts;
+    [SerializeField] private TextMeshProUGUI[] statInfoTexts;
     
-    [SerializeField] private TextMeshProUGUI DamageCost;
-    [SerializeField] private TextMeshProUGUI DamageStats;
-
-    [SerializeField] private TextMeshProUGUI BPMCost;
-    [SerializeField] private TextMeshProUGUI BPMStats;
-
-    [SerializeField] private TextMeshProUGUI SizeCost;
-    [SerializeField] private TextMeshProUGUI SizeStats;
-
-    [SerializeField] private TextMeshProUGUI PierceCost;
-    [SerializeField] private TextMeshProUGUI PierceStats;
-
-    [SerializeField] private TextMeshProUGUI XpMultCost;
-    [SerializeField] private TextMeshProUGUI XpMultStats;
-
-    [SerializeField] private TextMeshProUGUI HPCost;
-    [SerializeField] private TextMeshProUGUI HPStats;
-
-    [SerializeField] private TextMeshProUGUI DefenceCost;
-    [SerializeField] private TextMeshProUGUI DefenceStats;
-
-    [SerializeField] private TextMeshProUGUI MovSpeedCost;
-    [SerializeField] private TextMeshProUGUI MovSpeedStats;
-
-    [SerializeField] private TextMeshProUGUI InvincibilityCost;
-    [SerializeField] private TextMeshProUGUI InvincibilityStats;
-
-    [SerializeField] private TextMeshProUGUI MoneyMultCost;
-    [SerializeField] private TextMeshProUGUI MoneyMultStats;
-
-    private List<int> upgrades = new List<int>();
-
-    public int perLevelPriceIncrease;
-    private int levelDamage;
-    private int levelBPM;
-    private int levelSize;
-    private int levelPrice;
-    private int levelXpMultiplier;
-    private int levelHP;
-    private int levelDefence;
-    private int levelMoveSpeed;
-    private int levelInvincibilityFrames;
-    private int levelMoneyMult;
     
+    
+    private float[] multipliers = { 1f,0.1f,1f,1f,5f,5f,10f,5f,5f,5f,5f,5f};
+    private int[] levels = {0,0,0,0,0,0,0,0,0,0,0,0 };
 
-     private void Start()
+    private string[] uppgradeName =         { "Defence", "Regen", "Pierce", "Projectils", "Damage", "ProjSpeed", "HealthMult", "MoveSpeed", "AOE", "Duration", "MoneyMult", "XpMult" };
+    private string[] statUnits =            {    "",       "",       "",         "",         "%",       "%",         "%",          "%",       "%",     "%",        "%",        "%" };
+    private int[] perLevelPriceIncrease =   {   100,       100,     1000,       1000,       200,        100,        100,            100,      100,     200,        500,        500 };
+
+    private void Start()
     {
-        InitialisingPanel();
+        
+        if(upgradeStats.savedLevels.Length > 0){
+            money = upgradeStats.savedMony;
+            levels = upgradeStats.savedLevels;
+        }else{
+            levels = new int[statCostTexts.Length];
+        }
+       
+        
+        InitializePanel();
     }
 
-    public void InitialisingPanel(){
-    
-    
-    levelDamage = 0;
-    levelBPM = 0;
-    levelSize = 0;
-    levelPrice = 0;
-    levelXpMultiplier = 0;
-    levelHP = 0;
-    levelDefence = 0;
-    levelMoveSpeed = 0;
-    levelInvincibilityFrames = 0;
-    levelMoneyMult = 0;
-    
-
-
+    private void InitializePanel()
+    {
         MoneyText1.SetText(money.ToString());
         MoneyText2.SetText(money.ToString());
 
-        DamageCost.SetText(((levelDamage + 1) * perLevelPriceIncrease).ToString());
-        DamageStats.SetText(levelDamage * 5 + "%");
+        for (int i = 0; i < statCostTexts.Length; i++)
+        {
+            statCostTexts[i].SetText(((levels[i] + 1) * perLevelPriceIncrease[i]).ToString());
+            statInfoTexts[i].SetText((levels[i] * multipliers[i]) + statUnits[i]);
+            statIncreaseTexts[i].SetText("+"+ multipliers[i] + statUnits[i]);
+            statNameTexts[i].SetText(uppgradeName[i]); 
+        }
+    }
 
-        BPMCost.SetText(((levelBPM + 1) * perLevelPriceIncrease).ToString());
-        BPMStats.SetText(levelBPM * 5 + "%");
+    public void BuyUpgrade(int statIndex)
+    {
+        if (EnoughMoney((levels[statIndex] + 1) * perLevelPriceIncrease[statIndex]))
+        {
+            levels[statIndex]++;
+            money -= (levels[statIndex]) * perLevelPriceIncrease[statIndex];
+            UpdateUI(statIndex);
+        }
+    }
 
-        SizeCost.SetText(((levelSize + 1) * perLevelPriceIncrease).ToString());
-        SizeStats.SetText(levelSize * 10 + "%");
-
-        
-        PierceCost.SetText(((levelPrice + 1) * perLevelPriceIncrease).ToString());
-        PierceStats.SetText(levelPrice + "");
-
-        XpMultCost.SetText(((levelXpMultiplier + 1) * perLevelPriceIncrease).ToString());
-        XpMultStats.SetText(levelXpMultiplier * 2.5 + "%");
-
-        HPCost.SetText(((levelHP + 1) * perLevelPriceIncrease).ToString());
-        HPStats.SetText(levelHP * 10 + "%");
-
-        DefenceCost.SetText(((levelDefence + 1) * perLevelPriceIncrease).ToString());
-        DefenceStats.SetText(levelDefence * 5 + "");
-
-        MovSpeedCost.SetText(((levelMoveSpeed + 1) * perLevelPriceIncrease).ToString());
-        MovSpeedStats.SetText(levelMoveSpeed * 0.1 + "");
-
-        InvincibilityCost.SetText(((levelInvincibilityFrames + 1) * perLevelPriceIncrease).ToString());
-        InvincibilityStats.SetText(levelInvincibilityFrames * 0.1 + "s");
-
-        MoneyMultCost.SetText(((levelMoneyMult + 1) * perLevelPriceIncrease).ToString());
-        MoneyMultStats.SetText(levelMoneyMult * 2.5 + "%");
-
+    private void UpdateUI(int statIndex)
+    {
+        MoneyText1.SetText(money.ToString());
+        MoneyText2.SetText(money.ToString());
+        statCostTexts[statIndex].SetText(((levels[statIndex] + 1) * perLevelPriceIncrease[statIndex]).ToString());
+        statInfoTexts[statIndex].SetText((levels[statIndex] * multipliers[statIndex]) + statUnits[statIndex]);
         
     }
 
-    public void ResetUppgrades(){
-        upgrades.AddRange(new int[] { levelDamage, levelBPM, levelSize, levelPrice, levelXpMultiplier, levelHP, levelDefence, levelMoveSpeed, levelInvincibilityFrames, levelMoneyMult });
-        foreach (int level in upgrades){
-
-            for (int i = 1; i <= level; ++i)
-            {
-                money += i * perLevelPriceIncrease; 
-            }
-        }
-        upgrades.Clear();
-        
-        InitialisingPanel();
-    }
-    public void ByDameg()
+    private bool EnoughMoney(int price)
     {
-        if(EnothMoney((levelDamage + 1) * perLevelPriceIncrease)){
-            levelDamage += 1;
-            DamageCost.SetText(((levelDamage + 1) * perLevelPriceIncrease).ToString());
-            DamageStats.SetText(levelDamage * 5 + "%");
-        }
+        return money >= price;
     }
-
-    public void ByBPM()
+    public void RefundAllUpgrades()
     {
-        if(EnothMoney((levelBPM + 1) * perLevelPriceIncrease)){
-            levelBPM += 1;
-            BPMCost.SetText(((levelBPM + 1) * perLevelPriceIncrease).ToString());
-            BPMStats.SetText(levelBPM * 5 + "%");
-        }
-    }
-
-    public void BySize()
-    {
-        if(EnothMoney((levelSize + 1) * perLevelPriceIncrease)){
-            levelSize += 1;
-            SizeCost.SetText(((levelSize + 1) * perLevelPriceIncrease).ToString());
-            SizeStats.SetText(levelSize * 10 + "%");
-        }
-    }
-
-    public void ByPirce()
-    {
-        if(EnothMoney((levelPrice + 1) * perLevelPriceIncrease)){
-            levelPrice += 1;
-            PierceCost.SetText(((levelPrice + 1) * perLevelPriceIncrease).ToString());
-            PierceStats.SetText(levelPrice + "");
-        }
-    }
-
-    public void ByXpMultiplayer()
-    {
-        if(EnothMoney((levelXpMultiplier + 1) * perLevelPriceIncrease)){
-            levelXpMultiplier += 1;
-            XpMultCost.SetText(((levelXpMultiplier + 1) * perLevelPriceIncrease).ToString());
-            XpMultStats.SetText(levelXpMultiplier * 2.5 + "%");
-        }
-    }
-
-    public void ByHP()
-    {
-        if(EnothMoney((levelHP + 1) * perLevelPriceIncrease)){
-            levelHP += 1;
-            HPCost.SetText(((levelHP + 1) * perLevelPriceIncrease).ToString());
-            HPStats.SetText(levelHP * 10 + "%");
+        for (int i = 0; i < levels.Length; i++)
+        {
             
+            for (int level = levels[i]; level > 0; level--)
+            {
+                money += level * perLevelPriceIncrease[i];
+            }
+            
+            levels[i] = 0;
+            
+            UpdateUI(i);
         }
+
+        
+        MoneyText1.SetText(money.ToString());
+        MoneyText2.SetText(money.ToString());
+    }
+    public void SetStats(){
+
+        upgradeStats.savedLevels = levels;
+        upgradeStats.savedMony = money;
+
+        upgradeStats.defence = levels[0] * (int)multipliers[0];
+        upgradeStats.regeneration = levels[1] * (int)multipliers[1];
+        upgradeStats.pierce = levels[2] * (int)multipliers[2];
+        upgradeStats.burstAmount = levels[3] * (int)multipliers[3];
+
+        upgradeStats.damage = levels[4] * multipliers[4]/100;
+        upgradeStats.projectileSpeed = levels[5] * multipliers[5]/100;
+        upgradeStats.healthMultiplier = levels[6] * multipliers[6]/100;
+        upgradeStats.movementSpeed = levels[7] * multipliers[7]/100;
+        upgradeStats.areaOfEffectSize = levels[8] * multipliers[8]/100;
+        upgradeStats.duration = levels[9] * multipliers[9]/100;
+        upgradeStats.moneyMultiplier = levels[10] * multipliers[10]/100;
+        upgradeStats.xpMultiplier = levels[11] * multipliers[11]/100;
+    }
+    public string SaveToString()
+    {   SetStats();
+        return JsonUtility.ToJson(upgradeStats, true);
     }
 
-    public void ByDefence()
+    public void CreateFromJSON(string jsonString)
     {
-        if(EnothMoney((levelDefence + 1)  * perLevelPriceIncrease)){
-            levelDefence += 1;
-            DefenceCost.SetText(((levelDefence + 1) * perLevelPriceIncrease).ToString());
-            DefenceStats.SetText(levelDefence * 5 + "");
-        }
+        JsonUtility.FromJsonOverwrite(jsonString, upgradeStats);
+        InitializePanel();
     }
-
-    public void ByMovSpeed()
+    public void OnSaveButtonClicked()
     {
-        if(EnothMoney((levelMoveSpeed + 1) * perLevelPriceIncrease)){
-            levelMoveSpeed += 1;
-            MovSpeedCost.SetText(((levelMoveSpeed + 1) * perLevelPriceIncrease).ToString());
-            MovSpeedStats.SetText(levelMoveSpeed * 0.1 + "");
-        }
+        string jsonData = SaveToString();
+        PlayerPrefs.SetString("UpgradeData", jsonData);
+        PlayerPrefs.Save(); 
     }
 
-    public void ByInvinsebiletyFrames()
+    public void OnLoadButtonClicked()
     {
-       if(EnothMoney((levelInvincibilityFrames + 1) * perLevelPriceIncrease)){
-            levelInvincibilityFrames += 1;
-            InvincibilityCost.SetText(((levelInvincibilityFrames + 1) * perLevelPriceIncrease).ToString());
-            InvincibilityStats.SetText(levelInvincibilityFrames * 0.1 + "s");
-        }
+        string jsonData = PlayerPrefs.GetString("UpgradeData", "{}"); 
+        CreateFromJSON(jsonData);
     }
 
-    public void ByMoneyMult()
-    {
-       if(EnothMoney((levelMoneyMult + 1) * perLevelPriceIncrease)){
-            levelMoneyMult += 1;
-            MoneyMultCost.SetText(((levelMoneyMult + 1) * perLevelPriceIncrease).ToString());
-            MoneyMultStats.SetText(levelMoneyMult * 2.5 + "%");
-        }
-    }
-
-    public bool EnothMoney(int price)
-    {
-        if(money >= price){
-            money -= price;
-            MoneyText1.SetText(money.ToString());
-            MoneyText2.SetText(money.ToString());
-            return true;
-        }
-        return false;
-    }
-
+}
     
 
     
@@ -240,4 +160,4 @@ public class UpgradeController : MonoBehaviour
 
     
 
-}
+
