@@ -1,7 +1,12 @@
-using System.Collections;
+using System;
+using System.Reflection;
+using System.IO;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Unity.VisualScripting.FullSerializer.Internal;
+using static UnityEditor.Progress;
 
 public class UpgradeController : MonoBehaviour
 {
@@ -39,8 +44,11 @@ public class UpgradeController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI MoneyMultCost;
     [SerializeField] private TextMeshProUGUI MoneyMultStats;
 
+    [SerializeField] private Item[] items;
+
     private List<int> upgrades = new List<int>();
 
+    private Dictionary<Tuple<string, string>, int> upgradeMap = new Dictionary<Tuple<string, string>, int>();
     public int perLevelPriceIncrease;
     private int levelDamage;
     private int levelBPM;
@@ -52,28 +60,126 @@ public class UpgradeController : MonoBehaviour
     private int levelMoveSpeed;
     private int levelInvincibilityFrames;
     private int levelMoneyMult;
-    
 
-     private void Start()
+    private bool upgradesUnfinished = true;
+    string upgradeStatsFile;
+
+    [SerializeField] public int bassGuitarDamageUpgradeRank;
+    [SerializeField] public int yoyoProjectileUpgradeRank;
+    [SerializeField] public int yoyoDamageUpgradeRank;
+    [SerializeField] public int discoBallProjectileCountUpgradeRank;
+    [SerializeField] public int discoBallPenetrationAmountUpgradeRank;
+    [SerializeField] public int discoBallDamageUpgradeRank;
+    [SerializeField] public int electricGuitarTetherUpgradeRank;
+    [SerializeField] public int electricGuitarDamageUpgradeRank;
+    [SerializeField] public int saxophoneProjectileCountUpgradeRank;
+    [SerializeField] public int saxophonePenetrationAmountUpgradeRank;
+    [SerializeField] public int saxophoneDamageUpgradeRank;
+    [SerializeField] public int synthwaveBlastProjectileCountUpgradeRank;
+    [SerializeField] public int synthwaveBlastPenetrationAmountUpgradeRank;
+    [SerializeField] public int synthwaveBlastDamageUpgradeRank;
+    [SerializeField] public int vinylRecordProjectileCountUpgradeRank;
+    [SerializeField] public int vinylRecordPenetrationAmountUpgradeRank;
+    [SerializeField] public int vinylRecordDamageUpgradeRank;
+    [SerializeField] public int chillVibeRadiusUpgradeRank;
+    [SerializeField] public int chillVibeSlowUpgradeRank;
+    [SerializeField] public int decoyDecoyAmountUpgradeRank;
+    [SerializeField] public int decoyDecoyHealthUpgradeRank;
+    [SerializeField] public int grooveArmorHealthUpgradeRank;
+    [SerializeField] public int rollerSkatesMovementSpeedUpgradeRank;
+    [SerializeField] public int stagePresenceDamageUpgradeRank;
+
+    private void CreateUpgradeMap()
+    {
+        foreach(Item item in items)
+        {
+            MethodInfo[] methods = item.GetType().GetMethods();
+            foreach(MethodInfo method in methods)
+            {
+                if (method.Name.Contains("UpgradeRank")) {
+                    string variableName = char.ToLower(item.GetName()[0]) + item.GetName().Substring(1).Replace(" ", "") + method.Name;
+                    upgradeMap.Add(Tuple.Create(item.GetName(), method.Name), (int)typeof(UpgradeController).GetField(variableName).GetValue(this));
+                }
+            }
+        }
+    }
+
+    private void Awake()
+    {
+        upgradeStatsFile = Application.persistentDataPath + "/upgradeInfo.json";
+        ReadFile(upgradeStatsFile);
+        DontDestroyOnLoad(gameObject);
+        CreateUpgradeMap();
+    }
+
+    private void Start()
     {
         InitialisingPanel();
     }
 
-    public void InitialisingPanel(){
-    
-    
-    levelDamage = 0;
-    levelBPM = 0;
-    levelSize = 0;
-    levelPrice = 0;
-    levelXpMultiplier = 0;
-    levelHP = 0;
-    levelDefence = 0;
-    levelMoveSpeed = 0;
-    levelInvincibilityFrames = 0;
-    levelMoneyMult = 0;
-    
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            upgradesUnfinished = true;
+        }
+        
+        if (SceneManager.GetActiveScene().name == "Main" && upgradesUnfinished)
+        {
+            items = Resources.FindObjectsOfTypeAll<Item>();
+            foreach (Item item in items)
+            {
+                foreach(Tuple<string, string> key in upgradeMap.Keys) 
+                { 
+                    if (item.GetName().Contains(key.Item1)) 
+                    { 
+                        item.GetType().GetMethod(key.Item2).Invoke(item, new object[] { upgradeMap[key] });
+                    }
+                }
+            }
+            upgradesUnfinished = false;
+        }
+    }
 
+    private void ReadFile(string saveFile)
+    {
+        if (File.Exists(saveFile))
+        {
+            string fileContents = File.ReadAllText(saveFile);
+            CreateFromJSON(fileContents);
+        }
+        else
+        {
+            Debug.Log("File does not exist.");
+        }
+    }
+
+    public void CreateFromJSON(string jsonString)
+    {
+        JsonUtility.FromJsonOverwrite(jsonString, this);
+    }
+
+    public string SaveToString()
+    {
+        return JsonUtility.ToJson(this);
+    }
+
+
+    public void InitialisingPanel()
+    {
+    
+        levelDamage = 0;
+        levelBPM = 0;
+        levelSize = 0;
+        levelPrice = 0;
+        levelXpMultiplier = 0;
+        levelHP = 0;
+        levelDefence = 0;
+        levelMoveSpeed = 0;
+        levelInvincibilityFrames = 0;
+        levelMoneyMult = 0;
+    
+/*
 
         MoneyText1.SetText(money.ToString());
         MoneyText2.SetText(money.ToString());
@@ -108,7 +214,7 @@ public class UpgradeController : MonoBehaviour
 
         MoneyMultCost.SetText(((levelMoneyMult + 1) * perLevelPriceIncrease).ToString());
         MoneyMultStats.SetText(levelMoneyMult * 2.5 + "%");
-
+*/
         
     }
 
@@ -125,6 +231,20 @@ public class UpgradeController : MonoBehaviour
         
         InitialisingPanel();
     }
+
+    public void UpgradeRank(string classAndMethod)
+    {
+        string[] parts = classAndMethod.Split(','); 
+        string className = parts[0];
+        string methodName = parts[1];
+        string variableName = char.ToLower(className[0]) + className.Substring(1).Replace(" ", "") + methodName;
+        int variableValueBefore = (int)typeof(UpgradeController).GetField(variableName).GetValue(this);
+        typeof(UpgradeController).GetField(variableName).SetValue(this, variableValueBefore + 1);
+        int variableValueAfter = (int)typeof(UpgradeController).GetField(variableName).GetValue(this);
+        upgradeMap[Tuple.Create(className, methodName)] = variableValueAfter;
+        File.WriteAllText(upgradeStatsFile, SaveToString());
+    }
+
     public void ByDameg()
     {
         if(EnothMoney((levelDamage + 1) * perLevelPriceIncrease)){

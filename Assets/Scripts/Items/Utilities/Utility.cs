@@ -1,4 +1,7 @@
 public abstract class Utility : Item
 {
-    //Yes, this should be empty.
+    protected override void Awake()
+    {
+        base.Awake();
+    }
 }

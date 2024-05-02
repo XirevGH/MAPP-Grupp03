@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,10 +7,30 @@ public abstract class TetheringWeapon : Weapon
     [SerializeField] protected int amountOfTethers;
     [SerializeField] protected int tetherIncreasePerUpgrade;
     protected HashSet<GameObject> enemies = new HashSet<GameObject>();
+    public int tetherRank;
+
+
+    public void TetherUpgradeRank(int rankIncrease)
+    {
+        tetherRank += rankIncrease;
+        if (!InitialUpgradesComplete())
+        {
+            for (int i = 0; i < tetherRank; i++)
+            {
+                IncreaseDamage();
+            }
+            EndInitialUpgrades();
+        }
+    }
+
 
     public void IncreaseTetherAmount()
     {
         amountOfTethers += tetherIncreasePerUpgrade;
+        if (InitialUpgradesComplete())
+        {
+            TetherUpgradeRank(1);
+        }
     }
 
     protected GameObject[] GetClosestEnemies(int amountOfTethers)

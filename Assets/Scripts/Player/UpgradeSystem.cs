@@ -3,8 +3,6 @@ using UnityEngine;
 using System;
 using TMPro;
 using System.Reflection;
-using System.IO;
-using System.Linq;
 
 public class UpgradeSystem : MonoBehaviour
 {

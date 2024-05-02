@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VinylDiscController : ProjectileWeapon
 {
@@ -10,9 +11,12 @@ public class VinylDiscController : ProjectileWeapon
     private Transform playerTransform;
     private Vector3 playerPosition;
 
-    void Start()
+    protected override void Awake()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        base.Awake();
+        if (SceneManager.GetActiveScene().name == "Main") {  
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        }
     }
 
     public override void Attack()

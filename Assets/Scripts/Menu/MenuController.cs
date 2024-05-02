@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 
 
-public class ManuController : MonoBehaviour
+public class MenuController : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject exit;
     [SerializeField] private GameObject play;
-    [SerializeField] private GameObject uppgradesPanel;
+    [SerializeField] private GameObject upgradesPanel;
+    [SerializeField] private GameObject itemsPanel;
     [SerializeField] private GameObject settingPanel;
     [SerializeField] private GameObject creditPanel;
    //  [SerializeField] private AudioSource audioSource;
@@ -23,13 +24,9 @@ public class ManuController : MonoBehaviour
     {
         CloseCredits();
         CloseSetting();
-        CloseUppgrades();
+        CloseUpgrades();
+        CloseItems();
 
-    }
-
-    private void Update()
-    {
-        
     }
 
     public void Startgame()
@@ -54,10 +51,6 @@ public class ManuController : MonoBehaviour
     }
 
 
-   
-    
-
-
     public void ChangeScene()
     {
         //soundManager.GetComponent<SoundManager>().ToggleMusicPause();
@@ -75,21 +68,30 @@ public class ManuController : MonoBehaviour
     {
         settingPanel.SetActive(false);
         mainMenu.SetActive(true);
-
-
     }
 
-    public void ShowUppgrades()
+    public void CloseItems()
     {
-        uppgradesPanel.SetActive(true);
+        itemsPanel.SetActive(false);
+        mainMenu.SetActive(true);
+    }
+
+    public void ShowItems()
+    {
+        itemsPanel.SetActive(true);
         mainMenu.SetActive(false);
+    }
+    public void ShowUpgrades()
+    {
+        upgradesPanel.SetActive(true);
+        itemsPanel.SetActive(false);
      
     }
 
-    public void CloseUppgrades()
+    public void CloseUpgrades()
     {
-        uppgradesPanel.SetActive(false);
-        mainMenu.SetActive(true);
+        upgradesPanel.SetActive(false);
+        itemsPanel.SetActive(true);
       
     }
 

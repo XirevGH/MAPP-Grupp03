@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -8,9 +6,9 @@ using UnityEngine.Tilemaps;
 
 public class GameController : MonoBehaviour
 {
-    private string saveFile;
-    public PlayerStats playerStats;
     [SerializeField] private GameObject trackswapper;
+    public PlayerStats playerStats;
+    private string playerStatsFile;
     public Camera mainCamera;
     public Tilemap tilemap;
     public int currentTrackBPM;
@@ -19,23 +17,24 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        saveFile = Application.persistentDataPath + "/playerInfo.json";
-      
-        ReadFile();
+        playerStatsFile = Application.persistentDataPath + "/playerInfo.json";
+        ReadFile(playerStatsFile);
         mainCamera = Camera.main;
         Enemy.movementSpeed = 1f;        // Global % enemy movespeed increase.  
-        Debug.Log("Start");
     }
+
     private void Update()
     {
         currentTrackBPM = SoundManager.instance.GetComponent<SoundManager>().GetCurrentBPM();
     }
+
     private void FixedUpdate()
     {  
         Enemy.movementSpeed += 0.0001f; // Global % enemy movespeed increase.  
        
     }
-    private void ReadFile()
+
+    private void ReadFile(string saveFile)
     {
         if (File.Exists(saveFile))
         {
@@ -51,7 +50,7 @@ public class GameController : MonoBehaviour
     public void GameOver()
     {
         SoundManager.instance.GetComponent<SoundManager>().Die();
-        File.WriteAllText(saveFile, playerStats.SaveToString());
+        File.WriteAllText(playerStatsFile, playerStats.SaveToString());
         SceneManager.LoadScene("ResultsScreen");
        
     }

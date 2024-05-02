@@ -7,6 +7,18 @@ public abstract class PermanentProjectileWeapon : Weapon
     [SerializeField] protected int amountOfProjectiles;
     [SerializeField] protected int projectileIncreasePerUpgrade;
 
+    public int projectileRank;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        for (int i = 0; i < projectileRank; i++)
+        {
+            IncreaseProjectileCount();
+        }
+        EndInitialUpgrades();
+    }
+
     public override void IncreaseDamage()
     {
         base.IncreaseDamage();
@@ -19,6 +31,15 @@ public abstract class PermanentProjectileWeapon : Weapon
     public void IncreaseProjectileCount()
     {
         amountOfProjectiles += projectileIncreasePerUpgrade;
+        if (InitialUpgradesComplete())
+        {
+            ProjectileUpgradeRank(1);
+        }
+    }
+
+    public void ProjectileUpgradeRank(int rankAmount)
+    {
+        projectileRank += rankAmount;
     }
 
     public int GetProjectileIncreasePerUpgrade()

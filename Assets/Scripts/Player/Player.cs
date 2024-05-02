@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
         xpHeld = 0;
     }
 
+    //For leveling up faster for testing, remove later
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.L)) 
