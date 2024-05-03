@@ -44,11 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899576dad5c4b5a40a0036a0f3a9d6b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   itemName: 
-  damage: 5
-  percentageDamageIncreasePerUpgrade: 5
+  damage: 10
+  percentageDamageIncrease: 0
   amountOfProjectiles: 1
   projectileIncreasePerUpgrade: 1
   penetration: 1
   penetrationIncreasePerUpgrade: 1
   discoBall: {fileID: 2005328289849877413, guid: f92804d05bface3499e84240f1143431, type: 3}
+  blinkTime: 0
