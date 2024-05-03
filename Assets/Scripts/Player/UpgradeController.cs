@@ -27,8 +27,8 @@ public class UpgradeController : MonoBehaviour
     
     
     
-    private float[] multipliers = { 1f,0.1f,1f,1f,5f,5f,10f,5f,5f,5f,5f,5f};
-    private int[] levels = {0,0,0,0,0,0,0,0,0,0,0,0 };
+    private float[] multipliers =           {   1f,         0,      1f,         1f,         1f,         5f,         5f,             10f,       5f,      5f,         5f,         5f};
+    private int[] levels =                  {   0,          0,      0,          0,          0,          0,          0,              0,        0,        0,          0,          0 };
 
     private string[] uppgradeName =         { "Defence", "Regen", "Pierce", "Projectils", "Damage", "ProjSpeed", "HealthMult", "MoveSpeed", "AOE", "Duration", "MoneyMult", "XpMult" };
     private string[] statUnits =            {    "",       "",       "",         "",         "%",       "%",         "%",          "%",       "%",     "%",        "%",        "%" };
