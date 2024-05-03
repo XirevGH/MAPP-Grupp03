@@ -21,7 +21,8 @@ public class VinylDisc : Projectile
 
     void Awake()
     {
-        
+        vinylDisc.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(Random.Range(0f, 1f), 0.7f, 1);
+
         aimingArrowRotation = GameObject.FindGameObjectWithTag("AimingArrow").transform.rotation;
         startPosition = transform.position;
 
@@ -29,7 +30,7 @@ public class VinylDisc : Projectile
         endPosition = new Vector3(
         Mathf.Cos(Mathf.Deg2Rad * aimingArrowRotation.eulerAngles.z) * travelDistance + startPosition.x,
         Mathf.Sin(Mathf.Deg2Rad * aimingArrowRotation.eulerAngles.z) * travelDistance + startPosition.y, startPosition.z);
-        vinylDisc.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(Random.Range(0f, 1f), 0.7f, 1);
+
         controlPoint = BezierCurve.CalculateControlPoint(startPosition, endPosition, controlPointOffSet, true);
 
         if (aimingArrowRotation.eulerAngles.z <= 90f && aimingArrowRotation.eulerAngles.z >= -90f)
