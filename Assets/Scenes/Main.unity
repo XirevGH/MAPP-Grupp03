@@ -187,6 +187,7 @@ MonoBehaviour:
   itemName: Roller Skates
   playerMovement: {fileID: 3002987865988841894}
   percentageIncrease: 10
+  movementSpeedRank: 0
 --- !u!1 &6597864
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,8 +1446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1778b5d485d3e494f8175ffdbfc30ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 5436226366269919644}
   trackswapper: {fileID: 2662689527024895925}
+  playerStats: {fileID: 5436226366269919644}
   mainCamera: {fileID: 519420031}
   tilemap: {fileID: 1947654048}
   currentTrackBPM: 0
@@ -1883,6 +1884,8 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2025,9 +2028,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0573ba55f499ce8418894d4824623359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followSpeed: 1000
+  followSpeed: 10
   yOffset: 0
   target: {fileID: 5383820192035051673}
+--- !u!95 &519420034
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a458a62e572d4d1468267636e890def9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d9e11a8e93da974fa3dfd7c94ed1db0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &533074183
 GameObject:
   m_ObjectHideFlags: 0
@@ -6678,6 +6714,7 @@ MonoBehaviour:
   player: {fileID: 2554686454012362858}
   itemName: Stage Presence
   damage: 1
+  damageRank: 0
   percentageDamageIncrease: 10
 --- !u!58 &1320764030
 CircleCollider2D:
@@ -8626,6 +8663,7 @@ MonoBehaviour:
   player: {fileID: 2554686454012362858}
   itemName: Groove Armor
   percentageIncrease: 10
+  healthRank: 0
 --- !u!1 &1796234484
 GameObject:
   m_ObjectHideFlags: 0
@@ -10879,8 +10917,8 @@ MonoBehaviour:
   playerStats: {fileID: 5436226366269919644}
   upgradeSystem: {fileID: 599903640}
   upgradeScreen: {fileID: 1077478087}
-  currentItems:
-  - {fileID: 3506312224535107785}
+  startingWeapon: {fileID: 3506312224535107785}
+  currentItems: []
   maxHealth: 0
   health: 100
 --- !u!1 &2662689527024895925
@@ -11044,6 +11082,7 @@ MonoBehaviour:
   player: {fileID: 2554686454012362858}
   itemName: Bass Guitar
   damage: 10
+  damageRank: 0
   percentageDamageIncrease: 10
   anim: {fileID: 6747922250687069817}
 --- !u!1 &3593054911237702068
@@ -11128,11 +11167,14 @@ MonoBehaviour:
   player: {fileID: 2554686454012362858}
   itemName: Saxophone
   damage: 3
+  damageRank: 0
   percentageDamageIncrease: 10
   amountOfProjectiles: 2
   projectileIncreasePerUpgrade: 2
   penetration: 2
   penetrationIncreasePerUpgrade: 2
+  projectileRank: 0
+  penetrationRank: 0
   shootingPoint: {fileID: 7147500035608189028}
   notePrefab: {fileID: 5730958551181348608, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
   speed: 10
@@ -11337,9 +11379,11 @@ MonoBehaviour:
   player: {fileID: 2554686454012362858}
   itemName: Electric Guitar
   damage: 5
+  damageRank: 0
   percentageDamageIncrease: 10
   amountOfTethers: 1
   tetherIncreasePerUpgrade: 1
+  tetherRank: 0
   bolt: {fileID: 8209966115709815941, guid: c89b4386ca74450468870cc3cee72ee5, type: 3}
 --- !u!95 &6747922250687069817
 Animator:
@@ -11673,6 +11717,23 @@ MonoBehaviour:
         - m_Target: {fileID: 1600751}
           m_TargetAssemblyTypeName: DiscoBallController, Assembly-CSharp
           m_MethodName: Blink
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    isTriggering: 1
+  - noteValue: 1
+    quaterNoteTrigger:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 519420035}
+          m_TargetAssemblyTypeName: CameraMovement, Assembly-CSharp
+          m_MethodName: Bounce
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

@@ -15,8 +15,9 @@ public class DiscoBallController : ProjectileWeapon
         get; private set;
     }
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         if (instance == null)
         {
             instance = this;
@@ -26,7 +27,6 @@ public class DiscoBallController : ProjectileWeapon
         {
             Destroy(gameObject);
         }
-
     }
 
     public void Blink()

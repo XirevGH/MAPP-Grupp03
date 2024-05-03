@@ -16,7 +16,8 @@ public class Player : MonoBehaviour
     [SerializeField] private UpgradeSystem upgradeSystem;
     [SerializeField] private UpgradePanel upgradeScreen;
 
-    public List<Item> currentItems = new List<Item>();
+    [SerializeField] private Weapon startingWeapon;
+    public List<Item> currentItems;
 
     private int money;
     private float moneyMultiplier;
@@ -35,7 +36,7 @@ public class Player : MonoBehaviour
     private short burstAmount;
 
     
-    private void Start()
+    private void Awake()
     {
         money = playerStats.money; 
         moneyMultiplier = playerStats.moneyMultiplier; 
@@ -51,6 +52,8 @@ public class Player : MonoBehaviour
         level = 1;
         burstAmount = playerStats.burstAmount;
         xpHeld = 0;
+        currentItems = new List<Item>();
+        currentItems.Add(startingWeapon);
     }
 
     //For leveling up faster for testing, remove later

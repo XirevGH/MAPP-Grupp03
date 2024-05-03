@@ -12,7 +12,7 @@ public class UpgradeSystem : MonoBehaviour
 
     private Dictionary<Item, List<string>> upgradeOptions = new Dictionary<Item, List<string>>();
     private List<GameObject> choicePanels;
-    private List<Item> sessionItems = new List<Item>();
+    private List<Item> sessionItems;
     private List<Item> choiceItems;
     private List<Item> currentPlayerItems = new List<Item>();
     private List<string> typeOptions = new List<string>();
@@ -83,6 +83,9 @@ public class UpgradeSystem : MonoBehaviour
         int randomUpgradeIndex = UnityEngine.Random.Range(0, upgradeOptions[chosenItem].Count);
 
         //Fetch the upgrade option at the index of the random number.
+
+        Debug.Log("Upgrade: Amount of upgrades for " + chosenItem + ": " + upgradeOptions[chosenItem].Count);
+        Debug.Log("Upgrade: Random index chosen: " + randomUpgradeIndex);
         string chosenUpgrade = upgradeOptions[chosenItem][randomUpgradeIndex];
 
         //Return the chosen item along with the chosen upgrade.
@@ -104,8 +107,11 @@ public class UpgradeSystem : MonoBehaviour
                 itemsOfType.Add((Utility)item);
             }
         }
+
         
         int randomItemIndex = UnityEngine.Random.Range(0, itemsOfType.Count);
+        Debug.Log("Weapon: Amount of items in the list: " + itemsOfType.Count);
+        Debug.Log("Weapon: Random index chosen: " + randomItemIndex);
 
         Item chosenItem = itemsOfType[randomItemIndex];
         return Tuple.Create(chosenItem, chosenItem.GetName());
@@ -325,19 +331,32 @@ public class UpgradeSystem : MonoBehaviour
                 typeOptions.Add("Utility");
             }
         }
-        //Check if we are at the allowed amount of weapons.
-        if (numberOfWeapons == allowedAmountOfWeapons && typeOptions.Contains("Weapon"))
+        //Check if we are at the allowed amount of weapons or are out of weapons.
+        if ((numberOfWeapons == allowedAmountOfWeapons || CountItemType(typeof(Weapon)) == 0) && typeOptions.Contains("Weapon"))
         {
             //Remove the string from the list so that it cannot be chosen as an option.
             typeOptions.Remove("Weapon");
         }
-        //Check if we are at the allowed amount of utilities.
-        if (numberOfUtilities == allowedAmountOfUtility && typeOptions.Contains("Utility"))
+        //Check if we are at the allowed amount of utilities or we are out of utilities.
+        if ((numberOfUtilities == allowedAmountOfUtility || CountItemType(typeof(Utility)) == 0) && typeOptions.Contains("Utility"))
         {
             //Remove the string from the list so that it cannot be chosen as an option.
             typeOptions.Remove("Utility");
         }
 
         return typeOptions;
+    }
+
+    private int CountItemType(Type type)
+    {
+        int itemCount = 0;
+        foreach (Item item in choiceItems)
+        {
+            if (type.IsAssignableFrom(item.GetType()))
+            {
+                itemCount++;
+            }
+        }
+        return itemCount;
     }
 }

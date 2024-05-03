@@ -14,7 +14,6 @@ public abstract class Weapon : Item
         damageRank += rankIncrease;
         if (!InitialUpgradesComplete())
         {
-            Debug.Log(damageRank);
             for (int i = 0; i < damageRank; i++) 
             {
                 IncreaseDamage();

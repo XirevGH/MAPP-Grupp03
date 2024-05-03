@@ -5,8 +5,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting.FullSerializer.Internal;
-using static UnityEditor.Progress;
+using System.Linq;
 
 public class UpgradeController : MonoBehaviour
 {
@@ -44,7 +43,8 @@ public class UpgradeController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI MoneyMultCost;
     [SerializeField] private TextMeshProUGUI MoneyMultStats;
 
-    [SerializeField] private Item[] items;
+    [SerializeField] private List<Item> itemsMainMenu;
+    private List<Item> itemsInGame;
 
     private List<int> upgrades = new List<int>();
 
@@ -63,6 +63,8 @@ public class UpgradeController : MonoBehaviour
 
     private bool upgradesUnfinished = true;
     string upgradeStatsFile;
+
+    private UpgradeController instance;
 
     [SerializeField] public int bassGuitarDamageUpgradeRank;
     [SerializeField] public int yoyoProjectileUpgradeRank;
@@ -91,7 +93,7 @@ public class UpgradeController : MonoBehaviour
 
     private void CreateUpgradeMap()
     {
-        foreach(Item item in items)
+        foreach(Item item in itemsMainMenu)
         {
             MethodInfo[] methods = item.GetType().GetMethods();
             foreach(MethodInfo method in methods)
@@ -106,9 +108,13 @@ public class UpgradeController : MonoBehaviour
 
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
         upgradeStatsFile = Application.persistentDataPath + "/upgradeInfo.json";
         ReadFile(upgradeStatsFile);
-        DontDestroyOnLoad(gameObject);
         CreateUpgradeMap();
     }
 
@@ -126,12 +132,12 @@ public class UpgradeController : MonoBehaviour
         
         if (SceneManager.GetActiveScene().name == "Main" && upgradesUnfinished)
         {
-            items = Resources.FindObjectsOfTypeAll<Item>();
-            foreach (Item item in items)
+            itemsInGame = Resources.FindObjectsOfTypeAll<Item>().ToList<Item>();
+            foreach (Item item in itemsInGame)
             {
                 foreach(Tuple<string, string> key in upgradeMap.Keys) 
                 { 
-                    if (item.GetName().Contains(key.Item1)) 
+                    if (item.GetName().Equals(key.Item1)) 
                     { 
                         item.GetType().GetMethod(key.Item2).Invoke(item, new object[] { upgradeMap[key] });
                     }
