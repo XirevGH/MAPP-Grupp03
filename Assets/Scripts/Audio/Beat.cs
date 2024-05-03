@@ -53,10 +53,11 @@ public class Beat : MonoBehaviour
         int direction = increasePitch ? 1 : -1;
         float timeElapsed = 0;
         AudioSource audioSource = SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>();
-
+        
         while (timeElapsed < timeToIncrease)
         {
-            audioSource.pitch = Mathf.Lerp(audioSource.pitch, audioSource.pitch + (MusicSpeedChange * direction), timeElapsed / timeToIncrease);
+            audioSource.pitch = Mathf.Lerp(1, 1.5f , timeElapsed / timeToIncrease);
+            Debug.Log(timeElapsed);
             timeElapsed += Time.deltaTime;
             yield return null;
 

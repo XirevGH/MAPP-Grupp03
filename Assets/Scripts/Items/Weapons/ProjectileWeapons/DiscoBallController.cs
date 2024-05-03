@@ -8,14 +8,14 @@ public class DiscoBallController : ProjectileWeapon
 {    
     [SerializeField] private GameObject discoBall;
     [SerializeField] private float blinkTime;
-    public HashSet<GameObject> activeDiscoBalls = new HashSet<GameObject>();
+    public List<GameObject> activeDiscoBalls = new();
 
     public static DiscoBallController instance
     {
         get; private set;
     }
 
-    private void Awake()
+    private void Start()
     {
         if (instance == null)
         {
@@ -38,13 +38,14 @@ public class DiscoBallController : ProjectileWeapon
         }
         else
         {
-            
-            foreach (GameObject discoBall in activeDiscoBalls)
+
+            for (int i =0; i < activeDiscoBalls.Count; i++)
             {
-              
+                GameObject discoBall = activeDiscoBalls[i];
+
                 if (discoBall == null)
                 {
-                    discoBall.GetComponent<DiscoBall>().RemoveFromSetIfNotAlive();
+                    activeDiscoBalls.RemoveAt(i);
                 }
                 else
                 {
