@@ -33,7 +33,7 @@ public class MenuController : MonoBehaviour
     {
       
         ChangeScene();
-        SoundManager.instance.GetComponent<SoundManager>().StartGame();
+        SoundManager.Instance.GetComponent<SoundManager>().StartGame();
     }
 
     public void ShowCredits()

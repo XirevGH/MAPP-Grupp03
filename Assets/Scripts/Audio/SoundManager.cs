@@ -14,7 +14,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip[] musicTracks;
     [SerializeField] private int[] BPMforTracks;
     [SerializeField] float timeToFade = 1f;
-    public static SoundManager Instance;
+
     public Scene currentScene;
     public AudioMixerSnapshot lowPassSnapshots, normalSnapshots;
     public bool isOnePlaying, isLowPassOn, isInMenu, hasRun;
@@ -24,16 +24,16 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private float MusicSpeedChange;
     [SerializeField] private float timeToChange;
 
-    public static SoundManager instance
+    public static SoundManager Instance
     {
         get; private set;
     }
 
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
