@@ -66,6 +66,10 @@ MonoBehaviour:
   isLowPassOn: 0
   isInMenu: 0
   hasRun: 0
+  currentTrackNumber: 0
+  currentBPM: 0
+  MusicSpeedChange: 0.01
+  timeToChange: 0.5
 --- !u!1 &786379661519232125
 GameObject:
   m_ObjectHideFlags: 0
