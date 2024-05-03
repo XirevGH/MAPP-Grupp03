@@ -13,6 +13,11 @@ public class ManuController : MonoBehaviour
     [SerializeField] private GameObject uppgradesPanel;
     [SerializeField] private GameObject settingPanel;
     [SerializeField] private GameObject creditPanel;
+    [SerializeField] private GameObject upgradeControler;
+    
+
+    
+    
    //  [SerializeField] private AudioSource audioSource;
    // [SerializeField] private AudioClip clickSound;
 
@@ -21,7 +26,9 @@ public class ManuController : MonoBehaviour
 
     private void Start()
     {   
-        
+        GlobalUpgrades.Instance.LoadFromPlayerPrefs();
+        upgradeControler.GetComponent<UpgradeController>().levels = GlobalUpgrades.Instance.upgradeStats.savedLevels;
+        upgradeControler.GetComponent<UpgradeController>().money = GlobalUpgrades.Instance.upgradeStats.savedMoney;
        
         CloseCredits();
         CloseSetting();
@@ -37,7 +44,7 @@ public class ManuController : MonoBehaviour
     public void Startgame()
     {
         
-        UpgradeController.Instance.LoadFromPlayerPrefs();
+        
         
         ChangeScene();
         SoundManager.instance.GetComponent<SoundManager>().StartGame();
@@ -64,8 +71,8 @@ public class ManuController : MonoBehaviour
 
     public void ChangeScene()
     {   
-        
-        UpgradeController.Instance.SaveToPlayerPrefs();
+        upgradeControler.GetComponent<UpgradeController>().SetStats();
+        GlobalUpgrades.Instance.SaveToPlayerPrefs();
         
         
         //soundManager.GetComponent<SoundManager>().ToggleMusicPause();
@@ -107,7 +114,7 @@ public class ManuController : MonoBehaviour
     public void Endgame()
     {
         
-        UpgradeController.Instance.SaveToPlayerPrefs();
+        //UpgradeController.Instance.SaveToPlayerPrefs();
         
         Application.Quit();
        

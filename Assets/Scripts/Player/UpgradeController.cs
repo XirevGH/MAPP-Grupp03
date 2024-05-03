@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
 [System.Serializable]
 public struct UpgradeStats
 {
@@ -17,11 +17,12 @@ public struct UpgradeStats
     public string[] statIncreaseObjects;
     public string[] statInfoObjects;
 }
-
+*/
 public class UpgradeController : MonoBehaviour
 {
     public static UpgradeController Instance { get; private set; }
     
+
     
     [SerializeField] private TextMeshProUGUI MoneyText1;
 
@@ -29,45 +30,49 @@ public class UpgradeController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] statNameTexts; 
     [SerializeField] private TextMeshProUGUI[] statIncreaseTexts;
     [SerializeField] private TextMeshProUGUI[] statInfoTexts;
-    [SerializeField] public UpgradeStats upgradeStats;
+    //[SerializeField] public UpgradeStats upgradeStats;
     
     
     private float[] multipliers =           {   1f,         1f,      1f,         1f,         1f,         5f,         5f,             10f,       5f,      5f,         5f,         5f};
     
-    private int[] levels = new int[12];
+    public int[] levels = new int[12];
 
     private string[] upgradeNames =         { "Defence", "Regen", "Pierce", "Projectils", "Damage", "ProjSpeed", "HealthMult", "MoveSpeed", "AOE", "Duration", "MoneyMult", "XpMult" };
     private string[] statUnits =            {    "",       "",       "",         "",         "%",       "%",         "%",          "%",       "%",     "%",        "%",        "%" };
     private int[] perLevelPriceIncrease  =   {   100,       100,     1000,       1000,       200,        100,        100,            100,      100,     200,        500,        500 };
 
-    private int money;
-
+    public int money;
+   
    private void Awake()
     {   
         
             
             
         
-        
-    if (Instance == null)
-        {   
+        /*
+        if (Instance == null)
+        {   SaveTMPUI();
             transform.parent = null; // Ensure it's a root object
             Instance = this;
             DontDestroyOnLoad(gameObject);
             LoadFromPlayerPrefs();
         }
         else
-        {
+        {   
+            
             Destroy(gameObject);
-        }
-        SaveTMPUI();
-        SetTMPUI();
+            
+        } */
+        
     }
-    private void Start()
-    {   
+    
+   
+    public void Start()
+    {  
+        /* 
        if(statCostTexts[0]){
             SetTMPUI();
-        }
+        }*/
         
         InitializePanel();
     }
@@ -102,7 +107,7 @@ public class UpgradeController : MonoBehaviour
             money -= cost;
             levels[statIndex]++;
             UpdateUI(statIndex);
-            SaveToPlayerPrefs();  // Save whenever changes are made
+            //SaveToPlayerPrefs();  // Save whenever changes are made
         }
     }
     public void RefundLastUpgrade()
@@ -130,7 +135,7 @@ public class UpgradeController : MonoBehaviour
     MoneyText1.SetText(money.ToString());
 
     // Optionally, save the changes
-    SaveToPlayerPrefs();
+    //SaveToPlayerPrefs();
 
     Debug.Log($"Total refund provided: {totalRefund}. All levels reset.");
     }
@@ -141,7 +146,7 @@ public class UpgradeController : MonoBehaviour
         statCostTexts[statIndex].SetText(((levels[statIndex] + 1) * perLevelPriceIncrease[statIndex]).ToString());
         statInfoTexts[statIndex].SetText((levels[statIndex] * multipliers[statIndex]) + statUnits[statIndex]);
     }
-
+    /*
     public void SaveToPlayerPrefs()
     {
         SetStats();  // Update the stats struct with current data
@@ -174,24 +179,25 @@ public class UpgradeController : MonoBehaviour
         
         InitializePanel();
     }
-    private void SetStats()
+    */
+    public void SetStats()
     {
-        upgradeStats.savedLevels = (int[]) levels.Clone();
-        upgradeStats.savedMoney = money;
+        GlobalUpgrades.Instance.upgradeStats.savedLevels = (int[]) levels.Clone();
+        GlobalUpgrades.Instance.upgradeStats.savedMoney = money;
 
-        upgradeStats.defence = levels[0] * (int)multipliers[0];
-        upgradeStats.regeneration = levels[1] * (int)multipliers[1];
-        upgradeStats.pierce = levels[2] * (int)multipliers[2];
-        upgradeStats.burstAmount = levels[3] * (int)multipliers[3];
+        GlobalUpgrades.Instance.upgradeStats.defence = levels[0] * (int)multipliers[0];
+        GlobalUpgrades.Instance.upgradeStats.regeneration = levels[1] * (int)multipliers[1];
+        GlobalUpgrades.Instance.upgradeStats.pierce = levels[2] * (int)multipliers[2];
+        GlobalUpgrades.Instance.upgradeStats.burstAmount = levels[3] * (int)multipliers[3];
 
-        upgradeStats.damage = levels[4] * multipliers[4]/100;
-        upgradeStats.projectileSpeed = levels[5] * multipliers[5]/100;
-        upgradeStats.healthMultiplier = levels[6] * multipliers[6]/100;
-        upgradeStats.movementSpeed = levels[7] * multipliers[7]/100;
-        upgradeStats.areaOfEffectSize = levels[8] * multipliers[8]/100;
-        upgradeStats.duration = levels[9] * multipliers[9]/100;
-        upgradeStats.moneyMultiplier = levels[10] * multipliers[10]/100;
-        upgradeStats.xpMultiplier = levels[11] * multipliers[11]/100;
+        GlobalUpgrades.Instance.upgradeStats.damage = levels[4] * multipliers[4]/100;
+        GlobalUpgrades.Instance.upgradeStats.projectileSpeed = levels[5] * multipliers[5]/100;
+        GlobalUpgrades.Instance.upgradeStats.healthMultiplier = levels[6] * multipliers[6]/100;
+        GlobalUpgrades.Instance.upgradeStats.movementSpeed = levels[7] * multipliers[7]/100;
+        GlobalUpgrades.Instance.upgradeStats.areaOfEffectSize = levels[8] * multipliers[8]/100;
+        GlobalUpgrades.Instance.upgradeStats.duration = levels[9] * multipliers[9]/100;
+        GlobalUpgrades.Instance.upgradeStats.moneyMultiplier = levels[10] * multipliers[10]/100;
+        GlobalUpgrades.Instance.upgradeStats.xpMultiplier = levels[11] * multipliers[11]/100;
 
     
         
@@ -200,7 +206,7 @@ public class UpgradeController : MonoBehaviour
     
     
     }
-
+    /*
     private void SaveTMPUI(){
 
         if( upgradeStats.statCostObjects.Length < 12){
@@ -262,7 +268,7 @@ public class UpgradeController : MonoBehaviour
 
         statNameTexts[i] = buttonGameObject.GetComponentInChildren<TextMeshProUGUI>();
     }
-}
+}*/
 
 
 
@@ -276,7 +282,7 @@ public class UpgradeController : MonoBehaviour
     
 }
 
-    
+
 
      
     

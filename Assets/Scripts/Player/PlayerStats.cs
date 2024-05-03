@@ -33,7 +33,7 @@ public struct Stats
 
 }
 public class PlayerStats : MonoBehaviour
-{   [SerializeField] private UpgradeController upgradeController;
+{   [SerializeField] private GlobalUpgrades upgradeController;
     [SerializeField] public Stats stats = new Stats{
         baseHealth = 100, money = 0, damage = 1, projectileSpeed = 1, healthMultiplier = 1,
         movementSpeed = 1, areaOfEffectSize = 1, duration = 1, moneyMultiplier = 1, xpMultiplier = 1,  

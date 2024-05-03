@@ -7420,7 +7420,7 @@ GameObject:
   - component: {fileID: 586391285}
   - component: {fileID: 586391284}
   m_Layer: 5
-  m_Name: Money - Stats
+  m_Name: XpMult - Stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9041,6 +9041,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 790390270}
   m_CullTransparentMesh: 1
+--- !u!1 &798244709 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7045387268072612372, guid: 58b3a0310f6abe44d909bdb6256a60cd, type: 3}
+  m_PrefabInstance: {fileID: 3017902983486105478}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &805663932
 GameObject:
   m_ObjectHideFlags: 0
@@ -17404,6 +17409,7 @@ MonoBehaviour:
   uppgradesPanel: {fileID: 1712015238}
   settingPanel: {fileID: 833831281}
   creditPanel: {fileID: 1291354408}
+  upgradeControler: {fileID: 798244709}
   levelToload: 1
 --- !u!1 &1425473850
 GameObject:
@@ -21339,7 +21345,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 14692687243392891, guid: 58b3a0310f6abe44d909bdb6256a60cd, type: 3}
   m_PrefabInstance: {fileID: 3017902983486105478}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 798244709}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a67dba08b60622479d960d099a471b5, type: 3}
@@ -25943,6 +25949,64 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58b3a0310f6abe44d909bdb6256a60cd, type: 3}
+--- !u!1001 &4044232327411990044
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4686043295041820473, guid: a9d1f5cd9baf69241a576b4776496c5f, type: 3}
+      propertyPath: m_Name
+      value: GloblaPlayerStats
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068428441021713671, guid: a9d1f5cd9baf69241a576b4776496c5f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 873.0735
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068428441021713671, guid: a9d1f5cd9baf69241a576b4776496c5f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 595.8365
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068428441021713671, guid: a9d1f5cd9baf69241a576b4776496c5f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3574.031
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068428441021713671, guid: a9d1f5cd9baf69241a576b4776496c5f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068428441021713671, guid: a9d1f5cd9baf69241a576b4776496c5f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068428441021713671, guid: a9d1f5cd9baf69241a576b4776496c5f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068428441021713671, guid: a9d1f5cd9baf69241a576b4776496c5f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068428441021713671, guid: a9d1f5cd9baf69241a576b4776496c5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068428441021713671, guid: a9d1f5cd9baf69241a576b4776496c5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068428441021713671, guid: a9d1f5cd9baf69241a576b4776496c5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7640689756785891683, guid: a9d1f5cd9baf69241a576b4776496c5f, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a9d1f5cd9baf69241a576b4776496c5f, type: 3}
 --- !u!1001 &5131103641739008332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26034,3 +26098,4 @@ SceneRoots:
   - {fileID: 1418972432}
   - {fileID: 3017902983486105478}
   - {fileID: 5131103641739008332}
+  - {fileID: 4044232327411990044}
