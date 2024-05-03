@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public struct UpgradeStats
@@ -10,6 +11,11 @@ public struct UpgradeStats
     public float damage, projectileSpeed, healthMultiplier, movementSpeed, areaOfEffectSize, duration, moneyMultiplier, xpMultiplier;
     public int[] savedLevels;
     public int savedMoney;
+
+    public string[] statCostObjects;
+    public string[] statNameObjects;
+    public string[] statIncreaseObjects;
+    public string[] statInfoObjects;
 }
 
 public class UpgradeController : MonoBehaviour
@@ -18,7 +24,6 @@ public class UpgradeController : MonoBehaviour
     
     
     [SerializeField] private TextMeshProUGUI MoneyText1;
-
 
     [SerializeField] private TextMeshProUGUI[] statCostTexts;
     [SerializeField] private TextMeshProUGUI[] statNameTexts; 
@@ -38,21 +43,31 @@ public class UpgradeController : MonoBehaviour
     private int money;
 
    private void Awake()
-{   
-   if (Instance == null)
     {   
-        transform.parent = null; // Ensure it's a root object
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-        LoadFromPlayerPrefs();
+        
+            
+            
+        
+        
+    if (Instance == null)
+        {   
+            transform.parent = null; // Ensure it's a root object
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            LoadFromPlayerPrefs();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        SaveTMPUI();
+        SetTMPUI();
     }
-    else
-    {
-        Destroy(gameObject);
-    }
-}
     private void Start()
     {   
+       if(statCostTexts[0]){
+            SetTMPUI();
+        }
         
         InitializePanel();
     }
@@ -136,10 +151,11 @@ public class UpgradeController : MonoBehaviour
     }
 
     public void LoadFromPlayerPrefs()
-    {
+    {   
         string jsonData = PlayerPrefs.GetString("UpgradeStats", "{}");
         JsonUtility.FromJsonOverwrite(jsonData, upgradeStats);
         ApplyLoadedStats();
+        
     }
 
     public void ApplyLoadedStats()
@@ -176,9 +192,79 @@ public class UpgradeController : MonoBehaviour
         upgradeStats.duration = levels[9] * multipliers[9]/100;
         upgradeStats.moneyMultiplier = levels[10] * multipliers[10]/100;
         upgradeStats.xpMultiplier = levels[11] * multipliers[11]/100;
-        
 
+    
+        
+    
+        
+    
+    
     }
+
+    private void SaveTMPUI(){
+
+        if( upgradeStats.statCostObjects.Length < 12){
+            upgradeStats.statCostObjects = new string[12];
+            upgradeStats.statNameObjects = new string[12];
+            upgradeStats.statIncreaseObjects = new string[12];
+            upgradeStats.statInfoObjects = new string[12];
+        }
+        for (int i = 0; i < 12; i++) {
+            if (statCostTexts[i] != null && statCostTexts[i].transform.parent != null) {
+                upgradeStats.statCostObjects[i] = statCostTexts[i].transform.parent.gameObject.name;
+            } else {
+                Debug.LogError("statCostTexts[i] is null or has no parent.");
+            }
+
+            if (statNameTexts[i] != null && statNameTexts[i].transform.parent != null) {
+                upgradeStats.statNameObjects[i] = statNameTexts[i].transform.parent.gameObject.name;
+            } else {
+                Debug.LogError("statNameTexts[i] is null or has no parent.");
+            }
+
+            if (statIncreaseTexts[i] != null && statIncreaseTexts[i].transform.parent != null) {
+                upgradeStats.statIncreaseObjects[i] = statIncreaseTexts[i].transform.parent.gameObject.name;
+            } else {
+                Debug.LogError("statIncreaseTexts[i] is null or has no parent.");
+            }
+
+            if (statInfoTexts[i] != null && statInfoTexts[i].transform.parent != null) {
+                upgradeStats.statInfoObjects[i] = statInfoTexts[i].transform.parent.gameObject.name;
+            } else {
+                Debug.LogError("statInfoTexts[i] is null or has no parent.");
+            }
+        }
+    }
+
+    public void SetTMPUI() {
+    for (int i = 0; i < 12; i++) {
+        int index = i;  // Local variable capturing the loop's current index value
+
+        // Find and setup UI components
+        statCostTexts[i] = GameObject.Find(upgradeStats.statCostObjects[i]).GetComponentInChildren<TextMeshProUGUI>();
+        
+        statIncreaseTexts[i] = GameObject.Find(upgradeStats.statIncreaseObjects[i]).GetComponentInChildren<TextMeshProUGUI>();
+        statInfoTexts[i] = GameObject.Find(upgradeStats.statInfoObjects[i]).GetComponentInChildren<TextMeshProUGUI>();
+
+        // Setup button with the correct index
+        GameObject buttonGameObject = GameObject.Find(upgradeStats.statNameObjects[i]);
+        if (buttonGameObject != null) {
+            Button button = buttonGameObject.GetComponent<Button>();
+            if (button != null) {
+                button.onClick.RemoveAllListeners();  // Clear existing listeners to avoid duplicate calls
+                button.onClick.AddListener(() => BuyUpgrade(index));
+            } else {
+                Debug.LogError("Button component not found on GameObject named: " + upgradeStats.statNameObjects[i]);
+            }
+        } else {
+            Debug.LogError("GameObject not found: " + upgradeStats.statNameObjects[i]);
+        }
+
+        statNameTexts[i] = buttonGameObject.GetComponentInChildren<TextMeshProUGUI>();
+    }
+}
+
+
 
     public void AddMoney(int addedMoney)
     {

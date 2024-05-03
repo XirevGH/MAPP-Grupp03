@@ -1697,7 +1697,7 @@ GameObject:
   - component: {fileID: 109994737}
   - component: {fileID: 109994736}
   m_Layer: 5
-  m_Name: MovSpeed - Added
+  m_Name: AOE - Added
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2127,7 +2127,7 @@ GameObject:
   - component: {fileID: 173185688}
   - component: {fileID: 173185687}
   m_Layer: 5
-  m_Name: Invincibility - Button
+  m_Name: Duration - Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3066,7 +3066,7 @@ GameObject:
   - component: {fileID: 222473559}
   - component: {fileID: 222473558}
   m_Layer: 5
-  m_Name: Money - Stats
+  m_Name: ProjectileSpeed - Stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3279,7 +3279,7 @@ GameObject:
   - component: {fileID: 262820030}
   - component: {fileID: 262820029}
   m_Layer: 5
-  m_Name: Money - Button
+  m_Name: MonyMult - Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4452,7 +4452,7 @@ GameObject:
   - component: {fileID: 420362004}
   - component: {fileID: 420362003}
   m_Layer: 5
-  m_Name: BPM - Stats
+  m_Name: Regeneration - Stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4982,7 +4982,7 @@ GameObject:
   - component: {fileID: 459040259}
   - component: {fileID: 459040258}
   m_Layer: 5
-  m_Name: Hp - Button
+  m_Name: HepthMult - Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5516,7 +5516,7 @@ GameObject:
   - component: {fileID: 485975687}
   - component: {fileID: 485975686}
   m_Layer: 5
-  m_Name: Money - Button
+  m_Name: XpMult - Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5745,7 +5745,7 @@ GameObject:
   - component: {fileID: 500516862}
   - component: {fileID: 500516861}
   m_Layer: 5
-  m_Name: 'HP - Price '
+  m_Name: 'HepthMult - Price '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5896,7 +5896,7 @@ GameObject:
   - component: {fileID: 524279185}
   - component: {fileID: 524279184}
   m_Layer: 5
-  m_Name: 'Movspeed - Price '
+  m_Name: 'AOE - Price '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6806,7 +6806,7 @@ GameObject:
   - component: {fileID: 566529371}
   - component: {fileID: 566529370}
   m_Layer: 5
-  m_Name: 'Invincibility - Price '
+  m_Name: 'Duration - Price '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7496,7 +7496,7 @@ GameObject:
   - component: {fileID: 598413651}
   - component: {fileID: 598413650}
   m_Layer: 5
-  m_Name: Invincibility  - Added
+  m_Name: Duration  - Added
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7708,7 +7708,7 @@ GameObject:
   - component: {fileID: 606677384}
   - component: {fileID: 606677383}
   m_Layer: 5
-  m_Name: Damge - Price
+  m_Name: Defens - Price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8485,7 +8485,7 @@ GameObject:
   - component: {fileID: 716927486}
   - component: {fileID: 716927485}
   m_Layer: 5
-  m_Name: Defense - Added
+  m_Name: Movespeed - Added
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8561,7 +8561,7 @@ GameObject:
   - component: {fileID: 754115736}
   - component: {fileID: 754115735}
   m_Layer: 5
-  m_Name: Xp Mult - Stats
+  m_Name: Damag - Stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8977,7 +8977,7 @@ GameObject:
   - component: {fileID: 790390274}
   - component: {fileID: 790390273}
   m_Layer: 5
-  m_Name: BPM - Added
+  m_Name: Regeneration - Added
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9457,7 +9457,7 @@ GameObject:
   - component: {fileID: 819595112}
   - component: {fileID: 819595111}
   m_Layer: 5
-  m_Name: Damge - Button
+  m_Name: Defens - Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10580,7 +10580,7 @@ GameObject:
   - component: {fileID: 907310301}
   - component: {fileID: 907310300}
   m_Layer: 5
-  m_Name: Money - Added
+  m_Name: MonyMult - Added
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12028,7 +12028,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1045034409}
   m_Layer: 0
-  m_Name: projectileSpeed
+  m_Name: ProjectileSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12201,7 +12201,7 @@ GameObject:
   - component: {fileID: 1064992497}
   - component: {fileID: 1064992496}
   m_Layer: 5
-  m_Name: Money - Added
+  m_Name: XpMult - Added
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12550,7 +12550,7 @@ GameObject:
   - component: {fileID: 1079181238}
   - component: {fileID: 1079181237}
   m_Layer: 5
-  m_Name: 'XP Mult - Buton '
+  m_Name: 'Damag - Buton '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12951,7 +12951,7 @@ GameObject:
   - component: {fileID: 1099277978}
   - component: {fileID: 1099277977}
   m_Layer: 5
-  m_Name: Defense - Stats
+  m_Name: Movespeed - Stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13330,7 +13330,7 @@ GameObject:
   - component: {fileID: 1129351701}
   - component: {fileID: 1129351700}
   m_Layer: 5
-  m_Name: 'Defens - Price '
+  m_Name: 'Movespeed - Price '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13406,7 +13406,7 @@ GameObject:
   - component: {fileID: 1144691197}
   - component: {fileID: 1144691196}
   m_Layer: 5
-  m_Name: 'XP Mult - Price '
+  m_Name: 'Damag - Price '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14534,7 +14534,7 @@ GameObject:
   - component: {fileID: 1195318406}
   - component: {fileID: 1195318405}
   m_Layer: 5
-  m_Name: MovSpeed - Button
+  m_Name: AOE - Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15087,7 +15087,7 @@ GameObject:
   - component: {fileID: 1234996429}
   - component: {fileID: 1234996428}
   m_Layer: 5
-  m_Name: BPM - Price
+  m_Name: Regeneration - Price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15296,7 +15296,7 @@ GameObject:
   - component: {fileID: 1241686846}
   - component: {fileID: 1241686845}
   m_Layer: 5
-  m_Name: HP - Added
+  m_Name: HepthMult - Added
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15373,7 +15373,7 @@ GameObject:
   - component: {fileID: 1263771299}
   - component: {fileID: 1263771298}
   m_Layer: 5
-  m_Name: Money - Button
+  m_Name: ProjectileSpeed - Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16052,7 +16052,7 @@ GameObject:
   - component: {fileID: 1332284951}
   - component: {fileID: 1332284950}
   m_Layer: 5
-  m_Name: Invincibility  - Stats
+  m_Name: Duration  - Stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16942,7 +16942,7 @@ GameObject:
   - component: {fileID: 1390002590}
   - component: {fileID: 1390002589}
   m_Layer: 5
-  m_Name: 'Money - Price  '
+  m_Name: 'MonyMult - Price  '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17154,7 +17154,7 @@ GameObject:
   - component: {fileID: 1405849343}
   - component: {fileID: 1405849342}
   m_Layer: 5
-  m_Name: Damge - Added
+  m_Name: Defens - Added
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18892,7 +18892,7 @@ GameObject:
   - component: {fileID: 1588621919}
   - component: {fileID: 1588621918}
   m_Layer: 5
-  m_Name: 'Money - Price  '
+  m_Name: 'XpMult - Price  '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19104,7 +19104,7 @@ GameObject:
   - component: {fileID: 1596318872}
   - component: {fileID: 1596318871}
   m_Layer: 5
-  m_Name: HP - Stats
+  m_Name: HepthMult - Stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19923,7 +19923,7 @@ GameObject:
   - component: {fileID: 1673757344}
   - component: {fileID: 1673757343}
   m_Layer: 5
-  m_Name: Damge - Stats
+  m_Name: Defens - Stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19999,7 +19999,7 @@ GameObject:
   - component: {fileID: 1675718842}
   - component: {fileID: 1675718841}
   m_Layer: 5
-  m_Name: Xp Mult - Added
+  m_Name: Damag - Added
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20597,7 +20597,7 @@ GameObject:
   - component: {fileID: 1735666062}
   - component: {fileID: 1735666061}
   m_Layer: 5
-  m_Name: MovSpeed - Stats
+  m_Name: AOE - Stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20944,7 +20944,7 @@ GameObject:
   - component: {fileID: 1751431251}
   - component: {fileID: 1751431250}
   m_Layer: 5
-  m_Name: BPM -Button
+  m_Name: Regeneration -Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21626,7 +21626,7 @@ GameObject:
   - component: {fileID: 1809649702}
   - component: {fileID: 1809649701}
   m_Layer: 5
-  m_Name: Money - Added
+  m_Name: ProjectileSpeed - Added
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22326,7 +22326,7 @@ GameObject:
   - component: {fileID: 1894260028}
   - component: {fileID: 1894260027}
   m_Layer: 5
-  m_Name: 'Money - Price  '
+  m_Name: 'ProjectileSpeed - Price  '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23627,7 +23627,7 @@ GameObject:
   - component: {fileID: 1984459175}
   - component: {fileID: 1984459174}
   m_Layer: 5
-  m_Name: "Defense - Button\t"
+  m_Name: "Movespeed - Button\t"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24867,7 +24867,7 @@ GameObject:
   - component: {fileID: 2104590466}
   - component: {fileID: 2104590465}
   m_Layer: 5
-  m_Name: Money - Stats
+  m_Name: MonyMult - Stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
