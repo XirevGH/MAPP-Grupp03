@@ -41,7 +41,7 @@ public class DiscoBall : Projectile
 
     public override void DestroyWhenMaxPenetration()
     {
-        DiscoBallController.instance.activeDiscoBalls.Remove(gameObject);
+        DiscoBallController.Instance.activeDiscoBalls.Remove(gameObject);
         base.DestroyWhenMaxPenetration();
 
     }

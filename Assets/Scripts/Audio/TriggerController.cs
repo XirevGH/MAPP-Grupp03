@@ -23,6 +23,7 @@ public class TriggerController : MonoBehaviour
         [SerializeField] private UnityEvent quaterNoteTrigger;
         private int lastQuaterNote;
         public bool isTriggering;
+
         public float GetIntervalLength(float BPM)
         {
             return 60f / (BPM/ noteValue);
@@ -42,16 +43,16 @@ public class TriggerController : MonoBehaviour
         }
     }
 
-    public static TriggerController instance
+    public static TriggerController Instance
     {
         get; private set;
     }
 
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -65,14 +66,14 @@ public class TriggerController : MonoBehaviour
     {
         isTriggering = true;
 
-        inGameMusic = SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>();
+        inGameMusic = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>();
 
     }
 
     void Update()
     {
-        inGameMusic = SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>();
-        inGameCurrentTrackBPM = SoundManager.instance.GetCurrentBPM();
+        inGameMusic = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>();
+        inGameCurrentTrackBPM = SoundManager.Instance.GetCurrentBPM();
         if (isTriggering)
         {
             foreach (Trigger trigger in triggers)

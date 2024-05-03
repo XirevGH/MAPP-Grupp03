@@ -8,7 +8,7 @@ public class TrackSwapper : MonoBehaviour
         if (collider.CompareTag("Music Collider"))
         {
 
-            SoundManager.instance.StartGame();
+            SoundManager.Instance.StartGame();
         }
     }
 }

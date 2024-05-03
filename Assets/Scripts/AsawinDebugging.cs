@@ -28,7 +28,7 @@ public class AsawinDebugging : MonoBehaviour
             //float random = UnityEngine.Random.Range(0f, 101f);
             //Debug.Log(random);
 
-            SoundManager.instance.GetComponent<SoundManager>().StartGame();
+            SoundManager.Instance.GetComponent<SoundManager>().StartGame();
            
 
 

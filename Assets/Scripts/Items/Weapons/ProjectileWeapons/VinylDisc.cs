@@ -48,9 +48,9 @@ public class VinylDisc : Projectile
     void FixedUpdate()
     {
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-        BPM = TriggerController.instance.GetCurrentTrackBPM();
-        noteValue = TriggerController.instance.GetTrigger(triggerNumber).noteValue;
-        source = SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>();
+        BPM = TriggerController.Instance.GetCurrentTrackBPM();
+        noteValue = TriggerController.Instance.GetTrigger(triggerNumber).noteValue;
+        source = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>();
         pitch = source.pitch;
     
         travelTime = (((60f / (BPM / noteValue)) / pitch) /2f);

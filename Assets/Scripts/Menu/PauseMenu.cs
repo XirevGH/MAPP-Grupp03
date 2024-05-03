@@ -52,8 +52,8 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         ToggleJoysticks(true);
-        TriggerController.instance.GetComponent<TriggerController>().ToggleTrigger();
-        SoundManager.instance.GetComponent<SoundManager>().ToggleMusicPause();
+        TriggerController.Instance.GetComponent<TriggerController>().ToggleTrigger();
+        SoundManager.Instance.GetComponent<SoundManager>().ToggleMusicPause();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -62,8 +62,8 @@ public class PauseMenu : MonoBehaviour
     void PauseGame()
     {
         ToggleJoysticks(false);
-        TriggerController.instance.GetComponent<TriggerController>().ToggleTrigger();
-        SoundManager.instance.GetComponent<SoundManager>().ToggleMusicPause();
+        TriggerController.Instance.GetComponent<TriggerController>().ToggleTrigger();
+        SoundManager.Instance.GetComponent<SoundManager>().ToggleMusicPause();
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
@@ -72,7 +72,7 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-        SoundManager.instance.GetComponent<SoundManager>().GoBackToMain();
+        SoundManager.Instance.GetComponent<SoundManager>().GoBackToMain();
         GameIsPaused = false;
         ToggleJoysticks(true);
         Time.timeScale = 1f;

@@ -14,8 +14,8 @@ public class Beat : MonoBehaviour
     {
         isAlive = true;
         circleStartingScale = circle.transform.localScale;
-        beatLife = (60f / (TriggerController.instance.GetComponent<TriggerController>().GetCurrentTrackBPM() / TriggerController.instance.GetComponent<TriggerController>().GetTrigger(0).noteValue))
-        / SoundManager.instance.transform.GetChild(0).GetComponent<AudioSource>().pitch;
+        beatLife = (60f / (TriggerController.Instance.GetComponent<TriggerController>().GetCurrentTrackBPM() / TriggerController.Instance.GetComponent<TriggerController>().GetTrigger(0).noteValue))
+        / SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>().pitch;
     }
 
     void FixedUpdate()
@@ -39,7 +39,7 @@ public class Beat : MonoBehaviour
     public void DestroyNoteWhenNotPickedUp()
     {
         Instantiate(particle, this.transform.position, Quaternion.identity);
-        SoundManager.instance.ChangePitch1(false);
+        SoundManager.Instance.ChangePitch1(false);
         Destroy(gameObject);
     }
 
@@ -49,7 +49,7 @@ public class Beat : MonoBehaviour
     {
         if (collider.CompareTag("Music Collider"))
         {
-           SoundManager.instance.ChangePitch1(true);
+           SoundManager.Instance.ChangePitch1(true);
             Destroy(gameObject);
         }
     }

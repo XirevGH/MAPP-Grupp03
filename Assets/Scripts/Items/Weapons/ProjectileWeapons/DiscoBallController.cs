@@ -10,7 +10,7 @@ public class DiscoBallController : ProjectileWeapon
     [SerializeField] private float blinkTime;
     public List<GameObject> activeDiscoBalls = new();
 
-    public static DiscoBallController instance
+    public static DiscoBallController Instance
     {
         get; private set;
     }
@@ -18,9 +18,9 @@ public class DiscoBallController : ProjectileWeapon
     protected override void Awake()
     {
         base.Awake();
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
