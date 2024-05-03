@@ -9,105 +9,159 @@ public struct UpgradeStats
     public int defence, regeneration, pierce, burstAmount;
     public float damage, projectileSpeed, healthMultiplier, movementSpeed, areaOfEffectSize, duration, moneyMultiplier, xpMultiplier;
     public int[] savedLevels;
-    public int savedMony;
-
+    public int savedMoney;
 }
 
 public class UpgradeController : MonoBehaviour
 {
-    [SerializeField] public UpgradeStats upgradeStats;
-    [SerializeField] private int money;
+    public static UpgradeController Instance { get; private set; }
+    
+    
     [SerializeField] private TextMeshProUGUI MoneyText1;
-    [SerializeField] private TextMeshProUGUI MoneyText2;
+
 
     [SerializeField] private TextMeshProUGUI[] statCostTexts;
     [SerializeField] private TextMeshProUGUI[] statNameTexts; 
     [SerializeField] private TextMeshProUGUI[] statIncreaseTexts;
     [SerializeField] private TextMeshProUGUI[] statInfoTexts;
+    [SerializeField] public UpgradeStats upgradeStats;
     
     
+    private float[] multipliers =           {   1f,         1f,      1f,         1f,         1f,         5f,         5f,             10f,       5f,      5f,         5f,         5f};
     
-    private float[] multipliers =           {   1f,         0,      1f,         1f,         1f,         5f,         5f,             10f,       5f,      5f,         5f,         5f};
-    private int[] levels =                  {   0,          0,      0,          0,          0,          0,          0,              0,        0,        0,          0,          0 };
+    private int[] levels = new int[12];
 
-    private string[] uppgradeName =         { "Defence", "Regen", "Pierce", "Projectils", "Damage", "ProjSpeed", "HealthMult", "MoveSpeed", "AOE", "Duration", "MoneyMult", "XpMult" };
+    private string[] upgradeNames =         { "Defence", "Regen", "Pierce", "Projectils", "Damage", "ProjSpeed", "HealthMult", "MoveSpeed", "AOE", "Duration", "MoneyMult", "XpMult" };
     private string[] statUnits =            {    "",       "",       "",         "",         "%",       "%",         "%",          "%",       "%",     "%",        "%",        "%" };
-    private int[] perLevelPriceIncrease =   {   100,       100,     1000,       1000,       200,        100,        100,            100,      100,     200,        500,        500 };
+    private int[] perLevelPriceIncrease  =   {   100,       100,     1000,       1000,       200,        100,        100,            100,      100,     200,        500,        500 };
 
-    private void Start()
+    private int money;
+
+   private void Awake()
+{   
+   if (Instance == null)
+    {   
+        transform.parent = null; // Ensure it's a root object
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+        LoadFromPlayerPrefs();
+    }
+    else
     {
-        
-        if(upgradeStats.savedLevels.Length > 0){
-            money = upgradeStats.savedMony;
-            levels = upgradeStats.savedLevels;
-        }else{
-            levels = new int[statCostTexts.Length];
-        }
-       
+        Destroy(gameObject);
+    }
+}
+    private void Start()
+    {   
         
         InitializePanel();
     }
 
     private void InitializePanel()
     {
-        MoneyText1.SetText(money.ToString());
-        MoneyText2.SetText(money.ToString());
+        if (statCostTexts.Length < levels.Length ||
+            statInfoTexts.Length < levels.Length ||
+            statIncreaseTexts.Length < levels.Length ||
+            statNameTexts.Length < levels.Length)
+        {
+            Debug.LogError("UI arrays do not match level arrays length.");
+            return;
+        }
 
-        for (int i = 0; i < statCostTexts.Length; i++)
+        MoneyText1.SetText(money.ToString());
+        for (int i = 0; i < levels.Length; i++)
         {
             statCostTexts[i].SetText(((levels[i] + 1) * perLevelPriceIncrease[i]).ToString());
             statInfoTexts[i].SetText((levels[i] * multipliers[i]) + statUnits[i]);
-            statIncreaseTexts[i].SetText("+"+ multipliers[i] + statUnits[i]);
-            statNameTexts[i].SetText(uppgradeName[i]); 
+            statIncreaseTexts[i].SetText("+" + multipliers[i] + statUnits[i]);
+            statNameTexts[i].SetText(upgradeNames[i]); 
         }
+        
     }
 
     public void BuyUpgrade(int statIndex)
     {
-        if (EnoughMoney((levels[statIndex] + 1) * perLevelPriceIncrease[statIndex]))
+        int cost = (levels[statIndex] + 1) * perLevelPriceIncrease[statIndex];
+        if (money >= cost)
         {
+            money -= cost;
             levels[statIndex]++;
-            money -= (levels[statIndex]) * perLevelPriceIncrease[statIndex];
             UpdateUI(statIndex);
+            SaveToPlayerPrefs();  // Save whenever changes are made
         }
+    }
+    public void RefundLastUpgrade()
+    {
+        int totalRefund = 0;
+
+        for (int i = 0; i < levels.Length; i++)
+        {
+            for(int b = 1; b <= levels[i]; b++){
+                totalRefund += b * perLevelPriceIncrease[i];
+            }
+            
+
+            // Reset the level
+            levels[i] = 0;
+
+            // Update the UI for each upgrade
+            UpdateUI(i);
+        }
+
+    // Add the total refund to the money
+    money += totalRefund;
+
+    // Update the money display separately if it's not part of UpdateUI
+    MoneyText1.SetText(money.ToString());
+
+    // Optionally, save the changes
+    SaveToPlayerPrefs();
+
+    Debug.Log($"Total refund provided: {totalRefund}. All levels reset.");
     }
 
     private void UpdateUI(int statIndex)
     {
         MoneyText1.SetText(money.ToString());
-        MoneyText2.SetText(money.ToString());
         statCostTexts[statIndex].SetText(((levels[statIndex] + 1) * perLevelPriceIncrease[statIndex]).ToString());
         statInfoTexts[statIndex].SetText((levels[statIndex] * multipliers[statIndex]) + statUnits[statIndex]);
-        
     }
 
-    private bool EnoughMoney(int price)
+    public void SaveToPlayerPrefs()
     {
-        return money >= price;
+        SetStats();  // Update the stats struct with current data
+        string jsonData = JsonUtility.ToJson(upgradeStats);
+        PlayerPrefs.SetString("UpgradeStats", jsonData);
+        PlayerPrefs.Save();
     }
-    public void RefundAllUpgrades()
+
+    public void LoadFromPlayerPrefs()
     {
-        for (int i = 0; i < levels.Length; i++)
+        string jsonData = PlayerPrefs.GetString("UpgradeStats", "{}");
+        JsonUtility.FromJsonOverwrite(jsonData, upgradeStats);
+        ApplyLoadedStats();
+    }
+
+    public void ApplyLoadedStats()
+    {
+        if (upgradeStats.savedLevels != null && upgradeStats.savedLevels.Length == levels.Length)
         {
-            
-            for (int level = levels[i]; level > 0; level--)
-            {
-                money += level * perLevelPriceIncrease[i];
-            }
-            
-            levels[i] = 0;
-            
-            UpdateUI(i);
+            levels = (int[]) upgradeStats.savedLevels.Clone();
+        }
+        else
+        {
+            Debug.LogWarning("Mismatch in saved levels length; resetting to default.");
+            levels = new int[12]; // Default initialization
         }
 
+        money = upgradeStats.savedMoney;
         
-        MoneyText1.SetText(money.ToString());
-        MoneyText2.SetText(money.ToString());
+        InitializePanel();
     }
-    public void SetStats(){
-
-        upgradeStats.savedLevels = levels;
-        upgradeStats.savedMony = money;
+    private void SetStats()
+    {
+        upgradeStats.savedLevels = (int[]) levels.Clone();
+        upgradeStats.savedMoney = money;
 
         upgradeStats.defence = levels[0] * (int)multipliers[0];
         upgradeStats.regeneration = levels[1] * (int)multipliers[1];
@@ -122,32 +176,19 @@ public class UpgradeController : MonoBehaviour
         upgradeStats.duration = levels[9] * multipliers[9]/100;
         upgradeStats.moneyMultiplier = levels[10] * multipliers[10]/100;
         upgradeStats.xpMultiplier = levels[11] * multipliers[11]/100;
-    }
-    public string SaveToString()
-    {   SetStats();
-        return JsonUtility.ToJson(upgradeStats, true);
+        
+
     }
 
-    public void CreateFromJSON(string jsonString)
+    public void AddMoney(int addedMoney)
     {
-        JsonUtility.FromJsonOverwrite(jsonString, upgradeStats);
-        InitializePanel();
+        money += addedMoney;
+        // Call UpdateUI for each stat or only update the money text if that's all that's needed
+        MoneyText1.SetText(money.ToString());
     }
-    public void OnSaveButtonClicked()
-    {
-        string jsonData = SaveToString();
-        PlayerPrefs.SetString("UpgradeData", jsonData);
-        PlayerPrefs.Save(); 
-    }
-
-    public void OnLoadButtonClicked()
-    {
-        string jsonData = PlayerPrefs.GetString("UpgradeData", "{}"); 
-        CreateFromJSON(jsonData);
-    }
-
-}
     
+    
+}
 
     
 

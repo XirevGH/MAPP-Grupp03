@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,7 +20,9 @@ public class ManuController : MonoBehaviour
     [SerializeField] private int levelToload;
 
     private void Start()
-    {
+    {   
+        
+       
         CloseCredits();
         CloseSetting();
         CloseUppgrades();
@@ -33,7 +36,9 @@ public class ManuController : MonoBehaviour
 
     public void Startgame()
     {
-      
+        
+        UpgradeController.Instance.LoadFromPlayerPrefs();
+        
         ChangeScene();
         SoundManager.instance.GetComponent<SoundManager>().StartGame();
     }
@@ -60,6 +65,9 @@ public class ManuController : MonoBehaviour
     public void ChangeScene()
     {   
         
+        UpgradeController.Instance.SaveToPlayerPrefs();
+        
+        
         //soundManager.GetComponent<SoundManager>().ToggleMusicPause();
         //soundManager.GetComponent<SoundManager>().musicSource1.Play();
         SceneManager.LoadScene(levelToload); // by till spel scennens
@@ -80,7 +88,7 @@ public class ManuController : MonoBehaviour
     }
 
     public void ShowUppgrades()
-    {
+        {   
         uppgradesPanel.SetActive(true);
         mainMenu.SetActive(false);
      
@@ -97,8 +105,10 @@ public class ManuController : MonoBehaviour
 
 
     public void Endgame()
-
     {
+        
+        UpgradeController.Instance.SaveToPlayerPrefs();
+        
         Application.Quit();
        
     }

@@ -44,6 +44,8 @@ public class PlayerStats : MonoBehaviour
 
 
     private void Start(){
+
+    
     stats.damage += upgradeController.upgradeStats.damage;
     stats.projectileSpeed += upgradeController.upgradeStats.projectileSpeed;
     stats.healthMultiplier += upgradeController.upgradeStats.healthMultiplier;

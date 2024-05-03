@@ -34,8 +34,12 @@ public class Player : MonoBehaviour
 
     private int burstAmount;
 
-    
     private void Start()
+    {
+        // This ensures it reads updated stats possibly right after loading new data
+        InitializePlayerStats();
+    }
+    private void InitializePlayerStats()
     {
         money = playerStats.stats.money; 
         moneyMultiplier = playerStats.stats.moneyMultiplier; 
