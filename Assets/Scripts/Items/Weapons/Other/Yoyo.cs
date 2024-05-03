@@ -19,6 +19,7 @@ public class Yoyo : Projectile
     private float BPM, noteValue, pitch;
 
     private CircleCollider2D circleColl;
+   
 
     private void Start()
     {
@@ -26,6 +27,7 @@ public class Yoyo : Projectile
         superMode = false;
         lerpTime = 0;
         circleColl = GetComponent<CircleCollider2D>();
+        ball.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(Random.Range(0f, 1f), 0.7f, 1);
     }
 
     private void Update()

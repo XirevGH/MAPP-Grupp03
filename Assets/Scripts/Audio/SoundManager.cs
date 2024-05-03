@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Rendering;
@@ -10,17 +12,17 @@ public class SoundManager : MonoBehaviour
 {
     [SerializeField] public AudioSource musicSource1, musicSource2, menuMusic, currentSource;
     [SerializeField] private AudioClip[] musicTracks;
-    private AudioSource inGameMusic;
-    //private Dictionary<int , AudioClip> BPMforTracks = new  Dictionary<int, AudioClip>();
     [SerializeField] private int[] BPMforTracks;
-    //[SerializeField] public Slider slider;
     [SerializeField] float timeToFade = 1f;
-    //[SerializeField] public Slider slidertoFind;
     public static SoundManager Instance;
     public Scene currentScene;
     public AudioMixerSnapshot lowPassSnapshots, normalSnapshots;
     public bool isOnePlaying, isLowPassOn, isInMenu, hasRun;
     public int currentTrackNumber, currentBPM;
+
+    [Header("Beat relateted")]
+    [SerializeField] private float MusicSpeedChange;
+    [SerializeField] private float timeToChange;
 
     public static SoundManager instance
     {
@@ -39,7 +41,7 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
         }
         //slider = GameObject.FindGameObjectWithTag("volumeSlider").GetComponent<Slider>();
-        inGameMusic = transform.GetChild(0).GetComponent<AudioSource>();
+      
       
     }
 
@@ -184,7 +186,7 @@ public class SoundManager : MonoBehaviour
             musicSource2.clip = musicTracks[trackNumber];
             currentSource = musicSource2;
             musicSource2.Play();
-            while (timeElapsed < timeToFade)
+            while (timeElapsed <= timeToFade)
             {
                 musicSource2.volume = Mathf.Lerp(0, 1, timeElapsed / timeToFade);
                 musicSource1.volume = Mathf.Lerp(1, 0, timeElapsed / timeToFade);
@@ -202,7 +204,7 @@ public class SoundManager : MonoBehaviour
             musicSource1.clip = musicTracks[trackNumber];
             currentSource = musicSource1;
             musicSource1.Play();
-            while (timeElapsed < timeToFade)
+            while (timeElapsed <= timeToFade)
             {
                 musicSource1.volume = Mathf.Lerp(0, 1, timeElapsed / timeToFade);
                 musicSource2.volume = Mathf.Lerp(1, 0, timeElapsed / timeToFade);
@@ -214,4 +216,44 @@ public class SoundManager : MonoBehaviour
             musicSource2.pitch = 1;
         }
     }
+
+    public void ChangePitch1(bool increasePitch)
+    {
+        StartCoroutine(ChangePitch(increasePitch));
+        
+    }
+
+    private  IEnumerator ChangePitch(bool increasePitch)
+    {
+        
+       
+        AudioSource audioSource = transform.GetChild(0).GetComponent<AudioSource>();
+        int direction = increasePitch ? 1 : -1;
+        float elapsedTime = 0;
+        float nexPitch = audioSource.pitch + (MusicSpeedChange * direction);
+        float currentPitch = audioSource.pitch;
+       
+
+        if (audioSource.pitch <= 0.5)
+        {
+            audioSource.pitch = 0.5f;
+        }
+        else
+        {
+            while (elapsedTime <= timeToChange)
+            {
+               
+                audioSource.pitch = Mathf.Lerp(currentPitch, nexPitch, elapsedTime / timeToChange);
+                Debug.Log(elapsedTime / timeToChange);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+
+            }
+
+        }
+
+     
+    }
+
+    
 }
