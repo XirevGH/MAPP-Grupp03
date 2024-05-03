@@ -46,11 +46,5 @@ public class DiscoBall : Projectile
 
     }
 
-    public void RemoveFromSetIfNotAlive()
-    {
-        if (this == null && ReferenceEquals(this, null))
-        {
-            DiscoBallController.instance.activeDiscoBalls.Remove(gameObject);
-        }
-    }
+  
 }

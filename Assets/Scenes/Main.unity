@@ -4214,6 +4214,10 @@ PrefabInstance:
       value: Vinyl Record
       objectReference: {fileID: 0}
     - target: {fileID: 1103054515861734431, guid: 17ccd9c1a77fa004790076d7ee038be3, type: 3}
+      propertyPath: amountOfProjectiles
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103054515861734431, guid: 17ccd9c1a77fa004790076d7ee038be3, type: 3}
       propertyPath: percentageDamageIncrease
       value: 10
       objectReference: {fileID: 0}
@@ -6139,7 +6143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: amountOfProjectiles
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: percentageDamageIncrease
@@ -7058,6 +7062,14 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 51626d5583f3bd345959fb1fd4a5550e, type: 3}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: timeToChange
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: MusicSpeedChange
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10957,6 +10969,10 @@ PrefabInstance:
       value: Yoyo
       objectReference: {fileID: 0}
     - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+      propertyPath: amountOfProjectiles
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: percentageDamageIncrease
       value: 10
       objectReference: {fileID: 0}
@@ -11734,6 +11750,9 @@ MonoBehaviour:
         - m_Target: {fileID: 519420035}
           m_TargetAssemblyTypeName: CameraMovement, Assembly-CSharp
           m_MethodName: Bounce
+        - m_Target: {fileID: 2044913609}
+          m_TargetAssemblyTypeName: YoyoController, Assembly-CSharp
+          m_MethodName: Blink
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

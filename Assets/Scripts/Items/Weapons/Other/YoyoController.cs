@@ -22,6 +22,19 @@ public class YoyoController : PermanentProjectileWeapon
         }
     }
 
+    public void Blink()
+    {
+        int totalYoyo = transform.childCount;
+
+        for (int i = 0; i < totalYoyo; i++)
+        {
+            transform.GetChild(i).GetComponent<Yoyo>().Blink();
+          
+        }
+     
+    }
+
+
     private void SetYoyoPosition()
     {
         int totalYoyo = transform.childCount;

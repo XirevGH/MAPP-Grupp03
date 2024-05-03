@@ -21,7 +21,8 @@ public class VinylDisc : Projectile
 
     void Awake()
     {
-        
+        vinylDisc.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(Random.Range(0f, 1f), 0.7f, 1);
+
         aimingArrowRotation = GameObject.FindGameObjectWithTag("AimingArrow").transform.rotation;
         startPosition = transform.position;
 
