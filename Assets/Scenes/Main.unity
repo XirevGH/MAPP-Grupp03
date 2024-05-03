@@ -187,6 +187,7 @@ MonoBehaviour:
   itemName: Roller Skates
   playerMovement: {fileID: 3002987865988841894}
   percentageIncrease: 10
+  movementSpeedRank: 0
 --- !u!1 &6597864
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,8 +1446,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1778b5d485d3e494f8175ffdbfc30ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 5436226366269919644}
   trackswapper: {fileID: 2662689527024895925}
+  playerStats: {fileID: 5436226366269919644}
   mainCamera: {fileID: 519420031}
   tilemap: {fileID: 1947654048}
   currentTrackBPM: 0
@@ -4178,6 +4179,10 @@ PrefabInstance:
       value: Vinyl Record
       objectReference: {fileID: 0}
     - target: {fileID: 1103054515861734431, guid: 17ccd9c1a77fa004790076d7ee038be3, type: 3}
+      propertyPath: amountOfProjectiles
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103054515861734431, guid: 17ccd9c1a77fa004790076d7ee038be3, type: 3}
       propertyPath: percentageDamageIncrease
       value: 10
       objectReference: {fileID: 0}
@@ -6103,7 +6108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: amountOfProjectiles
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: percentageDamageIncrease
@@ -6678,6 +6683,7 @@ MonoBehaviour:
   player: {fileID: 2554686454012362858}
   itemName: Stage Presence
   damage: 1
+  damageRank: 0
   percentageDamageIncrease: 10
 --- !u!58 &1320764030
 CircleCollider2D:
@@ -7021,6 +7027,14 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 51626d5583f3bd345959fb1fd4a5550e, type: 3}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: timeToChange
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: MusicSpeedChange
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8626,6 +8640,7 @@ MonoBehaviour:
   player: {fileID: 2554686454012362858}
   itemName: Groove Armor
   percentageIncrease: 10
+  healthRank: 0
 --- !u!1 &1796234484
 GameObject:
   m_ObjectHideFlags: 0
@@ -11044,6 +11059,7 @@ MonoBehaviour:
   player: {fileID: 2554686454012362858}
   itemName: Bass Guitar
   damage: 10
+  damageRank: 0
   percentageDamageIncrease: 10
   anim: {fileID: 6747922250687069817}
 --- !u!1 &3593054911237702068
@@ -11128,11 +11144,14 @@ MonoBehaviour:
   player: {fileID: 2554686454012362858}
   itemName: Saxophone
   damage: 3
+  damageRank: 0
   percentageDamageIncrease: 10
   amountOfProjectiles: 2
   projectileIncreasePerUpgrade: 2
   penetration: 2
   penetrationIncreasePerUpgrade: 2
+  projectileRank: 0
+  penetrationRank: 0
   shootingPoint: {fileID: 7147500035608189028}
   notePrefab: {fileID: 5730958551181348608, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
   speed: 10
@@ -11337,9 +11356,11 @@ MonoBehaviour:
   player: {fileID: 2554686454012362858}
   itemName: Electric Guitar
   damage: 5
+  damageRank: 0
   percentageDamageIncrease: 10
   amountOfTethers: 1
   tetherIncreasePerUpgrade: 1
+  tetherRank: 0
   bolt: {fileID: 8209966115709815941, guid: c89b4386ca74450468870cc3cee72ee5, type: 3}
 --- !u!95 &6747922250687069817
 Animator:
