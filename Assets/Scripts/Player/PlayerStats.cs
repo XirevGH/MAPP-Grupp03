@@ -11,29 +11,13 @@ public struct Stats
     [Range(-1, 10)] public int defence, regeneration;
     [Range(-1, 5)] public int pierce, burstAmount;
 
-    public static Stats operator +(Stats one, Stats two)
-    {
-        one.baseHealth += two.baseHealth;
-        one.money += two.money;
-        one.damage += two.damage;
-        one.projectileSpeed += two.projectileSpeed;
-        one.healthMultiplier += two.healthMultiplier;
-        one.movementSpeed += two.movementSpeed;
-        one.areaOfEffectSize += two.areaOfEffectSize;
-        one.duration += two.duration;
-        one.moneyMultiplier += two.moneyMultiplier;
-        one.xpMultiplier += two.xpMultiplier;
-        one.defence += two.defence;
-        one.regeneration += two.regeneration;
-        one.pierce += two.pierce;
-        one.burstAmount += two.burstAmount;
-        return one;
-    }
+    
 
 
 }
 public class PlayerStats : MonoBehaviour
 {   [SerializeField] private GlobalUpgrades upgradeController;
+    
     [SerializeField] public Stats stats = new Stats{
         baseHealth = 100, money = 0, damage = 1, projectileSpeed = 1, healthMultiplier = 1,
         movementSpeed = 1, areaOfEffectSize = 1, duration = 1, moneyMultiplier = 1, xpMultiplier = 1,  

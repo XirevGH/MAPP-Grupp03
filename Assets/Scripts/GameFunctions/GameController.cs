@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
     private HashSet<XPDrop> xpList = new HashSet<XPDrop>();
 
     private void Awake()
-    {
+    {   
         saveFile = Application.persistentDataPath + "/playerInfo.json";
       
         ReadFile();
