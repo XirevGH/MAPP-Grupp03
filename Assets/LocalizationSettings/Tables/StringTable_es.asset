@@ -9,68 +9,63 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: StringTable Shared Data
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: StringTable_es
   m_EditorClassIdentifier: 
-  m_TableCollectionName: StringTable
-  m_TableCollectionNameGuidString: 36a812a686b058d4fb4a1177c241dd26
-  m_Entries:
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 36a812a686b058d4fb4a1177c241dd26, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
   - m_Id: 212584636416
-    m_Key: PlayButton
+    m_Localized: Comenzar
     m_Metadata:
       m_Items: []
   - m_Id: 7952967147520
-    m_Key: SettingsButton
+    m_Localized: Ajustes
     m_Metadata:
       m_Items: []
   - m_Id: 8053961793536
-    m_Key: UpgradeButton
+    m_Localized: Actualizaciones
     m_Metadata:
       m_Items: []
   - m_Id: 10311415898112
-    m_Key: LanguageText
+    m_Localized: Idioma
     m_Metadata:
       m_Items: []
   - m_Id: 10456714977280
-    m_Key: Audiotext
+    m_Localized: Audio
     m_Metadata:
       m_Items: []
   - m_Id: 10553506930688
-    m_Key: MusicText
+    m_Localized: "M\xFAsica"
     m_Metadata:
       m_Items: []
   - m_Id: 1108225311645696
-    m_Key: Select item text
+    m_Localized: "Seleccione un art\xEDculo"
     m_Metadata:
       m_Items: []
   - m_Id: 1108544242327552
-    m_Key: Weapon text
+    m_Localized: Armas
     m_Metadata:
       m_Items: []
   - m_Id: 1114824310792192
-    m_Key: Utilites Text
+    m_Localized: Utilidades
     m_Metadata:
       m_Items: []
   - m_Id: 1117495465877504
-    m_Key: Roller skates text
+    m_Localized: Patines
     m_Metadata:
       m_Items: []
   - m_Id: 1117938422128640
-    m_Key: Damage text
+    m_Localized: "Da\xF1o"
     m_Metadata:
       m_Items: []
   - m_Id: 1120733296599040
-    m_Key: Bass guitar text
+    m_Localized: Bajo
     m_Metadata:
       m_Items: []
-  m_Metadata:
-    m_Items: []
-  m_KeyGenerator:
-    rid: 8709831970386870296
   references:
     version: 2
-    RefIds:
-    - rid: 8709831970386870296
-      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
-      data:
-        m_CustomEpoch: 1714562939195
+    RefIds: []

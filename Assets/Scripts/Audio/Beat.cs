@@ -37,7 +37,7 @@ public class Beat : MonoBehaviour
     public void DestroyNoteWhenNotPickedUp()
     {
         Instantiate(particle, this.transform.position, Quaternion.identity);
-        SoundManager.Instance.ChangePitch1(false);
+        SoundManager.Instance.ChangePitch(false);
         Destroy(gameObject);
     }
 
@@ -47,7 +47,7 @@ public class Beat : MonoBehaviour
     {
         if (collider.CompareTag("Music Collider"))
         {
-           SoundManager.Instance.ChangePitch1(true);
+           SoundManager.Instance.ChangePitch(true);
             Destroy(gameObject);
         }
     }

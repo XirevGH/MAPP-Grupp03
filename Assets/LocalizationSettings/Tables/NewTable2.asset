@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
-  m_Name: StringTable
+  m_Name: NewTable2
   m_EditorClassIdentifier: 
-  m_SharedTableData: {fileID: 11400000, guid: 36a812a686b058d4fb4a1177c241dd26, type: 2}
+  m_SharedTableData: {fileID: 11400000, guid: 7821eec962b7535428fea867159cb594, type: 2}
   m_Tables:
-  - {fileID: 11400000, guid: 10cd820bfc9c71b49a0f2428e2a1d7cd, type: 2}
-  - {fileID: 11400000, guid: 278ee60c2c1627942bd9d86d2f6f63e1, type: 2}
-  - {fileID: 11400000, guid: 21e98a83d9957c2428ff32adc48aefbe, type: 2}
-  - {fileID: 11400000, guid: ae5452cf0390ed440968072f2612629e, type: 2}
+  - {fileID: 11400000, guid: 5304bb7ec5008044abcdc42f812e4454, type: 2}
+  - {fileID: 11400000, guid: c5e0ea4e93db87747bb2af86bad90800, type: 2}
+  - {fileID: 11400000, guid: 50eef3572a6d38b4faaad3bcfa7c14f2, type: 2}
+  - {fileID: 11400000, guid: 4a9691aac5eecef4bb8e17a2fe0b1906, type: 2}
   m_Extensions: []
   m_Group: String Table
   references:

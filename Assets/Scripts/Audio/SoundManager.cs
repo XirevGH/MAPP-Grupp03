@@ -217,13 +217,13 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void ChangePitch1(bool increasePitch)
+    public void ChangePitch(bool increasePitch)
     {
-        StartCoroutine(ChangePitch(increasePitch));
+        StartCoroutine(ChangePitchCoroutine(increasePitch));
         
     }
 
-    private  IEnumerator ChangePitch(bool increasePitch)
+    private  IEnumerator ChangePitchCoroutine(bool increasePitch)
     {
         AudioSource audioSource = transform.GetChild(0).GetComponent<AudioSource>();
         int direction = increasePitch ? 1 : -1;
