@@ -19,14 +19,15 @@ public struct CharacterStats
 public class PlayerStats : MonoBehaviour
 {   private UpgradeStats menuUpgradeStats;
     
-    [SerializeField] public CharacterStats stats = new CharacterStats{
+    [SerializeField] public CharacterStats stats; 
+
+    private void Start() {
+        stats = new CharacterStats{
         baseHealth = 100, money = 0, basemovementSpeed = 5, damage = 1, projectileSpeed = 1, healthMultiplier = 1,
         movementSpeed = 1, areaOfEffectSize = 1, duration = 1, moneyMultiplier = 1, xpMultiplier = 1,  
         defence = 0, regeneration = 0,
-        pierce = 0, burstAmount = 0, 
-    };
-
-    private void Start() {
+        pierce = 0, burstAmount = 0};
+        
         menuUpgradeStats = GlobalUpgrades.Instance.upgradeStats;
         AddMenuStats();
         GetComponent<Player>().InitializePlayerStats();

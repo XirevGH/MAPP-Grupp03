@@ -185,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2554686454012362858}
   itemName: Roller Skates
-  characterStats: {fileID: 0}
+  characterStats: {fileID: 5436226366269919646}
   percentageIncrease: 10
 --- !u!1 &6597864
 GameObject:

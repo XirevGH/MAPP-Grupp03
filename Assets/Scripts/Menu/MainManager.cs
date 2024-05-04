@@ -9,12 +9,15 @@ public class MainManager : MonoBehaviour
     [SerializeField] private TMP_Text levelText;
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private TMP_Text enemiesDefeatedText;
+    
 
     public static MainManager Instance;
 
     public string timeText = "";
     public int mainLevel = 1;
     public int enemiesDefeated;
+    public int mony;
+
 
     private void Awake()
     {
@@ -28,13 +31,18 @@ public class MainManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    
-
+    private void Start() {
+        levelText.text = "" + mainLevel;
+        timerText.text = "" + timeText;
+        enemiesDefeatedText.text = "" + enemiesDefeated;
+        
+    }
+    /*
     public void Update()
     {
         levelText.text = "" + mainLevel;
         timerText.text = "" + timeText;
         enemiesDefeatedText.text = "" + enemiesDefeated;
-    }
+    }*/
 
 }

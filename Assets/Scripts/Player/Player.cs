@@ -88,7 +88,9 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-
+        MainManager.Instance.mony = characterStats.stats.money;
+        GlobalUpgrades.Instance.upgradeStats.currencies[0] += characterStats.stats.money;
+        GlobalUpgrades.Instance.SaveToPlayerPrefs();
         gameController.GameOver();
     }
     #endregion

@@ -49,7 +49,7 @@ public class GameController : MonoBehaviour
     }
 
     public void GameOver()
-    {
+    {   
         TriggerController.instance.GetComponent<TriggerController>().ToggleTrigger();
         SoundManager.instance.GetComponent<SoundManager>().ToggleMusicPause();
         File.WriteAllText(saveFile, playerStats.GetComponent<PlayerStats>().SaveToString());
