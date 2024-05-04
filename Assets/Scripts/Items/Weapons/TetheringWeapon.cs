@@ -9,18 +9,10 @@ public abstract class TetheringWeapon : Weapon
     protected HashSet<GameObject> enemies = new HashSet<GameObject>();
     public int tetherRank;
 
-
-    public void TetherUpgradeRank(int rankIncrease)
-    {
-        tetherRank += rankIncrease;
-        IncreaseDamage();
-    }
-
-
     public void IncreaseTetherAmount()
     {
+        tetherRank++;
         amountOfTethers += tetherIncreasePerUpgrade;
-        TetherUpgradeRank(1);
     }
 
     protected GameObject[] GetClosestEnemies(int amountOfTethers)

@@ -13,11 +13,6 @@ public class GrooveArmor : Utility
         player.IncreaseMaxHealth(1 + (percentageIncrease / 100f));
     }
 
-    public void HealthUpgradeRank(int rankAmount)
-    {
-        healthRank += rankAmount;
-    }
-
     public float GetHealthUpgradePercentage()
     {
         return percentageIncrease;

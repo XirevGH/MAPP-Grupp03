@@ -11,16 +11,6 @@ public class ChillVibe : Utility
     public int slowRank;
     public int radiusRank;
 
-    public void RadiusUpgradeRank(int rankAmount)
-    {
-        radiusRank += rankAmount;
-    }
-
-    public void SlowUpgradeRank(int rankAmount)
-    {
-        slowRank += rankAmount;
-    }
-
     public void IncreaseRadius()
     {
         radiusRank++;
