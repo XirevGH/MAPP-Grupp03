@@ -50,6 +50,22 @@ MonoBehaviour:
     m_Localized: Weapons
     m_Metadata:
       m_Items: []
+  - m_Id: 1114824310792192
+    m_Localized: Utilites
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1117495465877504
+    m_Localized: Roller skates
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1117938422128640
+    m_Localized: Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1120733296599040
+    m_Localized: Bass guitar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -47,7 +47,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1108544242327552
-    m_Localized: vapen
+    m_Localized: Vapen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1114824310792192
+    m_Localized: Verktyg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1117495465877504
+    m_Localized: Rullskridskor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1117938422128640
+    m_Localized: Skada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1120733296599040
+    m_Localized: Basgitarr
     m_Metadata:
       m_Items: []
   references:

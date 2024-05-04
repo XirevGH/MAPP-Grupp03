@@ -47,6 +47,22 @@ MonoBehaviour:
     m_Key: Weapon text
     m_Metadata:
       m_Items: []
+  - m_Id: 1114824310792192
+    m_Key: Utilites Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1117495465877504
+    m_Key: Roller skates text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1117938422128640
+    m_Key: Damage text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1120733296599040
+    m_Key: Bass guitar text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
