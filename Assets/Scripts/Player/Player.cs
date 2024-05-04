@@ -18,11 +18,10 @@ public class Player : MonoBehaviour
 
     public List<Item> currentItems = new List<Item>();
 
-    //private int money;
-    //private float moneyMultiplier;
-    //private float damage;
-    //private float areaOfEffectSize;
-    //private int pierce;
+    private float timer = 0f;
+    private const float duration = 10f;  
+    private bool timerActive = true;
+
     private float xpMultiplier;
     public float maxHealth;
     public float health;
@@ -34,11 +33,7 @@ public class Player : MonoBehaviour
     private int level;
 
 
-    private void Start()
-    {
-        
-        
-    }
+    
     public void InitializePlayerStats()
     {
         xpMultiplier = characterStats.stats.xpMultiplier;
@@ -52,10 +47,19 @@ public class Player : MonoBehaviour
         level = 1;
         xpHeld = 0;
     }
-    private void UpdatePlayerStats(){
+    
+    private void FixedUpdate() {
+         if (timerActive)
+        {
+            timer += Time.fixedDeltaTime;  
 
+            if (timer >= duration)
+            {
+                RestoreHealth(regen); 
+                timer = 0f; 
+            }
+        }
     }
-
 
     #region HP Stuff
     public void RestoreHealth(float percent)
@@ -70,9 +74,11 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {   if(damageAmount > defence){
+            health -= damageAmount - defence;
+        }else{
             health -= 1;
         }
-        health -= damageAmount - defence;
+        
         UpdateHealthSlider();
         if(health <= 0)
         {

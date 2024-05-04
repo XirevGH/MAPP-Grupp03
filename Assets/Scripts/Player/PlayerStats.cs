@@ -6,7 +6,7 @@ using UnityEngine;
 public struct CharacterStats
 {
     public int baseHealth, money; 
-    [Range(-1, 10)] public float basemovementSpeed;
+    [Range(-1, 5)] public float basemovementSpeed;
     [Range(-1, 10)] public float damage, projectileSpeed, healthMultiplier;
     [Range(-1, 5)] public float movementSpeed, areaOfEffectSize, duration, moneyMultiplier, xpMultiplier;
     [Range(-1, 10)] public int defence, regeneration;
@@ -23,13 +23,15 @@ public class PlayerStats : MonoBehaviour
 
     private void Start() {
         stats = new CharacterStats{
-        baseHealth = 100, money = 0, basemovementSpeed = 5, damage = 1, projectileSpeed = 1, healthMultiplier = 1,
+        baseHealth = 100, money = 0, basemovementSpeed = 3, damage = 1, projectileSpeed = 1, healthMultiplier = 1,
         movementSpeed = 1, areaOfEffectSize = 1, duration = 1, moneyMultiplier = 1, xpMultiplier = 1,  
         defence = 0, regeneration = 0,
         pierce = 0, burstAmount = 0};
-
-        menuUpgradeStats = GlobalUpgrades.Instance.upgradeStats;
-        AddMenuStats();
+        if(GlobalUpgrades.Instance != null){
+            menuUpgradeStats = GlobalUpgrades.Instance.upgradeStats;
+            AddMenuStats();
+        }
+        
         GetComponent<Player>().InitializePlayerStats();
         GetComponent<PlayerMovement>().movementSpeed = stats.basemovementSpeed;
     }

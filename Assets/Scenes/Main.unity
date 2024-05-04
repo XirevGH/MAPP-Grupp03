@@ -9832,6 +9832,7 @@ MonoBehaviour:
   timeText: 
   mainLevel: 1
   enemiesDefeated: 0
+  mony: 0
 --- !u!4 &1976371860
 Transform:
   m_ObjectHideFlags: 0
@@ -11141,7 +11142,7 @@ MonoBehaviour:
   stats:
     baseHealth: 100
     money: 0
-    basemovementSpeed: 5
+    basemovementSpeed: 1
     damage: 1
     projectileSpeed: 1
     healthMultiplier: 1
