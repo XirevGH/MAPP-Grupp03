@@ -11,20 +11,6 @@ public class ChillVibe : Utility
     public int slowRank;
     public int radiusRank;
 
-    protected override void Awake()
-    {
-        base.Awake();
-        for (int i = 0; i < slowRank; i++)
-        {
-            IncreaseSlow();
-        }
-        for (int i = 0; i < radiusRank; i++)
-        {
-            IncreaseRadius();
-        }
-        EndInitialUpgrades();
-    }
-
     public void RadiusUpgradeRank(int rankAmount)
     {
         radiusRank += rankAmount;
@@ -37,28 +23,22 @@ public class ChillVibe : Utility
 
     public void IncreaseRadius()
     {
+        radiusRank++;
         gameObject.transform.localScale *= (1 + (radiusIncreasePercentage / 100f));
-        if (InitialUpgradesComplete())
-        {
-            RadiusUpgradeRank(1);
-        }
     }
 
     public void IncreaseSlow()
     {
+        slowRank++;
         slowSpeedPercent *= (1 - (slowIncreasePercentage / 100f));
-        if (InitialUpgradesComplete())
-        {
-            SlowUpgradeRank(1);
-        }
     }
 
-    public float GetRadiusIncreasePercentage()
+    public float GetRadiusUpgradePercentage()
     {
         return radiusIncreasePercentage;
     }
 
-    public float GetSlowIncreasePercentage()
+    public float GetSlowUpgradePercentage()
     {
         return slowIncreasePercentage;
     }

@@ -9,54 +9,24 @@ public abstract class ProjectileWeapon : Weapon
     public int projectileRank;
     public int penetrationRank;
 
-    protected override void Awake()
-    {
-        base.Awake();
-        for (int i = 0; i < projectileRank; i++)
-        {
-            IncreaseProjectileCount();
-        }
-        for (int i = 0; i < penetrationRank; i++)
-        {
-            IncreasePenetrationAmount();
-        }
-        EndInitialUpgrades();
-    }
-
-    public void ProjectileCountUpgradeRank(int rankAmount)
-    {
-        projectileRank += rankAmount;
-    }
-
-    public void PenetrationAmountUpgradeRank(int rankAmount)
-    {
-        penetrationRank += rankAmount;
-    }
-
     public void IncreaseProjectileCount()
     {
+        projectileRank++;
         amountOfProjectiles += projectileIncreasePerUpgrade;
-        if (InitialUpgradesComplete())
-        {
-            ProjectileCountUpgradeRank(1);
-        }
     }
 
     public void IncreasePenetrationAmount()
     {
+        penetrationRank++;
         penetration += penetrationIncreasePerUpgrade;
-        if (InitialUpgradesComplete())
-        {
-            PenetrationAmountUpgradeRank(1);
-        }
     }
 
-    public int GetProjectileIncreasePerUpgrade()
+    public int GetProjectilePerUpgrade()
     {
         return projectileIncreasePerUpgrade;
     }
 
-    public int GetPenetrationIncreasePerUpgrade()
+    public int GetPenetrationPerUpgrade()
     {
         return projectileIncreasePerUpgrade;
     }

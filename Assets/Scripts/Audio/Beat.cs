@@ -8,11 +8,10 @@ public class Beat : MonoBehaviour
     [SerializeField] private GameObject circle, particle;
     private float percentageComplete, elapsedTime, beatLife;
     private Vector3 circleStartingScale;
-    private bool isAlive;
+    public bool isAlive;
 
     private void Start()
     {
-        isAlive = true;
         circleStartingScale = circle.transform.localScale;
         beatLife = (60f / (TriggerController.Instance.GetComponent<TriggerController>().GetCurrentTrackBPM() / TriggerController.Instance.GetComponent<TriggerController>().GetTrigger(0).noteValue))
         / SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>().pitch;
@@ -32,7 +31,6 @@ public class Beat : MonoBehaviour
         if (Mathf.FloorToInt(percentageComplete) == 1)
         {
             DestroyNoteWhenNotPickedUp();
-          
         }
     }
 

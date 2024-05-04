@@ -225,8 +225,6 @@ public class SoundManager : MonoBehaviour
 
     private  IEnumerator ChangePitch(bool increasePitch)
     {
-        
-       
         AudioSource audioSource = transform.GetChild(0).GetComponent<AudioSource>();
         int direction = increasePitch ? 1 : -1;
         float elapsedTime = 0;

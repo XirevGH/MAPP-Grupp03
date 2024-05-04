@@ -9,29 +9,13 @@ public abstract class Weapon : Item
 
     public abstract void Attack();
 
-    public void DamageUpgradeRank(int rankIncrease)
-    {
-        damageRank += rankIncrease;
-        if (!InitialUpgradesComplete())
-        {
-            for (int i = 0; i < damageRank; i++) 
-            {
-                IncreaseDamage();
-            }
-            EndInitialUpgrades();
-        }
-    }
-
     public virtual void IncreaseDamage()
     {
+        damageRank++;
         damage *= (1 + (percentageDamageIncrease / 100f));
-        if (InitialUpgradesComplete())
-        {
-            DamageUpgradeRank(1);
-        }
     }
 
-    public float GetDamageIncreasePercentage()
+    public float GetDamageUpgradePercentage()
     {
         return percentageDamageIncrease;
     }

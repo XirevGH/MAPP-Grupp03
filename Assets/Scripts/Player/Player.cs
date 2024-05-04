@@ -8,16 +8,17 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Slider hpSlider, xpSlider;
-    [SerializeField] private TMP_Text levelText;
-    [SerializeField] private GameController gameController;
     [SerializeField] private Player player;
+    [SerializeField] private Slider hpSlider;
     [SerializeField] private PlayerStats playerStats;
-    [SerializeField] private UpgradeSystem upgradeSystem;
-    [SerializeField] private UpgradePanel upgradeScreen;
-
     [SerializeField] private Weapon startingWeapon;
-    public List<Item> currentItems;
+    [SerializeField] private List<Item> currentItems;
+
+    private UpgradeSystem upgradeSystem;
+    private UpgradePanel upgradeScreen;
+    private Slider xpSlider;
+    private TMP_Text levelText;
+    private GameController gameController;
 
     private int money;
     private float moneyMultiplier;
@@ -35,9 +36,22 @@ public class Player : MonoBehaviour
 
     private short burstAmount;
 
-    
+    public static Player Instance
+    {
+        get; private set;
+    }
+
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         money = playerStats.money; 
         moneyMultiplier = playerStats.moneyMultiplier; 
         damage = playerStats.damage;
@@ -52,8 +66,7 @@ public class Player : MonoBehaviour
         level = 1;
         burstAmount = playerStats.burstAmount;
         xpHeld = 0;
-        currentItems = new List<Item>();
-        currentItems.Add(startingWeapon);
+        currentItems = new List<Item>{startingWeapon};
     }
 
     //For leveling up faster for testing, remove later
@@ -62,6 +75,30 @@ public class Player : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.L)) 
         {
             LevelUp();
+        }
+        if(SceneManager.GetActiveScene().name == "Main")
+        {
+            if (xpSlider == null)
+            {
+                xpSlider = GameObject.FindGameObjectWithTag("XPSlider").GetComponent<Slider>();
+                
+            }
+            if (levelText == null)
+            {
+                levelText = GameObject.FindGameObjectWithTag("levelText").GetComponent<TMP_Text>();
+            }
+            if (upgradeScreen == null)
+            {
+                upgradeScreen = FindObjectOfType<UpgradePanel>(true);
+            }
+            if (upgradeSystem == null)
+            {
+                upgradeSystem = FindObjectOfType<UpgradeSystem>();
+            }
+            if (gameController == null)
+            {
+                gameController = FindObjectOfType<GameController>();
+            }
         }
     }
     #region HP Stuff
@@ -82,7 +119,14 @@ public class Player : MonoBehaviour
         if(health <= 0)
         {
             Die();
+            RestoreHealth(100);
+            ResetPosition();
         }
+    }
+
+    private void ResetPosition()
+    {
+        transform.position = Vector3.zero;
     }
 
     private void UpdateHealthSlider()
@@ -92,7 +136,6 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-
         gameController.GameOver();
     }
     #endregion

@@ -16,7 +16,7 @@ public class DecoyController : Utility
     public int decoyHealthRank;
 
     public DynamicJoystick dynamicJoystick;
-    private Vector2 playerDirection, throwigDirection, playerPosition;
+    private Vector2 playerDirection, throwingDirection, playerPosition;
 
     protected override void Awake()
     {
@@ -29,13 +29,23 @@ public class DecoyController : Utility
         {
             IncreaseDecoyHealth();
         }
-        EndInitialUpgrades();
     }
 
     void Update()
     {
         if (SceneManager.GetActiveScene().name == "Main") {
-            playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+            if (dynamicJoystick == null)
+            {
+                DynamicJoystick[] dynamicJoysticks = FindObjectsOfType<DynamicJoystick>();
+                foreach (DynamicJoystick joystick in dynamicJoysticks)
+                {
+                    if (joystick.GetPosition() == "Right")
+                    {
+                        dynamicJoystick = joystick;
+                    }
+                }
+            }
+            playerPosition = player.transform.position;
             playerDirection = new Vector2(dynamicJoystick.Horizontal, dynamicJoystick.Vertical).normalized;
             
         }
@@ -43,9 +53,9 @@ public class DecoyController : Utility
 
     private Vector2 FindLandingSpot()
     {
-        throwigDirection = -playerDirection;
+        throwingDirection = -playerDirection;
 
-        return playerPosition + (throwDistance * throwigDirection);
+        return playerPosition + (throwDistance * throwingDirection);
     }
 
     public void Throw()
@@ -81,26 +91,20 @@ public class DecoyController : Utility
     public void IncreaseDecoyAmount()
     {
         amountOfDecoy += decoyIncreasePerUpgrade;
-        if (InitialUpgradesComplete())
-        {
-            DecoyAmountUpgradeRank(1);
-        }
+        DecoyAmountUpgradeRank(1);
     }
 
     public void IncreaseDecoyHealth()
     {
         decoyHealth += decoyIncreasePerUpgrade;
-        if (InitialUpgradesComplete())
-        {
-            DecoyHealthUpgradeRank(1);
-        }
+        DecoyHealthUpgradeRank(1);
     }
 
-    public int GetDecoyHealthIncreasePerUpgrade()
+    public int GetDecoyHealthAmountPerUpgrade()
     {
         return decoyHealthIncreasePerUpgrade;
     }
-    public int GetDecoyIncreasePerUpgrade()
+    public int GetDecoyAmountPerUpgrade()
     {
         return decoyIncreasePerUpgrade;
     }

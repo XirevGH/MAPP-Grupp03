@@ -13,24 +13,14 @@ public abstract class TetheringWeapon : Weapon
     public void TetherUpgradeRank(int rankIncrease)
     {
         tetherRank += rankIncrease;
-        if (!InitialUpgradesComplete())
-        {
-            for (int i = 0; i < tetherRank; i++)
-            {
-                IncreaseDamage();
-            }
-            EndInitialUpgrades();
-        }
+        IncreaseDamage();
     }
 
 
     public void IncreaseTetherAmount()
     {
         amountOfTethers += tetherIncreasePerUpgrade;
-        if (InitialUpgradesComplete())
-        {
-            TetherUpgradeRank(1);
-        }
+        TetherUpgradeRank(1);
     }
 
     protected GameObject[] GetClosestEnemies(int amountOfTethers)
@@ -54,7 +44,7 @@ public abstract class TetheringWeapon : Weapon
         }
     }
 
-    public int GetTetherIncreasePerUpgrade()
+    public int GetTetherAmountPerUpgrade()
     {
         return tetherIncreasePerUpgrade;
     }

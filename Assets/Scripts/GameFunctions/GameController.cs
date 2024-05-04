@@ -6,7 +6,6 @@ using UnityEngine.Tilemaps;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] private GameObject trackswapper;
     public PlayerStats playerStats;
     private string playerStatsFile;
     public Camera mainCamera;
@@ -36,6 +35,7 @@ public class GameController : MonoBehaviour
 
     private void ReadFile(string saveFile)
     {
+        playerStats = FindObjectOfType<PlayerStats>();
         if (File.Exists(saveFile))
         {
             string fileContents = File.ReadAllText(saveFile);

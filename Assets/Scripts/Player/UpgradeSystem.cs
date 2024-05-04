@@ -10,8 +10,9 @@ public class UpgradeSystem : MonoBehaviour
     [SerializeField] private Item[] startingItems;
     [SerializeField] private Player player;
 
+    private UpgradeController controller;
+
     private Dictionary<Item, List<string>> upgradeOptions = new Dictionary<Item, List<string>>();
-    private List<GameObject> choicePanels;
     private List<Item> sessionItems;
     private List<Item> choiceItems;
     private List<Item> currentPlayerItems = new List<Item>();
@@ -22,10 +23,21 @@ public class UpgradeSystem : MonoBehaviour
 
     private void Awake()
     {
+        if (player == null)
+        {
+            player = FindObjectOfType<Player>();
+        }
+
+        if (controller == null)
+        {
+            controller = FindObjectOfType<UpgradeController>();
+        }
+        
         allowedAmountOfWeapons = 4;
         allowedAmountOfUtility = 3;
-        sessionItems = new List<Item>(startingItems);
+        sessionItems = new List<Item>(controller.GetItems());
     }
+
 
     public void InitializeUpgradeOptions(List<Item> playerItems)
     {
@@ -145,11 +157,6 @@ public class UpgradeSystem : MonoBehaviour
         return player.GetCurrentItems();
     }
 
-    private void InitializePanels()
-    {
-        choicePanels = new List<GameObject>(panels);
-    }
-
     private void InitializeItems()
     {
         //Prepare all available items in order to be able to remove from the random choices from the list 
@@ -157,29 +164,13 @@ public class UpgradeSystem : MonoBehaviour
         choiceItems = new List<Item>(sessionItems);
     }
 
-    private GameObject ChooseRandomPanel()
-    {
-        //Get a random number based on the amount of panels in the panel list.
-        int randomPanel = UnityEngine.Random.Range(0, choicePanels.Count);
-
-        //Save the Game Object of the chosen panel.
-        GameObject chosenPanel = choicePanels[randomPanel];
-
-        //Remove the chosen panel so it cannot be chosen for the remaining upgrades.
-        RemovePanelAsOption(chosenPanel);
-
-        //Return the game object of the randomly chosen panel.
-        return chosenPanel;
-    }
 
     private void SetPanelText(GameObject panel, string itemName, string textDescription)
     {
         panel.GetComponentInChildren<TMP_Text>().text = itemName + "\n\n" + textDescription;
     }
-    private void RemovePanelAsOption(GameObject chosenPanel)
-    {
-        choicePanels.Remove(chosenPanel);
-    }
+
+
     private void SetPanelMethod(GameObject panel, string typeOfChoice, Item item, string upgrade)
     {
         //Depending on if it is an item or an upgrade, the button gets told to call a different method along with the necessary information.
@@ -199,9 +190,6 @@ public class UpgradeSystem : MonoBehaviour
         //and places them inside of a new list so that the new list can
         //be modified inside of the loop without it affecting the original list.
         InitializeItems();
-
-        //Does the same thing as with the items above but for the available panels.
-        InitializePanels();
 
         //Gets all of the items that the player is currently holding.
         currentPlayerItems = GetItems();
@@ -224,7 +212,7 @@ public class UpgradeSystem : MonoBehaviour
 
             //Randomly choose one type.
             string typeOfChoice = ChooseUpgradeType(typeOptions);
-            
+
             //Depending on which type was chosen, we execute different methods to either get an upgrade or an item.
             if (typeOfChoice.Equals("Upgrade"))
             {
@@ -242,14 +230,13 @@ public class UpgradeSystem : MonoBehaviour
                 //Remove the item so it cannot be received again as a choice for the remaining loops.
                 RemoveItemAsChoice(item, choiceItems);
             }
-            //Chooses a random panel, bit redundant. Might remove.
-            GameObject chosenPanel = ChooseRandomPanel();
+
 
             //Sets the text on the panel for the type of item or upgrade chosen.
-            SetPanelText(chosenPanel, item.GetName(), GetUpgradeDescription(item, typeOfChoice, upgradeText));
+            SetPanelText(panels[i], item.GetName(), GetUpgradeDescription(item, typeOfChoice, upgradeText));
 
             //Prepares the button with the method to call in case that button is pressed.
-            SetPanelMethod(chosenPanel, typeOfChoice, item, upgradeText);
+            SetPanelMethod(panels[i], typeOfChoice, item, upgradeText);
         }
     }
 

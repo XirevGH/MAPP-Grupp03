@@ -1,15 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.Events;
-using Random = UnityEngine.Random;
+
 
 public class TriggerController : MonoBehaviour
 {
     [SerializeField] public float inGameCurrentTrackBPM;
-    [SerializeField] GameObject trackswapper;
     [SerializeField] public Trigger[] triggers;
     [SerializeField] public bool isTriggering;
 
@@ -20,7 +16,7 @@ public class TriggerController : MonoBehaviour
     public class Trigger
     {
         [SerializeField] public float noteValue;
-        [SerializeField] private UnityEvent quaterNoteTrigger;
+        [SerializeField] public UnityEvent quaterNoteTrigger;
         private int lastQuaterNote;
         public bool isTriggering;
 
@@ -99,5 +95,10 @@ public class TriggerController : MonoBehaviour
     public float GetCurrentTrackBPM()
     {
         return inGameCurrentTrackBPM;
+    }
+
+    public void SetTrigger<T>(int triggerNumber, UnityAction action)
+    {
+        triggers[triggerNumber].quaterNoteTrigger.AddListener(action);
     }
 }

@@ -43,12 +43,12 @@ public class UpgradeController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI MoneyMultCost;
     [SerializeField] private TextMeshProUGUI MoneyMultStats;
 
-    [SerializeField] private List<Item> itemsMainMenu;
-    private List<Item> itemsInGame;
+    [SerializeField] private List<Item> items;
+
 
     private List<int> upgrades = new List<int>();
 
-    private Dictionary<Tuple<string, string>, int> upgradeMap = new Dictionary<Tuple<string, string>, int>();
+    private Dictionary<Tuple<string, string>, int> upgradeMap;
     public int perLevelPriceIncrease;
     private int levelDamage;
     private int levelBPM;
@@ -61,44 +61,50 @@ public class UpgradeController : MonoBehaviour
     private int levelInvincibilityFrames;
     private int levelMoneyMult;
 
-    private bool upgradesUnfinished = true;
+    private static bool initialUpgrades = true;
     string upgradeStatsFile;
 
     private UpgradeController instance;
 
-    [SerializeField] public int bassGuitarDamageUpgradeRank;
-    [SerializeField] public int yoyoProjectileUpgradeRank;
-    [SerializeField] public int yoyoDamageUpgradeRank;
-    [SerializeField] public int discoBallProjectileCountUpgradeRank;
-    [SerializeField] public int discoBallPenetrationAmountUpgradeRank;
-    [SerializeField] public int discoBallDamageUpgradeRank;
-    [SerializeField] public int electricGuitarTetherUpgradeRank;
-    [SerializeField] public int electricGuitarDamageUpgradeRank;
-    [SerializeField] public int saxophoneProjectileCountUpgradeRank;
-    [SerializeField] public int saxophonePenetrationAmountUpgradeRank;
-    [SerializeField] public int saxophoneDamageUpgradeRank;
-    [SerializeField] public int synthwaveBlastProjectileCountUpgradeRank;
-    [SerializeField] public int synthwaveBlastPenetrationAmountUpgradeRank;
-    [SerializeField] public int synthwaveBlastDamageUpgradeRank;
-    [SerializeField] public int vinylRecordProjectileCountUpgradeRank;
-    [SerializeField] public int vinylRecordPenetrationAmountUpgradeRank;
-    [SerializeField] public int vinylRecordDamageUpgradeRank;
-    [SerializeField] public int chillVibeRadiusUpgradeRank;
-    [SerializeField] public int chillVibeSlowUpgradeRank;
-    [SerializeField] public int decoyDecoyAmountUpgradeRank;
-    [SerializeField] public int decoyDecoyHealthUpgradeRank;
-    [SerializeField] public int grooveArmorHealthUpgradeRank;
-    [SerializeField] public int rollerSkatesMovementSpeedUpgradeRank;
-    [SerializeField] public int stagePresenceDamageUpgradeRank;
+    [SerializeField] public int bassGuitarIncreaseDamage;
+    [SerializeField] public int yoyoIncreaseProjectileCount;
+    [SerializeField] public int yoyoIncreaseDamage;
+    [SerializeField] public int discoBallIncreaseProjectileCount;
+    [SerializeField] public int discoBallIncreasePenetrationAmount;
+    [SerializeField] public int discoBallIncreaseDamage;
+    [SerializeField] public int electricGuitarIncreaseTetherAmount;
+    [SerializeField] public int electricGuitarIncreaseDamage;
+    [SerializeField] public int saxophoneIncreaseProjectileCount;
+    [SerializeField] public int saxophoneIncreasePenetrationAmount;
+    [SerializeField] public int saxophoneIncreaseDamage;
+    [SerializeField] public int synthwaveBlastIncreaseProjectileCount;
+    [SerializeField] public int synthwaveBlastIncreasePenetrationAmount;
+    [SerializeField] public int synthwaveBlastIncreaseDamage;
+    [SerializeField] public int vinylRecordIncreaseProjectileCount;
+    [SerializeField] public int vinylRecordIncreasePenetrationAmount;
+    [SerializeField] public int vinylRecordIncreaseDamage;
+    [SerializeField] public int chillVibeIncreaseRadius;
+    [SerializeField] public int chillVibeIncreaseSlow;
+    [SerializeField] public int decoyIncreaseDecoyAmount;
+    [SerializeField] public int decoyIncreaseDecoyHealth;
+    [SerializeField] public int grooveArmorIncreaseHealth;
+    [SerializeField] public int rollerSkatesIncreaseMovementSpeed;
+    [SerializeField] public int stagePresenceIncreaseDamage;
 
+    public static UpgradeController Instance
+    {
+        get; private set;
+    }
     private void CreateUpgradeMap()
     {
-        foreach(Item item in itemsMainMenu)
+        upgradeMap = new Dictionary<Tuple<string, string>, int>();
+        foreach (Item item in items)
         {
             MethodInfo[] methods = item.GetType().GetMethods();
             foreach(MethodInfo method in methods)
             {
-                if (method.Name.Contains("UpgradeRank")) {
+                
+                if (method.Name.Contains("Increase")) {
                     string variableName = char.ToLower(item.GetName()[0]) + item.GetName().Substring(1).Replace(" ", "") + method.Name;
                     upgradeMap.Add(Tuple.Create(item.GetName(), method.Name), (int)typeof(UpgradeController).GetField(variableName).GetValue(this));
                 }
@@ -108,43 +114,48 @@ public class UpgradeController : MonoBehaviour
 
     private void Awake()
     {
+        
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+        else
+        {
+            Destroy(gameObject);
+        }
+        InitialisingPanel();
         upgradeStatsFile = Application.persistentDataPath + "/upgradeInfo.json";
         ReadFile(upgradeStatsFile);
         CreateUpgradeMap();
-    }
-
-    private void Start()
-    {
-        InitialisingPanel();
-    }
-
-    private void Update()
-    {
-        if (SceneManager.GetActiveScene().name == "MainMenu")
-        {
-            upgradesUnfinished = true;
-        }
-        
-        if (SceneManager.GetActiveScene().name == "Main" && upgradesUnfinished)
-        {
-            itemsInGame = Resources.FindObjectsOfTypeAll<Item>().ToList<Item>();
-            foreach (Item item in itemsInGame)
+        if (initialUpgrades) { 
+            foreach (Item item in items)
             {
-                foreach(Tuple<string, string> key in upgradeMap.Keys) 
-                { 
-                    if (item.GetName().Equals(key.Item1)) 
-                    { 
-                        item.GetType().GetMethod(key.Item2).Invoke(item, new object[] { upgradeMap[key] });
+                foreach (Tuple<string, string> key in upgradeMap.Keys)
+                {
+                    if (item.GetName().Equals("Bass Guitar")) {
+                        Debug.Log("Bass Guitar is here");
+                        Debug.Log("Bass Guitar damage increase rank: " + bassGuitarIncreaseDamage);
+                        Debug.Log("Item1: " + key.Item1);
+                        Debug.Log(item.GetName().Equals(key.Item1));
+                        Debug.Log(upgradeMap[key]);
+                    }
+                    if (item.GetName().Equals(key.Item1) && upgradeMap[key] != 0)
+                    {
+                        Debug.Log("The name is correct and the variable is not 0");
+                        Debug.Log("Value of variable: " + upgradeMap[key]);
+                        for(int i = 0; i < upgradeMap[key]; i++) 
+                        {
+                            Debug.Log("Item2: " + key.Item2);
+                            item.GetType().GetMethod(key.Item2).Invoke(item, null);
+                        }
                     }
                 }
             }
-            upgradesUnfinished = false;
+
+            initialUpgrades = false;
         }
+        
     }
 
     private void ReadFile(string saveFile)
@@ -153,10 +164,6 @@ public class UpgradeController : MonoBehaviour
         {
             string fileContents = File.ReadAllText(saveFile);
             CreateFromJSON(fileContents);
-        }
-        else
-        {
-            Debug.Log("File does not exist.");
         }
     }
 
@@ -245,9 +252,21 @@ public class UpgradeController : MonoBehaviour
         string methodName = parts[1];
         string variableName = char.ToLower(className[0]) + className.Substring(1).Replace(" ", "") + methodName;
         int variableValueBefore = (int)typeof(UpgradeController).GetField(variableName).GetValue(this);
+        Debug.Log("Variable before: " + variableValueBefore);
         typeof(UpgradeController).GetField(variableName).SetValue(this, variableValueBefore + 1);
         int variableValueAfter = (int)typeof(UpgradeController).GetField(variableName).GetValue(this);
+        Debug.Log("Variable after: " + variableValueAfter);
+        
         upgradeMap[Tuple.Create(className, methodName)] = variableValueAfter;
+        
+
+        foreach (Item item in items)
+        {
+            if (item.GetName().Equals(className))
+            {
+                item.GetType().GetMethod(methodName).Invoke(item, null);
+            }
+        }
         File.WriteAllText(upgradeStatsFile, SaveToString());
     }
 
@@ -353,17 +372,8 @@ public class UpgradeController : MonoBehaviour
         return false;
     }
 
-    
-
-    
-
-     
-    
-
-
-
-    
-
-    
-
+    public List<Item> GetItems() 
+    { 
+        return items;
+    }
 }

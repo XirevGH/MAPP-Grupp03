@@ -8,16 +8,7 @@ public class VinylDiscController : ProjectileWeapon
     [SerializeField] private GameObject vinylDisc;
     [SerializeField] private float attackDelayTime;
 
-    private Transform playerTransform;
     private Vector3 playerPosition;
-
-    protected override void Awake()
-    {
-        base.Awake();
-        if (SceneManager.GetActiveScene().name == "Main") {  
-            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        }
-    }
 
     public override void Attack()
     {
@@ -30,7 +21,7 @@ public class VinylDiscController : ProjectileWeapon
     {
         for (int i = 0; i < amountOfProjectiles; i++)
         {
-            playerPosition = playerTransform.position;
+            playerPosition = player.transform.position;
             GameObject clone = Instantiate(vinylDisc, playerPosition, Quaternion.identity);
             clone.GetComponent<Projectile>().SetDamage(damage);
             clone.GetComponent<Projectile>().SetPenetration(penetration);
@@ -38,7 +29,7 @@ public class VinylDiscController : ProjectileWeapon
 
             yield return new WaitForSeconds(attackDelayTime);
 
-            playerPosition = playerTransform.position;
+            playerPosition = player.transform.position;
             GameObject clone1 = Instantiate(vinylDisc, playerPosition, Quaternion.identity);
             clone1.GetComponent<Projectile>().SetDamage(damage);
             clone1.GetComponent<Projectile>().SetPenetration(penetration);

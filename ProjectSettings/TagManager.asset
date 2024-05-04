@@ -17,6 +17,10 @@ TagManager:
   - AimingArrow
   - Decoy
   - UpgradeSystem
+  - BeatContainer
+  - XPSlider
+  - levelText
+  - UpgradeScreen
   layers:
   - Default
   - TransparentFX
