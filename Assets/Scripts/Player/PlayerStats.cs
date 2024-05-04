@@ -27,7 +27,7 @@ public class PlayerStats : MonoBehaviour
         movementSpeed = 1, areaOfEffectSize = 1, duration = 1, moneyMultiplier = 1, xpMultiplier = 1,  
         defence = 0, regeneration = 0,
         pierce = 0, burstAmount = 0};
-        
+
         menuUpgradeStats = GlobalUpgrades.Instance.upgradeStats;
         AddMenuStats();
         GetComponent<Player>().InitializePlayerStats();
@@ -46,6 +46,7 @@ public class PlayerStats : MonoBehaviour
         stats.regeneration += menuUpgradeStats.regeneration;
         stats.pierce += menuUpgradeStats.pierce;
         stats.burstAmount += menuUpgradeStats.burstAmount;
+        //ApplyStatsToWeapons();
     }
 
     
@@ -91,8 +92,43 @@ public class PlayerStats : MonoBehaviour
     public void AddMoneyStast(int increase){
         stats.money +=(int) (increase * stats.moneyMultiplier);
     }
-    
+    /*
+    public void ApplyStatsToWeapons()
+    {
+        // Assuming 'stats' is accessible within this context and properly initialized
+        Weapon[] weapons = GetComponentsInChildren<Weapon>();
+        foreach (Weapon weapon in weapons)
+        {
+            // Increase damage for all weapons if applicable
+            weapon.IncreaseDamage(stats.damage);
 
+            // Specific weapon type checks and upgrades
+            if (weapon is PermanentProjectileWeapon ppw)
+            {
+                
+                ppw.IncreaseProjectileCount(stats.burstAmount);
+            }
+            else if (weapon is ProjectileWeapon pw)
+            {
+                pw.IncreasePenetrationAmount(stats.pierce);
+                pw.IncreaseProjectileCount(stats.burstAmount);
+            }
+            else if (weapon is TetheringWeapon tw)
+            {
+                tw.IncreaseTetherAmount(stats.burstAmount);
+            }
+
+            // Check if the weapon component is also a Projectile (assuming a Projectile can also be a Weapon)
+            Projectile projectile = weapon.GetComponent<Projectile>();
+            if (projectile != null)
+            {
+                projectile.IncreaseSpeed(stats.projectileSpeed);
+                projectile.SetDamage(stats.damage);
+                projectile.SetPenetration(stats.burstAmount);
+            }
+        }
+    }
+    */
    
     
     

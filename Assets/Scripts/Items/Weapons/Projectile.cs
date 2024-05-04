@@ -14,6 +14,10 @@ public abstract class Projectile : MonoBehaviour
         }
     }
 
+    public void IncreaseSpeed(float increase) //felix
+    { 
+        speed += increase;
+    }
     public void DestroyWhenMaxPenetration()
     {
         penetration--;

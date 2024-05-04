@@ -33,7 +33,6 @@ public class Player : MonoBehaviour
     private float xpToLevel;
     private int level;
 
-    private int burstAmount;
 
     private void Start()
     {
@@ -71,7 +70,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {   if(damageAmount > defence){
-
+            health -= 1;
         }
         health -= damageAmount - defence;
         UpdateHealthSlider();

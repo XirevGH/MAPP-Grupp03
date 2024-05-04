@@ -21,6 +21,11 @@ public abstract class PermanentProjectileWeapon : Weapon
         amountOfProjectiles += projectileIncreasePerUpgrade;
     }
 
+    public void IncreaseProjectileCount(int projectileIncreasee) //felix
+    {
+        amountOfProjectiles += projectileIncreasee;
+    }
+
     public int GetProjectileIncreasePerUpgrade()
     {
         return projectileIncreasePerUpgrade;

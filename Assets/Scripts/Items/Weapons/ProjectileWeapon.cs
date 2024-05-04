@@ -11,10 +11,18 @@ public abstract class ProjectileWeapon : Weapon
     {
         amountOfProjectiles += projectileIncreasePerUpgrade;
     }
+    public void IncreaseProjectileCount(int projectileIncrease) //felix
+    {
+        amountOfProjectiles += projectileIncrease;
+    }
 
     public void IncreasePenetrationAmount()
     {
         penetration += penetrationIncreasePerUpgrade;
+    }
+    public void IncreasePenetrationAmount(int penetrationIncrease) //felix
+    {
+        penetration += penetrationIncrease;
     }
 
     public int GetProjectileIncreasePerUpgrade()

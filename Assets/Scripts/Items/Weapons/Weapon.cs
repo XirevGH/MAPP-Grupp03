@@ -11,6 +11,11 @@ public abstract class Weapon : Item
         damage *= (1 + (percentageDamageIncrease / 100f));
     }
 
+    public void IncreaseDamage(float DamageIncrease) //felix
+    {
+        damage *= DamageIncrease;
+    }
+
     public float GetDamageIncreasePercentage()
     {
         return percentageDamageIncrease;

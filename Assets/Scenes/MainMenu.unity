@@ -6594,7 +6594,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Size
+  m_text: '
 
 '
   m_isRightToLeft: 0
@@ -7193,7 +7193,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Money mutl.
+  m_text: '
 
 '
   m_isRightToLeft: 0
@@ -7829,7 +7829,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'HP
+  m_text: '
 
 '
   m_isRightToLeft: 0
@@ -11062,7 +11062,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Invincibility
+  m_text: '
 
 '
   m_isRightToLeft: 0
@@ -11787,7 +11787,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pierce
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: -8542620725292600027, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
@@ -12127,7 +12127,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'BPM
+  m_text: '
 
 '
   m_isRightToLeft: 0
@@ -13917,7 +13917,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Mov. speed
+  m_text: '
 
 '
   m_isRightToLeft: 0
@@ -16462,7 +16462,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Damage
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: -8542620725292600027, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
@@ -17080,7 +17080,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Money mutl.
+  m_text: '
 
 '
   m_isRightToLeft: 0
@@ -17971,7 +17971,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 100
+          m_IntArgument: 1000
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -20736,7 +20736,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Defence
+  m_text: '
 
 '
   m_isRightToLeft: 0
@@ -21418,7 +21418,7 @@ MonoBehaviour:
   - {fileID: 1355780717}
   - {fileID: 246575885}
   levels: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  money: 10000
+  money: 1000
 --- !u!4 &1792653753
 Transform:
   m_ObjectHideFlags: 0
@@ -23586,9 +23586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Xp Mult.
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: -8542620725292600027, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
@@ -24027,9 +24025,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Money mutl.
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: -8542620725292600027, guid: acb3a264d8423a04cbba7741154c7050, type: 2}

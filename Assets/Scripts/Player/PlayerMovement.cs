@@ -81,6 +81,9 @@ public class PlayerMovement : MonoBehaviour
     }
     public float GetMovementSpeed(){
         movementSpeed = characterStats.stats.basemovementSpeed * movementSpeedDecrease * characterStats.stats.movementSpeed;
+        if(movementSpeed > 10){
+            movementSpeed = 10;
+        }
         return movementSpeed;
     }
 

@@ -14,6 +14,11 @@ public abstract class TetheringWeapon : Weapon
         amountOfTethers += tetherIncreasePerUpgrade;
     }
 
+     public void IncreaseTetherAmount(int tetherIncrease) //felix
+    {
+        amountOfTethers += tetherIncrease;
+    }
+
     protected GameObject[] GetClosestEnemies(int amountOfTethers)
     {
         SortedSet<GameObject> sortedEnemies = new SortedSet<GameObject>(new GameObjectComparer());
