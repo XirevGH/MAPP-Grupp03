@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class UpgradeController : MonoBehaviour
 {
-    public static UpgradeController Instance { get; private set; }
+    
+
     
 
     
@@ -39,7 +40,13 @@ public class UpgradeController : MonoBehaviour
     }
 
     private void InitializePanel()
-    {
+    {   
+
+        levels = GlobalUpgrades.Instance.upgradeStats.savedLevels;
+        money = GlobalUpgrades.Instance.upgradeStats.currencies[0];
+        SetStats();
+
+
         if (statCostTexts.Length < levels.Length ||
             statInfoTexts.Length < levels.Length ||
             statIncreaseTexts.Length < levels.Length ||
@@ -110,7 +117,7 @@ public class UpgradeController : MonoBehaviour
     public void SetStats()
     {
         GlobalUpgrades.Instance.upgradeStats.savedLevels = (int[]) levels.Clone();
-        GlobalUpgrades.Instance.upgradeStats.savedMoney = money;
+        GlobalUpgrades.Instance.upgradeStats.currencies[0] = money;
 
         GlobalUpgrades.Instance.upgradeStats.defence = levels[0] * (int)multipliers[0];
         GlobalUpgrades.Instance.upgradeStats.regeneration = levels[1] * (int)multipliers[1];
@@ -128,6 +135,8 @@ public class UpgradeController : MonoBehaviour
 
     
     }
+
+    
     
 
 

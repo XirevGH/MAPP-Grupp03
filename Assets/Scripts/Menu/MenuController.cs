@@ -13,7 +13,7 @@ public class ManuController : MonoBehaviour
     [SerializeField] private GameObject uppgradesPanel;
     [SerializeField] private GameObject settingPanel;
     [SerializeField] private GameObject creditPanel;
-    [SerializeField] private GameObject upgradeControler;
+    [SerializeField] private UpgradeController upgradeControler;
     
 
     
@@ -27,8 +27,8 @@ public class ManuController : MonoBehaviour
     private void Start()
     {   
         GlobalUpgrades.Instance.LoadFromPlayerPrefs();
-        upgradeControler.GetComponent<UpgradeController>().levels = GlobalUpgrades.Instance.upgradeStats.savedLevels;
-        upgradeControler.GetComponent<UpgradeController>().money = GlobalUpgrades.Instance.upgradeStats.savedMoney;
+        
+        
        
         CloseCredits();
         CloseSetting();

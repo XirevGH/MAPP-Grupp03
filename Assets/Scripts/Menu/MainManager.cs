@@ -28,6 +28,8 @@ public class MainManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    
+
     public void Update()
     {
         levelText.text = "" + mainLevel;

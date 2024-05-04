@@ -5,11 +5,12 @@ using UnityEngine;
 
 [System.Serializable]
 public struct UpgradeStats
-{
+{   
     public int defence, regeneration, pierce, burstAmount;
     public float damage, projectileSpeed, healthMultiplier, movementSpeed, areaOfEffectSize, duration, moneyMultiplier, xpMultiplier;
     public int[] savedLevels;
-    public int savedMoney;
+    public int[] currencies; //money
+    
 
 }
 public class GlobalUpgrades : MonoBehaviour
@@ -31,6 +32,7 @@ public class GlobalUpgrades : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             LoadFromPlayerPrefs();
             upgradeStats.savedLevels = new int[12];
+            upgradeStats.currencies = new int[1];
         }
         else
         {   

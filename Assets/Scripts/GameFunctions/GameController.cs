@@ -9,7 +9,7 @@ using UnityEngine.Tilemaps;
 public class GameController : MonoBehaviour
 {
     private string saveFile;
-    public PlayerStats playerStats;
+     [SerializeField] public GameObject playerStats;
     [SerializeField] private GameObject trackswapper;
     public Camera mainCamera;
     public Tilemap tilemap;
@@ -52,7 +52,7 @@ public class GameController : MonoBehaviour
     {
         TriggerController.instance.GetComponent<TriggerController>().ToggleTrigger();
         SoundManager.instance.GetComponent<SoundManager>().ToggleMusicPause();
-        File.WriteAllText(saveFile, playerStats.SaveToString());
+        File.WriteAllText(saveFile, playerStats.GetComponent<PlayerStats>().SaveToString());
         SceneManager.LoadScene("ResultsScreen");
        
     }

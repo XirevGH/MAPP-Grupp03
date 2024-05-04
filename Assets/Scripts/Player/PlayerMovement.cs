@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed;
+    public float movementSpeed;
     [SerializeField] private Transform pos;
+    [SerializeField] private PlayerStats characterStats;
     public DynamicJoystick dynamicJoystick;
 
     private float horizontalValue;
@@ -20,20 +21,24 @@ public class PlayerMovement : MonoBehaviour
     {
         rend = GetComponent<SpriteRenderer>(); 
         anim = GetComponent<Animator>();
+        
     }
+
+
 
     void Update()
     {
+        
         if (Time.timeScale == 0f)
         {
             return;
         }
     }
 
-    public void IncreaseMovementSpeed(float percentageIncrease)
+    /*public void IncreaseMovementSpeed(float percentageIncrease)
     {
         movementSpeed *= percentageIncrease;
-    }
+    }*/
 
     private void FlipSprite(bool flip)
     {
@@ -66,13 +71,17 @@ public class PlayerMovement : MonoBehaviour
         if (dynamicJoystick.Horizontal != 0f || dynamicJoystick.Vertical != 0f)
         {
             anim.SetFloat("MoveSpeed", Mathf.Abs(dynamicJoystick.Horizontal + dynamicJoystick.Vertical / 2));
-            pos.position = new Vector2(pos.position.x + dynamicJoystick.Horizontal * movementSpeed * movementSpeedDecrease * Time.deltaTime, pos.position.y + dynamicJoystick.Vertical * movementSpeed * movementSpeedDecrease* Time.deltaTime);
+            pos.position = new Vector2(pos.position.x + dynamicJoystick.Horizontal * GetMovementSpeed() * Time.deltaTime, pos.position.y + dynamicJoystick.Vertical * movementSpeed * movementSpeedDecrease* Time.deltaTime);
         }
         else
         {
             anim.SetFloat("MoveSpeed", Mathf.Abs(horizontalValue + verticalValue / 2));
-            pos.position = new Vector2(pos.position.x + horizontalValue * movementSpeed * movementSpeedDecrease * Time.deltaTime, pos.position.y + verticalValue * movementSpeed * movementSpeedDecrease * Time.deltaTime);
+            pos.position = new Vector2(pos.position.x + horizontalValue * movementSpeed * Time.deltaTime, pos.position.y + verticalValue * GetMovementSpeed() * Time.deltaTime);
         }
+    }
+    public float GetMovementSpeed(){
+        movementSpeed = characterStats.stats.basemovementSpeed * movementSpeedDecrease * characterStats.stats.movementSpeed;
+        return movementSpeed;
     }
 
     public void DecreaseMovementSpeed(float percentageDecrease)

@@ -58,4 +58,4 @@ MonoBehaviour:
     moneyMultiplier: 0
     xpMultiplier: 0
     savedLevels: 
-    savedMoney: 0
+    savedMoney: 1000

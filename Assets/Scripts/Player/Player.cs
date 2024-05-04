@@ -12,22 +12,23 @@ public class Player : MonoBehaviour
     [SerializeField] private TMP_Text levelText;
     [SerializeField] private GameController gameController;
     [SerializeField] private Player player;
-    [SerializeField] private PlayerStats playerStats;
+    [SerializeField] private PlayerStats characterStats;
     [SerializeField] private UpgradeSystem upgradeSystem;
     [SerializeField] private UpgradePanel upgradeScreen;
 
     public List<Item> currentItems = new List<Item>();
 
-    private int money;
-    private float moneyMultiplier;
-    private float damage;
-    private float areaOfEffectSize;
-    private int pierce;
+    //private int money;
+    //private float moneyMultiplier;
+    //private float damage;
+    //private float areaOfEffectSize;
+    //private int pierce;
     private float xpMultiplier;
     public float maxHealth;
     public float health;
     private int defence;
-    private float movementSpeed;
+
+    private int regen; 
     private float xpHeld;
     private float xpToLevel;
     private int level;
@@ -36,26 +37,26 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        // This ensures it reads updated stats possibly right after loading new data
-        InitializePlayerStats();
+        
+        
     }
-    private void InitializePlayerStats()
+    public void InitializePlayerStats()
     {
-        money = playerStats.stats.money; 
-        moneyMultiplier = playerStats.stats.moneyMultiplier; 
-        damage = playerStats.stats.damage;
-        areaOfEffectSize = playerStats.stats.areaOfEffectSize;
-        pierce = playerStats.stats.pierce;
-        xpMultiplier = playerStats.stats.xpMultiplier;
-        maxHealth = xpMultiplier * playerStats.stats.baseHealth; 
+        xpMultiplier = characterStats.stats.xpMultiplier;
+        maxHealth =  characterStats.stats.healthMultiplier * characterStats.stats.baseHealth; 
         health =  maxHealth;
-        defence = playerStats.stats.defence; 
-        movementSpeed = playerStats.stats.movementSpeed; 
+        defence = characterStats.stats.defence;  
+        regen = characterStats.stats.regeneration;
+
+
         xpToLevel = 100;
         level = 1;
-        burstAmount = playerStats.stats.burstAmount;
         xpHeld = 0;
     }
+    private void UpdatePlayerStats(){
+
+    }
+
 
     #region HP Stuff
     public void RestoreHealth(float percent)
@@ -69,8 +70,10 @@ public class Player : MonoBehaviour
     }
 
     public void TakeDamage(int damageAmount)
-    {
-        health -= damageAmount;
+    {   if(damageAmount > defence){
+
+        }
+        health -= damageAmount - defence;
         UpdateHealthSlider();
         if(health <= 0)
         {
@@ -93,7 +96,7 @@ public class Player : MonoBehaviour
     #region XP Stuff
     public void AddXP(int amountToAdd)
     {
-        xpHeld += amountToAdd;
+        xpHeld += (int)(amountToAdd * xpMultiplier);
         UpdateXPSlider();
         CheckForLevelUp();
     }

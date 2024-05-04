@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RollerSkates : Utility
 {
-    public PlayerMovement playerMovement;
+    [SerializeField] private PlayerStats characterStats;
     public float percentageIncrease;
 
     public float GetMovementSpeedIncreasePercentage()
@@ -14,7 +14,7 @@ public class RollerSkates : Utility
 
     public void IncreaseMovementSpeed()
     {
-        playerMovement.IncreaseMovementSpeed(1 + (percentageIncrease / 100f));
+        characterStats.MovementSpeedUpgrade(percentageIncrease/100);
     }
 
     protected override void CreateUpgradeOptions()
