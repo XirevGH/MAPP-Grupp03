@@ -42,6 +42,14 @@ MonoBehaviour:
     m_Localized: Musik
     m_Metadata:
       m_Items: []
+  - m_Id: 1108225311645696
+    m_Localized: "V\xE4lj objekt"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1108544242327552
+    m_Localized: vapen
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
