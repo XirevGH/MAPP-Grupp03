@@ -10,27 +10,27 @@ Utility,Roller Skates,Put on your roller skates and speed up your movement.
 Utility,Groove Armor,Put on your Groove Armor and dampen the blows of your enemies.
 Utility,Chill Vibe,Make your enemies move slower with your chill vibe.
 Utility,Decoy,Make it rain money to distract your enemies.
-Upgrade,Bass Guitar,IncreaseDamage,Increase damage by,GetDamageUpgradePercentage,%
-Upgrade,Vinyl Record,IncreaseDamage,Increase damage by,GetDamageUpgradePercentage,%
-Upgrade,Vinyl Record,IncreaseProjectileCount,Increase the amount of Vinyl Records shot out by,GetProjectilePerUpgrade,.
-Upgrade,Vinyl Record,IncreasePenetrationAmount,Increase the amount of targets each Vinyl Record can deal damage to by,GetPenetrationPerUpgrade,.
-Upgrade,Yoyo,IncreaseDamage,Increase damage by,GetDamageUpgradePercentage,%
-Upgrade,Yoyo,IncreaseProjectileCount,Increase the amount of Yoyos by,GetProjectilePerUpgrade,.
-Upgrade,Disco Ball,IncreaseDamage,Increase damage by,GetDamageUpgradePercentage,%
-Upgrade,Disco Ball,IncreaseProjectileCount,Increase the amount of Disco Balls launched by,GetProjectilePerUpgrade,.
-Upgrade,Disco Ball,IncreasePenetrationAmount,Increase the amount of targets each Disco Ball can deal damage to by,GetPenetrationPerUpgrade,.
-Upgrade,Electric Guitar,IncreaseDamage,Increase damage by,GetDamageUpgradePercentage,%
-Upgrade,Electric Guitar,IncreaseTetherAmount,Increase the amount of targets the Electric Guitar will zap,GetTetherAmountPerUpgrade,.
-Upgrade,Saxophone,IncreaseDamage,Increase damage by,GetDamageUpgradePercentage,%
-Upgrade,Saxophone,IncreaseProjectileCount,Increase the amount of Notes fired by,GetProjectilePerUpgrade,.
-Upgrade,Saxophone,IncreasePenetrationAmount,Increase the amount of targets each Note can deal damage to by,GetPenetrationPerUpgrade,.
-Upgrade,Stage Presence,IncreaseDamage,Increase damage by,GetDamageUpgradePercentage,%
-Upgrade,Synthwave Blast,IncreaseDamage,Increase damage by,GetDamageUpgradePercentage,%
-Upgrade,Synthwave Blast,IncreaseProjectileAmount,Increase the amount of Synthwave Bolts in each blast by,GetProjectilePerUpgrade,.
-Upgrade,Synthwave Blast,IncreasePenetrationAmount,Increase the amount of targets each Synthwave Bolt can deal damage to by,GetPenetrationPerUpgrade,.
-Upgrade,Roller Skates,IncreaseMovementSpeed,Increase movement speed by,GetMovementSpeedUpgradePercentage,%
-Upgrade,Groove Armor,IncreaseHealth,Increase health by,GetHealthUpgradePercentage,%
-Upgrade,Chill Vibe,IncreaseRadius,Increase the area of your chill vibe by,GetRadiusUpgradePercentage,%
-Upgrade,Chill Vibe,IncreaseSlow,Increase the slow of your chill vibe by,GetSlowUpgradePercentage,%
-Upgrade,Decoy,IncreaseDecoyAmount,Increase the amount of decoys by,GetDecoyAmountPerUpgrade,.
-Upgrade,Decoy,IncreaseDecoyHealth,Increase the amount of health your decoys have by,GetDecoyHealthAmountPerUpgrade,.
+Upgrade,Bass Guitar,Increase damage by,IncreaseDamage,GetDamageUpgradePercentage,%
+Upgrade,Vinyl Record,Increase damage by,IncreaseDamage,GetDamageUpgradePercentage,%
+Upgrade,Vinyl Record,Increase the amount of Vinyl Records shot out by,IncreaseProjectileCount,GetProjectilePerUpgrade,.
+Upgrade,Vinyl Record,Increase the amount of targets each Vinyl Record can deal damage to by,IncreasePenetrationAmount,GetPenetrationPerUpgrade,.
+Upgrade,Yoyo,Increase damage by,IncreaseDamage,GetDamageUpgradePercentage,%
+Upgrade,Yoyo,Increase the amount of Yoyos by,IncreaseProjectileCount,GetProjectilePerUpgrade,.
+Upgrade,Disco Ball,Increase damage by,IncreaseDamage,GetDamageUpgradePercentage,%
+Upgrade,Disco Ball,Increase the amount of Disco Balls launched by,IncreaseProjectileCount,GetProjectilePerUpgrade,.
+Upgrade,Disco Ball,Increase the amount of targets each Disco Ball can deal damage to by,IncreasePenetrationAmount,GetPenetrationPerUpgrade,.
+Upgrade,Electric Guitar,Increase damage by,IncreaseDamage,GetDamageUpgradePercentage,%
+Upgrade,Electric Guitar,Increase the amount of targets the Electric Guitar will zap,IncreaseTetherAmount,GetTetherAmountPerUpgrade,.
+Upgrade,Saxophone,Increase damage by,IncreaseDamage,GetDamageUpgradePercentage,%
+Upgrade,Saxophone,Increase the amount of Notes fired by,IncreaseProjectileCount,GetProjectilePerUpgrade,.
+Upgrade,Saxophone,Increase the amount of targets each Note can deal damage to by,IncreasePenetrationAmount,GetPenetrationPerUpgrade,.
+Upgrade,Stage Presence,Increase damage by,IncreaseDamage,GetDamageUpgradePercentage,%
+Upgrade,Synthwave Blast,Increase damage by,IncreaseDamage,GetDamageUpgradePercentage,%
+Upgrade,Synthwave Blast,Increase the amount of Synthwave Bolts in each blast by,IncreaseProjectileAmount,GetProjectilePerUpgrade,.
+Upgrade,Synthwave Blast,Increase the amount of targets each Synthwave Bolt can deal damage to by,IncreasePenetrationAmount,GetPenetrationPerUpgrade,.
+Upgrade,Roller Skates,Increase movement speed by,IncreaseMovementSpeed,GetMovementSpeedUpgradePercentage,%
+Upgrade,Groove Armor,Increase health by,IncreaseHealth,GetHealthUpgradePercentage,%
+Upgrade,Chill Vibe,Increase the area of your chill vibe by,IncreaseRadius,GetRadiusUpgradePercentage,%
+Upgrade,Chill Vibe,Increase the slow of your chill vibe by,IncreaseSlow,GetSlowUpgradePercentage,%
+Upgrade,Decoy,Increase the amount of decoys by,IncreaseDecoyAmount,GetDecoyAmountPerUpgrade,.
+Upgrade,Decoy,Increase the amount of health your decoys have by,IncreaseDecoyHealth,GetDecoyHealthAmountPerUpgrade,.
