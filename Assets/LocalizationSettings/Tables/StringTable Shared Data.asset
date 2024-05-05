@@ -63,6 +63,14 @@ MonoBehaviour:
     m_Key: Bass guitar text
     m_Metadata:
       m_Items: []
+  - m_Id: 1496771042222080
+    m_Key: Price text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1499334529523712
+    m_Key: Current Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
