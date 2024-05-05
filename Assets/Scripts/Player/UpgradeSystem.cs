@@ -62,9 +62,9 @@ public class UpgradeSystem : MonoBehaviour
             string type = fields[0];
             string name = fields[1];
             string description = fields[2];
-            if (typeOfChoice == "Upgrade") {
+            if (typeOfChoice == "Upgrade" && type.Equals("Upgrade") && name.Equals(item.GetName())) {
                 string upgradeMethodName = fields[3];
-                if (type.Equals("Upgrade") && name.Equals(item.GetName()) && upgradeMethodName.Equals(upgrade))
+                if (upgradeMethodName.Equals(upgrade))
                 {
                     string getStatIncrease = fields[4];
                     string symbol = fields[5];
