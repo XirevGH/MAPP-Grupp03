@@ -97,7 +97,7 @@ public class TriggerController : MonoBehaviour
         return inGameCurrentTrackBPM;
     }
 
-    public void SetTrigger<T>(int triggerNumber, UnityAction action)
+    public void SetTrigger(int triggerNumber, UnityAction action)
     {
         triggers[triggerNumber].quaterNoteTrigger.AddListener(action);
     }
