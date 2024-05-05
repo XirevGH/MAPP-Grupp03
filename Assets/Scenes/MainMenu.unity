@@ -56676,7 +56676,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1995602516}
   - component: {fileID: 1995602518}
-  - component: {fileID: 1995602517}
   m_Layer: 5
   m_Name: Pages
   m_TagString: Untagged
@@ -56715,20 +56714,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 12964.001, y: 1048}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1995602517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1995602515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!114 &1995602518
 MonoBehaviour:
   m_ObjectHideFlags: 0
