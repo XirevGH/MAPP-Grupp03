@@ -10,7 +10,7 @@ public class UpgradeSystem : MonoBehaviour
     [SerializeField] private Item[] startingItems;
     [SerializeField] private Player player;
 
-    private UpgradeController controller;
+    private MetaUpgradeSystem controller;
 
     private Dictionary<Item, List<string>> upgradeOptions = new Dictionary<Item, List<string>>();
     private List<Item> sessionItems;
@@ -30,7 +30,7 @@ public class UpgradeSystem : MonoBehaviour
 
         if (controller == null)
         {
-            controller = FindObjectOfType<UpgradeController>();
+            controller = FindObjectOfType<MetaUpgradeSystem>();
         }
         
         allowedAmountOfWeapons = 4;
