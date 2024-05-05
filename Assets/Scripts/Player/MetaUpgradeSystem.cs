@@ -4,6 +4,7 @@ using System.IO;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MetaUpgradeSystem : MonoBehaviour
 {
@@ -109,7 +110,6 @@ public class MetaUpgradeSystem : MonoBehaviour
 
     private void Awake()
     {
-        
         if (instance == null)
         {
             instance = this;
@@ -126,20 +126,17 @@ public class MetaUpgradeSystem : MonoBehaviour
         if (initialUpgrades) { 
             foreach (Item item in items)
             {
-                foreach (Tuple<string, string> key in upgradeMap.Keys)
+                foreach(string upgradeMethod in item.GetUpgradeOptions())
                 {
-                    if (item.GetName().Equals(key.Item1) && upgradeMap[key] != 0)
+                    int rank = upgradeMap[Tuple.Create(item.GetName(), upgradeMethod)];
+                    for(int i = 0; i < rank; i++)
                     {
-                        for(int i = 0; i < upgradeMap[key]; i++) 
-                        {
-                            item.GetType().GetMethod(key.Item2).Invoke(item, null);
-                        }
+                        item.GetType().GetMethod(upgradeMethod).Invoke(item, null);
                     }
                 }
             }
             initialUpgrades = false;
         }
-        
     }
 
     private void ReadFile(string saveFile)
