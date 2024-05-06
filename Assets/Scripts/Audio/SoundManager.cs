@@ -243,7 +243,7 @@ public class SoundManager : MonoBehaviour
             {
                
                 audioSource.pitch = Mathf.Lerp(currentPitch, nexPitch, elapsedTime / timeToChange);
-                Debug.Log(elapsedTime / timeToChange);
+                //Debug.Log(elapsedTime / timeToChange);
                 elapsedTime += Time.deltaTime;
                 yield return null;
 

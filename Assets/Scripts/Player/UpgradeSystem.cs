@@ -3,12 +3,15 @@ using UnityEngine;
 using System;
 using TMPro;
 using System.Reflection;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class UpgradeSystem : MonoBehaviour
 {
     [SerializeField] private GameObject[] panels;
     [SerializeField] private Item[] startingItems;
     [SerializeField] private Player player;
+    [SerializeField] private Sprite weaponPanel, utilityPanel;
 
     private MetaUpgradeSystem controller;
 
@@ -163,9 +166,17 @@ public class UpgradeSystem : MonoBehaviour
     }
 
 
-    private void SetPanelText(GameObject panel, string itemName, string textDescription)
+    private void SetPanelText(GameObject panel, Item item, string textDescription)
     {
-        panel.GetComponentInChildren<TMP_Text>().text = itemName + "\n\n" + textDescription;
+        panel.GetComponentInChildren<TMP_Text>().text = item.GetName() + "\n\n" + textDescription;
+        if(item.GetItemType().Equals("Weapon"))
+        {
+            panel.GetComponent<UnityEngine.UI.Image>().sprite = weaponPanel;
+        } 
+        else
+        {
+            panel.GetComponent<UnityEngine.UI.Image>().sprite = utilityPanel;
+        }
     }
 
 
@@ -231,7 +242,7 @@ public class UpgradeSystem : MonoBehaviour
 
 
             //Sets the text on the panel for the type of item or upgrade chosen.
-            SetPanelText(panels[i], item.GetName(), GetUpgradeDescription(item, typeOfChoice, upgradeText));
+            SetPanelText(panels[i], item, GetUpgradeDescription(item, typeOfChoice, upgradeText));
 
             //Prepares the button with the method to call in case that button is pressed.
             SetPanelMethod(panels[i], typeOfChoice, item, upgradeText);

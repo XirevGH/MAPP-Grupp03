@@ -4,4 +4,9 @@ public abstract class Utility : Item
     {
         base.Awake();
     }
+
+    public override string GetItemType()
+    {
+        return "Utility";
+    }
 }
