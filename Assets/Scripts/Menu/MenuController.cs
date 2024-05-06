@@ -32,13 +32,9 @@ public class MenuController : MonoBehaviour
 
     public void Startgame()
     {
-     
         ChangeScene();
-      //  if (MainManager.Instance)
-        //{
-            MainManager.Instance.enemiesDefeated = 0;
-            MainManager.Instance.mainLevel = 1;
-     //   }
+        MainManager.Instance.enemiesDefeated = 0;
+        MainManager.Instance.mainLevel = 1;
         SoundManager.Instance.GetComponent<SoundManager>().StartGame();
     }
 
