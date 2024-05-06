@@ -90,7 +90,15 @@ public class Enemy : MonoBehaviour
     {
         SelectTarget();
         damageNumberWindow -= Time.deltaTime;
-        
+
+
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
+        if (rb != null)
+        {
+            StartCoroutine(RemoveForce(rb, 1f));
+        }
+
 
         if (IsAlive()) 
         {
