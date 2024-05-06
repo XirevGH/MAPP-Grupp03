@@ -164,9 +164,18 @@ public class UpgradeSystem : MonoBehaviour
     }
 
 
-    private void SetPanelText(GameObject panel, Item item, string textDescription)
+    private void SetPanelText(GameObject panel, Item item, string textDescription, string typeOfChoice)
     {
-        panel.GetComponentInChildren<TMP_Text>().text = item.GetName() + "\n\n" + textDescription;
+        if(typeOfChoice.Equals("Upgrade"))
+        {
+            panel.transform.parent.transform.GetChild(0).GetComponent<TMP_Text>().text = item.GetItemType() + " Upgrade";
+        }
+        else
+        {
+            panel.transform.parent.transform.GetChild(0).GetComponent<TMP_Text>().text = item.GetItemType();
+        }
+        panel.GetComponentsInChildren<TMP_Text>()[0].text = item.GetName();
+        panel.GetComponentsInChildren<TMP_Text>()[1].text = textDescription;
         if(item.GetItemType().Equals("Weapon"))
         {
             panel.GetComponent<UnityEngine.UI.Image>().sprite = weaponPanel;
@@ -240,7 +249,7 @@ public class UpgradeSystem : MonoBehaviour
 
 
             //Sets the text on the panel for the type of item or upgrade chosen.
-            SetPanelText(panels[i], item, GetUpgradeDescription(item, typeOfChoice, upgradeText));
+            SetPanelText(panels[i], item, GetUpgradeDescription(item, typeOfChoice, upgradeText), typeOfChoice);
 
             //Prepares the button with the method to call in case that button is pressed.
             SetPanelMethod(panels[i], typeOfChoice, item, upgradeText);

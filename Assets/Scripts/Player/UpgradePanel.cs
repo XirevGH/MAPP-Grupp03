@@ -2,10 +2,15 @@ using UnityEngine;
 
 public class UpgradePanel : MonoBehaviour
 {
+    [SerializeField] private GameObject tintPanel;
+
     public void OpenUpgradeWindow()
     {
         Time.timeScale = 0f;
         gameObject.gameObject.SetActive(true);
+        TriggerController.Instance.ToggleTrigger();
+        SoundManager.Instance.ToggleMusicPause();
+        tintPanel.SetActive(true);
         TriggerController.Instance.GetComponent<TriggerController>().ToggleTrigger();
         SoundManager.Instance.GetComponent<SoundManager>().ToggleMusicPause();
     }
@@ -14,6 +19,9 @@ public class UpgradePanel : MonoBehaviour
     {
         Time.timeScale = 1f;
         gameObject.gameObject.SetActive(false);
+        TriggerController.Instance.ToggleTrigger();
+        SoundManager.Instance.ToggleMusicPause();
+        tintPanel.SetActive(false);
         TriggerController.Instance.GetComponent<TriggerController>().ToggleTrigger();
         SoundManager.Instance.GetComponent<SoundManager>().ToggleMusicPause();
     }

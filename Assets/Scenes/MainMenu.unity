@@ -18009,6 +18009,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea4ebdb01e86b5144ac9d6ddbcf4ba76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  metaUpgradeSystem: {fileID: 1792653752}
+  mainManager: {fileID: 768095922}
   player: {fileID: 543497618}
   hpSlider: {fileID: 610686735}
   playerStats: {fileID: 543497617}
@@ -24218,9 +24220,11 @@ MonoBehaviour:
   levelText: {fileID: 6256552757786023533, guid: f055b79b77a15314cb97578cd6d155b6, type: 3}
   timerText: {fileID: 3095667434961151154, guid: ea123d5ad32fcc34f987ef3e49be0304, type: 3}
   enemiesDefeatedText: {fileID: 4704084059594391430, guid: 410163a0795c9334498bb9d2e18eaebc, type: 3}
+  moneyEarnedText: {fileID: 9167483687933025870, guid: f74ac1888e5efd74f9b48c349a43bb3b, type: 3}
   timeText: 
   mainLevel: 1
   enemiesDefeated: 0
+  moneyEarned: 0
 --- !u!4 &768095923
 Transform:
   m_ObjectHideFlags: 0

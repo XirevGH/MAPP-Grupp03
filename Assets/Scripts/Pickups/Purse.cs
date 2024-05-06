@@ -4,32 +4,39 @@ using System.Collections.Generic;
 using System.Text;
 using TMPro;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Purse : MonoBehaviour
 {
     private UpgradeSystem upgradeAbility;
     private Item item;
-    private string upgradeText = "ddscsd";
+    private string upgradeText = "";
     private int moneyAmount;
     public GameObject text;
+    private PursePanel panel;
 
     private void Start()
     {
         upgradeAbility = GameObject.FindGameObjectWithTag("UpgradeSystem").GetComponent<UpgradeSystem>();
         moneyAmount = GiveRandomAmountOfMoney();
+        panel = FindObjectOfType<PursePanel>(true);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<Player>().money += moneyAmount;
+            other.GetComponent<Player>().currency += moneyAmount;
             UpgradeRandomItem();
             Debug.Log(item + upgradeText);
-            GameObject textClone = Instantiate(text, new Vector3(transform.position.x, transform.position.y +2, -0.5f), Quaternion.identity);
+            GameObject textClone = Instantiate(text, new Vector3(transform.position.x, transform.position.y + 2, -0.5f), Quaternion.identity);
+            //panel.OpenPurseWindow();
+            //panel.SetAmountOfMoney(moneyAmount);
+            //panel.SetUpgradeText(upgradeText);
             textClone.GetComponent<TextMesh>().text = GetTestPopup();
             Destroy(gameObject);
             
+
         }
     }
     private String GetTestPopup()

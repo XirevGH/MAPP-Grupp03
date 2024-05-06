@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LanguageManager : MonoBehaviour
 {
-    /*
+    
     public TMP_FontAsset fontEn;
     public TMP_FontAsset fontSw;
     public TMP_FontAsset fontSp;
@@ -25,11 +25,11 @@ public class LanguageManager : MonoBehaviour
 
     public delegate void LangugageMgrHandler(string lang);
 
-   public static event LanguageManager LanguageChanged; 
+  // public static event LanguageManager LanguageChanged; 
 
     private static void LanguageChangeHasOccurred()
     {
-       if (LanguageChanged != null) LanguageChanged();
+   //    if (LanguageChanged != null) LanguageChanged();
     }
 
     public void SwitchLanguage(string lang)
@@ -52,8 +52,8 @@ public class LanguageManager : MonoBehaviour
         }
 
         // Notify subscribers that the language has changed
-        LanguageChangeHasOccurred(lang);
+    //    LanguageChangeHasOccurred(lang);
     }
-*/
+
 }
 

@@ -9,7 +9,7 @@ using System.Data.SqlTypes;
 
 public class MetaUpgradeSystem : MonoBehaviour
 {
-    [SerializeField] public int money;
+    [SerializeField] private int currency;
     [SerializeField] private TextMeshProUGUI MoneyText1;
     [SerializeField] private TextMeshProUGUI MoneyText2;
     
@@ -84,7 +84,7 @@ public class MetaUpgradeSystem : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
+        UpdateMoney();
         upgradeStatsFile = Application.persistentDataPath + "/upgradeInfo.json";
         ReadFile(upgradeStatsFile);
         CreateUpgradeMap();
@@ -151,15 +151,23 @@ public class MetaUpgradeSystem : MonoBehaviour
 
     
 
-    public bool EnothMoney(int price)
+    private bool EnothMoney(int price)
     {
-        if(money >= price){
-            money -= price;
-            MoneyText1.SetText(money.ToString());
-            MoneyText2.SetText(money.ToString());
+        if(currency >= price){
+            currency -= price;
+            UpdateMoney();
             return true;
         }
         return false;
+    }
+
+    private void UpdateMoney(){
+        MoneyText1.SetText(currency.ToString());
+        MoneyText2.SetText(currency.ToString());
+    }
+
+    public void AddCurrency(int addedCurrency){
+        currency += addedCurrency;
     }
 
     public List<Item> GetItems() 
@@ -167,7 +175,5 @@ public class MetaUpgradeSystem : MonoBehaviour
         return items;
     }
 
-    public void addMony(int monyToAdd){
-        money += monyToAdd;
-    } 
+    
 }

@@ -12,8 +12,10 @@ public class ResultScreen : MonoBehaviour
 
     
     public void LoadMainMenu()
-    {
+    {   MainManager.Instance.Reset();
         SceneManager.LoadScene(levelToload);
     }   
+
+
 
 }
