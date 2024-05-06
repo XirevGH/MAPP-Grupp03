@@ -39,5 +39,7 @@ public abstract class Item : MonoBehaviour
     }
 
     protected abstract void CreateUpgradeOptions();
+
+    public abstract string GetItemType();
 }
 
