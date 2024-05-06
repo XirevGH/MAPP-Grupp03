@@ -33,7 +33,7 @@ public class XPDrop : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(Vector3.Distance(player.transform.position, transform.position) < 2 && move != true){
+        if(Vector3.Distance(player.transform.position, transform.position) < 2.7 && move != true){
             MoveToPlayer(player.transform);
              
         }

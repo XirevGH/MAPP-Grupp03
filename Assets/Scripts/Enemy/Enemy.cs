@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
     protected float damageNumberWindow = 3f;
     public SpriteRenderer sprite;
     public static float movementSpeed;  // Global % enemy movespeed increase.  
-    public static float healthProsenIncreas = 1f;
+    public static float healthProcenIncrease;
     public float health;
      
     public float thisMovementSpeed; 
@@ -65,9 +65,8 @@ public class Enemy : MonoBehaviour
 
 
     protected virtual void Start()
-    {    
-        health *= healthProsenIncreas;
-        startingHealth = health;
+    {   startingHealth = health * healthProcenIncrease;
+        health = startingHealth;
         player = GameObject.FindGameObjectWithTag("Player");
         sprite = GetComponent<SpriteRenderer>();
         UpdateSpeed();
@@ -243,6 +242,7 @@ public class Enemy : MonoBehaviour
     public void UpdateSpeed(){
         thisMovementSpeed = movementSpeed * baseMovementSpeed;
     }
+    
 
 
     

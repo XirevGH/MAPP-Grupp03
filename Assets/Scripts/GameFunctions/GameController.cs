@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
         ReadFile(playerStatsFile);
         mainCamera = Camera.main;
         Enemy.movementSpeed = 1f;        // Global % enemy movespeed increase.  
+        Enemy.healthProcenIncrease =1f;
     }
 
     private void Update()
@@ -30,7 +31,7 @@ public class GameController : MonoBehaviour
     private void FixedUpdate()
     {  
         Enemy.movementSpeed += 0.0001f; // Global % enemy movespeed increase.  
-       
+        Enemy.healthProcenIncrease += 0.0001f;
     }
 
     private void ReadFile(string saveFile)
