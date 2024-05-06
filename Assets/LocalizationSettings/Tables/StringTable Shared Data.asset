@@ -71,6 +71,10 @@ MonoBehaviour:
     m_Key: Current Text
     m_Metadata:
       m_Items: []
+  - m_Id: 1806480006979584
+    m_Key: Disco ball text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
