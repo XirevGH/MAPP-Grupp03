@@ -9,15 +9,14 @@ using UnityEngine.UIElements;
 public class UpgradeSystem : MonoBehaviour
 {
     [SerializeField] private GameObject[] panels;
-    [SerializeField] private Item[] startingItems;
     [SerializeField] private Player player;
     [SerializeField] private Sprite weaponPanel, utilityPanel;
 
     private MetaUpgradeSystem controller;
 
     private Dictionary<Item, List<string>> upgradeOptions = new Dictionary<Item, List<string>>();
-    private List<Item> sessionItems;
-    private List<Item> choiceItems;
+    [SerializeField] private List<Item> sessionItems;
+    [SerializeField] private List<Item> choiceItems;
     private List<Item> currentPlayerItems = new List<Item>();
     private List<string> typeOptions = new List<string>();
     
@@ -39,6 +38,7 @@ public class UpgradeSystem : MonoBehaviour
         allowedAmountOfWeapons = 4;
         allowedAmountOfUtility = 3;
         sessionItems = new List<Item>(controller.GetItems());
+        sessionItems.Remove(player.GetCurrentItems()[0]);
     }
 
 
