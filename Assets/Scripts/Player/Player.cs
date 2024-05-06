@@ -8,12 +8,14 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    
     [SerializeField] private Player player;
     [SerializeField] private Slider hpSlider;
     [SerializeField] private PlayerStats playerStats;
     [SerializeField] private Weapon startingWeapon;
     [SerializeField] private List<Item> currentItems;
 
+    
     private UpgradeSystem upgradeSystem;
     private UpgradePanel upgradeScreen;
     private Slider xpSlider;
@@ -21,12 +23,11 @@ public class Player : MonoBehaviour
     private GameController gameController;
 
     public int money;
-    public float baseHealth;
     public float maxHealth;
     public float health;
-    private float xpHeld;
-    private float xpToLevel;
-    private int level;
+    public float xpHeld;
+    public float xpToLevel;
+    public int level;
 
     
 
@@ -46,15 +47,18 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        InitializePlayer();
+    }   
+    private void InitializePlayer(){
         money = 0; 
-        maxHealth = baseHealth;
+        maxHealth = 100;
         health = maxHealth;
         xpToLevel = 100;
         level = 1;
         xpHeld = 0;
         currentItems = new List<Item>{startingWeapon};
-    }   
-
+        
+    }
 
 
     //For leveling up faster for testing, remove later
@@ -123,7 +127,8 @@ public class Player : MonoBehaviour
     }
 
     private void Die()
-    {   MetaUpgradeSystem.Instance.money += Instance.money;
+    {   //MetaUpgradeSystem.Instance.addMony(money);
+        InitializePlayer();
         gameController.GameOver();
     }
     #endregion

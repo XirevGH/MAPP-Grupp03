@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Data.SqlTypes;
 
 public class MetaUpgradeSystem : MonoBehaviour
 {
@@ -160,4 +161,8 @@ public class MetaUpgradeSystem : MonoBehaviour
     { 
         return items;
     }
+
+    public void addMony(int monyToAdd){
+        money += monyToAdd;
+    } 
 }
