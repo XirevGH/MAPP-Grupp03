@@ -8,7 +8,6 @@ using UnityEngine;
 public class VinylDisc : Projectile
 {
     [SerializeField] private float travelTime, BPM, noteValue, pitch, travelDistance, rotateSpeed, angle, controlPointOffSet;
-    [SerializeField] private int triggerNumber;
     [SerializeField] private GameObject vinylDisc;
     [SerializeField] private AnimationCurve curve;
 
@@ -49,7 +48,7 @@ public class VinylDisc : Projectile
     {
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
         BPM = TriggerController.Instance.GetCurrentTrackBPM();
-        noteValue = TriggerController.Instance.GetTrigger(triggerNumber).noteValue;
+        noteValue = TriggerController.Instance.GetTrigger(VinylDiscController.triggerNumber).noteValue;
         source = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>();
         pitch = source.pitch;
     

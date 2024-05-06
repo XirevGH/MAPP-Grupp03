@@ -8,6 +8,7 @@ public class VinylDiscController : ProjectileWeapon
 {
     [SerializeField] private GameObject vinylDisc;
     [SerializeField] private float attackDelayTime;
+    public static int triggerNumber = 10;
 
     private Vector3 playerPosition;
 
@@ -15,7 +16,7 @@ public class VinylDiscController : ProjectileWeapon
     private void Start()
     {
         UnityAction action = new UnityAction(Attack);
-        TriggerController.Instance.SetTrigger(10, action);
+        TriggerController.Instance.SetTrigger(triggerNumber, action);
     }
 
     public override void Attack()
