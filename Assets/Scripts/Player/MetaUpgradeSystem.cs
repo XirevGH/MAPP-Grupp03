@@ -60,7 +60,6 @@ public class MetaUpgradeSystem : MonoBehaviour
     private int levelInvincibilityFrames;
     private int levelMoneyMult;
 
-    private static bool initialUpgrades = true;
     string upgradeStatsFile;
 
     private MetaUpgradeSystem instance;

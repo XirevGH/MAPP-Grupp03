@@ -21265,9 +21265,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Stage Presence
-  damage: 1
+  damage: 2
   damageRank: 0
-  percentageDamageIncrease: 10
+  percentageDamageIncrease: 20
+  radiusIncreasePercentage: 5
+  radiusRank: 0
 --- !u!58 &656064300
 CircleCollider2D:
   m_ObjectHideFlags: 0
