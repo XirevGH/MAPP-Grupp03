@@ -5692,172 +5692,72 @@ MonoBehaviour:
   - noteValue: 3
     quaterNoteTrigger:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1047333868}
-          m_TargetAssemblyTypeName: BassGuitar, Assembly-CSharp
-          m_MethodName: Attack
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     isTriggering: 1
   - noteValue: 4
     quaterNoteTrigger:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 705557627}
-          m_TargetAssemblyTypeName: DiscoBallController, Assembly-CSharp
-          m_MethodName: Attack
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     isTriggering: 1
   - noteValue: 5
     quaterNoteTrigger:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2038418318}
-          m_TargetAssemblyTypeName: ElectricGuitar, Assembly-CSharp
-          m_MethodName: Attack
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     isTriggering: 1
   - noteValue: 6
     quaterNoteTrigger:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 376511733}
-          m_TargetAssemblyTypeName: VinylDiscController, Assembly-CSharp
-          m_MethodName: Attack
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     isTriggering: 1
   - noteValue: 7
     quaterNoteTrigger:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1047333868}
-          m_TargetAssemblyTypeName: BassGuitar, Assembly-CSharp
-          m_MethodName: Attack
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     isTriggering: 1
   - noteValue: 8
     quaterNoteTrigger:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1733086101}
-          m_TargetAssemblyTypeName: SynthwaveBlast, Assembly-CSharp
-          m_MethodName: Attack
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     isTriggering: 1
   - noteValue: 9
     quaterNoteTrigger:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 798736330}
-          m_TargetAssemblyTypeName: Saxophone, Assembly-CSharp
-          m_MethodName: Attack
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     isTriggering: 1
   - noteValue: 10
     quaterNoteTrigger:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 392191487}
-          m_TargetAssemblyTypeName: DecoyController, Assembly-CSharp
-          m_MethodName: Throw
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    isTriggering: 1
+        m_Calls: []
+    isTriggering: 0
   - noteValue: 11
     quaterNoteTrigger:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 705557627}
-          m_TargetAssemblyTypeName: DiscoBallController, Assembly-CSharp
-          m_MethodName: Blink
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     isTriggering: 1
   - noteValue: 12
     quaterNoteTrigger:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 610983637}
-          m_TargetAssemblyTypeName: YoyoController, Assembly-CSharp
-          m_MethodName: Blink
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
+    isTriggering: 1
+  - noteValue: 13
+    quaterNoteTrigger:
+      m_PersistentCalls:
+        m_Calls: []
+    isTriggering: 1
+  - noteValue: 14
+    quaterNoteTrigger:
+      m_PersistentCalls:
+        m_Calls: []
+    isTriggering: 1
+  - noteValue: 15
+    quaterNoteTrigger:
+      m_PersistentCalls:
+        m_Calls: []
+    isTriggering: 1
+  - noteValue: 16
+    quaterNoteTrigger:
+      m_PersistentCalls:
+        m_Calls: []
     isTriggering: 1
   isTriggering: 0
 --- !u!1 &136986919
@@ -21268,7 +21168,7 @@ MonoBehaviour:
   damage: 2
   damageRank: 0
   percentageDamageIncrease: 20
-  radiusIncreasePercentage: 5
+  radiusIncreasePercentage: 0
   radiusRank: 0
 --- !u!58 &656064300
 CircleCollider2D:
