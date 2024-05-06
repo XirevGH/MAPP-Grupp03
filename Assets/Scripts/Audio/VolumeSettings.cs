@@ -59,7 +59,7 @@ public class VolumeSettings : MonoBehaviour
     {
         pauseButtonRectTransform.anchorMin = new Vector2(0f, pauseButtonRectTransform.anchorMin.y);
         pauseButtonRectTransform.anchorMax = new Vector2(0f, pauseButtonRectTransform.anchorMax.y);
-        //SoundManager.Instance.GetComponent<SoundManager>().Click();
+       
     }
 
     public void OnRightButtonClick()
@@ -68,7 +68,6 @@ public class VolumeSettings : MonoBehaviour
         float newXAnchor = 1f - offset;
         pauseButtonRectTransform.anchorMin = new Vector2(newXAnchor, pauseButtonRectTransform.anchorMin.y);
         pauseButtonRectTransform.anchorMax = new Vector2(newXAnchor, pauseButtonRectTransform.anchorMax.y);
-        //SoundManager.Instance.GetComponent<SoundManager>().Click();
     }
     public void TurnOnHealthBar()
     {
