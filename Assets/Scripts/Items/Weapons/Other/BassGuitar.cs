@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BassGuitar : PhysicalWeapon
 {
@@ -9,11 +10,17 @@ public class BassGuitar : PhysicalWeapon
     private void Start()
     {
         anim = GetComponent<Animator>();
+       
+        UnityAction action = new UnityAction(Attack);         
+        TriggerController.Instance.SetTrigger(3, action);
+
+        
     }
 
     public override void Attack()
     {
         anim.SetTrigger("Attacking");
+        GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip, 1);
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -23,6 +30,8 @@ public class BassGuitar : PhysicalWeapon
         {
             colliders.Add(other);
             DealDamage(other);
+
+          
         }
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("BassGuitarIdle"))
         {

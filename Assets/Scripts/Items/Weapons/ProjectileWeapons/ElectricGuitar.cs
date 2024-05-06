@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Events;
 
 public class ElectricGuitar : TetheringWeapon
 {
     [SerializeField] private GameObject bolt;
+
+    private void Start()
+    {
+        UnityAction action = new UnityAction(Attack);
+        TriggerController.Instance.SetTrigger(11, action);
+    }
 
     private void OnTriggerStay2D(Collider2D other)
     {

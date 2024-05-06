@@ -13,7 +13,7 @@ public class Beat : MonoBehaviour
     private void Start()
     {
         circleStartingScale = circle.transform.localScale;
-        beatLife = (60f / (TriggerController.Instance.GetComponent<TriggerController>().GetCurrentTrackBPM() / TriggerController.Instance.GetComponent<TriggerController>().GetTrigger(0).noteValue))
+        beatLife = (60f / (TriggerController.Instance.GetCurrentTrackBPM() / TriggerController.Instance.GetTrigger(BeatSpawner.triggerNumber).noteValue))
         / SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>().pitch;
     }
 
