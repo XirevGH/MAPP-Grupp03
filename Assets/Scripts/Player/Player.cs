@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
         burstAmount = playerStats.burstAmount;
         xpHeld = 0;
         currentItems = new List<Item>{startingWeapon};
+        Debug.Log("Awake");
     }
 
     //For leveling up faster for testing, remove later

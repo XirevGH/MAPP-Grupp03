@@ -3199,7 +3199,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Synthwave Blast,ProjectileCountUpgradeRank
+          m_StringArgument: Synthwave Blast,IncreaseProjectileCount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &76531670
@@ -4158,7 +4158,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Roller Skates,MovementSpeedUpgradeRank
+          m_StringArgument: Roller Skates,IncreaseMovementSpeed
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &89927884
@@ -7556,7 +7556,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Electric Guitar,DamageUpgradeRank
+          m_StringArgument: Electric Guitar,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &189749679
@@ -11340,7 +11340,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Synthwave Blast,PenetrationAmountUpgradeRank
+          m_StringArgument: Synthwave Blast,IncreasePenetrationAmount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &358665122
@@ -12403,7 +12403,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Disco Ball,DamageUpgradeRank
+          m_StringArgument: Disco Ball,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &380668766
@@ -12531,6 +12531,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: Click
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 668755574}
+        m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
+        m_MethodName: ChangePauseButtonSides
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -16801,7 +16813,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Health,HealthUpgradeRank
+          m_StringArgument: Health,IncreaseHealth
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &505731916
@@ -18445,6 +18457,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 668755574}
+        m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
+        m_MethodName: ChangePauseButtonSides
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &566490630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19187,7 +19211,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Stage Presence,DamageUpgradeRank
+          m_StringArgument: Stage Presence,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &595757711
@@ -21580,7 +21604,7 @@ GameObject:
   - component: {fileID: 668755574}
   m_Layer: 0
   m_Name: SettingsManager
-  m_TagString: Untagged
+  m_TagString: SettingsManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21784,7 +21808,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Vinyl Record,DamageUpgradeRank
+          m_StringArgument: Vinyl Record,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 77403563}
@@ -23653,6 +23677,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767913666}
   m_CullTransparentMesh: 1
+--- !u!1 &768095921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 768095923}
+  - component: {fileID: 768095922}
+  m_Layer: 0
+  m_Name: MainManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &768095922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768095921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef8ee63eb952678448d967196a631605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelText: {fileID: 6256552757786023533, guid: f055b79b77a15314cb97578cd6d155b6, type: 3}
+  timerText: {fileID: 3095667434961151154, guid: ea123d5ad32fcc34f987ef3e49be0304, type: 3}
+  enemiesDefeatedText: {fileID: 4704084059594391430, guid: 410163a0795c9334498bb9d2e18eaebc, type: 3}
+  timeText: 
+  mainLevel: 1
+  enemiesDefeated: 0
+--- !u!4 &768095923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768095921}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 381.56284, y: 303.369, z: -1.0186987}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &771210306
 GameObject:
   m_ObjectHideFlags: 0
@@ -23745,7 +23819,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Disco Ball,PenetrationAmountUpgradeRank
+          m_StringArgument: Disco Ball,IncreasePenetrationAmount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &771210309
@@ -29090,7 +29164,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Vinyl Record,PenetrationAmountUpgradeRank
+          m_StringArgument: Vinyl Record,IncreasePenetrationAmount
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 77403563}
@@ -30879,7 +30953,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Decoy,DecoyAmountUpgradeRank
+          m_StringArgument: Decoy,IncreaseDecoy
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1001002496
@@ -31321,7 +31395,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Vinyl Record,ProjectileCountUpgradeRank
+          m_StringArgument: Vinyl Record,IncreaseProjectileCount
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 77403563}
@@ -33743,7 +33817,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Chill Vibe,RadiusUpgradeRank
+          m_StringArgument: Chill Vibe,IncreaseRadius
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1098210114
@@ -37776,7 +37850,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Electric Guitar,TetherUpgradeRank
+          m_StringArgument: Electric Guitar,IncreaseTetherAmount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1258439481
@@ -37947,7 +38021,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Chill Vibe,SlowUpgradeRank
+          m_StringArgument: Chill Vibe,IncreaseSlow
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1264745448
@@ -38516,7 +38590,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Vinyl Record,DamageUpgradeRank
+          m_StringArgument: Yoyo,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1290233828
@@ -42254,7 +42328,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Yoyo,ProjectileCountUpgradeRank
+          m_StringArgument: Yoyo,IncreaseProjectileCount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1455975414
@@ -43881,7 +43955,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Saxophone,PenetrationAmountUpgradeRank
+          m_StringArgument: Saxophone,IncreasePenetrationAmount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1544027771
@@ -49666,7 +49740,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Synthwave Blast,DamageUpgradeRank
+          m_StringArgument: Synthwave Blast,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1727458413
@@ -56657,7 +56731,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Saxophone,ProjectileCountUpgradeRank
+          m_StringArgument: Saxophone,IncreaseProjectileCount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2000235676
@@ -57391,7 +57465,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Saxophone,DamageUpgradeRank
+          m_StringArgument: Saxophone,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2026435082
@@ -59620,7 +59694,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Disco Ball,ProjectileCountUpgradeRank
+          m_StringArgument: Disco Ball,IncreaseProjectileCount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2094675558
@@ -61434,3 +61508,4 @@ SceneRoots:
   - {fileID: 53145882}
   - {fileID: 543497624}
   - {fileID: 668755575}
+  - {fileID: 768095923}

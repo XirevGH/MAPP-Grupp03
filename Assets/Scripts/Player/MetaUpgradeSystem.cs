@@ -110,6 +110,7 @@ public class MetaUpgradeSystem : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("upgrade awake");
         if (instance == null)
         {
             instance = this;
@@ -123,19 +124,16 @@ public class MetaUpgradeSystem : MonoBehaviour
         upgradeStatsFile = Application.persistentDataPath + "/upgradeInfo.json";
         ReadFile(upgradeStatsFile);
         CreateUpgradeMap();
-        if (initialUpgrades) { 
-            foreach (Item item in items)
+        foreach (Item item in items)
+        {
+            foreach(string upgradeMethod in item.GetUpgradeOptions())
             {
-                foreach(string upgradeMethod in item.GetUpgradeOptions())
+                int rank = upgradeMap[Tuple.Create(item.GetName(), upgradeMethod)];
+                for(int i = 0; i < rank; i++)
                 {
-                    int rank = upgradeMap[Tuple.Create(item.GetName(), upgradeMethod)];
-                    for(int i = 0; i < rank; i++)
-                    {
-                        item.GetType().GetMethod(upgradeMethod).Invoke(item, null);
-                    }
+                    item.GetType().GetMethod(upgradeMethod).Invoke(item, null);
                 }
             }
-            initialUpgrades = false;
         }
     }
 

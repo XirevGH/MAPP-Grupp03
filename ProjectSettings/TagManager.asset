@@ -21,6 +21,7 @@ TagManager:
   - XPSlider
   - levelText
   - UpgradeScreen
+  - SettingsManager
   layers:
   - Default
   - TransparentFX
