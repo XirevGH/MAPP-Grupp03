@@ -9,7 +9,7 @@ public class Purse : MonoBehaviour
 {
     private UpgradeSystem upgradeAbility;
     private Item item;
-    private string upgradeText = "";
+    private string upgradeText = "ddscsd";
     private int moneyAmount;
     public GameObject text;
 
@@ -26,9 +26,10 @@ public class Purse : MonoBehaviour
             other.GetComponent<PlayerStats>().money += moneyAmount;
             UpgradeRandomItem();
             Debug.Log(item + upgradeText);
-            GameObject textClone = Instantiate(text, new Vector3(transform.position.x, transform.position.y +2, -0.5f), Quaternion.identity, transform);
+            GameObject textClone = Instantiate(text, new Vector3(transform.position.x, transform.position.y +2, -0.5f), Quaternion.identity);
             textClone.GetComponent<TextMesh>().text = GetTestPopup();
             Destroy(gameObject);
+            
         }
     }
     private String GetTestPopup()
