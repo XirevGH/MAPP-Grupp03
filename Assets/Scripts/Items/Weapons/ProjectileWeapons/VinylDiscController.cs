@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class VinylDiscController : ProjectileWeapon
@@ -9,6 +10,13 @@ public class VinylDiscController : ProjectileWeapon
     [SerializeField] private float attackDelayTime;
 
     private Vector3 playerPosition;
+
+
+    private void Start()
+    {
+        UnityAction action = new UnityAction(Attack);
+        TriggerController.Instance.SetTrigger(10, action);
+    }
 
     public override void Attack()
     {

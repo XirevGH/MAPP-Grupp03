@@ -1,9 +1,20 @@
 
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BeatSpawner : MonoBehaviour
 {
+    public static int triggerNumber;
     [SerializeField] private GameObject parentForBeat, beat;
+
+
+    private void Start()
+    {
+        UnityAction action1 = new UnityAction(SpawnBeat);
+        UnityAction action2 = new UnityAction(SetSpawnPosition);
+        TriggerController.Instance.SetTrigger(triggerNumber, action1);
+        TriggerController.Instance.SetTrigger(triggerNumber, action2);
+    }
 
     public void SpawnBeat()
     {
@@ -18,4 +29,5 @@ public class BeatSpawner : MonoBehaviour
     {
         transform.localPosition = new Vector2(Random.Range(-16.0f, 16.0f), Random.Range(-8.0f, 8.0f));
     }
+
 }

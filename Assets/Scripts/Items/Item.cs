@@ -7,9 +7,7 @@ public abstract class Item : MonoBehaviour
     [SerializeField] protected Player player;
     [SerializeField] protected string itemName;
     protected List<string> upgradeOptions = new List<string>();
-    private bool initialUpgradesComplete = false;
     protected bool active;
-    
 
     private void LateUpdate()
     {
@@ -41,5 +39,7 @@ public abstract class Item : MonoBehaviour
     }
 
     protected abstract void CreateUpgradeOptions();
+
+    public abstract string GetItemType();
 }
 

@@ -796,6 +796,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 77403563}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &18857628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2511,7 +2523,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 63349688}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 77403563}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &63349688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3175,7 +3199,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Synthwave Blast,ProjectileCountUpgradeRank
+          m_StringArgument: Synthwave Blast,IncreaseProjectileCount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &76531670
@@ -3277,6 +3301,17 @@ MonoBehaviour:
   m_Spacing: {x: 83, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &77403563 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+  m_PrefabInstance: {fileID: 5131103641739008332}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc9a7210903a494bb3085de40ee11da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &77702994
 GameObject:
   m_ObjectHideFlags: 0
@@ -3629,6 +3664,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 77403563}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4111,7 +4158,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Roller Skates,MovementSpeedUpgradeRank
+          m_StringArgument: Roller Skates,IncreaseMovementSpeed
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &89927884
@@ -5632,53 +5679,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inGameCurrentTrackBPM: 0
   triggers:
-  - noteValue: 8
+  - noteValue: 1
     quaterNoteTrigger:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 280798642}
-          m_TargetAssemblyTypeName: BeatSpawner, Assembly-CSharp
-          m_MethodName: SetSpawnPosition
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 280798642}
-          m_TargetAssemblyTypeName: BeatSpawner, Assembly-CSharp
-          m_MethodName: SpawnBeat
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     isTriggering: 1
-  - noteValue: 8
+  - noteValue: 2
     quaterNoteTrigger:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 610983637}
-          m_TargetAssemblyTypeName: YoyoController, Assembly-CSharp
-          m_MethodName: Attack
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     isTriggering: 1
-  - noteValue: 4
+  - noteValue: 3
     quaterNoteTrigger:
       m_PersistentCalls:
         m_Calls:
@@ -5695,7 +5706,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     isTriggering: 1
-  - noteValue: 8
+  - noteValue: 4
     quaterNoteTrigger:
       m_PersistentCalls:
         m_Calls:
@@ -5712,7 +5723,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     isTriggering: 1
-  - noteValue: 8
+  - noteValue: 5
     quaterNoteTrigger:
       m_PersistentCalls:
         m_Calls:
@@ -5729,7 +5740,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     isTriggering: 1
-  - noteValue: 8
+  - noteValue: 6
     quaterNoteTrigger:
       m_PersistentCalls:
         m_Calls:
@@ -5746,7 +5757,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     isTriggering: 1
-  - noteValue: 8
+  - noteValue: 7
     quaterNoteTrigger:
       m_PersistentCalls:
         m_Calls:
@@ -5780,7 +5791,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     isTriggering: 1
-  - noteValue: 8
+  - noteValue: 9
     quaterNoteTrigger:
       m_PersistentCalls:
         m_Calls:
@@ -5797,7 +5808,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     isTriggering: 1
-  - noteValue: 8
+  - noteValue: 10
     quaterNoteTrigger:
       m_PersistentCalls:
         m_Calls:
@@ -5814,7 +5825,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     isTriggering: 1
-  - noteValue: 1
+  - noteValue: 11
     quaterNoteTrigger:
       m_PersistentCalls:
         m_Calls:
@@ -5831,7 +5842,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     isTriggering: 1
-  - noteValue: 1
+  - noteValue: 12
     quaterNoteTrigger:
       m_PersistentCalls:
         m_Calls:
@@ -5848,7 +5859,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     isTriggering: 1
-  isTriggering: 1
+  isTriggering: 0
 --- !u!1 &136986919
 GameObject:
   m_ObjectHideFlags: 0
@@ -7728,7 +7739,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Electric Guitar,DamageUpgradeRank
+          m_StringArgument: Electric Guitar,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &189749679
@@ -8657,6 +8668,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Localization, Assembly-CSharp
         m_MethodName: ChangeLocale
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 77403563}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11500,7 +11523,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Synthwave Blast,PenetrationAmountUpgradeRank
+          m_StringArgument: Synthwave Blast,IncreasePenetrationAmount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &358665122
@@ -12563,7 +12586,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Disco Ball,DamageUpgradeRank
+          m_StringArgument: Disco Ball,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &380668766
@@ -12686,7 +12709,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 384437002}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 77403563}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 668755574}
+        m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
+        m_MethodName: ChangePauseButtonSides
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &384437002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14593,7 +14640,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 428518013}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 77403563}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &428518013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14958,6 +15017,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 77403563}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -16925,7 +16996,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Health,HealthUpgradeRank
+          m_StringArgument: Health,IncreaseHealth
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &505731916
@@ -18556,7 +18627,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 566490630}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 77403563}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 668755574}
+        m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
+        m_MethodName: ChangePauseButtonSides
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &566490630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19299,7 +19394,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Stage Presence,DamageUpgradeRank
+          m_StringArgument: Stage Presence,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &595757711
@@ -21170,9 +21265,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Stage Presence
-  damage: 1
+  damage: 2
   damageRank: 0
-  percentageDamageIncrease: 10
+  percentageDamageIncrease: 20
+  radiusIncreasePercentage: 5
+  radiusRank: 0
 --- !u!58 &656064300
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -21680,6 +21777,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667541569}
   m_CullTransparentMesh: 1
+--- !u!1 &668755573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 668755575}
+  - component: {fileID: 668755574}
+  m_Layer: 0
+  m_Name: SettingsManager
+  m_TagString: SettingsManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &668755574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668755573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67691ebcdb890f84e97c06be93521ae3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &668755575
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668755573}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 384.8978, y: 657.08795, z: -0.43476647}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &678701871
 GameObject:
   m_ObjectHideFlags: 0
@@ -21852,7 +21993,19 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Vinyl Record,DamageUpgradeRank
+          m_StringArgument: Vinyl Record,IncreaseDamage
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 77403563}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &688645266
@@ -23709,6 +23862,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767913666}
   m_CullTransparentMesh: 1
+--- !u!1 &768095921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 768095923}
+  - component: {fileID: 768095922}
+  m_Layer: 0
+  m_Name: MainManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &768095922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768095921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef8ee63eb952678448d967196a631605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelText: {fileID: 6256552757786023533, guid: f055b79b77a15314cb97578cd6d155b6, type: 3}
+  timerText: {fileID: 3095667434961151154, guid: ea123d5ad32fcc34f987ef3e49be0304, type: 3}
+  enemiesDefeatedText: {fileID: 4704084059594391430, guid: 410163a0795c9334498bb9d2e18eaebc, type: 3}
+  timeText: 
+  mainLevel: 1
+  enemiesDefeated: 0
+--- !u!4 &768095923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768095921}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 381.56284, y: 303.369, z: -1.0186987}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &771210306
 GameObject:
   m_ObjectHideFlags: 0
@@ -23801,7 +24004,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Disco Ball,PenetrationAmountUpgradeRank
+          m_StringArgument: Disco Ball,IncreasePenetrationAmount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &771210309
@@ -25788,6 +25991,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Bass Guitar,IncreaseDamage
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 77403563}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &832667337
@@ -29134,7 +29349,19 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Vinyl Record,PenetrationAmountUpgradeRank
+          m_StringArgument: Vinyl Record,IncreasePenetrationAmount
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 77403563}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &951496370
@@ -30911,7 +31138,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Decoy,DecoyAmountUpgradeRank
+          m_StringArgument: Decoy,IncreaseDecoy
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1001002496
@@ -31353,7 +31580,19 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Vinyl Record,ProjectileCountUpgradeRank
+          m_StringArgument: Vinyl Record,IncreaseProjectileCount
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 77403563}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1017721306
@@ -32001,6 +32240,7 @@ GameObject:
   - component: {fileID: 1047333869}
   - component: {fileID: 1047333870}
   - component: {fileID: 1047333868}
+  - component: {fileID: 1047333872}
   m_Layer: 10
   m_Name: BassGuitar
   m_TagString: Weapon
@@ -32108,6 +32348,102 @@ Transform:
   - {fileID: 372060889}
   m_Father: {fileID: 1798286936}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1047333872
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047333867}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -396259705445800102, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 88fb0caa1c9e1d2498d876ee16087bb1, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1050422854
 GameObject:
   m_ObjectHideFlags: 0
@@ -32194,6 +32530,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1792653752}
         m_TargetAssemblyTypeName: UppgradeControler, Assembly-CSharp
         m_MethodName: ResetUppgrades
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 77403563}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33654,7 +34002,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Chill Vibe,RadiusUpgradeRank
+          m_StringArgument: Chill Vibe,IncreaseRadius
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1098210114
@@ -37687,7 +38035,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Electric Guitar,TetherUpgradeRank
+          m_StringArgument: Electric Guitar,IncreaseTetherAmount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1258439481
@@ -37858,7 +38206,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Chill Vibe,SlowUpgradeRank
+          m_StringArgument: Chill Vibe,IncreaseSlow
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1264745448
@@ -38259,11 +38607,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1282012774}
   m_CullTransparentMesh: 1
---- !u!82 &1283233605 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8419575893291496720, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
-  m_PrefabInstance: {fileID: 5131103641739008332}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1287071403
 GameObject:
   m_ObjectHideFlags: 0
@@ -38432,7 +38775,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Vinyl Record,DamageUpgradeRank
+          m_StringArgument: Yoyo,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1290233828
@@ -41269,7 +41612,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 2101310067}
-  exit: {fileID: 0}
   play: {fileID: 1912058776}
   upgradesPanel: {fileID: 1135520745}
   itemsPanel: {fileID: 875972082}
@@ -42171,7 +42513,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Yoyo,ProjectileCountUpgradeRank
+          m_StringArgument: Yoyo,IncreaseProjectileCount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1455975414
@@ -43798,7 +44140,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Saxophone,PenetrationAmountUpgradeRank
+          m_StringArgument: Saxophone,IncreasePenetrationAmount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1544027771
@@ -44522,6 +44864,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 77403563}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -49571,7 +49925,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Synthwave Blast,DamageUpgradeRank
+          m_StringArgument: Synthwave Blast,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1727458413
@@ -56562,7 +56916,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Saxophone,ProjectileCountUpgradeRank
+          m_StringArgument: Saxophone,IncreaseProjectileCount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2000235676
@@ -57296,7 +57650,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Saxophone,DamageUpgradeRank
+          m_StringArgument: Saxophone,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2026435082
@@ -59525,7 +59879,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Disco Ball,ProjectileCountUpgradeRank
+          m_StringArgument: Disco Ball,IncreaseProjectileCount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2094675558
@@ -61321,10 +61675,6 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
-      propertyPath: menuMusic
-      value: 
-      objectReference: {fileID: 1283233605}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -61342,3 +61692,5 @@ SceneRoots:
   - {fileID: 5131103641739008332}
   - {fileID: 53145882}
   - {fileID: 543497624}
+  - {fileID: 668755575}
+  - {fileID: 768095923}
