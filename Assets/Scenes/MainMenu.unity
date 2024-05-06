@@ -20630,11 +20630,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: amountOfProjectiles
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: percentageDamageIncrease
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7772078910061721573, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: m_Name
@@ -22650,7 +22650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: amountOfProjectiles
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: percentageDamageIncrease
@@ -23339,6 +23339,7 @@ MonoBehaviour:
   pushInterval: 10
   radiusIncreasePercentage: 10
   forceIncreasePercentage: 10
+  radius: 0
   radiusRank: 0
   forceRank: 0
 --- !u!1 &737629427
@@ -32585,9 +32586,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Bass Guitar
-  damage: 10
+  damage: 3
   damageRank: 0
-  percentageDamageIncrease: 10
+  percentageDamageIncrease: 25
   anim: {fileID: 1047333869}
 --- !u!95 &1047333869
 Animator:
@@ -52452,6 +52453,8 @@ MonoBehaviour:
   rollerSkatesIncreaseMovementSpeed: 0
   stagePresenceIncreaseDamage: 0
   stagePresenceIncreaseRadius: 0
+  personalSpaceIncreaseRadius: 0
+  personalSpaceIncreaseForce: 0
 --- !u!1 &1798286935
 GameObject:
   m_ObjectHideFlags: 0
