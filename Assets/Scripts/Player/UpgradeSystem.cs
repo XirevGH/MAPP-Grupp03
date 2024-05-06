@@ -74,7 +74,7 @@ public class UpgradeSystem : MonoBehaviour
                     return description + " " + item.GetType().GetMethod(getStatIncrease).Invoke(item, null) + symbol;
                 }
             }
-            else
+            if (typeOfChoice == "Weapon" || typeOfChoice == "Utility")
             {
                 if (name.Equals(item.GetName()))
                 {

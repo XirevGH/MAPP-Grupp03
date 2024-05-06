@@ -74,6 +74,10 @@ MonoBehaviour:
     m_Localized: Actual
     m_Metadata:
       m_Items: []
+  - m_Id: 1806480006979584
+    m_Localized: Bola De disco
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

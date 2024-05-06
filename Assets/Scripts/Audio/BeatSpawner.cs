@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class BeatSpawner : MonoBehaviour
 {
-    public static int triggerNumber;
+    public static int triggerNumber = 7;
     [SerializeField] private GameObject parentForBeat, beat;
 
 
