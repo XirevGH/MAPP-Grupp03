@@ -450,7 +450,7 @@ MonoBehaviour:
     chargeDuration: 3
     chargeAdditiveSpeed: 10
     bossChargeActive: 0
-  baseAttackCooldown: 12
+  baseAttackCooldown: 10
 --- !u!114 &-6179003319820616230
 MonoBehaviour:
   m_ObjectHideFlags: 0

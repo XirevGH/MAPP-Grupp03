@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicianAura : Weapon
+public class StagePresence : Weapon
 {
 
     [SerializeField] private float radiusIncreasePercentage;

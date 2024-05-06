@@ -28,7 +28,8 @@ public class Boss_AOE_Slow : MonoBehaviour
         abiletyLifetime -= Time.deltaTime;
         if(abiletyLifetime <= 0){
             if(player != null){
-                player.GetComponent<PlayerMovement>().DecreaseMovementSpeed(1);
+                Player.Instance.GetComponent<PlayerMovement>().DecreaseMovementSpeed(1);
+             //   player.GetComponent<PlayerMovement>().DecreaseMovementSpeed(1);
                 Destroy(gameObject); 
             }
         }
