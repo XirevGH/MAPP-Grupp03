@@ -137,6 +137,8 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
+        level = 1;
+        currentItems = new List<Item> { startingWeapon };
         gameController.GameOver();
     }
     #endregion

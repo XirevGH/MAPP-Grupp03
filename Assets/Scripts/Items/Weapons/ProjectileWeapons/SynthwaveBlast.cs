@@ -1,9 +1,16 @@
 using UnityEngine;
-
+using UnityEngine.Events;
 
 public class SynthwaveBlast : ProjectileWeapon
 {
     [SerializeField] GameObject synthwavePivotPrefab;
+
+
+    private void Start()
+    {
+        UnityAction action = new UnityAction(Attack);
+        TriggerController.Instance.SetTrigger(9, action);
+    }
 
     public override void Attack()
     {

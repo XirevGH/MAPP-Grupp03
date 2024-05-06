@@ -24,4 +24,9 @@ public abstract class Weapon : Item
     {
         upgradeOptions.Add("IncreaseDamage");
     }
+
+    public override string GetItemType()
+    {
+        return "Weapon";
+    }
 }

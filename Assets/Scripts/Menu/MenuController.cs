@@ -27,6 +27,8 @@ public class MenuController : MonoBehaviour
         ChangeScene();
         SoundManager.Instance.GetComponent<SoundManager>().StartGame();
         SoundManager.Instance.GetComponent<SoundManager>().Click();
+        MainManager.Instance.enemiesDefeated = 0;
+        MainManager.Instance.mainLevel = 1;
     }
 
     public void ShowCredits()
