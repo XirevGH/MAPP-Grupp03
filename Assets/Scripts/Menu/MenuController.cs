@@ -14,8 +14,9 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject itemsPanel;
     [SerializeField] private GameObject settingPanel;
     [SerializeField] private GameObject creditPanel;
-   //  [SerializeField] private AudioSource audioSource;
-   // [SerializeField] private AudioClip clickSound;
+    //  [SerializeField] private AudioSource audioSource;
+    // [SerializeField] private AudioClip clickSound;
+ 
 
 
     [SerializeField] private int levelToload;
@@ -31,8 +32,13 @@ public class MenuController : MonoBehaviour
 
     public void Startgame()
     {
-      
+     
         ChangeScene();
+      //  if (MainManager.Instance)
+        //{
+            MainManager.Instance.enemiesDefeated = 0;
+            MainManager.Instance.mainLevel = 1;
+     //   }
         SoundManager.Instance.GetComponent<SoundManager>().StartGame();
     }
 
