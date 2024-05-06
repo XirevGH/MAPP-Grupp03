@@ -24,8 +24,13 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
-    public bool GetisSetOnRight()
+    public bool GetIsSetOnRight()
     {
         return isSetOnRight;
+    }
+
+    public void ChangePauseButtonSides(bool isSetOnRight)
+    {
+        this.isSetOnRight = isSetOnRight;
     }
 }

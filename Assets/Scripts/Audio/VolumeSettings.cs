@@ -55,20 +55,7 @@ public class VolumeSettings : MonoBehaviour
         SetSFXVolume();
     }
 
-    public void OnLeftButtonClick()
-    {
-        pauseButtonRectTransform.anchorMin = new Vector2(0f, pauseButtonRectTransform.anchorMin.y);
-        pauseButtonRectTransform.anchorMax = new Vector2(0f, pauseButtonRectTransform.anchorMax.y);
-       
-    }
-
-    public void OnRightButtonClick()
-    {
-        float offset = 0.1f;
-        float newXAnchor = 1f - offset;
-        pauseButtonRectTransform.anchorMin = new Vector2(newXAnchor, pauseButtonRectTransform.anchorMin.y);
-        pauseButtonRectTransform.anchorMax = new Vector2(newXAnchor, pauseButtonRectTransform.anchorMax.y);
-    }
+   
     public void TurnOnHealthBar()
     {
         healthBar.SetActive(true);
