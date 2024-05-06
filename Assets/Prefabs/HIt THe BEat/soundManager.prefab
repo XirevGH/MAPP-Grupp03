@@ -50,12 +50,13 @@ MonoBehaviour:
   musicSource1: {fileID: 4282401076657109252}
   musicSource2: {fileID: 1413303723989624773}
   menuMusic: {fileID: 8419575893291496720}
+  currentSource: {fileID: 0}
   musicTracks:
   - {fileID: 8300000, guid: 51626d5583f3bd345959fb1fd4a5550e, type: 3}
-  - {fileID: 8300000, guid: 4c187a4e2adad8343b1897fcd454c948, type: 3}
   - {fileID: 8300000, guid: 7d314c10faf80994da9aed2d48de3c89, type: 3}
   - {fileID: 8300000, guid: 196d921db814ac04593fd9ba2f417270, type: 3}
-  BPMforTracks: 640000008c0000006e00000078000000
+  - {fileID: 8300000, guid: dfab166b772b7b24e802b21757083d6f, type: 3}
+  BPMforTracks: 640000006e0000007800000082000000
   timeToFade: 1.25
   currentScene:
     m_Handle: 0
@@ -65,6 +66,10 @@ MonoBehaviour:
   isLowPassOn: 0
   isInMenu: 0
   hasRun: 0
+  currentTrackNumber: 0
+  currentBPM: 0
+  MusicSpeedChange: 0.02
+  timeToChange: 0.5
 --- !u!1 &786379661519232125
 GameObject:
   m_ObjectHideFlags: 0

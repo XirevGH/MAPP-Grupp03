@@ -1,26 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
 
 public class YoyoController : PermanentProjectileWeapon
 {
     public GameObject yoyo;
 
-    private int childCount;
-
-    void Start()
-    {
-        childCount = transform.childCount;
-        SetYoyoPosition();
-    }
-
     void Update()
     {
-        if (childCount < transform.childCount)
+        if (amountOfProjectiles > transform.childCount)
         {
+            AddYoyo();
             SetYoyoPosition();
-            childCount = transform.childCount;
         }
     }
 
@@ -32,6 +21,19 @@ public class YoyoController : PermanentProjectileWeapon
              transform.GetChild(i).GetComponent<Yoyo>().ActivateSuperMode();
         }
     }
+
+    public void Blink()
+    {
+        int totalYoyo = transform.childCount;
+
+        for (int i = 0; i < totalYoyo; i++)
+        {
+            transform.GetChild(i).GetComponent<Yoyo>().Blink();
+          
+        }
+     
+    }
+
 
     private void SetYoyoPosition()
     {
@@ -47,7 +49,7 @@ public class YoyoController : PermanentProjectileWeapon
         }
     }
 
-    public void Upgrade()
+    public void AddYoyo()
     {
         GameObject clone = Instantiate(yoyo, transform.position, Quaternion.identity, transform);
         clone.GetComponent<Yoyo>().SetDamage(damage);

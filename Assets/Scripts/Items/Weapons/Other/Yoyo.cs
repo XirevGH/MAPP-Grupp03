@@ -6,7 +6,8 @@ using UnityEngine.Rendering;
 public class Yoyo : Projectile
 {
     [SerializeField] private float rotateSpeed, colliderStartingOffset, colliderSuperModeOffset;
-    [SerializeField] private GameObject ball, yoyoString, triggerController, soundManager;
+    [SerializeField] private int triggerNumber;
+    [SerializeField] private GameObject ball, yoyoString;
     [SerializeField] private Vector3 ballStartPosition, ballSuperModePosition, stringStartPosition, stringSuperModePosition, stringStartScale, stringSuperModeScale;
 
     private List<string> upgradeOptions;
@@ -15,24 +16,34 @@ public class Yoyo : Projectile
     private bool superMode;
     private float lerpTime, lerpElapsedTime;
 
+    private float BPM, noteValue, pitch;
+
     private CircleCollider2D circleColl;
+
+    public void Blink()
+    {
+
+        ball.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(Random.Range(0f, 1f), 0.7f, 1);
+    }
 
     private void Start()
     {
-        triggerController = GameObject.FindGameObjectWithTag("TriggerController");
-        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
-        rotateSpeed = ((triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM()/ 60f));
-
         upgradeOptions = new List<string> {"SuperMode", "PlusOneYoyo"};
         superMode = false;
         lerpTime = 0;
         circleColl = GetComponent<CircleCollider2D>();
+        ball.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(Random.Range(0f, 1f), 0.7f, 1);
     }
 
     private void Update()
     {
-        rotateSpeed = ((triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM() / 60f));
-        superModeTime = ((60f / (triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM() / triggerController.GetComponent<TriggerController>().GetTrigger(1).noteValue)) / soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch) / 2;
+        BPM = TriggerController.Instance.GetCurrentTrackBPM();
+        noteValue = TriggerController.Instance.GetTrigger(triggerNumber).noteValue;
+        pitch = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>().pitch;
+       
+
+        rotateSpeed = BPM / 60;
+        superModeTime = ((60f / (BPM / noteValue)) / pitch) / 2;
         lerpTime = superModeTime / 5;
     }
 

@@ -4,16 +4,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class ManuController : MonoBehaviour
+
+public class MenuController : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject exit;
     [SerializeField] private GameObject play;
-    [SerializeField] private GameObject uppgradesPanel;
+    [SerializeField] private GameObject upgradesPanel;
+    [SerializeField] private GameObject itemsPanel;
     [SerializeField] private GameObject settingPanel;
     [SerializeField] private GameObject creditPanel;
-    private GameObject soundManager;
-  
+   //  [SerializeField] private AudioSource audioSource;
+   // [SerializeField] private AudioClip clickSound;
+
 
     [SerializeField] private int levelToload;
 
@@ -21,19 +24,16 @@ public class ManuController : MonoBehaviour
     {
         CloseCredits();
         CloseSetting();
-        CloseUppgrades();
-    }
+        CloseUpgrades();
+        CloseItems();
 
-    private void Update()
-    {
-        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
     }
 
     public void Startgame()
     {
-        
+      
         ChangeScene();
-        soundManager.GetComponent<SoundManager>().StrartGame();
+        SoundManager.Instance.GetComponent<SoundManager>().StartGame();
     }
 
     public void ShowCredits()
@@ -46,12 +46,9 @@ public class ManuController : MonoBehaviour
     {
         creditPanel.SetActive(false);
         mainMenu.SetActive(true);
+ 
 
     }
-
-
-
-    
 
 
     public void ChangeScene()
@@ -65,26 +62,37 @@ public class ManuController : MonoBehaviour
     {
         settingPanel.SetActive(true);
         mainMenu.SetActive(false);
+    
     }
     public void CloseSetting()
     {
         settingPanel.SetActive(false);
         mainMenu.SetActive(true);
-
     }
 
-    public void ShowUppgrades()
+    public void CloseItems()
     {
-        uppgradesPanel.SetActive(true);
-        mainMenu.SetActive(false);
-
-    }
-
-    public void CloseUppgrades()
-    {
-        uppgradesPanel.SetActive(false);
+        itemsPanel.SetActive(false);
         mainMenu.SetActive(true);
+    }
 
+    public void ShowItems()
+    {
+        itemsPanel.SetActive(true);
+        mainMenu.SetActive(false);
+    }
+    public void ShowUpgrades()
+    {
+        upgradesPanel.SetActive(true);
+        itemsPanel.SetActive(false);
+     
+    }
+
+    public void CloseUpgrades()
+    {
+        upgradesPanel.SetActive(false);
+        itemsPanel.SetActive(true);
+      
     }
 
     
@@ -94,6 +102,7 @@ public class ManuController : MonoBehaviour
 
     {
         Application.Quit();
+       
     }
 
 

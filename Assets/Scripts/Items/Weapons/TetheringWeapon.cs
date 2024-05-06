@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,37 +7,43 @@ public abstract class TetheringWeapon : Weapon
     [SerializeField] protected int amountOfTethers;
     [SerializeField] protected int tetherIncreasePerUpgrade;
     protected HashSet<GameObject> enemies = new HashSet<GameObject>();
+    public int tetherRank;
 
     public void IncreaseTetherAmount()
     {
+        tetherRank++;
         amountOfTethers += tetherIncreasePerUpgrade;
     }
 
-    protected GameObject[] GetClosestEnemies(int amountOfTargets)
+    protected GameObject[] GetClosestEnemies(int amountOfTethers)
     {
         SortedSet<GameObject> sortedEnemies = new SortedSet<GameObject>(new GameObjectComparer());
         foreach (GameObject enemy in enemies)
         {
             sortedEnemies.Add(enemy);
         }
-        return sortedEnemies.Take(amountOfTargets).ToArray();
+        return sortedEnemies.Take(amountOfTethers).ToArray();
     }
-    protected int AdjustTargetOverflow(int amountOfTargets)
+    protected int AdjustTargetOverflow(int amountOfTethers)
     {
-        if (enemies.Count < amountOfTargets)
+        if (enemies.Count < amountOfTethers)
         {
             return enemies.Count;
         }
         else
         {
-            return amountOfTargets;
+            return amountOfTethers;
         }
     }
 
-    public override List<string> GetUpgradeOptions()
+    public int GetTetherAmountPerUpgrade()
     {
-        base.GetUpgradeOptions();
+        return tetherIncreasePerUpgrade;
+    }
+
+    protected override void CreateUpgradeOptions()
+    {
+        base.CreateUpgradeOptions();
         upgradeOptions.Add("IncreaseTetherAmount");
-        return upgradeOptions;
     }
 }

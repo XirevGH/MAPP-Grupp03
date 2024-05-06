@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3935263393931761594}
   - component: {fileID: 8497690072020535060}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SynthwaveBlast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,6 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   damage: 1
+  percentageDamageIncreasePerUpgrade: 0
   amountOfProjectiles: 20
+  projectileIncreasePerUpgrade: 0
   penetration: 3
+  penetrationIncreaserPerUpgrade: 0
   synthwavePivotPrefab: {fileID: 5077785313873686110, guid: e5431e134121c924ab8194e56131f775, type: 3}

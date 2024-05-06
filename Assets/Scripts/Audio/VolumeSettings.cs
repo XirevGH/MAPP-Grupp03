@@ -7,15 +7,19 @@ public class VolumeSettings : MonoBehaviour
     [SerializeField] private AudioMixer myMixer;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider SFXSlider;
+    [SerializeField] public GameObject healthBar;
 
     public PauseMenu pauseMenu;
     public RectTransform pauseButtonRectTransform;
+   
 
-    private AudioSource audioSource;
-    private AudioClip clickSound;
+    // [SerializeField] private AudioSource audioSource;
+    //[SerializeField] private AudioClip clickSound;
+
+    private float baseClickVolume;
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
         if (PlayerPrefs.HasKey("musicVolume"))
         {
             LoadVolume();
@@ -31,6 +35,7 @@ public class VolumeSettings : MonoBehaviour
         float volume = musicSlider.value;
         myMixer.SetFloat("music", Mathf.Log10(volume)*20);
         PlayerPrefs.SetFloat("musicVolume", volume);
+ 
     }
 
     public void SetSFXVolume()
@@ -38,6 +43,8 @@ public class VolumeSettings : MonoBehaviour
         float volume = SFXSlider.value;
         myMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("SFXVolume", volume);
+
+       // audioSource.volume = baseClickVolume * volume;
     }
 
     private void LoadVolume()
@@ -53,7 +60,7 @@ public class VolumeSettings : MonoBehaviour
     {
         pauseButtonRectTransform.anchorMin = new Vector2(0f, pauseButtonRectTransform.anchorMin.y);
         pauseButtonRectTransform.anchorMax = new Vector2(0f, pauseButtonRectTransform.anchorMax.y);
-        audioSource.PlayOneShot(clickSound);
+      // audioSource.PlayOneShot(clickSound);
     }
 
     public void OnRightButtonClick()
@@ -62,7 +69,15 @@ public class VolumeSettings : MonoBehaviour
         float newXAnchor = 1f - offset;
         pauseButtonRectTransform.anchorMin = new Vector2(newXAnchor, pauseButtonRectTransform.anchorMin.y);
         pauseButtonRectTransform.anchorMax = new Vector2(newXAnchor, pauseButtonRectTransform.anchorMax.y);
-        audioSource.PlayOneShot(clickSound);
+     //  audioSource.PlayOneShot(clickSound);
+    }
+    public void TurnOnHealthBar()
+    {
+        healthBar.SetActive(true);
     }
 
+    public void TurnOffHealthBar()
+    {
+        healthBar.SetActive(false);
+    }
 }

@@ -765,8 +765,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 5436226366269919644}
-  triggerController: {fileID: 1128267155804970998}
-  soundManager: {fileID: 1431856008}
   trackswapper: {fileID: 2662689527024895925}
   mainCamera: {fileID: 519420031}
   tilemap: {fileID: 1947654048}
@@ -1372,8 +1370,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Level: 1'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2017,7 +2015,8 @@ MonoBehaviour:
   enemyBouncer: {fileID: 6536046719154458180, guid: e08403d79ea9a0046acfb2c680d5eb32, type: 3}
   enemyDancer: {fileID: 6536046719154458180, guid: 935a3a109fd200c4080657daa8c508d3, type: 3}
   enemyDrunkard: {fileID: 6536046719154458180, guid: 3ecd58846d80571498c5c49f0cba8ec3, type: 3}
-  parent: {fileID: 1707783737}
+  enmemyParent: {fileID: 1707783737}
+  bossParent: {fileID: 1707783737}
   spawnLocations:
   - {fileID: 1730046822}
   - {fileID: 867326975}
@@ -2874,7 +2873,6 @@ MonoBehaviour:
   - {fileID: 303113334}
   pauseMenuUI: {fileID: 1796234484}
   BeatSpawnerController: {fileID: 1128267155804970998}
-  soundManager: {fileID: 0}
   pauseButton: {fileID: 0}
   settingPanel: {fileID: 0}
   mainMenuSceneName: MainMenu
@@ -3003,11 +3001,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
---- !u!1 &1431856008 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 251786827020902282, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
-  m_PrefabInstance: {fileID: 1431856007}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1431856009 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1355660591452939855, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
@@ -3395,6 +3388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   damage: 1
+  damageIncreasePerUpgrade: 0
   usedAbility: 0
   dealDamage: 0
   bombMoving: 0
@@ -4588,8 +4582,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Timer
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5630,6 +5624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   damage: 10
+  damageIncreasePerUpgrade: 0
   anim: {fileID: 6747922250687069817}
 --- !u!1 &3593054911237702068
 GameObject:
@@ -5788,8 +5783,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   damage: 3
+  damageIncreasePerUpgrade: 0
   amountOfProjectiles: 0
+  projectileIncreasePerUpgrade: 0
   penetration: 1
+  penetrationIncreaserPerUpgrade: 0
   shootingPoint: {fileID: 7147500035608189028}
   notePrefab: {fileID: 5730958551181348608, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
   speed: 1
@@ -6012,7 +6010,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   damage: 5
+  damageIncreasePerUpgrade: 0
   amountOfTethers: 0
+  tetherIncreasePerUpgrade: 0
   bolt: {fileID: 8209966115709815941, guid: c89b4386ca74450468870cc3cee72ee5, type: 3}
 --- !u!95 &6747922250687069817
 Animator:

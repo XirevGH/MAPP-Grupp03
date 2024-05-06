@@ -6,12 +6,16 @@ public class CameraFollow : MonoBehaviour
 {
     public float followSpeed = 6f;
     public float yOffset = 1f;
-    public Transform target; 
+    public Player target;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        Vector3 newPos = new Vector3(target.position.x, target.position.y + yOffset, -10f);
+        target = FindObjectOfType<Player>();
+    }
+    void FixedUpdate()
+    {
+
+        Vector3 newPos = new Vector3(target.transform.position.x, target.transform.position.y + yOffset, -10f);
         transform.position = Vector3.Slerp(transform.position, newPos, followSpeed * Time.deltaTime);
     }
 }

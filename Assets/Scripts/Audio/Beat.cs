@@ -1,67 +1,53 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Beat : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed, increaseCooldownDuration, reduceCooldownDuration, MusicSpeedChange;
-    [SerializeField] private GameObject circle, particle, triggerController, soundManager;
-    public static float totalChangedInBPM = 0;
-
+    [SerializeField] private float increaseCooldownDuration, reduceCooldownDuration, MusicSpeedChange, timeToChange;
+    [SerializeField] private GameObject circle, particle;
     private float percentageComplete, elapsedTime, beatLife;
     private Vector3 circleStartingScale;
+    public bool isAlive;
 
     private void Start()
     {
-        triggerController = GameObject.FindGameObjectWithTag("TriggerController");
-        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
-       
         circleStartingScale = circle.transform.localScale;
-        beatLife = (60f / (triggerController.GetComponent<TriggerController>().GetCurrentTrackBPM() / triggerController.GetComponent<TriggerController>().GetTrigger(0).noteValue)) / soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch;
-    }
-    private void Update()
-    {
-     
-        
+        beatLife = (60f / (TriggerController.Instance.GetComponent<TriggerController>().GetCurrentTrackBPM() / TriggerController.Instance.GetComponent<TriggerController>().GetTrigger(0).noteValue))
+        / SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>().pitch;
     }
 
     void FixedUpdate()
     {
-       
-        elapsedTime += Time.deltaTime;
-        percentageComplete = elapsedTime / beatLife;
-        GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, percentageComplete);
-        circle.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, percentageComplete);
-        circle.transform.localScale = Vector3.Lerp(circleStartingScale, new Vector3(0, 0, 0), percentageComplete);
-        
+        if (isAlive)
+        {
+            elapsedTime += Time.deltaTime;
+            percentageComplete = elapsedTime / beatLife;
+            GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, percentageComplete);
+            circle.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, percentageComplete);
+            circle.transform.localScale = Vector3.Lerp(circleStartingScale, new Vector3(0, 0, 0), percentageComplete);
+        }
+
         if (Mathf.FloorToInt(percentageComplete) == 1)
         {
-            DestroyNote();
+            DestroyNoteWhenNotPickedUp();
         }
     }
 
-    public void DestroyNote()
+    public void DestroyNoteWhenNotPickedUp()
     {
-        if (soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch <= 0.5)
-        {
-            soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = 0.5f;
-        }
-        else
-        {
-            soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch - MusicSpeedChange;
-        }
-        
-        totalChangedInBPM = totalChangedInBPM - MusicSpeedChange;
         Instantiate(particle, this.transform.position, Quaternion.identity);
+        SoundManager.Instance.ChangePitch(false);
         Destroy(gameObject);
     }
+
+
 
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Music Collider"))
         {
-
-            soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch = soundManager.transform.GetChild(0).GetComponent<AudioSource>().pitch + MusicSpeedChange;
-            totalChangedInBPM = totalChangedInBPM + MusicSpeedChange;
+           SoundManager.Instance.ChangePitch(true);
             Destroy(gameObject);
         }
     }

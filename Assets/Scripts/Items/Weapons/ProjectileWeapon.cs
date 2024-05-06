@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class ProjectileWeapon : Weapon
@@ -8,25 +5,37 @@ public abstract class ProjectileWeapon : Weapon
     [SerializeField] protected int amountOfProjectiles;
     [SerializeField] protected int projectileIncreasePerUpgrade;
     [SerializeField] protected int penetration;
-    [SerializeField] protected int penetrationIncreaserPerUpgrade;
+    [SerializeField] protected int penetrationIncreasePerUpgrade;
+    public int projectileRank;
+    public int penetrationRank;
 
-    public void IncreaseProjectileCount(int projectileIncreasePerUpgrade)
+    public void IncreaseProjectileCount()
     {
+        projectileRank++;
         amountOfProjectiles += projectileIncreasePerUpgrade;
     }
 
-    public void IncreasePenetrationAmount(int penetrationIncreaserPerUpgrade)
+    public void IncreasePenetrationAmount()
     {
-        penetration += penetrationIncreaserPerUpgrade;
+        penetrationRank++;
+        penetration += penetrationIncreasePerUpgrade;
     }
 
-    public override List<string> GetUpgradeOptions()
+    public int GetProjectilePerUpgrade()
     {
+        return projectileIncreasePerUpgrade;
+    }
 
-        base.GetUpgradeOptions();
+    public int GetPenetrationPerUpgrade()
+    {
+        return projectileIncreasePerUpgrade;
+    }
+
+    protected override void CreateUpgradeOptions()
+    {
+        base.CreateUpgradeOptions();
 
         upgradeOptions.Add("IncreaseProjectileCount");
         upgradeOptions.Add("IncreasePenetrationAmount");
-        return upgradeOptions;
     }
 }

@@ -8,16 +8,17 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Slider hpSlider, xpSlider;
-    [SerializeField] private TMP_Text levelText;
-    [SerializeField] private GameObject electricGuitar, lightningAoe, bassGuitar, saxophone;
-    [SerializeField] private GameController gameController;
     [SerializeField] private Player player;
+    [SerializeField] private Slider hpSlider;
     [SerializeField] private PlayerStats playerStats;
-    [SerializeField] private UpgradeAbility upgrade;
-    [SerializeField] private UpgradePanel upgradeScreen;
+    [SerializeField] private Weapon startingWeapon;
+    [SerializeField] private List<Item> currentItems;
 
-    public List<Item> currentItems = new List<Item>();
+    private UpgradeSystem upgradeSystem;
+    private UpgradePanel upgradeScreen;
+    private Slider xpSlider;
+    private TMP_Text levelText;
+    private GameController gameController;
 
     private int money;
     private float moneyMultiplier;
@@ -35,9 +36,22 @@ public class Player : MonoBehaviour
 
     private short burstAmount;
 
-    
-    private void Start()
+    public static Player Instance
     {
+        get; private set;
+    }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         money = playerStats.money; 
         moneyMultiplier = playerStats.moneyMultiplier; 
         damage = playerStats.damage;
@@ -52,8 +66,41 @@ public class Player : MonoBehaviour
         level = 1;
         burstAmount = playerStats.burstAmount;
         xpHeld = 0;
+        currentItems = new List<Item>{startingWeapon};
     }
 
+    //For leveling up faster for testing, remove later
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.L)) 
+        {
+            LevelUp();
+        }
+        if(SceneManager.GetActiveScene().name == "Main")
+        {
+            if (xpSlider == null)
+            {
+                xpSlider = GameObject.FindGameObjectWithTag("XPSlider").GetComponent<Slider>();
+                
+            }
+            if (levelText == null)
+            {
+                levelText = GameObject.FindGameObjectWithTag("levelText").GetComponent<TMP_Text>();
+            }
+            if (upgradeScreen == null)
+            {
+                upgradeScreen = FindObjectOfType<UpgradePanel>(true);
+            }
+            if (upgradeSystem == null)
+            {
+                upgradeSystem = FindObjectOfType<UpgradeSystem>();
+            }
+            if (gameController == null)
+            {
+                gameController = FindObjectOfType<GameController>();
+            }
+        }
+    }
     #region HP Stuff
     public void RestoreHealth(float percent)
     {
@@ -72,7 +119,14 @@ public class Player : MonoBehaviour
         if(health <= 0)
         {
             Die();
+            RestoreHealth(100);
+            ResetPosition();
         }
+    }
+
+    private void ResetPosition()
+    {
+        transform.position = Vector3.zero;
     }
 
     private void UpdateHealthSlider()
@@ -82,7 +136,6 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-
         gameController.GameOver();
     }
     #endregion
@@ -112,38 +165,7 @@ public class Player : MonoBehaviour
         UpdateXPSlider();
         MainManager.Instance.mainLevel = level;
         upgradeScreen.OpenUpgradeWindow();
-        upgrade.StartUpgradeSystem();
-        
-        /*if (level == 2)
-        {
-            electricGuitar.SetActive(true);
-        }
-        if(level == 3)
-        {
-            lightningAoe.SetActive(true);
-        }
-        if(level == 4){
-            saxophone.SetActive(true);
-        }
-
-        if(level > 2)
-        {
-            electricGuitar.GetComponent<ElectricGuitar>().UpgradeTetherAmount(1);
-        }
-        if(level > 3)
-        {
-            burstAmount += 3;
-            lightningAoe.GetComponent<ParticleSystem>().emission.SetBursts(new ParticleSystem.Burst[] {new ParticleSystem.Burst(0.05f, burstAmount)});
-        }
-        if (level > 4)
-        {
-            if (level % 6 == 0)
-            {
-                saxophone.GetComponent<Saxophone>().IncreasePenetrationAmount(1);
-                saxophone.GetComponent<Saxophone>().IncreaseProjectileCount(1);
-                saxophone.GetComponent<Saxophone>().IncreaseDamage(1.1f);
-            }
-        }*/
+        upgradeSystem.StartUpgradeSystem();
     }
 
     private void UpdateXPSlider()

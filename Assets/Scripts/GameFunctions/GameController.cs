@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -8,9 +6,8 @@ using UnityEngine.Tilemaps;
 
 public class GameController : MonoBehaviour
 {
-    private string saveFile;
     public PlayerStats playerStats;
-    [SerializeField] private GameObject triggerController, soundManager, trackswapper;
+    private string playerStatsFile;
     public Camera mainCamera;
     public Tilemap tilemap;
     public int currentTrackBPM;
@@ -19,24 +16,26 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        saveFile = Application.persistentDataPath + "/playerInfo.json";
-        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
-        ReadFile();
+        playerStatsFile = Application.persistentDataPath + "/playerInfo.json";
+        ReadFile(playerStatsFile);
         mainCamera = Camera.main;
-        Enemy.movementSpeed = 1f;        // är % * till thisEnmey
-        Debug.Log("Start");
+        Enemy.movementSpeed = 1f;        // Global % enemy movespeed increase.  
     }
+
     private void Update()
     {
-        currentTrackBPM = soundManager.GetComponent<SoundManager>().BPMforTracks[trackswapper.GetComponent<TrackSwapper>().i];
+        currentTrackBPM = SoundManager.Instance.GetComponent<SoundManager>().GetCurrentBPM();
     }
+
     private void FixedUpdate()
     {  
-        Enemy.movementSpeed += 0.0001f; // är % * till thisEnmey
+        Enemy.movementSpeed += 0.0001f; // Global % enemy movespeed increase.  
        
     }
-    private void ReadFile()
+
+    private void ReadFile(string saveFile)
     {
+        playerStats = FindObjectOfType<PlayerStats>();
         if (File.Exists(saveFile))
         {
             string fileContents = File.ReadAllText(saveFile);
@@ -50,9 +49,10 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        File.WriteAllText(saveFile, playerStats.SaveToString());
+        SoundManager.Instance.GetComponent<SoundManager>().Die();
+        File.WriteAllText(playerStatsFile, playerStats.SaveToString());
         SceneManager.LoadScene("ResultsScreen");
-        triggerController.GetComponent<TriggerController>().ToggleTrigger();
+       
     }
 
     public BoundsInt GetBoundsFromCamera()

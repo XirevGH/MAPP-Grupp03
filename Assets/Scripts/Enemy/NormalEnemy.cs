@@ -1,12 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using System.Text;
-using System;
-using System.Linq;
-using System.Diagnostics;
-using static UnityEngine.GraphicsBuffer;
+
 
 public class NormalEnemy : Enemy
 {
@@ -17,12 +10,15 @@ public class NormalEnemy : Enemy
     void FixedUpdate()
     {
         damageNumberWindow -= Time.deltaTime;
-        
-
-       
+        SelectTarget();
         if (IsAlive())
         {
             if (Vector3.Distance(target.transform.position, transform.position) < 0.5)
+            {
+                player.GetComponent<Player>().TakeDamage(1);
+            }
+
+            if (Vector3.Distance(player.transform.position, transform.position) < 1)
             {
                 player.GetComponent<Player>().TakeDamage(1);
             }
@@ -40,9 +36,6 @@ public class NormalEnemy : Enemy
 
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, thisMovementSpeed / 200);
         }
-
-
-
     }
     protected override void DestroyGameObject()
     {

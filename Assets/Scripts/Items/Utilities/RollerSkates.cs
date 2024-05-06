@@ -5,8 +5,22 @@ using UnityEngine;
 public class RollerSkates : Utility
 {
     public PlayerMovement playerMovement;
-    public void UpgradeMovementSpeed()
+    public float percentageIncrease;
+    public int movementSpeedRank;
+
+    public float GetMovementSpeedUpgradePercentage()
     {
-        playerMovement.IncreaseMovementSpeed(GetStatPercentIncrease());
+        return percentageIncrease;
+    }
+
+    public void IncreaseMovementSpeed()
+    {
+        movementSpeedRank++;
+        playerMovement.IncreaseMovementSpeed(1 + (percentageIncrease / 100f));
+    }
+    
+    protected override void CreateUpgradeOptions()
+    {
+        upgradeOptions.Add("IncreaseMovementSpeed");
     }
 }

@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 8952015041370688503}
   - component: {fileID: 8283433590032857020}
   - component: {fileID: 5618277646040145595}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &8283433590032857020
 MonoBehaviour:
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 1244441984418440535}
   - component: {fileID: -8718832928761771214}
   - component: {fileID: 5789765322901318672}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boss-Drunkard
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -431,6 +431,8 @@ MonoBehaviour:
   drops:
   - item: {fileID: 2322821042000343324, guid: 0369a782efb602b49b7a7f02ad8b43ba, type: 3}
     dropChance: 100
+  - item: {fileID: 4917292742459662858, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+    dropChance: 100
   multiDrop: 1
   player: {fileID: 0}
   target: {fileID: 0}
@@ -443,9 +445,12 @@ MonoBehaviour:
   damageNumberAnim: {fileID: 2898152515693454215}
   enemyAnim: {fileID: -8718832928761771214}
   hpSlider: {fileID: 8914765566047444305}
-  baseAttackColdown: 10
-  baseChargDuration: 4
-  chargAddetivSpeed: 10
+  bossCharge:
+    chargeEnabled: 1
+    chargeDuration: 3
+    chargeAdditiveSpeed: 10
+    bossChargeActive: 0
+  baseAttackCooldown: 12
 --- !u!114 &-6179003319820616230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,13 +463,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8516b445a503f06449ea468cc62de5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abiletySpeed: 10
-  abiletyZise: 3
-  abiletySlow: 20
-  abiletyLifetime: 1
+  projectileLifetime: 10
+  projectileSpeed: 10
   bossPosition: {fileID: 4104584175501468764}
-  bossAtckObject: {fileID: 2142423527954636700, guid: 996479ba723320345b83c66eb5e7b993, type: 3}
-  player: {fileID: 0}
+  bossProjectileObject: {fileID: 2142423527954636700, guid: 996479ba723320345b83c66eb5e7b993, type: 3}
+  abilitySize: 2.5
+  abilitySlow: 20
+  abilityLifetime: 1.5
 --- !u!50 &1244441984418440535
 Rigidbody2D:
   serializedVersion: 4
@@ -477,7 +482,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -560,7 +565,7 @@ GameObject:
   - component: {fileID: 6468836483505505757}
   - component: {fileID: 287581913604085729}
   - component: {fileID: 2898152515693454215}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

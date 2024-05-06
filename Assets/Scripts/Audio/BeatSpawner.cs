@@ -7,6 +7,10 @@ public class BeatSpawner : MonoBehaviour
 
     public void SpawnBeat()
     {
+        if (parentForBeat == null)
+        {
+            parentForBeat = GameObject.FindGameObjectWithTag("BeatContainer");
+        }
        Instantiate(beat, transform.position, Quaternion.identity, parentForBeat.GetComponent<Transform>());
     }
 

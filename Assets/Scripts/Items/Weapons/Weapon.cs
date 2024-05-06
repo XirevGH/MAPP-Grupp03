@@ -1,20 +1,27 @@
-using System.Collections.Generic;
+
+using UnityEngine;
 
 public abstract class Weapon : Item
 {
     public float damage;
-    public float damageIncreasePerUpgrade;
+    public int damageRank;
+    public float percentageDamageIncrease;
 
     public abstract void Attack();
 
-    public void IncreaseDamage(float damageIncreasePerUpgrade)
+    public virtual void IncreaseDamage()
     {
-        damage *= damageIncreasePerUpgrade;
+        damageRank++;
+        damage *= (1 + (percentageDamageIncrease / 100f));
     }
 
-    public override List<string> GetUpgradeOptions()
+    public float GetDamageUpgradePercentage()
+    {
+        return percentageDamageIncrease;
+    }
+
+    protected override void CreateUpgradeOptions()
     {
         upgradeOptions.Add("IncreaseDamage");
-        return upgradeOptions;
     }
 }

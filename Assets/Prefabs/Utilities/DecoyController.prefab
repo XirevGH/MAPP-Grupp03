@@ -44,9 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6535906d91641b145944e7e4d9bca1d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
   player: {fileID: 0}
-  decoyHealth: 0
+  itemName: Decoy
+  decoyHealth: 2
   throwDistance: 2
+  throwDelayTime: 0.5
   decoy: {fileID: 4393732222355668112, guid: 40ed4233f1695c940bb5b18f146d7603, type: 3}
+  amountOfDecoy: 1
+  decoyIncreasePerUpgrade: 1
+  decoyHealthIncreasePerUpgrade: 2
   dynamicJoystick: {fileID: 0}

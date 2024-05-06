@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 public class DynamicJoystick : Joystick
 {
     public float MoveThreshold { get { return moveThreshold; } set { moveThreshold = Mathf.Abs(value); } }
 
     [SerializeField] private float moveThreshold = 1;
+    [SerializeField] private string position;
 
     protected override void Start()
     {
@@ -32,5 +34,9 @@ public class DynamicJoystick : Joystick
     protected override void HandleInput(float magnitude, Vector2 normalised, Vector2 radius, Camera cam)
     {
         base.HandleInput(magnitude, normalised, radius, cam);
+    }
+    public string GetPosition()
+    {
+        return position;
     }
 }

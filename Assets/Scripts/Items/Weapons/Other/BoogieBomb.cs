@@ -19,8 +19,7 @@ public class BoogieBomb : PhysicalWeapon
 
     [SerializeField] private GameObject bombParticles;
 
-    [SerializeField] private Transform player;
-    GameObject enemy;
+    [SerializeField] private Transform playerPosition;
 
 
     private void Start()
@@ -34,7 +33,7 @@ public class BoogieBomb : PhysicalWeapon
         if (!bombMoving)
         {
             this.GetComponent<SpriteRenderer>().enabled = false;
-            transform.position = player.position;
+            transform.position = playerPosition.position;
         }
 
 

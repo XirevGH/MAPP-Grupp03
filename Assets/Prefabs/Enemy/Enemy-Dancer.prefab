@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8952015041370688503}
   - component: {fileID: 8283433590032857020}
   - component: {fileID: 5618277646040145595}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &8283433590032857020
 MonoBehaviour:
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 4452318053238822982}
   - component: {fileID: 1244441984418440535}
   - component: {fileID: -8718832928761771214}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy-Dancer
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -206,16 +206,18 @@ MonoBehaviour:
   enemySprite: {fileID: 21300000, guid: 29b8918923ac85341a22275f7aad2f64, type: 3}
   drops:
   - item: {fileID: 2322821042000343324, guid: 73e8c7fac64e160469ab7a30447b8bc1, type: 3}
-    dropChance: 50
+    dropChance: 100
   - item: {fileID: 4857899130433156979, guid: 86fd765608c838c41ac970a87857d355, type: 3}
-    dropChance: 5
+    dropChance: 10
+  - item: {fileID: 4917292742459662858, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
+    dropChance: 0.5
   multiDrop: 0
   player: {fileID: 0}
   target: {fileID: 0}
   sprite: {fileID: 0}
   health: 10
   thisMovementSpeed: 0
-  baseMovementSpeed: 5
+  baseMovementSpeed: 6
   isSlow: 0
   damageNumbers: {fileID: 287581913604085729}
   damageNumberAnim: {fileID: 2898152515693454215}
@@ -267,7 +269,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -281,7 +283,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &-8718832928761771214
 Animator:
   serializedVersion: 5
@@ -315,7 +317,7 @@ GameObject:
   - component: {fileID: 6468836483505505757}
   - component: {fileID: 287581913604085729}
   - component: {fileID: 2898152515693454215}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

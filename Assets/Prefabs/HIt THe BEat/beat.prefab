@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4150572735521592843}
   - component: {fileID: 708104104445463441}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 2085584343929549221}
   - component: {fileID: 3118479947898944213}
   - component: {fileID: 4867680817826248142}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: beat
   m_TagString: Beat
   m_Icon: {fileID: 0}
@@ -220,15 +220,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd618e034531c9640bf44b88389c60e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
   increaseCooldownDuration: 0.1
   reduceCooldownDuration: 0.1
-  MusicSpeedChange: 0.001
+  MusicSpeedChange: 0.01
+  timeToChange: 0.5
   circle: {fileID: 2807010619834201707}
   particle: {fileID: 2506341979681168310, guid: 4eefcb67bfd2afe44beea10856d5040b, type: 3}
-  triggerController: {fileID: 0}
-  soundManager: {fileID: 0}
-  weapons: []
+  isAlive: 1
 --- !u!58 &4867680817826248142
 CircleCollider2D:
   m_ObjectHideFlags: 0

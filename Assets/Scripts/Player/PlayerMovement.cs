@@ -1,11 +1,10 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float movementSpeed;
-    [SerializeField] private Transform pos;
-    public DynamicJoystick dynamicJoystick;
-
+    private DynamicJoystick dynamicJoystick;
     private float horizontalValue;
     private float verticalValue;
 
@@ -53,25 +52,38 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if (dynamicJoystick.Horizontal < 0f || horizontalValue < 0f)
+        if (SceneManager.GetActiveScene().name == "Main")
         {
-            FlipSprite(true);
-        }
-        if (dynamicJoystick.Horizontal > 0f || horizontalValue > 0f)
-        {
-            FlipSprite(false);
-        }
-        
-
-        if (dynamicJoystick.Horizontal != 0f || dynamicJoystick.Vertical != 0f)
-        {
-            anim.SetFloat("MoveSpeed", Mathf.Abs(dynamicJoystick.Horizontal + dynamicJoystick.Vertical / 2));
-            pos.position = new Vector2(pos.position.x + dynamicJoystick.Horizontal * movementSpeed * movementSpeedDecrease * Time.deltaTime, pos.position.y + dynamicJoystick.Vertical * movementSpeed * movementSpeedDecrease* Time.deltaTime);
-        }
-        else
-        {
-            anim.SetFloat("MoveSpeed", Mathf.Abs(horizontalValue + verticalValue / 2));
-            pos.position = new Vector2(pos.position.x + horizontalValue * movementSpeed * movementSpeedDecrease * Time.deltaTime, pos.position.y + verticalValue * movementSpeed * movementSpeedDecrease * Time.deltaTime);
+            if (dynamicJoystick == null)
+            {
+                
+                DynamicJoystick[] dynamicJoysticks = FindObjectsOfType<DynamicJoystick>();
+                foreach (DynamicJoystick joystick in dynamicJoysticks)
+                {
+                    if (joystick.GetPosition() == "Left")
+                    {
+                        dynamicJoystick = joystick;
+                    }
+                }
+            }
+            if (dynamicJoystick.Horizontal < 0f || horizontalValue < 0f)
+            {
+                FlipSprite(true);
+            }
+            if (dynamicJoystick.Horizontal > 0f || horizontalValue > 0f)
+            {
+                FlipSprite(false);
+            }
+            if (dynamicJoystick.Horizontal != 0f || dynamicJoystick.Vertical != 0f)
+            {
+                anim.SetFloat("MoveSpeed", Mathf.Abs(dynamicJoystick.Horizontal + dynamicJoystick.Vertical / 2));
+                transform.position = new Vector2(transform.position.x + dynamicJoystick.Horizontal * movementSpeed * movementSpeedDecrease * Time.deltaTime, transform.position.y + dynamicJoystick.Vertical * movementSpeed * movementSpeedDecrease* Time.deltaTime);
+            }
+            else
+            {
+                anim.SetFloat("MoveSpeed", Mathf.Abs(horizontalValue + verticalValue / 2));
+                transform.position = new Vector2(transform.position.x + horizontalValue * movementSpeed * movementSpeedDecrease * Time.deltaTime, transform.position.y + verticalValue * movementSpeed * movementSpeedDecrease * Time.deltaTime);
+            }
         }
     }
 

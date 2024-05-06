@@ -4,8 +4,22 @@ using UnityEngine;
 
 public class GrooveArmor : Utility
 {
-    public void UpgradeHealth() 
-    { 
-        player.IncreaseMaxHealth(GetStatPercentIncrease());
+    public float percentageIncrease;
+    public int healthRank;
+
+    public void IncreaseHealth() 
+    {
+        healthRank++;
+        player.IncreaseMaxHealth(1 + (percentageIncrease / 100f));
+    }
+
+    public float GetHealthUpgradePercentage()
+    {
+        return percentageIncrease;
+    }
+
+    protected override void CreateUpgradeOptions()
+    {
+        upgradeOptions.Add("IncreaseHealth");
     }
 }

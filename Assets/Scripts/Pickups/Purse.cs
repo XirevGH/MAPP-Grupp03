@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class Purse : MonoBehaviour
 {
-    private UpgradeAbility upgradeAbility;
+    private UpgradeSystem upgradeAbility;
     private Item item;
     private string upgradeText = "";
     private int moneyAmount;
@@ -15,7 +15,7 @@ public class Purse : MonoBehaviour
 
     private void Start()
     {
-        upgradeAbility = GameObject.FindGameObjectWithTag("UpgradeSystem").GetComponent<UpgradeAbility>();
+        upgradeAbility = GameObject.FindGameObjectWithTag("UpgradeSystem").GetComponent<UpgradeSystem>();
         moneyAmount = GiveRandomAmountOfMoney();
     }
 
@@ -24,10 +24,11 @@ public class Purse : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<PlayerStats>().money += moneyAmount;
-            //UpgradeRandomItem();
+            UpgradeRandomItem();
             Debug.Log(item + upgradeText);
             GameObject textClone = Instantiate(text, new Vector3(transform.position.x, transform.position.y +2, -0.5f), Quaternion.identity, transform);
             textClone.GetComponent<TextMesh>().text = GetTestPopup();
+            Destroy(gameObject);
         }
     }
     private String GetTestPopup()
@@ -44,7 +45,9 @@ public class Purse : MonoBehaviour
 
     private void UpgradeRandomItem()
     {
-        upgradeAbility.InitializeUpgradeOptions();
+        List<Item> currentPlayerItems = upgradeAbility.GetItems();
+        Debug.Log(currentPlayerItems);
+        upgradeAbility.InitializeUpgradeOptions(currentPlayerItems);
         (item, upgradeText) = upgradeAbility.ChooseRandomUpgrade();
         upgradeAbility.PerformRandomizedUpgrade(item, upgradeText);
     }

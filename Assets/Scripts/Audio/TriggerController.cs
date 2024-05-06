@@ -1,18 +1,13 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.Events;
-using Random = UnityEngine.Random;
+
 
 public class TriggerController : MonoBehaviour
 {
     [SerializeField] public float inGameCurrentTrackBPM;
-    [SerializeField] GameObject trackswapper;
     [SerializeField] public Trigger[] triggers;
     [SerializeField] public bool isTriggering;
-    private SoundManager soundManager;
 
     private AudioSource inGameMusic;
         
@@ -21,9 +16,10 @@ public class TriggerController : MonoBehaviour
     public class Trigger
     {
         [SerializeField] public float noteValue;
-        [SerializeField] private UnityEvent quaterNoteTrigger;
+        [SerializeField] public UnityEvent quaterNoteTrigger;
         private int lastQuaterNote;
         public bool isTriggering;
+
         public float GetIntervalLength(float BPM)
         {
             return 60f / (BPM/ noteValue);
@@ -43,19 +39,37 @@ public class TriggerController : MonoBehaviour
         }
     }
 
+    public static TriggerController Instance
+    {
+        get; private set;
+    }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+       
+    }
+
     void Start()
     {
         isTriggering = true;
-        GameObject manager = GameObject.FindGameObjectWithTag("SoundManager");
-        inGameMusic = manager.transform.GetChild(0).GetComponent<AudioSource>();
-        soundManager = manager.GetComponent<SoundManager>();
-      
+
+        inGameMusic = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>();
+
     }
 
     void Update()
     {
-        inGameMusic = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
-        inGameCurrentTrackBPM = soundManager.BPMforTracks[trackswapper.GetComponent<TrackSwapper>().i];
+        inGameMusic = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>();
+        inGameCurrentTrackBPM = SoundManager.Instance.GetCurrentBPM();
         if (isTriggering)
         {
             foreach (Trigger trigger in triggers)
@@ -81,5 +95,10 @@ public class TriggerController : MonoBehaviour
     public float GetCurrentTrackBPM()
     {
         return inGameCurrentTrackBPM;
+    }
+
+    public void SetTrigger(int triggerNumber, UnityAction action)
+    {
+        triggers[triggerNumber].quaterNoteTrigger.AddListener(action);
     }
 }

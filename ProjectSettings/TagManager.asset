@@ -17,19 +17,23 @@ TagManager:
   - AimingArrow
   - Decoy
   - UpgradeSystem
+  - BeatContainer
+  - XPSlider
+  - levelText
+  - UpgradeScreen
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - guitar hero
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Projectile
+  - MusicNotes
+  - Utility
+  - Weapon
+  - Pickups
   - 
   - 
   - 

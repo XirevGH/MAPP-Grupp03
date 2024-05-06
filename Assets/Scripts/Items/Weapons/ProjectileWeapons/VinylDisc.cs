@@ -17,18 +17,15 @@ public class VinylDisc : Projectile
 
     private Vector3  startPosition, endPosition, playerPosition, controlPoint;
     private Quaternion aimingArrowRotation;
-    private SoundManager soundManager;
     private AudioSource source;
-    private TriggerController triggerController;
 
     void Awake()
     {
-        triggerController = GameObject.FindGameObjectWithTag("TriggerController").GetComponent<TriggerController>();
-        soundManager = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>();
-        source = soundManager.transform.GetChild(0).GetComponent<AudioSource>();
+        vinylDisc.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(Random.Range(0f, 1f), 0.7f, 1);
+
         aimingArrowRotation = GameObject.FindGameObjectWithTag("AimingArrow").transform.rotation;
-      
         startPosition = transform.position;
+
         //find endPosition by using Trigonometry (angle of the aiming arrow and travelDistance).
         endPosition = new Vector3(
         Mathf.Cos(Mathf.Deg2Rad * aimingArrowRotation.eulerAngles.z) * travelDistance + startPosition.x,
@@ -51,8 +48,9 @@ public class VinylDisc : Projectile
     void FixedUpdate()
     {
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-        BPM = triggerController.GetCurrentTrackBPM();
-        noteValue = triggerController.GetTrigger(triggerNumber).noteValue;
+        BPM = TriggerController.Instance.GetCurrentTrackBPM();
+        noteValue = TriggerController.Instance.GetTrigger(triggerNumber).noteValue;
+        source = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>();
         pitch = source.pitch;
     
         travelTime = (((60f / (BPM / noteValue)) / pitch) /2f);
@@ -90,11 +88,6 @@ public class VinylDisc : Projectile
         }
     }
 
-
-   
-
-
-
     public void Attack() 
     {
         isAtPlayer = true;
@@ -103,6 +96,7 @@ public class VinylDisc : Projectile
     private void OnTriggerEnter2D(Collider2D other)
     {
         DealDamage(other);
+        DestroyWhenMaxPenetration();
     }
 
 }
