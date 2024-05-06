@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class DecoyController : Utility
@@ -29,6 +30,14 @@ public class DecoyController : Utility
         {
             IncreaseDecoyHealth();
         }
+    }
+
+
+
+    private void Start()
+    {
+        UnityAction action = new UnityAction(Throw);
+        TriggerController.Instance.SetTrigger(15, action);
     }
 
     void Update()

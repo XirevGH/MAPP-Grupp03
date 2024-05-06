@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Saxophone : ProjectileWeapon
 {
@@ -10,6 +11,13 @@ public class Saxophone : ProjectileWeapon
     public GameObject notePrefab; 
     public float speed;
     private List<GameObject> enemies = new List<GameObject>();
+
+
+    private void Start()
+    {
+        UnityAction action = new UnityAction(Attack);
+        TriggerController.Instance.SetTrigger(8, action);
+    }
 
 
     private void OnTriggerEnter2D(Collider2D other)

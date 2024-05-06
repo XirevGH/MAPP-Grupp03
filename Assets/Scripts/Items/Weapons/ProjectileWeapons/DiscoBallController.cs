@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DiscoBallController : ProjectileWeapon
 {    
@@ -24,6 +25,14 @@ public class DiscoBallController : ProjectileWeapon
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        UnityAction action1 = new UnityAction(Attack);
+        UnityAction action2 = new UnityAction(Blink);
+        TriggerController.Instance.SetTrigger(4, action1);
+        TriggerController.Instance.SetTrigger(3, action2);
     }
 
     public void Blink()

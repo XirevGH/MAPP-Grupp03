@@ -1,8 +1,18 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class YoyoController : PermanentProjectileWeapon
 {
     public GameObject yoyo;
+
+
+    private void Start()
+    {
+        UnityAction action1 = new UnityAction(Attack);
+        UnityAction action2 = new UnityAction(Blink);
+        TriggerController.Instance.SetTrigger(7, action1);
+        TriggerController.Instance.SetTrigger(3, action2);
+    }
 
     void Update()
     {
