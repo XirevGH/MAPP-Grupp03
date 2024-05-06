@@ -17996,16 +17996,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a89c7dedefacc87448b53e5e4529ae80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 0
-  moneyMultiplier: 0
-  damage: 0
-  areaOfEffectSize: 0
-  pierce: 0
-  xpMultiplier: 0
-  defence: 0
-  movementSpeed: 0
-  burstAmount: 0
-  maxHealth: 100
 --- !u!114 &543497618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18023,8 +18013,12 @@ MonoBehaviour:
   playerStats: {fileID: 543497617}
   startingWeapon: {fileID: 1047333868}
   currentItems: []
+  money: 0
   maxHealth: 0
-  health: 100
+  health: 0
+  xpHeld: 0
+  xpToLevel: 0
+  level: 0
 --- !u!114 &543497619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21568,7 +21562,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1806259868}
@@ -52413,26 +52407,6 @@ MonoBehaviour:
   money: 1000
   MoneyText1: {fileID: 0}
   MoneyText2: {fileID: 1687503610}
-  DamageCost: {fileID: 0}
-  DamageStats: {fileID: 0}
-  BPMCost: {fileID: 0}
-  BPMStats: {fileID: 0}
-  SizeCost: {fileID: 0}
-  SizeStats: {fileID: 0}
-  PierceCost: {fileID: 0}
-  PierceStats: {fileID: 0}
-  XpMultCost: {fileID: 0}
-  XpMultStats: {fileID: 0}
-  HPCost: {fileID: 0}
-  HPStats: {fileID: 0}
-  DefenceCost: {fileID: 0}
-  DefenceStats: {fileID: 0}
-  MovSpeedCost: {fileID: 0}
-  MovSpeedStats: {fileID: 0}
-  InvincibilityCost: {fileID: 0}
-  InvincibilityStats: {fileID: 0}
-  MoneyMultCost: {fileID: 0}
-  MoneyMultStats: {fileID: 0}
   items:
   - {fileID: 1848075309}
   - {fileID: 1616841855}
@@ -52446,7 +52420,6 @@ MonoBehaviour:
   - {fileID: 798736330}
   - {fileID: 656064299}
   - {fileID: 1733086101}
-  perLevelPriceIncrease: 100
   bassGuitarIncreaseDamage: 0
   yoyoIncreaseProjectileCount: 0
   yoyoIncreaseDamage: 0

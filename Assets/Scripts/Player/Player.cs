@@ -8,33 +8,28 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    
     [SerializeField] private Player player;
     [SerializeField] private Slider hpSlider;
     [SerializeField] private PlayerStats playerStats;
     [SerializeField] private Weapon startingWeapon;
     [SerializeField] private List<Item> currentItems;
 
+    
     private UpgradeSystem upgradeSystem;
     private UpgradePanel upgradeScreen;
     private Slider xpSlider;
     private TMP_Text levelText;
     private GameController gameController;
 
-    private int money;
-    private float moneyMultiplier;
-    private int damage;
-    private int areaOfEffectSize;
-    private int pierce;
-    private float xpMultiplier;
+    public int money;
     public float maxHealth;
     public float health;
-    private int defence;
-    private float movementSpeed;
-    private float xpHeld;
-    private float xpToLevel;
-    private int level;
+    public float xpHeld;
+    public float xpToLevel;
+    public int level;
 
-    private short burstAmount;
+    
 
     public static Player Instance
     {
@@ -52,23 +47,19 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        money = playerStats.money; 
-        moneyMultiplier = playerStats.moneyMultiplier; 
-        damage = playerStats.damage;
-        areaOfEffectSize = playerStats.areaOfEffectSize;
-        pierce = playerStats.pierce;
-        xpMultiplier = playerStats.xpMultiplier;
-        maxHealth = playerStats.maxHealth; 
+        InitializePlayer();
+    }   
+    private void InitializePlayer(){
+        money = 0; 
+        maxHealth = 100;
         health = maxHealth;
-        defence = playerStats.defence; 
-        movementSpeed = playerStats.movementSpeed; 
         xpToLevel = 100;
         level = 1;
-        burstAmount = playerStats.burstAmount;
         xpHeld = 0;
         currentItems = new List<Item>{startingWeapon};
-        Debug.Log("Awake");
+        
     }
+
 
     //For leveling up faster for testing, remove later
     private void Update()
@@ -136,9 +127,8 @@ public class Player : MonoBehaviour
     }
 
     private void Die()
-    {
-        level = 1;
-        currentItems = new List<Item> { startingWeapon };
+    {   //MetaUpgradeSystem.Instance.addMony(money);
+        InitializePlayer();
         gameController.GameOver();
     }
     #endregion
