@@ -44,46 +44,46 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         ToggleJoysticks(true);
-        TriggerController.Instance.GetComponent<TriggerController>().ToggleTrigger();
-        SoundManager.Instance.GetComponent<SoundManager>().ToggleMusicPause();
+        TriggerController.Instance.ToggleTrigger();
+        SoundManager.Instance.ToggleMusicPause();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-        SoundManager.Instance.GetComponent<SoundManager>().Click();
+        SoundManager.Instance.Click();
 
     }
     void PauseGame()
     {
         ToggleJoysticks(false);
-        TriggerController.Instance.GetComponent<TriggerController>().ToggleTrigger();
-        SoundManager.Instance.GetComponent<SoundManager>().ToggleMusicPause();
+        TriggerController.Instance.ToggleTrigger();
+        SoundManager.Instance.ToggleMusicPause();
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
-        SoundManager.Instance.GetComponent<SoundManager>().Click();
+        SoundManager.Instance.Click();
     }
 
     public void LoadMenu()
     {
-        SoundManager.Instance.GetComponent<SoundManager>().GoBackToMain();
+        SoundManager.Instance.GoBackToMain();
         GameIsPaused = false;
         ToggleJoysticks(true);
         Time.timeScale = 1f;
         SceneManager.LoadScene(mainMenuSceneName);
-        SoundManager.Instance.GetComponent<SoundManager>().Click();
+        SoundManager.Instance.Click();
     }
 
     public void Settings()
     {
         Debug.Log("Settings meny");
         settingPanel.SetActive(true);
-        SoundManager.Instance.GetComponent<SoundManager>().Click();
+        SoundManager.Instance.Click();
     }
 
     public void CloseSetting()
     {
         settingPanel.SetActive(false);
-        SoundManager.Instance.GetComponent<SoundManager>().Click();
+        SoundManager.Instance.Click();
 
     }
 
