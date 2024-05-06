@@ -10,8 +10,8 @@ using System.Data.SqlTypes;
 public class MetaUpgradeSystem : MonoBehaviour
 {
     [SerializeField] private int currency;
-    [SerializeField] private TextMeshProUGUI MoneyText1;
-    [SerializeField] private TextMeshProUGUI MoneyText2;
+    //[SerializeField] private TextMeshProUGUI MoneyText1;
+    //[SerializeField] private TextMeshProUGUI MoneyText2;
     
     [SerializeField] private List<Item> items;
 
@@ -164,8 +164,8 @@ public class MetaUpgradeSystem : MonoBehaviour
     }
 
     private void UpdateMoney(){
-        MoneyText1.SetText(currency.ToString());
-        MoneyText2.SetText(currency.ToString());
+        //MoneyText1.SetText(currency.ToString());
+        //MoneyText2.SetText(currency.ToString());
     }
 
     public void AddCurrency(int addedCurrency){

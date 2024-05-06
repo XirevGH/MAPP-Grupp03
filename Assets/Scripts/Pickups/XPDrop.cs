@@ -8,35 +8,45 @@ public class XPDrop : MonoBehaviour
 {
     [SerializeField] private int XP;
 
+    private GameObject player;
+    private Player playerScript;
+
+    static private GameController gameController;
     public float speed = 20f;
 
     private bool move = false;
 
     private Transform target;
-    private GameController gameController;
+    
 
     private void Awake()
-    {
-        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+    {   playerScript =  Player.Instance;
+        player = playerScript.GameObject();
+        if(gameController == null){
+            gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        }
+        
         gameController.AddXpObject(this);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.CompareTag("Player"))
-        {
-            other.GetComponent<Player>().AddXP(XP);
-            gameController.RemoveXpObject(this);
-            Destroy(gameObject);
-        }
-    }
+    
 
     void FixedUpdate()
     {
-        if (move && target != null)
+        if(Vector3.Distance(player.transform.position, transform.position) < 2 && move != true){
+            MoveToPlayer(player.transform);
+             
+        }
+        if (move && player != null)
         {
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        }
+            if(Vector3.Distance(player.transform.position, transform.position) < 0.3){
+                playerScript.AddXP(XP);
+                gameController.RemoveXpObject(this);
+                Destroy(gameObject);
+            }
+        } 
+       
     }
 
     public void MoveToPlayer(Transform playerTransform)
