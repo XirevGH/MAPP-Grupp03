@@ -22,8 +22,6 @@ public class MetaUpgradeSystem : MonoBehaviour
 
     string upgradeStatsFile;
 
-    private MetaUpgradeSystem instance;
-
     [SerializeField] private int bassGuitarIncreaseDamage;
     [SerializeField] private int yoyoIncreaseProjectileCount;
     [SerializeField] private int yoyoIncreaseDamage;
@@ -77,9 +75,9 @@ public class MetaUpgradeSystem : MonoBehaviour
     private void Awake()
     {
         Debug.Log("upgrade awake");
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
