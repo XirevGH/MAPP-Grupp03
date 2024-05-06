@@ -10,8 +10,8 @@ public class YoyoController : PermanentProjectileWeapon
     {
         UnityAction action1 = new UnityAction(Attack);
         UnityAction action2 = new UnityAction(Blink);
-        TriggerController.Instance.SetTrigger(7, action1);
-        TriggerController.Instance.SetTrigger(3, action2);
+        TriggerController.SetTrigger(7, action1);
+        TriggerController.SetTrigger(3, action2);
     }
 
     void Update()
