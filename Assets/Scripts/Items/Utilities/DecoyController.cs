@@ -19,25 +19,13 @@ public class DecoyController : Utility
     public DynamicJoystick dynamicJoystick;
     private Vector2 playerDirection, throwingDirection, playerPosition;
 
-    protected override void Awake()
-    {
-        base.Awake();
-        for (int i = 0; i < decoyAmountRank; i++)
-        {
-            IncreaseDecoyAmount();
-        }
-        for (int i = 0; i < decoyHealthRank; i++)
-        {
-            IncreaseDecoyHealth();
-        }
-    }
 
 
 
     private void Start()
     {
         UnityAction action = new UnityAction(Throw);
-        TriggerController.Instance.SetTrigger(15, action);
+        TriggerController.SetTrigger(15, action);
     }
 
     void Update()
