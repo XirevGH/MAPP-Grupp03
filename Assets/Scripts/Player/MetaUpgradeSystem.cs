@@ -9,7 +9,7 @@ using System.Data.SqlTypes;
 
 public class MetaUpgradeSystem : MonoBehaviour
 {
-    [SerializeField] public int money;
+    [SerializeField] private int currency;
     [SerializeField] private TextMeshProUGUI MoneyText1;
     [SerializeField] private TextMeshProUGUI MoneyText2;
     
@@ -49,6 +49,8 @@ public class MetaUpgradeSystem : MonoBehaviour
     [SerializeField] private int rollerSkatesIncreaseMovementSpeed;
     [SerializeField] private int stagePresenceIncreaseDamage;
     [SerializeField] private int stagePresenceIncreaseRadius;
+    [SerializeField] private int personalSpaceIncreaseRadius;
+    [SerializeField] private int personalSpaceIncreaseForce;
 
     public static MetaUpgradeSystem Instance
     {
@@ -62,10 +64,10 @@ public class MetaUpgradeSystem : MonoBehaviour
             foreach(string upgradeMethod in item.GetUpgradeOptions()) 
             { 
                 string variableName = char.ToLower(item.GetName()[0]) + item.GetName().Substring(1).Replace(" ", "") + upgradeMethod;
-                Debug.Log("Variable name: " + variableName);
+                /*Debug.Log("Variable name: " + variableName);
                 Debug.Log("Variable value: " + (int)typeof(MetaUpgradeSystem).GetField(variableName, BindingFlags.NonPublic | BindingFlags.Instance).GetValue(this));
                 Debug.Log("Item name: " + item.GetName());
-                Debug.Log("Upgrade method :" + upgradeMethod);
+                Debug.Log("Upgrade method :" + upgradeMethod);*/
                 upgradeMap.Add(Tuple.Create(item.GetName(), upgradeMethod), (int)typeof(MetaUpgradeSystem).GetField(variableName, BindingFlags.NonPublic | BindingFlags.Instance).GetValue(this));
             }
 
@@ -84,7 +86,7 @@ public class MetaUpgradeSystem : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
+        UpdateMoney();
         upgradeStatsFile = Application.persistentDataPath + "/upgradeInfo.json";
         ReadFile(upgradeStatsFile);
         CreateUpgradeMap();
@@ -151,15 +153,23 @@ public class MetaUpgradeSystem : MonoBehaviour
 
     
 
-    public bool EnothMoney(int price)
+    private bool EnothMoney(int price)
     {
-        if(money >= price){
-            money -= price;
-            MoneyText1.SetText(money.ToString());
-            MoneyText2.SetText(money.ToString());
+        if(currency >= price){
+            currency -= price;
+            UpdateMoney();
             return true;
         }
         return false;
+    }
+
+    private void UpdateMoney(){
+        MoneyText1.SetText(currency.ToString());
+        MoneyText2.SetText(currency.ToString());
+    }
+
+    public void AddCurrency(int addedCurrency){
+        currency += addedCurrency;
     }
 
     public List<Item> GetItems() 
@@ -167,7 +177,5 @@ public class MetaUpgradeSystem : MonoBehaviour
         return items;
     }
 
-    public void addMony(int monyToAdd){
-        money += monyToAdd;
-    } 
+    
 }
