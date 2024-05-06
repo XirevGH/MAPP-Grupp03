@@ -1,4 +1,3 @@
-using System;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.Events;
@@ -6,9 +5,9 @@ using UnityEngine.Events;
 
 public class TriggerController : MonoBehaviour
 {
-    public static float inGameCurrentTrackBPM;
-    public static Trigger[] triggers;
-    public static bool isTriggering;
+    [SerializeField] public float inGameCurrentTrackBPM;
+    [SerializeField] public Trigger[] triggers;
+    [SerializeField] public bool isTriggering;
 
     private AudioSource inGameMusic;
         
@@ -28,11 +27,9 @@ public class TriggerController : MonoBehaviour
 
         public void CheckForNewQuaterNote(float interval)
         {
-            float intervalTwoDecimal = (float)Math.Floor(interval * 100) / 100;
-
-            if (Mathf.FloorToInt(intervalTwoDecimal) != lastQuaterNote)
+            if (Mathf.FloorToInt(interval) != lastQuaterNote)
             {
-                lastQuaterNote = Mathf.FloorToInt(intervalTwoDecimal);
+                lastQuaterNote = Mathf.FloorToInt(interval);
 
                 if(isTriggering)
                 {
@@ -40,6 +37,25 @@ public class TriggerController : MonoBehaviour
                 } 
             }
         }
+    }
+
+    public static TriggerController Instance
+    {
+        get; private set;
+    }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+       
     }
 
     void Start()
@@ -66,12 +82,12 @@ public class TriggerController : MonoBehaviour
         }
     }
 
-    public static void ToggleTrigger()
+    public void ToggleTrigger()
     {
         isTriggering = !isTriggering;
     }
 
-    public static Trigger GetTrigger(int triggerNumber) 
+    public Trigger GetTrigger(int triggerNumber) 
     {
         return triggers[triggerNumber];
     }
@@ -81,7 +97,7 @@ public class TriggerController : MonoBehaviour
         return inGameCurrentTrackBPM;
     }
 
-    public static void SetTrigger(int triggerNumber, UnityAction action)
+    public void SetTrigger(int triggerNumber, UnityAction action)
     {
         triggers[triggerNumber].quaterNoteTrigger.AddListener(action);
     }

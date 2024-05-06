@@ -6,7 +6,7 @@ public class UpgradePanel : MonoBehaviour
     {
         Time.timeScale = 0f;
         gameObject.gameObject.SetActive(true);
-        TriggerController.ToggleTrigger();
+        TriggerController.Instance.GetComponent<TriggerController>().ToggleTrigger();
         SoundManager.Instance.GetComponent<SoundManager>().ToggleMusicPause();
     }
 
@@ -14,7 +14,7 @@ public class UpgradePanel : MonoBehaviour
     {
         Time.timeScale = 1f;
         gameObject.gameObject.SetActive(false);
-        TriggerController.ToggleTrigger();
+        TriggerController.Instance.GetComponent<TriggerController>().ToggleTrigger();
         SoundManager.Instance.GetComponent<SoundManager>().ToggleMusicPause();
     }
 }

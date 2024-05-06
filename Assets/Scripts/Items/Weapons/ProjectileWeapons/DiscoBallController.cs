@@ -31,8 +31,8 @@ public class DiscoBallController : ProjectileWeapon
     {
         UnityAction action1 = new UnityAction(Attack);
         UnityAction action2 = new UnityAction(Blink);
-        TriggerController.SetTrigger(4, action1);
-        TriggerController.SetTrigger(3, action2);
+        TriggerController.Instance.SetTrigger(4, action1);
+        TriggerController.Instance.SetTrigger(3, action2);
     }
 
     public void Blink()

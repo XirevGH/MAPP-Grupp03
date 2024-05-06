@@ -12,7 +12,7 @@ public class BassGuitar : PhysicalWeapon
         anim = GetComponent<Animator>();
        
         UnityAction action = new UnityAction(Attack);         
-        TriggerController.SetTrigger(3, action);
+        TriggerController.Instance.SetTrigger(3, action);
 
         
     }

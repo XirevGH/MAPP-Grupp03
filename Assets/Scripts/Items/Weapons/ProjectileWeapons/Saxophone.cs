@@ -16,7 +16,7 @@ public class Saxophone : ProjectileWeapon
     private void Start()
     {
         UnityAction action = new UnityAction(Attack);
-        TriggerController.SetTrigger(8, action);
+        TriggerController.Instance.SetTrigger(8, action);
     }
 
 

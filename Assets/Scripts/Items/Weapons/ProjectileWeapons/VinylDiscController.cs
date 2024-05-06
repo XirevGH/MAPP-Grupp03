@@ -15,7 +15,7 @@ public class VinylDiscController : ProjectileWeapon
     private void Start()
     {
         UnityAction action = new UnityAction(Attack);
-        TriggerController.SetTrigger(10, action);
+        TriggerController.Instance.SetTrigger(10, action);
     }
 
     public override void Attack()
