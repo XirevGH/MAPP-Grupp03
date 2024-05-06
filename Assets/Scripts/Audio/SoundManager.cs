@@ -10,10 +10,11 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] public AudioSource musicSource1, musicSource2, menuMusic, currentSource;
-    [SerializeField] private AudioClip[] musicTracks;
+    [SerializeField] public AudioSource musicSource1, musicSource2, menuMusic, currentSource, sfxSource;
+    [SerializeField] private AudioClip[] musicTracks, clickSound;
     [SerializeField] private int[] BPMforTracks;
     [SerializeField] float timeToFade = 1f;
+    
 
     public Scene currentScene;
     public AudioMixerSnapshot lowPassSnapshots, normalSnapshots;
@@ -251,6 +252,11 @@ public class SoundManager : MonoBehaviour
         }
 
      
+    }
+
+    public void Click()
+    {
+        sfxSource.PlayOneShot(clickSound[0], 1); 
     }
 
     
