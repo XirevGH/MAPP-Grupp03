@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
-{
-    
+{   [SerializeField] private MetaUpgradeSystem metaUpgradeSystem;
+    [SerializeField] private MainManager mainManager;
     [SerializeField] private Player player;
     [SerializeField] private Slider hpSlider;
     [SerializeField] private PlayerStats playerStats;
@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     private TMP_Text levelText;
     private GameController gameController;
 
-    public int money;
+    public int currency;
     public float maxHealth;
     public float health;
     public float xpHeld;
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
         InitializePlayer();
     }   
     private void InitializePlayer(){
-        money = 0; 
+        currency = 0; 
         maxHealth = 100;
         health = maxHealth;
         xpToLevel = 100;
@@ -127,7 +127,8 @@ public class Player : MonoBehaviour
     }
 
     private void Die()
-    {   //MetaUpgradeSystem.Instance.addMony(money);
+    {   metaUpgradeSystem.AddCurrency(currency);
+        mainManager.moneyEarned += currency;
         InitializePlayer();
         gameController.GameOver();
     }

@@ -23,7 +23,7 @@ public class Purse : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<Player>().money += moneyAmount;
+            other.GetComponent<Player>().currency += moneyAmount;
             UpgradeRandomItem();
             Debug.Log(item + upgradeText);
             GameObject textClone = Instantiate(text, new Vector3(transform.position.x, transform.position.y +2, -0.5f), Quaternion.identity);
