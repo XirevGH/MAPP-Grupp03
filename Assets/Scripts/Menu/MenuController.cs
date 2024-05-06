@@ -14,8 +14,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject itemsPanel;
     [SerializeField] private GameObject settingPanel;
     [SerializeField] private GameObject creditPanel;
-    //[SerializeField] private AudioSource audioSource;
-    //[SerializeField] private AudioClip clickSound;
+    
 
 
     [SerializeField] private int levelToload;
@@ -27,6 +26,7 @@ public class MenuController : MonoBehaviour
       
         ChangeScene();
         SoundManager.Instance.GetComponent<SoundManager>().StartGame();
+        SoundManager.Instance.GetComponent<SoundManager>().Click();
     }
 
     public void ShowCredits()

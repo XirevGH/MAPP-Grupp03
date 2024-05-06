@@ -12,17 +12,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseButton; 
 
     [SerializeField] private GameObject settingPanel;
- // [SerializeField] private AudioSource audioSource;
-   //[SerializeField] private AudioClip clickSound;
-
-
 
     public string mainMenuSceneName = "MainMenu";
 
-    private void Start()
-    {
-       
-    }
 
     void Update()
     {
@@ -57,6 +49,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        SoundManager.Instance.GetComponent<SoundManager>().Click();
 
     }
     void PauseGame()
@@ -67,7 +60,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
-       //audioSource.PlayOneShot(clickSound);
+        SoundManager.Instance.GetComponent<SoundManager>().Click();
     }
 
     public void LoadMenu()
@@ -76,20 +69,21 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = false;
         ToggleJoysticks(true);
         Time.timeScale = 1f;
-        SceneManager.LoadScene(mainMenuSceneName); 
+        SceneManager.LoadScene(mainMenuSceneName);
+        SoundManager.Instance.GetComponent<SoundManager>().Click();
     }
 
     public void Settings()
     {
         Debug.Log("Settings meny");
         settingPanel.SetActive(true);
-    
+        SoundManager.Instance.GetComponent<SoundManager>().Click();
     }
 
     public void CloseSetting()
     {
         settingPanel.SetActive(false);
-      //  audioSource.PlayOneShot(clickSound);
+        SoundManager.Instance.GetComponent<SoundManager>().Click();
 
     }
 

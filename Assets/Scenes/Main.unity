@@ -1087,6 +1087,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 371572267}
   m_CullTransparentMesh: 1
+--- !u!82 &391076307 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4297343317063124742, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+  m_PrefabInstance: {fileID: 1431856007}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &395017870
 GameObject:
   m_ObjectHideFlags: 0
@@ -6533,6 +6538,18 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 51626d5583f3bd345959fb1fd4a5550e, type: 3}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: sfxSource
+      value: 
+      objectReference: {fileID: 391076307}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: clickSound.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: clickSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 03a59a406ce7001498b6738f21472b64, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

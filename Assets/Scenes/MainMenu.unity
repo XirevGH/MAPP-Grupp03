@@ -38259,11 +38259,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1282012774}
   m_CullTransparentMesh: 1
---- !u!82 &1283233605 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8419575893291496720, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
-  m_PrefabInstance: {fileID: 5131103641739008332}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1287071403
 GameObject:
   m_ObjectHideFlags: 0
@@ -41269,7 +41264,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 2101310067}
-  exit: {fileID: 0}
   play: {fileID: 1912058776}
   upgradesPanel: {fileID: 1135520745}
   itemsPanel: {fileID: 875972082}
@@ -61321,10 +61315,6 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
-      propertyPath: menuMusic
-      value: 
-      objectReference: {fileID: 1283233605}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
