@@ -120,8 +120,6 @@ public class UpgradeSystem : MonoBehaviour
 
         
         int randomItemIndex = UnityEngine.Random.Range(0, itemsOfType.Count);
-        Debug.Log("Weapon: Amount of items in the list: " + itemsOfType.Count);
-        Debug.Log("Weapon: Random index chosen: " + randomItemIndex);
 
         Item chosenItem = itemsOfType[randomItemIndex];
         return Tuple.Create(chosenItem, chosenItem.GetName());

@@ -3187,7 +3187,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Synthwave Blast,ProjectileCountUpgradeRank
+          m_StringArgument: Synthwave Blast,IncreaseProjectileCount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &76531670
@@ -4134,7 +4134,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Roller Skates,MovementSpeedUpgradeRank
+          m_StringArgument: Roller Skates,IncreaseMovementSpeed
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &89927884
@@ -7751,7 +7751,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Electric Guitar,DamageUpgradeRank
+          m_StringArgument: Electric Guitar,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &189749679
@@ -11523,7 +11523,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Synthwave Blast,PenetrationAmountUpgradeRank
+          m_StringArgument: Synthwave Blast,IncreasePenetrationAmount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &358665122
@@ -12586,7 +12586,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Disco Ball,DamageUpgradeRank
+          m_StringArgument: Disco Ball,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &380668766
@@ -16948,7 +16948,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Health,HealthUpgradeRank
+          m_StringArgument: Health,IncreaseHealth
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &505731916
@@ -19322,7 +19322,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Stage Presence,DamageUpgradeRank
+          m_StringArgument: Stage Presence,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &595757711
@@ -21875,7 +21875,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Vinyl Record,DamageUpgradeRank
+          m_StringArgument: Vinyl Record,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 77403563}
@@ -23836,7 +23836,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Disco Ball,PenetrationAmountUpgradeRank
+          m_StringArgument: Disco Ball,IncreasePenetrationAmount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &771210309
@@ -29181,7 +29181,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Vinyl Record,PenetrationAmountUpgradeRank
+          m_StringArgument: Vinyl Record,IncreasePenetrationAmount
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 77403563}
@@ -30970,7 +30970,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Decoy,DecoyAmountUpgradeRank
+          m_StringArgument: Decoy,IncreaseDecoy
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1001002496
@@ -31412,7 +31412,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Vinyl Record,ProjectileCountUpgradeRank
+          m_StringArgument: Vinyl Record,IncreaseProjectileCount
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 77403563}
@@ -33737,7 +33737,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Chill Vibe,RadiusUpgradeRank
+          m_StringArgument: Chill Vibe,IncreaseRadius
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1098210114
@@ -37770,7 +37770,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Electric Guitar,TetherUpgradeRank
+          m_StringArgument: Electric Guitar,IncreaseTetherAmount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1258439481
@@ -37941,7 +37941,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Chill Vibe,SlowUpgradeRank
+          m_StringArgument: Chill Vibe,IncreaseSlow
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1264745448
@@ -38510,7 +38510,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Vinyl Record,DamageUpgradeRank
+          m_StringArgument: Yoyo,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1290233828
@@ -42248,7 +42248,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Yoyo,ProjectileCountUpgradeRank
+          m_StringArgument: Yoyo,IncreaseProjectileCount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1455975414
@@ -43875,7 +43875,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Saxophone,PenetrationAmountUpgradeRank
+          m_StringArgument: Saxophone,IncreasePenetrationAmount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1544027771
@@ -49648,7 +49648,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Synthwave Blast,DamageUpgradeRank
+          m_StringArgument: Synthwave Blast,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1727458413
@@ -56639,7 +56639,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Saxophone,ProjectileCountUpgradeRank
+          m_StringArgument: Saxophone,IncreaseProjectileCount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2000235676
@@ -57373,7 +57373,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Saxophone,DamageUpgradeRank
+          m_StringArgument: Saxophone,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2026435082
@@ -59602,7 +59602,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Disco Ball,ProjectileCountUpgradeRank
+          m_StringArgument: Disco Ball,IncreaseProjectileCount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2094675558
