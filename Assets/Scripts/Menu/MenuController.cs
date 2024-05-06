@@ -98,12 +98,7 @@ public class MenuController : MonoBehaviour
     
 
 
-    public void Endgame()
-
-    {
-        Application.Quit();
-       
-    }
+   
 
 
 
