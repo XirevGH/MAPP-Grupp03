@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PushAwayAbility : Utility
+public class PersonalSpace : Utility
 {
   
     public float pushForce = 5f;

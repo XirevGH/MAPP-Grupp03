@@ -49,6 +49,8 @@ public class MetaUpgradeSystem : MonoBehaviour
     [SerializeField] private int rollerSkatesIncreaseMovementSpeed;
     [SerializeField] private int stagePresenceIncreaseDamage;
     [SerializeField] private int stagePresenceIncreaseRadius;
+    [SerializeField] private int personalSpaceIncreaseRadius;
+    [SerializeField] private int personalSpaceIncreaseForce;
 
     public static MetaUpgradeSystem Instance
     {
