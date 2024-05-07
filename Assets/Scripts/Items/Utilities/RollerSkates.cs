@@ -7,6 +7,7 @@ public class RollerSkates : Utility
     public PlayerMovement playerMovement;
     public float percentageIncrease;
     public int movementSpeedRank;
+    public int movementSpeedUpgradeCost;
 
     public float GetMovementSpeedUpgradePercentage()
     {
@@ -21,6 +22,12 @@ public class RollerSkates : Utility
     
     protected override void CreateUpgradeOptions()
     {
+        Debug.Log("Created upgrade options for roller skates");
         upgradeOptions.Add("IncreaseMovementSpeed");
+    }
+
+    public int GetIncreaseMovementSpeedCost()
+    {
+        return movementSpeedUpgradeCost;
     }
 }

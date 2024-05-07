@@ -23,21 +23,6 @@ public class DecoyController : Utility
     public DynamicJoystick dynamicJoystick;
     private Vector2 playerDirection, throwingDirection, playerPosition;
 
-    protected override void Awake()
-    {
-        base.Awake();
-        for (int i = 0; i < decoyAmountRank; i++)
-        {
-            IncreaseDecoyAmount();
-        }
-        for (int i = 0; i < decoyHealthRank; i++)
-        {
-            IncreaseDecoyHealth();
-        }
-    }
-
-
-
     private void Start()
     {
         UnityAction action = new UnityAction(Throw);
@@ -92,25 +77,16 @@ public class DecoyController : Utility
         
      }
 
-    public void DecoyAmountUpgradeRank(int rankAmount)
-    {
-        decoyAmountRank += rankAmount;
-    }
-    public void DecoyHealthUpgradeRank(int rankAmount)
-    {
-        decoyAmountRank += rankAmount;
-    }
-
     public void IncreaseDecoyAmount()
     {
+        decoyAmountRank++;
         amountOfDecoy += decoyIncreasePerUpgrade;
-        DecoyAmountUpgradeRank(1);
     }
 
     public void IncreaseDecoyHealth()
     {
+        decoyHealthRank++;
         decoyHealth += decoyIncreasePerUpgrade;
-        DecoyHealthUpgradeRank(1);
     }
 
     public int GetDecoyHealthAmountPerUpgrade()
