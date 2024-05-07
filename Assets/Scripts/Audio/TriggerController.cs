@@ -36,8 +36,7 @@ public class TriggerController : MonoBehaviour
 
             if (Mathf.FloorToInt(interval) != lastQuaterNote)
             {
-                Debug.Log(Mathf.FloorToInt(interval));
-                Debug.Log(lastQuaterNote);
+               
                 lastQuaterNote = Mathf.FloorToInt(interval);
 
                 if(isTriggering)
