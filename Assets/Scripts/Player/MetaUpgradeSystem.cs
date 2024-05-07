@@ -12,7 +12,9 @@ public class MetaUpgradeSystem : MonoBehaviour
     [SerializeField] private int currency;
     //[SerializeField] private TextMeshProUGUI MoneyText1;
     //[SerializeField] private TextMeshProUGUI MoneyText2;
-    
+
+    private static bool initialUpgrades = true;
+
     [SerializeField] private List<Item> items;
     private Dictionary<Tuple<string, string>, int> upgradeMap;
     private Dictionary<Tuple<string, string>, int> costMap;
@@ -64,11 +66,29 @@ public class MetaUpgradeSystem : MonoBehaviour
                 Debug.Log("Upgrade method :" + upgradeMethod);*/
                 upgradeMap.Add(Tuple.Create(item.GetName(), upgradeMethod), (int)typeof(MetaUpgradeSystem).GetField(variableName, BindingFlags.NonPublic | BindingFlags.Instance).GetValue(this));
             }
-
         }
     }
 
-    private void Awake()
+    private void CreateCostMap()
+    {
+        costMap = new Dictionary<Tuple<string, string>, int>();
+        foreach (Item item in items)
+        {
+            /*Debug.Log(item.GetName());
+            Debug.Log(item.GetUpgradeOptions().Count);*/
+            foreach (string upgradeMethod in item.GetUpgradeOptions())
+            {
+                
+                string costMethod = "Get" + upgradeMethod + "Cost";
+                /*Debug.Log(item.GetName());
+                Debug.Log(upgradeMethod);
+                Debug.Log(costMethod);*/
+                costMap.Add(Tuple.Create(item.GetName(), upgradeMethod), (int)item.GetType().GetMethod(costMethod).Invoke(item, null));
+            }
+        }
+    }
+
+    private void Start()
     {
         Debug.Log("upgrade awake");
         if (Instance == null)
@@ -83,18 +103,22 @@ public class MetaUpgradeSystem : MonoBehaviour
         UpdateMoney();
         upgradeStatsFile = Application.persistentDataPath + "/upgradeInfo.json";
         ReadFile(upgradeStatsFile);
+        CreateCostMap();
         CreateUpgradeMap();
-        foreach (Item item in items)
+        if (initialUpgrades)
         {
-            foreach(string upgradeMethod in item.GetUpgradeOptions())
+            foreach (Item item in items)
             {
-                int rank = upgradeMap[Tuple.Create(item.GetName(), upgradeMethod)];
-                for(int i = 0; i < rank; i++)
+                foreach (string upgradeMethod in item.GetUpgradeOptions())
                 {
-                    item.GetType().GetMethod(upgradeMethod).Invoke(item, null);
+                    int rank = upgradeMap[Tuple.Create(item.GetName(), upgradeMethod)];
+                    for (int i = 0; i < rank; i++)
+                    {
+                        item.GetType().GetMethod(upgradeMethod).Invoke(item, null);
+                    }
                 }
-                
             }
+            initialUpgrades = false;
         }
     }
 
@@ -117,19 +141,23 @@ public class MetaUpgradeSystem : MonoBehaviour
         return JsonUtility.ToJson(this);
     }
 
-
-    
-    
-
-        
-    
-
+    private Tuple<string, string> SplitClassMethodString(string classAndMethod)
+    {
+        string[] parts = classAndMethod.Split(',');
+        string className = parts[0];
+        string methodName = parts[1];
+        return Tuple.Create(className, methodName);
+    }    
+    public string GetUpgradeCost(string classAndMethod)
+    {
+        (string className, string methodName) = SplitClassMethodString(classAndMethod);
+        Debug.Log(className + " " + methodName);
+        return costMap[Tuple.Create(className, methodName)].ToString();
+    }
     
     public void UpgradeRank(string classAndMethod)
     {
-        string[] parts = classAndMethod.Split(','); 
-        string className = parts[0];
-        string methodName = parts[1];
+        (string className, string methodName) = SplitClassMethodString(classAndMethod);
         string variableName = char.ToLower(className[0]) + className.Substring(1).Replace(" ", "") + methodName;
         int variableValueBefore = (int)typeof(MetaUpgradeSystem).GetField(variableName, (BindingFlags) 36).GetValue(this);
         int variableValueAfter = variableValueBefore + 1;
