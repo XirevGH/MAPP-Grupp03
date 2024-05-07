@@ -73,7 +73,6 @@ public class Player : MonoBehaviour
             if (xpSlider == null)
             {
                 xpSlider = GameObject.FindGameObjectWithTag("XPSlider").GetComponent<Slider>();
-                
             }
             if (levelText == null)
             {

@@ -9,7 +9,9 @@ public class ChillVibe : Utility
     [SerializeField] private float slowIncreasePercentage;
 
     public int slowRank;
+    public int slowUpgradeCost;
     public int radiusRank;
+    public int radiusUpgradeCost;
 
     public void IncreaseRadius()
     {
@@ -37,6 +39,16 @@ public class ChillVibe : Utility
     {
         upgradeOptions.Add("IncreaseRadius");
         upgradeOptions.Add("IncreaseSlow");
+    }
+
+    public int GetIncreaseRadiusCost()
+    {
+        return radiusUpgradeCost;
+    }
+
+    public int GetIncreaseSlowCost()
+    {
+        return slowUpgradeCost;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

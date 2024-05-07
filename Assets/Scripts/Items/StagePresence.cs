@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StagePresence : Weapon
@@ -23,6 +21,7 @@ public class StagePresence : Weapon
 
     protected override void CreateUpgradeOptions()
     {
+        base.CreateUpgradeOptions();
         upgradeOptions.Add("IncreaseRadius");
     }
 

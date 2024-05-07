@@ -18,6 +18,9 @@ public class PersonalSpace : Utility
     public int radiusRank;
     public int forceRank;
 
+    public int radiusUpgradeCost;
+    public int forceUpgradeCost;
+
 
     private void Update()
     {
@@ -61,7 +64,15 @@ public class PersonalSpace : Utility
         upgradeOptions.Add("IncreaseForce");
     }
 
-    
+    public int GetIncreaseRadiusCost()
+    {
+        return radiusUpgradeCost;
+    }
+
+    public int GetIncreaseForceCost()
+    {
+        return forceUpgradeCost;
+    }
 
     private void PushEnemiesAway()
     {

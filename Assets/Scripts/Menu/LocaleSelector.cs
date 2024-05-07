@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 
 public class Localization : MonoBehaviour
 {
     private void Start()
     {
-        int savedLocaleID = PlayerPrefs.GetInt("LocaleKey", 0);
-        ChangeLocale(savedLocaleID);
+       int savedLocaleID = PlayerPrefs.GetInt("LocaleKey", 0);
+       ChangeLocale(savedLocaleID);
     }
 
     private bool active = false;

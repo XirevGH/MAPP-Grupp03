@@ -51,8 +51,8 @@ MonoBehaviour:
   musicSource1: {fileID: 4282401076657109252}
   musicSource2: {fileID: 1413303723989624773}
   menuMusic: {fileID: 8419575893291496720}
-  currentSource: {fileID: 0}
   sfxSource: {fileID: 4297343317063124742}
+  currentSource: {fileID: 0}
   musicTracks:
   - {fileID: 8300000, guid: 51626d5583f3bd345959fb1fd4a5550e, type: 3}
   - {fileID: 8300000, guid: 7d314c10faf80994da9aed2d48de3c89, type: 3}
@@ -60,8 +60,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: dfab166b772b7b24e802b21757083d6f, type: 3}
   clickSound:
   - {fileID: 8300000, guid: 03a59a406ce7001498b6738f21472b64, type: 3}
-  BPMforTracks: 640000006e0000007800000082000000
+  BPMForTracks: 640000006e0000007800000082000000
   timeToFade: 1.25
+  sfxObject: {fileID: 7176476281948975897, guid: 68b62b1a95c83e04781fdde2017472eb, type: 3}
   currentScene:
     m_Handle: 0
   lowPassSnapshots: {fileID: 6332697282471297084, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}

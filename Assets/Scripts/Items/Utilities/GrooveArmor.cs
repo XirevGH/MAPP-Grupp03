@@ -6,6 +6,7 @@ public class GrooveArmor : Utility
 {
     public float percentageIncrease;
     public int healthRank;
+    public int healthUpgradeCost;
 
     public void IncreaseHealth() 
     {
@@ -21,5 +22,10 @@ public class GrooveArmor : Utility
     protected override void CreateUpgradeOptions()
     {
         upgradeOptions.Add("IncreaseHealth");
+    }
+
+    public int GetIncreaseHealthCost()
+    {
+        return healthUpgradeCost;
     }
 }

@@ -23,6 +23,7 @@ TagManager:
   - UpgradeScreen
   - SettingsManager
   - PursePanel
+  - MetaUpgradeSystem
   layers:
   - Default
   - TransparentFX
