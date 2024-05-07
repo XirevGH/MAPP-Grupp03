@@ -5865,7 +5865,7 @@ MonoBehaviour:
     quaterNoteTrigger:
       m_PersistentCalls:
         m_Calls: []
-    isTriggering: 0
+    isTriggering: 1
   - noteValue: 11
     quaterNoteTrigger:
       m_PersistentCalls:
@@ -59029,7 +59029,7 @@ MonoBehaviour:
   damageRank: 0
   damageUpgradeCost: 0
   percentageDamageIncrease: 10
-  attackSound: {fileID: 8300000, guid: 25cc512ac62420643b7b9e89090d6130, type: 3}
+  attackSound: {fileID: 8300000, guid: 8016efeb188fdde458cc881148701656, type: 3}
   amountOfTethers: 1
   tetherIncreasePerUpgrade: 1
   tetherRank: 0
