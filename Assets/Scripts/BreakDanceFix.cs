@@ -69,6 +69,11 @@ public class BreakDanceFix : PhysicalWeapon
         throw new System.NotImplementedException();
     }
 
+    public override int GetIncreaseDamageCost()
+    {
+        return damageUpgradeCost;
+    }
+
     /*
     private void OnTriggerStay2D(Collider2D other)
     {

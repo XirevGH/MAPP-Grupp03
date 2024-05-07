@@ -8,6 +8,7 @@ public abstract class PermanentProjectileWeapon : Weapon
     [SerializeField] protected int projectileIncreasePerUpgrade;
 
     public int projectileRank;
+    public int projectileUpgradeCost;
 
     public override void IncreaseDamage()
     {
@@ -34,4 +35,6 @@ public abstract class PermanentProjectileWeapon : Weapon
         base.CreateUpgradeOptions();
         upgradeOptions.Add("IncreaseProjectileCount");
     }
+
+    public abstract int GetIncreaseProjectileCountCost();
 }

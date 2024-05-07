@@ -5,6 +5,7 @@ public abstract class Weapon : Item
 {
     public float damage;
     public int damageRank;
+    public int damageUpgradeCost;
     public float percentageDamageIncrease;
 
     public abstract void Attack();
@@ -29,4 +30,6 @@ public abstract class Weapon : Item
     {
         return "Weapon";
     }
+
+    public abstract int GetIncreaseDamageCost();
 }
