@@ -10,8 +10,8 @@ public class BeatSpawner : MonoBehaviour
 
     private void Start()
     {
-        UnityAction action1 = new UnityAction(SpawnBeat);
-        UnityAction action2 = new UnityAction(SetSpawnPosition);
+        UnityAction action1 = new UnityAction(SetSpawnPosition);
+        UnityAction action2 = new UnityAction(SpawnBeat);
         TriggerController.Instance.SetTrigger(triggerNumber, action1);
         TriggerController.Instance.SetTrigger(triggerNumber, action2);
     }

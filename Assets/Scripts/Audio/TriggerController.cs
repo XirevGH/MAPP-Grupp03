@@ -19,6 +19,7 @@ public class TriggerController : MonoBehaviour
         [SerializeField] public UnityEvent quaterNoteTrigger;
         private int lastQuaterNote;
         public bool isTriggering;
+        private AudioClip currentClip;
 
         public float GetIntervalLength(float BPM)
         {
@@ -27,8 +28,15 @@ public class TriggerController : MonoBehaviour
 
         public void CheckForNewQuaterNote(float interval)
         {
+            if (currentClip != SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>().clip)
+            {
+                currentClip = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>().clip;
+                lastQuaterNote = 0;
+            }
+
             if (Mathf.FloorToInt(interval) != lastQuaterNote)
             {
+               
                 lastQuaterNote = Mathf.FloorToInt(interval);
 
                 if(isTriggering)
@@ -36,6 +44,8 @@ public class TriggerController : MonoBehaviour
                     quaterNoteTrigger.Invoke();
                 } 
             }
+
+            
         }
     }
 
