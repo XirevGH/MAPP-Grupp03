@@ -40,9 +40,4 @@ public class BassGuitar : PhysicalWeapon
             colliders.Clear();
         }
     }
-
-    public override int GetIncreaseDamageCost()
-    {
-        return damageUpgradeCost;
-    }
 }

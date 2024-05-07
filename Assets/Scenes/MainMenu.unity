@@ -2050,6 +2050,7 @@ GameObject:
   - component: {fileID: 51714691}
   - component: {fileID: 51714693}
   - component: {fileID: 51714692}
+  - component: {fileID: 51714694}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2175,6 +2176,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51714690}
   m_CullTransparentMesh: 1
+--- !u!114 &51714694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51714690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Disco Ball
+  method: GetCurrentDamage
+  isPercentage: 0
 --- !u!1 &52748015
 GameObject:
   m_ObjectHideFlags: 0
@@ -2608,10 +2624,10 @@ RectTransform:
   - {fileID: 1976892569}
   m_Father: {fileID: 242387200}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -187.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &67619377
 GameObject:
@@ -2908,6 +2924,7 @@ GameObject:
   - component: {fileID: 73953078}
   - component: {fileID: 73953080}
   - component: {fileID: 73953079}
+  - component: {fileID: 73953081}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3031,6 +3048,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73953077}
   m_CullTransparentMesh: 1
+--- !u!114 &73953081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73953077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Vinyl Record
+  method: GetDamageIncreasePercentage
+  isPercentage: 1
 --- !u!1 &74069924
 GameObject:
   m_ObjectHideFlags: 0
@@ -4000,11 +4032,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 88295922}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Electric Guitar
-  methodName: IncreaseDamage
+  item: Electric Guitar
+  method: GetIncreaseDamageCost
+  isPercentage: 0
 --- !u!1 &88895291
 GameObject:
   m_ObjectHideFlags: 0
@@ -4523,6 +4556,7 @@ GameObject:
   - component: {fileID: 99131350}
   - component: {fileID: 99131349}
   - component: {fileID: 99131351}
+  - component: {fileID: 99131352}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -4662,6 +4696,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Disco Ball
   methodName: IncreasePenetrationAmount
+  upgrade: {fileID: 0}
+--- !u!114 &99131352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99131347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Disco Ball
+  method: 
+  isPercentage: 0
 --- !u!1 &99881783
 GameObject:
   m_ObjectHideFlags: 0
@@ -4830,10 +4880,10 @@ RectTransform:
   - {fileID: 1844713526}
   m_Father: {fileID: 341002535}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -62.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &111336895
 GameObject:
@@ -5327,6 +5377,7 @@ GameObject:
   - component: {fileID: 127321789}
   - component: {fileID: 127321791}
   - component: {fileID: 127321790}
+  - component: {fileID: 127321792}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -5452,6 +5503,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127321788}
   m_CullTransparentMesh: 1
+--- !u!114 &127321792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127321788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Stage Presence
+  method: 
+  isPercentage: 0
 --- !u!1 &131108516
 GameObject:
   m_ObjectHideFlags: 0
@@ -5641,6 +5707,7 @@ GameObject:
   - component: {fileID: 131749226}
   - component: {fileID: 131749225}
   - component: {fileID: 131749227}
+  - component: {fileID: 131749228}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -5780,6 +5847,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Saxophone
   methodName: IncreasePenetrationAmount
+  upgrade: {fileID: 0}
+--- !u!114 &131749228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131749223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Saxophone
+  method: 
+  isPercentage: 0
 --- !u!1 &135113055
 GameObject:
   m_ObjectHideFlags: 0
@@ -6374,6 +6457,7 @@ GameObject:
   - component: {fileID: 150573716}
   - component: {fileID: 150573718}
   - component: {fileID: 150573717}
+  - component: {fileID: 150573719}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -6499,6 +6583,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 150573715}
   m_CullTransparentMesh: 1
+--- !u!114 &150573719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150573715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Personal Space
+  method: 
+  isPercentage: 0
 --- !u!1 &151367101
 GameObject:
   m_ObjectHideFlags: 0
@@ -6670,6 +6769,7 @@ GameObject:
   - component: {fileID: 152098797}
   - component: {fileID: 152098799}
   - component: {fileID: 152098798}
+  - component: {fileID: 152098800}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -6795,6 +6895,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152098796}
   m_CullTransparentMesh: 1
+--- !u!114 &152098800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152098796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Saxophone
+  method: GetCurrentDamage
+  isPercentage: 0
 --- !u!1 &156275574
 GameObject:
   m_ObjectHideFlags: 0
@@ -7113,10 +7228,10 @@ RectTransform:
   - {fileID: 572661076}
   m_Father: {fileID: 2026309917}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -62.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &164689834
 GameObject:
@@ -7204,6 +7319,7 @@ GameObject:
   - component: {fileID: 170472819}
   - component: {fileID: 170472821}
   - component: {fileID: 170472820}
+  - component: {fileID: 170472822}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -7329,6 +7445,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170472818}
   m_CullTransparentMesh: 1
+--- !u!114 &170472822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170472818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Disco Ball
+  method: GetCurrentProjectileCount
+  isPercentage: 0
 --- !u!1 &171223867
 GameObject:
   m_ObjectHideFlags: 0
@@ -7612,9 +7743,9 @@ RectTransform:
   - {fileID: 1906974253}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 480.3999, y: -524}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &182843106
@@ -8009,6 +8140,7 @@ GameObject:
   - component: {fileID: 195377278}
   - component: {fileID: 195377280}
   - component: {fileID: 195377279}
+  - component: {fileID: 195377281}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -8132,6 +8264,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195377277}
   m_CullTransparentMesh: 1
+--- !u!114 &195377281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195377277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Yoyo
+  method: GetProjectileIncreasePerUpgrade
+  isPercentage: 0
 --- !u!1 &195427051
 GameObject:
   m_ObjectHideFlags: 0
@@ -8490,10 +8637,10 @@ RectTransform:
   - {fileID: 1088814521}
   m_Father: {fileID: 857589419}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 242, y: -62.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &200300767
 GameObject:
@@ -9300,6 +9447,7 @@ GameObject:
   - component: {fileID: 232367346}
   - component: {fileID: 232367345}
   - component: {fileID: 232367347}
+  - component: {fileID: 232367348}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -9439,6 +9587,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Chill Vibe
   methodName: IncreaseSlow
+  upgrade: {fileID: 0}
+--- !u!114 &232367348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232367343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Chill Vibe
+  method: 
+  isPercentage: 0
 --- !u!1 &236569654
 GameObject:
   m_ObjectHideFlags: 0
@@ -9450,6 +9614,7 @@ GameObject:
   - component: {fileID: 236569655}
   - component: {fileID: 236569657}
   - component: {fileID: 236569656}
+  - component: {fileID: 236569658}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -9575,6 +9740,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236569654}
   m_CullTransparentMesh: 1
+--- !u!114 &236569658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236569654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Decoy
+  method: 
+  isPercentage: 0
 --- !u!1 &242387199
 GameObject:
   m_ObjectHideFlags: 0
@@ -10463,10 +10643,10 @@ RectTransform:
   - {fileID: 467439716}
   m_Father: {fileID: 2055604420}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -62.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &309888650
 GameObject:
@@ -11373,11 +11553,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 326386308}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Decoy
-  methodName: IncreaseDecoyAmount
+  item: Decoy
+  method: 
+  isPercentage: 0
 --- !u!1 &329286310
 GameObject:
   m_ObjectHideFlags: 0
@@ -11657,6 +11838,7 @@ GameObject:
   - component: {fileID: 334836282}
   - component: {fileID: 334836284}
   - component: {fileID: 334836283}
+  - component: {fileID: 334836285}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -11782,6 +11964,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334836281}
   m_CullTransparentMesh: 1
+--- !u!114 &334836285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334836281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Decoy
+  method: 
+  isPercentage: 0
 --- !u!1 &335149464
 GameObject:
   m_ObjectHideFlags: 0
@@ -12906,6 +13103,7 @@ GameObject:
   - component: {fileID: 373848582}
   - component: {fileID: 373848584}
   - component: {fileID: 373848583}
+  - component: {fileID: 373848585}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -13031,6 +13229,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373848581}
   m_CullTransparentMesh: 1
+--- !u!114 &373848585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373848581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Yoyo
+  method: GetCurrentDamage
+  isPercentage: 0
 --- !u!1001 &376511731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13114,6 +13327,10 @@ PrefabInstance:
     - target: {fileID: 8740916117587216165, guid: 17ccd9c1a77fa004790076d7ee038be3, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740916117587216165, guid: 17ccd9c1a77fa004790076d7ee038be3, type: 3}
+      propertyPath: m_TagString
+      value: Vinyl Record
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13719,9 +13936,9 @@ RectTransform:
   - {fileID: 765764874}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10301.199, y: -524}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &391427945
@@ -13817,6 +14034,10 @@ PrefabInstance:
     - target: {fileID: 3584226290686964480, guid: c700b16655ade9b4a866c1c987d323e1, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584226290686964480, guid: c700b16655ade9b4a866c1c987d323e1, type: 3}
+      propertyPath: m_TagString
+      value: Decoy
       objectReference: {fileID: 0}
     - target: {fileID: 6050468577649203368, guid: c700b16655ade9b4a866c1c987d323e1, type: 3}
       propertyPath: player
@@ -14434,9 +14655,9 @@ RectTransform:
   - {fileID: 1086674387}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 12483.6, y: -524}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &406590735
@@ -15043,6 +15264,7 @@ GameObject:
   - component: {fileID: 425493282}
   - component: {fileID: 425493281}
   - component: {fileID: 425493283}
+  - component: {fileID: 425493284}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -15182,6 +15404,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Saxophone
   methodName: IncreaseProjectileCount
+  upgrade: {fileID: 0}
+--- !u!114 &425493284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425493279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Saxophone
+  method: GetIncreaseProjectileCountCost
+  isPercentage: 0
 --- !u!1 &426095742
 GameObject:
   m_ObjectHideFlags: 0
@@ -15904,10 +16142,10 @@ RectTransform:
   - {fileID: 1472484093}
   m_Father: {fileID: 341002535}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -312.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &451569157
 GameObject:
@@ -16513,6 +16751,7 @@ GameObject:
   - component: {fileID: 469126685}
   - component: {fileID: 469126687}
   - component: {fileID: 469126686}
+  - component: {fileID: 469126688}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -16638,6 +16877,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469126684}
   m_CullTransparentMesh: 1
+--- !u!114 &469126688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469126684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Synthwave Blast
+  method: 
+  isPercentage: 0
 --- !u!1 &472844880
 GameObject:
   m_ObjectHideFlags: 0
@@ -16850,9 +17104,9 @@ RectTransform:
   - {fileID: 582799798}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 5936.399, y: -524}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &473561495
@@ -17172,6 +17426,7 @@ GameObject:
   - component: {fileID: 486087543}
   - component: {fileID: 486087545}
   - component: {fileID: 486087544}
+  - component: {fileID: 486087546}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -17295,6 +17550,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486087542}
   m_CullTransparentMesh: 1
+--- !u!114 &486087546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486087542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Vinyl Record
+  method: 
+  isPercentage: 0
 --- !u!1 &492153691
 GameObject:
   m_ObjectHideFlags: 0
@@ -18294,6 +18564,7 @@ GameObject:
   - component: {fileID: 519090429}
   - component: {fileID: 519090428}
   - component: {fileID: 519090430}
+  - component: {fileID: 519090431}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -18433,6 +18704,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Electric Guitar
   methodName: IncreaseTetherAmount
+  upgrade: {fileID: 0}
+--- !u!114 &519090431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519090426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Electric Guitar
+  method: 
+  isPercentage: 0
 --- !u!1 &522819677
 GameObject:
   m_ObjectHideFlags: 0
@@ -18519,6 +18806,7 @@ GameObject:
   - component: {fileID: 524432343}
   - component: {fileID: 524432345}
   - component: {fileID: 524432344}
+  - component: {fileID: 524432346}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -18642,6 +18930,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524432342}
   m_CullTransparentMesh: 1
+--- !u!114 &524432346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524432342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Yoyo
+  method: GetDamageIncreasePercentage
+  isPercentage: 1
 --- !u!1 &526753005
 GameObject:
   m_ObjectHideFlags: 0
@@ -18676,10 +18979,10 @@ RectTransform:
   - {fileID: 2037681745}
   m_Father: {fileID: 2055604420}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -187.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &543497616
 GameObject:
@@ -18948,9 +19251,9 @@ RectTransform:
   - {fileID: 2874334}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1571.5997, y: -524}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &549859385
@@ -19798,11 +20101,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 567707397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Roller Skates
-  methodName: IncreaseMovementSpeed
+  item: Roller Skates
+  method: 
+  isPercentage: 0
 --- !u!1 &571957264
 GameObject:
   m_ObjectHideFlags: 0
@@ -20659,9 +20963,9 @@ RectTransform:
   - {fileID: 628576736}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 4845.199, y: -524}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &600388467
@@ -20789,6 +21093,7 @@ GameObject:
   - component: {fileID: 602837636}
   - component: {fileID: 602837638}
   - component: {fileID: 602837637}
+  - component: {fileID: 602837639}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -20914,6 +21219,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602837635}
   m_CullTransparentMesh: 1
+--- !u!114 &602837639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602837635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Synthwave Blast
+  method: GetCurrentDamage
+  isPercentage: 0
 --- !u!1 &605893856
 GameObject:
   m_ObjectHideFlags: 0
@@ -21388,6 +21708,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7772078910061721573, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+      propertyPath: m_TagString
+      value: Yoyo
+      objectReference: {fileID: 0}
     - target: {fileID: 8009434792270855696, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -21751,6 +22075,7 @@ GameObject:
   - component: {fileID: 622424652}
   - component: {fileID: 622424654}
   - component: {fileID: 622424653}
+  - component: {fileID: 622424655}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -21874,6 +22199,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622424651}
   m_CullTransparentMesh: 1
+--- !u!114 &622424655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622424651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Saxophone
+  method: GetProjectileIncreasePerUpgrade
+  isPercentage: 0
 --- !u!1 &628576735
 GameObject:
   m_ObjectHideFlags: 0
@@ -22153,11 +22493,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 633243999}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Vinyl Record
-  methodName: IncreaseProjectileCount
+  item: Vinyl Record
+  method: GetIncreaseProjectileCountCost
+  isPercentage: 0
 --- !u!1 &634947963
 GameObject:
   m_ObjectHideFlags: 0
@@ -22296,6 +22637,7 @@ GameObject:
   - component: {fileID: 640791284}
   - component: {fileID: 640791286}
   - component: {fileID: 640791285}
+  - component: {fileID: 640791287}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -22419,6 +22761,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 640791283}
   m_CullTransparentMesh: 1
+--- !u!114 &640791287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640791283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Groove Armor
+  method: 
+  isPercentage: 0
 --- !u!1 &649568145
 GameObject:
   m_ObjectHideFlags: 0
@@ -22484,7 +22841,7 @@ GameObject:
   - component: {fileID: 656064299}
   m_Layer: 10
   m_Name: StagePresence
-  m_TagString: Untagged
+  m_TagString: Stage Presence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22499,7 +22856,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1806259868}
@@ -22518,7 +22875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Stage Presence
-  damage: 2
+  baseDamage: 0
   damageRank: 0
   damageUpgradeCost: 22
   percentageDamageIncrease: 20
@@ -22699,6 +23056,7 @@ GameObject:
   - component: {fileID: 663208253}
   - component: {fileID: 663208255}
   - component: {fileID: 663208254}
+  - component: {fileID: 663208256}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -22822,6 +23180,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663208252}
   m_CullTransparentMesh: 1
+--- !u!114 &663208256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663208252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Vinyl Record
+  method: GetProjectileIncreasePerUpgrade
+  isPercentage: 0
 --- !u!1 &664987322
 GameObject:
   m_ObjectHideFlags: 0
@@ -22833,6 +23206,7 @@ GameObject:
   - component: {fileID: 664987323}
   - component: {fileID: 664987325}
   - component: {fileID: 664987324}
+  - component: {fileID: 664987326}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -22958,6 +23332,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664987322}
   m_CullTransparentMesh: 1
+--- !u!114 &664987326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664987322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Vinyl Record
+  method: GetCurrentDamage
+  isPercentage: 0
 --- !u!1 &667541569
 GameObject:
   m_ObjectHideFlags: 0
@@ -23114,9 +23503,9 @@ RectTransform:
   - {fileID: 704571017}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 9209.998, y: -524}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &678701873
@@ -23570,6 +23959,10 @@ PrefabInstance:
     - target: {fileID: 889766969775483866, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 889766969775483866, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
+      propertyPath: m_TagString
+      value: Disco Ball
       objectReference: {fileID: 0}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: damage
@@ -24217,7 +24610,7 @@ GameObject:
   - component: {fileID: 737617520}
   m_Layer: 10
   m_Name: PersonalSpace
-  m_TagString: Untagged
+  m_TagString: Personal Space
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24271,7 +24664,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 2
 --- !u!114 &737617521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24290,7 +24683,6 @@ MonoBehaviour:
   pushInterval: 10
   radiusIncreasePercentage: 10
   forceIncreasePercentage: 10
-  radius: 0
   radiusRank: 0
   forceRank: 0
   radiusUpgradeCost: 6
@@ -24329,10 +24721,10 @@ RectTransform:
   - {fileID: 351665242}
   m_Father: {fileID: 136986920}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -187.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &740693704
 GameObject:
@@ -24882,11 +25274,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 765200436}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Bass Guitar
-  methodName: IncreaseDamage
+  item: Bass Guitar
+  method: GetIncreaseDamageCost
+  isPercentage: 0
 --- !u!1 &765764873
 GameObject:
   m_ObjectHideFlags: 0
@@ -25560,6 +25953,7 @@ GameObject:
   - component: {fileID: 784739725}
   - component: {fileID: 784739727}
   - component: {fileID: 784739726}
+  - component: {fileID: 784739728}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -25683,6 +26077,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784739724}
   m_CullTransparentMesh: 1
+--- !u!114 &784739728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784739724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Stage Presence
+  method: GetDamageIncreasePercentage
+  isPercentage: 1
 --- !u!1 &785471509
 GameObject:
   m_ObjectHideFlags: 0
@@ -25717,10 +26126,10 @@ RectTransform:
   - {fileID: 1266562532}
   m_Father: {fileID: 341002535}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -187.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &786548819
 GameObject:
@@ -25868,11 +26277,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 786548819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Synthwave Blast
-  methodName: IncreasePenetrationAmount
+  item: Synthwave Blast
+  method: 
+  isPercentage: 0
 --- !u!1 &794913278
 GameObject:
   m_ObjectHideFlags: 0
@@ -25884,6 +26294,7 @@ GameObject:
   - component: {fileID: 794913279}
   - component: {fileID: 794913281}
   - component: {fileID: 794913280}
+  - component: {fileID: 794913282}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -26007,6 +26418,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794913278}
   m_CullTransparentMesh: 1
+--- !u!114 &794913282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794913278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Roller Skates
+  method: 
+  isPercentage: 0
 --- !u!1 &798736327
 GameObject:
   m_ObjectHideFlags: 0
@@ -26020,7 +26446,7 @@ GameObject:
   - component: {fileID: 798736329}
   m_Layer: 10
   m_Name: Saxophone
-  m_TagString: Weapon
+  m_TagString: Saxophone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26099,7 +26525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Saxophone
-  damage: 3
+  baseDamage: 0
   damageRank: 0
   damageUpgradeCost: 19
   percentageDamageIncrease: 10
@@ -26527,7 +26953,7 @@ GameObject:
   - component: {fileID: 815947304}
   - component: {fileID: 815947307}
   - component: {fileID: 815947306}
-  - component: {fileID: 815947305}
+  - component: {fileID: 815947308}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -26554,20 +26980,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 5}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &815947305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815947303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Personal Space
-  methodName: IncreaseRadius
 --- !u!114 &815947306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26667,6 +27079,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815947303}
   m_CullTransparentMesh: 1
+--- !u!114 &815947308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815947303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Personal Space
+  method: 
+  isPercentage: 0
 --- !u!1 &821225988
 GameObject:
   m_ObjectHideFlags: 0
@@ -27927,6 +28354,7 @@ GameObject:
   - component: {fileID: 850994468}
   - component: {fileID: 850994470}
   - component: {fileID: 850994469}
+  - component: {fileID: 850994471}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -28052,6 +28480,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850994467}
   m_CullTransparentMesh: 1
+--- !u!114 &850994471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850994467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Chill Vibe
+  method: 
+  isPercentage: 0
 --- !u!1 &853576764
 GameObject:
   m_ObjectHideFlags: 0
@@ -28063,6 +28506,7 @@ GameObject:
   - component: {fileID: 853576765}
   - component: {fileID: 853576767}
   - component: {fileID: 853576766}
+  - component: {fileID: 853576768}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -28188,6 +28632,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853576764}
   m_CullTransparentMesh: 1
+--- !u!114 &853576768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853576764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Vinyl Record
+  method: 
+  isPercentage: 0
 --- !u!1 &856474977
 GameObject:
   m_ObjectHideFlags: 0
@@ -28199,6 +28658,7 @@ GameObject:
   - component: {fileID: 856474978}
   - component: {fileID: 856474980}
   - component: {fileID: 856474979}
+  - component: {fileID: 856474981}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -28322,6 +28782,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856474977}
   m_CullTransparentMesh: 1
+--- !u!114 &856474981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856474977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Electric Guitar
+  method: 
+  isPercentage: 0
 --- !u!1 &857589418
 GameObject:
   m_ObjectHideFlags: 0
@@ -29313,11 +29788,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 900289620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Groove Armor
-  methodName: IncreaseHealth
+  item: Groove Armor
+  method: 
+  isPercentage: 0
 --- !u!1 &900829013
 GameObject:
   m_ObjectHideFlags: 0
@@ -29633,6 +30109,7 @@ GameObject:
   - component: {fileID: 913720802}
   - component: {fileID: 913720804}
   - component: {fileID: 913720803}
+  - component: {fileID: 913720805}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -29756,6 +30233,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913720801}
   m_CullTransparentMesh: 1
+--- !u!114 &913720805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913720801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Synthwave Blast
+  method: GetDamageIncreasePercentage
+  isPercentage: 1
 --- !u!1 &914897307
 GameObject:
   m_ObjectHideFlags: 0
@@ -30175,6 +30667,7 @@ GameObject:
   - component: {fileID: 927200939}
   - component: {fileID: 927200941}
   - component: {fileID: 927200940}
+  - component: {fileID: 927200942}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -30298,6 +30791,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927200938}
   m_CullTransparentMesh: 1
+--- !u!114 &927200942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927200938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Decoy
+  method: 
+  isPercentage: 0
 --- !u!1 &931800138
 GameObject:
   m_ObjectHideFlags: 0
@@ -30385,6 +30893,7 @@ GameObject:
   - component: {fileID: 934913334}
   - component: {fileID: 934913336}
   - component: {fileID: 934913335}
+  - component: {fileID: 934913337}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -30510,6 +31019,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934913333}
   m_CullTransparentMesh: 1
+--- !u!114 &934913337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934913333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Saxophone
+  method: GetCurrentProjectileCount
+  isPercentage: 0
 --- !u!1 &935936722
 GameObject:
   m_ObjectHideFlags: 0
@@ -30678,10 +31202,10 @@ RectTransform:
   - {fileID: 1646112713}
   m_Father: {fileID: 1883984000}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -187.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &940087678
 GameObject:
@@ -31754,6 +32278,7 @@ GameObject:
   - component: {fileID: 969809393}
   - component: {fileID: 969809395}
   - component: {fileID: 969809394}
+  - component: {fileID: 969809396}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -31879,6 +32404,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969809392}
   m_CullTransparentMesh: 1
+--- !u!114 &969809396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969809392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Electric Guitar
+  method: GetCurrentDamage
+  isPercentage: 0
 --- !u!1 &970510857
 GameObject:
   m_ObjectHideFlags: 0
@@ -33191,6 +33731,7 @@ GameObject:
   - component: {fileID: 1008788316}
   - component: {fileID: 1008788318}
   - component: {fileID: 1008788317}
+  - component: {fileID: 1008788319}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -33314,6 +33855,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008788315}
   m_CullTransparentMesh: 1
+--- !u!114 &1008788319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008788315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Synthwave Blast
+  method: 
+  isPercentage: 0
 --- !u!1 &1017721303
 GameObject:
   m_ObjectHideFlags: 0
@@ -33605,11 +34161,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1018652989}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Stage Presence
-  methodName: IncreaseDamage
+  item: Stage Presence
+  method: GetIncreaseDamageCost
+  isPercentage: 0
 --- !u!1 &1025205538
 GameObject:
   m_ObjectHideFlags: 0
@@ -34083,7 +34640,7 @@ GameObject:
   - component: {fileID: 1047333868}
   m_Layer: 10
   m_Name: BassGuitar
-  m_TagString: Weapon
+  m_TagString: Bass Guitar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34102,7 +34659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Bass Guitar
-  damage: 10
+  baseDamage: 5
   damageRank: 0
   damageUpgradeCost: 8
   percentageDamageIncrease: 10
@@ -34620,10 +35177,10 @@ RectTransform:
   - {fileID: 1358516915}
   m_Father: {fileID: 831052521}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -62.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1078142154
 GameObject:
@@ -34659,10 +35216,10 @@ RectTransform:
   - {fileID: 943667642}
   m_Father: {fileID: 2007105701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -62.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1078242577
 GameObject:
@@ -34834,9 +35391,9 @@ RectTransform:
   - {fileID: 2146772253}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 13574.799, y: -524}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1079584169
@@ -35157,11 +35714,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1083015757}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Saxophone
-  methodName: IncreaseDamage
+  item: Saxophone
+  method: GetIncreaseDamageCost
+  isPercentage: 0
 --- !u!1 &1084008213
 GameObject:
   m_ObjectHideFlags: 0
@@ -35934,6 +36492,7 @@ GameObject:
   - component: {fileID: 1098821666}
   - component: {fileID: 1098821668}
   - component: {fileID: 1098821667}
+  - component: {fileID: 1098821669}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -36057,6 +36616,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098821665}
   m_CullTransparentMesh: 1
+--- !u!114 &1098821669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098821665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Stage Presence
+  method: GetRadiusIncreasePercentage
+  isPercentage: 0
 --- !u!1 &1101748257
 GameObject:
   m_ObjectHideFlags: 0
@@ -36512,11 +37086,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1112748793}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Synthwave Blast
-  methodName: IncreaseProjectileCount
+  item: Synthwave Blast
+  method: GetIncreaseProjectileCountCost
+  isPercentage: 0
 --- !u!1 &1119166760
 GameObject:
   m_ObjectHideFlags: 0
@@ -36663,11 +37238,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1119166760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Yoyo
-  methodName: IncreaseDamage
+  item: Yoyo
+  method: GetIncreaseDamageCost
+  isPercentage: 0
 --- !u!1 &1125657799
 GameObject:
   m_ObjectHideFlags: 0
@@ -36899,7 +37475,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1135520746
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37581,6 +38157,7 @@ GameObject:
   - component: {fileID: 1156837050}
   - component: {fileID: 1156837052}
   - component: {fileID: 1156837051}
+  - component: {fileID: 1156837053}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -37704,6 +38281,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156837049}
   m_CullTransparentMesh: 1
+--- !u!114 &1156837053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156837049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Saxophone
+  method: 
+  isPercentage: 0
 --- !u!1 &1159731838
 GameObject:
   m_ObjectHideFlags: 0
@@ -37738,10 +38330,10 @@ RectTransform:
   - {fileID: 255050542}
   m_Father: {fileID: 831052521}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -187.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1160449948
 GameObject:
@@ -38641,9 +39233,9 @@ RectTransform:
   - {fileID: 914897308}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 8118.7983, y: -524}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1187897539
@@ -38872,6 +39464,7 @@ GameObject:
   - component: {fileID: 1193785786}
   - component: {fileID: 1193785788}
   - component: {fileID: 1193785787}
+  - component: {fileID: 1193785789}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -38895,7 +39488,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5, y: 5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1193785787
@@ -38918,9 +39511,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '0%
-
-'
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: -8542620725292600027, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
@@ -38947,10 +39538,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 93
+  m_fontSize: 72
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -38983,7 +39574,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 9.550415, y: 11.907288, z: 8.446167, w: 7.9802856}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -38997,6 +39588,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193785785}
   m_CullTransparentMesh: 1
+--- !u!114 &1193785789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193785785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Bass Guitar
+  method: GetCurrentDamage
+  isPercentage: 0
 --- !u!1 &1204171072
 GameObject:
   m_ObjectHideFlags: 0
@@ -39168,9 +39774,9 @@ RectTransform:
   - {fileID: 411754765}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 3753.9993, y: -524}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1205873705
@@ -39550,6 +40156,7 @@ GameObject:
   - component: {fileID: 1222739265}
   - component: {fileID: 1222739267}
   - component: {fileID: 1222739266}
+  - component: {fileID: 1222739268}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -39675,6 +40282,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222739264}
   m_CullTransparentMesh: 1
+--- !u!114 &1222739268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222739264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Groove Armor
+  method: 
+  isPercentage: 0
 --- !u!1 &1230041913
 GameObject:
   m_ObjectHideFlags: 0
@@ -40404,10 +41026,10 @@ RectTransform:
   - {fileID: 451569158}
   m_Father: {fileID: 2007105701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -187.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1263998325
 GameObject:
@@ -42009,10 +42631,10 @@ RectTransform:
   - {fileID: 1948903851}
   m_Father: {fileID: 1883984000}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -62.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1330709074
 GameObject:
@@ -42242,6 +42864,7 @@ GameObject:
   - component: {fileID: 1371049222}
   - component: {fileID: 1371049221}
   - component: {fileID: 1371049223}
+  - component: {fileID: 1371049224}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -42381,6 +43004,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Decoy
   methodName: IncreaseDecoyHealth
+  upgrade: {fileID: 0}
+--- !u!114 &1371049224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371049219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Decoy
+  method: 
+  isPercentage: 0
 --- !u!1 &1372322908
 GameObject:
   m_ObjectHideFlags: 0
@@ -42762,6 +43401,7 @@ GameObject:
   - component: {fileID: 1380310692}
   - component: {fileID: 1380310694}
   - component: {fileID: 1380310693}
+  - component: {fileID: 1380310695}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -42887,6 +43527,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380310691}
   m_CullTransparentMesh: 1
+--- !u!114 &1380310695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380310691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Disco Ball
+  method: 
+  isPercentage: 0
 --- !u!1 &1383092906
 GameObject:
   m_ObjectHideFlags: 0
@@ -42921,10 +43576,10 @@ RectTransform:
   - {fileID: 88895292}
   m_Father: {fileID: 368501547}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -187.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1384893780
 PrefabInstance:
@@ -42966,6 +43621,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4845860124362309007, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
+      propertyPath: m_TagString
+      value: Chill Vibe
+      objectReference: {fileID: 0}
     - target: {fileID: 6851086163164186471, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
       propertyPath: player
       value: 
@@ -42989,6 +43648,18 @@ PrefabInstance:
     - target: {fileID: 6851086163164186471, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
       propertyPath: radiusIncreasePercentage
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9002697594610811920, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9002697594610811920, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9002697594610811920, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9002697594610811920, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43245,6 +43916,7 @@ GameObject:
   - component: {fileID: 1399203575}
   - component: {fileID: 1399203577}
   - component: {fileID: 1399203576}
+  - component: {fileID: 1399203578}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -43370,6 +44042,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399203574}
   m_CullTransparentMesh: 1
+--- !u!114 &1399203578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399203574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Stage Presence
+  method: GetCurrentDamage
+  isPercentage: 0
 --- !u!1 &1399691802
 GameObject:
   m_ObjectHideFlags: 0
@@ -43404,10 +44091,10 @@ RectTransform:
   - {fileID: 1725797392}
   m_Father: {fileID: 1761643008}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 242, y: -62.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1403525325
 GameObject:
@@ -43848,6 +44535,7 @@ GameObject:
   - component: {fileID: 1410804557}
   - component: {fileID: 1410804559}
   - component: {fileID: 1410804558}
+  - component: {fileID: 1410804560}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -43971,6 +44659,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410804556}
   m_CullTransparentMesh: 1
+--- !u!114 &1410804560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410804556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Disco Ball
+  method: GetDamageIncreasePercentage
+  isPercentage: 1
 --- !u!1 &1412330998
 GameObject:
   m_ObjectHideFlags: 0
@@ -44005,10 +44708,10 @@ RectTransform:
   - {fileID: 1375004285}
   m_Father: {fileID: 1883984000}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -312.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1418972431
 GameObject:
@@ -44224,6 +44927,7 @@ GameObject:
   - component: {fileID: 1431417147}
   - component: {fileID: 1431417146}
   - component: {fileID: 1431417145}
+  - component: {fileID: 1431417148}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -44264,6 +44968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Personal Space
   methodName: IncreaseForce
+  upgrade: {fileID: 0}
 --- !u!114 &1431417146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44363,6 +45068,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431417143}
   m_CullTransparentMesh: 1
+--- !u!114 &1431417148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431417143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Personal Space
+  method: 
+  isPercentage: 0
 --- !u!1 &1432278736
 GameObject:
   m_ObjectHideFlags: 0
@@ -44374,6 +45094,7 @@ GameObject:
   - component: {fileID: 1432278737}
   - component: {fileID: 1432278739}
   - component: {fileID: 1432278738}
+  - component: {fileID: 1432278740}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -44499,6 +45220,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432278736}
   m_CullTransparentMesh: 1
+--- !u!114 &1432278740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432278736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Electric Guitar
+  method: 
+  isPercentage: 0
 --- !u!1 &1432664730
 GameObject:
   m_ObjectHideFlags: 0
@@ -45300,6 +46036,7 @@ GameObject:
   - component: {fileID: 1474914584}
   - component: {fileID: 1474914586}
   - component: {fileID: 1474914585}
+  - component: {fileID: 1474914587}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -45373,10 +46110,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38.1
+  m_fontSize: 51.3
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -45409,7 +46146,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 8.31543, y: 2.9104004, z: 0, w: 10.809998}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -45423,6 +46160,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474914583}
   m_CullTransparentMesh: 1
+--- !u!114 &1474914587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474914583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Bass Guitar
+  method: GetDamageIncreasePercentage
+  isPercentage: 1
 --- !u!1 &1475293350
 GameObject:
   m_ObjectHideFlags: 0
@@ -45611,6 +46363,7 @@ GameObject:
   - component: {fileID: 1476370027}
   - component: {fileID: 1476370029}
   - component: {fileID: 1476370028}
+  - component: {fileID: 1476370030}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -45734,6 +46487,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476370026}
   m_CullTransparentMesh: 1
+--- !u!114 &1476370030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476370026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Personal Space
+  method: 
+  isPercentage: 0
 --- !u!1 &1481725446
 GameObject:
   m_ObjectHideFlags: 0
@@ -45902,10 +46670,10 @@ RectTransform:
   - {fileID: 1296588139}
   m_Father: {fileID: 197003217}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -187.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1505284291
 GameObject:
@@ -45918,6 +46686,7 @@ GameObject:
   - component: {fileID: 1505284292}
   - component: {fileID: 1505284294}
   - component: {fileID: 1505284293}
+  - component: {fileID: 1505284295}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -46043,6 +46812,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1505284291}
   m_CullTransparentMesh: 1
+--- !u!114 &1505284295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505284291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Personal Space
+  method: 
+  isPercentage: 0
 --- !u!1 &1516849114
 GameObject:
   m_ObjectHideFlags: 0
@@ -46113,10 +46897,10 @@ RectTransform:
   - {fileID: 2029107454}
   m_Father: {fileID: 197003217}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -62.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1517991956
 GameObject:
@@ -47619,6 +48403,7 @@ GameObject:
   - component: {fileID: 1555174848}
   - component: {fileID: 1555174850}
   - component: {fileID: 1555174849}
+  - component: {fileID: 1555174851}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -47744,6 +48529,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1555174847}
   m_CullTransparentMesh: 1
+--- !u!114 &1555174851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555174847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Saxophone
+  method: 
+  isPercentage: 0
 --- !u!1 &1558392736
 GameObject:
   m_ObjectHideFlags: 0
@@ -48852,10 +49652,10 @@ RectTransform:
   - {fileID: 2076558221}
   m_Father: {fileID: 2026309917}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -187.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1616841853
 GameObject:
@@ -48869,7 +49669,7 @@ GameObject:
   - component: {fileID: 1616841855}
   m_Layer: 9
   m_Name: GrooveArmor
-  m_TagString: Untagged
+  m_TagString: Groove Armor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49019,9 +49819,9 @@ RectTransform:
   - {fileID: 1782659560}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 2662.7996, y: -524}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1619886917
@@ -49096,10 +49896,10 @@ RectTransform:
   - {fileID: 563851034}
   m_Father: {fileID: 76833485}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 242, y: -62.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1621822161
 GameObject:
@@ -49112,6 +49912,7 @@ GameObject:
   - component: {fileID: 1621822162}
   - component: {fileID: 1621822164}
   - component: {fileID: 1621822163}
+  - component: {fileID: 1621822165}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -49235,6 +50036,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621822161}
   m_CullTransparentMesh: 1
+--- !u!114 &1621822165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621822161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Saxophone
+  method: GetDamageIncreasePercentage
+  isPercentage: 1
 --- !u!1 &1622502583
 GameObject:
   m_ObjectHideFlags: 0
@@ -49380,6 +50196,7 @@ GameObject:
   - component: {fileID: 1625608149}
   - component: {fileID: 1625608151}
   - component: {fileID: 1625608150}
+  - component: {fileID: 1625608152}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -49503,6 +50320,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625608148}
   m_CullTransparentMesh: 1
+--- !u!114 &1625608152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625608148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Synthwave Blast
+  method: GetProjectileIncreasePerUpgrade
+  isPercentage: 0
 --- !u!1 &1626714264
 GameObject:
   m_ObjectHideFlags: 0
@@ -49682,6 +50514,7 @@ GameObject:
   - component: {fileID: 1633234832}
   - component: {fileID: 1633234834}
   - component: {fileID: 1633234833}
+  - component: {fileID: 1633234835}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -49805,6 +50638,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633234831}
   m_CullTransparentMesh: 1
+--- !u!114 &1633234835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633234831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Chill Vibe
+  method: 
+  isPercentage: 0
 --- !u!1 &1643413376
 GameObject:
   m_ObjectHideFlags: 0
@@ -50335,11 +51183,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1647043608}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Synthwave Blast
-  methodName: IncreaseDamage
+  item: Synthwave Blast
+  method: GetIncreaseDamageCost
+  isPercentage: 0
 --- !u!1 &1648342957
 GameObject:
   m_ObjectHideFlags: 0
@@ -51140,10 +51989,10 @@ RectTransform:
   - {fileID: 1988585313}
   m_Father: {fileID: 368501547}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -62.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1672465014
 GameObject:
@@ -51339,10 +52188,10 @@ RectTransform:
   - {fileID: 858555259}
   m_Father: {fileID: 136986920}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -62.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1685725959
 GameObject:
@@ -51916,6 +52765,7 @@ GameObject:
   - component: {fileID: 1692491211}
   - component: {fileID: 1692491210}
   - component: {fileID: 1692491212}
+  - component: {fileID: 1692491213}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -52055,6 +52905,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Disco Ball
   methodName: IncreaseProjectileCount
+  upgrade: {fileID: 0}
+--- !u!114 &1692491213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692491208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Disco Ball
+  method: GetIncreaseProjectileCountCost
+  isPercentage: 0
 --- !u!1 &1696945272
 GameObject:
   m_ObjectHideFlags: 0
@@ -52299,10 +53165,10 @@ RectTransform:
   - {fileID: 1825266831}
   m_Father: {fileID: 368501547}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -312.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1706412510
 GameObject:
@@ -53540,6 +54406,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SynthwaveBlast
       objectReference: {fileID: 0}
+    - target: {fileID: 860573873587036802, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+      propertyPath: m_TagString
+      value: Synthwave Blast
+      objectReference: {fileID: 0}
     - target: {fileID: 3935263393931761594, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -54171,6 +55041,7 @@ GameObject:
   - component: {fileID: 1758247958}
   - component: {fileID: 1758247960}
   - component: {fileID: 1758247959}
+  - component: {fileID: 1758247961}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -54294,6 +55165,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758247957}
   m_CullTransparentMesh: 1
+--- !u!114 &1758247961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758247957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Decoy
+  method: 
+  isPercentage: 0
 --- !u!1 &1759650115
 GameObject:
   m_ObjectHideFlags: 0
@@ -54305,6 +55191,7 @@ GameObject:
   - component: {fileID: 1759650116}
   - component: {fileID: 1759650118}
   - component: {fileID: 1759650117}
+  - component: {fileID: 1759650119}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -54430,6 +55317,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759650115}
   m_CullTransparentMesh: 1
+--- !u!114 &1759650119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759650115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Vinyl Record
+  method: GetCurrentProjectileCount
+  isPercentage: 0
 --- !u!1 &1761643007
 GameObject:
   m_ObjectHideFlags: 0
@@ -54678,6 +55580,7 @@ GameObject:
   - component: {fileID: 1777873356}
   - component: {fileID: 1777873355}
   - component: {fileID: 1777873357}
+  - component: {fileID: 1777873358}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -54817,6 +55720,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Chill Vibe
   methodName: IncreaseRadius
+  upgrade: {fileID: 0}
+--- !u!114 &1777873358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777873353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Chill Vibe
+  method: 
+  isPercentage: 0
 --- !u!1 &1782659559
 GameObject:
   m_ObjectHideFlags: 0
@@ -55705,11 +56624,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1816141924}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Vinyl Record
-  methodName: IncreasePenetrationAmount
+  item: Vinyl Record
+  method: 
+  isPercentage: 0
 --- !u!1 &1816667112
 GameObject:
   m_ObjectHideFlags: 0
@@ -56362,6 +57282,7 @@ GameObject:
   - component: {fileID: 1833677761}
   - component: {fileID: 1833677763}
   - component: {fileID: 1833677762}
+  - component: {fileID: 1833677764}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -56487,6 +57408,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1833677760}
   m_CullTransparentMesh: 1
+--- !u!114 &1833677764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833677760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Synthwave Blast
+  method: GetCurrentProjectileCount
+  isPercentage: 0
 --- !u!1 &1844713525
 GameObject:
   m_ObjectHideFlags: 0
@@ -56709,7 +57645,7 @@ GameObject:
   - component: {fileID: 1848075309}
   m_Layer: 9
   m_Name: RollerSkates
-  m_TagString: Untagged
+  m_TagString: Roller Skates
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57027,11 +57963,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1859991388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Vinyl Record
-  methodName: IncreaseDamage
+  item: Vinyl Record
+  method: GetIncreaseDamageCost
+  isPercentage: 0
 --- !u!1 &1861765206
 GameObject:
   m_ObjectHideFlags: 0
@@ -57178,11 +58115,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1861765206}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Stage Presence
-  methodName: IncreaseRadius
+  item: Stage Presence
+  method: GetIncreaseRadiusCost
+  isPercentage: 0
 --- !u!1 &1867374626
 GameObject:
   m_ObjectHideFlags: 0
@@ -57925,6 +58863,7 @@ GameObject:
   - component: {fileID: 1891987995}
   - component: {fileID: 1891987997}
   - component: {fileID: 1891987996}
+  - component: {fileID: 1891987998}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -58048,6 +58987,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891987994}
   m_CullTransparentMesh: 1
+--- !u!114 &1891987998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891987994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Personal Space
+  method: 
+  isPercentage: 0
 --- !u!1 &1894516788
 GameObject:
   m_ObjectHideFlags: 0
@@ -58135,6 +59089,7 @@ GameObject:
   - component: {fileID: 1897208612}
   - component: {fileID: 1897208614}
   - component: {fileID: 1897208613}
+  - component: {fileID: 1897208615}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -58260,6 +59215,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897208611}
   m_CullTransparentMesh: 1
+--- !u!114 &1897208615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897208611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Yoyo
+  method: GetCurrentProjectileCount
+  isPercentage: 0
 --- !u!1 &1900273892
 GameObject:
   m_ObjectHideFlags: 0
@@ -59267,9 +60237,9 @@ RectTransform:
   - {fileID: 453908373}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7027.5986, y: -524}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1935424000
@@ -59321,6 +60291,7 @@ GameObject:
   - component: {fileID: 1938992956}
   - component: {fileID: 1938992958}
   - component: {fileID: 1938992957}
+  - component: {fileID: 1938992959}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -59446,6 +60417,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938992955}
   m_CullTransparentMesh: 1
+--- !u!114 &1938992959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938992955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Chill Vibe
+  method: 
+  isPercentage: 0
 --- !u!1 &1946998663
 GameObject:
   m_ObjectHideFlags: 0
@@ -59458,6 +60444,7 @@ GameObject:
   - component: {fileID: 1946998666}
   - component: {fileID: 1946998665}
   - component: {fileID: 1946998667}
+  - component: {fileID: 1946998668}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -59597,6 +60584,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Yoyo
   methodName: IncreaseProjectileCount
+  upgrade: {fileID: 0}
+--- !u!114 &1946998668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946998663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Yoyo
+  method: GetIncreaseProjectileCountCost
+  isPercentage: 0
 --- !u!1 &1948903850
 GameObject:
   m_ObjectHideFlags: 0
@@ -61179,6 +62182,7 @@ GameObject:
   - component: {fileID: 2006918069}
   - component: {fileID: 2006918071}
   - component: {fileID: 2006918070}
+  - component: {fileID: 2006918072}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -61302,6 +62306,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2006918068}
   m_CullTransparentMesh: 1
+--- !u!114 &2006918072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006918068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Electric Guitar
+  method: GetDamageIncreasePercentage
+  isPercentage: 1
 --- !u!1 &2007105700
 GameObject:
   m_ObjectHideFlags: 0
@@ -61451,6 +62470,7 @@ GameObject:
   - component: {fileID: 2020070238}
   - component: {fileID: 2020070240}
   - component: {fileID: 2020070239}
+  - component: {fileID: 2020070241}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -61574,6 +62594,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020070237}
   m_CullTransparentMesh: 1
+--- !u!114 &2020070241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020070237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Chill Vibe
+  method: 
+  isPercentage: 0
 --- !u!1 &2024497032
 GameObject:
   m_ObjectHideFlags: 0
@@ -62150,9 +63185,9 @@ RectTransform:
   - {fileID: 289858953}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 11392.398, y: -524}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2032336877
@@ -62361,10 +63396,10 @@ RectTransform:
   - {fileID: 74069925}
   m_Father: {fileID: 242387200}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -62.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2037681744
 GameObject:
@@ -62455,7 +63490,7 @@ GameObject:
   - component: {fileID: 2038418318}
   m_Layer: 10
   m_Name: ElectricGuitar
-  m_TagString: Weapon
+  m_TagString: Electric Guitar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62489,7 +63524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Electric Guitar
-  damage: 5
+  baseDamage: 0
   damageRank: 0
   damageUpgradeCost: 17
   percentageDamageIncrease: 10
@@ -63413,11 +64448,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2064682890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Disco Ball
-  methodName: IncreaseDamage
+  item: Disco Ball
+  method: GetIncreaseDamageCost
+  isPercentage: 0
 --- !u!1 &2069659639
 GameObject:
   m_ObjectHideFlags: 0
@@ -63429,6 +64465,7 @@ GameObject:
   - component: {fileID: 2069659640}
   - component: {fileID: 2069659642}
   - component: {fileID: 2069659641}
+  - component: {fileID: 2069659643}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -63552,6 +64589,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069659639}
   m_CullTransparentMesh: 1
+--- !u!114 &2069659643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069659639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Disco Ball
+  method: GetProjectileIncreasePerUpgrade
+  isPercentage: 0
 --- !u!1 &2076463739
 GameObject:
   m_ObjectHideFlags: 0
@@ -64897,10 +65949,10 @@ RectTransform:
   - {fileID: 315761439}
   m_Father: {fileID: 197003217}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -312.5}
-  m_SizeDelta: {x: 9, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2127161325
 GameObject:
@@ -65313,6 +66365,7 @@ GameObject:
   - component: {fileID: 2131741911}
   - component: {fileID: 2131741913}
   - component: {fileID: 2131741912}
+  - component: {fileID: 2131741914}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -65438,6 +66491,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131741910}
   m_CullTransparentMesh: 1
+--- !u!114 &2131741914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131741910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Roller Skates
+  method: 
+  isPercentage: 0
 --- !u!1 &2133392518
 GameObject:
   m_ObjectHideFlags: 0
@@ -65583,6 +66651,7 @@ GameObject:
   - component: {fileID: 2134569391}
   - component: {fileID: 2134569393}
   - component: {fileID: 2134569392}
+  - component: {fileID: 2134569394}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -65706,6 +66775,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134569390}
   m_CullTransparentMesh: 1
+--- !u!114 &2134569394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134569390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: Disco Ball
+  method: 
+  isPercentage: 0
 --- !u!1 &2135310018
 GameObject:
   m_ObjectHideFlags: 0

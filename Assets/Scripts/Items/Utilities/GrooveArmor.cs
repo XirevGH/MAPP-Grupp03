@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GrooveArmor : Utility
@@ -27,5 +25,10 @@ public class GrooveArmor : Utility
     public int GetIncreaseHealthCost()
     {
         return healthUpgradeCost;
+    }
+
+    public float GetCurrentHealthIncrease()
+    {
+        return Mathf.Pow(1 + (percentageIncrease / 100f), healthRank);
     }
 }

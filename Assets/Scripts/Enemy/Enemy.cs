@@ -121,9 +121,9 @@ public class Enemy : MonoBehaviour
     }
 
     protected void SelectTarget(){
-         if(GameObject.FindGameObjectWithTag("Decoy") != null && GameObject.FindGameObjectWithTag("Decoy").activeInHierarchy)
+         if(GameObject.FindGameObjectWithTag("DecoyObject") != null && GameObject.FindGameObjectWithTag("DecoyObject").activeInHierarchy)
             {
-                target = GameObject.FindGameObjectWithTag("Decoy");
+                target = GameObject.FindGameObjectWithTag("DecoyObject");
 
             }
             else

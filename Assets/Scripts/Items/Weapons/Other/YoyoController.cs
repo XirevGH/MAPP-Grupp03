@@ -6,7 +6,6 @@ public class YoyoController : PermanentProjectileWeapon
     public GameObject yoyo;
     public static int triggerNumber = 7;
 
-
     private void Start()
     {
         UnityAction action1 = new UnityAction(Attack);
@@ -45,7 +44,6 @@ public class YoyoController : PermanentProjectileWeapon
      
     }
 
-
     private void SetYoyoPosition()
     {
         int totalYoyo = transform.childCount;
@@ -64,15 +62,5 @@ public class YoyoController : PermanentProjectileWeapon
     {
         GameObject clone = Instantiate(yoyo, transform.position, Quaternion.identity, transform);
         clone.GetComponent<Yoyo>().SetDamage(damage);
-    }
-
-    public override int GetIncreaseProjectileCountCost()
-    {
-        return projectileUpgradeCost;
-    }
-
-    public override int GetIncreaseDamageCost()
-    {
-        return damageUpgradeCost;
     }
 }

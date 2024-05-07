@@ -86,9 +86,4 @@ public class BoogieBomb : PhysicalWeapon
     {
         usedAbility = false;
     }
-
-    public override int GetIncreaseDamageCost()
-    {
-        return damageUpgradeCost;
-    }
 }

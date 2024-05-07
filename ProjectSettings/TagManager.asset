@@ -15,7 +15,6 @@ TagManager:
   - TriggerController
   - LeftJoyStick
   - AimingArrow
-  - Decoy
   - UpgradeSystem
   - BeatContainer
   - XPSlider
@@ -24,6 +23,20 @@ TagManager:
   - SettingsManager
   - PursePanel
   - MetaUpgradeSystem
+  - DecoyObject
+  - Bass Guitar
+  - Vinyl Record
+  - Yoyo
+  - Disco Ball
+  - Electric Guitar
+  - Saxophone
+  - Stage Presence
+  - Synthwave Blast
+  - Roller Skates
+  - Groove Armor
+  - Chill Vibe
+  - Decoy
+  - Personal Space
   layers:
   - Default
   - TransparentFX

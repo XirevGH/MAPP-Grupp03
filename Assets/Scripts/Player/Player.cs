@@ -29,8 +29,6 @@ public class Player : MonoBehaviour
     public float xpToLevel;
     public int level;
 
-    
-
     public static Player Instance
     {
         get; private set;
@@ -57,7 +55,6 @@ public class Player : MonoBehaviour
         level = 1;
         xpHeld = 0;
         currentItems = new List<Item>{startingWeapon};
-        
     }
 
 

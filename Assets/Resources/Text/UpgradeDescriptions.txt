@@ -11,29 +11,29 @@ Utility,Groove Armor,Put on your Groove Armor and dampen the blows of your enemi
 Utility,Chill Vibe,Make your enemies move slower with your chill vibe.
 Utility,Decoy,Make it rain money to distract your enemies.
 Utility,Personal Space,Pushes away enemies to give yourself some space.
-Upgrade,Bass Guitar,Increase damage by,IncreaseDamage,GetDamageUpgradePercentage,%
-Upgrade,Vinyl Record,Increase damage by,IncreaseDamage,GetDamageUpgradePercentage,%
+Upgrade,Bass Guitar,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Vinyl Record,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
 Upgrade,Vinyl Record,Increase the amount of Vinyl Records shot out by,IncreaseProjectileCount,GetProjectilePerUpgrade,.
 Upgrade,Vinyl Record,Increase the amount of targets each Vinyl Record can deal damage to by,IncreasePenetrationAmount,GetPenetrationPerUpgrade,.
-Upgrade,Yoyo,Increase damage by,IncreaseDamage,GetDamageUpgradePercentage,%
+Upgrade,Yoyo,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
 Upgrade,Yoyo,Increase the amount of Yoyos by,IncreaseProjectileCount,GetProjectilePerUpgrade,.
-Upgrade,Disco Ball,Increase damage by,IncreaseDamage,GetDamageUpgradePercentage,%
+Upgrade,Disco Ball,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
 Upgrade,Disco Ball,Increase the amount of Disco Balls launched by,IncreaseProjectileCount,GetProjectilePerUpgrade,.
 Upgrade,Disco Ball,Increase the amount of targets each Disco Ball can deal damage to by,IncreasePenetrationAmount,GetPenetrationPerUpgrade,.
-Upgrade,Electric Guitar,Increase damage by,IncreaseDamage,GetDamageUpgradePercentage,%
+Upgrade,Electric Guitar,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
 Upgrade,Electric Guitar,Increase the amount of targets the Electric Guitar will zap,IncreaseTetherAmount,GetTetherAmountPerUpgrade,.
-Upgrade,Saxophone,Increase damage by,IncreaseDamage,GetDamageUpgradePercentage,%
+Upgrade,Saxophone,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
 Upgrade,Saxophone,Increase the amount of Notes fired by,IncreaseProjectileCount,GetProjectilePerUpgrade,.
 Upgrade,Saxophone,Increase the amount of targets each Note can deal damage to by,IncreasePenetrationAmount,GetPenetrationPerUpgrade,.
-Upgrade,Stage Presence,Increase damage by,IncreaseDamage,GetDamageUpgradePercentage,%
-Upgrade,Synthwave Blast,Increase damage by,IncreaseDamage,GetDamageUpgradePercentage,%
+Upgrade,Stage Presence,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Synthwave Blast,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
 Upgrade,Synthwave Blast,Increase the amount of Synthwave Bolts in each blast by,IncreaseProjectileAmount,GetProjectilePerUpgrade,.
 Upgrade,Synthwave Blast,Increase the amount of targets each Synthwave Bolt can deal damage to by,IncreasePenetrationAmount,GetPenetrationPerUpgrade,.
-Upgrade,Roller Skates,Increase movement speed by,IncreaseMovementSpeed,GetMovementSpeedUpgradePercentage,%
-Upgrade,Groove Armor,Increase health by,IncreaseHealth,GetHealthUpgradePercentage,%
-Upgrade,Chill Vibe,Increase the area of your chill vibe by,IncreaseRadius,GetRadiusUpgradePercentage,%
-Upgrade,Chill Vibe,Increase the slow of your chill vibe by,IncreaseSlow,GetSlowUpgradePercentage,%
+Upgrade,Roller Skates,Increase movement speed by,IncreaseMovementSpeed,GetMovementSpeedIncreasePercentage,%
+Upgrade,Groove Armor,Increase health by,IncreaseHealth,GetHealthIncreasePercentage,%
+Upgrade,Chill Vibe,Increase the area of your chill vibe by,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,Chill Vibe,Increase the slow of your chill vibe by,IncreaseSlow,GetSlowIncreasePercentage,%
 Upgrade,Decoy,Increase the amount of decoys by,IncreaseDecoyAmount,GetDecoyAmountPerUpgrade,.
 Upgrade,Decoy,Increase the amount of health your decoys have by,IncreaseDecoyHealth,GetDecoyHealthAmountPerUpgrade,.
-Upgrade,Personal Space,Increases the radius by,IncreaseRadius,GetRadiusUpgradePercentage,%
-Upgrade,Personal Space,Increases the pushback by,IncreaseForce,GetForceUpgradePercentage,%
+Upgrade,Personal Space,Increases the radius by,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,Personal Space,Increases the pushback by,IncreaseForce,GetForceIncreasePercentage,%

@@ -11,6 +11,14 @@ public abstract class ProjectileWeapon : Weapon
     public int penetrationRank;
     public int penetrationUpgradeCost;
 
+    protected override void CreateUpgradeOptions()
+    {
+        base.CreateUpgradeOptions();
+
+        upgradeOptions.Add("IncreaseProjectileCount");
+        upgradeOptions.Add("IncreasePenetrationAmount");
+    }
+
     public void IncreaseProjectileCount()
     {
         projectileRank++;
@@ -23,25 +31,43 @@ public abstract class ProjectileWeapon : Weapon
         penetration += penetrationIncreasePerUpgrade;
     }
 
-    public int GetProjectilePerUpgrade()
+    public int GetProjectileIncreasePerUpgrade()
     {
         return projectileIncreasePerUpgrade;
     }
 
-    public int GetPenetrationPerUpgrade()
+    public int GetPenetrationIncreasePerUpgrade()
     {
         return projectileIncreasePerUpgrade;
     }
 
-    protected override void CreateUpgradeOptions()
+    public int GetIncreaseProjectileCountCost()
     {
-        base.CreateUpgradeOptions();
-
-        upgradeOptions.Add("IncreaseProjectileCount");
-        upgradeOptions.Add("IncreasePenetrationAmount");
+        return projectileUpgradeCost;
     }
 
-    public abstract int GetIncreaseProjectileCountCost();
+    public int GetIncreasePenetrationAmountCost()
+    {
+        return penetrationUpgradeCost;
+    }
 
-    public abstract int GetIncreasePenetrationAmountCost();
+    public int GetProjectileUpgradeRank()
+    {
+        return projectileRank;
+    }
+
+    public int GetPenetrationUpgradeRank()
+    {
+        return penetrationRank;
+    }
+
+    public int GetCurrentProjectileCount()
+    {
+        return amountOfProjectiles;
+    }
+
+    public int GetCurrentPenetrationAmount()
+    {
+        return penetration;
+    }
 }

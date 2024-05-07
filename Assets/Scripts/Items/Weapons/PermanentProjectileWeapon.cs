@@ -25,7 +25,7 @@ public abstract class PermanentProjectileWeapon : Weapon
         amountOfProjectiles += projectileIncreasePerUpgrade;
     }
 
-    public int GetProjectilePerUpgrade()
+    public int GetProjectileIncreasePerUpgrade()
     {
         return projectileIncreasePerUpgrade;
     }
@@ -36,5 +36,18 @@ public abstract class PermanentProjectileWeapon : Weapon
         upgradeOptions.Add("IncreaseProjectileCount");
     }
 
-    public abstract int GetIncreaseProjectileCountCost();
+    public int GetIncreaseProjectileCountCost()
+    {
+        return projectileUpgradeCost;
+    }
+
+    public int GetProjectileUpgradeRank() 
+    {
+        return projectileRank;
+    }
+
+    public int GetCurrentProjectileCount()
+    {
+        return amountOfProjectiles;
+    }    
 }

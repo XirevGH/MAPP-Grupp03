@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class StagePresence : Weapon
 {
-
     [SerializeField] private float radiusIncreasePercentage;
 
     public int radiusRank;
@@ -14,20 +13,20 @@ public class StagePresence : Weapon
         gameObject.transform.localScale *= (1 + (radiusIncreasePercentage / 100f));
     }
 
-    public float GetRadiusUpgradePercentage()
+    public float GetRadiusIncreasePercentage()
     {
         return radiusIncreasePercentage;
+    }
+
+    public float GetCurrentRadiusIncrease()
+    {
+        return Mathf.Pow(1 + (radiusIncreasePercentage / 100f), radiusRank);
     }
 
     protected override void CreateUpgradeOptions()
     {
         base.CreateUpgradeOptions();
         upgradeOptions.Add("IncreaseRadius");
-    }
-
-    public int GetIncreaseRadiusCost()
-    {
-        return radiusUpgradeCost;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -52,8 +51,13 @@ public class StagePresence : Weapon
         throw new System.NotImplementedException();
     }
 
-    public override int GetIncreaseDamageCost()
+    public int GetIncreaseRadiusCost()
     {
-        return damageUpgradeCost;
+        return radiusUpgradeCost;
+    }
+
+    public int GetRadiusUpgradeRank()
+    {
+        return radiusRank;
     }
 }

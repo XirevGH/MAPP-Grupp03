@@ -13,7 +13,6 @@ public class PersonalSpace : Utility
 
     [SerializeField] private float radiusIncreasePercentage;
     [SerializeField] private float forceIncreasePercentage;
-    [SerializeField] public float radius;
 
     public int radiusRank;
     public int forceRank;
@@ -39,7 +38,11 @@ public class PersonalSpace : Utility
     {
         radiusRank++;
         gameObject.transform.localScale *= (1 + (radiusIncreasePercentage / 100f));
-        radius = gameObject.transform.localScale.x;
+    }
+
+    public float GetCurrentRadiusIncrease()
+    {
+        return Mathf.Pow(1 + (radiusIncreasePercentage / 100f), radiusRank);
     }
 
     public void IncreaseForce()
@@ -48,13 +51,13 @@ public class PersonalSpace : Utility
         pushForce *= (1 + (forceIncreasePercentage / 100f));
     }
 
-    public float GetRadiusUpgradePercentage()
+    public float GetRadiusIncreasePercentage()
     {
         return radiusIncreasePercentage;
     }
 
 
-    public float GetForceUpgradePercentage()
+    public float GetForceIncreasePercentage()
     {
         return forceIncreasePercentage;
     }

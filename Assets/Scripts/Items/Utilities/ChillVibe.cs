@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ChillVibe : Utility
@@ -25,12 +23,12 @@ public class ChillVibe : Utility
         slowSpeedPercent *= (1 - (slowIncreasePercentage / 100f));
     }
 
-    public float GetRadiusUpgradePercentage()
+    public float GetRadiusIncreasePercentage()
     {
         return radiusIncreasePercentage;
     }
 
-    public float GetSlowUpgradePercentage()
+    public float GetSlowIncreasePercentage()
     {
         return slowIncreasePercentage;
     }
@@ -49,6 +47,16 @@ public class ChillVibe : Utility
     public int GetIncreaseSlowCost()
     {
         return slowUpgradeCost;
+    }
+
+    public float GetCurrentSlowIncrease()
+    {
+        return 100 - (slowSpeedPercent * Mathf.Pow(1 - (slowIncreasePercentage / 100f), slowRank) * 100);
+    }
+
+    public float GetCurrentRadiusIncrease()
+    {
+        return Mathf.Pow(1 + (radiusIncreasePercentage / 100f), radiusRank);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

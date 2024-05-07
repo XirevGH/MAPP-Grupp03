@@ -17,7 +17,6 @@ public class MetaUpgradeSystem : MonoBehaviour
 
     [SerializeField] private List<Item> items;
     private Dictionary<Tuple<string, string>, int> upgradeMap;
-    private Dictionary<Tuple<string, string>, int> costMap;
     string upgradeStatsFile;
 
     [SerializeField] private int bassGuitarIncreaseDamage;
@@ -69,25 +68,6 @@ public class MetaUpgradeSystem : MonoBehaviour
         }
     }
 
-    private void CreateCostMap()
-    {
-        costMap = new Dictionary<Tuple<string, string>, int>();
-        foreach (Item item in items)
-        {
-            /*Debug.Log(item.GetName());
-            Debug.Log(item.GetUpgradeOptions().Count);*/
-            foreach (string upgradeMethod in item.GetUpgradeOptions())
-            {
-                
-                string costMethod = "Get" + upgradeMethod + "Cost";
-                /*Debug.Log(item.GetName());
-                Debug.Log(upgradeMethod);
-                Debug.Log(costMethod);*/
-                costMap.Add(Tuple.Create(item.GetName(), upgradeMethod), (int)item.GetType().GetMethod(costMethod).Invoke(item, null));
-            }
-        }
-    }
-
     private void Start()
     {
         Debug.Log("upgrade awake");
@@ -103,7 +83,6 @@ public class MetaUpgradeSystem : MonoBehaviour
         UpdateMoney();
         upgradeStatsFile = Application.persistentDataPath + "/upgradeInfo.json";
         ReadFile(upgradeStatsFile);
-        CreateCostMap();
         CreateUpgradeMap();
         if (initialUpgrades)
         {
@@ -148,13 +127,7 @@ public class MetaUpgradeSystem : MonoBehaviour
         string methodName = parts[1];
         return Tuple.Create(className, methodName);
     }    
-    public string GetUpgradeCost(string classAndMethod)
-    {
-        (string className, string methodName) = SplitClassMethodString(classAndMethod);
-        Debug.Log(className + " " + methodName);
-        return costMap[Tuple.Create(className, methodName)].ToString();
-    }
-    
+
     public void UpgradeRank(string classAndMethod)
     {
         (string className, string methodName) = SplitClassMethodString(classAndMethod);

@@ -37,7 +37,7 @@ public abstract class TetheringWeapon : Weapon
         }
     }
 
-    public int GetTetherAmountPerUpgrade()
+    public int GetTetherAmountIncreasePerUpgrade()
     {
         return tetherIncreasePerUpgrade;
     }
@@ -48,5 +48,18 @@ public abstract class TetheringWeapon : Weapon
         upgradeOptions.Add("IncreaseTetherAmount");
     }
 
-    public abstract int GetIncreaseTetherAmountCost();
+    public int GetIncreaseTetherAmountCost()
+    {
+        return tetherUpgradeCost;
+    }
+
+    public int GetTetherUpgradeRank()
+    {
+        return tetherRank;
+    }
+
+    public int GetCurrentTetherAmount()
+    {
+        return amountOfTethers;
+    }
 }

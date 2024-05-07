@@ -3,23 +3,36 @@ using UnityEngine;
 
 public abstract class Weapon : Item
 {
-    public float damage;
+    protected int damage;
+    public float baseDamage;
     public int damageRank;
     public int damageUpgradeCost;
     public float percentageDamageIncrease;
     public AudioClip attackSound;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        damage = (int)baseDamage;
+    }
 
     public abstract void Attack();
 
     public virtual void IncreaseDamage()
     {
         damageRank++;
-        damage *= (1 + (percentageDamageIncrease / 100f));
+        baseDamage *= (1 + (percentageDamageIncrease / 100f));
+        damage = (int) baseDamage;
     }
 
-    public float GetDamageUpgradePercentage()
+    public float GetDamageIncreasePercentage()
     {
         return percentageDamageIncrease;
+    }
+
+    public int GetCurrentDamage()
+    {
+        return damage;
     }
 
     protected override void CreateUpgradeOptions()
@@ -32,5 +45,13 @@ public abstract class Weapon : Item
         return "Weapon";
     }
 
-    public abstract int GetIncreaseDamageCost();
+    public int GetIncreaseDamageCost()
+    {
+        return damageUpgradeCost;
+    }
+
+    public int GetDamageUpgradeRank()
+    {
+        return damageRank;
+    }
 }

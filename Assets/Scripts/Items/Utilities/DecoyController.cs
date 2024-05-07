@@ -89,11 +89,11 @@ public class DecoyController : Utility
         decoyHealth += decoyIncreasePerUpgrade;
     }
 
-    public int GetDecoyHealthAmountPerUpgrade()
+    public int GetDecoyHealthAmountIncreasePerUpgrade()
     {
         return decoyHealthIncreasePerUpgrade;
     }
-    public int GetDecoyAmountPerUpgrade()
+    public int GetDecoyAmountIncreasePerUpgrade()
     {
         return decoyIncreasePerUpgrade;
     }

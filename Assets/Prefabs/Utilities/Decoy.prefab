@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e3b3f9591f88244990217438b8937d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  landingSpot: {x: 0, y: 0}
+  endPosition: {x: 0, y: 0}
   travelTime: 1
   controlPointOffSet: 1
   decoyHealth: 5
