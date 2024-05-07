@@ -5779,6 +5779,7 @@ GameObject:
   m_Component:
   - component: {fileID: 135823167}
   - component: {fileID: 135823168}
+  - component: {fileID: 135823169}
   m_Layer: 0
   m_Name: TriggerController
   m_TagString: TriggerController
@@ -5897,6 +5898,45 @@ MonoBehaviour:
         m_Calls: []
     isTriggering: 1
   isTriggering: 0
+--- !u!114 &135823169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135823166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjects:
+  - rid: 8860502581168046093
+  references:
+    version: 2
+    RefIds:
+    - rid: 8860502581168046093
+      type: {class: TrackedMonoBehaviourObject, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 135823168}
+        m_TrackedProperties:
+          items:
+          - rid: 8860502581168046094
+        m_UpdateType: 1
+        m_Changed:
+          m_PersistentCalls:
+            m_Calls: []
+    - rid: 8860502581168046094
+      type: {class: BoolTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_PropertyPath: triggers.Array.data[9].isTriggering
+        m_VariantData:
+        - localeIdentifier:
+            m_Code: en
+          value: 0
+        - localeIdentifier:
+            m_Code: sv
+          value: 1
 --- !u!1 &136986919
 GameObject:
   m_ObjectHideFlags: 0
@@ -18016,7 +18056,7 @@ MonoBehaviour:
   playerStats: {fileID: 543497617}
   startingWeapon: {fileID: 1047333868}
   currentItems: []
-  money: 0
+  currency: 0
   maxHealth: 0
   health: 0
   xpHeld: 0
@@ -21587,6 +21627,7 @@ MonoBehaviour:
   damage: 2
   damageRank: 0
   percentageDamageIncrease: 20
+  attackSound: {fileID: 0}
   radiusIncreasePercentage: 0
   radiusRank: 0
 --- !u!58 &656064300
@@ -25121,6 +25162,7 @@ MonoBehaviour:
   damage: 3
   damageRank: 0
   percentageDamageIncrease: 10
+  attackSound: {fileID: 0}
   amountOfProjectiles: 2
   projectileIncreasePerUpgrade: 2
   penetration: 2
@@ -32568,7 +32610,6 @@ GameObject:
   - component: {fileID: 1047333869}
   - component: {fileID: 1047333870}
   - component: {fileID: 1047333868}
-  - component: {fileID: 1047333872}
   m_Layer: 10
   m_Name: BassGuitar
   m_TagString: Weapon
@@ -32593,6 +32634,7 @@ MonoBehaviour:
   damage: 10
   damageRank: 0
   percentageDamageIncrease: 10
+  attackSound: {fileID: 8300000, guid: 6e18b8597b07d9344b5ab4ee7e9c44d2, type: 3}
   anim: {fileID: 1047333869}
 --- !u!95 &1047333869
 Animator:
@@ -32676,102 +32718,6 @@ Transform:
   - {fileID: 372060889}
   m_Father: {fileID: 1798286936}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1047333872
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047333867}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -396259705445800102, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 88fb0caa1c9e1d2498d876ee16087bb1, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1050422854
 GameObject:
   m_ObjectHideFlags: 0
@@ -51042,9 +50988,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 543497618}
     - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 88fb0caa1c9e1d2498d876ee16087bb1, type: 3}
+    - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
       propertyPath: itemName
       value: Synthwave Blast
       objectReference: {fileID: 0}
+    - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+      propertyPath: attackSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 65a481418bf632f4bbcb6aed3b91f466, type: 3}
     - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
       propertyPath: percentageIncrease
       value: 1
@@ -52416,9 +52370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a67dba08b60622479d960d099a471b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 1000
-  MoneyText1: {fileID: 0}
-  MoneyText2: {fileID: 1687503610}
+  currency: 0
   items:
   - {fileID: 1848075309}
   - {fileID: 1616841855}
@@ -59108,6 +59060,7 @@ MonoBehaviour:
   damage: 5
   damageRank: 0
   percentageDamageIncrease: 10
+  attackSound: {fileID: 0}
   amountOfTethers: 1
   tetherIncreasePerUpgrade: 1
   tetherRank: 0
@@ -62439,6 +62392,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3837017160011725566, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: managedReferences[8860502580642709513].m_TrackedProperties.items.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 251786827020902282, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: m_Name
       value: soundManager
@@ -62488,6 +62445,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1413303723989624773, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: Priority
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413303723989624773, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: m_Volume
       value: 0
       objectReference: {fileID: 0}
@@ -62496,12 +62457,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 51626d5583f3bd345959fb1fd4a5550e, type: 3}
     - target: {fileID: 4282401076657109252, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: Priority
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282401076657109252, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 51626d5583f3bd345959fb1fd4a5550e, type: 3}
     - target: {fileID: 4282401076657109252, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: bpmForTracks.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419575893291496720, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: Priority
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

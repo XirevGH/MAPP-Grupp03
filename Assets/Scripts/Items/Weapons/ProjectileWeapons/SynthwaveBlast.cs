@@ -21,6 +21,7 @@ public class SynthwaveBlast : ProjectileWeapon
                 clone.transform.eulerAngles = new Vector3(0, 0, randomValue);
                 clone.transform.GetChild(0).GetComponent<SynthwaveBolt>().SetDamage(damage);
                 clone.transform.GetChild(0).GetComponent<SynthwaveBolt>().SetPenetration(penetration);
+                SoundManager.Instance.PlaySFX(attackSound, transform, 1, 128+(i*3));
             }
         }
     }

@@ -10,10 +10,11 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] public AudioSource musicSource1, musicSource2, menuMusic, currentSource, sfxSource;
+    [SerializeField] public AudioSource musicSource1, musicSource2, menuMusic, sfxSource, currentSource;
     [SerializeField] private AudioClip[] musicTracks, clickSound;
-    [SerializeField] private int[] BPMforTracks;
-    [SerializeField] float timeToFade = 1f;
+    [SerializeField] private int[] BPMForTracks;
+    [SerializeField] private float timeToFade = 1f;
+    [SerializeField] private AudioSource sfxObject;
     
 
     public Scene currentScene;
@@ -52,7 +53,7 @@ public class SoundManager : MonoBehaviour
         isOnePlaying = true;
         isInMenu = false;
         currentSource = musicSource1;
-        currentBPM = BPMforTracks[0];
+        currentBPM = BPMForTracks[0];
         currentTrackNumber = 0;
     }
 
@@ -180,7 +181,7 @@ public class SoundManager : MonoBehaviour
     private IEnumerator FadeTrack(int trackNumber)
     {
         float timeElapsed = 0;
-        currentBPM = BPMforTracks[trackNumber];
+        currentBPM = BPMForTracks[trackNumber];
         if (isOnePlaying)
         {
             musicSource2.transform.SetAsFirstSibling();
@@ -252,6 +253,18 @@ public class SoundManager : MonoBehaviour
         }
 
      
+    }
+
+    public void PlaySFX(AudioClip clip, Transform transform, float volume, int priority)
+    {
+        AudioSource audioSource = Instantiate(sfxObject, transform.position, Quaternion.identity);
+        audioSource.clip = clip;
+        audioSource.pitch = this.transform.GetChild(0).GetComponent<AudioSource>().pitch;
+        audioSource.priority = priority;
+        audioSource.volume = volume;
+        audioSource.Play();
+        Destroy(audioSource, audioSource.clip.length);
+
     }
 
     public void Click()
