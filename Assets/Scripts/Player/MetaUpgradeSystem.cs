@@ -74,15 +74,15 @@ public class MetaUpgradeSystem : MonoBehaviour
         costMap = new Dictionary<Tuple<string, string>, int>();
         foreach (Item item in items)
         {
-            Debug.Log(item.GetName());
-            Debug.Log(item.GetUpgradeOptions().Count);
+            /*Debug.Log(item.GetName());
+            Debug.Log(item.GetUpgradeOptions().Count);*/
             foreach (string upgradeMethod in item.GetUpgradeOptions())
             {
                 
                 string costMethod = "Get" + upgradeMethod + "Cost";
-                Debug.Log(item.GetName());
+                /*Debug.Log(item.GetName());
                 Debug.Log(upgradeMethod);
-                Debug.Log(costMethod);
+                Debug.Log(costMethod);*/
                 costMap.Add(Tuple.Create(item.GetName(), upgradeMethod), (int)item.GetType().GetMethod(costMethod).Invoke(item, null));
             }
         }

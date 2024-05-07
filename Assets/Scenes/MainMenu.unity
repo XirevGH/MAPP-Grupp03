@@ -53593,13 +53593,13 @@ PrefabInstance:
       value: Synthwave Blast
       objectReference: {fileID: 0}
     - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
-      propertyPath: damageUpgradeCost
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
       propertyPath: attackSound
       value: 
       objectReference: {fileID: 8300000, guid: 65a481418bf632f4bbcb6aed3b91f466, type: 3}
+    - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+      propertyPath: damageUpgradeCost
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
       propertyPath: percentageIncrease
       value: 1
@@ -61007,7 +61007,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -480.39996, y: 524}
-  m_SizeDelta: {x: 13093, y: 1048}
+  m_SizeDelta: {x: 14040, y: 1048}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1995602518
 MonoBehaviour:
