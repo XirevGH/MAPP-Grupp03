@@ -62,10 +62,10 @@ public class MetaUpgradeSystem : MonoBehaviour
             foreach(string upgradeMethod in item.GetUpgradeOptions()) 
             { 
                 string variableName = char.ToLower(item.GetName()[0]) + item.GetName().Substring(1).Replace(" ", "") + upgradeMethod;
-                /*Debug.Log("Variable name: " + variableName);
+                Debug.Log("Variable name: " + variableName);
                 Debug.Log("Variable value: " + (int)typeof(MetaUpgradeSystem).GetField(variableName, BindingFlags.NonPublic | BindingFlags.Instance).GetValue(this));
                 Debug.Log("Item name: " + item.GetName());
-                Debug.Log("Upgrade method :" + upgradeMethod);*/
+                Debug.Log("Upgrade method :" + upgradeMethod);
                 upgradeMap.Add(Tuple.Create(item.GetName(), upgradeMethod), (int)typeof(MetaUpgradeSystem).GetField(variableName, BindingFlags.NonPublic | BindingFlags.Instance).GetValue(this));
             }
 

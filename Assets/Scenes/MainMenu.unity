@@ -18016,7 +18016,7 @@ MonoBehaviour:
   playerStats: {fileID: 543497617}
   startingWeapon: {fileID: 1047333868}
   currentItems: []
-  money: 0
+  currency: 0
   maxHealth: 0
   health: 0
   xpHeld: 0
@@ -21549,7 +21549,7 @@ GameObject:
   - component: {fileID: 656064300}
   - component: {fileID: 656064299}
   m_Layer: 10
-  m_Name: MusicianAura
+  m_Name: StagePresence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23267,7 +23267,7 @@ GameObject:
   - component: {fileID: 737617521}
   - component: {fileID: 737617520}
   m_Layer: 10
-  m_Name: PushAway
+  m_Name: PersonalSpace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23336,7 +23336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
-  itemName: Push Away
+  itemName: Personal Space
   pushForce: 5
   pushInterval: 10
   radiusIncreasePercentage: 10
@@ -52416,14 +52416,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a67dba08b60622479d960d099a471b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 1000
-  MoneyText1: {fileID: 0}
-  MoneyText2: {fileID: 1687503610}
+  currency: 0
   items:
   - {fileID: 1848075309}
   - {fileID: 1616841855}
   - {fileID: 1384893782}
   - {fileID: 392191487}
+  - {fileID: 737617521}
   - {fileID: 1047333868}
   - {fileID: 376511733}
   - {fileID: 610983637}
