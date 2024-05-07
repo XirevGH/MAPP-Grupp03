@@ -2699,21 +2699,11 @@ MonoBehaviour:
   - {fileID: 1937459676}
   - {fileID: 1209299475}
   - {fileID: 1536165813}
-  startingItems:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   player: {fileID: 0}
   weaponPanel: {fileID: 21300000, guid: 0197b481d23ae224ea6904b66119ac2d, type: 3}
   utilityPanel: {fileID: 21300000, guid: a6bd45d815568c24e95aca648345eefe, type: 3}
+  sessionItems: []
+  choiceItems: []
 --- !u!4 &599903641
 Transform:
   m_ObjectHideFlags: 0
@@ -10204,9 +10194,11 @@ MonoBehaviour:
   levelText: {fileID: 6256552757786023533, guid: f055b79b77a15314cb97578cd6d155b6, type: 3}
   timerText: {fileID: 3095667434961151154, guid: ea123d5ad32fcc34f987ef3e49be0304, type: 3}
   enemiesDefeatedText: {fileID: 4704084059594391430, guid: 410163a0795c9334498bb9d2e18eaebc, type: 3}
+  moneyEarnedText: {fileID: 0}
   timeText: 
   mainLevel: 1
   enemiesDefeated: 0
+  moneyEarned: 0
 --- !u!4 &1976371860
 Transform:
   m_ObjectHideFlags: 0
