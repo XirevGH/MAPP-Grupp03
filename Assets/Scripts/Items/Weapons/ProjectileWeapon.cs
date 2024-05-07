@@ -7,9 +7,7 @@ public abstract class ProjectileWeapon : Weapon
     [SerializeField] protected int penetration;
     [SerializeField] protected int penetrationIncreasePerUpgrade;
     public int projectileRank;
-    public int projectileUpgradeCost;
     public int penetrationRank;
-    public int penetrationUpgradeCost;
 
     public void IncreaseProjectileCount()
     {
@@ -40,8 +38,4 @@ public abstract class ProjectileWeapon : Weapon
         upgradeOptions.Add("IncreaseProjectileCount");
         upgradeOptions.Add("IncreasePenetrationAmount");
     }
-
-    public abstract int GetIncreaseProjectileCountCost();
-
-    public abstract int GetIncreasePenetrationAmountCost();
 }

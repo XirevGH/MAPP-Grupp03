@@ -60,9 +60,4 @@ public class BreakDance : PhysicalWeapon
     {
         throw new System.NotImplementedException();
     }
-
-    public override int GetIncreaseDamageCost()
-    {
-        return damageUpgradeCost;
-    }
 }

@@ -1,4 +1,8 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class BoogieBomb : PhysicalWeapon
@@ -84,11 +88,8 @@ public class BoogieBomb : PhysicalWeapon
 
     private void AbilityCooldown()
     {
+
         usedAbility = false;
     }
 
-    public override int GetIncreaseDamageCost()
-    {
-        return damageUpgradeCost;
-    }
 }

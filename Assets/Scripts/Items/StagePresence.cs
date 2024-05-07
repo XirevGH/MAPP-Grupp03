@@ -8,7 +8,6 @@ public class StagePresence : Weapon
     [SerializeField] private float radiusIncreasePercentage;
 
     public int radiusRank;
-    public int radiusUpgradeCost;
 
     public void IncreaseRadius()
     {
@@ -26,10 +25,7 @@ public class StagePresence : Weapon
         upgradeOptions.Add("IncreaseRadius");
     }
 
-    public int GetIncreaseRadiusCost()
-    {
-        return radiusUpgradeCost;
-    }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -52,9 +48,5 @@ public class StagePresence : Weapon
     {
         throw new System.NotImplementedException();
     }
-
-    public override int GetIncreaseDamageCost()
-    {
-        return damageUpgradeCost;
-    }
+    
 }

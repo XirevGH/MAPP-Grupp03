@@ -19,10 +19,11 @@ public class DiscoBallController : ProjectileWeapon
         if (Instance == null)
         {
             Instance = this;
+            
         }
         else
         {
-            Destroy(gameObject);
+            return;
         }
     }
 
@@ -73,20 +74,5 @@ public class DiscoBallController : ProjectileWeapon
                 clone.GetComponent<DiscoBall>().SetPenetration(penetration);
             }
         }
-    }
-
-    public override int GetIncreaseProjectileCountCost()
-    {
-        return projectileUpgradeCost;
-    }
-
-    public override int GetIncreasePenetrationAmountCost()
-    {
-        return penetrationUpgradeCost;
-    }
-
-    public override int GetIncreaseDamageCost()
-    {
-        return damageUpgradeCost;
     }
 }
