@@ -5779,7 +5779,6 @@ GameObject:
   m_Component:
   - component: {fileID: 135823167}
   - component: {fileID: 135823168}
-  - component: {fileID: 135823169}
   m_Layer: 0
   m_Name: TriggerController
   m_TagString: TriggerController
@@ -5898,45 +5897,6 @@ MonoBehaviour:
         m_Calls: []
     isTriggering: 1
   isTriggering: 0
---- !u!114 &135823169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 135823166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TrackedObjects:
-  - rid: 8860502581168046093
-  references:
-    version: 2
-    RefIds:
-    - rid: 8860502581168046093
-      type: {class: TrackedMonoBehaviourObject, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
-      data:
-        m_Target: {fileID: 135823168}
-        m_TrackedProperties:
-          items:
-          - rid: 8860502581168046094
-        m_UpdateType: 1
-        m_Changed:
-          m_PersistentCalls:
-            m_Calls: []
-    - rid: 8860502581168046094
-      type: {class: BoolTrackedProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
-      data:
-        m_PropertyPath: triggers.Array.data[9].isTriggering
-        m_VariantData:
-        - localeIdentifier:
-            m_Code: en
-          value: 0
-        - localeIdentifier:
-            m_Code: sv
-          value: 1
 --- !u!1 &136986919
 GameObject:
   m_ObjectHideFlags: 0
@@ -59029,6 +58989,7 @@ GameObject:
   - component: {fileID: 2038418317}
   - component: {fileID: 2038418319}
   - component: {fileID: 2038418318}
+  - component: {fileID: 2038418320}
   m_Layer: 10
   m_Name: ElectricGuitar
   m_TagString: Weapon
@@ -59069,7 +59030,7 @@ MonoBehaviour:
   damageRank: 0
   damageUpgradeCost: 0
   percentageDamageIncrease: 10
-  attackSound: {fileID: 0}
+  attackSound: {fileID: 8300000, guid: 25cc512ac62420643b7b9e89090d6130, type: 3}
   amountOfTethers: 1
   tetherIncreasePerUpgrade: 1
   tetherRank: 0
@@ -59110,6 +59071,47 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 10
+--- !u!114 &2038418320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038418316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjects:
+  - rid: 8860502581168046097
+  references:
+    version: 2
+    RefIds:
+    - rid: 8860502581168046097
+      type: {class: TrackedMonoBehaviourObject, ns: UnityEngine.Localization.PropertyVariants.TrackedObjects, asm: Unity.Localization}
+      data:
+        m_Target: {fileID: 2038418318}
+        m_TrackedProperties:
+          items:
+          - rid: 8860502581168046098
+        m_UpdateType: 0
+        m_Changed:
+          m_PersistentCalls:
+            m_Calls: []
+    - rid: 8860502581168046098
+      type: {class: UnityObjectProperty, ns: UnityEngine.Localization.PropertyVariants.TrackedProperties, asm: Unity.Localization}
+      data:
+        m_PropertyPath: attackSound
+        m_TypeString: UnityEngine.AudioClip, UnityEngine.AudioModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        m_VariantData:
+        - localeIdentifier:
+            m_Code: en
+          value: {fileID: 8300000, guid: 8016efeb188fdde458cc881148701656, type: 3}
+        - localeIdentifier:
+            m_Code: sv
+          value: {fileID: 8300000, guid: 8016efeb188fdde458cc881148701656, type: 3}
 --- !u!1 &2042788361
 GameObject:
   m_ObjectHideFlags: 0

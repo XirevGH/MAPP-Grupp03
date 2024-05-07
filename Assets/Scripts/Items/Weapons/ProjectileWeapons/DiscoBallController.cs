@@ -63,7 +63,8 @@ public class DiscoBallController : ProjectileWeapon
 
     public override void Attack()
     {
-        if (gameObject.activeSelf) { 
+        if (gameObject.activeSelf) 
+        { 
             for (int i = 0; i < amountOfProjectiles; i++) 
             {
                 GameObject clone = Instantiate(discoBall, transform.position, Quaternion.identity);

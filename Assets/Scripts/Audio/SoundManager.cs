@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Events;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,7 +20,7 @@ public class SoundManager : MonoBehaviour
 
     public Scene currentScene;
     public AudioMixerSnapshot lowPassSnapshots, normalSnapshots;
-    public bool isOnePlaying, isLowPassOn, isInMenu, hasRun;
+    public bool isOnePlaying, isLowPassOn, isInMenu, hasRun, isTimeToChange;
     public int currentTrackNumber, currentBPM;
 
     [Header("Beat relateted")]
@@ -52,19 +53,28 @@ public class SoundManager : MonoBehaviour
         StopInGameMusic();
         isOnePlaying = true;
         isInMenu = false;
+        isTimeToChange = false;
         currentSource = musicSource1;
         currentBPM = BPMForTracks[0];
         currentTrackNumber = 0;
+
+        UnityAction action = new UnityAction(CheckIfItsTimeToChangeTrack);
+        TriggerController.Instance.SetTrigger(3, action);
     }
 
     void Update()
     {
         currentScene = SceneManager.GetActiveScene();
       
+    }
+
+    public void CheckIfItsTimeToChangeTrack()
+    {
         if (currentTrackNumber != 0)
         {
             if (currentSource.pitch <= 0.9f)
             {
+
                 ChangeTrack(--currentTrackNumber);
             }
 
@@ -77,8 +87,6 @@ public class SoundManager : MonoBehaviour
                 ChangeTrack(++currentTrackNumber);
             }
         }
-       
-       
     }
 
     private void StopInGameMusic()
@@ -258,12 +266,13 @@ public class SoundManager : MonoBehaviour
     public void PlaySFX(AudioClip clip, Transform transform, float volume, int priority)
     {
         AudioSource audioSource = Instantiate(sfxObject, transform.position, Quaternion.identity);
+
         audioSource.clip = clip;
         audioSource.pitch = this.transform.GetChild(0).GetComponent<AudioSource>().pitch;
         audioSource.priority = priority;
         audioSource.volume = volume;
         audioSource.Play();
-        Destroy(audioSource, audioSource.clip.length);
+        Destroy(audioSource.gameObject, audioSource.clip.length);
 
     }
 
