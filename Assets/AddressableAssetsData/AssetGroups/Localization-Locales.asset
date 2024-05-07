@@ -41,18 +41,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a060458dc6a4c034f97d2aa16c95970c
-    m_Address: Chinese (Simplified) (zh-Hans)
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ce110cc1423cb984b936f9a3bb2a719f
-    m_Address: Thai (Thailand) (th-TH)
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale
-    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: a245c807ae2f39e47afc759a2b43d4f6, type: 2}
   m_SchemaSet:
