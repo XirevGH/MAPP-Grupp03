@@ -59,20 +59,15 @@ public class SoundManager : MonoBehaviour
         currentTrackNumber = 0;
 
         UnityAction action = new UnityAction(CheckIfItsTimeToChangeTrack);
-        TriggerController.Instance.SetTrigger(3, action);
+        TriggerController.Instance.SetTrigger(1, action);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         currentScene = SceneManager.GetActiveScene();
-      
-    }
-
-    public void CheckIfItsTimeToChangeTrack()
-    {
         if (currentTrackNumber != 0)
         {
-            if (currentSource.pitch <= 0.9f)
+            if (Mathf.Approximately(currentSource.pitch, 0.9f))
             {
 
                 ChangeTrack(--currentTrackNumber);
@@ -82,11 +77,17 @@ public class SoundManager : MonoBehaviour
 
         if (currentTrackNumber != musicTracks.Length - 1)
         {
-            if (currentSource.pitch >= 1.1f)
+            if (Mathf.Approximately(currentSource.pitch, 1.1f))
             {
                 ChangeTrack(++currentTrackNumber);
             }
         }
+
+    }
+
+    public void CheckIfItsTimeToChangeTrack()
+    {
+       
     }
 
     private void StopInGameMusic()
@@ -198,9 +199,10 @@ public class SoundManager : MonoBehaviour
             musicSource2.Play();
             while (timeElapsed <= timeToFade)
             {
+                timeElapsed += Time.deltaTime;
                 musicSource2.volume = Mathf.Lerp(0, 1, timeElapsed / timeToFade);
                 musicSource1.volume = Mathf.Lerp(1, 0, timeElapsed / timeToFade);
-                timeElapsed += Time.deltaTime;
+               
                 yield return null;
 
             }
@@ -216,9 +218,10 @@ public class SoundManager : MonoBehaviour
             musicSource1.Play();
             while (timeElapsed <= timeToFade)
             {
+                timeElapsed += Time.deltaTime;
                 musicSource1.volume = Mathf.Lerp(0, 1, timeElapsed / timeToFade);
                 musicSource2.volume = Mathf.Lerp(1, 0, timeElapsed / timeToFade);
-                timeElapsed += Time.deltaTime;
+               
                 yield return null;
 
             }
@@ -250,10 +253,10 @@ public class SoundManager : MonoBehaviour
         {
             while (elapsedTime <= timeToChange)
             {
-               
-                audioSource.pitch = Mathf.Lerp(currentPitch, nexPitch, elapsedTime / timeToChange);
-                //Debug.Log(elapsedTime / timeToChange);
                 elapsedTime += Time.deltaTime;
+                audioSource.pitch = Mathf.Lerp(currentPitch, nexPitch, elapsedTime / timeToChange);
+                Debug.Log(elapsedTime / timeToChange);
+               
                 yield return null;
 
             }
