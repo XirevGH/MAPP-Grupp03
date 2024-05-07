@@ -14,7 +14,11 @@ public class DecoyController : Utility
     [SerializeField] private int decoyHealthIncreasePerUpgrade;
 
     public int decoyAmountRank;
+    public int decoyAmountUpgradeCost;
+    
     public int decoyHealthRank;
+    public int decoyHealthUpgradeCost;
+    
 
     public DynamicJoystick dynamicJoystick;
     private Vector2 playerDirection, throwingDirection, playerPosition;
@@ -122,5 +126,15 @@ public class DecoyController : Utility
     {
         upgradeOptions.Add("IncreaseDecoyHealth");
         upgradeOptions.Add("IncreaseDecoyAmount");
+    }
+
+    public int GetIncreaseDecoyHealthCost()
+    {
+        return decoyHealthUpgradeCost;
+    }
+
+    public int GetIncreaseDecoyAmountCost()
+    {
+        return decoyAmountUpgradeCost;
     }
 }
