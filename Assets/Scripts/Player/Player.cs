@@ -149,7 +149,7 @@ public class Player : MonoBehaviour
     private void LevelUp()
     {
         xpHeld -= xpToLevel;
-        xpToLevel *= 1.2f;
+        xpToLevel *= 1.4f;
         level++;
         levelText.text = "Level: " + level;
         UpdateXPSlider();
@@ -169,6 +169,10 @@ public class Player : MonoBehaviour
         currentItems.Add(item);
     }
 
+    public void AddCurrency(int addedCurrency)
+    {
+        currency += addedCurrency;
+    }
     public List<Item> GetCurrentItems()
     {
         return new List<Item>(currentItems);

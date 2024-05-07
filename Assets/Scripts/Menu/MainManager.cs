@@ -33,7 +33,7 @@ public class MainManager : MonoBehaviour
     }
     public void Reset() {
         timeText = "";
-        mainLevel = 0;
+        mainLevel = 1;
         enemiesDefeated = 0;
         moneyEarned = 0;
     }

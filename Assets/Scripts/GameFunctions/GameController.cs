@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
@@ -10,9 +12,12 @@ public class GameController : MonoBehaviour
     private string playerStatsFile;
     public Camera mainCamera;
     public Tilemap tilemap;
+     
     public int currentTrackBPM;
-
-    private HashSet<XPDrop> xpList = new HashSet<XPDrop>();
+    public int xpDropMax;
+    public int xpSaved;
+    public HashSet<XPDrop> xpList = new HashSet<XPDrop>();
+    private HashSet<ItemMagnet> magnets = new HashSet<ItemMagnet>();
 
     private void Awake()
     {
@@ -64,17 +69,45 @@ public class GameController : MonoBehaviour
         Vector3Int maxPosition = tilemap.WorldToCell(cameraPosition + new Vector3(cameraSize- 5 * mainCamera.aspect , cameraSize + 10, 0));
         return new BoundsInt(minPosition, maxPosition - minPosition);
     }
-
+    
     public void AddXpObject(XPDrop toAdd){
-        xpList.Add(toAdd);
+        if( xpList.Count < xpDropMax){
+            int extraXp = 0;
+            if(xpSaved > 40){
+                xpSaved -= 40;
+                extraXp = 40;
+            } 
+            toAdd.AddXP(extraXp);  
+            xpList.Add(toAdd);
+        }else{
+            MergeAndRemove(toAdd);
+        }
     }
-    public void RemoveXpObject(XPDrop toRemove){
-        xpList.Remove(toRemove);
+    public void MergeAndRemove(XPDrop toMerge){
+        xpSaved += toMerge.GetXpValue();
+        RemoveXp(toMerge);
+    }   
+    public void RemoveXp(XPDrop toRemove){
+        xpList.Add(toRemove);
+        XPDropPool.Instance.ReturnXPDrop(toRemove);
+    } 
+
+
+    
+    public void AddMagnet(ItemMagnet toAdd){
+        if(magnets.Count < 4){
+            Destroy(toAdd.gameObject);
+        }else{
+            magnets.Add(toAdd);
+        }
     }
+    public void RemoveMagnet(ItemMagnet toRemove){
+        magnets.Remove(toRemove);
+    }
+    
 
     public HashSet<XPDrop> GetXPDropObjects(){
         return xpList;
     }
 
-   
 }

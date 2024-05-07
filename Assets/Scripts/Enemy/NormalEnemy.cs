@@ -37,10 +37,5 @@ public class NormalEnemy : Enemy
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, thisMovementSpeed / 200);
         }
     }
-    protected override void DestroyGameObject()
-    {
-        Drops();
-        MainManager.Instance.enemiesDefeated += 1;
-        Destroy(gameObject);
-    }
+    
 }
