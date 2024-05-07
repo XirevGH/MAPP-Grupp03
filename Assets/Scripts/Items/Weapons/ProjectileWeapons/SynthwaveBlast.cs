@@ -25,4 +25,19 @@ public class SynthwaveBlast : ProjectileWeapon
             }
         }
     }
+
+    public override int GetIncreaseProjectileCountCost()
+    {
+        return projectileUpgradeCost;
+    }
+
+    public override int GetIncreasePenetrationAmountCost()
+    {
+        return penetrationUpgradeCost;
+    }
+
+    public override int GetIncreaseDamageCost()
+    {
+        return damageUpgradeCost;
+    }
 }

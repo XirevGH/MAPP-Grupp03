@@ -66,4 +66,13 @@ public class YoyoController : PermanentProjectileWeapon
         clone.GetComponent<Yoyo>().SetDamage(damage);
     }
 
+    public override int GetIncreaseProjectileCountCost()
+    {
+        return projectileUpgradeCost;
+    }
+
+    public override int GetIncreaseDamageCost()
+    {
+        return damageUpgradeCost;
+    }
 }

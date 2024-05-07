@@ -47,4 +47,14 @@ public class ElectricGuitar : TetheringWeapon
     {
         return damage;
     }
+
+    public override int GetIncreaseTetherAmountCost()
+    {
+        return tetherUpgradeCost;
+    }
+
+    public override int GetIncreaseDamageCost()
+    {
+        return damageUpgradeCost;
+    }
 }

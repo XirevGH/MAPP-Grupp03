@@ -5,6 +5,7 @@ public abstract class Weapon : Item
 {
     public float damage;
     public int damageRank;
+    public int damageUpgradeCost;
     public float percentageDamageIncrease;
     public AudioClip attackSound;
 
@@ -30,4 +31,6 @@ public abstract class Weapon : Item
     {
         return "Weapon";
     }
+
+    public abstract int GetIncreaseDamageCost();
 }

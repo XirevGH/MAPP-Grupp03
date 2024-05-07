@@ -14,12 +14,8 @@ public class MetaUpgradeSystem : MonoBehaviour
     //[SerializeField] private TextMeshProUGUI MoneyText2;
     
     [SerializeField] private List<Item> items;
-
-    
-    
-
     private Dictionary<Tuple<string, string>, int> upgradeMap;
-
+    private Dictionary<Tuple<string, string>, int> costMap;
     string upgradeStatsFile;
 
     [SerializeField] private int bassGuitarIncreaseDamage;
@@ -151,7 +147,7 @@ public class MetaUpgradeSystem : MonoBehaviour
 
     
 
-    private bool EnothMoney(int price)
+    private bool CheckIfSufficientCurrency(int price)
     {
         if(currency >= price){
             currency -= price;
