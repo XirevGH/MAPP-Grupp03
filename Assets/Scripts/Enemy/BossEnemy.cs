@@ -110,9 +110,8 @@ public class BossEnemy : Enemy
     }
 
     protected override void DestroyGameObject() {
-        EnemySpawner.bossAlive = false; //If bossAlive is true, then the Enemy waves are passed
-        Drops();
-        MainManager.Instance.enemiesDefeated += 1;
-        Destroy(gameObject);
+        EnemySpawner.bossAlive = false; 
+        base.DestroyGameObject();
+        
     }
 }

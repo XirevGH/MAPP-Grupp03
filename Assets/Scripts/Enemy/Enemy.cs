@@ -7,6 +7,7 @@ using System;
 using System.Linq;
 using Unity.VisualScripting;
 using static UnityEngine.GraphicsBuffer;
+using UnityEngine.UIElements;
 
 
 [System.Serializable]  
@@ -28,7 +29,6 @@ public class GameObjectComparer : IComparer<GameObject>
         }
     }
 }
-
 [System.Serializable]  
 public class DropItem
 {
@@ -42,9 +42,13 @@ public class Enemy : MonoBehaviour
 {
 
     [SerializeField] private Sprite enemySprite;
+    
     [SerializeField] private List<DropItem> drops = new List<DropItem>();
     //om den kan droppa ferla saker än en. Börja med först droppet i listan
+    public int xpValue;
+    public float dropChance;
     public bool multiDrop;
+    
     public GameObject player, target;
     protected float damageNumberWindow = 3f;
     public SpriteRenderer sprite;
@@ -239,6 +243,21 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    protected bool DropXP()
+    {   
+        float random = (float)Math.Round(UnityEngine.Random.Range(0f, 100f));
+        if(random <= dropChance){
+            XPDrop xpDrop = XPDropPool.Instance.GetXPDrop();
+            xpDrop.transform.position = transform.position;  
+            xpDrop.Initialize(xpValue, player);  
+            xpDrop.gameObject.SetActive(true);
+            
+            return true;
+        }
+        return false;
+    }
+
+
     public void UpdateSpeed(){
         thisMovementSpeed = movementSpeed * baseMovementSpeed;
     }
@@ -248,8 +267,11 @@ public class Enemy : MonoBehaviour
     
 
     protected virtual void DestroyGameObject()
-    {
-        Drops();
+    {   
+        if(!DropXP()|| multiDrop){
+            Drops();
+        }
+        
         MainManager.Instance.enemiesDefeated += 1;
         Destroy(gameObject);
     }

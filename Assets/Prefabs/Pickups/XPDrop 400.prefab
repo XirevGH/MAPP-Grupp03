@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   XP: 400
   speed: 20
+  bossDrop: 1
 --- !u!1 &3246810381641136031
 GameObject:
   m_ObjectHideFlags: 0

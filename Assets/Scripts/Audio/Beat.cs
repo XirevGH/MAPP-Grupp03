@@ -9,6 +9,7 @@ public class Beat : MonoBehaviour
     private float percentageComplete, elapsedTime, beatLife;
     private Vector3 circleStartingScale;
     public bool isAlive;
+    public int currencyToAdd;
 
     private void Start()
     {
@@ -46,7 +47,7 @@ public class Beat : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Music Collider"))
-        {
+        {  Player.Instance.AddCurrency(currencyToAdd);
            SoundManager.Instance.ChangePitch(true);
             Destroy(gameObject);
         }
