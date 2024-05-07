@@ -6,6 +6,7 @@ public class BassGuitar : PhysicalWeapon
 {
     public  HashSet<Collider2D> colliders = new HashSet<Collider2D>();
     public Animator anim;
+   
 
     private void Start()
     {
@@ -20,7 +21,7 @@ public class BassGuitar : PhysicalWeapon
     public override void Attack()
     {
         anim.SetTrigger("Attacking");
-        GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip, 1);
+        SoundManager.Instance.PlaySFX(attackSound, transform, 1, 128);
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -29,6 +30,7 @@ public class BassGuitar : PhysicalWeapon
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("BassGuitarSwing") && !colliders.Contains(other) && other.gameObject.CompareTag("Enemy")) 
         {
             colliders.Add(other);
+            //SoundManager.Instance.PlaySFX(hitSound, transform, 1);
             DealDamage(other);
 
           

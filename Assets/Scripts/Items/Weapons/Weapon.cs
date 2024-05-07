@@ -7,6 +7,7 @@ public abstract class Weapon : Item
     public int damageRank;
     public int damageUpgradeCost;
     public float percentageDamageIncrease;
+    public AudioClip attackSound;
 
     public abstract void Attack();
 

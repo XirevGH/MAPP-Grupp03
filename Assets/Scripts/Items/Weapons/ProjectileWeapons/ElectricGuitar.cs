@@ -29,15 +29,18 @@ public class ElectricGuitar : TetheringWeapon
 
     public override void Attack()
     {
-        GameObject[] targetEnemies = GetClosestEnemies(AdjustTargetOverflow(amountOfTethers));
-        for(int i = 0; i < targetEnemies.Length; i++)
+        if (gameObject.activeSelf)
         {
-            GameObject clone = Instantiate(bolt);
-            clone.GetComponent<ElectricBolt>().SetPlayerObject(gameObject);
-            clone.GetComponent<ElectricBolt>().SetTargetUnit(targetEnemies[i]);
-            clone.SetActive(true);
-        }
-        //StartCooldown();
+            SoundManager.Instance.PlaySFX(attackSound, transform, 1, 128);
+            GameObject[] targetEnemies = GetClosestEnemies(AdjustTargetOverflow(amountOfTethers));
+            for (int i = 0; i < targetEnemies.Length; i++)
+            {
+                GameObject clone = Instantiate(bolt);
+                clone.GetComponent<ElectricBolt>().SetPlayerObject(gameObject);
+                clone.GetComponent<ElectricBolt>().SetTargetUnit(targetEnemies[i]);
+                clone.SetActive(true);
+            }
+        } 
     }
 
     public float GetDamage()
