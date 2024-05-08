@@ -25,10 +25,14 @@ public class YoyoController : PermanentProjectileWeapon
 
     public override void Attack() 
     {
-        int totalYoyo = transform.childCount;
-        for (int i = 0; i < totalYoyo; i++)
+        if (gameObject.activeSelf)
         {
-             transform.GetChild(i).GetComponent<Yoyo>().ActivateSuperMode();
+            int totalYoyo = transform.childCount;
+            SoundManager.Instance.PlaySFX(attackSound, transform, 1);
+            for (int i = 0; i < totalYoyo; i++)
+            {
+                transform.GetChild(i).GetComponent<Yoyo>().ActivateSuperMode();
+            }
         }
     }
 

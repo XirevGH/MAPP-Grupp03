@@ -9,6 +9,7 @@ public abstract class PhysicalWeapon : Weapon
         if (other.gameObject != null)
         {
             other.GetComponent<Enemy>().TakeDamage(damage);
+
         }
     }
 }

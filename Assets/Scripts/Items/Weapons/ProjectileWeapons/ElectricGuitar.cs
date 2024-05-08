@@ -31,7 +31,7 @@ public class ElectricGuitar : TetheringWeapon
     {
         if (gameObject.activeSelf)
         {
-            SoundManager.Instance.PlaySFX(attackSound, transform, 1, 128);
+            SoundManager.Instance.PlaySFX(attackSound, transform, 1);
             GameObject[] targetEnemies = GetClosestEnemies(AdjustTargetOverflow(amountOfTethers));
             for (int i = 0; i < targetEnemies.Length; i++)
             {

@@ -11,7 +11,7 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] public AudioSource musicSource1, musicSource2, menuMusic, sfxSource, currentSource;
+    [SerializeField] public AudioSource musicSource1, musicSource2, menuMusic, SFXSource, currentSource;
     [SerializeField] private AudioClip[] musicTracks, clickSound;
     [SerializeField] private int[] BPMForTracks;
     [SerializeField] private float timeToFade = 1f;
@@ -266,24 +266,24 @@ public class SoundManager : MonoBehaviour
      
     }
 
-    public void PlaySFX(AudioClip clip, Transform transform, float volume, int priority)
+    public void PlaySFX(AudioClip clip, Transform transform, float volume)
     {
-        AudioSource audioSource = Instantiate(sfxObject, transform.position, Quaternion.identity);
 
-        audioSource.clip = clip;
-        audioSource.pitch = this.transform.GetChild(0).GetComponent<AudioSource>().pitch;
-        audioSource.priority = priority;
-        audioSource.volume = volume;
-        audioSource.Play();
-        Destroy(audioSource.gameObject, audioSource.clip.length);
+        AudioSource audioSource = Instantiate(sfxObject, transform.position, Quaternion.identity, transform);
+
+        //audioSource.clip = clip;
+        SFXSource.pitch = this.transform.GetChild(0).GetComponent<AudioSource>().pitch;
+        SFXSource.volume = (float)UnityEngine.Random.Range(0.5f, volume);
+        SFXSource.PlayOneShot(clip, 1);
+        Destroy(audioSource.gameObject);
 
     }
 
     public void Click()
     {
-        float randomPitch = UnityEngine.Random.Range(-0.2f, 0.2f); 
-        sfxSource.pitch = Mathf.Clamp(sfxSource.pitch + randomPitch, 0.1f, 3.0f);
-        sfxSource.PlayOneShot(clickSound[0], 1); 
+        float randomPitch = UnityEngine.Random.Range(-0.2f, 0.2f);
+        SFXSource.pitch = Mathf.Clamp(SFXSource.pitch + randomPitch, 0.1f, 3.0f);
+        SFXSource.PlayOneShot(clickSound[0], 1); 
     }
 
     

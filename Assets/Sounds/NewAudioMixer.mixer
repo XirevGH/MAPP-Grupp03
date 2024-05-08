@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!243 &-4809636261824017940
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Enemy
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 0bcd2f5a249280c4db5610944e9a493e
+  m_Children: []
+  m_Volume: 90afd3b70205adf4cb92d40f74b450d9
+  m_Pitch: c288e0a8c32b21d468541313ddd8a814
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 1346254396625176048}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &-396259705445800102
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -9,7 +28,8 @@ AudioMixerGroupController:
   m_Name: SFX
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 6f40cb855038d63448cd6e7e2eb63c27
-  m_Children: []
+  m_Children:
+  - {fileID: -4809636261824017940}
   m_Volume: 09be4fe566682124d8e7413ffe9f8c2c
   m_Pitch: 87aa9510e64ed0245a8e54abad188204
   m_Send: 00000000000000000000000000000000
@@ -46,9 +66,10 @@ AudioMixerController:
     - cb4816ad2c1dd99409234a16cdea7739
     - bab4a058be455224fadc135649fdf9da
     - 6f40cb855038d63448cd6e7e2eb63c27
+    - 0bcd2f5a249280c4db5610944e9a493e
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 6332697282471297084}
+  m_TargetSnapshot: {fileID: 1782747323206729303}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -99,6 +120,20 @@ AudioMixerSnapshotController:
     03ceece99060dae479266f2965c34059: -3.642635
     4bec3cee73ad09743b92532337ac8d27: 22000
   m_TransitionOverrides: {}
+--- !u!244 &1346254396625176048
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: cd8ebb73862d1e947a7ee3b9fab18979
+  m_EffectName: Attenuation
+  m_MixLevel: 344952a2a05f8664fac6ebbcecadb16e
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!245 &1782747323206729303
 AudioMixerSnapshotController:
   m_ObjectHideFlags: 0
@@ -113,6 +148,7 @@ AudioMixerSnapshotController:
     2b569452a282eea4b86e0c905281c592: 22000
     e389eae509b197c49af78fd6567592ab: 0
     09be4fe566682124d8e7413ffe9f8c2c: 0
+    90afd3b70205adf4cb92d40f74b450d9: -0.39762527
     6cf3f8f8d90c39c4f8cdc1fb22b93e92: 12285
     03ceece99060dae479266f2965c34059: -3.642635
     77006aec1a5fe3c4885769642c2f9d79: 0.5

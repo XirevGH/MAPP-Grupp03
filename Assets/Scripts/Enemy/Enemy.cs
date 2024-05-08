@@ -8,6 +8,9 @@ using System.Linq;
 using Unity.VisualScripting;
 using static UnityEngine.GraphicsBuffer;
 using UnityEngine.UIElements;
+using System.Xml.Linq;
+using UnityEditor.Localization.Plugins.XLIFF.V12;
+using UnityEngine.Rendering;
 
 
 [System.Serializable]  
@@ -66,7 +69,7 @@ public class Enemy : MonoBehaviour
     public TMP_Text damageNumbers;
     public Animator damageNumberAnim;
     public Animator enemyAnim;
-
+    public AudioClip hitSound;
 
     protected virtual void Start()
     {   startingHealth = health * healthProcenIncrease;
@@ -125,9 +128,9 @@ public class Enemy : MonoBehaviour
     }
 
     protected void SelectTarget(){
-         if(GameObject.FindGameObjectWithTag("DecoyObject") != null && GameObject.FindGameObjectWithTag("DecoyObject").activeInHierarchy)
+         if(GameObject.FindGameObjectWithTag("Decoy") != null && GameObject.FindGameObjectWithTag("Decoy").activeInHierarchy)
             {
-                target = GameObject.FindGameObjectWithTag("DecoyObject");
+                target = GameObject.FindGameObjectWithTag("Decoy");
 
             }
             else
@@ -146,8 +149,12 @@ public class Enemy : MonoBehaviour
                 damageNumberAnim.SetTrigger("TakingDamage");
             }
             enemyAnim.SetTrigger("TakeDamage");
+            GetComponent<AudioSource>().PlayOneShot(hitSound, (float)UnityEngine.Random.Range(0.8f, 1));
+
+
         }
     }
+
 
     protected string BuildDamageNumber(float damage)
     {
