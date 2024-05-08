@@ -26,6 +26,7 @@ Upgrade,Saxophone,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,
 Upgrade,Saxophone,Increase the amount of Notes fired by,IncreaseProjectileCount,GetProjectilePerUpgrade,.
 Upgrade,Saxophone,Increase the amount of targets each Note can deal damage to by,IncreasePenetrationAmount,GetPenetrationPerUpgrade,.
 Upgrade,Stage Presence,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Stage Presence,Increase radius by,IncreaseRadius,GetRadiusIncreasePercentage,%
 Upgrade,Synthwave Blast,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
 Upgrade,Synthwave Blast,Increase the amount of Synthwave Bolts in each blast by,IncreaseProjectileAmount,GetProjectilePerUpgrade,.
 Upgrade,Synthwave Blast,Increase the amount of targets each Synthwave Bolt can deal damage to by,IncreasePenetrationAmount,GetPenetrationPerUpgrade,.
