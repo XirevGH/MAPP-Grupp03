@@ -281,6 +281,8 @@ public class SoundManager : MonoBehaviour
 
     public void Click()
     {
+        float randomPitch = UnityEngine.Random.Range(-0.2f, 0.2f); 
+        sfxSource.pitch = Mathf.Clamp(sfxSource.pitch + randomPitch, 0.1f, 3.0f);
         sfxSource.PlayOneShot(clickSound[0], 1); 
     }
 
