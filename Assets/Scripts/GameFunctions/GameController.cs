@@ -14,9 +14,7 @@ public class GameController : MonoBehaviour
     public Tilemap tilemap;
      
     public int currentTrackBPM;
-    public int xpDropMax;
-    public int xpSaved;
-    public HashSet<XPDrop> xpList = new HashSet<XPDrop>();
+    
     private HashSet<ItemMagnet> magnets = new HashSet<ItemMagnet>();
 
     private void Awake()
@@ -70,44 +68,18 @@ public class GameController : MonoBehaviour
         return new BoundsInt(minPosition, maxPosition - minPosition);
     }
     
-    public void AddXpObject(XPDrop toAdd){
-        if( xpList.Count < xpDropMax){
-            int extraXp = 0;
-            if(xpSaved > 40){
-                xpSaved -= 40;
-                extraXp = 40;
-            } 
-            toAdd.AddXP(extraXp);  
-            xpList.Add(toAdd);
-        }else{
-            MergeAndRemove(toAdd);
-        }
-    }
-    public void MergeAndRemove(XPDrop toMerge){
-        xpSaved += toMerge.GetXpValue();
-        RemoveXp(toMerge);
-    }   
-    public void RemoveXp(XPDrop toRemove){
-        xpList.Add(toRemove);
-        XPDropPool.Instance.ReturnXPDrop(toRemove);
-    } 
+    
 
 
     
     public void AddMagnet(ItemMagnet toAdd){
-        if(magnets.Count < 4){
-            Destroy(toAdd.gameObject);
-        }else{
-            magnets.Add(toAdd);
-        }
+        
     }
     public void RemoveMagnet(ItemMagnet toRemove){
-        magnets.Remove(toRemove);
+        
     }
     
 
-    public HashSet<XPDrop> GetXPDropObjects(){
-        return xpList;
-    }
+    
 
 }

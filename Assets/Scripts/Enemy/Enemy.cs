@@ -251,7 +251,6 @@ public class Enemy : MonoBehaviour
             xpDrop.transform.position = transform.position;  
             xpDrop.Initialize(xpValue, player);  
             xpDrop.gameObject.SetActive(true);
-            
             return true;
         }
         return false;

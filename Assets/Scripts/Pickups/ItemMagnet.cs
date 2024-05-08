@@ -10,8 +10,6 @@ public class ItemMagnet : MonoBehaviour
     private void Awake()
     {   
     
-        
-        
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         gameController.AddMagnet(this);
         
@@ -21,13 +19,7 @@ public class ItemMagnet : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            HashSet<XPDrop> allXp = gameController.GetXPDropObjects();
-            foreach(XPDrop xp in allXp){
-                if(xp != null)
-                {
-                    xp.GetComponent<XPDrop>().MoveToPlayer();
-                }
-            }
+            XPDropPool.Instance.ActivateXpToPlayer();
             gameController.RemoveMagnet(this);
             Destroy(gameObject);
         }

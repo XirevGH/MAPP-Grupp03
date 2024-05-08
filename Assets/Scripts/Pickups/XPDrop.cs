@@ -8,12 +8,10 @@ using static UnityEngine.GraphicsBuffer;
 public class XPDrop : MonoBehaviour
 {
     
-    private int XP;
+    public int XP;
 
     private GameObject player;
 
-
-    static private GameController gameController;
     public float speed = 20f;
     public bool bossDrop;
     private bool move = false;
@@ -22,22 +20,19 @@ public class XPDrop : MonoBehaviour
     public XPDrop Initialize(int initialXP, GameObject player)
     {
         this.player = player;
-        this.XP = initialXP;
+        this.XP = XPDropPool.Instance.AddXpSaved(initialXP);
         return this;  
     }
-    private void Awake()
-    {   
-        if(gameController == null){
-            gameController = FindObjectOfType<GameController>();
-        }
-        gameController.AddXpObject(this);
-        
-    }
     void FixedUpdate()
-    {   if(Vector3.Distance(player.transform.position, transform.position) > 33 && move != true){
-            gameController.MergeAndRemove(this);
+    {
+    /*   
+    float yDistanceSquared = (player.transform.position.y - transform.position.y) * (player.transform.position.y - transform.position.y);
+        float xDistanceSquared = (player.transform.position.x - transform.position.x) * (player.transform.position.x - transform.position.x);
+
+        if ((yDistanceSquared > 225 || xDistanceSquared > 625) && !move) {
+            XPDropPool.Instance.MergeAndRemove(this);
              
-        }
+        }*/
         if(Vector3.Distance(player.transform.position, transform.position) < 2.7 && move != true){
             MoveToPlayer();
              
@@ -47,7 +42,7 @@ public class XPDrop : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
             if(Vector3.Distance(player.transform.position, transform.position) < 0.3){
                 player.GetComponent<Player>().AddXP(XP);
-                gameController.RemoveXp(this);
+                XPDropPool.Instance.RemoveXp(this);
                 
                 
             }

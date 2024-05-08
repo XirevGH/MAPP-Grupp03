@@ -1449,8 +1449,6 @@ MonoBehaviour:
   mainCamera: {fileID: 519420031}
   tilemap: {fileID: 1947654048}
   currentTrackBPM: 0
-  xpDropMax: 50
-  xpSaved: 0
 --- !u!4 &482028541
 Transform:
   m_ObjectHideFlags: 0
@@ -2478,6 +2476,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xpDropPrefab: {fileID: 2322821042000343324, guid: 73e8c7fac64e160469ab7a30447b8bc1, type: 3}
+  xpDropMax: 100
+  xpSaved: 0
 --- !u!4 &575496837
 Transform:
   m_ObjectHideFlags: 0
@@ -2487,7 +2487,7 @@ Transform:
   m_GameObject: {fileID: 575496835}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.759987, y: 15.434398, z: -0.15509048}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
