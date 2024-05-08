@@ -9,6 +9,10 @@ public class StagePresence : Weapon
 
     public int radiusRank;
 
+    private float damageInterval = 3f; //ska vara med beatet
+    private float timer = 0f;
+
+
     public void IncreaseRadius()
     {
         radiusRank++;
@@ -26,7 +30,7 @@ public class StagePresence : Weapon
     }
 
 
-
+    /*
     private void OnTriggerEnter2D(Collider2D other)
     {
             if (other.gameObject.CompareTag("Enemy"))
@@ -42,6 +46,32 @@ public class StagePresence : Weapon
             other.GetComponent<Enemy>().TakeDamage(damage);
         }
 
+    }*/
+
+    private void Update()
+    {
+        timer += Time.deltaTime;
+     
+        if (timer >= damageInterval)
+        {
+            timer = 0f;
+            DealDamage();
+        }
+    }
+
+
+    private void DealDamage()
+    {
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, GetComponent<CircleCollider2D>().radius * 1.5f);
+
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.gameObject.CompareTag("Enemy"))
+            {
+                collider.GetComponent<Enemy>().TakeDamage(damage);
+            }
+        }
     }
 
     public override void Attack()
