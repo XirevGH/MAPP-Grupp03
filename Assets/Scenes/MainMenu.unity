@@ -931,7 +931,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 21508840}
-  - component: {fileID: 21508841}
   m_Layer: 0
   m_Name: Saxophone
   m_TagString: Untagged
@@ -959,20 +958,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -454.3}
   m_SizeDelta: {x: 9, y: 82.6}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &21508841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 21508839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9ce08bf2be92f84e86fc5502e27b291, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollPanel: {fileID: 1135520748}
-  itemPanel: {fileID: 0}
 --- !u!1 &21780901
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,7 +2114,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -2188,7 +2173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Disco Ball
+  itemName: Disco Ball
   method: GetCurrentDamage
   isPercentage: 0
 --- !u!1 &52748015
@@ -2624,10 +2609,10 @@ RectTransform:
   - {fileID: 1976892569}
   m_Father: {fileID: 242387200}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -187.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &67619377
 GameObject:
@@ -3001,7 +2986,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -3060,7 +3045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Vinyl Record
+  itemName: Vinyl Record
   method: GetDamageIncreasePercentage
   isPercentage: 1
 --- !u!1 &74069924
@@ -3976,7 +3961,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -4035,7 +4020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Electric Guitar
+  itemName: Electric Guitar
   method: GetIncreaseDamageCost
   isPercentage: 0
 --- !u!1 &88895291
@@ -4556,7 +4541,6 @@ GameObject:
   - component: {fileID: 99131350}
   - component: {fileID: 99131349}
   - component: {fileID: 99131351}
-  - component: {fileID: 99131352}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -4635,7 +4619,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -4691,26 +4675,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 99131347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Disco Ball
-  methodName: IncreasePenetrationAmount
-  upgrade: {fileID: 0}
---- !u!114 &99131352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 99131347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Disco Ball
-  method: 
+  itemName: Disco Ball
+  method: GetIncreasePenetrationAmountCost
   isPercentage: 0
 --- !u!1 &99881783
 GameObject:
@@ -4880,10 +4849,10 @@ RectTransform:
   - {fileID: 1844713526}
   m_Father: {fileID: 341002535}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -62.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &111336895
 GameObject:
@@ -5456,7 +5425,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -5515,9 +5484,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Stage Presence
-  method: 
-  isPercentage: 0
+  itemName: Stage Presence
+  method: GetCurrentRadiusIncrease
+  isPercentage: 1
 --- !u!1 &131108516
 GameObject:
   m_ObjectHideFlags: 0
@@ -5706,7 +5675,6 @@ GameObject:
   - component: {fileID: 131749224}
   - component: {fileID: 131749226}
   - component: {fileID: 131749225}
-  - component: {fileID: 131749227}
   - component: {fileID: 131749228}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -5786,7 +5754,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -5833,21 +5801,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131749223}
   m_CullTransparentMesh: 1
---- !u!114 &131749227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 131749223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Saxophone
-  methodName: IncreasePenetrationAmount
-  upgrade: {fileID: 0}
 --- !u!114 &131749228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5860,8 +5813,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Saxophone
-  method: 
+  itemName: Saxophone
+  method: GetIncreasePenetrationAmountCost
   isPercentage: 0
 --- !u!1 &135113055
 GameObject:
@@ -6536,7 +6489,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -6595,9 +6548,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Personal Space
-  method: 
-  isPercentage: 0
+  itemName: Personal Space
+  method: GetCurrentRadiusIncrease
+  isPercentage: 1
 --- !u!1 &151367101
 GameObject:
   m_ObjectHideFlags: 0
@@ -6848,7 +6801,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -6907,7 +6860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Saxophone
+  itemName: Saxophone
   method: GetCurrentDamage
   isPercentage: 0
 --- !u!1 &156275574
@@ -7228,10 +7181,10 @@ RectTransform:
   - {fileID: 572661076}
   m_Father: {fileID: 2026309917}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -62.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &164689834
 GameObject:
@@ -7398,7 +7351,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -7457,7 +7410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Disco Ball
+  itemName: Disco Ball
   method: GetCurrentProjectileCount
   isPercentage: 0
 --- !u!1 &171223867
@@ -7743,9 +7696,9 @@ RectTransform:
   - {fileID: 1906974253}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 480.3999, y: -524}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &182843106
@@ -8217,7 +8170,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -8276,7 +8229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Yoyo
+  itemName: Yoyo
   method: GetProjectileIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &195427051
@@ -8637,10 +8590,10 @@ RectTransform:
   - {fileID: 1088814521}
   m_Father: {fileID: 857589419}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 242, y: -62.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &200300767
 GameObject:
@@ -9446,7 +9399,6 @@ GameObject:
   - component: {fileID: 232367344}
   - component: {fileID: 232367346}
   - component: {fileID: 232367345}
-  - component: {fileID: 232367347}
   - component: {fileID: 232367348}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -9526,7 +9478,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -9573,21 +9525,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232367343}
   m_CullTransparentMesh: 1
---- !u!114 &232367347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 232367343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Chill Vibe
-  methodName: IncreaseSlow
-  upgrade: {fileID: 0}
 --- !u!114 &232367348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9600,8 +9537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Chill Vibe
-  method: 
+  itemName: Chill Vibe
+  method: GetIncreaseSlowCost
   isPercentage: 0
 --- !u!1 &236569654
 GameObject:
@@ -9693,7 +9630,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -9752,8 +9689,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Decoy
-  method: 
+  itemName: Decoy
+  method: GetCurrentDecoyAmount
   isPercentage: 0
 --- !u!1 &242387199
 GameObject:
@@ -10643,10 +10580,10 @@ RectTransform:
   - {fileID: 467439716}
   m_Father: {fileID: 2055604420}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -62.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &309888650
 GameObject:
@@ -11497,7 +11434,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -11556,8 +11493,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Decoy
-  method: 
+  itemName: Decoy
+  method: GetIncreaseDecoyAmountCost
   isPercentage: 0
 --- !u!1 &329286310
 GameObject:
@@ -11917,7 +11854,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -11976,8 +11913,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Decoy
-  method: 
+  itemName: Decoy
+  method: GetCurrentDecoyHealthAmount
   isPercentage: 0
 --- !u!1 &335149464
 GameObject:
@@ -12350,7 +12287,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 353442729}
-  - component: {fileID: 353442730}
   m_Layer: 0
   m_Name: Electric Guitar
   m_TagString: Untagged
@@ -12378,20 +12314,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -371.69998}
   m_SizeDelta: {x: 9, y: 82.6}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &353442730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353442728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9ce08bf2be92f84e86fc5502e27b291, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollPanel: {fileID: 1135520748}
-  itemPanel: {fileID: 0}
 --- !u!1 &358665119
 GameObject:
   m_ObjectHideFlags: 0
@@ -13182,7 +13104,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -13241,7 +13163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Yoyo
+  itemName: Yoyo
   method: GetCurrentDamage
   isPercentage: 0
 --- !u!1001 &376511731
@@ -13259,6 +13181,10 @@ PrefabInstance:
     - target: {fileID: 1103054515861734431, guid: 17ccd9c1a77fa004790076d7ee038be3, type: 3}
       propertyPath: itemName
       value: Vinyl Record
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103054515861734431, guid: 17ccd9c1a77fa004790076d7ee038be3, type: 3}
+      propertyPath: baseDamage
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1103054515861734431, guid: 17ccd9c1a77fa004790076d7ee038be3, type: 3}
       propertyPath: damageUpgradeCost
@@ -13936,9 +13862,9 @@ RectTransform:
   - {fileID: 765764874}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 10301.199, y: -524}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &391427945
@@ -14655,9 +14581,9 @@ RectTransform:
   - {fileID: 1086674387}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 12483.6, y: -524}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &406590735
@@ -15263,7 +15189,6 @@ GameObject:
   - component: {fileID: 425493280}
   - component: {fileID: 425493282}
   - component: {fileID: 425493281}
-  - component: {fileID: 425493283}
   - component: {fileID: 425493284}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -15343,7 +15268,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -15390,21 +15315,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425493279}
   m_CullTransparentMesh: 1
---- !u!114 &425493283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 425493279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Saxophone
-  methodName: IncreaseProjectileCount
-  upgrade: {fileID: 0}
 --- !u!114 &425493284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15417,7 +15327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Saxophone
+  itemName: Saxophone
   method: GetIncreaseProjectileCountCost
   isPercentage: 0
 --- !u!1 &426095742
@@ -16142,10 +16052,10 @@ RectTransform:
   - {fileID: 1472484093}
   m_Father: {fileID: 341002535}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -312.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &451569157
 GameObject:
@@ -16830,7 +16740,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -16889,8 +16799,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Synthwave Blast
-  method: 
+  itemName: Synthwave Blast
+  method: GetCurrentPenetrationAmount
   isPercentage: 0
 --- !u!1 &472844880
 GameObject:
@@ -17104,9 +17014,9 @@ RectTransform:
   - {fileID: 582799798}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 5936.399, y: -524}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &473561495
@@ -17503,7 +17413,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -17562,8 +17472,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Vinyl Record
-  method: 
+  itemName: Vinyl Record
+  method: GetPenetrationIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &492153691
 GameObject:
@@ -18563,7 +18473,6 @@ GameObject:
   - component: {fileID: 519090427}
   - component: {fileID: 519090429}
   - component: {fileID: 519090428}
-  - component: {fileID: 519090430}
   - component: {fileID: 519090431}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -18643,7 +18552,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -18690,21 +18599,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519090426}
   m_CullTransparentMesh: 1
---- !u!114 &519090430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519090426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Electric Guitar
-  methodName: IncreaseTetherAmount
-  upgrade: {fileID: 0}
 --- !u!114 &519090431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18717,8 +18611,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Electric Guitar
-  method: 
+  itemName: Electric Guitar
+  method: GetIncreaseTetherAmountCost
   isPercentage: 0
 --- !u!1 &522819677
 GameObject:
@@ -18883,7 +18777,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -18942,7 +18836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Yoyo
+  itemName: Yoyo
   method: GetDamageIncreasePercentage
   isPercentage: 1
 --- !u!1 &526753005
@@ -18979,10 +18873,10 @@ RectTransform:
   - {fileID: 2037681745}
   m_Father: {fileID: 2055604420}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -187.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &543497616
 GameObject:
@@ -19251,9 +19145,9 @@ RectTransform:
   - {fileID: 2874334}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1571.5997, y: -524}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &549859385
@@ -20045,7 +19939,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -20104,8 +19998,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Roller Skates
-  method: 
+  itemName: Roller Skates
+  method: GetIncreaseMovementSpeedCost
   isPercentage: 0
 --- !u!1 &571957264
 GameObject:
@@ -20963,9 +20857,9 @@ RectTransform:
   - {fileID: 628576736}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 4845.199, y: -524}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &600388467
@@ -21172,7 +21066,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -21231,7 +21125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Synthwave Blast
+  itemName: Synthwave Blast
   method: GetCurrentDamage
   isPercentage: 0
 --- !u!1 &605893856
@@ -21685,12 +21579,16 @@ PrefabInstance:
       value: Yoyo
       objectReference: {fileID: 0}
     - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+      propertyPath: baseDamage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: damageUpgradeCost
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: amountOfProjectiles
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: projectileUpgradeCost
@@ -21698,7 +21596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: percentageDamageIncrease
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7772078910061721573, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: m_Name
@@ -22152,7 +22050,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -22211,7 +22109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Saxophone
+  itemName: Saxophone
   method: GetProjectileIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &628576735
@@ -22437,7 +22335,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -22496,7 +22394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Vinyl Record
+  itemName: Vinyl Record
   method: GetIncreaseProjectileCountCost
   isPercentage: 0
 --- !u!1 &634947963
@@ -22508,7 +22406,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 634947964}
-  - component: {fileID: 634947965}
   m_Layer: 0
   m_Name: Vinyl Record
   m_TagString: Untagged
@@ -22536,20 +22433,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -123.899994}
   m_SizeDelta: {x: 9, y: 82.6}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &634947965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 634947963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9ce08bf2be92f84e86fc5502e27b291, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollPanel: {fileID: 1135520748}
-  itemPanel: {fileID: 0}
 --- !u!1 &638677517
 GameObject:
   m_ObjectHideFlags: 0
@@ -22714,7 +22597,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -22773,9 +22656,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Groove Armor
-  method: 
-  isPercentage: 0
+  itemName: Groove Armor
+  method: GetHealthUpgradePercentage
+  isPercentage: 1
 --- !u!1 &649568145
 GameObject:
   m_ObjectHideFlags: 0
@@ -22785,7 +22668,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 649568146}
-  - component: {fileID: 649568147}
   m_Layer: 0
   m_Name: Yoyo
   m_TagString: Untagged
@@ -22813,20 +22695,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -206.5}
   m_SizeDelta: {x: 9, y: 82.6}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &649568147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 649568145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9ce08bf2be92f84e86fc5502e27b291, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollPanel: {fileID: 1135520748}
-  itemPanel: {fileID: 0}
 --- !u!1 &656064297
 GameObject:
   m_ObjectHideFlags: 0
@@ -22875,12 +22743,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Stage Presence
-  baseDamage: 0
+  baseDamage: 1
   damageRank: 0
   damageUpgradeCost: 22
   percentageDamageIncrease: 20
   attackSound: {fileID: 0}
-  radiusIncreasePercentage: 0
+  radiusIncreasePercentage: 5
   radiusRank: 0
   radiusUpgradeCost: 23
 --- !u!58 &656064300
@@ -23133,7 +23001,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -23192,7 +23060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Vinyl Record
+  itemName: Vinyl Record
   method: GetProjectileIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &664987322
@@ -23285,7 +23153,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -23344,7 +23212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Vinyl Record
+  itemName: Vinyl Record
   method: GetCurrentDamage
   isPercentage: 0
 --- !u!1 &667541569
@@ -23503,9 +23371,9 @@ RectTransform:
   - {fileID: 704571017}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 9209.998, y: -524}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &678701873
@@ -23977,6 +23845,14 @@ PrefabInstance:
       value: Disco Ball
       objectReference: {fileID: 0}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
+      propertyPath: baseDamage
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
+      propertyPath: penetration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: cooldownDuration
       value: 0
       objectReference: {fileID: 0}
@@ -23986,7 +23862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: amountOfProjectiles
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: projectileUpgradeCost
@@ -23999,6 +23875,14 @@ PrefabInstance:
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: percentageDamageIncrease
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
+      propertyPath: projectileIncreasePerUpgrade
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
+      propertyPath: penetrationIncreasePerUpgrade
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24721,10 +24605,10 @@ RectTransform:
   - {fileID: 351665242}
   m_Father: {fileID: 136986920}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -187.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &740693704
 GameObject:
@@ -25218,7 +25102,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -25277,7 +25161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Bass Guitar
+  itemName: Bass Guitar
   method: GetIncreaseDamageCost
   isPercentage: 0
 --- !u!1 &765764873
@@ -26030,7 +25914,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -26089,7 +25973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Stage Presence
+  itemName: Stage Presence
   method: GetDamageIncreasePercentage
   isPercentage: 1
 --- !u!1 &785471509
@@ -26126,10 +26010,10 @@ RectTransform:
   - {fileID: 1266562532}
   m_Father: {fileID: 341002535}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -187.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &786548819
 GameObject:
@@ -26221,7 +26105,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -26280,8 +26164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Synthwave Blast
-  method: 
+  itemName: Synthwave Blast
+  method: GetIncreasePenetrationAmountCost
   isPercentage: 0
 --- !u!1 &794913278
 GameObject:
@@ -26371,7 +26255,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -26430,9 +26314,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Roller Skates
-  method: 
-  isPercentage: 0
+  itemName: Roller Skates
+  method: GetMovementSpeedIncreasePercentage
+  isPercentage: 1
 --- !u!1 &798736327
 GameObject:
   m_ObjectHideFlags: 0
@@ -26525,7 +26409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Saxophone
-  baseDamage: 0
+  baseDamage: 2
   damageRank: 0
   damageUpgradeCost: 19
   percentageDamageIncrease: 10
@@ -27032,7 +26916,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -27091,8 +26975,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Personal Space
-  method: 
+  itemName: Personal Space
+  method: GetIncreaseRadiusCost
   isPercentage: 0
 --- !u!1 &821225988
 GameObject:
@@ -28433,7 +28317,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -28492,9 +28376,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Chill Vibe
-  method: 
-  isPercentage: 0
+  itemName: Chill Vibe
+  method: GetCurrentSlowIncrease
+  isPercentage: 1
 --- !u!1 &853576764
 GameObject:
   m_ObjectHideFlags: 0
@@ -28585,7 +28469,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -28644,8 +28528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Vinyl Record
-  method: 
+  itemName: Vinyl Record
+  method: GetCurrentPenetrationAmount
   isPercentage: 0
 --- !u!1 &856474977
 GameObject:
@@ -28735,7 +28619,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -28794,8 +28678,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Electric Guitar
-  method: 
+  itemName: Electric Guitar
+  method: GetTetherAmountIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &857589418
 GameObject:
@@ -29732,7 +29616,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -29791,8 +29675,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Groove Armor
-  method: 
+  itemName: Groove Armor
+  method: GetIncreaseHealthCost
   isPercentage: 0
 --- !u!1 &900829013
 GameObject:
@@ -30186,7 +30070,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -30245,7 +30129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Synthwave Blast
+  itemName: Synthwave Blast
   method: GetDamageIncreasePercentage
   isPercentage: 1
 --- !u!1 &914897307
@@ -30744,7 +30628,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -30803,8 +30687,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Decoy
-  method: 
+  itemName: Decoy
+  method: GetDecoyAmountIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &931800138
 GameObject:
@@ -30972,7 +30856,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -31031,7 +30915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Saxophone
+  itemName: Saxophone
   method: GetCurrentProjectileCount
   isPercentage: 0
 --- !u!1 &935936722
@@ -31202,10 +31086,10 @@ RectTransform:
   - {fileID: 1646112713}
   m_Father: {fileID: 1883984000}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -187.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &940087678
 GameObject:
@@ -32357,7 +32241,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -32416,7 +32300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Electric Guitar
+  itemName: Electric Guitar
   method: GetCurrentDamage
   isPercentage: 0
 --- !u!1 &970510857
@@ -32733,7 +32617,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 976400236}
-  - component: {fileID: 976400237}
   m_Layer: 0
   m_Name: Bass Guitar
   m_TagString: Untagged
@@ -32761,20 +32644,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -41.3}
   m_SizeDelta: {x: 9, y: 82.6}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &976400237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 976400235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9ce08bf2be92f84e86fc5502e27b291, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollPanel: {fileID: 1135520748}
-  itemPanel: {fileID: 0}
 --- !u!1 &978342137
 GameObject:
   m_ObjectHideFlags: 0
@@ -33808,7 +33677,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -33867,8 +33736,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Synthwave Blast
-  method: 
+  itemName: Synthwave Blast
+  method: GetPenetrationIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &1017721303
 GameObject:
@@ -34105,7 +33974,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -34164,7 +34033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Stage Presence
+  itemName: Stage Presence
   method: GetIncreaseDamageCost
   isPercentage: 0
 --- !u!1 &1025205538
@@ -35177,10 +35046,10 @@ RectTransform:
   - {fileID: 1358516915}
   m_Father: {fileID: 831052521}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -62.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1078142154
 GameObject:
@@ -35216,10 +35085,10 @@ RectTransform:
   - {fileID: 943667642}
   m_Father: {fileID: 2007105701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -62.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1078242577
 GameObject:
@@ -35391,9 +35260,9 @@ RectTransform:
   - {fileID: 2146772253}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 13574.799, y: -524}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1079584169
@@ -35658,7 +35527,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -35717,7 +35586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Saxophone
+  itemName: Saxophone
   method: GetIncreaseDamageCost
   isPercentage: 0
 --- !u!1 &1084008213
@@ -36569,7 +36438,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -36628,9 +36497,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Stage Presence
+  itemName: Stage Presence
   method: GetRadiusIncreasePercentage
-  isPercentage: 0
+  isPercentage: 1
 --- !u!1 &1101748257
 GameObject:
   m_ObjectHideFlags: 0
@@ -37030,7 +36899,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -37089,7 +36958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Synthwave Blast
+  itemName: Synthwave Blast
   method: GetIncreaseProjectileCountCost
   isPercentage: 0
 --- !u!1 &1119166760
@@ -37182,7 +37051,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -37241,7 +37110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Yoyo
+  itemName: Yoyo
   method: GetIncreaseDamageCost
   isPercentage: 0
 --- !u!1 &1125657799
@@ -37475,7 +37344,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1135520746
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37494,7 +37363,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 960.8, y: 1048}
+  m_SizeDelta: {x: 916, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1135520747
 MonoBehaviour:
@@ -38234,7 +38103,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -38293,8 +38162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Saxophone
-  method: 
+  itemName: Saxophone
+  method: GetPenetrationIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &1159731838
 GameObject:
@@ -38330,10 +38199,10 @@ RectTransform:
   - {fileID: 255050542}
   m_Father: {fileID: 831052521}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -187.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1160449948
 GameObject:
@@ -38677,6 +38546,166 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164754433}
+  m_CullTransparentMesh: 1
+--- !u!1 &1171281485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1171281486}
+  - component: {fileID: 1171281490}
+  - component: {fileID: 1171281489}
+  - component: {fileID: 1171281488}
+  - component: {fileID: 1171281487}
+  m_Layer: 5
+  m_Name: Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1171281486
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171281485}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 7.769788}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1369044790}
+  m_Father: {fileID: 1554411131}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -212, y: 185}
+  m_SizeDelta: {x: 300, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1171281487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171281485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ce08bf2be92f84e86fc5502e27b291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollPanel: {fileID: 1135520748}
+  itemPanel: {fileID: 1079584168}
+--- !u!114 &1171281488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171281485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1171281489}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1171281487}
+        m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
+        m_MethodName: ScrollPanelCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1418972433}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: ShowUpgrades
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1171281489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171281485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 27b40a04560dedb4ab1462f7094d7c52, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1171281490
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171281485}
   m_CullTransparentMesh: 1
 --- !u!1 &1173064666
 GameObject:
@@ -39233,9 +39262,9 @@ RectTransform:
   - {fileID: 914897308}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 8118.7983, y: -524}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1187897539
@@ -39600,7 +39629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Bass Guitar
+  itemName: Bass Guitar
   method: GetCurrentDamage
   isPercentage: 0
 --- !u!1 &1204171072
@@ -39774,9 +39803,9 @@ RectTransform:
   - {fileID: 411754765}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 3753.9993, y: -524}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1205873705
@@ -40235,7 +40264,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -40294,9 +40323,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Groove Armor
-  method: 
-  isPercentage: 0
+  itemName: Groove Armor
+  method: GetCurrentHealthIncrease
+  isPercentage: 1
 --- !u!1 &1230041913
 GameObject:
   m_ObjectHideFlags: 0
@@ -41026,10 +41055,10 @@ RectTransform:
   - {fileID: 451569158}
   m_Father: {fileID: 2007105701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -187.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1263998325
 GameObject:
@@ -42631,10 +42660,10 @@ RectTransform:
   - {fileID: 1948903851}
   m_Father: {fileID: 1883984000}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -62.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1330709074
 GameObject:
@@ -42745,6 +42774,7 @@ RectTransform:
   - {fileID: 195698089}
   - {fileID: 77702995}
   - {fileID: 149492772}
+  - {fileID: 1554411131}
   m_Father: {fileID: 1125657800}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -42852,6 +42882,140 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358516914}
   m_CullTransparentMesh: 1
+--- !u!1 &1369044789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1369044790}
+  - component: {fileID: 1369044792}
+  - component: {fileID: 1369044791}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1369044790
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369044789}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1171281486}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1369044791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369044789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Personal Space
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
+  m_sharedMaterial: {fileID: -8542620725292600027, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4289409997
+  m_fontColor: {r: 0.8039216, g: 0.2, b: 0.67058825, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 72
+  m_fontSizeBase: 48
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 12.224609, y: 7.352539, z: 12.655273, w: 9.386536}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1369044792
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369044789}
+  m_CullTransparentMesh: 1
 --- !u!1 &1371049219
 GameObject:
   m_ObjectHideFlags: 0
@@ -42863,7 +43027,6 @@ GameObject:
   - component: {fileID: 1371049220}
   - component: {fileID: 1371049222}
   - component: {fileID: 1371049221}
-  - component: {fileID: 1371049223}
   - component: {fileID: 1371049224}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -42943,7 +43106,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -42990,21 +43153,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371049219}
   m_CullTransparentMesh: 1
---- !u!114 &1371049223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1371049219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Decoy
-  methodName: IncreaseDecoyHealth
-  upgrade: {fileID: 0}
 --- !u!114 &1371049224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43017,8 +43165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Decoy
-  method: 
+  itemName: Decoy
+  method: GetIncreaseDecoyHealthCost
   isPercentage: 0
 --- !u!1 &1372322908
 GameObject:
@@ -43480,7 +43628,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -43539,8 +43687,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Disco Ball
-  method: 
+  itemName: Disco Ball
+  method: GetCurrentPenetrationAmount
   isPercentage: 0
 --- !u!1 &1383092906
 GameObject:
@@ -43576,10 +43724,10 @@ RectTransform:
   - {fileID: 88895292}
   m_Father: {fileID: 368501547}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -187.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1384893780
 PrefabInstance:
@@ -43995,7 +44143,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -44054,7 +44202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Stage Presence
+  itemName: Stage Presence
   method: GetCurrentDamage
   isPercentage: 0
 --- !u!1 &1399691802
@@ -44091,10 +44239,10 @@ RectTransform:
   - {fileID: 1725797392}
   m_Father: {fileID: 1761643008}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 242, y: -62.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1403525325
 GameObject:
@@ -44612,7 +44760,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -44671,7 +44819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Disco Ball
+  itemName: Disco Ball
   method: GetDamageIncreasePercentage
   isPercentage: 1
 --- !u!1 &1412330998
@@ -44708,10 +44856,10 @@ RectTransform:
   - {fileID: 1375004285}
   m_Father: {fileID: 1883984000}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -312.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1418972431
 GameObject:
@@ -44926,7 +45074,6 @@ GameObject:
   - component: {fileID: 1431417144}
   - component: {fileID: 1431417147}
   - component: {fileID: 1431417146}
-  - component: {fileID: 1431417145}
   - component: {fileID: 1431417148}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -44954,21 +45101,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 5}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1431417145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1431417143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Personal Space
-  methodName: IncreaseForce
-  upgrade: {fileID: 0}
 --- !u!114 &1431417146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45021,7 +45153,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -45080,8 +45212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Personal Space
-  method: 
+  itemName: Personal Space
+  method: GetIncreaseForceCost
   isPercentage: 0
 --- !u!1 &1432278736
 GameObject:
@@ -45173,7 +45305,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -45232,8 +45364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Electric Guitar
-  method: 
+  itemName: Electric Guitar
+  method: GetCurrentTetherAmount
   isPercentage: 0
 --- !u!1 &1432664730
 GameObject:
@@ -46172,7 +46304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Bass Guitar
+  itemName: Bass Guitar
   method: GetDamageIncreasePercentage
   isPercentage: 1
 --- !u!1 &1475293350
@@ -46440,7 +46572,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -46499,9 +46631,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Personal Space
-  method: 
-  isPercentage: 0
+  itemName: Personal Space
+  method: GetForceIncreasePercentage
+  isPercentage: 1
 --- !u!1 &1481725446
 GameObject:
   m_ObjectHideFlags: 0
@@ -46670,10 +46802,10 @@ RectTransform:
   - {fileID: 1296588139}
   m_Father: {fileID: 197003217}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -187.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1505284291
 GameObject:
@@ -46765,7 +46897,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -46824,9 +46956,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Personal Space
-  method: 
-  isPercentage: 0
+  itemName: Personal Space
+  method: GetCurrentForceIncrease
+  isPercentage: 1
 --- !u!1 &1516849114
 GameObject:
   m_ObjectHideFlags: 0
@@ -46897,10 +47029,10 @@ RectTransform:
   - {fileID: 2029107454}
   m_Father: {fileID: 197003217}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -62.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1517991956
 GameObject:
@@ -48316,6 +48448,57 @@ RectTransform:
   m_AnchoredPosition: {x: 343, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1554411130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1554411131}
+  - component: {fileID: 1554411132}
+  m_Layer: 0
+  m_Name: Personal Space
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1554411131
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554411130}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1171281486}
+  m_Father: {fileID: 1334869528}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 4.5, y: -287}
+  m_SizeDelta: {x: 9, y: 82}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1554411132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554411130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ce08bf2be92f84e86fc5502e27b291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollPanel: {fileID: 1135520748}
+  itemPanel: {fileID: 0}
 --- !u!1 &1554628362
 GameObject:
   m_ObjectHideFlags: 0
@@ -48482,7 +48665,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -48541,8 +48724,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Saxophone
-  method: 
+  itemName: Saxophone
+  method: GetCurrentPenetrationAmount
   isPercentage: 0
 --- !u!1 &1558392736
 GameObject:
@@ -49652,10 +49835,10 @@ RectTransform:
   - {fileID: 2076558221}
   m_Father: {fileID: 2026309917}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -187.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1616841853
 GameObject:
@@ -49819,9 +50002,9 @@ RectTransform:
   - {fileID: 1782659560}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 2662.7996, y: -524}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1619886917
@@ -49896,10 +50079,10 @@ RectTransform:
   - {fileID: 563851034}
   m_Father: {fileID: 76833485}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 242, y: -62.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1621822161
 GameObject:
@@ -49989,7 +50172,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -50048,7 +50231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Saxophone
+  itemName: Saxophone
   method: GetDamageIncreasePercentage
   isPercentage: 1
 --- !u!1 &1622502583
@@ -50273,7 +50456,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -50332,7 +50515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Synthwave Blast
+  itemName: Synthwave Blast
   method: GetProjectileIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &1626714264
@@ -50591,7 +50774,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -50650,9 +50833,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Chill Vibe
-  method: 
-  isPercentage: 0
+  itemName: Chill Vibe
+  method: GetRadiusIncreasePercentage
+  isPercentage: 1
 --- !u!1 &1643413376
 GameObject:
   m_ObjectHideFlags: 0
@@ -51127,7 +51310,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -51186,7 +51369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Synthwave Blast
+  itemName: Synthwave Blast
   method: GetIncreaseDamageCost
   isPercentage: 0
 --- !u!1 &1648342957
@@ -51989,10 +52172,10 @@ RectTransform:
   - {fileID: 1988585313}
   m_Father: {fileID: 368501547}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -62.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1672465014
 GameObject:
@@ -52188,10 +52371,10 @@ RectTransform:
   - {fileID: 858555259}
   m_Father: {fileID: 136986920}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -62.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1685725959
 GameObject:
@@ -52764,7 +52947,6 @@ GameObject:
   - component: {fileID: 1692491209}
   - component: {fileID: 1692491211}
   - component: {fileID: 1692491210}
-  - component: {fileID: 1692491212}
   - component: {fileID: 1692491213}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -52844,7 +53026,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -52891,21 +53073,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692491208}
   m_CullTransparentMesh: 1
---- !u!114 &1692491212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1692491208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Disco Ball
-  methodName: IncreaseProjectileCount
-  upgrade: {fileID: 0}
 --- !u!114 &1692491213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52918,7 +53085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Disco Ball
+  itemName: Disco Ball
   method: GetIncreaseProjectileCountCost
   isPercentage: 0
 --- !u!1 &1696945272
@@ -53165,10 +53332,10 @@ RectTransform:
   - {fileID: 1825266831}
   m_Father: {fileID: 368501547}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -312.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1706412510
 GameObject:
@@ -54463,6 +54630,10 @@ PrefabInstance:
       value: Synthwave Blast
       objectReference: {fileID: 0}
     - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+      propertyPath: baseDamage
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
       propertyPath: attackSound
       value: 
       objectReference: {fileID: 8300000, guid: 65a481418bf632f4bbcb6aed3b91f466, type: 3}
@@ -54476,7 +54647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
       propertyPath: amountOfProjectiles
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
       propertyPath: projectileUpgradeCost
@@ -55118,7 +55289,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -55177,8 +55348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Decoy
-  method: 
+  itemName: Decoy
+  method: GetDecoyHealthAmountIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &1759650115
 GameObject:
@@ -55270,7 +55441,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -55329,7 +55500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Vinyl Record
+  itemName: Vinyl Record
   method: GetCurrentProjectileCount
   isPercentage: 0
 --- !u!1 &1761643007
@@ -55579,7 +55750,6 @@ GameObject:
   - component: {fileID: 1777873354}
   - component: {fileID: 1777873356}
   - component: {fileID: 1777873355}
-  - component: {fileID: 1777873357}
   - component: {fileID: 1777873358}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -55659,7 +55829,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -55706,21 +55876,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1777873353}
   m_CullTransparentMesh: 1
---- !u!114 &1777873357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777873353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Chill Vibe
-  methodName: IncreaseRadius
-  upgrade: {fileID: 0}
 --- !u!114 &1777873358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55733,8 +55888,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Chill Vibe
-  method: 
+  itemName: Chill Vibe
+  method: GetIncreaseRadiusCost
   isPercentage: 0
 --- !u!1 &1782659559
 GameObject:
@@ -56568,7 +56723,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -56627,8 +56782,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Vinyl Record
-  method: 
+  itemName: Vinyl Record
+  method: GetIncreasePenetrationAmountCost
   isPercentage: 0
 --- !u!1 &1816667112
 GameObject:
@@ -57361,7 +57516,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -57420,7 +57575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Synthwave Blast
+  itemName: Synthwave Blast
   method: GetCurrentProjectileCount
   isPercentage: 0
 --- !u!1 &1844713525
@@ -57907,7 +58062,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -57966,7 +58121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Vinyl Record
+  itemName: Vinyl Record
   method: GetIncreaseDamageCost
   isPercentage: 0
 --- !u!1 &1861765206
@@ -58059,7 +58214,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -58118,7 +58273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Stage Presence
+  itemName: Stage Presence
   method: GetIncreaseRadiusCost
   isPercentage: 0
 --- !u!1 &1867374626
@@ -58940,7 +59095,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -58999,9 +59154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Personal Space
-  method: 
-  isPercentage: 0
+  itemName: Personal Space
+  method: GetRadiusIncreasePercentage
+  isPercentage: 1
 --- !u!1 &1894516788
 GameObject:
   m_ObjectHideFlags: 0
@@ -59168,7 +59323,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -59227,7 +59382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Yoyo
+  itemName: Yoyo
   method: GetCurrentProjectileCount
   isPercentage: 0
 --- !u!1 &1900273892
@@ -60237,9 +60392,9 @@ RectTransform:
   - {fileID: 453908373}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 7027.5986, y: -524}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1935424000
@@ -60370,7 +60525,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -60429,9 +60584,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Chill Vibe
-  method: 
-  isPercentage: 0
+  itemName: Chill Vibe
+  method: GetCurrentRadiusIncrease
+  isPercentage: 1
 --- !u!1 &1946998663
 GameObject:
   m_ObjectHideFlags: 0
@@ -60443,7 +60598,6 @@ GameObject:
   - component: {fileID: 1946998664}
   - component: {fileID: 1946998666}
   - component: {fileID: 1946998665}
-  - component: {fileID: 1946998667}
   - component: {fileID: 1946998668}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -60523,7 +60677,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -60570,21 +60724,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946998663}
   m_CullTransparentMesh: 1
---- !u!114 &1946998667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1946998663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9bd59e9ec450f45a098fc89ef004d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Yoyo
-  methodName: IncreaseProjectileCount
-  upgrade: {fileID: 0}
 --- !u!114 &1946998668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60597,7 +60736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Yoyo
+  itemName: Yoyo
   method: GetIncreaseProjectileCountCost
   isPercentage: 0
 --- !u!1 &1948903850
@@ -62009,7 +62148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -480.39996, y: 524}
+  m_AnchoredPosition: {x: -7055.501, y: 524}
   m_SizeDelta: {x: 14040, y: 1048}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1995602518
@@ -62259,7 +62398,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -62318,7 +62457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Electric Guitar
+  itemName: Electric Guitar
   method: GetDamageIncreasePercentage
   isPercentage: 1
 --- !u!1 &2007105700
@@ -62547,7 +62686,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -62606,9 +62745,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Chill Vibe
-  method: 
-  isPercentage: 0
+  itemName: Chill Vibe
+  method: GetSlowIncreasePercentage
+  isPercentage: 1
 --- !u!1 &2024497032
 GameObject:
   m_ObjectHideFlags: 0
@@ -63185,9 +63324,9 @@ RectTransform:
   - {fileID: 289858953}
   m_Father: {fileID: 1995602516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 11392.398, y: -524}
   m_SizeDelta: {x: 960.7998, y: 1048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2032336877
@@ -63396,10 +63535,10 @@ RectTransform:
   - {fileID: 74069925}
   m_Father: {fileID: 242387200}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -62.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2037681744
 GameObject:
@@ -63524,12 +63663,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Electric Guitar
-  baseDamage: 0
+  baseDamage: 3
   damageRank: 0
   damageUpgradeCost: 17
   percentageDamageIncrease: 10
   attackSound: {fileID: 8300000, guid: 8016efeb188fdde458cc881148701656, type: 3}
-  amountOfTethers: 1
+  amountOfTethers: 2
   tetherIncreasePerUpgrade: 1
   tetherRank: 0
   tetherUpgradeCost: 18
@@ -64021,7 +64160,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2054245123}
-  - component: {fileID: 2054245124}
   m_Layer: 0
   m_Name: Disco Ball
   m_TagString: Untagged
@@ -64049,20 +64187,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -289.09998}
   m_SizeDelta: {x: 9, y: 82.6}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2054245124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2054245122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9ce08bf2be92f84e86fc5502e27b291, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollPanel: {fileID: 1135520748}
-  itemPanel: {fileID: 0}
 --- !u!1 &2055014289
 GameObject:
   m_ObjectHideFlags: 0
@@ -64392,7 +64516,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -64451,7 +64575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Disco Ball
+  itemName: Disco Ball
   method: GetIncreaseDamageCost
   isPercentage: 0
 --- !u!1 &2069659639
@@ -64542,7 +64666,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -64601,7 +64725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Disco Ball
+  itemName: Disco Ball
   method: GetProjectileIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &2076463739
@@ -65949,10 +66073,10 @@ RectTransform:
   - {fileID: 315761439}
   m_Father: {fileID: 197003217}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -312.5}
+  m_SizeDelta: {x: 9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2127161325
 GameObject:
@@ -66444,7 +66568,7 @@ MonoBehaviour:
   m_fontSize: 93
   m_fontSizeBase: 93
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -66503,9 +66627,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Roller Skates
-  method: 
-  isPercentage: 0
+  itemName: Roller Skates
+  method: GetCurrentMovementSpeedIncrease
+  isPercentage: 1
 --- !u!1 &2133392518
 GameObject:
   m_ObjectHideFlags: 0
@@ -66728,7 +66852,7 @@ MonoBehaviour:
   m_fontSize: 38.1
   m_fontSizeBase: 38.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -66787,8 +66911,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Disco Ball
-  method: 
+  itemName: Disco Ball
+  method: GetPenetrationIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &2135310018
 GameObject:
@@ -66874,7 +66998,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2138694527}
-  - component: {fileID: 2138694528}
   m_Layer: 0
   m_Name: Stage Presence
   m_TagString: Untagged
@@ -66902,20 +67025,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -536.89996}
   m_SizeDelta: {x: 9, y: 82.6}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2138694528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2138694526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9ce08bf2be92f84e86fc5502e27b291, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollPanel: {fileID: 1135520748}
-  itemPanel: {fileID: 0}
 --- !u!1 &2146772252
 GameObject:
   m_ObjectHideFlags: 0

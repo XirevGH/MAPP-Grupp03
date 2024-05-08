@@ -45,6 +45,11 @@ public class PersonalSpace : Utility
         return Mathf.Pow(1 + (radiusIncreasePercentage / 100f), radiusRank);
     }
 
+    public float GetCurrentForceIncrease()
+    {
+        return Mathf.Pow(1 + (forceIncreasePercentage / 100f), forceRank);
+    }
+
     public void IncreaseForce()
     {
         forceRank++;

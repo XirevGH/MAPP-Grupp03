@@ -27,7 +27,6 @@ public class RollerSkates : Utility
 
     protected override void CreateUpgradeOptions()
     {
-        Debug.Log("Created upgrade options for roller skates");
         upgradeOptions.Add("IncreaseMovementSpeed");
     }
 
