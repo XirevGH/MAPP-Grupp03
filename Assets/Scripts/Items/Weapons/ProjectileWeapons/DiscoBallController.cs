@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -5,7 +6,7 @@ using UnityEngine.Events;
 public class DiscoBallController : ProjectileWeapon
 {    
     [SerializeField] private GameObject discoBall;
-    [SerializeField] private float blinkTime;
+    [SerializeField] private float blinkTime, attackDelayTime;
     public List<GameObject> activeDiscoBalls = new();
 
     public static DiscoBallController Instance
@@ -63,15 +64,26 @@ public class DiscoBallController : ProjectileWeapon
 
     public override void Attack()
     {
-        if (gameObject.activeSelf) 
-        { 
-            for (int i = 0; i < amountOfProjectiles; i++) 
-            {
-                GameObject clone = Instantiate(discoBall, transform.position, Quaternion.identity);
-                activeDiscoBalls.Add(clone);
-                clone.GetComponent<DiscoBall>().SetDamage(damage);
-                clone.GetComponent<DiscoBall>().SetPenetration(penetration);
-            }
+        if (gameObject.activeSelf)
+        {
+            StartCoroutine("AttackDelay");
         }
+
+    }
+
+    private IEnumerator AttackDelay()
+    {
+        for (int i = 0; i < amountOfProjectiles; i++)
+        {
+            GameObject clone = Instantiate(discoBall, transform.position, Quaternion.identity);
+            activeDiscoBalls.Add(clone);
+            clone.GetComponent<DiscoBall>().SetDamage(damage);
+            clone.GetComponent<DiscoBall>().SetPenetration(penetration);
+            SoundManager.Instance.PlaySFX(gameObject, attackSound, 1);
+        
+            yield return new WaitForSeconds(attackDelayTime);
+    
+        }
+
     }
 }

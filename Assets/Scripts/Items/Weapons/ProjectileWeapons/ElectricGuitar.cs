@@ -11,7 +11,7 @@ public class ElectricGuitar : TetheringWeapon
     private void Start()
     {
         UnityAction action = new UnityAction(Attack);
-        TriggerController.Instance.SetTrigger(11, action);
+        TriggerController.Instance.SetTrigger(6, action);
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -31,7 +31,7 @@ public class ElectricGuitar : TetheringWeapon
     {
         if (gameObject.activeSelf)
         {
-            SoundManager.Instance.PlaySFX(attackSound, transform, 1);
+            SoundManager.Instance.PlaySFX(gameObject, attackSound, 1);
             GameObject[] targetEnemies = GetClosestEnemies(AdjustTargetOverflow(amountOfTethers));
             for (int i = 0; i < targetEnemies.Length; i++)
             {

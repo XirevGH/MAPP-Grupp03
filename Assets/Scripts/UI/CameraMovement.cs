@@ -15,7 +15,7 @@ public class CameraMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         triggerController = FindObjectOfType<TriggerController>();
         UnityAction action = new UnityAction(Bounce);
-        triggerController.SetTrigger(11, action);
+        triggerController.SetTrigger(1, action);
     }
 
     public void Bounce()

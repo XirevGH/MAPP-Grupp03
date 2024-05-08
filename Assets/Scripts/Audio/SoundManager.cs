@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.Localization.Plugins.XLIFF.V12;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Events;
@@ -266,16 +267,12 @@ public class SoundManager : MonoBehaviour
      
     }
 
-    public void PlaySFX(AudioClip clip, Transform transform, float volume)
+    public void PlaySFX(GameObject gameObject, AudioClip clip, float volume)
     {
-
-        AudioSource audioSource = Instantiate(sfxObject, transform.position, Quaternion.identity, transform);
-
-        //audioSource.clip = clip;
-        SFXSource.pitch = this.transform.GetChild(0).GetComponent<AudioSource>().pitch;
-        SFXSource.volume = (float)UnityEngine.Random.Range(0.5f, volume);
-        SFXSource.PlayOneShot(clip, 1);
-        Destroy(audioSource.gameObject);
+        AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.pitch = this.transform.GetChild(0).GetComponent<AudioSource>().pitch;
+        audioSource.volume = (float)UnityEngine.Random.Range(0.5f, volume);
+        audioSource.PlayOneShot(clip, audioSource.volume);
 
     }
 

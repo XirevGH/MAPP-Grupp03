@@ -16,7 +16,7 @@ public class Saxophone : ProjectileWeapon
     private void Start()
     {
         UnityAction action = new UnityAction(Attack);
-        TriggerController.Instance.SetTrigger(8, action);
+        TriggerController.Instance.SetTrigger(3, action);
     }
 
 
@@ -43,6 +43,7 @@ public class Saxophone : ProjectileWeapon
         if (closestEnemy != null)
         {   
             foreach(GameObject target in closestEnemy){
+                SoundManager.Instance.PlaySFX(gameObject, attackSound, 1);
                 ShootNoteAtEnemy(target);
             }
             //StartCooldown();

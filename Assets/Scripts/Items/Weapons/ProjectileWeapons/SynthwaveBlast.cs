@@ -9,14 +9,14 @@ public class SynthwaveBlast : ProjectileWeapon
     private void Start()
     {
         UnityAction action = new UnityAction(Attack);
-        TriggerController.Instance.SetTrigger(9, action);
+        TriggerController.Instance.SetTrigger(5, action);
     }
 
     public override void Attack()
     {
         if (gameObject.activeSelf) {
 
-            SoundManager.Instance.PlaySFX(attackSound, transform, 1);
+            SoundManager.Instance.PlaySFX(gameObject, attackSound, 1);
             for (int i = 0; i < amountOfProjectiles; i++) {
                 float randomValue = Random.Range(0f, 360f);
                 GameObject clone = Instantiate(synthwavePivotPrefab, transform);

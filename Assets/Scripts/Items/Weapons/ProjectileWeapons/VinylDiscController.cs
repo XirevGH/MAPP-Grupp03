@@ -45,14 +45,11 @@ public class VinylDiscController : ProjectileWeapon
             clone.GetComponent<Projectile>().SetDamage(damage);
             clone.GetComponent<Projectile>().SetPenetration(penetration);
             clone.GetComponent<VinylDisc>().isAtPlayer = true;
+            this.GetComponent<AudioSource>().Play();
+            SoundManager.Instance.PlaySFX(gameObject, attackSound, 1);
 
             yield return new WaitForSeconds(attackDelayTime);
 
-            playerPosition = player.transform.position;
-            GameObject clone1 = Instantiate(vinylDisc, playerPosition, Quaternion.identity);
-            clone1.GetComponent<Projectile>().SetDamage(damage);
-            clone1.GetComponent<Projectile>().SetPenetration(penetration);
-            clone1.GetComponent<VinylDisc>().isAtPlayer = true;
         }
 
     }

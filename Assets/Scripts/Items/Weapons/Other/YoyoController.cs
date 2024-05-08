@@ -28,7 +28,7 @@ public class YoyoController : PermanentProjectileWeapon
         if (gameObject.activeSelf)
         {
             int totalYoyo = transform.childCount;
-            SoundManager.Instance.PlaySFX(attackSound, transform, 1);
+            SoundManager.Instance.PlaySFX(gameObject, attackSound, 1);
             for (int i = 0; i < totalYoyo; i++)
             {
                 transform.GetChild(i).GetComponent<Yoyo>().ActivateSuperMode();
