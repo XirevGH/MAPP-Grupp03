@@ -25,10 +25,11 @@ public class SoundManager : MonoBehaviour
     public AudioMixerSnapshot lowPassSnapshots, normalSnapshots;
     public bool isOnePlaying, isLowPassOn, isInMenu, hasRun, isTimeToChange;
     public int currentTrackNumber, currentBPM;
+    private int totalPitchChange; // how many times pitch has changed
 
     [Header("Beat relateted")]
-    [SerializeField] private float MusicSpeedChange;
     [SerializeField] private float timeToChange;
+    [SerializeField] private int beatThreshold; // how many beats does it take to change track
 
     private Slider musicSpeedSilder;
     public static SoundManager Instance
@@ -61,6 +62,7 @@ public class SoundManager : MonoBehaviour
         currentSource = musicSource1;
         currentBPM = BPMForTracks[0];
         currentTrackNumber = 0;
+        totalPitchChange = 0;
     }
 
     void FixedUpdate()
@@ -190,7 +192,7 @@ public class SoundManager : MonoBehaviour
     {
         StopAllCoroutines();
         StartCoroutine(FadeTrack(trackNumber));
-        StartCoroutine(ResetMusicSpeedliderValuve());
+        StartCoroutine(ResetMusicSpeedSliderValue());
         isOnePlaying = !isOnePlaying;
     }
 
@@ -247,12 +249,14 @@ public class SoundManager : MonoBehaviour
 
     private IEnumerator ChangePitchCoroutine(bool increasePitch)
     {
+       
+        float MusicSpeedChange = (10 / currentBPM) / beatThreshold; //  calculate the percentage increase or decrease from current track to the next or las track
         int direction = increasePitch ? 1 : -1;
         float elapsedTime = 0;
         float nexPitch = currentSource.pitch + (MusicSpeedChange * direction);
         float currentPitch = currentSource.pitch;
        
-        if (currentSource.pitch <= 0.5)
+        if (totalPitchChange == 10)
         {
             currentSource.pitch = 0.5f;
         }
@@ -262,19 +266,19 @@ public class SoundManager : MonoBehaviour
             {
                 elapsedTime += Time.deltaTime;
                 currentSource.pitch = Mathf.Lerp(currentPitch, nexPitch, elapsedTime / timeToChange);
-                UpdateMusicSpeedliderValuve();
+                UpdateMusicSpeedSliderValue();
 
                 yield return null;
             }
         }
     }
 
-    private void UpdateMusicSpeedliderValuve()
+    private void UpdateMusicSpeedSliderValue()
     {
             musicSpeedSilder.value = currentSource.pitch;
     }
 
-    private IEnumerator ResetMusicSpeedliderValuve()
+    private IEnumerator ResetMusicSpeedSliderValue()
     {
         float elapsedTime = 0;
         float currentValue = musicSpeedSilder.value;
