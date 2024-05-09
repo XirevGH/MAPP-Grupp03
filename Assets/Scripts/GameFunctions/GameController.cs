@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
     private void FixedUpdate()
     {  
         Enemy.movementSpeed += 0.0001f; // Global % enemy movespeed increase.  
-        Enemy.healthProcenIncrease += 0.0001f;
+        Enemy.healthProcenIncrease += 0.00006f;
     }
 
     private void ReadFile(string saveFile)

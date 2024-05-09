@@ -4,65 +4,70 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
-
 public class XPDrop : MonoBehaviour
-{
+{   [SerializeField] private SpriteRenderer spriteRenderer;
+
+    [SerializeField] private Sprite biggXpDropSprite; 
+    public Vector3 biggXpSize;
+    public int biggMaxXpValue;
+
+    [SerializeField] private Sprite mediumXpDropSprite; 
+    public Vector3 mediumXpSize;
+    public int mediumMaxXpValue;
+
+    [SerializeField] private Sprite smallXpDropSprite;
+    public Vector3 smallXpSize;
+    public int smallMaxXpValue;
+    
     
     public int XP;
 
     private GameObject player;
 
     public float speed = 20f;
-    public bool bossDrop;
     private bool move = false;
 
     
     public XPDrop Initialize(int initialXP, GameObject player)
-    {
+    {   move = false;
         this.player = player;
-        this.XP = XPDropPool.Instance.AddXpSaved(initialXP);
+        this.XP = initialXP;
+
+        SetXpType();
         return this;  
     }
-    void FixedUpdate()
-    {
-    /*   
-    float yDistanceSquared = (player.transform.position.y - transform.position.y) * (player.transform.position.y - transform.position.y);
-        float xDistanceSquared = (player.transform.position.x - transform.position.x) * (player.transform.position.x - transform.position.x);
 
-        if ((yDistanceSquared > 225 || xDistanceSquared > 625) && !move) {
-            XPDropPool.Instance.MergeAndRemove(this);
-             
-        }*/
-        if(Vector3.Distance(player.transform.position, transform.position) < 2.7 && move != true){
-            MoveToPlayer();
-             
-        }
-        if (move && player != null)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-            if(Vector3.Distance(player.transform.position, transform.position) < 0.3){
-                player.GetComponent<Player>().AddXP(XP);
-                XPDropPool.Instance.RemoveXp(this);
-                
-                
-            }
-        } 
-       
+    /*public enum(){
+
+        biggXpDrop, mediumXpDrop, smallXpDrop 
+    }*/
+    void FixedUpdate()
+{
+    float requiredDistance = 2.7f;
+    float stopDistance = 0.3f;
+    float distanceSquared = (player.transform.position - transform.position).sqrMagnitude;
+    
+    if (distanceSquared < requiredDistance * requiredDistance && !move){
+        MoveToPlayer();
     }
+    if (move && player != null)
+    {
+        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        if (distanceSquared < stopDistance * stopDistance){
+            player.GetComponent<Player>().AddXP(XP);
+            XPDropPool.Instance.ReturnXPDrop(this);
+        }
+    } 
+}
 
     public void MoveToPlayer()
-    {
+    {   
         move = true;
     }
-    
-    public void SetXP(int xp)
-    {
-        XP = xp;
-    }
-
     public void AddXP(int xpToAdd)
     {
         XP += xpToAdd;
+        SetXpType();
     }
 
     public void ResetXP()
@@ -73,11 +78,48 @@ public class XPDrop : MonoBehaviour
     {
         return XP;
     }
+
+    public void SetXpType()
+    {
+        if (XP <= smallMaxXpValue) {
+            SetXpToSmallXp();
+        } else if (XP <= mediumMaxXpValue) {
+            SetXpToMediumXp();
+        } else if (XP <= biggMaxXpValue) {
+            SetXpToBiggXp();
+        } else {
+            Debug.LogWarning("XPDrop was too big.");
+    }
+    }
     
+    public void SetXpToBiggXp(){
+        XPDropPool.Instance.SetAsBiggXp(this); 
+        spriteRenderer.sprite = biggXpDropSprite;
+        transform.localScale = biggXpSize;
+    }
+    public void SetXpToMediumXp(){
+        XPDropPool.Instance.SetAsMediumXp(this); 
+        spriteRenderer.sprite = mediumXpDropSprite;
+        transform.localScale = mediumXpSize;
+    }
+
+    public void SetXpToSmallXp(){
+        XPDropPool.Instance.SetAsSmallXp(this); 
+        spriteRenderer.sprite = smallXpDropSprite;
+        transform.localScale = smallXpSize;
+    }
+    public int NeededXpForNextLevel()
+    {
+        //if (XP < smallMaxXpValue) return smallMaxXpValue - XP;
+        if (XP < mediumMaxXpValue) return mediumMaxXpValue - XP;
+        if (XP < biggMaxXpValue) return biggMaxXpValue - XP;
+        return 0;  
+    }
 
     
     public void Deactivate()
-    {   move = false;
+    {   
+        move = false;
         ResetXP();
         gameObject.SetActive(false);
     }

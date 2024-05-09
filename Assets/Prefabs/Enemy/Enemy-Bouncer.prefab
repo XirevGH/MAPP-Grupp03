@@ -211,7 +211,7 @@ MonoBehaviour:
   - item: {fileID: 4917292742459662858, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
     dropChance: 1
   xpValue: 35
-  dropChance: 35
+  dropChance: 50
   multiDrop: 0
   player: {fileID: 0}
   target: {fileID: 0}
