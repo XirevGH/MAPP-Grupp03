@@ -84,12 +84,12 @@ public class Enemy : MonoBehaviour
 
     protected virtual void CustomSlowUpdate() //Slow uppdate 0.4s
     {
-         if (!isSlow)
+        if (!isSlow)
         {
             UpdateSpeed();
-            
+
         }
-        
+
     }
 
     void FixedUpdate()
@@ -266,6 +266,7 @@ public class Enemy : MonoBehaviour
 
     public void UpdateSpeed(){
         thisMovementSpeed = movementSpeed * baseMovementSpeed;
+       
     }
     
 

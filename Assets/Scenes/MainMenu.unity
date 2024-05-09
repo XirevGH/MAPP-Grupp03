@@ -67706,6 +67706,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 51626d5583f3bd345959fb1fd4a5550e, type: 3}
     - target: {fileID: 4282401076657109252, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: m_Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282401076657109252, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: Priority
       value: 8
       objectReference: {fileID: 0}
@@ -67733,6 +67737,10 @@ PrefabInstance:
       propertyPath: SFXSource
       value: 
       objectReference: {fileID: 893744045}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: beatThreshold
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: bpmForTracks.Array.size
       value: 3
