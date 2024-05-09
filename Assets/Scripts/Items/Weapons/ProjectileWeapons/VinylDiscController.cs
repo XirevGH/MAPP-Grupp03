@@ -26,7 +26,7 @@ public class VinylDiscController : ProjectileWeapon
         source = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>();
         pitch = source.pitch;
 
-        attackDelayTime = (60f / (BPM  / pitch)) / 2;
+        attackDelayTime = ((60f / BPM) / 2 ) / pitch;
     }
 
     public override void Attack()
@@ -46,7 +46,7 @@ public class VinylDiscController : ProjectileWeapon
             clone.GetComponent<Projectile>().SetPenetration(penetration);
             clone.GetComponent<VinylDisc>().isAtPlayer = true;
             this.GetComponent<AudioSource>().Play();
-            SoundManager.Instance.PlaySFX(gameObject, attackSound, 1);
+            SoundManager.Instance.PlaySFX(gameObject, attackSound, 1 - (i * 0.1f));
 
             yield return new WaitForSeconds(attackDelayTime);
 

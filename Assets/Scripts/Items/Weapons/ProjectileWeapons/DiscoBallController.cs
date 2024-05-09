@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Localization.Plugins.XLIFF.V12;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class DiscoBallController : ProjectileWeapon
 {    
     [SerializeField] private GameObject discoBall;
-    [SerializeField] private float blinkTime, attackDelayTime;
+    [SerializeField] private float blinkTime;
     public List<GameObject> activeDiscoBalls = new();
+
+
+    private float BPM, attackDelayTime, pitch;
+    private AudioSource source;
 
     public static DiscoBallController Instance
     {
@@ -34,6 +39,16 @@ public class DiscoBallController : ProjectileWeapon
         TriggerController.Instance.SetTrigger(4, action1);
         TriggerController.Instance.SetTrigger(1, action2);
     }
+
+    private void FixedUpdate()
+    {
+        BPM = TriggerController.Instance.GetCurrentTrackBPM();
+        source = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>();
+        pitch = source.pitch;
+
+        attackDelayTime = ((60f / BPM) / 2) / pitch;
+    }
+
 
     public void Blink()
     {
@@ -79,7 +94,7 @@ public class DiscoBallController : ProjectileWeapon
             activeDiscoBalls.Add(clone);
             clone.GetComponent<DiscoBall>().SetDamage(damage);
             clone.GetComponent<DiscoBall>().SetPenetration(penetration);
-            SoundManager.Instance.PlaySFX(gameObject, attackSound, 1);
+            SoundManager.Instance.PlaySFX(gameObject, attackSound, 1 - (i * 0.1f));
         
             yield return new WaitForSeconds(attackDelayTime);
     

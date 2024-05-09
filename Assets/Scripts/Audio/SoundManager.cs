@@ -9,6 +9,8 @@ using UnityEngine.Events;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Slider = UnityEngine.UI.Slider;
 
 public class SoundManager : MonoBehaviour
 {
@@ -22,12 +24,15 @@ public class SoundManager : MonoBehaviour
     public Scene currentScene;
     public AudioMixerSnapshot lowPassSnapshots, normalSnapshots;
     public bool isOnePlaying, isLowPassOn, isInMenu, hasRun, isTimeToChange;
-    public int currentTrackNumber, currentBPM;
+    public int currentTrackNumber, currentBPM, currentPitchAdjustedBPM;
+
 
     [Header("Beat relateted")]
-    [SerializeField] private float MusicSpeedChange;
     [SerializeField] private float timeToChange;
+    [SerializeField] private int beatThreshold; // how many beats does it take to change track
+    private int totalPitchChange; // how many times pitch has changed
 
+    private Slider musicSpeedSilder;
     public static SoundManager Instance
     {
         get; private set;
@@ -57,18 +62,25 @@ public class SoundManager : MonoBehaviour
         isTimeToChange = false;
         currentSource = musicSource1;
         currentBPM = BPMForTracks[0];
+        currentPitchAdjustedBPM = currentBPM;
         currentTrackNumber = 0;
-
-        UnityAction action = new UnityAction(CheckIfItsTimeToChangeTrack);
-        TriggerController.Instance.SetTrigger(1, action);
+        totalPitchChange = 0;
     }
 
     void FixedUpdate()
     {
         currentScene = SceneManager.GetActiveScene();
+        if (SceneManager.GetActiveScene().name == "Main")
+        {
+            if (musicSpeedSilder == null)
+            {
+                musicSpeedSilder = GameObject.FindGameObjectWithTag("MusicSpeedlider").GetComponent<Slider>();
+            }
+        }
+
         if (currentTrackNumber != 0)
         {
-            if (Mathf.Approximately(currentSource.pitch, 0.9f))
+            if (totalPitchChange == -beatThreshold)
             {
 
                 ChangeTrack(--currentTrackNumber);
@@ -78,17 +90,14 @@ public class SoundManager : MonoBehaviour
 
         if (currentTrackNumber != musicTracks.Length - 1)
         {
-            if (Mathf.Approximately(currentSource.pitch, 1.1f))
+            if (totalPitchChange == beatThreshold)
             {
                 ChangeTrack(++currentTrackNumber);
             }
         }
 
-    }
 
-    public void CheckIfItsTimeToChangeTrack()
-    {
-       
+
     }
 
     private void StopInGameMusic()
@@ -192,6 +201,7 @@ public class SoundManager : MonoBehaviour
     {
         float timeElapsed = 0;
         currentBPM = BPMForTracks[trackNumber];
+        totalPitchChange = 0;
         if (isOnePlaying)
         {
             musicSource2.transform.SetAsFirstSibling();
@@ -209,7 +219,8 @@ public class SoundManager : MonoBehaviour
             }
             musicSource1.Stop();
             musicSource1.pitch = 1;
-          
+           
+
         }
         else
         {
@@ -228,51 +239,60 @@ public class SoundManager : MonoBehaviour
             }
             musicSource2.Stop();
             musicSource2.pitch = 1;
+            
         }
     }
 
     public void ChangePitch(bool increasePitch)
     {
         StartCoroutine(ChangePitchCoroutine(increasePitch));
+        StartCoroutine(UpdateMusicSpeedSliderValue());
+      
+    }
+
+    private IEnumerator ChangePitchCoroutine(bool increasePitch)
+    {
+       
+        float MusicSpeedChange = (10 / currentBPM) / beatThreshold; //  calculate the percentage increase or decrease from current track to the next or las track
+        int direction = increasePitch ? 1 : -1;
+        currentPitchAdjustedBPM += direction * (10 / beatThreshold);
+        totalPitchChange += direction;
+        float elapsedTime = 0;
+        float nexPitch = currentSource.pitch + (MusicSpeedChange * direction);
+        float currentPitch = currentSource.pitch;
+       
+      
+        while (elapsedTime <= timeToChange)
+        {
+            elapsedTime += Time.deltaTime;
+            currentSource.pitch = Mathf.Lerp(currentPitch, nexPitch, elapsedTime / timeToChange);
+           
+
+            yield return null;
+        }
         
     }
 
-    private  IEnumerator ChangePitchCoroutine(bool increasePitch)
+    private IEnumerator UpdateMusicSpeedSliderValue()
     {
-        AudioSource audioSource = transform.GetChild(0).GetComponent<AudioSource>();
-        int direction = increasePitch ? 1 : -1;
         float elapsedTime = 0;
-        float nexPitch = audioSource.pitch + (MusicSpeedChange * direction);
-        float currentPitch = audioSource.pitch;
-       
+        float currentValue = musicSpeedSilder.value;
+        float nextValue = currentPitchAdjustedBPM;
 
-        if (audioSource.pitch <= 0.5)
+        while (elapsedTime <= timeToChange)
         {
-            audioSource.pitch = 0.5f;
+            elapsedTime += Time.deltaTime;
+            musicSpeedSilder.value = Mathf.Lerp(currentValue, nextValue, elapsedTime / timeToChange);
+            yield return null;
         }
-        else
-        {
-            while (elapsedTime <= timeToChange)
-            {
-                elapsedTime += Time.deltaTime;
-                audioSource.pitch = Mathf.Lerp(currentPitch, nexPitch, elapsedTime / timeToChange);
-               
-               
-                yield return null;
-
-            }
-
-        }
-
-     
     }
 
     public void PlaySFX(GameObject gameObject, AudioClip clip, float volume)
     {
-        AudioSource audioSource = gameObject.GetComponent<AudioSource>();
-        audioSource.pitch = this.transform.GetChild(0).GetComponent<AudioSource>().pitch;
-        audioSource.volume = (float)UnityEngine.Random.Range(0.5f, volume);
-        audioSource.PlayOneShot(clip, audioSource.volume);
+        AudioSource audioSource = currentSource;
+        audioSource.pitch = currentSource.pitch;
+        //audioSource.volume = (float)UnityEngine.Random.Range(0.5f, volume);
+        audioSource.PlayOneShot(clip, volume);
 
     }
 
