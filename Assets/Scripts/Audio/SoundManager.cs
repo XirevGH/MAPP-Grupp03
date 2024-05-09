@@ -9,6 +9,8 @@ using UnityEngine.Events;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Slider = UnityEngine.UI.Slider;
 
 public class SoundManager : MonoBehaviour
 {
@@ -28,6 +30,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private float MusicSpeedChange;
     [SerializeField] private float timeToChange;
 
+    private Slider musicSpeedSilder;
     public static SoundManager Instance
     {
         get; private set;
@@ -58,14 +61,19 @@ public class SoundManager : MonoBehaviour
         currentSource = musicSource1;
         currentBPM = BPMForTracks[0];
         currentTrackNumber = 0;
-
-        UnityAction action = new UnityAction(CheckIfItsTimeToChangeTrack);
-        TriggerController.Instance.SetTrigger(1, action);
     }
 
     void FixedUpdate()
     {
         currentScene = SceneManager.GetActiveScene();
+        if (SceneManager.GetActiveScene().name == "Main")
+        {
+            if (musicSpeedSilder == null)
+            {
+                musicSpeedSilder = GameObject.FindGameObjectWithTag("MusicSpeedlider").GetComponent<Slider>();
+            }
+        }
+
         if (currentTrackNumber != 0)
         {
             if (Mathf.Approximately(currentSource.pitch, 0.9f))
@@ -84,11 +92,8 @@ public class SoundManager : MonoBehaviour
             }
         }
 
-    }
 
-    public void CheckIfItsTimeToChangeTrack()
-    {
-       
+
     }
 
     private void StopInGameMusic()
@@ -185,6 +190,7 @@ public class SoundManager : MonoBehaviour
     {
         StopAllCoroutines();
         StartCoroutine(FadeTrack(trackNumber));
+        StartCoroutine(ResetMusicSpeedliderValuve());
         isOnePlaying = !isOnePlaying;
     }
 
@@ -209,7 +215,8 @@ public class SoundManager : MonoBehaviour
             }
             musicSource1.Stop();
             musicSource1.pitch = 1;
-          
+           
+
         }
         else
         {
@@ -228,51 +235,65 @@ public class SoundManager : MonoBehaviour
             }
             musicSource2.Stop();
             musicSource2.pitch = 1;
+            
         }
     }
 
     public void ChangePitch(bool increasePitch)
     {
         StartCoroutine(ChangePitchCoroutine(increasePitch));
-        
+      
     }
 
-    private  IEnumerator ChangePitchCoroutine(bool increasePitch)
+    private IEnumerator ChangePitchCoroutine(bool increasePitch)
     {
-        AudioSource audioSource = transform.GetChild(0).GetComponent<AudioSource>();
         int direction = increasePitch ? 1 : -1;
         float elapsedTime = 0;
-        float nexPitch = audioSource.pitch + (MusicSpeedChange * direction);
-        float currentPitch = audioSource.pitch;
+        float nexPitch = currentSource.pitch + (MusicSpeedChange * direction);
+        float currentPitch = currentSource.pitch;
        
-
-        if (audioSource.pitch <= 0.5)
+        if (currentSource.pitch <= 0.5)
         {
-            audioSource.pitch = 0.5f;
+            currentSource.pitch = 0.5f;
         }
         else
         {
             while (elapsedTime <= timeToChange)
             {
                 elapsedTime += Time.deltaTime;
-                audioSource.pitch = Mathf.Lerp(currentPitch, nexPitch, elapsedTime / timeToChange);
-               
-               
+                currentSource.pitch = Mathf.Lerp(currentPitch, nexPitch, elapsedTime / timeToChange);
+                UpdateMusicSpeedliderValuve();
+
                 yield return null;
-
             }
-
         }
+    }
 
-     
+    private void UpdateMusicSpeedliderValuve()
+    {
+            musicSpeedSilder.value = currentSource.pitch;
+    }
+
+    private IEnumerator ResetMusicSpeedliderValuve()
+    {
+        float elapsedTime = 0;
+        float currentValue = musicSpeedSilder.value;
+
+        while (elapsedTime <= timeToChange)
+        {
+            elapsedTime += Time.deltaTime;
+            musicSpeedSilder.value = Mathf.Lerp(currentValue, 1, elapsedTime / timeToChange);
+            yield return null;
+        }
+        
     }
 
     public void PlaySFX(GameObject gameObject, AudioClip clip, float volume)
     {
-        AudioSource audioSource = gameObject.GetComponent<AudioSource>();
-        audioSource.pitch = this.transform.GetChild(0).GetComponent<AudioSource>().pitch;
-        audioSource.volume = (float)UnityEngine.Random.Range(0.5f, volume);
-        audioSource.PlayOneShot(clip, audioSource.volume);
+        AudioSource audioSource = currentSource;
+        audioSource.pitch = currentSource.pitch;
+        //audioSource.volume = (float)UnityEngine.Random.Range(0.5f, volume);
+        audioSource.PlayOneShot(clip, volume);
 
     }
 

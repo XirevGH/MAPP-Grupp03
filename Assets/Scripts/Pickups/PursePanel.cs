@@ -13,6 +13,7 @@ public class PursePanel : MonoBehaviour
     private int moneyAmount;
     public Sprite weaponPanel;
     public Sprite utilityPanel;
+    [SerializeField] private GameObject tintPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -46,18 +47,20 @@ public class PursePanel : MonoBehaviour
     public void OpenPurseWindow()
     {
         Time.timeScale = 0f;
-        gameObject.gameObject.SetActive(true);
+        gameObject.SetActive(true);
         TriggerController.Instance.ToggleTrigger();
         SoundManager.Instance.ToggleMusicPause();
+        tintPanel.SetActive(true);
     }
 
     public void ClosePurseWindow()
     {
         Time.timeScale = 1f;
-        gameObject.gameObject.SetActive(false);
+        gameObject.SetActive(false);
         TriggerController.Instance.ToggleTrigger();
         SoundManager.Instance.ToggleMusicPause();
+        tintPanel.SetActive(false);
     }
 
-  
+
 }
