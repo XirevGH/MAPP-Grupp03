@@ -66,8 +66,11 @@ public class ChillVibe : Utility
     {
         if (other.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<Enemy>().thisMovementSpeed = other.gameObject.GetComponent<Enemy>().thisMovementSpeed * slowSpeedPercent;
-            other.gameObject.GetComponent<Enemy>().isSlow = true;
+
+            Enemy  enemyScript = other.gameObject.GetComponent<Enemy>();
+            enemyScript.GetComponent<Enemy>().isSlow = true;
+            enemyScript.thisMovementSpeed = enemyScript.thisMovementSpeed * slowSpeedPercent * Enemy.movementSpeed * enemyScript.baseMovementSpeed;
+           
           
         }
     }

@@ -144,12 +144,12 @@ public class Player : MonoBehaviour
     {
         xpHeld += amountToAdd;
         UpdateXPSlider();
-        CheckForLevelUp();
+        Invoke("CheckForLevelUp", 0.8f);
     }
 
     private void CheckForLevelUp()
     {
-        if (xpHeld >= xpToLevel)
+        if(xpHeld >= xpToLevel)
         {
             LevelUp();
         }
@@ -165,6 +165,8 @@ public class Player : MonoBehaviour
         MainManager.Instance.mainLevel = level;
         upgradeScreen.OpenUpgradeWindow();
         upgradeSystem.StartUpgradeSystem();
+        Invoke("CheckForLevelUp", 0.8f);
+        
     }
 
     private void UpdateXPSlider()

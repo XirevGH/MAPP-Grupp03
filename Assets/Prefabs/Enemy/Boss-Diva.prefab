@@ -477,7 +477,7 @@ MonoBehaviour:
     dropChance: 100
   - item: {fileID: 4917292742459662858, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
     dropChance: 100
-  xpValue: 600
+  xpValue: 2500
   dropChance: 100
   multiDrop: 1
   player: {fileID: 0}

@@ -75,12 +75,12 @@ public class Enemy : MonoBehaviour
 
     protected virtual void CustomSlowUpdate() //Slow uppdate 0.4s
     {
-         if (!isSlow)
+        if (!isSlow)
         {
             UpdateSpeed();
-            
+
         }
-        
+
     }
 
     void FixedUpdate()
@@ -253,6 +253,10 @@ public class Enemy : MonoBehaviour
         float random = (float)Math.Round(UnityEngine.Random.Range(0f, 100f));
         if(random <= dropChance){
             XPDrop xpDrop = XPDropPool.Instance.GetXPDrop();
+            if(xpDrop == null){ 
+                Debug.LogWarning("xpDrop was null "); 
+                return false;
+            }
             xpDrop.transform.position = transform.position;  
             xpDrop.Initialize(xpValue, player);  
             xpDrop.gameObject.SetActive(true);
@@ -264,6 +268,7 @@ public class Enemy : MonoBehaviour
 
     public void UpdateSpeed(){
         thisMovementSpeed = movementSpeed * baseMovementSpeed;
+       
     }
     
 

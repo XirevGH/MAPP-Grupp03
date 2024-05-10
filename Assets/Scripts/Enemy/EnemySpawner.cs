@@ -80,8 +80,8 @@ public class EnemySpawner : MonoBehaviour
     private void FixedUpdate()
     {
         if(!bossAlive){
-            spawnRate -= 0.0001f;
-            spawnIncreaser += 0.0004f;}
+            spawnRate -= 0.00001f;
+            spawnIncreaser += 0.0006f;}
     }
     void SpawnEnemy(Vector3Int position)
     {   

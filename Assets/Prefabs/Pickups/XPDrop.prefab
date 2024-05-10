@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: d47d7fbe8bb50334296fb2f273403001, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,7 +98,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea0dd1d597caa84ebb82c9cf8496b60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XP: 20
+  spriteRenderer: {fileID: 8449104146653439331}
+  biggXpDropSprite: {fileID: 21300000, guid: d47d7fbe8bb50334296fb2f273403001, type: 3}
+  biggXpSize: {x: 0.2, y: 0.2, z: 0.2}
+  biggMaxXpValue: 10000
+  mediumXpDropSprite: {fileID: 21300000, guid: d47d7fbe8bb50334296fb2f273403001, type: 3}
+  mediumXpSize: {x: 0.15, y: 0.15, z: 0.15}
+  mediumMaxXpValue: 500
+  smallXpDropSprite: {fileID: 21300000, guid: d47d7fbe8bb50334296fb2f273403001, type: 3}
+  smallXpSize: {x: 0.1, y: 0.1, z: 0.1}
+  smallMaxXpValue: 25
+  XP: 0
   speed: 20
 --- !u!1 &8939485538652551796
 GameObject:
