@@ -52,7 +52,7 @@ MonoBehaviour:
   musicSource1: {fileID: 4282401076657109252}
   musicSource2: {fileID: 1413303723989624773}
   menuMusic: {fileID: 8419575893291496720}
-  SFXSource: {fileID: 0}
+  SFXSource: {fileID: 4297343317063124742}
   currentSource: {fileID: 0}
   musicTracks:
   - {fileID: 8300000, guid: 51626d5583f3bd345959fb1fd4a5550e, type: 3}
@@ -62,7 +62,7 @@ MonoBehaviour:
   clickSound:
   - {fileID: 8300000, guid: 03a59a406ce7001498b6738f21472b64, type: 3}
   BPMForTracks: 640000006e0000007800000082000000
-  timeToFade: 1.25
+  timeToFade: 1
   sfxObject: {fileID: 7176476281948975897, guid: 68b62b1a95c83e04781fdde2017472eb, type: 3}
   currentScene:
     m_Handle: 0
@@ -75,8 +75,9 @@ MonoBehaviour:
   isTimeToChange: 0
   currentTrackNumber: 0
   currentBPM: 0
-  MusicSpeedChange: 0.02
+  currentPitchAdjustedBPM: 0
   timeToChange: 0.5
+  beatThreshold: 5
 --- !u!1 &786379661519232125
 GameObject:
   m_ObjectHideFlags: 0

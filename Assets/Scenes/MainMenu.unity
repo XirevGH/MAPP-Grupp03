@@ -29468,11 +29468,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!82 &893744045 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4297343317063124742, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
-  m_PrefabInstance: {fileID: 5131103641739008332}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &894220424
 GameObject:
   m_ObjectHideFlags: 0
@@ -67645,10 +67640,6 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
-      propertyPath: SFXSource
-      value: 
-      objectReference: {fileID: 893744045}
     - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: bpmForTracks.Array.size
       value: 3
