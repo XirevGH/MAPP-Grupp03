@@ -196,7 +196,6 @@ public class SoundManager : MonoBehaviour
 
     public void ChangeTrack(int trackNumber)
     {
-        StopAllCoroutines();
         StartCoroutine(FadeTrack(trackNumber));
         isOnePlaying = !isOnePlaying;
     }
@@ -256,7 +255,6 @@ public class SoundManager : MonoBehaviour
 
     private IEnumerator ChangePitchCoroutine(bool increasePitch)
     {
-       
         float MusicSpeedChange = (10 / currentBPM) / beatThreshold; //  calculate the percentage increase or decrease from current track to the next or las track
         int direction = increasePitch ? 1 : -1;
         currentPitchAdjustedBPM += direction * (10 / beatThreshold);
@@ -265,16 +263,13 @@ public class SoundManager : MonoBehaviour
         float nexPitch = currentSource.pitch + (MusicSpeedChange * direction);
         float currentPitch = currentSource.pitch;
        
-      
         while (elapsedTime <= timeToChange)
         {
             elapsedTime += Time.deltaTime;
             currentSource.pitch = Mathf.Lerp(currentPitch, nexPitch, elapsedTime / timeToChange);
            
-
             yield return null;
-        }
-        
+        }  
     }
 
     private IEnumerator UpdateMusicSpeedSliderValue()

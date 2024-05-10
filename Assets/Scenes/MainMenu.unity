@@ -23889,6 +23889,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 543497618}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
+      propertyPath: attackSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 64db24276734dd94c9fc7337805a49d7, type: 3}
+    - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: cooldownDuration
       value: 0
       objectReference: {fileID: 0}
