@@ -1,9 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class ElectricBolt : MonoBehaviour
 {
@@ -37,13 +32,15 @@ public class ElectricBolt : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        length = Vector3.Distance(player.transform.position, targetUnit.transform.position);
-        direction = targetUnit.transform.position - player.transform.position;
-        angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        if (player != null) { 
+            length = Vector3.Distance(player.transform.position, targetUnit.transform.position);
+            direction = targetUnit.transform.position - player.transform.position;
+            angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        transform.position = player.transform.position;
-        transform.rotation = Quaternion.Euler(0, 0, angle);
-        transform.localScale = new Vector3(length / 10.24f, transform.localScale.y, transform.localScale.z);
+            transform.position = player.transform.position;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+            transform.localScale = new Vector3(length / 10.24f, transform.localScale.y, transform.localScale.z);
+        }
     }
 
     private void FixedUpdate()

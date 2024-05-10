@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RollerSkates : Utility
 {
@@ -8,6 +8,15 @@ public class RollerSkates : Utility
     public float percentageIncrease;
     public int movementSpeedRank;
     public int movementSpeedUpgradeCost;
+
+
+    private void OnEnable()
+    {
+        if (SceneManager.GetActiveScene().name == "Main") 
+        {
+            playerMovement.IncreaseMovementSpeed(Mathf.Pow(1 + (percentageIncrease / 100f), movementSpeedRank));
+        }
+    }
 
     public float GetMovementSpeedIncreasePercentage()
     {
@@ -17,12 +26,11 @@ public class RollerSkates : Utility
     public void IncreaseMovementSpeed()
     {
         movementSpeedRank++;
-        playerMovement.IncreaseMovementSpeed(1 + (percentageIncrease / 100f));
     }
     
     public float GetCurrentMovementSpeedIncrease()
     {
-        return Mathf.Pow(1 + (percentageIncrease / 100f), movementSpeedRank);
+        return (float)Math.Round((Mathf.Pow(1 + (percentageIncrease / 100f), movementSpeedRank) - 1) * 100, 1);
     }
 
     protected override void CreateUpgradeOptions()

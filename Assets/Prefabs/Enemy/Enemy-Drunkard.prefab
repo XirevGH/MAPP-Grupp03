@@ -216,7 +216,7 @@ MonoBehaviour:
   player: {fileID: 0}
   target: {fileID: 0}
   sprite: {fileID: 0}
-  health: 4
+  health: 25416470
   thisMovementSpeed: 2
   baseMovementSpeed: 2
   isSlow: 0
@@ -504,7 +504,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 1024
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -532,7 +532,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.4277625, y: 1.2574422, z: -0.5364506, w: 0}
+  m_margin: {x: -0.8967922, y: 1.1972349, z: -1.6748819, w: -0.30103493}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

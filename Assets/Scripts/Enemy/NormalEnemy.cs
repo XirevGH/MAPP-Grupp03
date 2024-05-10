@@ -3,13 +3,8 @@ using UnityEngine;
 
 public class NormalEnemy : Enemy
 {
-    public NormalEnemy()
-    {
-    }
-
     void FixedUpdate()
     {
-        damageNumberWindow -= Time.deltaTime;
         SelectTarget();
         if (IsAlive())
         {

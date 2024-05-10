@@ -45,8 +45,12 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
         }
         //slider = GameObject.FindGameObjectWithTag("volumeSlider").GetComponent<Slider>();
-      
-      
+    }
+
+    public void DestroyInstance()
+    {
+        Destroy(gameObject);
+        Instance = null;
     }
 
     void Start()

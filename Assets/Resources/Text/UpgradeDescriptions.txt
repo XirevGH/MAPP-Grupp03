@@ -13,28 +13,28 @@ Utility,Decoy,Make it rain money to distract your enemies.
 Utility,Personal Space,Pushes away enemies to give yourself some space.
 Upgrade,Bass Guitar,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
 Upgrade,Vinyl Record,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
-Upgrade,Vinyl Record,Increase the amount of Vinyl Records shot out by,IncreaseProjectileCount,GetProjectilePerUpgrade,.
-Upgrade,Vinyl Record,Increase the amount of targets each Vinyl Record can deal damage to by,IncreasePenetrationAmount,GetPenetrationPerUpgrade,.
+Upgrade,Vinyl Record,Increase the amount of Vinyl Records shot out by,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Vinyl Record,Increase the amount of targets each Vinyl Record can deal damage to by,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
 Upgrade,Yoyo,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
-Upgrade,Yoyo,Increase the amount of Yoyos by,IncreaseProjectileCount,GetProjectilePerUpgrade,.
+Upgrade,Yoyo,Increase the amount of Yoyos by,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
 Upgrade,Disco Ball,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
-Upgrade,Disco Ball,Increase the amount of Disco Balls launched by,IncreaseProjectileCount,GetProjectilePerUpgrade,.
-Upgrade,Disco Ball,Increase the amount of targets each Disco Ball can deal damage to by,IncreasePenetrationAmount,GetPenetrationPerUpgrade,.
+Upgrade,Disco Ball,Increase the amount of Disco Balls launched by,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Disco Ball,Increase the amount of targets each Disco Ball can deal damage to by,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
 Upgrade,Electric Guitar,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
-Upgrade,Electric Guitar,Increase the amount of targets the Electric Guitar will zap,IncreaseTetherAmount,GetTetherAmountPerUpgrade,.
+Upgrade,Electric Guitar,Increase the amount of targets the Electric Guitar will zap,IncreaseTetherAmount,GetTetherAmountIncreasePerUpgrade,.
 Upgrade,Saxophone,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
-Upgrade,Saxophone,Increase the amount of Notes fired by,IncreaseProjectileCount,GetProjectilePerUpgrade,.
-Upgrade,Saxophone,Increase the amount of targets each Note can deal damage to by,IncreasePenetrationAmount,GetPenetrationPerUpgrade,.
+Upgrade,Saxophone,Increase the amount of Notes fired by,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Saxophone,Increase the amount of targets each Note can deal damage to by,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
 Upgrade,Stage Presence,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
 Upgrade,Stage Presence,Increase radius by,IncreaseRadius,GetRadiusIncreasePercentage,%
 Upgrade,Synthwave Blast,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
-Upgrade,Synthwave Blast,Increase the amount of Synthwave Bolts in each blast by,IncreaseProjectileAmount,GetProjectilePerUpgrade,.
-Upgrade,Synthwave Blast,Increase the amount of targets each Synthwave Bolt can deal damage to by,IncreasePenetrationAmount,GetPenetrationPerUpgrade,.
+Upgrade,Synthwave Blast,Increase the amount of Synthwave Bolts in each blast by,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Synthwave Blast,Increase the amount of targets each Synthwave Bolt can deal damage to by,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
 Upgrade,Roller Skates,Increase movement speed by,IncreaseMovementSpeed,GetMovementSpeedIncreasePercentage,%
 Upgrade,Groove Armor,Increase health by,IncreaseHealth,GetHealthIncreasePercentage,%
 Upgrade,Chill Vibe,Increase the area of your chill vibe by,IncreaseRadius,GetRadiusIncreasePercentage,%
 Upgrade,Chill Vibe,Increase the slow of your chill vibe by,IncreaseSlow,GetSlowIncreasePercentage,%
-Upgrade,Decoy,Increase the amount of decoys by,IncreaseDecoyAmount,GetDecoyAmountPerUpgrade,.
-Upgrade,Decoy,Increase the amount of health your decoys have by,IncreaseDecoyHealth,GetDecoyHealthAmountPerUpgrade,.
+Upgrade,Decoy,Increase the amount of decoys by,IncreaseDecoyAmount,GetDecoyAmountIncreasePerUpgrade,.
+Upgrade,Decoy,Increase the amount of health your decoys have by,IncreaseDecoyHealth,GetDecoyHealthAmountIncreasePerUpgrade,.
 Upgrade,Personal Space,Increases the radius by,IncreaseRadius,GetRadiusIncreasePercentage,%
 Upgrade,Personal Space,Increases the pushback by,IncreaseForce,GetForceIncreasePercentage,%

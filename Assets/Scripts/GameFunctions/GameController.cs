@@ -28,7 +28,10 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        currentTrackBPM = SoundManager.Instance.GetComponent<SoundManager>().GetCurrentBPM();
+        if (SoundManager.Instance != null) 
+        { 
+            currentTrackBPM = SoundManager.Instance.GetCurrentBPM();
+        }
     }
 
     private void FixedUpdate()
@@ -55,6 +58,7 @@ public class GameController : MonoBehaviour
     {
         SoundManager.Instance.GetComponent<SoundManager>().Die();
         File.WriteAllText(playerStatsFile, playerStats.SaveToString());
+        MainManager.Instance.CompileText();
         SceneManager.LoadScene("ResultsScreen");
        
     }

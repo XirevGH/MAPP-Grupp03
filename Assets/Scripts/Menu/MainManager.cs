@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -29,16 +27,15 @@ public class MainManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        
-    }
-    public void Reset() {
-        timeText = "";
-        mainLevel = 1;
-        enemiesDefeated = 0;
-        moneyEarned = 0;
     }
 
-    private void Start() {
+    public void DestroyInstance()
+    {
+        Destroy(gameObject);
+        Instance = null;
+    }
+
+    public void CompileText() {
         moneyEarnedText.text = "" + moneyEarned;
         levelText.text = "" + mainLevel;
         timerText.text = "" + timeText;

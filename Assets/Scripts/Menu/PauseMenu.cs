@@ -65,12 +65,14 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-        SoundManager.Instance.GoBackToMain();
         GameIsPaused = false;
         ToggleJoysticks(true);
         Time.timeScale = 1f;
-        SceneManager.LoadScene(mainMenuSceneName);
         SoundManager.Instance.Click();
+        Player.Instance.DestroyInstance();
+        MetaUpgradeSystem.Instance.DestroyInstance();
+        SoundManager.Instance.DestroyInstance();
+        SceneManager.LoadScene(mainMenuSceneName);
     }
 
     public void Settings()

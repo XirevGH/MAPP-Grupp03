@@ -1,17 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Text;
 using System;
-using System.Linq;
-using Unity.VisualScripting;
-using static UnityEngine.GraphicsBuffer;
-using UnityEngine.UIElements;
-using System.Xml.Linq;
-using UnityEditor.Localization.Plugins.XLIFF.V12;
-using UnityEngine.Rendering;
-
 
 [System.Serializable]  
 public class GameObjectComparer : IComparer<GameObject>
@@ -51,9 +42,9 @@ public class Enemy : MonoBehaviour
     public int xpValue;
     public float dropChance;
     public bool multiDrop;
-    
+
     public GameObject player, target;
-    protected float damageNumberWindow = 3f;
+    protected float damageNumberWindow = 1f;
     public SpriteRenderer sprite;
     public static float movementSpeed;  // Global % enemy movespeed increase.  
     public static float healthProcenIncrease;
@@ -100,8 +91,6 @@ public class Enemy : MonoBehaviour
 
         if (IsAlive()) 
         {
-           
-
             if (Vector3.Distance(target.transform.position, transform.position) < 0.5)
             {
                 player.GetComponent<Player>().TakeDamage(1);
@@ -143,15 +132,10 @@ public class Enemy : MonoBehaviour
     {   if (IsAlive())
         {   health -= damageTaken;
             damageNumbers.text = BuildDamageNumber(damageTaken);
-            if (damageNumberWindow <= 0)
-            {
-                damageNumberWindow = 3f;
-                damageNumberAnim.SetTrigger("TakingDamage");
-            }
+            damageNumberWindow = 0.5f;
+            damageNumberAnim.SetTrigger("TakingDamage");
             enemyAnim.SetTrigger("TakeDamage");
             GetComponent<AudioSource>().PlayOneShot(hitSound, (float)UnityEngine.Random.Range(0.8f, 1));
-
-
         }
     }
 
@@ -160,25 +144,33 @@ public class Enemy : MonoBehaviour
     {
         string source = damageNumbers.text;
         int count = source.Split('\n').Length;
-        if (count > 4 || damageNumberWindow <= 0)
+        if (count > 4 || damageNumberWindow <= 0 || damageNumberAnim.GetCurrentAnimatorStateInfo(0).IsName("NotTakingDamage"))
         {
             damageNumbers.text = "";
             count = 0;
+            damageNumbers.gameObject.transform.parent.transform.parent = gameObject.transform;
+            damageNumbers.gameObject.transform.parent.position = gameObject.transform.position;
+            damageNumbers.gameObject.transform.parent.localPosition = new Vector2(0, 1.42f);
         }
         StringBuilder builder = new StringBuilder(damageNumbers.text);
         if (count > 0)
         {
             
-            builder.Insert(0, damage.ToString());
+            builder.Insert(0, ((int)damage).ToString());
             builder.Insert(0, " ", count);
             builder.Insert(0, "\n");
         }
         else
         {
             builder.Append("\n");
-            builder.Append(damage.ToString());
+            builder.Append(((int)damage).ToString());
+        }
+        if (transform.childCount > 0)
+        {
+            damageNumbers.gameObject.transform.parent.transform.parent = null;
         }
         return builder.ToString();
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -186,7 +178,6 @@ public class Enemy : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
-
             Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
@@ -219,11 +210,18 @@ public class Enemy : MonoBehaviour
         {
             enemyAnim.SetTrigger("Dead");
             Invoke("DestroyGameObject", 0.8f);
+            Debug.Log(damageNumbers.transform.parent.gameObject.name);
+            Invoke("RemoveText", 0.8f);
             return false;
         }
         return true;
     }
 
+    private void RemoveText()
+    {
+        Debug.Log(damageNumbers.transform.parent.gameObject.name);
+        Destroy(damageNumbers.transform.parent.gameObject);
+    }
 
     protected bool Drop(GameObject drop, float dropChance)
     {   float random = (float)Math.Round(UnityEngine.Random.Range(0f, 100f), 4);

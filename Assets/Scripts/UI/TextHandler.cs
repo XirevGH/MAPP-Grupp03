@@ -30,7 +30,7 @@ public class TextHandler : MonoBehaviour
         Debug.Log("Method string name: " + method);
         Debug.Log("Actual method: " + item.GetType().GetMethod(method).Name);
         Debug.Log("Item GameObject: " + item.name);
-        Debug.Log("Item actual name:" + item.GetName());*/
+        Debug.Log("Item actual name:" + item.GetName())*/;
         string value = item.GetType().GetMethod(method).Invoke(item, null).ToString();
         if (method.Contains("Increase"))
         {

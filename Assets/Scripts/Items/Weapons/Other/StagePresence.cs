@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class StagePresence : Weapon
@@ -20,7 +21,7 @@ public class StagePresence : Weapon
 
     public float GetCurrentRadiusIncrease()
     {
-        return Mathf.Pow(1 + (radiusIncreasePercentage / 100f), radiusRank);
+        return (float)Math.Round((Mathf.Pow(1 + (radiusIncreasePercentage / 100f), radiusRank) - 1) * 100, 1);
     }
 
     protected override void CreateUpgradeOptions()

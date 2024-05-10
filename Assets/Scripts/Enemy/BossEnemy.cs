@@ -71,7 +71,6 @@ public class BossEnemy : Enemy
     void FixedUpdate() {
         SelectTarget();
         attackCooldown -= Time.deltaTime;
-        damageNumberWindow -= Time.deltaTime;
 
         if (IsAlive()) {
             bossCharge.UpdateCharge();

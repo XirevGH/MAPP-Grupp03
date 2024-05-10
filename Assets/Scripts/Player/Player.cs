@@ -34,8 +34,15 @@ public class Player : MonoBehaviour
         get; private set;
     }
 
+    public void DestroyInstance()
+    {
+        Destroy(gameObject);
+        Instance = null;
+    }
+
     private void Awake()
     {
+
         if (Instance == null)
         {
             Instance = this;
@@ -45,17 +52,18 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        InitializePlayer();
-    }   
-    private void InitializePlayer(){
-        currency = 0; 
-        maxHealth = 100;
-        health = maxHealth;
-        xpToLevel = 100;
-        level = 1;
-        xpHeld = 0;
-        currentItems = new List<Item>{startingWeapon};
+        currentItems = new List<Item> { startingWeapon };
+        /*        InitializePlayer();*/
     }
+    /*    private void InitializePlayer(){
+            currency = 0; 
+            maxHealth = 100;
+            health = maxHealth;
+            xpToLevel = 100;
+            level = 1;
+            xpHeld = 0;
+            currentItems = new List<Item>{startingWeapon};
+        }*/
 
 
     //For leveling up faster for testing, remove later
@@ -125,7 +133,8 @@ public class Player : MonoBehaviour
     private void Die()
     {   metaUpgradeSystem.AddCurrency(currency);
         mainManager.moneyEarned += currency;
-        InitializePlayer();
+        DestroyInstance();
+        MetaUpgradeSystem.Instance.DestroyInstance();
         gameController.GameOver();
     }
     #endregion

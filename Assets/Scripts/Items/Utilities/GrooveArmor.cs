@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GrooveArmor : Utility
@@ -12,7 +13,7 @@ public class GrooveArmor : Utility
         player.IncreaseMaxHealth(1 + (percentageIncrease / 100f));
     }
 
-    public float GetHealthUpgradePercentage()
+    public float GetHealthIncreasePercentage()
     {
         return percentageIncrease;
     }
@@ -29,6 +30,6 @@ public class GrooveArmor : Utility
 
     public float GetCurrentHealthIncrease()
     {
-        return Mathf.Pow(1 + (percentageIncrease / 100f), healthRank);
+        return (float)Math.Round((Mathf.Pow(1 + (percentageIncrease / 100f), healthRank) - 1) * 100, 1); ;
     }
 }

@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class PersonalSpace : Utility
@@ -42,12 +41,12 @@ public class PersonalSpace : Utility
 
     public float GetCurrentRadiusIncrease()
     {
-        return Mathf.Pow(1 + (radiusIncreasePercentage / 100f), radiusRank);
+        return (float)Math.Round(Mathf.Pow(1 + (radiusIncreasePercentage / 100f), radiusRank), 1);
     }
 
     public float GetCurrentForceIncrease()
     {
-        return Mathf.Pow(1 + (forceIncreasePercentage / 100f), forceRank);
+        return (float)Math.Round(Mathf.Pow(1 + (forceIncreasePercentage / 100f), forceRank), 1);
     }
 
     public void IncreaseForce()

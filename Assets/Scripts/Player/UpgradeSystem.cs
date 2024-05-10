@@ -32,7 +32,7 @@ public class UpgradeSystem : MonoBehaviour
 
         if (controller == null)
         {
-            controller = FindObjectOfType<MetaUpgradeSystem>();
+            controller = MetaUpgradeSystem.Instance;
         }
         
         allowedAmountOfWeapons = 4;
@@ -71,6 +71,12 @@ public class UpgradeSystem : MonoBehaviour
                 {
                     string getStatIncrease = fields[4];
                     string symbol = fields[5];
+                    Debug.Log(type);
+                    Debug.Log(name);
+                    Debug.Log(description);
+                    Debug.Log(upgradeMethodName);
+                    Debug.Log(getStatIncrease);
+                    Debug.Log(symbol);
                     return description + " " + item.GetType().GetMethod(getStatIncrease).Invoke(item, null) + symbol;
                 }
             }

@@ -29,9 +29,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void IncreaseMovementSpeed(float percentageIncrease)
+    public void IncreaseMovementSpeed(float movementSpeedIncrease)
     {
-        movementSpeed *= percentageIncrease;
+        movementSpeed *= movementSpeedIncrease;
+    }
+
+    public float GetMovementSpeed()
+    {
+        return movementSpeed;
     }
 
     private void FlipSprite(bool flip)

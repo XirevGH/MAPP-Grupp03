@@ -1,10 +1,9 @@
-
+using System;
 using UnityEngine;
 
 public abstract class Weapon : Item
 {
-    protected int damage;
-    public float baseDamage;
+    public float damage;
     public int damageRank;
     public int damageUpgradeCost;
     public float percentageDamageIncrease;
@@ -13,7 +12,6 @@ public abstract class Weapon : Item
     protected override void Awake()
     {
         base.Awake();
-        damage = (int)baseDamage;
     }
 
     public abstract void Attack();
@@ -21,8 +19,7 @@ public abstract class Weapon : Item
     public virtual void IncreaseDamage()
     {
         damageRank++;
-        baseDamage *= (1 + (percentageDamageIncrease / 100f));
-        damage = (int) baseDamage;
+        damage *= (1 + (percentageDamageIncrease / 100f));
     }
 
     public float GetDamageIncreasePercentage()
@@ -30,9 +27,9 @@ public abstract class Weapon : Item
         return percentageDamageIncrease;
     }
 
-    public int GetCurrentDamage()
+    public float GetCurrentDamage()
     {
-        return damage;
+        return (float)Math.Round(damage, 1);
     }
 
     protected override void CreateUpgradeOptions()

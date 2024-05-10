@@ -4,8 +4,6 @@ using System.IO;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using System.Data.SqlTypes;
 
 public class MetaUpgradeSystem : MonoBehaviour
 {
@@ -15,7 +13,7 @@ public class MetaUpgradeSystem : MonoBehaviour
 
     private static bool initialUpgrades = true;
 
-    [SerializeField] private List<Item> items;
+    private Item[] items;
     private Dictionary<Tuple<string, string>, int> upgradeMap;
     string upgradeStatsFile;
 
@@ -51,6 +49,14 @@ public class MetaUpgradeSystem : MonoBehaviour
     {
         get; private set;
     }
+
+    public void DestroyInstance()
+    {
+        Destroy(gameObject);
+        Instance = null;
+        initialUpgrades = true;
+    }
+
     private void CreateUpgradeMap()
     {
         upgradeMap = new Dictionary<Tuple<string, string>, int>();
@@ -70,7 +76,7 @@ public class MetaUpgradeSystem : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("upgrade awake");
+        items = FindObjectsOfType<Item>();
         if (Instance == null)
         {
             Instance = this;
@@ -167,7 +173,7 @@ public class MetaUpgradeSystem : MonoBehaviour
         currency += addedCurrency;
     }
 
-    public List<Item> GetItems() 
+    public Item[] GetItems() 
     { 
         return items;
     }

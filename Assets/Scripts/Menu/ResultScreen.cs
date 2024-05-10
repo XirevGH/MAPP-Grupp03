@@ -12,10 +12,9 @@ public class ResultScreen : MonoBehaviour
 
     
     public void LoadMainMenu()
-    {   MainManager.Instance.Reset();
+    {
+        MainManager.Instance.DestroyInstance();
+        SoundManager.Instance.DestroyInstance();
         SceneManager.LoadScene(levelToload);
     }   
-
-
-
 }
