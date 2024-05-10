@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-6218118484585964804
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 140e9b457e8b29a44a49da9db1a6ca60
+  m_EffectName: Send
+  m_MixLevel: bc68c79ff65f853439b33390329ae230
+  m_Parameters: []
+  m_SendTarget: {fileID: -15246952741802180}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-4809636261824017940
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -15,10 +29,31 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 1346254396625176048}
+  - {fileID: -6218118484585964804}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-611749291550147857
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: f538205abe1695344ade48c45f033214
+  m_EffectName: Normalize
+  m_MixLevel: 77aef5ca38b566d46b19d916893cdb33
+  m_Parameters:
+  - m_ParameterName: Fade in time
+    m_GUID: d17658db32f037d4e8ee1e17f3b6cd6b
+  - m_ParameterName: Lowest volume
+    m_GUID: e2dde518b0563314b87125f9e99259e1
+  - m_ParameterName: Maximum amp
+    m_GUID: c3638b8f15fc5294085df5922c79b47e
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-396259705445800102
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -35,10 +70,40 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 8289227062312705205}
+  - {fileID: -15246952741802180}
+  - {fileID: -611749291550147857}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-15246952741802180
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 471641d5916f4f14ea16becc073ba479
+  m_EffectName: Duck Volume
+  m_MixLevel: 749345b25eb8f8f45a8c542a730ccc7f
+  m_Parameters:
+  - m_ParameterName: Threshold
+    m_GUID: bd4bab8a048c233458e16187e1c281bc
+  - m_ParameterName: Ratio
+    m_GUID: aaa65d0eaf105a44baf74001eb1f03fd
+  - m_ParameterName: Attack Time
+    m_GUID: 8b661e450cb0a5c43a5723e268586860
+  - m_ParameterName: Release Time
+    m_GUID: 581a6abc6371a1447a3eff9c2824245c
+  - m_ParameterName: Make-up Gain
+    m_GUID: e48244825e740184da005b0cad1111ef
+  - m_ParameterName: Knee
+    m_GUID: 8d5268214dd8a154b9cad78e6387d0a2
+  - m_ParameterName: Sidechain Mix
+    m_GUID: 6349cbe08c7aeeb47aa49acd3c5ca74f
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -144,16 +209,21 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 343ac950bc043134aba38ce1563797bf
   m_FloatValues:
+    6349cbe08c7aeeb47aa49acd3c5ca74f: 0
     9700ca713d6bcae4d9cb4ee4687151f0: 1
     2b569452a282eea4b86e0c905281c592: 22000
+    e48244825e740184da005b0cad1111ef: 0
+    8b661e450cb0a5c43a5723e268586860: 0.009
     e389eae509b197c49af78fd6567592ab: 0
     09be4fe566682124d8e7413ffe9f8c2c: 0
-    90afd3b70205adf4cb92d40f74b450d9: -0.39762527
+    90afd3b70205adf4cb92d40f74b450d9: -0.08374829
     6cf3f8f8d90c39c4f8cdc1fb22b93e92: 12285
     03ceece99060dae479266f2965c34059: -3.642635
+    bd4bab8a048c233458e16187e1c281bc: -64
     77006aec1a5fe3c4885769642c2f9d79: 0.5
     300ee35edeb0daf438cf15a4f57636a2: 256
     4bec3cee73ad09743b92532337ac8d27: 22000
+    bc68c79ff65f853439b33390329ae230: -80
   m_TransitionOverrides: {}
 --- !u!243 &6274849602263825335
 AudioMixerGroupController:
@@ -185,6 +255,7 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 3abb9db1a1a825243b2aca0d71b5cc90
   m_FloatValues:
+    6349cbe08c7aeeb47aa49acd3c5ca74f: 0.45
     2b569452a282eea4b86e0c905281c592: 500
     6cf3f8f8d90c39c4f8cdc1fb22b93e92: 12285
     03ceece99060dae479266f2965c34059: -3.642635
