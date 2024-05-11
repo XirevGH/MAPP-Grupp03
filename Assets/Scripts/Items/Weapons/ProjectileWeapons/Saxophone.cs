@@ -43,7 +43,7 @@ public class Saxophone : ProjectileWeapon
         if (closestEnemy != null)
         {   
             foreach(GameObject target in closestEnemy){
-                SoundManager.Instance.PlaySFX(gameObject, attackSound, 1);
+                SoundManager.Instance.PlaySFX(attackSound, 1);
                 ShootNoteAtEnemy(target);
             }
             //StartCooldown();

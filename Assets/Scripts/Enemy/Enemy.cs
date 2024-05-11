@@ -135,7 +135,8 @@ public class Enemy : MonoBehaviour
             damageNumberWindow = 0.5f;
             damageNumberAnim.SetTrigger("TakingDamage");
             enemyAnim.SetTrigger("TakeDamage");
-            GetComponent<AudioSource>().PlayOneShot(hitSound, (float)UnityEngine.Random.Range(0.8f, 1));
+            SoundManager.Instance.PlayEnemySFX(gameObject, hitSound, 1);
+           
         }
     }
 

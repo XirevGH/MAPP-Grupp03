@@ -67645,6 +67645,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: maxEnemySounds
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: bpmForTracks.Array.size
       value: 3
       objectReference: {fileID: 0}

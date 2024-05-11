@@ -94,7 +94,7 @@ public class DiscoBallController : ProjectileWeapon
             activeDiscoBalls.Add(clone);
             clone.GetComponent<DiscoBall>().SetDamage(damage);
             clone.GetComponent<DiscoBall>().SetPenetration(penetration);
-            SoundManager.Instance.PlaySFX(gameObject, attackSound, 1 - (i * 0.1f));
+            SoundManager.Instance.PlaySFX(attackSound, 1 - (i * 0.1f));
         
             yield return new WaitForSeconds(attackDelayTime);
     

@@ -16,7 +16,7 @@ public class SynthwaveBlast : ProjectileWeapon
     {
         if (gameObject.activeSelf) {
 
-            SoundManager.Instance.PlaySFX(gameObject, attackSound, 1);
+            SoundManager.Instance.PlaySFX(attackSound, 1);
             for (int i = 0; i < amountOfProjectiles; i++) {
                 float randomValue = Random.Range(0f, 360f);
                 GameObject clone = Instantiate(synthwavePivotPrefab, transform);
