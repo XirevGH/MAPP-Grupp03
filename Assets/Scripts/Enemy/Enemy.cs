@@ -32,7 +32,7 @@ public class DropItem
 
     //chansen i int "%" hur stor changen är att den droppas
     
-    public float dropChance;
+    [Range(0,100)] public float dropChance;
 }
 public class Enemy : MonoBehaviour
 {
@@ -250,7 +250,7 @@ public class Enemy : MonoBehaviour
                 }
                 pooledObject.transform.position = transform.position;
                 return true;
-                
+
             }else{
                 GameObject dropInstance = Instantiate(drop.item, transform.position, Quaternion.identity);
                 dropInstance.SetActive(true);
