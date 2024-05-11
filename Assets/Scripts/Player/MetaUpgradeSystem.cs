@@ -188,7 +188,7 @@ public class MetaUpgradeSystem : MonoBehaviour
     {
         currency -= cost;
         CurrencyTextHandler.Instance.UpdateCurrency();
-
+        SaveFile();
     }
 
     public Item[] GetItems() 
