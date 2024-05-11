@@ -54447,7 +54447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priceText: {fileID: 815947306}
-  button: {fileID: 1545191043}
+  button: {fileID: 1798092028}
   metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1798286935
 GameObject:
