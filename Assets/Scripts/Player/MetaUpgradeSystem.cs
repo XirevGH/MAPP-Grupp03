@@ -179,7 +179,7 @@ public class MetaUpgradeSystem : MonoBehaviour
         SaveFile();
     }
 
-    public int GetCurrency()
+    public int GetCurrencyAmount()
     {
         return currency;
     }
@@ -187,6 +187,8 @@ public class MetaUpgradeSystem : MonoBehaviour
     public void DeductCurrency(int cost)
     {
         currency -= cost;
+        CurrencyTextHandler.Instance.UpdateCurrency();
+
     }
 
     public Item[] GetItems() 

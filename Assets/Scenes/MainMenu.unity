@@ -1963,7 +1963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Disco Ball
+  item: {fileID: 1009160738}
   method: GetCurrentDamage
   isPercentage: 0
 --- !u!1 &52748015
@@ -2835,7 +2835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Vinyl Record
+  item: {fileID: 2012838995}
   method: GetDamageIncreasePercentage
   isPercentage: 1
 --- !u!1 &74069924
@@ -2926,6 +2926,7 @@ GameObject:
   - component: {fileID: 76531671}
   - component: {fileID: 76531670}
   - component: {fileID: 76531669}
+  - component: {fileID: 76531672}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3047,6 +3048,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 76531667}
   m_CullTransparentMesh: 1
+--- !u!114 &76531672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76531667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 1112748795}
+  button: {fileID: 76531669}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &76833484
 GameObject:
   m_ObjectHideFlags: 0
@@ -3810,7 +3826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Electric Guitar
+  item: {fileID: 2038418318}
   method: GetIncreaseDamageCost
   isPercentage: 0
 --- !u!1 &88895291
@@ -3901,6 +3917,7 @@ GameObject:
   - component: {fileID: 89927885}
   - component: {fileID: 89927884}
   - component: {fileID: 89927883}
+  - component: {fileID: 89927886}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -4022,6 +4039,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89927881}
   m_CullTransparentMesh: 1
+--- !u!114 &89927886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89927881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 567707399}
+  button: {fileID: 89927883}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &91288850
 GameObject:
   m_ObjectHideFlags: 0
@@ -4468,7 +4500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Disco Ball
+  item: {fileID: 1009160738}
   method: GetIncreasePenetrationAmountCost
   isPercentage: 0
 --- !u!1 &99881783
@@ -5274,7 +5306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Stage Presence
+  item: {fileID: 656064299}
   method: GetCurrentRadiusIncrease
   isPercentage: 1
 --- !u!1 &131108516
@@ -5603,7 +5635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Saxophone
+  item: {fileID: 798736330}
   method: GetIncreasePenetrationAmountCost
   isPercentage: 0
 --- !u!1 &135113055
@@ -6338,7 +6370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Personal Space
+  item: {fileID: 737617521}
   method: GetCurrentRadiusIncrease
   isPercentage: 1
 --- !u!1 &151367101
@@ -6650,7 +6682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Saxophone
+  item: {fileID: 798736330}
   method: GetCurrentDamage
   isPercentage: 0
 --- !u!1 &156275574
@@ -7200,7 +7232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Disco Ball
+  item: {fileID: 1009160738}
   method: GetCurrentProjectileCount
   isPercentage: 0
 --- !u!1 &178291909
@@ -7674,6 +7706,7 @@ GameObject:
   - component: {fileID: 189749680}
   - component: {fileID: 189749679}
   - component: {fileID: 189749678}
+  - component: {fileID: 189749681}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -7795,6 +7828,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 189749676}
   m_CullTransparentMesh: 1
+--- !u!114 &189749681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189749676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 88295924}
+  button: {fileID: 189749678}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &195377277
 GameObject:
   m_ObjectHideFlags: 0
@@ -7942,7 +7990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Yoyo
+  item: {fileID: 610983638}
   method: GetProjectileIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &195427051
@@ -9040,7 +9088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Chill Vibe
+  item: {fileID: 1658825041}
   method: GetIncreaseSlowCost
   isPercentage: 0
 --- !u!1 &236569654
@@ -9192,7 +9240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Decoy
+  item: {fileID: 1784713650}
   method: GetCurrentDecoyAmount
   isPercentage: 0
 --- !u!1 &242387199
@@ -10920,7 +10968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Decoy
+  item: {fileID: 1784713650}
   method: GetIncreaseDecoyAmountCost
   isPercentage: 0
 --- !u!1 &329286310
@@ -11340,7 +11388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Decoy
+  item: {fileID: 1784713650}
   method: GetCurrentDecoyHealthAmount
   isPercentage: 0
 --- !u!1 &335149464
@@ -11753,6 +11801,7 @@ GameObject:
   - component: {fileID: 358665123}
   - component: {fileID: 358665122}
   - component: {fileID: 358665121}
+  - component: {fileID: 358665124}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -11874,6 +11923,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358665119}
   m_CullTransparentMesh: 1
+--- !u!114 &358665124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358665119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 786548821}
+  button: {fileID: 358665121}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &360941149
 GameObject:
   m_ObjectHideFlags: 0
@@ -12590,7 +12654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Yoyo
+  item: {fileID: 610983638}
   method: GetCurrentDamage
   isPercentage: 0
 --- !u!1001 &376511731
@@ -12817,6 +12881,7 @@ GameObject:
   - component: {fileID: 380668767}
   - component: {fileID: 380668766}
   - component: {fileID: 380668765}
+  - component: {fileID: 380668768}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -12938,6 +13003,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380668763}
   m_CullTransparentMesh: 1
+--- !u!114 &380668768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380668763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 2064682892}
+  button: {fileID: 380668765}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &384436999
 GameObject:
   m_ObjectHideFlags: 0
@@ -14706,7 +14786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Saxophone
+  item: {fileID: 798736330}
   method: GetIncreaseProjectileCountCost
   isPercentage: 0
 --- !u!1 &426095742
@@ -16178,7 +16258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Synthwave Blast
+  item: {fileID: 1733086102}
   method: GetCurrentPenetrationAmount
   isPercentage: 0
 --- !u!1 &472844880
@@ -16850,7 +16930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Vinyl Record
+  item: {fileID: 2012838995}
   method: GetPenetrationIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &492153691
@@ -17215,6 +17295,7 @@ GameObject:
   - component: {fileID: 505731917}
   - component: {fileID: 505731916}
   - component: {fileID: 505731915}
+  - component: {fileID: 505731918}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -17336,6 +17417,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 505731913}
   m_CullTransparentMesh: 1
+--- !u!114 &505731918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505731913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 900289622}
+  button: {fileID: 505731915}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &508805728
 GameObject:
   m_ObjectHideFlags: 0
@@ -17855,7 +17951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Electric Guitar
+  item: {fileID: 2038418318}
   method: GetIncreaseTetherAmountCost
   isPercentage: 0
 --- !u!1 &522819677
@@ -18080,7 +18176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Yoyo
+  item: {fileID: 610983638}
   method: GetDamageIncreasePercentage
   isPercentage: 1
 --- !u!1 &526753005
@@ -19241,7 +19337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Roller Skates
+  item: {fileID: 1848075309}
   method: GetIncreaseMovementSpeedCost
   isPercentage: 0
 --- !u!1 &571957264
@@ -19674,6 +19770,7 @@ GameObject:
   - component: {fileID: 595757712}
   - component: {fileID: 595757711}
   - component: {fileID: 595757710}
+  - component: {fileID: 595757713}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -19795,6 +19892,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595757708}
   m_CullTransparentMesh: 1
+--- !u!114 &595757713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595757708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 1018652991}
+  button: {fileID: 595757710}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &595910956
 GameObject:
   m_ObjectHideFlags: 0
@@ -20233,7 +20345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Synthwave Blast
+  item: {fileID: 1733086102}
   method: GetCurrentDamage
   isPercentage: 0
 --- !u!1 &605893856
@@ -20776,6 +20888,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8009434792270855696, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
   m_PrefabInstance: {fileID: 610983635}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &610983638 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
+  m_PrefabInstance: {fileID: 610983635}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ac944594ea6d8e4ba0f9561b63b794e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &613478723
 GameObject:
   m_ObjectHideFlags: 0
@@ -21138,7 +21261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Saxophone
+  item: {fileID: 798736330}
   method: GetProjectileIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &628576735
@@ -21423,7 +21546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Vinyl Record
+  item: {fileID: 2012838995}
   method: GetIncreaseProjectileCountCost
   isPercentage: 0
 --- !u!1 &634947963
@@ -21685,7 +21808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Groove Armor
+  item: {fileID: 1616841855}
   method: GetHealthIncreasePercentage
   isPercentage: 1
 --- !u!1 &649568145
@@ -22186,7 +22309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Vinyl Record
+  item: {fileID: 2012838995}
   method: GetProjectileIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &664987322
@@ -22338,7 +22461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Vinyl Record
+  item: {fileID: 2012838995}
   method: GetCurrentDamage
   isPercentage: 0
 --- !u!1 &667541569
@@ -22551,6 +22674,7 @@ GameObject:
   - component: {fileID: 688645267}
   - component: {fileID: 688645266}
   - component: {fileID: 688645265}
+  - component: {fileID: 688645268}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -22684,6 +22808,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 688645263}
   m_CullTransparentMesh: 1
+--- !u!114 &688645268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688645263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 1859991390}
+  button: {fileID: 688645265}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &688874781
 GameObject:
   m_ObjectHideFlags: 0
@@ -24105,7 +24244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Bass Guitar
+  item: {fileID: 1047333868}
   method: GetIncreaseDamageCost
   isPercentage: 0
 --- !u!1 &765764873
@@ -24439,6 +24578,7 @@ GameObject:
   - component: {fileID: 771210310}
   - component: {fileID: 771210309}
   - component: {fileID: 771210308}
+  - component: {fileID: 771210311}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -24560,6 +24700,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771210306}
   m_CullTransparentMesh: 1
+--- !u!114 &771210311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771210306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 99131349}
+  button: {fileID: 771210308}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &774908315
 GameObject:
   m_ObjectHideFlags: 0
@@ -24783,7 +24938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Stage Presence
+  item: {fileID: 656064299}
   method: GetDamageIncreasePercentage
   isPercentage: 1
 --- !u!1 &785471509
@@ -24974,7 +25129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Synthwave Blast
+  item: {fileID: 1733086102}
   method: GetIncreasePenetrationAmountCost
   isPercentage: 0
 --- !u!1 &794913278
@@ -25124,7 +25279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Roller Skates
+  item: {fileID: 1848075309}
   method: GetMovementSpeedIncreasePercentage
   isPercentage: 1
 --- !u!1 &798736327
@@ -25882,7 +26037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Personal Space
+  item: {fileID: 737617521}
   method: GetIncreaseRadiusCost
   isPercentage: 0
 --- !u!1 &821225988
@@ -26654,6 +26809,7 @@ GameObject:
   - component: {fileID: 832667338}
   - component: {fileID: 832667337}
   - component: {fileID: 832667336}
+  - component: {fileID: 832667339}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -26787,6 +26943,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832667334}
   m_CullTransparentMesh: 1
+--- !u!114 &832667339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832667334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 765200438}
+  button: {fileID: 832667336}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &833831281
 GameObject:
   m_ObjectHideFlags: 0
@@ -27283,7 +27454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Chill Vibe
+  item: {fileID: 1658825041}
   method: GetCurrentSlowIncrease
   isPercentage: 1
 --- !u!1 &853576764
@@ -27435,7 +27606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Vinyl Record
+  item: {fileID: 2012838995}
   method: GetCurrentPenetrationAmount
   isPercentage: 0
 --- !u!1 &856474977
@@ -27585,7 +27756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Electric Guitar
+  item: {fileID: 2038418318}
   method: GetTetherAmountIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &857589418
@@ -28582,7 +28753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Groove Armor
+  item: {fileID: 1616841855}
   method: GetIncreaseHealthCost
   isPercentage: 0
 --- !u!1 &900829013
@@ -29036,7 +29207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Synthwave Blast
+  item: {fileID: 1733086102}
   method: GetDamageIncreasePercentage
   isPercentage: 1
 --- !u!1 &914897307
@@ -29518,7 +29689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Decoy
+  item: {fileID: 1784713650}
   method: GetDecoyAmountIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &934913333
@@ -29670,7 +29841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Saxophone
+  item: {fileID: 798736330}
   method: GetCurrentProjectileCount
   isPercentage: 0
 --- !u!1 &935936722
@@ -30258,6 +30429,7 @@ GameObject:
   - component: {fileID: 951496371}
   - component: {fileID: 951496370}
   - component: {fileID: 951496369}
+  - component: {fileID: 951496372}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -30391,6 +30563,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951496367}
   m_CullTransparentMesh: 1
+--- !u!114 &951496372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951496367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 1816141926}
+  button: {fileID: 951496369}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &951600208
 GameObject:
   m_ObjectHideFlags: 0
@@ -31055,7 +31242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Electric Guitar
+  item: {fileID: 2038418318}
   method: GetCurrentDamage
   isPercentage: 0
 --- !u!1 &970510857
@@ -31914,6 +32101,7 @@ GameObject:
   - component: {fileID: 1001002497}
   - component: {fileID: 1001002496}
   - component: {fileID: 1001002495}
+  - component: {fileID: 1001002498}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -32035,6 +32223,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1001002493}
   m_CullTransparentMesh: 1
+--- !u!114 &1001002498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001002493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 326386310}
+  button: {fileID: 1001002495}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1003939935
 GameObject:
   m_ObjectHideFlags: 0
@@ -32357,9 +32560,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Synthwave Blast
+  item: {fileID: 1733086102}
   method: GetPenetrationIncreasePerUpgrade
   isPercentage: 0
+--- !u!114 &1009160738 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
+  m_PrefabInstance: {fileID: 705557625}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899576dad5c4b5a40a0036a0f3a9d6b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1017721303
 GameObject:
   m_ObjectHideFlags: 0
@@ -32372,6 +32586,7 @@ GameObject:
   - component: {fileID: 1017721307}
   - component: {fileID: 1017721306}
   - component: {fileID: 1017721305}
+  - component: {fileID: 1017721308}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -32505,6 +32720,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017721303}
   m_CullTransparentMesh: 1
+--- !u!114 &1017721308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017721303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 633244001}
+  button: {fileID: 1017721305}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1018652989
 GameObject:
   m_ObjectHideFlags: 0
@@ -32654,7 +32884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Stage Presence
+  item: {fileID: 656064299}
   method: GetIncreaseDamageCost
   isPercentage: 0
 --- !u!1 &1025205538
@@ -34303,7 +34533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Saxophone
+  item: {fileID: 798736330}
   method: GetIncreaseDamageCost
   isPercentage: 0
 --- !u!1 &1084008213
@@ -34736,6 +34966,7 @@ GameObject:
   - component: {fileID: 1098210115}
   - component: {fileID: 1098210114}
   - component: {fileID: 1098210113}
+  - component: {fileID: 1098210116}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -34857,6 +35088,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098210111}
   m_CullTransparentMesh: 1
+--- !u!114 &1098210116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098210111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 1777873355}
+  button: {fileID: 1098210113}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1098821665
 GameObject:
   m_ObjectHideFlags: 0
@@ -35004,7 +35250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Stage Presence
+  item: {fileID: 656064299}
   method: GetRadiusIncreasePercentage
   isPercentage: 1
 --- !u!1 &1101748257
@@ -35465,7 +35711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Synthwave Blast
+  item: {fileID: 1733086102}
   method: GetIncreaseProjectileCountCost
   isPercentage: 0
 --- !u!1 &1119166760
@@ -35617,7 +35863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Yoyo
+  item: {fileID: 610983638}
   method: GetIncreaseDamageCost
   isPercentage: 0
 --- !u!1 &1125657799
@@ -36670,7 +36916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Saxophone
+  item: {fileID: 798736330}
   method: GetPenetrationIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &1159731838
@@ -38138,6 +38384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   metaUpgradeSystem: {fileID: 1792653752}
   textField: {fileID: 1191457475}
+  updater: {fileID: 0}
 --- !u!1 &1193785785
 GameObject:
   m_ObjectHideFlags: 0
@@ -38285,7 +38532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Bass Guitar
+  item: {fileID: 1047333868}
   method: GetCurrentDamage
   isPercentage: 0
 --- !u!1 &1204171072
@@ -38978,7 +39225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Groove Armor
+  item: {fileID: 1616841855}
   method: GetCurrentHealthIncrease
   isPercentage: 1
 --- !u!1 &1230041913
@@ -39421,6 +39668,7 @@ GameObject:
   - component: {fileID: 1258439482}
   - component: {fileID: 1258439481}
   - component: {fileID: 1258439480}
+  - component: {fileID: 1258439483}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -39542,6 +39790,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258439478}
   m_CullTransparentMesh: 1
+--- !u!114 &1258439483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258439478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 519090428}
+  button: {fileID: 1258439480}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1262560040
 GameObject:
   m_ObjectHideFlags: 0
@@ -39631,6 +39894,7 @@ GameObject:
   - component: {fileID: 1264745449}
   - component: {fileID: 1264745448}
   - component: {fileID: 1264745447}
+  - component: {fileID: 1264745450}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -39752,6 +40016,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264745445}
   m_CullTransparentMesh: 1
+--- !u!114 &1264745450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264745445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 232367345}
+  button: {fileID: 1264745447}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1266562531
 GameObject:
   m_ObjectHideFlags: 0
@@ -40200,6 +40479,7 @@ GameObject:
   - component: {fileID: 1290233829}
   - component: {fileID: 1290233828}
   - component: {fileID: 1290233827}
+  - component: {fileID: 1290233830}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -40321,6 +40601,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290233825}
   m_CullTransparentMesh: 1
+--- !u!114 &1290233830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290233825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 1119166762}
+  button: {fileID: 1290233827}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1291354408
 GameObject:
   m_ObjectHideFlags: 0
@@ -41686,7 +41981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Decoy
+  item: {fileID: 1784713650}
   method: GetIncreaseDecoyHealthCost
   isPercentage: 0
 --- !u!1 &1372322908
@@ -42208,7 +42503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Disco Ball
+  item: {fileID: 1009160738}
   method: GetCurrentPenetrationAmount
   isPercentage: 0
 --- !u!1 &1383092906
@@ -42636,7 +42931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Stage Presence
+  item: {fileID: 656064299}
   method: GetCurrentDamage
   isPercentage: 0
 --- !u!1 &1399691802
@@ -43253,7 +43548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Disco Ball
+  item: {fileID: 1009160738}
   method: GetDamageIncreasePercentage
   isPercentage: 1
 --- !u!1 &1412330998
@@ -43646,7 +43941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Personal Space
+  item: {fileID: 737617521}
   method: GetIncreaseForceCost
   isPercentage: 0
 --- !u!1 &1432278736
@@ -43798,7 +44093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Electric Guitar
+  item: {fileID: 2038418318}
   method: GetCurrentTetherAmount
   isPercentage: 0
 --- !u!1 &1432664730
@@ -44318,6 +44613,7 @@ GameObject:
   - component: {fileID: 1455975415}
   - component: {fileID: 1455975414}
   - component: {fileID: 1455975413}
+  - component: {fileID: 1455975416}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -44439,6 +44735,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455975411}
   m_CullTransparentMesh: 1
+--- !u!114 &1455975416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455975411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 1946998665}
+  button: {fileID: 1455975413}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1459105679
 GameObject:
   m_ObjectHideFlags: 0
@@ -44738,7 +45049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Bass Guitar
+  item: {fileID: 1047333868}
   method: GetDamageIncreasePercentage
   isPercentage: 1
 --- !u!1 &1475293350
@@ -45065,7 +45376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Personal Space
+  item: {fileID: 737617521}
   method: GetForceIncreasePercentage
   isPercentage: 1
 --- !u!1 &1481725446
@@ -45390,7 +45701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Personal Space
+  item: {fileID: 737617521}
   method: GetCurrentForceIncrease
   isPercentage: 1
 --- !u!1 &1516849114
@@ -45614,6 +45925,7 @@ GameObject:
   - component: {fileID: 1521685661}
   - component: {fileID: 1521685660}
   - component: {fileID: 1521685659}
+  - component: {fileID: 1521685662}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -45735,6 +46047,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521685657}
   m_CullTransparentMesh: 1
+--- !u!114 &1521685662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521685657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 1861765208}
+  button: {fileID: 1521685659}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1523469920
 GameObject:
   m_ObjectHideFlags: 0
@@ -46381,6 +46708,7 @@ GameObject:
   - component: {fileID: 1544027772}
   - component: {fileID: 1544027771}
   - component: {fileID: 1544027770}
+  - component: {fileID: 1544027773}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -46502,6 +46830,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544027768}
   m_CullTransparentMesh: 1
+--- !u!114 &1544027773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544027768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 131749225}
+  button: {fileID: 1544027770}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1545191041
 GameObject:
   m_ObjectHideFlags: 0
@@ -46514,6 +46857,7 @@ GameObject:
   - component: {fileID: 1545191045}
   - component: {fileID: 1545191044}
   - component: {fileID: 1545191043}
+  - component: {fileID: 1545191046}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -46635,6 +46979,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545191041}
   m_CullTransparentMesh: 1
+--- !u!114 &1545191046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545191041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 1371049221}
+  button: {fileID: 1545191043}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1549536751
 GameObject:
   m_ObjectHideFlags: 0
@@ -47158,7 +47517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Saxophone
+  item: {fileID: 798736330}
   method: GetCurrentPenetrationAmount
   isPercentage: 0
 --- !u!1 &1558392736
@@ -48454,7 +48813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Saxophone
+  item: {fileID: 798736330}
   method: GetDamageIncreasePercentage
   isPercentage: 1
 --- !u!1 &1625608148
@@ -48604,7 +48963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Synthwave Blast
+  item: {fileID: 1733086102}
   method: GetProjectileIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &1627636330
@@ -48788,7 +49147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Chill Vibe
+  item: {fileID: 1658825041}
   method: GetRadiusIncreasePercentage
   isPercentage: 1
 --- !u!1 &1643413376
@@ -49324,7 +49683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Synthwave Blast
+  item: {fileID: 1733086102}
   method: GetIncreaseDamageCost
   isPercentage: 0
 --- !u!1 &1648342957
@@ -49845,6 +50204,17 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &1658825041 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6851086163164186471, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
+  m_PrefabInstance: {fileID: 1384893780}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa540f2b5e33674887409756e331824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1660192429
 GameObject:
   m_ObjectHideFlags: 0
@@ -50888,7 +51258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Disco Ball
+  item: {fileID: 1009160738}
   method: GetIncreaseProjectileCountCost
   isPercentage: 0
 --- !u!1 &1696945272
@@ -51934,6 +52304,7 @@ GameObject:
   - component: {fileID: 1727458414}
   - component: {fileID: 1727458413}
   - component: {fileID: 1727458412}
+  - component: {fileID: 1727458415}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -52055,6 +52426,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727458410}
   m_CullTransparentMesh: 1
+--- !u!114 &1727458415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727458410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 1647043610}
+  button: {fileID: 1727458412}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1728438429
 GameObject:
   m_ObjectHideFlags: 0
@@ -52490,6 +52876,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3935263393931761594, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
   m_PrefabInstance: {fileID: 1733086099}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1733086102 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
+  m_PrefabInstance: {fileID: 1733086099}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281b7f74555262247999fef0c83e8fca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1742000943
 GameObject:
   m_ObjectHideFlags: 0
@@ -53144,7 +53541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Decoy
+  item: {fileID: 1784713650}
   method: GetDecoyHealthAmountIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &1759650115
@@ -53296,7 +53693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Vinyl Record
+  item: {fileID: 2012838995}
   method: GetCurrentProjectileCount
   isPercentage: 0
 --- !u!1 &1761643007
@@ -53684,7 +54081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Chill Vibe
+  item: {fileID: 1658825041}
   method: GetIncreaseRadiusCost
   isPercentage: 0
 --- !u!1 &1782659559
@@ -53820,6 +54217,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782659559}
   m_CullTransparentMesh: 1
+--- !u!114 &1784713650 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6050468577649203368, guid: c700b16655ade9b4a866c1c987d323e1, type: 3}
+  m_PrefabInstance: {fileID: 392191485}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6535906d91641b145944e7e4d9bca1d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1792653750
 GameObject:
   m_ObjectHideFlags: 0
@@ -53904,6 +54312,7 @@ GameObject:
   - component: {fileID: 1798092030}
   - component: {fileID: 1798092029}
   - component: {fileID: 1798092028}
+  - component: {fileID: 1798092031}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -54025,6 +54434,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798092026}
   m_CullTransparentMesh: 1
+--- !u!114 &1798092031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798092026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 815947306}
+  button: {fileID: 1545191043}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1798286935
 GameObject:
   m_ObjectHideFlags: 0
@@ -54564,7 +54988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Vinyl Record
+  item: {fileID: 2012838995}
   method: GetIncreasePenetrationAmountCost
   isPercentage: 0
 --- !u!1 &1816667112
@@ -55357,7 +55781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Synthwave Blast
+  item: {fileID: 1733086102}
   method: GetCurrentProjectileCount
   isPercentage: 0
 --- !u!1 &1844713525
@@ -55769,7 +56193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Vinyl Record
+  item: {fileID: 2012838995}
   method: GetIncreaseDamageCost
   isPercentage: 0
 --- !u!1 &1861765206
@@ -55921,7 +56345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Stage Presence
+  item: {fileID: 656064299}
   method: GetIncreaseRadiusCost
   isPercentage: 0
 --- !u!1 &1867374626
@@ -56802,7 +57226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Personal Space
+  item: {fileID: 737617521}
   method: GetRadiusIncreasePercentage
   isPercentage: 1
 --- !u!1 &1894516788
@@ -57030,7 +57454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Yoyo
+  item: {fileID: 610983638}
   method: GetCurrentProjectileCount
   isPercentage: 0
 --- !u!1 &1900273892
@@ -58231,7 +58655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Chill Vibe
+  item: {fileID: 1658825041}
   method: GetCurrentRadiusIncrease
   isPercentage: 1
 --- !u!1 &1946998663
@@ -58383,7 +58807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Yoyo
+  item: {fileID: 610983638}
   method: GetIncreaseProjectileCountCost
   isPercentage: 0
 --- !u!1 &1948903850
@@ -59760,6 +60184,7 @@ GameObject:
   - component: {fileID: 2000235677}
   - component: {fileID: 2000235676}
   - component: {fileID: 2000235675}
+  - component: {fileID: 2000235678}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -59881,6 +60306,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000235673}
   m_CullTransparentMesh: 1
+--- !u!114 &2000235678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000235673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 425493281}
+  button: {fileID: 2000235675}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &2006918068
 GameObject:
   m_ObjectHideFlags: 0
@@ -60028,7 +60468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Electric Guitar
+  item: {fileID: 2038418318}
   method: GetDamageIncreasePercentage
   isPercentage: 1
 --- !u!1 &2007105700
@@ -60093,6 +60533,17 @@ MonoBehaviour:
   m_Spacing: {x: 83, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &2012838995 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1103054515861734431, guid: 17ccd9c1a77fa004790076d7ee038be3, type: 3}
+  m_PrefabInstance: {fileID: 376511731}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da7086d8d21da6a40a21e0e75b05914f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2016125232
 GameObject:
   m_ObjectHideFlags: 0
@@ -60316,7 +60767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Chill Vibe
+  item: {fileID: 1658825041}
   method: GetSlowIncreasePercentage
   isPercentage: 1
 --- !u!1 &2024497032
@@ -60527,6 +60978,7 @@ GameObject:
   - component: {fileID: 2026435083}
   - component: {fileID: 2026435082}
   - component: {fileID: 2026435081}
+  - component: {fileID: 2026435084}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -60648,6 +61100,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026435079}
   m_CullTransparentMesh: 1
+--- !u!114 &2026435084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026435079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 1083015759}
+  button: {fileID: 2026435081}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &2027274148
 GameObject:
   m_ObjectHideFlags: 0
@@ -62242,7 +62709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Disco Ball
+  item: {fileID: 1009160738}
   method: GetIncreaseDamageCost
   isPercentage: 0
 --- !u!1 &2069659639
@@ -62392,7 +62859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Disco Ball
+  item: {fileID: 1009160738}
   method: GetProjectileIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &2076463739
@@ -62872,6 +63339,7 @@ GameObject:
   - component: {fileID: 2094675559}
   - component: {fileID: 2094675558}
   - component: {fileID: 2094675557}
+  - component: {fileID: 2094675560}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -62993,6 +63461,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094675555}
   m_CullTransparentMesh: 1
+--- !u!114 &2094675560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094675555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 1692491210}
+  button: {fileID: 2094675557}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &2101310067
 GameObject:
   m_ObjectHideFlags: 0
@@ -63891,6 +64374,7 @@ GameObject:
   - component: {fileID: 2130078801}
   - component: {fileID: 2130078800}
   - component: {fileID: 2130078799}
+  - component: {fileID: 2130078802}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -64012,6 +64496,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130078797}
   m_CullTransparentMesh: 1
+--- !u!114 &2130078802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130078797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d93b733685583408b8f32a22fd3047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 1431417146}
+  button: {fileID: 2130078799}
+  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &2130827841
 GameObject:
   m_ObjectHideFlags: 0
@@ -64294,7 +64793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Roller Skates
+  item: {fileID: 1848075309}
   method: GetCurrentMovementSpeedIncrease
   isPercentage: 1
 --- !u!1 &2133392518
@@ -64578,7 +65077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c476a97a80ea7841948c9a0664a991d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Disco Ball
+  item: {fileID: 1009160738}
   method: GetPenetrationIncreasePerUpgrade
   isPercentage: 0
 --- !u!1 &2135310018

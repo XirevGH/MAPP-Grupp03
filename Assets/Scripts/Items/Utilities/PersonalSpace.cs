@@ -41,12 +41,12 @@ public class PersonalSpace : Utility
 
     public float GetCurrentRadiusIncrease()
     {
-        return (float)Math.Round(Mathf.Pow(1 + (radiusIncreasePercentage / 100f), radiusRank), 1);
+        return (float)Math.Round((Mathf.Pow(1 + (radiusIncreasePercentage / 100f), radiusRank) - 1) * 100, 1);
     }
 
     public float GetCurrentForceIncrease()
     {
-        return (float)Math.Round(Mathf.Pow(1 + (forceIncreasePercentage / 100f), forceRank), 1);
+        return (float)Math.Round((Mathf.Pow(1 + (forceIncreasePercentage / 100f), forceRank) - 1) * 100, 1);
     }
 
     public void IncreaseForce()
