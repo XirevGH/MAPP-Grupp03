@@ -78,6 +78,9 @@ MonoBehaviour:
   currentPitchAdjustedBPM: 0
   timeToChange: 0.5
   beatThreshold: 5
+  maxEnemySounds: 3
+  currentEnemySoundsPlaying: 0
+  canPlay: 0
 --- !u!1 &786379661519232125
 GameObject:
   m_ObjectHideFlags: 0
