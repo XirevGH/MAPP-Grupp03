@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GrooveArmor : Utility
 {
@@ -7,10 +8,21 @@ public class GrooveArmor : Utility
     public int healthRank;
     public int healthUpgradeCost;
 
+    private void OnEnable()
+    {
+        if (SceneManager.GetActiveScene().name == "Main")
+        {
+            player.IncreaseMaxHealth(Mathf.Pow(1 + (percentageIncrease / 100f), healthRank));
+        }
+    }
+
     public void IncreaseHealth() 
     {
         healthRank++;
-        player.IncreaseMaxHealth(1 + (percentageIncrease / 100f));
+        if (SceneManager.GetActiveScene().name == "Main")
+        {
+            player.IncreaseMaxHealth(1 + (percentageIncrease / 100f));
+        }
     }
 
     public float GetHealthIncreasePercentage()

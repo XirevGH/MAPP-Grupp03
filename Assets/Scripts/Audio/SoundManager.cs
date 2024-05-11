@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.Localization.Plugins.XLIFF.V12;
 using UnityEngine;
@@ -31,6 +32,11 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private float timeToChange;
     [SerializeField] private int beatThreshold; // how many beats does it take to change track
     private int totalPitchChange; // how many times pitch has changed
+
+    [Header("Enemy relateted")]
+    [SerializeField] private int maxEnemySounds = 3;
+    [SerializeField] private int currentEnemySoundsPlaying = 0;
+    [SerializeField] private bool canPlay = false;
 
     private Slider musicSpeedSilder;
     public static SoundManager Instance
@@ -99,8 +105,21 @@ public class SoundManager : MonoBehaviour
                 ChangeTrack(++currentTrackNumber);
             }
         }
+    }
 
+    private void Update()
+    {
+        currentEnemySoundsPlaying = 0;
+ 
+        foreach (Enemy enemy in GameObject.FindObjectsOfType<Enemy>(false))
+        {
+            if (enemy.gameObject.GetComponent<AudioSource>().isPlaying)
+            {
+                currentEnemySoundsPlaying++;
+            }
+        }
 
+        canPlay = currentEnemySoundsPlaying < maxEnemySounds;
 
     }
 
@@ -196,7 +215,6 @@ public class SoundManager : MonoBehaviour
 
     public void ChangeTrack(int trackNumber)
     {
-        StopAllCoroutines();
         StartCoroutine(FadeTrack(trackNumber));
         isOnePlaying = !isOnePlaying;
     }
@@ -256,7 +274,6 @@ public class SoundManager : MonoBehaviour
 
     private IEnumerator ChangePitchCoroutine(bool increasePitch)
     {
-       
         float MusicSpeedChange = (10 / currentBPM) / beatThreshold; //  calculate the percentage increase or decrease from current track to the next or las track
         int direction = increasePitch ? 1 : -1;
         currentPitchAdjustedBPM += direction * (10 / beatThreshold);
@@ -265,16 +282,13 @@ public class SoundManager : MonoBehaviour
         float nexPitch = currentSource.pitch + (MusicSpeedChange * direction);
         float currentPitch = currentSource.pitch;
        
-      
         while (elapsedTime <= timeToChange)
         {
             elapsedTime += Time.deltaTime;
             currentSource.pitch = Mathf.Lerp(currentPitch, nexPitch, elapsedTime / timeToChange);
            
-
             yield return null;
-        }
-        
+        }  
     }
 
     private IEnumerator UpdateMusicSpeedSliderValue()
@@ -291,12 +305,25 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlaySFX(GameObject gameObject, AudioClip clip, float volume)
+    public void PlaySFX(AudioClip clip, float volume)
     {
-        AudioSource audioSource = currentSource;
+        AudioSource audioSource = SFXSource;
         audioSource.pitch = currentSource.pitch;
         //audioSource.volume = (float)UnityEngine.Random.Range(0.5f, volume);
         audioSource.PlayOneShot(clip, volume);
+
+    }
+
+    public void PlayEnemySFX(GameObject gameobject, AudioClip clip, float volume)
+    {
+        Debug.Log(canPlay);
+        if (canPlay)
+        {
+            AudioSource audioSource = gameobject.GetComponent<AudioSource>();
+            audioSource.pitch = currentSource.pitch;
+            //audioSource.volume = (float)UnityEngine.Random.Range(0.5f, volume);
+            audioSource.PlayOneShot(clip, volume);
+        }
 
     }
 

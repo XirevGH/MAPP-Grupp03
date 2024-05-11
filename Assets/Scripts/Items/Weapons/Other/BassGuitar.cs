@@ -21,7 +21,7 @@ public class BassGuitar : PhysicalWeapon
     public override void Attack()
     {
         anim.SetTrigger("Attacking");
-        SoundManager.Instance.PlaySFX(gameObject, attackSound, 1);
+        SoundManager.Instance.PlaySFX(attackSound, 1);
     }
 
     private void OnTriggerStay2D(Collider2D other)

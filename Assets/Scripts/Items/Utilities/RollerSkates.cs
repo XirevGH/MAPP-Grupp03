@@ -26,6 +26,10 @@ public class RollerSkates : Utility
     public void IncreaseMovementSpeed()
     {
         movementSpeedRank++;
+        if (SceneManager.GetActiveScene().name == "Main")
+        {
+            playerMovement.IncreaseMovementSpeed(1 + (percentageIncrease / 100f));
+        }
     }
     
     public float GetCurrentMovementSpeedIncrease()

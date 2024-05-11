@@ -206,20 +206,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySprite: {fileID: 21300000, guid: 9646ca466ea597a448a2e70c55acb027, type: 3}
   drops:
-  - item: {fileID: 2322821042000343324, guid: 73e8c7fac64e160469ab7a30447b8bc1, type: 3}
-    dropChance: 45
   - item: {fileID: 4857899130433156979, guid: 86fd765608c838c41ac970a87857d355, type: 3}
     dropChance: 1
-  - item: {fileID: 1616300450462348478, guid: c2d6c3032fbc6a344bb584fecada63bb, type: 3}
-    dropChance: 1
   - item: {fileID: 4917292742459662858, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
-    dropChance: 1
-  xpValue: 10
-  multiDrop: 1
+    dropChance: 0.25
+  xpValue: 15
+  dropChance: 40
+  multiDrop: 0
   player: {fileID: 0}
   target: {fileID: 0}
   sprite: {fileID: 0}
-  health: 3.5
+  health: 10
   thisMovementSpeed: 2
   baseMovementSpeed: 2
   isSlow: 0
@@ -328,7 +325,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 197
+  Priority: 234
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
