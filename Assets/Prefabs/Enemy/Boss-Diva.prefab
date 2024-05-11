@@ -469,6 +469,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySprite: {fileID: 0}
   drops:
+  - item: {fileID: 2322821042000343324, guid: 73e8c7fac64e160469ab7a30447b8bc1, type: 3}
+    dropChance: 100
   - item: {fileID: 6536046719154458180, guid: 3ecd58846d80571498c5c49f0cba8ec3, type: 3}
     dropChance: 100
   - item: {fileID: 6536046719154458180, guid: e9c853b6690eefb479ed71008c35e6bf, type: 3}
@@ -478,7 +480,6 @@ MonoBehaviour:
   - item: {fileID: 4917292742459662858, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
     dropChance: 100
   xpValue: 2500
-  dropChance: 100
   multiDrop: 1
   player: {fileID: 0}
   target: {fileID: 0}
