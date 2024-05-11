@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using System.Text;
 using System;
+using Unity.VisualScripting;
 
 [System.Serializable]  
 public class GameObjectComparer : IComparer<GameObject>
@@ -27,9 +28,10 @@ public class GameObjectComparer : IComparer<GameObject>
 public class DropItem
 {
     //Prefaben som ska skapas
-    public GameObject item;
+    [SerializeField] public GameObject item;
 
     //chansen i int "%" hur stor changen är att den droppas
+    
     public float dropChance;
 }
 public class Enemy : MonoBehaviour
@@ -39,10 +41,10 @@ public class Enemy : MonoBehaviour
     
     [SerializeField] private List<DropItem> drops = new List<DropItem>();
     //om den kan droppa ferla saker än en. Börja med först droppet i listan
-    public int xpValue;
-    public float dropChance;
-    public bool multiDrop;
 
+    [SerializeField] int xpValue;
+    public bool multiDrop;
+    
     public GameObject player, target;
     protected float damageNumberWindow = 1f;
     public SpriteRenderer sprite;
@@ -190,7 +192,7 @@ public class Enemy : MonoBehaviour
     private System.Collections.IEnumerator RemoveForce(Rigidbody2D rb, float delay)
     {
       
-            yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(delay);
         if (rb != null)
         {
             rb.velocity = Vector2.zero;
@@ -223,63 +225,49 @@ public class Enemy : MonoBehaviour
         Destroy(damageNumbers.transform.parent.gameObject);
     }
 
-    protected bool Drop(GameObject drop, float dropChance)
-    {   float random = (float)Math.Round(UnityEngine.Random.Range(0f, 100f), 4);
-        if (random <= dropChance)
-        {   
-            if (drop) {
-                GameObject enemyDrop = Instantiate(drop, transform.position, Quaternion.identity);
-                enemyDrop.SetActive(true);
-                return true;
-            } else {
-            Debug.LogWarning("Drop item is null.");
+    
+    protected void Drops()
+    {
+        foreach (DropItem drop in drops)
+        {
+            if (Drop(drop) && !multiDrop)
+            {
+                break;  // Stop further drops if multiDrop is not allowd
             }
         }
-        return false;
-        
     }
-    protected void Drops() {
-        foreach (DropItem drop in drops) { 
-            if (Drop(drop.item, drop.dropChance )) {
-                if (!multiDrop) {
-                    break;
+
+    protected bool Drop(DropItem drop)
+    {
+        if (UnityEngine.Random.Range(0f, 100f) <= drop.dropChance)
+        {
+            GameObject pooledObject = PoolController.Instance.GetPooledObject(drop.item.name);
+            if (pooledObject != null)
+            {   
+                if(drop.item.name == "XPDrop"){
+                    pooledObject.GetComponent<XPDrop>().Initialize(xpValue);
                 }
+                pooledObject.transform.position = transform.position;
+                return true;
+                
+            }else{
+                GameObject dropInstance = Instantiate(drop.item, transform.position, Quaternion.identity);
+                dropInstance.SetActive(true);
+                return true;
             }
-        }
-    }
-
-    protected bool DropXP()
-    {   
-        float random = (float)Math.Round(UnityEngine.Random.Range(0f, 100f));
-        if(random <= dropChance){
-            XPDrop xpDrop = XPDropPool.Instance.GetXPDrop();
-            if(xpDrop == null){ 
-                Debug.LogWarning("xpDrop was null "); 
-                return false;
-            }
-            xpDrop.transform.position = transform.position;  
-            xpDrop.Initialize(xpValue, player);  
-            xpDrop.gameObject.SetActive(true);
-            return true;
         }
         return false;
     }
-
-
     public void UpdateSpeed(){
         thisMovementSpeed = movementSpeed * baseMovementSpeed;
        
     }
-    
-
-
-    
 
     protected virtual void DestroyGameObject()
     {   
-        if(!DropXP()|| multiDrop){
-            Drops();
-        }
+    
+        Drops();
+        
         
         MainManager.Instance.enemiesDefeated += 1;
         Destroy(gameObject);

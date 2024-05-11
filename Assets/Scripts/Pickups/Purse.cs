@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
 
-public class Purse : MonoBehaviour
+public class Purse : Pickup
 {
     private UpgradeSystem upgradeAbility;
     private Item item;
@@ -21,23 +21,16 @@ public class Purse : MonoBehaviour
         moneyAmount = GiveRandomAmountOfMoney();
         panel = FindObjectOfType<PursePanel>(true);
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
+    protected override void IndividualPickupAction()
     {
-        if (other.CompareTag("Player"))
-        {
-            other.GetComponent<Player>().currency += moneyAmount;
-            UpgradeRandomItem();
-            Debug.Log(item + upgradeText);
-            GameObject textClone = Instantiate(text, new Vector3(transform.position.x, transform.position.y + 2, -0.5f), Quaternion.identity);
-            //panel.OpenPurseWindow();
-            //panel.SetAmountOfMoney(moneyAmount);
-            //panel.SetUpgradeText(upgradeText);
-            textClone.GetComponent<TextMesh>().text = GetTestPopup();
-            Destroy(gameObject);
-            
-
-        }
+        player.currency += moneyAmount;
+        UpgradeRandomItem();
+        Debug.Log(item + upgradeText);
+        GameObject textClone = Instantiate(text, new Vector3(transform.position.x, transform.position.y + 2, -0.5f), Quaternion.identity);
+        //panel.OpenPurseWindow();
+        //panel.SetAmountOfMoney(moneyAmount);
+        //panel.SetUpgradeText(upgradeText);
+        textClone.GetComponent<TextMesh>().text = GetTestPopup();
     }
     private String GetTestPopup()
     {
@@ -66,7 +59,10 @@ public class Purse : MonoBehaviour
         return money;
     }
 
-  
-   
+    protected override void ResetThis()
+    {   upgradeText = "";
+        moneyAmount = GiveRandomAmountOfMoney();
+    }
+    
 
 }

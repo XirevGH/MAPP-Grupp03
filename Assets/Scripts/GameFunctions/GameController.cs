@@ -15,7 +15,6 @@ public class GameController : MonoBehaviour
      
     public int currentTrackBPM;
     
-    private HashSet<ItemMagnet> magnets = new HashSet<ItemMagnet>();
 
     private void Awake()
     {
@@ -23,7 +22,7 @@ public class GameController : MonoBehaviour
         ReadFile(playerStatsFile);
         mainCamera = Camera.main;
         Enemy.movementSpeed = 1f;        // Global % enemy movespeed increase.  
-        Enemy.healthProcenIncrease =1f;
+        Enemy.healthProcenIncrease = 1f;
     }
 
     private void Update()
@@ -76,12 +75,7 @@ public class GameController : MonoBehaviour
 
 
     
-    public void AddMagnet(ItemMagnet toAdd){
-        
-    }
-    public void RemoveMagnet(ItemMagnet toRemove){
-        
-    }
+
     
 
     
