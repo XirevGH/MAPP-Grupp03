@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class TextHandler : MonoBehaviour
+public class ItemUpgradeTextHandler : MonoBehaviour
 {
     private TMP_Text textfield;
     private MetaUpgradeSystem metaUpgradeSystem;

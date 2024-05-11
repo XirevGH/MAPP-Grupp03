@@ -149,10 +149,15 @@ public class MetaUpgradeSystem : MonoBehaviour
                 item.GetType().GetMethod(methodName).Invoke(item, null);
             }
         }
+        SaveFile();
+    }
+
+
+    private void SaveFile()
+    {
         File.WriteAllText(upgradeStatsFile, SaveToString());
     }
 
-    
 
     private bool CheckIfSufficientCurrency(int price)
     {
@@ -171,6 +176,17 @@ public class MetaUpgradeSystem : MonoBehaviour
 
     public void AddCurrency(int addedCurrency){
         currency += addedCurrency;
+        SaveFile();
+    }
+
+    public int GetCurrency()
+    {
+        return currency;
+    }
+
+    public void DeductCurrency(int cost)
+    {
+        currency -= cost;
     }
 
     public Item[] GetItems() 
