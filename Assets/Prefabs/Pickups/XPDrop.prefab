@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1843139789886664066}
   - component: {fileID: 8449104146653439331}
   - component: {fileID: 6728562833124184542}
-  - component: {fileID: 3437243790774937507}
   m_Layer: 11
   m_Name: XPDrop
   m_TagString: XPDrop20
@@ -99,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea0dd1d597caa84ebb82c9cf8496b60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 20
+  itemPickupRadius: 3
   spriteRenderer: {fileID: 8449104146653439331}
   biggXpDropSprite: {fileID: 21300000, guid: d47d7fbe8bb50334296fb2f273403001, type: 3}
   biggXpSize: {x: 0.2, y: 0.2, z: 0.2}
@@ -109,29 +110,7 @@ MonoBehaviour:
   smallXpDropSprite: {fileID: 21300000, guid: d47d7fbe8bb50334296fb2f273403001, type: 3}
   smallXpSize: {x: 0.1, y: 0.1, z: 0.1}
   smallMaxXpValue: 25
-  XP: 0
-  speed: 20
---- !u!95 &3437243790774937507
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2322821042000343324}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f76b7a1e712333e47a1c5d21c7c73c96, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  XP: 25
 --- !u!1 &8939485538652551796
 GameObject:
   m_ObjectHideFlags: 0

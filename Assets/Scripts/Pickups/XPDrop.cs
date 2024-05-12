@@ -1,8 +1,12 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-
-public class XPDrop : MonoBehaviour
+using static UnityEngine.GraphicsBuffer;
+public class XPDrop : Pickup
 {   [SerializeField] private SpriteRenderer spriteRenderer;
-
+    
     [SerializeField] private Sprite biggXpDropSprite; 
     public Vector3 biggXpSize;
     public int biggMaxXpValue;
@@ -15,48 +19,22 @@ public class XPDrop : MonoBehaviour
     public Vector3 smallXpSize;
     public int smallMaxXpValue;
     
-    
-    public int XP;
+    [SerializeField] private int XP;
 
-    private GameObject player;
-
-    public float speed = 20f;
-    private bool move = false;
 
     
-    public XPDrop Initialize(int initialXP, GameObject player)
+    public XPDrop Initialize(int initialXP)
     {   move = false;
-        this.player = player;
-        this.XP = initialXP;
+        XP = initialXP;
 
         SetXpType();
         return this;  
     }
 
-    /*public enum(){
-
-        biggXpDrop, mediumXpDrop, smallXpDrop 
-    }*/
-    void FixedUpdate()
-{
-    float requiredDistance = 2.7f;
-    float stopDistance = 0.3f;
-    float distanceSquared = (player.transform.position - transform.position).sqrMagnitude;
     
-    if (distanceSquared < requiredDistance * requiredDistance && !move){
-        MoveToPlayer();
-    }
-    if (move && player != null)
-    {
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-        if (distanceSquared < stopDistance * stopDistance){
-            player.GetComponent<Player>().AddXP(XP);
-            XPDropPool.Instance.ReturnXPDrop(this);
-        }
-    } 
-}
+    
 
-    public void MoveToPlayer()
+    public new void MoveToPlayer()
     {   
         move = true;
     }
@@ -65,15 +43,11 @@ public class XPDrop : MonoBehaviour
         XP += xpToAdd;
         SetXpType();
     }
-
-    public void ResetXP()
-    {
-        XP = 0;
-    }
     public int GetXpValue()
     {
         return XP;
     }
+    
 
     public void SetXpType()
     {
@@ -85,16 +59,16 @@ public class XPDrop : MonoBehaviour
             SetXpToBiggXp();
         } else {
             Debug.LogWarning("XPDrop was too big.");
-    }
+        }
     }
     
     public void SetXpToBiggXp(){
-        XPDropPool.Instance.SetAsBiggXp(this); 
+        XPDropPool.Instance.SetAsBiggXp(this);
         spriteRenderer.sprite = biggXpDropSprite;
         transform.localScale = biggXpSize;
     }
     public void SetXpToMediumXp(){
-        XPDropPool.Instance.SetAsMediumXp(this); 
+        XPDropPool.Instance.SetAsMediumXp(this);
         spriteRenderer.sprite = mediumXpDropSprite;
         transform.localScale = mediumXpSize;
     }
@@ -113,11 +87,14 @@ public class XPDrop : MonoBehaviour
     }
 
     
-    public void Deactivate()
-    {   
-        move = false;
-        ResetXP();
-        gameObject.SetActive(false);
+    
+    protected override void ResetThis()
+    {   XPDropPool.Instance.RemoveFromActiveList(this);
+        XP = 0;
+    }
+    protected override void IndividualPickupAction(){
+        player.GetComponent<Player>().AddXP(XP);
+
     }
 
     

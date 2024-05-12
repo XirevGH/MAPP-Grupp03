@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4930263954281152823}
   - component: {fileID: 4600674612995164974}
-  - component: {fileID: 8703966938356091655}
   - component: {fileID: 7051740499546952433}
   m_Layer: 11
   m_Name: HealthPickup
@@ -74,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 97bd49fd42a5e914ba7edc0d3e72d916, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -86,41 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &8703966938356091655
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616300450462348478}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 5.5
 --- !u!114 &7051740499546952433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,4 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c4b4b8652feb040807bf536dc88d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 20
+  itemPickupRadius: 1.5
   percentToHeal: 30
