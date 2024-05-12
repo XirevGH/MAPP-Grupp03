@@ -2622,7 +2622,7 @@ GameObject:
   - component: {fileID: 575496836}
   - component: {fileID: 575496839}
   m_Layer: 0
-  m_Name: PoolController
+  m_Name: ==Pools==
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2675,7 +2675,7 @@ MonoBehaviour:
   poolToInitialize:
   - thePrefab: {fileID: 2322821042000343324, guid: 73e8c7fac64e160469ab7a30447b8bc1, type: 3}
     parent: {fileID: 462431798}
-    Size: 150
+    Size: 200
   - thePrefab: {fileID: 4857899130433156979, guid: 86fd765608c838c41ac970a87857d355, type: 3}
     parent: {fileID: 2018098930}
     Size: 10
