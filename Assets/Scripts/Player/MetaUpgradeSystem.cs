@@ -2,14 +2,11 @@ using System;
 using System.Reflection;
 using System.IO;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class MetaUpgradeSystem : MonoBehaviour
 {
     [SerializeField] private int currency;
-    //[SerializeField] private TextMeshProUGUI MoneyText1;
-    //[SerializeField] private TextMeshProUGUI MoneyText2;
 
     private static bool initialUpgrades = true;
 
@@ -86,7 +83,6 @@ public class MetaUpgradeSystem : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        UpdateMoney();
         upgradeStatsFile = Application.persistentDataPath + "/upgradeInfo.json";
         ReadFile(upgradeStatsFile);
         CreateUpgradeMap();
@@ -152,26 +148,9 @@ public class MetaUpgradeSystem : MonoBehaviour
         SaveFile();
     }
 
-
     private void SaveFile()
     {
         File.WriteAllText(upgradeStatsFile, SaveToString());
-    }
-
-
-    private bool CheckIfSufficientCurrency(int price)
-    {
-        if(currency >= price){
-            currency -= price;
-            UpdateMoney();
-            return true;
-        }
-        return false;
-    }
-
-    private void UpdateMoney(){
-        //MoneyText1.SetText(currency.ToString());
-        //MoneyText2.SetText(currency.ToString());
     }
 
     public void AddCurrency(int addedCurrency){
@@ -195,6 +174,4 @@ public class MetaUpgradeSystem : MonoBehaviour
     { 
         return items;
     }
-
-    
 }

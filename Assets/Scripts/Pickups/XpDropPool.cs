@@ -131,10 +131,5 @@ public class XPDropPool : MonoBehaviour
             }
         }
     }
-
-
-    
-
-    
 }
 

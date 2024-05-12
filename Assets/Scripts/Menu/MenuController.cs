@@ -7,68 +7,52 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
+    [SerializeField] private SceneTransition transition;
     [SerializeField] private GameObject mainMenu;
-    
     [SerializeField] private GameObject play;
     [SerializeField] private GameObject upgradesPanel;
     [SerializeField] private GameObject itemsPanel;
     [SerializeField] private GameObject settingPanel;
     [SerializeField] private GameObject creditPanel;
-    
-
-
-    [SerializeField] private int levelToload;
-
- 
 
     public void Startgame()
     {
-      
-        ChangeScene();
+        transition.StartGame();
         SoundManager.Instance.GetComponent<SoundManager>().StartGame();
         SoundManager.Instance.GetComponent<SoundManager>().Click();
-        
     }
 
     public void ShowCredits()
     {
         creditPanel.SetActive(true);
-        mainMenu.SetActive(false);
+        mainMenu.GetComponent<TweenUI>().OnClose();
         SoundManager.Instance.GetComponent<SoundManager>().Click(); 
     }
 
     public void CloseCredits()
     {
-        creditPanel.SetActive(false);
+        creditPanel.GetComponent<TweenUI>().OnClose();
         mainMenu.SetActive(true);
         SoundManager.Instance.GetComponent<SoundManager>().Click();
-    }
-
-
-    public void ChangeScene()
-    {
-        //soundManager.GetComponent<SoundManager>().ToggleMusicPause();
-        //soundManager.GetComponent<SoundManager>().musicSource1.Play();
-        SceneManager.LoadScene(levelToload); // by till spel scennens
     }
 
     public void ShowSetting()
     {
         settingPanel.SetActive(true);
-        mainMenu.SetActive(false);
+        mainMenu.GetComponent<TweenUI>().OnClose();
         SoundManager.Instance.GetComponent<SoundManager>().Click();
 
     }
     public void CloseSetting()
     {
-        settingPanel.SetActive(false);
+        settingPanel.GetComponent<TweenUI>().OnClose();
         mainMenu.SetActive(true);
         SoundManager.Instance.GetComponent<SoundManager>().Click();
     }
 
     public void CloseItems()
     {
-        itemsPanel.SetActive(false);
+        itemsPanel.GetComponent<TweenUI>().OnClose();
         mainMenu.SetActive(true);
         SoundManager.Instance.GetComponent<SoundManager>().Click();
     }
@@ -76,25 +60,20 @@ public class MenuController : MonoBehaviour
     public void ShowItems()
     {
         itemsPanel.SetActive(true);
-        mainMenu.SetActive(false);
+        mainMenu.GetComponent<TweenUI>().OnClose();
         SoundManager.Instance.GetComponent<SoundManager>().Click();
     }
     public void ShowUpgrades()
     {
         upgradesPanel.SetActive(true);
-        itemsPanel.SetActive(false);
+        itemsPanel.GetComponent<TweenUI>().OnClose();
         SoundManager.Instance.GetComponent<SoundManager>().Click();
     }
 
     public void CloseUpgrades()
     {
-        upgradesPanel.SetActive(false);
+        upgradesPanel.GetComponent<TweenScroll>().OnClose();
         itemsPanel.SetActive(true);
         SoundManager.Instance.GetComponent<SoundManager>().Click();
     }
-
-   
-
-
-
 }

@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class Scroll : MonoBehaviour
 {
-
     public RectTransform pagesTransform;
 
     public void SetPosition(RectTransform target)

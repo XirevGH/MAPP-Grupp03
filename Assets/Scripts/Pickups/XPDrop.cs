@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
+
 public class XPDrop : MonoBehaviour
 {   [SerializeField] private SpriteRenderer spriteRenderer;
 

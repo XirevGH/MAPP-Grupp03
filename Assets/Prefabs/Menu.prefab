@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
+  m_sharedMaterial: {fileID: 5428608028598007450, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -201,8 +201,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
+  m_sharedMaterial: {fileID: 5428608028598007450, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -693,8 +693,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
+  m_sharedMaterial: {fileID: 5428608028598007450, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -808,8 +808,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff872710ab64fd489a56b296f433273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creditPanel: {fileID: 1060763069591782983}
+  transition: {fileID: 0}
+  mainMenu: {fileID: 0}
+  play: {fileID: 0}
+  upgradesPanel: {fileID: 0}
+  itemsPanel: {fileID: 0}
   settingPanel: {fileID: 6520413972866393259}
+  creditPanel: {fileID: 1060763069591782983}
   levelToload: 0
 --- !u!1 &6232167614100608995
 GameObject:

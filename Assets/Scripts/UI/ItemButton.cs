@@ -2,10 +2,10 @@
 
 public class ItemButton : MonoBehaviour
 {
-    public Scroll scrollPanel;
+    public TweenScroll scrollPanel;
     public RectTransform itemPanel;
     public void ScrollPanelCall()
     {
-        scrollPanel.SetPosition(itemPanel);
+        scrollPanel.SetTarget(itemPanel);
     } 
 }
