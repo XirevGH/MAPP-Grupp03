@@ -147,7 +147,7 @@ public class Enemy : MonoBehaviour
     {
         string source = damageNumbers.text;
         int count = source.Split('\n').Length;
-        if (count > 4 || damageNumberWindow <= 0 || damageNumberAnim.GetCurrentAnimatorStateInfo(0).IsName("NotTakingDamage"))
+        if (count > 4 ||  damageNumberAnim.GetCurrentAnimatorStateInfo(0).IsName("NotTakingDamage"))
         {
             damageNumbers.text = "";
             count = 0;
@@ -173,7 +173,6 @@ public class Enemy : MonoBehaviour
             damageNumbers.gameObject.transform.parent.transform.parent = null;
         }
         return builder.ToString();
-        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -213,16 +212,16 @@ public class Enemy : MonoBehaviour
         {
             enemyAnim.SetTrigger("Dead");
             Invoke("DestroyGameObject", 0.8f);
-            Debug.Log(damageNumbers.transform.parent.gameObject.name);
             Invoke("RemoveText", 0.8f);
             return false;
         }
         return true;
     }
 
+
+    //This should instead reattach the gameobject to the enemy if we are to reuse the gameobject instead of destroying them.
     private void RemoveText()
     {
-        Debug.Log(damageNumbers.transform.parent.gameObject.name);
         Destroy(damageNumbers.transform.parent.gameObject);
     }
 

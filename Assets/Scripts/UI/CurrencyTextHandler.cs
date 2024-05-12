@@ -13,7 +13,6 @@ public class CurrencyTextHandler : MonoBehaviour
         get; private set;
     }
 
-
     void Start()
     {
         Instance = this;
