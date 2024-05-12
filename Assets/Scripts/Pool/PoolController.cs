@@ -57,7 +57,7 @@ public class PoolController : MonoBehaviour
     }
 
     
-    public virtual void ReturnPooledObject(string key, GameObject obj)
+    public void ReturnPooledObject(string key, GameObject obj)
     {
         if (!inactivePools.ContainsKey(key))
         {   
@@ -69,7 +69,12 @@ public class PoolController : MonoBehaviour
         obj.SetActive(false);
         inactivePools[key].Enqueue(obj);
     }
-
+    public bool IsInPooledObjects(string key){
+        if(inactivePools.ContainsKey(key)){
+            return true;
+        } 
+        return false;
+    }
     
     private void InitializePool(GameObject prefab, Transform parent, int size, string key)
     {   
@@ -86,4 +91,6 @@ public class PoolController : MonoBehaviour
             }
         }
     }
+
+
 }

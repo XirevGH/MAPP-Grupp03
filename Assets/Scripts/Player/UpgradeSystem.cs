@@ -5,12 +5,13 @@ using TMPro;
 using System.Reflection;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using System.Linq;
 
 public class UpgradeSystem : MonoBehaviour
 {
     [SerializeField] private GameObject[] panels;
     [SerializeField] private Player player;
-    [SerializeField] private Sprite weaponPanel, utilityPanel;
+    [SerializeField] private Sprite weaponPanel, utilityPanel, placeholderSprite;
 
     private MetaUpgradeSystem controller;
 
@@ -71,12 +72,12 @@ public class UpgradeSystem : MonoBehaviour
                 {
                     string getStatIncrease = fields[4];
                     string symbol = fields[5];
-                    Debug.Log(type);
-                    Debug.Log(name);
-                    Debug.Log(description);
-                    Debug.Log(upgradeMethodName);
-                    Debug.Log(getStatIncrease);
-                    Debug.Log(symbol);
+                    //Debug.Log(type);
+                    //Debug.Log(name);
+                    //Debug.Log(description);
+                    //Debug.Log(upgradeMethodName);
+                    //Debug.Log(getStatIncrease);
+                    //Debug.Log(symbol);
                     return description + " " + item.GetType().GetMethod(getStatIncrease).Invoke(item, null) + symbol;
                 }
             }
@@ -170,7 +171,7 @@ public class UpgradeSystem : MonoBehaviour
     }
 
 
-    private void SetPanelText(GameObject panel, Item item, string textDescription, string typeOfChoice)
+    private void SetPanelContent(GameObject panel, Item item, string textDescription, string typeOfChoice)
     {
         if(typeOfChoice.Equals("Upgrade"))
         {
@@ -189,6 +190,17 @@ public class UpgradeSystem : MonoBehaviour
         else
         {
             panel.GetComponent<UnityEngine.UI.Image>().sprite = utilityPanel;
+        }
+        
+        string fileItemName = String.Concat(item.GetName().Where(c => !Char.IsWhiteSpace(c)));
+        Sprite currentSprite = Resources.Load<Sprite>("Icons/" + fileItemName + "Pixel");
+        if(currentSprite != null)
+        {
+            panel.GetComponentsInChildren<UnityEngine.UI.Image>()[1].sprite = currentSprite;
+        }
+        else
+        {
+            panel.GetComponentsInChildren<UnityEngine.UI.Image>()[1].sprite = placeholderSprite;
         }
     }
 
@@ -255,7 +267,7 @@ public class UpgradeSystem : MonoBehaviour
 
 
             //Sets the text on the panel for the type of item or upgrade chosen.
-            SetPanelText(panels[i], item, GetUpgradeDescription(item, typeOfChoice, upgradeText), typeOfChoice);
+            SetPanelContent(panels[i], item, GetUpgradeDescription(item, typeOfChoice, upgradeText), typeOfChoice);
 
             //Prepares the button with the method to call in case that button is pressed.
             SetPanelMethod(panels[i], typeOfChoice, item, upgradeText);

@@ -6,6 +6,7 @@ public class Beat : MonoBehaviour
 {
     [SerializeField] private float increaseCooldownDuration, reduceCooldownDuration, MusicSpeedChange, timeToChange;
     [SerializeField] private GameObject circle, particle;
+    [SerializeField] private AudioClip collectedSound, notCollectedSound;
     private float percentageComplete, elapsedTime, beatLife;
     private Vector3 circleStartingScale;
     public bool isAlive;
@@ -31,14 +32,16 @@ public class Beat : MonoBehaviour
 
         if (Mathf.FloorToInt(percentageComplete) == 1)
         {
-            DestroyNoteWhenNotPickedUp();
+            DestroyNoteWhenNotCollected();
         }
     }
 
-    public void DestroyNoteWhenNotPickedUp()
+    public void DestroyNoteWhenNotCollected()
     {
         Instantiate(particle, this.transform.position, Quaternion.identity);
+        SoundManager.Instance.PlaySFX(notCollectedSound, 1);
         SoundManager.Instance.ChangePitch(false);
+       
         Destroy(gameObject);
     }
 
@@ -48,6 +51,7 @@ public class Beat : MonoBehaviour
     {
         if (collider.CompareTag("Music Collider"))
         {  Player.Instance.AddCurrency(currencyToAdd);
+           SoundManager.Instance.PlaySFX(collectedSound, 1);
            SoundManager.Instance.ChangePitch(true);
             Destroy(gameObject);
         }

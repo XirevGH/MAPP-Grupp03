@@ -49,9 +49,14 @@ public class Pickup : MonoBehaviour
    }
 
     public void ReturnToPool(){
-        ResetThis();
-        move = false;
-        PoolController.Instance.ReturnPooledObject(gameObject.name, gameObject);
+        if(PoolController.Instance.IsInPooledObjects(gameObject.name)){
+            ResetThis();
+            move = false;
+            PoolController.Instance.ReturnPooledObject(gameObject.name, gameObject);
+        }else{
+            Destroy(gameObject);
+        }
+        
     }
 
     protected virtual void IndividualPickupAction(){
