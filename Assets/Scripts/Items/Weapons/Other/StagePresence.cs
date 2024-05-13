@@ -9,7 +9,7 @@ public class StagePresence : Weapon
 
     public int radiusRank;
 
-    private float damageInterval = 3f; //ska vara med beatet
+    private float damageInterval = (60f / TriggerController.Instance.GetCurrentTrackBPM()); //ska vara med beatet
     private float timer = 0f;
 
     public void IncreaseRadius()
@@ -29,31 +29,11 @@ public class StagePresence : Weapon
     }
 
 
-    /*
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-            if (other.gameObject.CompareTag("Enemy"))
-            {
-                other.GetComponent<Enemy>().TakeDamage(damage);
-            }  
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            other.GetComponent<Enemy>().TakeDamage(damage);
-        }
-
-    }*/
-
     private void Update()
     {
         timer += Time.deltaTime;
 
-        float banana = (60f / TriggerController.Instance.GetCurrentTrackBPM());
-
-        if (timer >= banana)
+        if (timer >= damageInterval)
         {
             timer = 0f;
             DealDamage();
