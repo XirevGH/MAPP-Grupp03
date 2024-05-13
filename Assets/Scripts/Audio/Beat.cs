@@ -39,8 +39,9 @@ public class Beat : MonoBehaviour
     public void DestroyNoteWhenNotCollected()
     {
         Instantiate(particle, this.transform.position, Quaternion.identity);
-        SoundManager.Instance.PlaySFX(notCollectedSound, 1);
         SoundManager.Instance.ChangePitch(false);
+        SoundManager.Instance.PlaySFX(notCollectedSound, 1);
+      
        
         Destroy(gameObject);
     }
@@ -51,8 +52,9 @@ public class Beat : MonoBehaviour
     {
         if (collider.CompareTag("Music Collider"))
         {  Player.Instance.AddCurrency(currencyToAdd);
-           SoundManager.Instance.PlaySFX(collectedSound, 1);
-           SoundManager.Instance.ChangePitch(true);
+            SoundManager.Instance.ChangePitch(true);
+            SoundManager.Instance.PlaySFX(collectedSound, 1);
+          
             Destroy(gameObject);
         }
     }

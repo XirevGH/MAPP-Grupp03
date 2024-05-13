@@ -78,6 +78,14 @@ MonoBehaviour:
     m_Localized: Discobal
     m_Metadata:
       m_Items: []
+  - m_Id: 4329597774340096
+    m_Localized: Elektrische Gitaar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4331366357147648
+    m_Localized: Saxofoon
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
