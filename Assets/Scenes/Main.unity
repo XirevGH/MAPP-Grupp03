@@ -10970,12 +10970,10 @@ MonoBehaviour:
   timerText: {fileID: 3095667434961151154, guid: ea123d5ad32fcc34f987ef3e49be0304, type: 3}
   enemiesDefeatedText: {fileID: 4704084059594391430, guid: 410163a0795c9334498bb9d2e18eaebc, type: 3}
   moneyEarnedText: {fileID: 9167483687933025870, guid: f74ac1888e5efd74f9b48c349a43bb3b, type: 3}
-  moneyEarnedDuringGameText: {fileID: 6814671478546142863, guid: d368e8534100a0642ad251a8816876dc, type: 3}
   timeText: 
   mainLevel: 1
   enemiesDefeated: 0
   moneyEarned: 0
-  moneyEarnedInGame: 0
 --- !u!4 &1976371860
 Transform:
   m_ObjectHideFlags: 0
@@ -12203,8 +12201,41 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1400751299523291752, guid: d368e8534100a0642ad251a8816876dc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5387124778148117749}
   m_SourcePrefab: {fileID: 100100000, guid: d368e8534100a0642ad251a8816876dc, type: 3}
+--- !u!1 &5387124778148117747 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1400751299523291752, guid: d368e8534100a0642ad251a8816876dc, type: 3}
+  m_PrefabInstance: {fileID: 5387124778148117746}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5387124778148117748 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6814671478546142863, guid: d368e8534100a0642ad251a8816876dc, type: 3}
+  m_PrefabInstance: {fileID: 5387124778148117746}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5387124778148117747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5387124778148117749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5387124778148117747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f271152f76504a4392edef2ac2bbd9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyEarnedDuringGameText: {fileID: 5387124778148117748}
+  moneyEarnedInGame: 0
 --- !u!1 &6934043507771099633
 GameObject:
   m_ObjectHideFlags: 0

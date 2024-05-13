@@ -10,7 +10,7 @@ public class ResultManager : MonoBehaviour
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private TMP_Text enemiesDefeatedText;
     [SerializeField] private TMP_Text moneyEarnedText;
-    [SerializeField] private TMP_Text moneyEarnedDuringGameText;
+   
 
     public static ResultManager Instance;
 
@@ -18,25 +18,8 @@ public class ResultManager : MonoBehaviour
     public int mainLevel;
     public int enemiesDefeated;
     public int moneyEarned;
-    public int moneyEarnedInGame;
 
-
-    private void Update()
-    {
-
-        //   Player.Instance.AddCurrency(GetComponent<Beat>().currencyToAdd);
-        UnityEngine.SceneManagement.Scene currentScene = SceneManager.GetActiveScene();
-        if (Player.Instance.currency > moneyEarnedInGame)
-        {
-            moneyEarnedInGame = Player.Instance.currency;//GetComponent<Player>().currency;
-        }
-
-        if (currentScene.name == "Main")
-        {
-            moneyEarnedDuringGameText.text = "" + moneyEarnedInGame;
-        }
-           
-    }
+ 
 
     private void Awake()
     {
