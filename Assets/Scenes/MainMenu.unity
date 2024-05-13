@@ -22590,7 +22590,7 @@ GameObject:
   - component: {fileID: 768095923}
   - component: {fileID: 768095922}
   m_Layer: 0
-  m_Name: MainManager
+  m_Name: ResultManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22612,10 +22612,12 @@ MonoBehaviour:
   timerText: {fileID: 3095667434961151154, guid: ea123d5ad32fcc34f987ef3e49be0304, type: 3}
   enemiesDefeatedText: {fileID: 4704084059594391430, guid: 410163a0795c9334498bb9d2e18eaebc, type: 3}
   moneyEarnedText: {fileID: 9167483687933025870, guid: f74ac1888e5efd74f9b48c349a43bb3b, type: 3}
+  moneyEarnedDuringGameText: {fileID: 6814671478546142863, guid: d368e8534100a0642ad251a8816876dc, type: 3}
   timeText: 
   mainLevel: 1
   enemiesDefeated: 0
   moneyEarned: 0
+  moneyEarnedInGame: 0
 --- !u!4 &768095923
 Transform:
   m_ObjectHideFlags: 0
