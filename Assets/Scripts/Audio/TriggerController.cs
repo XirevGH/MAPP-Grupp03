@@ -56,16 +56,7 @@ public class TriggerController : MonoBehaviour
 
     private void Awake()
     { 
-           
-        if (Instance == null)
-        {
-            Instance = this;
-            
-        }
-        else
-        {
-            return;
-        }
+        Instance = this;
     }
 
     void Start()

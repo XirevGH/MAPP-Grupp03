@@ -37,15 +37,12 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
+        if (Instance != null)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+            Destroy(Instance.gameObject);
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
         //slider = GameObject.FindGameObjectWithTag("volumeSlider").GetComponent<Slider>();
     }
 

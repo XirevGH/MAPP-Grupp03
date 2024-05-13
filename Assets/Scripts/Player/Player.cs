@@ -34,24 +34,16 @@ public class Player : MonoBehaviour
         get; private set;
     }
 
-    public void DestroyInstance()
-    {
-        Destroy(gameObject);
-        Instance = null;
-    }
-
     private void Awake()
     {
 
-        if (Instance == null)
+        if (Instance != null)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+            Destroy(Instance.gameObject);
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
         currentItems = new List<Item> { startingWeapon };
         /*        InitializePlayer();*/
     }
@@ -133,8 +125,6 @@ public class Player : MonoBehaviour
     private void Die()
     {   metaUpgradeSystem.AddCurrency(currency);
         mainManager.moneyEarned += currency;
-        DestroyInstance();
-        MetaUpgradeSystem.Instance.DestroyInstance();
         gameController.GameOver();
     }
     #endregion

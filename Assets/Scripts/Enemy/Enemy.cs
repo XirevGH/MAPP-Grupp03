@@ -151,7 +151,7 @@ public class Enemy : MonoBehaviour
         {
             damageNumbers.text = "";
             count = 0;
-            damageNumbers.gameObject.transform.parent.transform.parent = gameObject.transform;
+            damageNumbers.gameObject.transform.parent.transform.SetParent(gameObject.transform);
             damageNumbers.gameObject.transform.parent.position = gameObject.transform.position;
             damageNumbers.gameObject.transform.parent.localPosition = new Vector2(0, 1.42f);
         }
@@ -170,7 +170,7 @@ public class Enemy : MonoBehaviour
         }
         if (transform.childCount > 0)
         {
-            damageNumbers.gameObject.transform.parent.transform.parent = null;
+            damageNumbers.gameObject.transform.parent.transform.SetParent(null);
         }
         return builder.ToString();
     }

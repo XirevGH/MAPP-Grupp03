@@ -10,7 +10,7 @@ public class SceneTransition : MonoBehaviour
 
     public float transitionTime = 1f;
 
-    public void StartGame()
+    public void ChangeScene()
     {
         StartCoroutine(LoadScene());
     }

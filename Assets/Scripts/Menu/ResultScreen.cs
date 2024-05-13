@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ResultScreen : MonoBehaviour
 {
-    [SerializeField] private int levelToload;
+    [SerializeField] private SceneTransition transition;
     [SerializeField] private GameObject exit;
     [SerializeField] private TextMeshProUGUI enemiesKilledText;
 
@@ -14,7 +14,6 @@ public class ResultScreen : MonoBehaviour
     public void LoadMainMenu()
     {
         MainManager.Instance.DestroyInstance();
-        SoundManager.Instance.DestroyInstance();
-        SceneManager.LoadScene(levelToload);
+        transition.ChangeScene();
     }   
 }

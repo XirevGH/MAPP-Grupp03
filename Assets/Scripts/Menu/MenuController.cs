@@ -17,7 +17,7 @@ public class MenuController : MonoBehaviour
 
     public void Startgame()
     {
-        transition.StartGame();
+        transition.ChangeScene();
         SoundManager.Instance.GetComponent<SoundManager>().StartGame();
         SoundManager.Instance.GetComponent<SoundManager>().Click();
     }

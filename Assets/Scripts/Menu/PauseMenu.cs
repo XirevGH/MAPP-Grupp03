@@ -69,9 +69,6 @@ public class PauseMenu : MonoBehaviour
         ToggleJoysticks(true);
         Time.timeScale = 1f;
         SoundManager.Instance.Click();
-        Player.Instance.DestroyInstance();
-        MetaUpgradeSystem.Instance.DestroyInstance();
-        SoundManager.Instance.DestroyInstance();
         SceneManager.LoadScene(mainMenuSceneName);
     }
 

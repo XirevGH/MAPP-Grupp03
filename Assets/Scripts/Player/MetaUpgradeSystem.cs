@@ -47,13 +47,6 @@ public class MetaUpgradeSystem : MonoBehaviour
         get; private set;
     }
 
-    public void DestroyInstance()
-    {
-        Destroy(gameObject);
-        Instance = null;
-        initialUpgrades = true;
-    }
-
     private void CreateUpgradeMap()
     {
         upgradeMap = new Dictionary<Tuple<string, string>, int>();
@@ -71,20 +64,22 @@ public class MetaUpgradeSystem : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(Instance.gameObject);
+            initialUpgrades = true;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
     private void Start()
     {
         items = FindObjectsOfType<Item>();
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
         upgradeStatsFile = Application.persistentDataPath + "/upgradeInfo.json";
         ReadFile(upgradeStatsFile);
+        Debug.Log("Start");
         CreateUpgradeMap();
         if (initialUpgrades)
         {

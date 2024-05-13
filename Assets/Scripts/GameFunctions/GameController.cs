@@ -8,6 +8,7 @@ using UnityEngine.Tilemaps;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField] private SceneTransition transition;
     public PlayerStats playerStats;
     private string playerStatsFile;
     public Camera mainCamera;
@@ -58,8 +59,7 @@ public class GameController : MonoBehaviour
         SoundManager.Instance.GetComponent<SoundManager>().Die();
         File.WriteAllText(playerStatsFile, playerStats.SaveToString());
         MainManager.Instance.CompileText();
-        SceneManager.LoadScene("ResultsScreen");
-       
+        transition.ChangeScene();
     }
 
     public BoundsInt GetBoundsFromCamera()
