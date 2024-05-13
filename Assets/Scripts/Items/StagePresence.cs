@@ -12,7 +12,6 @@ public class StagePresence : Weapon
     private float damageInterval = 3f; //ska vara med beatet
     private float timer = 0f;
 
-
     public void IncreaseRadius()
     {
         radiusRank++;
@@ -51,8 +50,10 @@ public class StagePresence : Weapon
     private void Update()
     {
         timer += Time.deltaTime;
-     
-        if (timer >= damageInterval)
+
+        float banana = (60f / TriggerController.Instance.GetCurrentTrackBPM());
+
+        if (timer >= banana)
         {
             timer = 0f;
             DealDamage();

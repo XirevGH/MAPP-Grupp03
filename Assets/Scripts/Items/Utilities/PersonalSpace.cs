@@ -24,7 +24,6 @@ public class PersonalSpace : Utility
 
         timer += Time.deltaTime;
 
-
         if (timer >= pushInterval)
         {
             PushEnemiesAway();
