@@ -21,7 +21,7 @@ public class SoundManager : MonoBehaviour
 
     [Header("Beat relateted")]
     [SerializeField] private float timeToChange;
-    [SerializeField] private float beatThreshold;
+    [SerializeField] private int beatThreshold;
     // how many beats does it take to change track
     private int totalPitchChange; // how many times pitch has changed
 
@@ -263,9 +263,9 @@ public class SoundManager : MonoBehaviour
 
     private IEnumerator ChangePitchCoroutine(bool increasePitch)
     {
-        float MusicSpeedChange = (10 / currentBPM) / beatThreshold; //  calculate the percentage increase or decrease from current track to the next or las track
+        float MusicSpeedChange = (10 / currentBPM) / (float)beatThreshold; //  calculate the percentage increase or decrease from current track to the next or las track
         int direction = increasePitch ? 1 : -1;
-        currentPitchAdjustedBPM += direction * (10 / (int)beatThreshold);
+        currentPitchAdjustedBPM += direction * (10 / beatThreshold);
         totalPitchChange += (direction * 1);
         float elapsedTime = 0;
         float nexPitch = currentSource.pitch + (MusicSpeedChange * direction);
