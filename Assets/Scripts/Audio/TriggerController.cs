@@ -77,8 +77,7 @@ public class TriggerController : MonoBehaviour
             {
                 float sampledTime = (inGameMusic.timeSamples / (inGameMusic.clip.frequency * trigger.GetIntervalLength(inGameCurrentTrackBPM)));
                 trigger.CheckForNewQuaterNote(sampledTime);
-                //Debug.Log(Mathf.FloorToInt(sampledTime));
-                //Debug.Log(Mathf.FloorToInt(inGameMusic.));
+                
             }
         }
     }

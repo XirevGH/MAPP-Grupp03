@@ -56,12 +56,12 @@ MonoBehaviour:
   currentSource: {fileID: 0}
   musicTracks:
   - {fileID: 8300000, guid: 51626d5583f3bd345959fb1fd4a5550e, type: 3}
-  - {fileID: 8300000, guid: 7d314c10faf80994da9aed2d48de3c89, type: 3}
-  - {fileID: 8300000, guid: 196d921db814ac04593fd9ba2f417270, type: 3}
-  - {fileID: 8300000, guid: dfab166b772b7b24e802b21757083d6f, type: 3}
+  - {fileID: 8300000, guid: 73169f11ef5feca4996fdfcd4adbfd6b, type: 3}
+  - {fileID: 8300000, guid: b824079af628edc42b8a44669dd96142, type: 3}
+  - {fileID: 8300000, guid: 4e3a087a6ca3b704ba7d03c7ecd8172b, type: 3}
   clickSound:
   - {fileID: 8300000, guid: 03a59a406ce7001498b6738f21472b64, type: 3}
-  BPMForTracks: 640000006e0000007800000082000000
+  BPMForTracks: 640000007d00000096000000af000000
   timeToFade: 1
   sfxObject: {fileID: 7176476281948975897, guid: 68b62b1a95c83e04781fdde2017472eb, type: 3}
   currentScene:
