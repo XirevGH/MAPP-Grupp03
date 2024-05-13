@@ -16,6 +16,6 @@ public class Timer : MonoBehaviour
         int seconds = Mathf.FloorToInt(elapsedTime % 60);
 
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-        MainManager.Instance.timeText = timerText.text;
+        ResultManager.Instance.timeText = timerText.text;
     }
 }

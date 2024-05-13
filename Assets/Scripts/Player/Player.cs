@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {   [SerializeField] private MetaUpgradeSystem metaUpgradeSystem;
-    [SerializeField] private MainManager mainManager;
+    [SerializeField] private ResultManager mainManager;
     [SerializeField] private Player player;
     [SerializeField] private Slider hpSlider;
     [SerializeField] private PlayerStats playerStats;
@@ -162,7 +162,7 @@ public class Player : MonoBehaviour
         level++;
         levelText.text = "Level: " + level;
         UpdateXPSlider();
-        MainManager.Instance.mainLevel = level;
+        ResultManager.Instance.mainLevel = level;
         upgradeScreen.OpenUpgradeWindow();
         upgradeSystem.StartUpgradeSystem();
         Invoke("CheckForLevelUp", 0.8f);

@@ -13,7 +13,7 @@ public class ResultScreen : MonoBehaviour
     
     public void LoadMainMenu()
     {
-        MainManager.Instance.DestroyInstance();
+        ResultManager.Instance.DestroyInstance();
         SoundManager.Instance.DestroyInstance();
         SceneManager.LoadScene(levelToload);
     }   

@@ -277,7 +277,7 @@ public class Enemy : MonoBehaviour
         Drops();
         
         
-        MainManager.Instance.enemiesDefeated += 1;
+        ResultManager.Instance.enemiesDefeated += 1;
         Destroy(gameObject);
     }
 
