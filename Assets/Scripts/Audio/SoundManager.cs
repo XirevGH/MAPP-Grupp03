@@ -297,22 +297,23 @@ public class SoundManager : MonoBehaviour
 
     private float CalculatePitchChange(bool increasePitch)
     {
-        if (currentPitchAdjustedBPM >= maxBPM)
-        {
-            currentPitchAdjustedBPM = maxBPM;
-            return currentTrack.pitch;
-        }
-
-        if (currentPitchAdjustedBPM <= minBPM)
-        {
-            currentPitchAdjustedBPM = minBPM;
-            return currentTrack.pitch;
-        }
 
         float musicSpeedChange = ((float)BPMBetweenTracks / (float)currentBPM / (float)beatThreshold);
         int direction = increasePitch ? 1 : -1;
         currentPitchAdjustedBPM += direction * (BPMBetweenTracks / beatThreshold);
         float nextPitch = currentTrack.pitch + (musicSpeedChange * direction);
+
+        if (currentPitchAdjustedBPM > maxBPM)
+        {
+            currentPitchAdjustedBPM = maxBPM;
+            return currentTrack.pitch;
+        }
+
+        if (currentPitchAdjustedBPM < minBPM)
+        {
+            currentPitchAdjustedBPM = minBPM;
+            return currentTrack.pitch;
+        }
 
         return nextPitch;
     }
