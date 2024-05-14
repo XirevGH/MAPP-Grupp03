@@ -22,7 +22,7 @@ public class VinylDiscController : ProjectileWeapon
 
     private void FixedUpdate()
     {
-        BPM = TriggerController.Instance.GetCurrentTrackBPM();
+        BPM = SoundManager.Instance.GetCurrentBPM();
         source = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>();
         pitch = source.pitch;
 

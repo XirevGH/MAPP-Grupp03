@@ -61196,6 +61196,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 51626d5583f3bd345959fb1fd4a5550e, type: 3}
+    - target: {fileID: 1413303723989624773, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 7625027123756469107, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}
     - target: {fileID: 4282401076657109252, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: Priority
       value: 8
@@ -61208,6 +61212,10 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4282401076657109252, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 7625027123756469107, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}
     - target: {fileID: 4297343317063124742, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: Priority
       value: 177
@@ -61217,13 +61225,37 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: maxBPM
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: minBPM
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: BPMBetweenTracks
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: bpmForTracks.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419575893291496720, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: Loop
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8419575893291496720, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: Priority
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8419575893291496720, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a3a2d846161fe404ca1b7afba33e8678, type: 3}
+    - target: {fileID: 8419575893291496720, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -1066239571824212141, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}
     - target: {fileID: 8610313985729025687, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: m_audioClip
       value: 
