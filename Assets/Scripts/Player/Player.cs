@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Xml.XPath;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem.Processors;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
-{   [SerializeField] private MetaUpgradeSystem metaUpgradeSystem;
-    [SerializeField] private ResultManager mainManager;
+{
+    [SerializeField] private List<Item> allItems;
     [SerializeField] private Player player;
     [SerializeField] private Slider hpSlider;
     [SerializeField] private PlayerStats playerStats;
     [SerializeField] private Weapon startingWeapon;
     [SerializeField] private List<Item> currentItems;
 
-    
     private UpgradeSystem upgradeSystem;
     private UpgradePanel upgradeScreen;
     private Slider xpSlider;
@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
     public float xpToLevel;
     public int level;
 
+    private bool isAlive = true;
+
     public static Player Instance
     {
         get; private set;
@@ -36,15 +38,16 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-
-        if (Instance != null)
+        if (Instance != this && Instance != null)
         {
             Destroy(Instance.gameObject);
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
         currentItems = new List<Item> { startingWeapon };
+
+        FindItems(transform);
+        
         /*        InitializePlayer();*/
     }
     /*    private void InitializePlayer(){
@@ -57,11 +60,28 @@ public class Player : MonoBehaviour
             currentItems = new List<Item>{startingWeapon};
         }*/
 
+    private void FindItems(Transform transform)
+    {
+        foreach (Transform child in transform)
+        {
+            if (child.gameObject.GetComponent<Item>() != null)
+            {
+                Debug.Log(child.gameObject.name);
 
-    //For leveling up faster for testing, remove later
+                child.GetComponent<Item>().GetName();
+                allItems.Add(child.GetComponent<Item>());
+            }
+            else
+            {
+                FindItems(child);
+            }
+        }
+    }
+
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.L)) 
+        //For leveling up faster for testing, remove later
+        if (Input.GetKeyDown(KeyCode.L)) 
         {
             LevelUp();
         }
@@ -107,14 +127,7 @@ public class Player : MonoBehaviour
         if(health <= 0)
         {
             Die();
-            RestoreHealth(100);
-            ResetPosition();
         }
-    }
-
-    private void ResetPosition()
-    {
-        transform.position = Vector3.zero;
     }
 
     private void UpdateHealthSlider()
@@ -123,8 +136,10 @@ public class Player : MonoBehaviour
     }
 
     private void Die()
-    {   metaUpgradeSystem.AddCurrency(currency);
-        mainManager.moneyEarned += currency;
+    {
+        isAlive = false;
+        MetaUpgradeSystem.Instance.AddCurrency(currency);
+        ResultManager.Instance.moneyEarned += currency;
         gameController.GameOver();
     }
     #endregion
@@ -186,5 +201,15 @@ public class Player : MonoBehaviour
         health += maxHealth - oldMaxHealth;
         UpdateHealthSlider();
         Debug.Log("Health is now " + maxHealth);
+    }
+
+    public List<Item> GetAllItems()
+    {
+        return new List<Item>(allItems);
+    }
+
+    public bool PlayerIsAlive()
+    {
+        return isAlive;
     }
 }

@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class StagePresence : Weapon
@@ -8,8 +7,10 @@ public class StagePresence : Weapon
     [SerializeField] private float radiusIncreasePercentage;
 
     public int radiusRank;
+    public int radiusUpgradeCost;
 
-    private float damageInterval = (60f / TriggerController.Instance.GetCurrentTrackBPM()); //ska vara med beatet
+
+    /* private float damageInterval = (60f / TriggerController.Instance.GetCurrentTrackBPM()); //ska vara med beatet*/
     private float timer = 0f;
 
     public void IncreaseRadius()
@@ -18,13 +19,30 @@ public class StagePresence : Weapon
         gameObject.transform.localScale *= (1 + (radiusIncreasePercentage / 100f));
     }
 
-    public float GetRadiusUpgradePercentage()
+    public float GetRadiusIncreasePercentage()
     {
         return radiusIncreasePercentage;
     }
 
+    public float GetCurrentRadiusIncrease()
+    {
+        return (float)Math.Round((Mathf.Pow(1 + (radiusIncreasePercentage / 100f), radiusRank) - 1) * 100, 1);
+    }
+
+    public int GetIncreaseRadiusCost()
+
+    {
+        return radiusUpgradeCost;
+    }
+
+    public int GetRadiusUpgradeRank()
+    {
+        return radiusRank;
+    }
+
     protected override void CreateUpgradeOptions()
     {
+        base.CreateUpgradeOptions();
         upgradeOptions.Add("IncreaseRadius");
     }
 
@@ -33,11 +51,11 @@ public class StagePresence : Weapon
     {
         timer += Time.deltaTime;
 
-        if (timer >= damageInterval)
-        {
+        /*if (timer >= damageInterval)
+        {*/
             timer = 0f;
             DealDamage();
-        }
+        /*}*/
     }
 
 

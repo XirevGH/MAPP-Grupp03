@@ -1,7 +1,5 @@
 using TMPro;
-using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ResultManager : MonoBehaviour
 {
@@ -23,20 +21,12 @@ public class ResultManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance != null)
+        if (Instance != this && Instance != null)
         {
-            Destroy(gameObject);
-            return;
+            Destroy(Instance.gameObject);
         }
-
         Instance = this;
         DontDestroyOnLoad(gameObject);
-    }
-
-    public void DestroyInstance()
-    {
-        Destroy(gameObject);
-        Instance = null;
     }
 
     public void CompileText() {

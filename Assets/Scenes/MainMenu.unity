@@ -2837,7 +2837,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 1112748795}
   button: {fileID: 76531669}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &76833484
 GameObject:
   m_ObjectHideFlags: 0
@@ -3683,7 +3682,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 567707399}
   button: {fileID: 89927883}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &91288850
 GameObject:
   m_ObjectHideFlags: 0
@@ -7379,7 +7377,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 88295924}
   button: {fileID: 189749678}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &195377277
 GameObject:
   m_ObjectHideFlags: 0
@@ -11257,7 +11254,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 786548821}
   button: {fileID: 358665121}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &360941149
 GameObject:
   m_ObjectHideFlags: 0
@@ -12337,7 +12333,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 2064682892}
   button: {fileID: 380668765}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &390597350
 GameObject:
   m_ObjectHideFlags: 0
@@ -15810,7 +15805,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 900289622}
   button: {fileID: 505731915}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &508805728
 GameObject:
   m_ObjectHideFlags: 0
@@ -16644,8 +16638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea4ebdb01e86b5144ac9d6ddbcf4ba76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metaUpgradeSystem: {fileID: 1792653752}
-  mainManager: {fileID: 768095922}
+  allItems: []
   player: {fileID: 543497618}
   hpSlider: {fileID: 610686735}
   playerStats: {fileID: 543497617}
@@ -18006,7 +17999,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 1018652991}
   button: {fileID: 595757710}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &595910956
 GameObject:
   m_ObjectHideFlags: 0
@@ -20044,6 +20036,7 @@ MonoBehaviour:
   attackSound: {fileID: 0}
   radiusIncreasePercentage: 5
   radiusRank: 0
+  radiusUpgradeCost: 5
 --- !u!58 &656064300
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -20887,7 +20880,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 1859991390}
   button: {fileID: 688645265}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &688874781
 GameObject:
   m_ObjectHideFlags: 0
@@ -22612,12 +22604,10 @@ MonoBehaviour:
   timerText: {fileID: 3095667434961151154, guid: ea123d5ad32fcc34f987ef3e49be0304, type: 3}
   enemiesDefeatedText: {fileID: 4704084059594391430, guid: 410163a0795c9334498bb9d2e18eaebc, type: 3}
   moneyEarnedText: {fileID: 9167483687933025870, guid: f74ac1888e5efd74f9b48c349a43bb3b, type: 3}
-  moneyEarnedDuringGameText: {fileID: 6814671478546142863, guid: d368e8534100a0642ad251a8816876dc, type: 3}
   timeText: 
   mainLevel: 1
   enemiesDefeated: 0
   moneyEarned: 0
-  moneyEarnedInGame: 0
 --- !u!4 &768095923
 Transform:
   m_ObjectHideFlags: 0
@@ -22792,7 +22782,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 99131349}
   button: {fileID: 771210308}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &774908315
 GameObject:
   m_ObjectHideFlags: 0
@@ -25076,7 +25065,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 765200438}
   button: {fileID: 832667336}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &833831281 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3107362561719993206, guid: 005f4b37b96997747b938601cacd5dc1, type: 3}
@@ -28680,7 +28668,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 1816141926}
   button: {fileID: 951496369}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &951600208
 GameObject:
   m_ObjectHideFlags: 0
@@ -30304,7 +30291,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 326386310}
   button: {fileID: 1001002495}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1003939935
 GameObject:
   m_ObjectHideFlags: 0
@@ -30801,7 +30787,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 633244001}
   button: {fileID: 1017721305}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1018652989
 GameObject:
   m_ObjectHideFlags: 0
@@ -33035,7 +33020,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 1777873355}
   button: {fileID: 1098210113}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1098821665
 GameObject:
   m_ObjectHideFlags: 0
@@ -36006,7 +35990,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1222a61fdd0be408defe81809a6576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metaUpgradeSystem: {fileID: 1792653752}
   textField: {fileID: 1191457475}
   updater: {fileID: 0}
 --- !u!1 &1193785785
@@ -37353,7 +37336,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 519090428}
   button: {fileID: 1258439480}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1262560040
 GameObject:
   m_ObjectHideFlags: 0
@@ -37579,7 +37561,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 232367345}
   button: {fileID: 1264745447}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1266562531
 GameObject:
   m_ObjectHideFlags: 0
@@ -37994,7 +37975,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 1119166762}
   button: {fileID: 1290233827}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1291354408
 GameObject:
   m_ObjectHideFlags: 0
@@ -41881,7 +41861,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 1946998665}
   button: {fileID: 1455975413}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1459105679
 GameObject:
   m_ObjectHideFlags: 0
@@ -43193,7 +43172,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 1861765208}
   button: {fileID: 1521685659}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1523469920
 GameObject:
   m_ObjectHideFlags: 0
@@ -43976,7 +43954,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 131749225}
   button: {fileID: 1544027770}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1545191041
 GameObject:
   m_ObjectHideFlags: 0
@@ -44125,7 +44102,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 1371049221}
   button: {fileID: 1545191043}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1549536751
 GameObject:
   m_ObjectHideFlags: 0
@@ -49393,7 +49369,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 1647043610}
   button: {fileID: 1727458412}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1728438429
 GameObject:
   m_ObjectHideFlags: 0
@@ -50917,6 +50892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currency: 0
+  items: []
   bassGuitarIncreaseDamage: 0
   yoyoIncreaseProjectileCount: 0
   yoyoIncreaseDamage: 0
@@ -51092,7 +51068,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 815947306}
   button: {fileID: 1798092028}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &1798286935
 GameObject:
   m_ObjectHideFlags: 0
@@ -56239,7 +56214,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 425493281}
   button: {fileID: 2000235675}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &2006918068
 GameObject:
   m_ObjectHideFlags: 0
@@ -57033,7 +57007,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 1083015759}
   button: {fileID: 2026435081}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &2027274148
 GameObject:
   m_ObjectHideFlags: 0
@@ -59301,7 +59274,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 1692491210}
   button: {fileID: 2094675557}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &2101310067
 GameObject:
   m_ObjectHideFlags: 0
@@ -60349,7 +60321,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   priceText: {fileID: 1431417146}
   button: {fileID: 2130078799}
-  metaUpgradeSystem: {fileID: 1792653752}
 --- !u!1 &2130827841
 GameObject:
   m_ObjectHideFlags: 0

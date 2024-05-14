@@ -4,15 +4,22 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*[System.Serializable]
+public class ItemStorage
+{
+    public Item[] items;
+
+}*/
+
 public class MetaUpgradeSystem : MonoBehaviour
 {
+    /*[SerializeField] private ItemStorage storage;*/
     [SerializeField] private int currency;
-
     private static bool initialUpgrades = true;
-
-    private Item[] items;
     private Dictionary<Tuple<string, string>, int> upgradeMap;
     string upgradeStatsFile;
+
+    private List<Item> items;
 
     [SerializeField] private int bassGuitarIncreaseDamage;
     [SerializeField] private int yoyoIncreaseProjectileCount;
@@ -66,20 +73,19 @@ public class MetaUpgradeSystem : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null)
+        if (Instance != this && Instance != null)
         {
             Destroy(Instance.gameObject);
-            initialUpgrades = true;
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        initialUpgrades = true;
     }
-    private void Start()
+    void Start()
     {
-        items = FindObjectsOfType<Item>();
+        items = Player.Instance.GetAllItems();
         upgradeStatsFile = Application.persistentDataPath + "/upgradeInfo.json";
         ReadFile(upgradeStatsFile);
-        Debug.Log("Start");
         CreateUpgradeMap();
         if (initialUpgrades)
         {
@@ -165,8 +171,8 @@ public class MetaUpgradeSystem : MonoBehaviour
         SaveFile();
     }
 
-    public Item[] GetItems() 
-    { 
+    public List<Item> GetItems()
+    {
         return items;
     }
 }

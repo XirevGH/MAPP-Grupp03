@@ -71,23 +71,29 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
             }
-            if (dynamicJoystick.Horizontal < 0f || horizontalValue < 0f)
-            {
-                FlipSprite(true);
-            }
-            if (dynamicJoystick.Horizontal > 0f || horizontalValue > 0f)
-            {
-                FlipSprite(false);
-            }
-            if (dynamicJoystick.Horizontal != 0f || dynamicJoystick.Vertical != 0f)
-            {
-                anim.SetFloat("MoveSpeed", Mathf.Abs(dynamicJoystick.Horizontal + dynamicJoystick.Vertical / 2));
-                transform.position = new Vector2(transform.position.x + dynamicJoystick.Horizontal * movementSpeed * movementSpeedDecrease * Time.deltaTime, transform.position.y + dynamicJoystick.Vertical * movementSpeed * movementSpeedDecrease* Time.deltaTime);
+            if (Player.Instance.PlayerIsAlive()) { 
+                if (dynamicJoystick.Horizontal < 0f || horizontalValue < 0f)
+                {
+                    FlipSprite(true);
+                }
+                if (dynamicJoystick.Horizontal > 0f || horizontalValue > 0f)
+                {
+                    FlipSprite(false);
+                }
+                if (dynamicJoystick.Horizontal != 0f || dynamicJoystick.Vertical != 0f)
+                {
+                    anim.SetFloat("MoveSpeed", Mathf.Abs(dynamicJoystick.Horizontal + dynamicJoystick.Vertical / 2));
+                    transform.position = new Vector2(transform.position.x + dynamicJoystick.Horizontal * movementSpeed * movementSpeedDecrease * Time.deltaTime, transform.position.y + dynamicJoystick.Vertical * movementSpeed * movementSpeedDecrease* Time.deltaTime);
+                }
+                else
+                {
+                    anim.SetFloat("MoveSpeed", Mathf.Abs(horizontalValue + verticalValue / 2));
+                    transform.position = new Vector2(transform.position.x + horizontalValue * movementSpeed * movementSpeedDecrease * Time.deltaTime, transform.position.y + verticalValue * movementSpeed * movementSpeedDecrease * Time.deltaTime);
+                }
             }
             else
             {
-                anim.SetFloat("MoveSpeed", Mathf.Abs(horizontalValue + verticalValue / 2));
-                transform.position = new Vector2(transform.position.x + horizontalValue * movementSpeed * movementSpeedDecrease * Time.deltaTime, transform.position.y + verticalValue * movementSpeed * movementSpeedDecrease * Time.deltaTime);
+                anim.SetFloat("MoveSpeed", 0);
             }
         }
     }

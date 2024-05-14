@@ -21,14 +21,7 @@ public class DiscoBallController : ProjectileWeapon
     protected override void Awake()
     {
         base.Awake();
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
     }
 
     private void Start()

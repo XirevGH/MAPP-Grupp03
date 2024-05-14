@@ -7,7 +7,6 @@ public class ButtonEventUpdater : MonoBehaviour
 {
     [SerializeField] private TMP_Text priceText;
     [SerializeField] private Button button;
-    [SerializeField] private MetaUpgradeSystem metaUpgradeSystem;
 
     void Start()
     {
@@ -16,7 +15,7 @@ public class ButtonEventUpdater : MonoBehaviour
 
     private void Update()
     {
-        if (metaUpgradeSystem.GetCurrencyAmount() < int.Parse(priceText.text[1..]))
+        if (MetaUpgradeSystem.Instance.GetCurrencyAmount() < int.Parse(priceText.text[1..]))
         {
             button.interactable = false;
         }
@@ -28,7 +27,7 @@ public class ButtonEventUpdater : MonoBehaviour
 
     private void SetPriceOnButton()
     {
-        UnityAction<int> action = metaUpgradeSystem.DeductCurrency;
+        UnityAction<int> action = MetaUpgradeSystem.Instance.DeductCurrency;
         button.onClick.AddListener(() => action(int.Parse(priceText.text[1..])));
     }
 

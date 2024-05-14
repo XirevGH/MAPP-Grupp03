@@ -3,7 +3,6 @@ using TMPro;
 
 public class CurrencyTextHandler : MonoBehaviour
 {
-    [SerializeField] private MetaUpgradeSystem metaUpgradeSystem;
     [SerializeField] private TMP_Text textField;
     [SerializeField] private ButtonEventUpdater updater;
     private string currency;
@@ -26,7 +25,7 @@ public class CurrencyTextHandler : MonoBehaviour
 
     private void SetText()
     {
-        currency = metaUpgradeSystem.GetCurrencyAmount().ToString();
+        currency = MetaUpgradeSystem.Instance.GetCurrencyAmount().ToString();
         textField.text = "Currency: " + currency;
     }
 }
