@@ -6,7 +6,7 @@ public class TEST_GetCurrency : MonoBehaviour
 {
     public void GetCurrency()
     {
-        MetaUpgradeSystem.Instance.AddCurrency(50);
+        MetaUpgradeSystem.Instance.AddCurrency(500);
     }
     
 }
