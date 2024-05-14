@@ -23,6 +23,7 @@ public class ResultManager : MonoBehaviour
     {
         if (Instance != this && Instance != null)
         {
+            gameObject.SetActive(false);
             Destroy(Instance.gameObject);
         }
         Instance = this;
