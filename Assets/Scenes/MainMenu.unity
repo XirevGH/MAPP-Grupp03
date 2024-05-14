@@ -34144,9 +34144,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'TEST BUTTON
+  m_text: '-TEST BUTTON-
 
-    Get 100 Currency'
+    Get 500 Currency'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
   m_sharedMaterial: {fileID: 5428608028598007450, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
@@ -51214,8 +51214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a67dba08b60622479d960d099a471b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storage:
-    items: []
   currency: 0
   bassGuitarIncreaseDamage: 0
   yoyoIncreaseProjectileCount: 0

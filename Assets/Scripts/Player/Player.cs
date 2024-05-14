@@ -124,7 +124,7 @@ public class Player : MonoBehaviour
     {
         health -= damageAmount;
         UpdateHealthSlider();
-        if(health <= 0)
+        if(health <= 0 && isAlive)
         {
             Die();
         }

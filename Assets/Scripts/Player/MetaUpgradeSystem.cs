@@ -4,20 +4,15 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class ItemStorage
-{
-    public Item[] items;
-
-}
-
 public class MetaUpgradeSystem : MonoBehaviour
 {
-    [SerializeField] private ItemStorage storage;
+
     [SerializeField] private int currency;
     private static bool initialUpgrades = true;
     private Dictionary<Tuple<string, string>, int> upgradeMap;
     string upgradeStatsFile;
+
+    private List<Item> items;
 
     [SerializeField] private int bassGuitarIncreaseDamage;
     [SerializeField] private int yoyoIncreaseProjectileCount;
@@ -55,10 +50,10 @@ public class MetaUpgradeSystem : MonoBehaviour
     private void CreateUpgradeMap()
     {
         upgradeMap = new Dictionary<Tuple<string, string>, int>();
-        foreach (Item item in storage.items)
+        foreach (Item item in items)
         {
-            foreach(string upgradeMethod in item.GetUpgradeOptions()) 
-            { 
+            foreach (string upgradeMethod in item.GetUpgradeOptions())
+            {
                 string variableName = char.ToLower(item.GetName()[0]) + item.GetName().Substring(1).Replace(" ", "") + upgradeMethod;
                 /*Debug.Log("Variable name: " + variableName);
                 Debug.Log("Variable value: " + (int)typeof(MetaUpgradeSystem).GetField(variableName, BindingFlags.NonPublic | BindingFlags.Instance).GetValue(this));
@@ -75,22 +70,19 @@ public class MetaUpgradeSystem : MonoBehaviour
         {
             Destroy(Instance.gameObject);
         }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-            initialUpgrades = true;
-        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+        initialUpgrades = true;
     }
-
-    private void Start()
+    void Start()
     {
+        items = Player.Instance.GetAllItems();
         upgradeStatsFile = Application.persistentDataPath + "/upgradeInfo.json";
         ReadFile(upgradeStatsFile);
         CreateUpgradeMap();
         if (initialUpgrades)
         {
-            foreach (Item item in storage.items)
+            foreach (Item item in items)
             {
                 foreach (string upgradeMethod in item.GetUpgradeOptions())
                 {
@@ -130,17 +122,17 @@ public class MetaUpgradeSystem : MonoBehaviour
         string className = parts[0];
         string methodName = parts[1];
         return Tuple.Create(className, methodName);
-    }    
+    }
 
     public void UpgradeRank(string classAndMethod)
     {
         (string className, string methodName) = SplitClassMethodString(classAndMethod);
         string variableName = char.ToLower(className[0]) + className.Substring(1).Replace(" ", "") + methodName;
-        int variableValueBefore = (int)typeof(MetaUpgradeSystem).GetField(variableName, (BindingFlags) 36).GetValue(this);
+        int variableValueBefore = (int)typeof(MetaUpgradeSystem).GetField(variableName, (BindingFlags)36).GetValue(this);
         int variableValueAfter = variableValueBefore + 1;
         typeof(MetaUpgradeSystem).GetField(variableName, BindingFlags.NonPublic | BindingFlags.Instance).SetValue(this, variableValueAfter);
-        
-        foreach (Item item in storage.items)
+
+        foreach (Item item in items)
         {
             if (item.GetName().Equals(className))
             {
@@ -155,9 +147,9 @@ public class MetaUpgradeSystem : MonoBehaviour
         File.WriteAllText(upgradeStatsFile, SaveToString());
     }
 
-    public void AddCurrency(int addedCurrency){
+    public void AddCurrency(int addedCurrency)
+    {
         currency += addedCurrency;
-        CurrencyTextHandler.Instance.UpdateCurrency();
         SaveFile();
     }
 
@@ -173,8 +165,8 @@ public class MetaUpgradeSystem : MonoBehaviour
         SaveFile();
     }
 
-    public Item[] GetItems()
+    public List<Item> GetItems()
     {
-        return storage.items;
+        return items;
     }
 }
