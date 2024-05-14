@@ -160,7 +160,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void LevelUp()
+    public void LevelUp() // change to public to make a button reach it for testing
     {
         xpHeld -= xpToLevel;
         xpToLevel *= 1.4f;
