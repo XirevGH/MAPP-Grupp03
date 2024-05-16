@@ -11990,6 +11990,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 543497618}
     - target: {fileID: 1103054515861734431, guid: 17ccd9c1a77fa004790076d7ee038be3, type: 3}
+      propertyPath: attackSound
+      value: 
+      objectReference: {fileID: 8300000, guid: aaff134ba9647e1439dd8c767ac6d9eb, type: 3}
+    - target: {fileID: 1103054515861734431, guid: 17ccd9c1a77fa004790076d7ee038be3, type: 3}
       propertyPath: damageUpgradeCost
       value: 50
       objectReference: {fileID: 0}
@@ -19104,7 +19108,7 @@ PrefabInstance:
     - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: attackSound
       value: 
-      objectReference: {fileID: 8300000, guid: 2057940cca452084eb3a9d107abd5da4, type: 3}
+      objectReference: {fileID: 8300000, guid: aedb6253896ecd54e8a6229ca833fbda, type: 3}
     - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: damageUpgradeCost
       value: 50
@@ -57919,7 +57923,7 @@ MonoBehaviour:
   damageRank: 0
   damageUpgradeCost: 150
   percentageDamageIncrease: 10
-  attackSound: {fileID: 8300000, guid: 8016efeb188fdde458cc881148701656, type: 3}
+  attackSound: {fileID: 8300000, guid: 98f11892ee7a5a34a87a3cd4d0aeed77, type: 3}
   amountOfTethers: 1
   tetherIncreasePerUpgrade: 1
   tetherRank: 0
@@ -57970,7 +57974,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -396259705445800102, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 8016efeb188fdde458cc881148701656, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 98f11892ee7a5a34a87a3cd4d0aeed77, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
