@@ -47,18 +47,8 @@ public class Player : MonoBehaviour
         currentItems = new List<Item> { startingWeapon };
 
         FindItems(transform);
-        
-        /*        InitializePlayer();*/
     }
-    /*    private void InitializePlayer(){
-            currency = 0; 
-            maxHealth = 100;
-            health = maxHealth;
-            xpToLevel = 100;
-            level = 1;
-            xpHeld = 0;
-            currentItems = new List<Item>{startingWeapon};
-        }*/
+
 
     private void FindItems(Transform transform)
     {
@@ -154,9 +144,11 @@ public class Player : MonoBehaviour
 
     private void CheckForLevelUp()
     {
-        if(xpHeld >= xpToLevel)
-        {
-            LevelUp();
+        if (isAlive) { 
+            if(xpHeld >= xpToLevel)
+            {
+                LevelUp();
+            }
         }
     }
 

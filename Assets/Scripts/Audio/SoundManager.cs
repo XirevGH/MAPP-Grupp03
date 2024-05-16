@@ -150,9 +150,9 @@ public class SoundManager : MonoBehaviour
        
     }
 
-    public void ToggleMusicPause()
+    public void ToggleMusicPause(bool state)
     {
-     
+        isInMenu = state;
         if (isInMenu == false)
         {
             musicSource1.Pause();
@@ -167,7 +167,6 @@ public class SoundManager : MonoBehaviour
             menuMusic.Stop();
             LowPassOff();
         }
-        isInMenu = !isInMenu;
     }
 
     public void LowPassOn()

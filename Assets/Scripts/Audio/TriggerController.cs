@@ -1,3 +1,4 @@
+using System;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.Events;
@@ -82,9 +83,9 @@ public class TriggerController : MonoBehaviour
         }
     }
 
-    public void ToggleTrigger()
+    public void ToggleTrigger(bool state)
     {
-        isTriggering = !isTriggering;
+        isTriggering = state;
     }
 
     public Trigger GetTrigger(int triggerNumber) 
