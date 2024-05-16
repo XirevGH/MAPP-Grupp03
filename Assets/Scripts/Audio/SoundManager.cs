@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -248,26 +249,30 @@ public class SoundManager : MonoBehaviour
 
     private void UpdateTrackIfBPMChanged()
     {
-        for (int i = 0; i < BPMForTracks.Length; i++)
+        //pitch goes down
+
+        if(Array.IndexOf(BPMForTracks, currentBPM) != 0)
         {
-            if (currentBPM == BPMForTracks[i])
+            if (currentPitchAdjustedBPM == currentBPM - (BPMBetweenTracks / beatThreshold))
             {
-                if (currentPitchAdjustedBPM == currentBPM - (BPMBetweenTracks / beatThreshold))
-                {
-                    ChangeTrack(i - 1, 1 + (((float)BPMBetweenTracks / (float)currentBPM / (float)beatThreshold)) * (beatThreshold - 1));
-                }
-            }
-           
-            if (currentPitchAdjustedBPM == BPMForTracks[i] && currentTrack.clip != musicTracks[i])
-            {
-                if (currentPitchAdjustedBPM == BPMForTracks[i] && currentTrack.clip != musicTracks[i])
-                {
-                    ChangeTrack(i);
-                    break;
-                }
-                
+                ChangeTrack(Array.IndexOf(BPMForTracks, currentBPM) - 1, 1 + (((float)BPMBetweenTracks / (float)currentBPM / (float)beatThreshold)) * (beatThreshold - 1));
             }
         }
+        
+
+
+        //pitch goes up
+        if (Array.IndexOf(BPMForTracks, currentBPM) != BPMForTracks.Length-1)
+        {
+           
+            if (currentPitchAdjustedBPM == BPMForTracks[Array.IndexOf(BPMForTracks, currentBPM + BPMBetweenTracks)])
+            {
+                ChangeTrack(Array.IndexOf(BPMForTracks, currentPitchAdjustedBPM));
+            }
+        }
+       
+
+        
     }
 
   
