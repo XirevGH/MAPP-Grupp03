@@ -181,7 +181,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 1b40db17f2181064888d17ac69c34b04, type: 3}
+  m_Sprite: {fileID: 1319777786, guid: 94e7a63924e66454c98dc820d146630a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77dd2effbcb5b94982211b3bb4118fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySprite: {fileID: 21300000, guid: 1b40db17f2181064888d17ac69c34b04, type: 3}
+  enemySprite: {fileID: 1319777786, guid: 94e7a63924e66454c98dc820d146630a, type: 3}
   drops:
   - item: {fileID: 2322821042000343324, guid: 73e8c7fac64e160469ab7a30447b8bc1, type: 3}
     dropChance: 65
