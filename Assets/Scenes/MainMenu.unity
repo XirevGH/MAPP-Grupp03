@@ -9296,7 +9296,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f40ad650baf3b84428ec00e710a93c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentForBeat: {fileID: 0}
   beat: {fileID: 7929235589256512294, guid: 416dd3d3b02ac7e43bfdc782899968f9, type: 3}
 --- !u!1 &281837485
 GameObject:
@@ -18582,7 +18581,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Stage Presence,IncreaseDamage
+          m_StringArgument: Break Dance,IncreaseDamage
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &595757711
@@ -20632,7 +20631,7 @@ GameObject:
   - component: {fileID: 656064299}
   - component: {fileID: 656064302}
   m_Layer: 10
-  m_Name: StagePresence
+  m_Name: BreakDance
   m_TagString: Stage Presence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20666,7 +20665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
-  itemName: Stage Presence
+  itemName: Break Dance
   damage: 1
   damageRank: 0
   damageUpgradeCost: 350
@@ -40169,7 +40168,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stage Presence
+  m_text: Break Dance
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: -8542620725292600027, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
@@ -44836,7 +44835,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Stage Presence,IncreaseRadius
+          m_StringArgument: Break Dance,IncreaseRadius
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1521685660
@@ -46855,7 +46854,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stage Presence
+  m_text: Break Dance
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: -8542620725292600027, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
@@ -52638,8 +52637,8 @@ MonoBehaviour:
   decoyIncreaseDecoyHealth: 0
   grooveArmorIncreaseHealth: 0
   rollerSkatesIncreaseMovementSpeed: 0
-  stagePresenceIncreaseDamage: 0
-  stagePresenceIncreaseRadius: 0
+  breakDanceIncreaseDamage: 0
+  breakDanceIncreaseRadius: 0
   personalSpaceIncreaseRadius: 0
   personalSpaceIncreaseForce: 0
 --- !u!1 &1798092026
@@ -56556,7 +56555,7 @@ GameObject:
   - component: {fileID: 1935424001}
   - component: {fileID: 1935424000}
   m_Layer: 5
-  m_Name: Stage Presence - Upgrades
+  m_Name: Break Dance - Upgrades
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62642,7 +62641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2138694527}
   m_Layer: 0
-  m_Name: Stage Presence
+  m_Name: Break Dance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
