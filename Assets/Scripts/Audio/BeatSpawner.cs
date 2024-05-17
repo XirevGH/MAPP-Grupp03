@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class BeatSpawner : MonoBehaviour
 {
     public static int triggerNumber = 7;
-    [SerializeField] private GameObject parentForBeat, beat;
+    [SerializeField] private GameObject beat;
 
 
     private void Start()
@@ -18,11 +18,8 @@ public class BeatSpawner : MonoBehaviour
 
     public void SpawnBeat()
     {
-        if (parentForBeat == null)
-        {
-            parentForBeat = GameObject.FindGameObjectWithTag("BeatContainer");
-        }
-       Instantiate(beat, transform.position, Quaternion.identity, parentForBeat.GetComponent<Transform>());
+       
+       Instantiate(beat, transform.localPosition, Quaternion.identity);
     }
 
     public void SetSpawnPosition()
