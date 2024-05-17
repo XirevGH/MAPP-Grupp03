@@ -4,7 +4,7 @@ Weapon,Yoyo,Swing around permanent Yoyos that speed up along with the beat.
 Weapon,Disco Ball,Launch Disco Balls into the air.
 Weapon,Electric Guitar,Zap your nearest enemies.
 Weapon,Saxophone,Shoot out musical notes at your nearest enemies.
-Weapon,Stage Presence,Deal damage to all enemies in your surrounding area.
+Weapon,Break Dance,Deal damage to all enemies in your surrounding area.
 Weapon,Synthwave Blast,Send out Synthwave Bolts in any direction.
 Utility,Roller Skates,Put on your roller skates and speed up your movement.
 Utility,Groove Armor,Put on your Groove Armor and dampen the blows of your enemies.
@@ -25,8 +25,8 @@ Upgrade,Electric Guitar,Increase the amount of targets the Electric Guitar will 
 Upgrade,Saxophone,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
 Upgrade,Saxophone,Increase the amount of Notes fired by,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
 Upgrade,Saxophone,Increase the amount of targets each Note can deal damage to by,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
-Upgrade,Stage Presence,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
-Upgrade,Stage Presence,Increase radius by,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,Break Dance,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Break Dance,Increase radius by,IncreaseRadius,GetRadiusIncreasePercentage,%
 Upgrade,Synthwave Blast,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
 Upgrade,Synthwave Blast,Increase the amount of Synthwave Bolts in each blast by,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
 Upgrade,Synthwave Blast,Increase the amount of targets each Synthwave Bolt can deal damage to by,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.

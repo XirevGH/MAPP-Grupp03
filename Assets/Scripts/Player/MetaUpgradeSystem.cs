@@ -37,8 +37,8 @@ public class MetaUpgradeSystem : MonoBehaviour
     [SerializeField] private int decoyIncreaseDecoyHealth;
     [SerializeField] private int grooveArmorIncreaseHealth;
     [SerializeField] private int rollerSkatesIncreaseMovementSpeed;
-    [SerializeField] private int stagePresenceIncreaseDamage;
-    [SerializeField] private int stagePresenceIncreaseRadius;
+    [SerializeField] private int breakDanceIncreaseDamage;
+    [SerializeField] private int breakDanceIncreaseRadius;
     [SerializeField] private int personalSpaceIncreaseRadius;
     [SerializeField] private int personalSpaceIncreaseForce;
 
