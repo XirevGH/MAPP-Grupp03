@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerStats playerStats;
     [SerializeField] private Weapon startingWeapon;
     [SerializeField] private List<Item> currentItems;
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip levelUpSound;
 
     private UpgradeSystem upgradeSystem;
     private UpgradePanel upgradeScreen;
@@ -47,6 +49,7 @@ public class Player : MonoBehaviour
         currentItems = new List<Item> { startingWeapon };
 
         FindItems(transform);
+
     }
 
 
@@ -127,6 +130,7 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
+        SoundManager.Instance.PlaySFX(deathSound, 1.5f);
         isAlive = false;
         MetaUpgradeSystem.Instance.AddCurrency(currency);
         ResultManager.Instance.moneyEarned += currency;
@@ -139,7 +143,7 @@ public class Player : MonoBehaviour
     {
         xpHeld += amountToAdd;
         UpdateXPSlider();
-        Invoke("CheckForLevelUp", 0.8f);
+        CheckForLevelUp();
     }
 
     private void CheckForLevelUp()
@@ -154,6 +158,7 @@ public class Player : MonoBehaviour
 
     public void LevelUp() // change to public to make a button reach it for testing
     {
+        SoundManager.Instance.PlaySFX(levelUpSound, 1);
         xpHeld -= xpToLevel;
         xpToLevel *= 1.4f;
         level++;
@@ -162,8 +167,6 @@ public class Player : MonoBehaviour
         ResultManager.Instance.mainLevel = level;
         upgradeScreen.OpenUpgradeWindow();
         upgradeSystem.StartUpgradeSystem();
-        Invoke("CheckForLevelUp", 0.8f);
-        
     }
 
     private void UpdateXPSlider()

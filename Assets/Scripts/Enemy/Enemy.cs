@@ -3,7 +3,6 @@ using UnityEngine;
 using TMPro;
 using System.Text;
 using System;
-using Unity.VisualScripting;
 
 [System.Serializable]  
 public class GameObjectComparer : IComparer<GameObject>
@@ -51,7 +50,7 @@ public class Enemy : MonoBehaviour
     public static float movementSpeed;  // Global % enemy movespeed increase.  
     public static float healthProcenIncrease;
     public float health;
-     
+    private bool alive;
     public float thisMovementSpeed; 
 
     public float baseMovementSpeed;
@@ -72,6 +71,7 @@ public class Enemy : MonoBehaviour
         UpdateSpeed();
         isSlow = false;
         target = player;
+        alive = true;
         StaticUpdateManager.RegisterUpdate(CustomSlowUpdate);
     }
 
@@ -216,14 +216,15 @@ public class Enemy : MonoBehaviour
 
     protected bool IsAlive()
     {
-        if (health <= 0)
+        if (health <= 0 && alive)
         {
+            alive = false;
+            Drops();
             enemyAnim.SetTrigger("Dead");
             Invoke("DestroyGameObject", 0.8f);
             Invoke("RemoveText", 0.8f);
-            return false;
         }
-        return true;
+        return alive;
     }
 
 
@@ -273,10 +274,6 @@ public class Enemy : MonoBehaviour
 
     protected virtual void DestroyGameObject()
     {   
-    
-        Drops();
-        
-        
         ResultManager.Instance.enemiesDefeated += 1;
         Destroy(gameObject);
     }
