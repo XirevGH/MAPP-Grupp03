@@ -19,7 +19,7 @@ public class BeatSpawner : MonoBehaviour
     public void SpawnBeat()
     {
        
-       Instantiate(beat, transform.localPosition, Quaternion.identity);
+       Instantiate(beat, transform.position, Quaternion.identity);
     }
 
     public void SetSpawnPosition()
