@@ -8,7 +8,7 @@ public class BreakDance : Weapon
 {
 
     [SerializeField] private float radiusIncreasePercentage;
-
+    private Animator anim;
     public int radiusRank;
     public int radiusUpgradeCost;
 
@@ -18,6 +18,7 @@ public class BreakDance : Weapon
     {
         UnityAction action = new UnityAction(Attack);
         TriggerController.Instance.SetTrigger(0, action);
+        anim = GetComponent<Animator>();
     }
 
     public void IncreaseRadius()
@@ -68,6 +69,7 @@ public class BreakDance : Weapon
 
     public override void Attack()
     {
+        anim.SetTrigger("Attack");
         foreach(GameObject enemy in enemies) 
         {
             if(enemy.gameObject != null)
