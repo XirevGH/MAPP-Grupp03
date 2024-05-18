@@ -33,7 +33,7 @@ public class BeatSpawner : MonoBehaviour
     {
         float x = Random.Range(4f, 16.0f);
         float y = Random.Range(4, 8.0f);
-        static float randomSign(float sign) => Random.Range(0f, 1f) == 0 ? sign : -sign;
+        static float randomSign(float sign) => Random.Range(0, 2) == 0 ? sign : -sign;
         x = randomSign(x);
         y = randomSign(y);
         Vector2 spawnPosition = new(x, y);
