@@ -51,11 +51,11 @@ TagManager:
   - Utility
   - Weapon
   - Pickups
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Floor
+  - EnemyLight
+  - PlayerLight
+  - XPLight
+  - FloorLight
   - 
   - 
   - 
