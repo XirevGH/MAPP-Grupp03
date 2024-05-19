@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,7 +6,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject[] joysticks;
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
-    public GameObject pauseButton; 
+    public GameObject pauseButton;
+    public GameObject upgradeScreen;
 
     [SerializeField] private GameObject settingPanel;
 
@@ -54,13 +52,16 @@ public class PauseMenu : MonoBehaviour
     }
     void PauseGame()
     {
-        ToggleJoysticks(false);
-        TriggerController.Instance.ToggleTrigger(false);
-        SoundManager.Instance.ToggleMusicPause(false);
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        GameIsPaused = true;
-        SoundManager.Instance.Click();
+
+        if (upgradeScreen.activeInHierarchy == false) { 
+            ToggleJoysticks(false);
+            TriggerController.Instance.ToggleTrigger(false);
+            SoundManager.Instance.ToggleMusicPause(false);
+            pauseMenuUI.SetActive(true);
+            Time.timeScale = 0f;
+            GameIsPaused = true;
+            SoundManager.Instance.Click();
+        }
     }
 
     public void LoadMenu()

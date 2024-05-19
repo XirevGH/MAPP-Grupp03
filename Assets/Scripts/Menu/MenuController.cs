@@ -15,7 +15,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject settingPanel;
     [SerializeField] private GameObject creditPanel;
 
-    public void Startgame()
+    public void StartGame()
     {
         transition.ChangeScene();
         SoundManager.Instance.GetComponent<SoundManager>().StartGame();

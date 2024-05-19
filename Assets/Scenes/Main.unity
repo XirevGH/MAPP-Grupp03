@@ -8588,6 +8588,7 @@ MonoBehaviour:
   - {fileID: 8135886327338831348}
   pauseMenuUI: {fileID: 1796234484}
   pauseButton: {fileID: 1046395237}
+  upgradeScreen: {fileID: 1077478085}
   settingPanel: {fileID: 1026943781}
   mainMenuSceneName: MainMenu
 --- !u!114 &1292167187
