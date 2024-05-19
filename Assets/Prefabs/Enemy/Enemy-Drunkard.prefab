@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77dd2effbcb5b94982211b3bb4118fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySprite: {fileID: 21300000, guid: 9646ca466ea597a448a2e70c55acb027, type: 3}
+  rend: {fileID: 8944445440707182931}
   drops:
   - item: {fileID: 2322821042000343324, guid: 73e8c7fac64e160469ab7a30447b8bc1, type: 3}
     dropChance: 60
@@ -385,7 +385,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: d335c4ccb4195334c8f269957a342811, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 

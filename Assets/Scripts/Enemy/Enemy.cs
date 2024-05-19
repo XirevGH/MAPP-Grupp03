@@ -36,8 +36,8 @@ public class DropItem
 public class Enemy : MonoBehaviour
 {
 
-    [SerializeField] private Sprite enemySprite;
-    
+
+    [SerializeField] private SpriteRenderer rend;
     [SerializeField] private List<DropItem> drops = new List<DropItem>();
     //om den kan droppa ferla saker än en. Börja med först droppet i listan
 
@@ -140,16 +140,16 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damageTaken)
     {   if (IsAlive())
-        {   health -= damageTaken;
+        {
+            health -= damageTaken;
             damageNumbers.text = BuildDamageNumber(damageTaken);
             damageNumberWindow = 0.5f;
             damageNumberAnim.SetTrigger("TakingDamage");
             enemyAnim.SetTrigger("TakeDamage");
             SoundManager.Instance.PlayEnemySFX(gameObject, hitSound, 1);
-           
+
         }
     }
-
 
     protected string BuildDamageNumber(float damage)
     {
