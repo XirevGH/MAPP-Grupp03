@@ -173,11 +173,11 @@ public class UpgradeSystem : MonoBehaviour
     {
         if(typeOfChoice.Equals("Upgrade"))
         {
-            panel.transform.parent.transform.GetChild(0).GetComponent<TMP_Text>().text = item.GetItemType() + " Upgrade";
+            panel.GetComponentsInChildren<TMP_Text>()[2].text = item.GetItemType() + " Upgrade";
         }
         else
         {
-            panel.transform.parent.transform.GetChild(0).GetComponent<TMP_Text>().text = item.GetItemType();
+            panel.GetComponentsInChildren<TMP_Text>()[2].text = item.GetItemType();
         }
         panel.GetComponentsInChildren<TMP_Text>()[0].text = item.GetName();
         panel.GetComponentsInChildren<TMP_Text>()[1].text = textDescription;
