@@ -11,6 +11,7 @@ public class NormalEnemy : Enemy
             if (Vector3.Distance(target.transform.position, transform.position) < 0.5)
             {
                 player.GetComponent<Player>().TakeDamage(1);
+                enemyAnim.SetTrigger("Attack");
             }
 
             if (Vector3.Distance(player.transform.position, transform.position) < 1)

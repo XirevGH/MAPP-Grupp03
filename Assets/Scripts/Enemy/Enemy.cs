@@ -104,6 +104,7 @@ public class Enemy : MonoBehaviour
             if (Vector3.Distance(target.transform.position, transform.position) < 0.5)
             {
                 player.GetComponent<Player>().TakeDamage(1);
+                
             }
 
             if (Vector3.Distance(player.transform.position, transform.position) < 1)
@@ -221,7 +222,7 @@ public class Enemy : MonoBehaviour
             alive = false;
             Drops();
             enemyAnim.SetTrigger("Dead");
-            Invoke("DestroyGameObject", 0.8f);
+            Invoke("DestroyGameObject", 1.8f);
             Invoke("RemoveText", 0.8f);
         }
         return alive;
