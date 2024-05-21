@@ -23057,7 +23057,7 @@ MonoBehaviour:
   damageRank: 0
   damageUpgradeCost: 75
   percentageDamageIncrease: 10
-  attackSound: {fileID: 0}
+  attackSound: {fileID: 8300000, guid: 63e5ffd53f8ba4f48b8028415dc2e87b, type: 3}
   amountOfProjectiles: 1
   projectileIncreasePerUpgrade: 1
   penetration: 1
@@ -64214,7 +64214,7 @@ PrefabInstance:
     - target: {fileID: 4282401076657109252, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 51626d5583f3bd345959fb1fd4a5550e, type: 3}
+      objectReference: {fileID: 8300000, guid: ecd1570b621444f4ca3480236d373d0c, type: 3}
     - target: {fileID: 4282401076657109252, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
@@ -64225,11 +64225,11 @@ PrefabInstance:
       objectReference: {fileID: 7625027123756469107, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}
     - target: {fileID: 4297343317063124742, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: Priority
-      value: 177
+      value: 193
       objectReference: {fileID: 0}
     - target: {fileID: 4297343317063124742, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: m_Volume
-      value: 1
+      value: 0.89
       objectReference: {fileID: 0}
     - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: maxBPM
@@ -64247,6 +64247,14 @@ PrefabInstance:
       propertyPath: bpmForTracks.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: musicTracks.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: ecd1570b621444f4ca3480236d373d0c, type: 3}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: musicTracks.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 03e1ae8d71279564eb768c347ccd09aa, type: 3}
     - target: {fileID: 8419575893291496720, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: Loop
       value: 1
