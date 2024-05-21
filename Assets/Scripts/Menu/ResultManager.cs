@@ -23,8 +23,10 @@ public class ResultManager : MonoBehaviour
     {
         if (Instance != this && Instance != null)
         {
-            gameObject.SetActive(false);
-            Destroy(Instance.gameObject);
+            //  gameObject.SetActive(false);
+            //  Destroy(Instance.gameObject);
+            Destroy(gameObject);
+            return;
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
