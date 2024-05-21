@@ -405,8 +405,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 243884816, guid: bde3438dd63ead34eb0411cc50f8c6bf, type: 3}
-  m_Color: {r: 1, g: 0.25943398, b: 0.63978505, a: 1}
+  m_Sprite: {fileID: 1492733530, guid: 486a4fd8efb1596498a881c4d1910df1, type: 3}
+  m_Color: {r: 0.69196284, g: 0.1273585, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -428,7 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f97681663d5fff248837cf7e2164cc3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySprite: {fileID: -2132439104, guid: bde3438dd63ead34eb0411cc50f8c6bf, type: 3}
+  rend: {fileID: 0}
   drops:
   - item: {fileID: 2322821042000343324, guid: 73e8c7fac64e160469ab7a30447b8bc1, type: 3}
     dropChance: 100
@@ -450,10 +450,10 @@ MonoBehaviour:
   hpSlider: {fileID: 8914765566047444305}
   bossCharge:
     chargeEnabled: 1
-    chargeDuration: 3
-    chargeAdditiveSpeed: 10
+    chargeDuration: 6
+    chargeAdditiveSpeed: 20
     bossChargeActive: 0
-  baseAttackCooldown: 10
+  baseAttackCooldown: 15
 --- !u!114 &-6179003319820616230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,7 +510,7 @@ Animator:
   m_GameObject: {fileID: 6536046719154458180}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d335c4ccb4195334c8f269957a342811, type: 2}
+  m_Controller: {fileID: 9100000, guid: e700a80680bb6104abcf57c184810a5e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

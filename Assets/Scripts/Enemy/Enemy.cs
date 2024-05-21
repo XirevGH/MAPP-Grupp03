@@ -3,7 +3,6 @@ using UnityEngine;
 using TMPro;
 using System.Text;
 using System;
-using Unity.VisualScripting;
 
 [System.Serializable]  
 public class GameObjectComparer : IComparer<GameObject>
@@ -37,8 +36,8 @@ public class DropItem
 public class Enemy : MonoBehaviour
 {
 
-    [SerializeField] private Sprite enemySprite;
-    
+
+    [SerializeField] private SpriteRenderer rend;
     [SerializeField] private List<DropItem> drops = new List<DropItem>();
     //om den kan droppa ferla saker än en. Börja med först droppet i listan
 
@@ -51,7 +50,7 @@ public class Enemy : MonoBehaviour
     public static float movementSpeed;  // Global % enemy movespeed increase.  
     public static float healthProcenIncrease;
     public float health;
-     
+    private bool alive;
     public float thisMovementSpeed; 
 
     public float baseMovementSpeed;
@@ -72,6 +71,7 @@ public class Enemy : MonoBehaviour
         UpdateSpeed();
         isSlow = false;
         target = player;
+        alive = true;
         StaticUpdateManager.RegisterUpdate(CustomSlowUpdate);
     }
 
@@ -104,6 +104,7 @@ public class Enemy : MonoBehaviour
             if (Vector3.Distance(target.transform.position, transform.position) < 0.5)
             {
                 player.GetComponent<Player>().TakeDamage(1);
+                
             }
 
             if (Vector3.Distance(player.transform.position, transform.position) < 1)
@@ -140,16 +141,16 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damageTaken)
     {   if (IsAlive())
-        {   health -= damageTaken;
+        {
+            health -= damageTaken;
             damageNumbers.text = BuildDamageNumber(damageTaken);
             damageNumberWindow = 0.5f;
             damageNumberAnim.SetTrigger("TakingDamage");
             enemyAnim.SetTrigger("TakeDamage");
             SoundManager.Instance.PlayEnemySFX(gameObject, hitSound, 1);
-           
+
         }
     }
-
 
     protected string BuildDamageNumber(float damage)
     {
@@ -216,14 +217,15 @@ public class Enemy : MonoBehaviour
 
     protected bool IsAlive()
     {
-        if (health <= 0)
+        if (health <= 0 && alive)
         {
+            alive = false;
+            Drops();
             enemyAnim.SetTrigger("Dead");
-            Invoke("DestroyGameObject", 0.8f);
+            Invoke("DestroyGameObject", 1.8f);
             Invoke("RemoveText", 0.8f);
-            return false;
         }
-        return true;
+        return alive;
     }
 
 
@@ -273,10 +275,6 @@ public class Enemy : MonoBehaviour
 
     protected virtual void DestroyGameObject()
     {   
-    
-        Drops();
-        
-        
         ResultManager.Instance.enemiesDefeated += 1;
         Destroy(gameObject);
     }

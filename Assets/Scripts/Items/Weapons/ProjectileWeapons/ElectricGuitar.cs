@@ -31,14 +31,18 @@ public class ElectricGuitar : TetheringWeapon
     {
         if (gameObject.activeSelf)
         {
-            SoundManager.Instance.PlaySFX(attackSound, 1);
-            GameObject[] targetEnemies = GetClosestEnemies(AdjustTargetOverflow(amountOfTethers));
-            for (int i = 0; i < targetEnemies.Length; i++)
+            if(enemies.Count != 0)
             {
-                GameObject clone = Instantiate(bolt);
-                clone.GetComponent<ElectricBolt>().SetPlayerObject(gameObject);
-                clone.GetComponent<ElectricBolt>().SetTargetUnit(targetEnemies[i]);
-                clone.SetActive(true);
+                SoundManager.Instance.PlaySFX(attackSound, 1);
+                GameObject[] targetEnemies = GetClosestEnemies(AdjustTargetOverflow(amountOfTethers));
+                for (int i = 0; i < targetEnemies.Length; i++)
+                {
+                    GameObject clone = Instantiate(bolt);
+                    clone.GetComponent<ElectricBolt>().SetPlayerObject(gameObject);
+                    clone.GetComponent<ElectricBolt>().SetTargetUnit(targetEnemies[i]);
+                    clone.SetActive(true);
+                }
+
             }
         } 
     }

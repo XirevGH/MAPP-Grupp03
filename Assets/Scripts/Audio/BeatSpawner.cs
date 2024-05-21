@@ -1,11 +1,13 @@
 
+using System;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class BeatSpawner : MonoBehaviour
 {
     public static int triggerNumber = 7;
-    [SerializeField] private GameObject parentForBeat, beat;
+    [SerializeField] private GameObject beat;
 
 
     private void Start()
@@ -18,16 +20,25 @@ public class BeatSpawner : MonoBehaviour
 
     public void SpawnBeat()
     {
-        if (parentForBeat == null)
-        {
-            parentForBeat = GameObject.FindGameObjectWithTag("BeatContainer");
-        }
-       Instantiate(beat, transform.position, Quaternion.identity, parentForBeat.GetComponent<Transform>());
+       
+       Instantiate(beat, transform.position, Quaternion.identity);
     }
 
     public void SetSpawnPosition()
     {
-        transform.localPosition = new Vector2(Random.Range(-16.0f, 16.0f), Random.Range(-8.0f, 8.0f));
+        transform.localPosition = RandomizeSpawnPosition();
+    }
+
+    private Vector2 RandomizeSpawnPosition()
+    {
+        float x = Random.Range(4f, 16.0f);
+        float y = Random.Range(4, 8.0f);
+        static float randomSign(float sign) => Random.Range(0, 2) == 0 ? sign : -sign;
+        x = randomSign(x);
+        y = randomSign(y);
+        Vector2 spawnPosition = new(x, y);
+
+        return spawnPosition;
     }
 
 }

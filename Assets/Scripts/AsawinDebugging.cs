@@ -18,6 +18,11 @@ public class AsawinDebugging : MonoBehaviour
 
     }
 
+    public void LevelUp()
+    {
+        Player.Instance.LevelUp();
+    }
+
     void Update()
     {
       

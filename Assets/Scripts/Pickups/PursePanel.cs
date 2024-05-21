@@ -48,8 +48,8 @@ public class PursePanel : MonoBehaviour
     {
         Time.timeScale = 0f;
         gameObject.SetActive(true);
-        TriggerController.Instance.ToggleTrigger();
-        SoundManager.Instance.ToggleMusicPause();
+        TriggerController.Instance.ToggleTrigger(false);
+        SoundManager.Instance.ToggleMusicPause(false);
         tintPanel.SetActive(true);
     }
 
@@ -57,8 +57,8 @@ public class PursePanel : MonoBehaviour
     {
         Time.timeScale = 1f;
         gameObject.SetActive(false);
-        TriggerController.Instance.ToggleTrigger();
-        SoundManager.Instance.ToggleMusicPause();
+        TriggerController.Instance.ToggleTrigger(true);
+        SoundManager.Instance.ToggleMusicPause(true);
         tintPanel.SetActive(false);
     }
 

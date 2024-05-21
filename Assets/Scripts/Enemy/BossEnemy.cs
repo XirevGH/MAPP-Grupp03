@@ -76,15 +76,19 @@ public class BossEnemy : Enemy
             bossCharge.UpdateCharge();
 
             if (Vector3.Distance(player.transform.position, transform.position) < 1) {
+                enemyAnim.SetTrigger("Attack");
                 player.GetComponent<Player>().TakeDamage(1);
+                
             }
             //Shoot att player
             if (Vector3.Distance(player.transform.position, transform.position) < 15 && attackCooldown <= 0) {
-                enemyAnim.SetTrigger("Attack");
+                enemyAnim.SetTrigger("TrowAttack");
                 GetComponent<Superclass_BossAttack_Projectile>().ShootAtPlayer(target);
                 attackCooldown = baseAttackCooldown;
                 //activates Charge
+                enemyAnim.SetTrigger("Charge");
                 bossCharge.ActivateCharge();
+                enemyAnim.ResetTrigger("Walking");
             }
 
             if (transform.position.x < target.transform.position.x) {
@@ -94,8 +98,11 @@ public class BossEnemy : Enemy
             }
             //Movement logic
             if (bossCharge.bossChargeActive) {
-                enemyAnim.SetTrigger("Charge");
-                transform.position = Vector3.MoveTowards(transform.position, target.transform.position, (thisMovementSpeed + bossCharge.chargeAdditiveSpeed) / 200);
+                if(IsInAnimationState("ChargeStart")){
+                    // no movmnet
+                }else{
+                    transform.position = Vector3.MoveTowards(transform.position, target.transform.position, (thisMovementSpeed + bossCharge.chargeAdditiveSpeed) / 200);
+                }
                 
             } else {
                 enemyAnim.SetTrigger("Walking");
@@ -106,6 +113,12 @@ public class BossEnemy : Enemy
 
     private void UpdateBossHp() {
         hpSlider.value = health / startingHealth;
+    }
+
+    private bool IsInAnimationState(string stateName, int layerIndex = 0)
+    {
+        AnimatorStateInfo stateInfo = enemyAnim.GetCurrentAnimatorStateInfo(layerIndex);
+        return stateInfo.IsName(stateName);
     }
 
     protected override void DestroyGameObject() {

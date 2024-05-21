@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Xml.XPath;
 using TMPro;
 using UnityEngine;
@@ -12,9 +13,12 @@ public class Player : MonoBehaviour
     [SerializeField] private List<Item> allItems;
     [SerializeField] private Player player;
     [SerializeField] private Slider hpSlider;
+    [SerializeField] private ParticleSystem hpLossParticles;
     [SerializeField] private PlayerStats playerStats;
     [SerializeField] private Weapon startingWeapon;
     [SerializeField] private List<Item> currentItems;
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip levelUpSound;
 
     private UpgradeSystem upgradeSystem;
     private UpgradePanel upgradeScreen;
@@ -29,7 +33,14 @@ public class Player : MonoBehaviour
     public float xpToLevel;
     public int level;
 
+
     private bool isAlive = true;
+    private bool isTakingDamage = false;
+    private bool vibrating = false;
+    private float takingDamagePeriod;
+    private float continuousDamageTime;
+    private float vibrationTime;
+    private ParticleSystem.MainModule particleMainModule;
 
     public static Player Instance
     {
@@ -47,18 +58,9 @@ public class Player : MonoBehaviour
         currentItems = new List<Item> { startingWeapon };
 
         FindItems(transform);
-        
-        /*        InitializePlayer();*/
+        particleMainModule = hpLossParticles.main;
     }
-    /*    private void InitializePlayer(){
-            currency = 0; 
-            maxHealth = 100;
-            health = maxHealth;
-            xpToLevel = 100;
-            level = 1;
-            xpHeld = 0;
-            currentItems = new List<Item>{startingWeapon};
-        }*/
+
 
     private void FindItems(Transform transform)
     {
@@ -108,6 +110,22 @@ public class Player : MonoBehaviour
                 gameController = FindObjectOfType<GameController>();
             }
         }
+        takingDamagePeriod -= Time.deltaTime;
+        if (takingDamagePeriod > 0)
+        {
+            ColorPlayerSprite(true);
+            continuousDamageTime += Time.deltaTime;
+            ScaleParticleLifetime(continuousDamageTime);
+        }
+        if (takingDamagePeriod <= 0)
+        {
+            ColorPlayerSprite(false);
+            StopParticles();
+        }
+        if (vibrating)
+        {
+            vibrationTime -= Time.deltaTime;
+        }
     }
     #region HP Stuff
     public void RestoreHealth(float percent)
@@ -120,14 +138,76 @@ public class Player : MonoBehaviour
         UpdateHealthSlider();
     }
 
+    private void ColorPlayerSprite(bool damagePeriod)
+    {
+        if (damagePeriod && !isTakingDamage)
+        {
+            isTakingDamage = true;
+            LeanTween.color(gameObject, Color.red, 0.25f);
+
+        }
+        if (!damagePeriod && isTakingDamage)
+        {
+            isTakingDamage = false;
+            LeanTween.color(gameObject, Color.white, 0.25f);
+        }
+        
+    }
+
     public void TakeDamage(int damageAmount)
     {
-        health -= damageAmount;
-        UpdateHealthSlider();
-        if(health <= 0 && isAlive)
-        {
-            Die();
+        if (isAlive) {
+            if (!vibrating)
+            {
+                vibrationTime = 1f;
+                Handheld.Vibrate();
+                Debug.Log("I'm vibrating");
+                vibrating = true;
+            }
+
+            if (vibrating && vibrationTime <= 0)
+            {
+                Debug.Log("I'm NOT vibrating");
+                vibrating = false;
+            }
+            takingDamagePeriod = 0.1f;
+            health -= damageAmount;
+            UpdateHealthSlider();
+            if(health <= 0)
+            {
+                Die();
+            }
         }
+    }
+
+    private void ScaleParticleLifetime(float continuousDamageTime)
+    {
+        if (continuousDamageTime >= 2)
+        {
+            particleMainModule.startLifetime = 0.5f;
+        }
+        else if (continuousDamageTime >= 1.5)
+        {
+            particleMainModule.startLifetime = 0.4f;
+        }
+        else if (continuousDamageTime >= 1)
+        {
+            particleMainModule.startLifetime = 0.3f;
+        }
+        else if (continuousDamageTime >= 0.5 )
+        {
+            particleMainModule.startLifetime = 0.2f;
+        }
+        else if (continuousDamageTime > 0)
+        {
+            particleMainModule.startLifetime = 0.1f;
+        }
+    }
+
+    private void StopParticles()
+    {
+        continuousDamageTime = 0;
+        particleMainModule.startLifetime = 0f;
     }
 
     private void UpdateHealthSlider()
@@ -137,6 +217,9 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
+        Handheld.Vibrate();
+        StopParticles();
+        SoundManager.Instance.PlaySFX(deathSound, 1.5f);
         isAlive = false;
         MetaUpgradeSystem.Instance.AddCurrency(currency);
         ResultManager.Instance.moneyEarned += currency;
@@ -149,19 +232,22 @@ public class Player : MonoBehaviour
     {
         xpHeld += amountToAdd;
         UpdateXPSlider();
-        Invoke("CheckForLevelUp", 0.8f);
+        CheckForLevelUp();
     }
 
     private void CheckForLevelUp()
     {
-        if(xpHeld >= xpToLevel)
-        {
-            LevelUp();
+        if (isAlive) { 
+            if(xpHeld >= xpToLevel)
+            {
+                LevelUp();
+            }
         }
     }
 
-    private void LevelUp()
+    public void LevelUp() // change to public to make a button reach it for testing
     {
+        SoundManager.Instance.PlaySFX(levelUpSound, 1);
         xpHeld -= xpToLevel;
         xpToLevel *= 1.4f;
         level++;
@@ -170,8 +256,6 @@ public class Player : MonoBehaviour
         ResultManager.Instance.mainLevel = level;
         upgradeScreen.OpenUpgradeWindow();
         upgradeSystem.StartUpgradeSystem();
-        Invoke("CheckForLevelUp", 0.8f);
-        
     }
 
     private void UpdateXPSlider()
