@@ -2433,8 +2433,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: 0.8949345, w: -0.44619766}
   m_LocalPosition: {x: 2.06, y: 0.27, z: 0}
-  m_LocalScale: {x: 3.0381696, y: 3.2715678, z: 3.6388888}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.49, y: 2.6812863, z: 2.9823327}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 372060889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2480,7 +2480,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Time: 0.3
+  m_Time: 0.2
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -3259,9 +3259,9 @@ Transform:
   m_GameObject: {fileID: 77523610}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: 0.8949345, w: -0.44619766}
-  m_LocalPosition: {x: 2.67, y: 2.85, z: 0}
-  m_LocalScale: {x: 3.0381696, y: 3.2715678, z: 3.6388888}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 1.74, y: 1.59, z: 0}
+  m_LocalScale: {x: 2.49, y: 2.6812863, z: 2.9823327}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 372060889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3307,7 +3307,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Time: 0.3
+  m_Time: 0.2
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -11405,7 +11405,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 1a633a27015e76a47a4076a225ab550a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12486,8 +12486,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: 0.8949345, w: -0.44619766}
   m_LocalPosition: {x: -2.8, y: -1.9, z: 0}
-  m_LocalScale: {x: 3.0381696, y: 3.2715678, z: 3.6388888}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.49, y: 2.6812863, z: 2.9823327}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 372060889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12533,7 +12533,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Time: 0.3
+  m_Time: 0.2
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -20273,8 +20273,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: 0.8949345, w: -0.44619766}
   m_LocalPosition: {x: -0.92, y: -0.37, z: 0}
-  m_LocalScale: {x: 3.0381696, y: 3.2715678, z: 3.6388888}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.49, y: 2.6812863, z: 2.9823327}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 372060889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20320,7 +20320,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Time: 0.3
+  m_Time: 0.2
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -23326,8 +23326,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: 0.8949345, w: -0.44619766}
   m_LocalPosition: {x: -4.67, y: -2.85, z: 0}
-  m_LocalScale: {x: 3.0381696, y: 3.2715678, z: 3.6388888}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.49, y: 2.6812863, z: 2.9823327}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 372060889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23373,7 +23373,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Time: 0.3
+  m_Time: 0.2
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -38764,8 +38764,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: 0.8949345, w: -0.44619766}
   m_LocalPosition: {x: -1.86, y: -4.78, z: 0}
-  m_LocalScale: {x: 3.0381696, y: 3.2715678, z: 3.6388888}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.49, y: 2.6812863, z: 2.9823327}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 372060889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -38811,7 +38811,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Time: 0.3
+  m_Time: 0.2
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -42471,8 +42471,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: 0.8949345, w: -0.44619766}
   m_LocalPosition: {x: 1.14, y: -0.91, z: 0}
-  m_LocalScale: {x: 3.0381696, y: 3.2715678, z: 3.6388888}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.49, y: 2.6812863, z: 2.9823327}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 372060889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -42518,7 +42518,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Time: 0.3
+  m_Time: 0.2
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -55279,8 +55279,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: 0.8949345, w: -0.44619766}
   m_LocalPosition: {x: -0.65, y: -2.44, z: 0}
-  m_LocalScale: {x: 3.0381696, y: 3.2715678, z: 3.6388888}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.49, y: 2.6812863, z: 2.9823327}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 372060889}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -55326,7 +55326,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Time: 0.3
+  m_Time: 0.2
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
