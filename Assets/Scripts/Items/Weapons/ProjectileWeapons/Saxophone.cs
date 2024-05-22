@@ -38,15 +38,19 @@ public class Saxophone : ProjectileWeapon
 
     public override void Attack()
     {
-      
-        List<GameObject> closestEnemy = FindClosestEnemy(base.amountOfProjectiles);
-        if (closestEnemy != null)
-        {   
-            foreach(GameObject target in closestEnemy){
-                SoundManager.Instance.PlaySFX(attackSound, 0.7f);
-                ShootNoteAtEnemy(target);
+        if (gameObject.activeSelf)
+        {
+            List<GameObject> closestEnemy = FindClosestEnemy(base.amountOfProjectiles);
+            if (closestEnemy != null)
+            {
+                SoundManager.Instance.PlaySFX(attackSound, 0.5f);
+                foreach (GameObject target in closestEnemy)
+                {
+
+                    ShootNoteAtEnemy(target);
+                }
+                //StartCooldown();
             }
-            //StartCooldown();
         }
     }
 
