@@ -36,5 +36,5 @@ Upgrade,Uppgradering,Chill Vibe,Lugna Vibbar,Öka området för dina lugna vibba
 Upgrade,Uppgradering,Chill Vibe,Lugna Vibbar,Öka långsamheten i dina lugna vibbar med,IncreaseSlow,GetSlowIncreasePercentage,%
 Upgrade,Uppgradering,Decoy,Lockbete,Öka antalet lockbeten med,IncreaseDecoyAmount,GetDecoyAmountIncreasePerUpgrade,.
 Upgrade,Uppgradering,Decoy,Lockbete,Öka mängden hälsa dina lockbeten har med,IncreaseDecoyHealth,GetDecoyHealthAmountIncreasePerUpgrade,.
-Upgrade,Uppgradering,Personal Space,Personlig Sfär,Ökar radien med,IncreaseRadius,GetRadiusIncreasePercentage,%
-Upgrade,Uppgradering,Personal Space,Personlig Sfär,Ökar knuffkraften med,IncreaseForce,GetForceIncreasePercentage,%
+Upgrade,Uppgradering,Personal Space,Personlig Sfär,Öka radien med,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,Uppgradering,Personal Space,Personlig Sfär,Öka knuffkraften med,IncreaseForce,GetForceIncreasePercentage,%
