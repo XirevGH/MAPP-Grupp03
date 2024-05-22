@@ -222,7 +222,7 @@ public class Enemy : MonoBehaviour
             alive = false;
             Drops();
             enemyAnim.SetTrigger("Dead");
-            Invoke("DestroyGameObject", 1.8f);
+            Invoke("DestroyGameObject", 1.6f);
             Invoke("RemoveText", 0.8f);
         }
         return alive;

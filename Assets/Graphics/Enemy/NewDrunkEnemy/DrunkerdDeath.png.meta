@@ -126,12 +126,12 @@ TextureImporter:
       name: DrunkerdDeath_0
       rect:
         serializedVersion: 2
-        x: 52
+        x: 49
         y: 565
-        width: 26
+        width: 30
         height: 53
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: DrunkerdDeath_1
       rect:
         serializedVersion: 2
-        x: 176
-        y: 565
-        width: 28
+        x: 174
+        y: 566
+        width: 30
         height: 53
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,12 +168,12 @@ TextureImporter:
       name: DrunkerdDeath_2
       rect:
         serializedVersion: 2
-        x: 300
+        x: 296
         y: 566
-        width: 32
-        height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 36
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: DrunkerdDeath_3
       rect:
         serializedVersion: 2
-        x: 423
+        x: 422
         y: 567
-        width: 36
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 37
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,12 +210,12 @@ TextureImporter:
       name: DrunkerdDeath_4
       rect:
         serializedVersion: 2
-        x: 549
+        x: 547
         y: 567
-        width: 35
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 37
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -231,12 +231,12 @@ TextureImporter:
       name: DrunkerdDeath_5
       rect:
         serializedVersion: 2
-        x: 48
+        x: 47
         y: 442
-        width: 37
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 38
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -252,12 +252,12 @@ TextureImporter:
       name: DrunkerdDeath_6
       rect:
         serializedVersion: 2
-        x: 173
+        x: 171
         y: 442
-        width: 37
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 40
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,12 +273,12 @@ TextureImporter:
       name: DrunkerdDeath_7
       rect:
         serializedVersion: 2
-        x: 296
+        x: 295
         y: 442
-        width: 40
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 47
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -296,10 +296,10 @@ TextureImporter:
         serializedVersion: 2
         x: 420
         y: 442
-        width: 42
-        height: 46
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 48
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -315,12 +315,12 @@ TextureImporter:
       name: DrunkerdDeath_9
       rect:
         serializedVersion: 2
-        x: 543
+        x: 541
         y: 443
-        width: 45
-        height: 43
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 53
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -338,10 +338,10 @@ TextureImporter:
         serializedVersion: 2
         x: 41
         y: 317
-        width: 49
-        height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 56
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -359,10 +359,10 @@ TextureImporter:
         serializedVersion: 2
         x: 165
         y: 316
-        width: 51
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 60
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -380,10 +380,10 @@ TextureImporter:
         serializedVersion: 2
         x: 289
         y: 316
-        width: 52
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 62
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -401,10 +401,10 @@ TextureImporter:
         serializedVersion: 2
         x: 414
         y: 315
-        width: 51
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 63
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -422,10 +422,10 @@ TextureImporter:
         serializedVersion: 2
         x: 539
         y: 315
-        width: 51
-        height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 63
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -443,10 +443,10 @@ TextureImporter:
         serializedVersion: 2
         x: 39
         y: 190
-        width: 51
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 63
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -464,10 +464,10 @@ TextureImporter:
         serializedVersion: 2
         x: 164
         y: 190
-        width: 51
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 63
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -485,10 +485,10 @@ TextureImporter:
         serializedVersion: 2
         x: 289
         y: 189
-        width: 51
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 63
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -506,10 +506,10 @@ TextureImporter:
         serializedVersion: 2
         x: 414
         y: 189
-        width: 51
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 63
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -527,10 +527,10 @@ TextureImporter:
         serializedVersion: 2
         x: 539
         y: 189
-        width: 51
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 63
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -548,10 +548,10 @@ TextureImporter:
         serializedVersion: 2
         x: 39
         y: 64
-        width: 51
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 63
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -567,12 +567,12 @@ TextureImporter:
       name: DrunkerdDeath_24
       rect:
         serializedVersion: 2
-        x: 164
+        x: 165
         y: 64
-        width: 51
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 63
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -590,10 +590,10 @@ TextureImporter:
         serializedVersion: 2
         x: 289
         y: 64
-        width: 51
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 63
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -611,10 +611,10 @@ TextureImporter:
         serializedVersion: 2
         x: 414
         y: 64
-        width: 51
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 63
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -632,10 +632,10 @@ TextureImporter:
         serializedVersion: 2
         x: 539
         y: 64
-        width: 51
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 63
+        height: 53
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

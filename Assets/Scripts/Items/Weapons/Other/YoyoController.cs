@@ -9,9 +9,7 @@ public class YoyoController : PermanentProjectileWeapon
     private void Start()
     {
         UnityAction action1 = new UnityAction(Attack);
-        UnityAction action2 = new UnityAction(Blink);
         TriggerController.Instance.SetTrigger(triggerNumber, action1);
-        TriggerController.Instance.SetTrigger(1, action2);
     }
 
     void Update()
@@ -34,18 +32,6 @@ public class YoyoController : PermanentProjectileWeapon
                 transform.GetChild(i).GetComponent<Yoyo>().ActivateSuperMode();
             }
         }
-    }
-
-    public void Blink()
-    {
-        int totalYoyo = transform.childCount;
-
-        for (int i = 0; i < totalYoyo; i++)
-        {
-            transform.GetChild(i).GetComponent<Yoyo>().Blink();
-          
-        }
-     
     }
 
     private void SetYoyoPosition()
