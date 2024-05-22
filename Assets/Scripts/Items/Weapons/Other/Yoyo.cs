@@ -20,19 +20,12 @@ public class Yoyo : Projectile
 
     private CircleCollider2D circleColl;
 
-    public void Blink()
-    {
-
-        ball.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(Random.Range(0f, 1f), 0.7f, 1);
-    }
-
     private void Start()
     {
         upgradeOptions = new List<string> {"SuperMode", "PlusOneYoyo"};
         superMode = false;
         lerpTime = 0;
         circleColl = GetComponent<CircleCollider2D>();
-        ball.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(Random.Range(0f, 1f), 0.7f, 1);
     }
 
     private void Update()

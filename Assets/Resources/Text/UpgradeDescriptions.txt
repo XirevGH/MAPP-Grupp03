@@ -1,16 +1,16 @@
 Weapon,Weapon,Bass Guitar,Bass Guitar,Swing at your enemies in close combat with this aimable weapon.
 Weapon,Weapon,Vinyl Record,Vinyl Record,Send out Vinyl Records like boomerangs.
 Weapon,Weapon,Yoyo,Yoyo,Swing around permanent Yoyos that speed up along with the beat.
-Weapon,Weapon,Disco Ball,Launch Disco Balls into the air.
-Weapon,Weapon,Electric Guitar,Zap your nearest enemies.
-Weapon,Weapon,Saxophone,Shoot out musical notes at your nearest enemies.
-Weapon,Weapon,Break Dance,Deal damage to all enemies in your surrounding area.
-Weapon,Weapon,Synthwave Blast,Send out Synthwave Bolts in any direction.
-Utility,Utility,Roller Skates,Put on your roller skates and speed up your movement.
-Utility,Utility,Groove Armor,Put on your Groove Armor and dampen the blows of your enemies.
-Utility,Utility,Chill Vibe,Make your enemies move slower with your chill vibe.
-Utility,Utility,Decoy,Make it rain money to distract your enemies.
-Utility,Utility,Personal Space,Pushes away enemies to give yourself some space.
+Weapon,Weapon,Disco Ball,Disco Ball,Launch Disco Balls into the air.
+Weapon,Weapon,Electric Guitar,Electric Guitar,Zap your nearest enemies.
+Weapon,Weapon,Saxophone,Saxophone,Shoot out musical notes at your nearest enemies.
+Weapon,Weapon,Break Dance,Break Dance,Deal damage to all enemies in your surrounding area.
+Weapon,Weapon,Synthwave Blast,Synthwave Blast,Send out Synthwave Bolts in any direction.
+Utility,Utility,Roller Skates,Roller Skates,Put on your roller skates and speed up your movement.
+Utility,Utility,Groove Armor,Groove Armor,Put on your Groove Armor and dampen the blows of your enemies.
+Utility,Utility,Chill Vibe,Chill Vibe,Make your enemies move slower with your chill vibe.
+Utility,Utility,Decoy,Decoy,Make it rain money to distract your enemies.
+Utility,Utility,Personal Space,Personal Space,Pushes away enemies to give yourself some space.
 Upgrade,Upgrade,Bass Guitar,Bass Guitar,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
 Upgrade,Upgrade,Vinyl Record,Vinyl Record,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
 Upgrade,Upgrade,Vinyl Record,Vinyl Record,Increase the amount of Vinyl Records shot out by,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
