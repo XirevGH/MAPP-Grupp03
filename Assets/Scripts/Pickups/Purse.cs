@@ -6,46 +6,37 @@ using UnityEngine;
 
 public class Purse : Pickup
 {
+    public AudioClip SFX;
     private UpgradeSystem upgradeAbility;
     private Item item;
     private string upgradeText = "";
     private int moneyAmount;
-    public GameObject text;
-    private PursePanel panel;
-
+    private GameObject panelGameObject;
+    PursePanel panel;
+    GameController gameController;
     private void Start()
     {
         upgradeAbility = GameObject.FindGameObjectWithTag("UpgradeSystem").GetComponent<UpgradeSystem>();
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         moneyAmount = GiveRandomAmountOfMoney();
+        panelGameObject = gameController.pursePanel;
         panel = FindObjectOfType<PursePanel>(true);
+
     }
+
     protected override void IndividualPickupAction()
     {
+        panel.OpenPurseWindow();
+        SoundManager.Instance.PlaySFX(SFX, 1);
         player.currency += moneyAmount;
         UpgradeRandomItem();
-        Debug.Log(item + upgradeText);
-        GameObject textClone = Instantiate(text, new Vector3(transform.position.x, transform.position.y + 2, -0.5f), Quaternion.identity);
-        //panel.OpenPurseWindow();
-        //panel.SetAmountOfMoney(moneyAmount);
-        //panel.SetUpgradeText(upgradeText);
-        textClone.GetComponent<TextMesh>().text = GetTestPopup();
-    }
-    private String GetTestPopup()
-    {
-        StringBuilder stringBuilder = new StringBuilder();
-
-        stringBuilder.AppendFormat("you get {0} coins", moneyAmount);
-        stringBuilder.AppendLine();
-        stringBuilder.AppendFormat("And a {0}" , upgradeText);
-
-        return stringBuilder.ToString();
-
+        upgradeAbility.SetPanelContent(panelGameObject, item, upgradeAbility.GetUpgradeDescription(item, "Upgrade", upgradeText), "Upgrade");
+        
     }
 
     private void UpgradeRandomItem()
     {
         List<Item> currentPlayerItems = upgradeAbility.GetItems();
-        Debug.Log(currentPlayerItems);
         upgradeAbility.InitializeUpgradeOptions(currentPlayerItems);
         (item, upgradeText) = upgradeAbility.ChooseRandomUpgrade();
         upgradeAbility.PerformRandomizedUpgrade(item, upgradeText);

@@ -351,8 +351,8 @@ public class SoundManager : MonoBehaviour
         if (canPlay)
         {
             AudioSource audioSource = gameobject.GetComponent<AudioSource>();
-            audioSource.pitch = currentTrack.pitch;
-            //audioSource.volume = (float)UnityEngine.Random.Range(0.5f, volume);
+            audioSource.pitch = (float)UnityEngine.Random.Range(0.5f, currentTrack.pitch);
+            audioSource.volume = (float)UnityEngine.Random.Range(volume - 0.3f, volume);
             audioSource.PlayOneShot(clip, volume);
         }
 

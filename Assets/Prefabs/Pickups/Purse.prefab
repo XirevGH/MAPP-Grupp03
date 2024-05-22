@@ -99,4 +99,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   itemPickupRadius: 1
-  text: {fileID: 6147471048923451102, guid: 2cb7b88d5667a854d9cc7f2844ab1bab, type: 3}
+  SFX: {fileID: 8300000, guid: 4953fa85e3e3eb644994d71efe97e651, type: 3}
