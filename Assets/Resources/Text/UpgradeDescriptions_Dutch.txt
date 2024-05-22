@@ -1,0 +1,40 @@
+﻿Weapon,Wapen,Bass Guitar,Basgitaar,Zwaai naar je vijanden in gevechten van dichtbij met dit richtbare wapen.
+Weapon,Wapen,Vinyl Record,Vinylplaat,Stuur vinylplaten uit als boemerangs.
+Weapon,Wapen,Yoyo,Jojo,Zwaai rond permanente jojo's die versnellen met de beat.
+Weapon,Wapen,Disco Ball,Discobal,Gooi discoballen in de lucht.
+Weapon,Wapen,Electric Guitar,Elgitaar,Elektriseer je dichtstbijzijnde vijanden.
+Weapon,Wapen,Saxophone,Saxofoon,Schiet muzieknoten op je dichtstbijzijnde vijanden.
+Weapon,Wapen,Break Dance,Break Dance,Beschadig alle vijanden die dichtbij je zijn. 
+Weapon,Wapen,Synthwave Blast,Synthwave-explosie,Stuur Synthwave-schokken in elke richting.
+Utility,Voorziening,Roller Skates,Rolschaatsen,Trek uw rolschaatsen aan en versnel uw bewegingen.
+Utility,Voorziening,Groove Armor,Disco Pantser,Trek je Disco Pantser aan en demp de slagen van je vijanden.
+Utility,Voorziening,Chill Vibe,Rustige Sfeer,Laat je vijanden langzamer bewegen met je Rustige Sfeer.
+Utility,Voorziening,Decoy,Lokaas,Laat het geld regenen om je vijanden af ​​te leiden.
+Utility,Voorziening,Personal Space,Persoonlijke Ruimte,Duwt vijanden weg om jezelf meer ruimte te geven.
+Upgrade,Upgrade,Bass Guitar,Basgitaar,Verhoog de schade met,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Upgrade,Vinyl Record,Vinylplaat,Verhoog de schade met,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Upgrade,Vinyl Record,Vinylplaat,Vergroot het aantal vinylplaten dat wordt uitgegeven,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Upgrade,Vinyl Record,Vinylplaat,Verhoog het aantal doelen dat elke vinylplaat kan beschadigen,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
+Upgrade,Upgrade,Yoyo,Jojo,Verhoog de schade met,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Upgrade,Yoyo,Jojo,Verhoog het aantal jojo's met,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Upgrade,Disco Ball,Discobal,Verhoog de schade met,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Upgrade,Disco Ball,Discobal,Verhoog het aantal gelanceerde discoballen,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Upgrade,Disco Ball,Discobal,Verhoog het aantal doelen dat elke discobal kan beschadigen,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
+Upgrade,Upgrade,Electric Guitar,Elgitaar,Verhoog de schade met,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Upgrade,Electric Guitar,Elgitaar,Vergroot het aantal doelen dat de elektrische gitaar zal elektrificeren,IncreaseTetherAmount,GetTetherAmountIncreasePerUpgrade,.
+Upgrade,Upgrade,Saxophone,Saxofoon,Verhoog de schade met,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Upgrade,Saxophone,Saxofoon,Verhoog het aantal muzieknoten waarmee wordt afgevuurd,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Upgrade,Saxophone,Saxofoon,Verhoog het aantal doelen dat elke muzieknoot kan beschadigen,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
+Upgrade,Upgrade,Break Dance,Break Dance,Verhoog de schade met,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Upgrade,Break Dance,Break Dance,Vergroot de straal met,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,Upgrade,Synthwave Blast,Synthwave-explosie,Verhoog de schade met,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Upgrade,Synthwave Blast,Synthwave-explosie,Verhoog het aantal Synthwave Shock bij elke explosie die voorbij schiet,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Upgrade,Synthwave Blast,Synthwave-explosie,Verhoog het aantal doelen dat elke Synthwave Shock kan beschadigen,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
+Upgrade,Upgrade,Roller Skates,Rolschaatsen,Verhoog de bewegingssnelheid met,IncreaseMovementSpeed,GetMovementSpeedIncreasePercentage,%
+Upgrade,Upgrade,Groove Armor,Disco Pantser,Verhoog de gezondheid met,IncreaseHealth,GetHealthIncreasePercentage,%
+Upgrade,Upgrade,Chill Vibe,Rustige Sfeer,Vergroot de oppervlakte van uw rustige sfeer met,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,Upgrade,Chill Vibe,Rustige Sfeer,Verhoog de traagheid van uw rustige sfeer met,IncreaseSlow,GetSlowIncreasePercentage,%
+Upgrade,Upgrade,Decoy,Lokaas,Verhoog het aantal lokaas met,IncreaseDecoyAmount,GetDecoyAmountIncreasePerUpgrade,.
+Upgrade,Upgrade,Decoy,Lokaas,Verhoog de hoeveelheid gezondheid die uw lokaas met zich meedraagt,IncreaseDecoyHealth,GetDecoyHealthAmountIncreasePerUpgrade,.
+Upgrade,Upgrade,Personal Space,Persoonlijke Ruimte,Vergroot de straal met,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,Upgrade,Personal Space,Persoonlijke Ruimte,Verhoog de duwkracht met,IncreaseForce,GetForceIncreasePercentage,%

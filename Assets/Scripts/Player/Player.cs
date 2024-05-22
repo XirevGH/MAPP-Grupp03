@@ -68,8 +68,6 @@ public class Player : MonoBehaviour
         {
             if (child.gameObject.GetComponent<Item>() != null)
             {
-                Debug.Log(child.gameObject.name);
-
                 child.GetComponent<Item>().GetName();
                 allItems.Add(child.GetComponent<Item>());
             }

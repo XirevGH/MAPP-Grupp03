@@ -62,14 +62,16 @@ public class UpgradeSystem : MonoBehaviour
         foreach (string line in file.text.Split("\n")) {
             string[] fields = line.Split(',');
             string type = fields[0];
-            string name = fields[1];
-            string description = fields[2];
+            string translatedType = fields[1];
+            string name = fields[2];
+            string translatedName = fields[3];
+            string description = fields[4];
             if (typeOfChoice == "Upgrade" && type.Equals("Upgrade") && name.Equals(item.GetName())) {
-                string upgradeMethodName = fields[3];
+                string upgradeMethodName = fields[5];
                 if (upgradeMethodName.Equals(upgrade))
                 {
-                    string getStatIncrease = fields[4];
-                    string symbol = fields[5];
+                    string getStatIncrease = fields[6];
+                    string symbol = fields[7];
                     //Debug.Log(type);
                     //Debug.Log(name);
                     //Debug.Log(description);
