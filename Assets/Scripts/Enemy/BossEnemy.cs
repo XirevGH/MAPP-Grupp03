@@ -75,7 +75,7 @@ public class BossEnemy : Enemy
         if (IsAlive()) {
             bossCharge.UpdateCharge();
 
-            if (Vector3.Distance(player.transform.position, transform.position) < 1) {
+            if (Vector3.Distance(player.transform.position, transform.position) < 2) {
                 enemyAnim.SetTrigger("Attack");
                 player.GetComponent<Player>().TakeDamage(1);
                 
