@@ -56,7 +56,7 @@ public class UpgradeSystem : MonoBehaviour
         }
     }
 
-    private string GetUpgradeDescription(Item item, string typeOfChoice, string upgrade)
+    public string GetUpgradeDescription(Item item, string typeOfChoice, string upgrade)
     {
         var file = Resources.Load<TextAsset>("Text/UpgradeDescriptions");
         foreach (string line in file.text.Split("\n")) {
@@ -171,7 +171,7 @@ public class UpgradeSystem : MonoBehaviour
     }
 
 
-    private void SetPanelContent(GameObject panel, Item item, string textDescription, string typeOfChoice)
+    public void SetPanelContent(GameObject panel, Item item, string textDescription, string typeOfChoice)
     {
         if(typeOfChoice.Equals("Upgrade"))
         {
