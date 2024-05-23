@@ -9,7 +9,7 @@ using UnityEngine.Tilemaps;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private SceneTransition transition;
-    public GameObject pursePanel;
+    public GameObject pursePanel, canvasWorldSpace;
     public PlayerStats playerStats;
     private string playerStatsFile;
     public Camera mainCamera;

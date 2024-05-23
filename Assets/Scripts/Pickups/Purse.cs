@@ -7,6 +7,7 @@ using UnityEngine;
 public class Purse : Pickup
 {
     public AudioClip SFX;
+    public GameObject confettiLeft, confettiRight, confettiCenter;
     private UpgradeSystem upgradeAbility;
     private Item item;
     private string upgradeText = "";
@@ -27,6 +28,9 @@ public class Purse : Pickup
     protected override void IndividualPickupAction()
     {
         panel.OpenPurseWindow();
+        Instantiate(confettiLeft, gameController.canvasWorldSpace.transform);
+        Instantiate(confettiRight, gameController.canvasWorldSpace.transform);
+        Instantiate(confettiCenter, gameController.canvasWorldSpace.transform);
         SoundManager.Instance.PlaySFX(SFX, 1);
         player.currency += moneyAmount;
         UpgradeRandomItem();
