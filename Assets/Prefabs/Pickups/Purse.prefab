@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   itemPickupRadius: 1
-  SFX: {fileID: 8300000, guid: 4953fa85e3e3eb644994d71efe97e651, type: 3}
+  SFX: {fileID: 8300000, guid: 3cb26614b5298ae47aa992e03edd56e8, type: 3}
   confettiLeft: {fileID: 4368079704156183935, guid: ea3173dfb29db0c4dbccab0e8a07b411, type: 3}
   confettiRight: {fileID: 9049254798051967236, guid: ef6ea6e770217e042b2357228d5f536b, type: 3}
   confettiCenter: {fileID: 1003694481400735471, guid: 8186de894dfc2cf41a583fa55019dcb9, type: 3}

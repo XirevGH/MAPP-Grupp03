@@ -28,9 +28,19 @@ public class Purse : Pickup
     protected override void IndividualPickupAction()
     {
         panel.OpenPurseWindow();
-        Instantiate(confettiLeft, gameController.canvasWorldSpace.transform);
-        Instantiate(confettiRight, gameController.canvasWorldSpace.transform);
-        Instantiate(confettiCenter, gameController.canvasWorldSpace.transform);
+        GameObject confettiLeftClone = Instantiate(confettiLeft, gameController.canvasWorldSpace.transform);
+        GameObject confettiRightClone = Instantiate(confettiRight, gameController.canvasWorldSpace.transform);
+        GameObject confettiCenterClone = Instantiate(confettiCenter, gameController.canvasWorldSpace.transform);
+
+        var mainModuleLeft = confettiLeftClone.GetComponent<ParticleSystem>().main;
+        mainModuleLeft.useUnscaledTime = true;
+
+        var mainModuleRight = confettiRightClone.GetComponent<ParticleSystem>().main;
+        mainModuleRight.useUnscaledTime = true;
+
+        var mainModuleCenter = confettiCenterClone.GetComponent<ParticleSystem>().main;
+        mainModuleCenter.useUnscaledTime = true;
+
         SoundManager.Instance.PlaySFX(SFX, 1);
         player.currency += moneyAmount;
         UpgradeRandomItem();
