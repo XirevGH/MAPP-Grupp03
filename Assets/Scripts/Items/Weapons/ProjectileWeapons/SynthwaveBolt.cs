@@ -16,11 +16,11 @@ public class SynthwaveBolt : Projectile
     {
         if (transform.localScale.x < 1)
         {
-            transform.localScale = new Vector2(transform.localScale.x + 0.2f, transform.localScale.y);
+            transform.localScale = new Vector2(transform.localScale.x + 0.1f, transform.localScale.y);
         }
         else
         {
-            transform.localPosition = new Vector2(transform.localPosition.x + 3f, transform.localPosition.y);
+            transform.localPosition = new Vector2(transform.localPosition.x + 0.8f, transform.localPosition.y);
         }
     }
 
