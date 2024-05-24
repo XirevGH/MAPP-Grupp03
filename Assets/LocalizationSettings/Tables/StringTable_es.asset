@@ -146,6 +146,46 @@ MonoBehaviour:
     m_Localized: Espacio Personal
     m_Metadata:
       m_Items: []
+  - m_Id: 8357953313185792
+    m_Localized: Divisa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8358562661670912
+    m_Localized: Proyectil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8359087528484864
+    m_Localized: "Penetraci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8359581135151104
+    m_Localized: Objetivos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8360250135027712
+    m_Localized: Radio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8361018439245824
+    m_Localized: Velocidad de movimiento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8361289215123456
+    m_Localized: Salud
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8361631747153920
+    m_Localized: Lentitud
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8361958433103872
+    m_Localized: Cantidad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8362307776684032
+    m_Localized: Fuerza
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

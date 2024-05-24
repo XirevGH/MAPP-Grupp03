@@ -146,6 +146,46 @@ MonoBehaviour:
     m_Localized: "Personlig Sf\xE4r"
     m_Metadata:
       m_Items: []
+  - m_Id: 8357953313185792
+    m_Localized: Valuta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8358562661670912
+    m_Localized: Projektil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8359087528484864
+    m_Localized: Penetration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8359581135151104
+    m_Localized: "M\xE5ltavlor"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8360250135027712
+    m_Localized: Radius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8361018439245824
+    m_Localized: "R\xF6relsehastighet"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8361289215123456
+    m_Localized: "H\xE4sla"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8361631747153920
+    m_Localized: "L\xE5ngsamhet"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8361958433103872
+    m_Localized: "M\xE4ngd"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8362307776684032
+    m_Localized: Kraft
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

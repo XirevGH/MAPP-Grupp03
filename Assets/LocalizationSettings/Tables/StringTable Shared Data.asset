@@ -143,6 +143,46 @@ MonoBehaviour:
     m_Key: Personal Space
     m_Metadata:
       m_Items: []
+  - m_Id: 8357953313185792
+    m_Key: Currency
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8358562661670912
+    m_Key: Projectile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8359087528484864
+    m_Key: Penetration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8359581135151104
+    m_Key: Targets
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8360250135027712
+    m_Key: Radius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8361018439245824
+    m_Key: Movement Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8361289215123456
+    m_Key: Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8361631747153920
+    m_Key: Slow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8361958433103872
+    m_Key: Amount
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8362307776684032
+    m_Key: Force
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
