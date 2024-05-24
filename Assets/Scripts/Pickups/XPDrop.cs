@@ -1,39 +1,29 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
+
 public class XPDrop : Pickup
-{   [SerializeField] private ParticleSystem particleSystem;
-    [SerializeField] private Material biggXpDropMaterial; 
-    [SerializeField] private Material mediumXpDropMaterial; 
-    [SerializeField] private Material smallXpDropMaterial; 
-    [SerializeField] private SpriteRenderer circle;
+{   [SerializeField] private SpriteRenderer spriteRenderer;
+    
+    [SerializeField] private Sprite biggXpDropSprite; 
+    public Vector3 biggXpSize;
     public int biggMaxXpValue;
+
+    [SerializeField] private Sprite mediumXpDropSprite; 
+    public Vector3 mediumXpSize;
     public int mediumMaxXpValue;
+
+    [SerializeField] private Sprite smallXpDropSprite;
+    public Vector3 smallXpSize;
     public int smallMaxXpValue;
-
-
+    
     [SerializeField] private int XP;
 
-    private ParticleSystemRenderer particleSystemRenderer;
-
-    private void Awake()
-    {
-        particleSystemRenderer = particleSystem.GetComponent<ParticleSystemRenderer>();
-        SetXpType();
-    }
-    
     public XPDrop Initialize(int initialXP)
     {   move = false;
         XP = initialXP;
+
         SetXpType();
         return this;  
     }
-
-    
-    
 
     public new void MoveToPlayer()
     {   
@@ -63,31 +53,21 @@ public class XPDrop : Pickup
         }
     }
     
-    public void SetXpToBiggXp()
-    {
+    public void SetXpToBiggXp(){
         XPDropPool.Instance.SetAsBiggXp(this);
-        particleSystemRenderer.material = biggXpDropMaterial;
-        particleSystemRenderer.trailMaterial = biggXpDropMaterial;
-        circle.material = biggXpDropMaterial;
-        
+        spriteRenderer.sprite = biggXpDropSprite;
+        transform.localScale = biggXpSize;
     }
-
-    public void SetXpToMediumXp()
-    {
+    public void SetXpToMediumXp(){
         XPDropPool.Instance.SetAsMediumXp(this);
-        particleSystemRenderer.material = mediumXpDropMaterial;
-        particleSystemRenderer.trailMaterial = mediumXpDropMaterial;
-        circle.material = mediumXpDropMaterial;
-        
+        spriteRenderer.sprite = mediumXpDropSprite;
+        transform.localScale = mediumXpSize;
     }
 
-    public void SetXpToSmallXp()
-    {
+    public void SetXpToSmallXp(){
         XPDropPool.Instance.SetAsSmallXp(this); 
-        particleSystemRenderer.material = smallXpDropMaterial;
-        particleSystemRenderer.trailMaterial = smallXpDropMaterial;
-        circle.material = smallXpDropMaterial;
-        
+        spriteRenderer.sprite = smallXpDropSprite;
+        transform.localScale = smallXpSize;
     }
     public int NeededXpForNextLevel()
     {

@@ -18,8 +18,8 @@ public class SoundManager : MonoBehaviour
     public Scene currentScene;
     public AudioMixerSnapshot lowPassSnapshots, normalSnapshots;
     public bool isOnePlaying, isLowPassOn, isInMenu, hasRun, isTimeToChange;
-    public int currentTrackNumber, currentBPM, currentPitchAdjustedBPM;
-
+    public int currentTrackNumber, currentBPM;
+    public float currentPitchAdjustedBPM;
 
     [Header("Beat relateted")]
     [SerializeField] private float timeToChange;
@@ -304,7 +304,7 @@ public class SoundManager : MonoBehaviour
 
         float musicSpeedChange = ((float)BPMBetweenTracks / (float)currentBPM / (float)beatThreshold);
         int direction = increasePitch ? 1 : -1;
-        currentPitchAdjustedBPM += direction * (BPMBetweenTracks / beatThreshold);
+        currentPitchAdjustedBPM += (float)direction * ((float)BPMBetweenTracks / (float)beatThreshold);
         float nextPitch = currentTrack.pitch + (musicSpeedChange * direction);
 
         if (currentPitchAdjustedBPM > maxBPM)
