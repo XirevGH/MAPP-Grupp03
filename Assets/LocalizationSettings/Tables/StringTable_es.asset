@@ -114,6 +114,22 @@ MonoBehaviour:
     m_Localized: Apagado
     m_Metadata:
       m_Items: []
+  - m_Id: 8352006402482176
+    m_Localized: Disco De Vinilo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8352291661291520
+    m_Localized: "Yoy\xF3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8353138180890624
+    m_Localized: Break Dance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8353429462720512
+    m_Localized: "Explosi\xF3n De Onda Sint\xE9tica"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
