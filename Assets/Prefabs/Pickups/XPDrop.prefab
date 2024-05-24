@@ -110,16 +110,16 @@ MonoBehaviour:
   speed: 20
   itemPickupRadius: 3
   spriteRenderer: {fileID: 8449104146653439331}
-  biggXpDropSprite: {fileID: 21300000, guid: 70141d51621e24facbca9196bbde84b4, type: 3}
-  biggXpSize: {x: 0.2, y: 0.2, z: 0}
+  particleSystem: {fileID: 2050496183805389482}
+  biggXpDropMaterial: {fileID: 2100000, guid: 9dc45b983ce9b2b448f55dee70bf3b01, type: 2}
+  mediumXpDropMaterial: {fileID: 2100000, guid: 59ce68f8dc1d1514fb1247bd63d14fb6, type: 2}
+  smallXpDropMaterial: {fileID: 2100000, guid: 1c3d3eea4b4cb644ea6188f568f0ee12, type: 2}
+  circle: {fileID: 1613325581015159923}
+  originalBlueColor: {r: 0, g: 0.38431373, b: 0.58431375, a: 0}
   biggMaxXpValue: 10000
-  mediumXpDropSprite: {fileID: 21300000, guid: 70141d51621e24facbca9196bbde84b4, type: 3}
-  mediumXpSize: {x: 0.15, y: 0.15, z: 0}
   mediumMaxXpValue: 500
-  smallXpDropSprite: {fileID: 21300000, guid: 70141d51621e24facbca9196bbde84b4, type: 3}
-  smallXpSize: {x: 0.1, y: 0.1, z: 0}
   smallMaxXpValue: 25
-  XP: 25
+  XP: 400
 --- !u!95 &6385122906642026408
 Animator:
   serializedVersion: 5
