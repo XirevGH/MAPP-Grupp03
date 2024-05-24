@@ -83,6 +83,106 @@ MonoBehaviour:
     m_Key: Saxophone text
     m_Metadata:
       m_Items: []
+  - m_Id: 8331149441507328
+    m_Key: Pause Button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8331814695870464
+    m_Key: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8332313407004672
+    m_Key: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8333080310325248
+    m_Key: Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8333918634254336
+    m_Key: Right
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8335663439552512
+    m_Key: On
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8335870160019456
+    m_Key: Off
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8352006402482176
+    m_Key: Vinyl Record
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8352291661291520
+    m_Key: Yoyo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8353138180890624
+    m_Key: Break Dance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8353429462720512
+    m_Key: Synthwave Blast
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8354362082992128
+    m_Key: Groove Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8354836303585280
+    m_Key: Chill Vibe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8355547594629120
+    m_Key: Decoy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8355993570779136
+    m_Key: Personal Space
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8357953313185792
+    m_Key: Currency
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8358562661670912
+    m_Key: Projectile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8359087528484864
+    m_Key: Penetration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8359581135151104
+    m_Key: Targets
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8360250135027712
+    m_Key: Radius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8361018439245824
+    m_Key: Movement Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8361289215123456
+    m_Key: Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8361631747153920
+    m_Key: Slow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8361958433103872
+    m_Key: Amount
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8362307776684032
+    m_Key: Force
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

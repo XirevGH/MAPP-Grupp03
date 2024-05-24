@@ -86,6 +86,106 @@ MonoBehaviour:
     m_Localized: "Saxof\xF3n"
     m_Metadata:
       m_Items: []
+  - m_Id: 8331149441507328
+    m_Localized: "Bot\xF3n de pausa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8331814695870464
+    m_Localized: Continuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8332313407004672
+    m_Localized: "Men\xFA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8333080310325248
+    m_Localized: Izquierda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8333918634254336
+    m_Localized: Bien
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8335663439552512
+    m_Localized: En
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8335870160019456
+    m_Localized: Apagado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8352006402482176
+    m_Localized: Disco De Vinilo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8352291661291520
+    m_Localized: "Yoy\xF3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8353138180890624
+    m_Localized: Break Dance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8353429462720512
+    m_Localized: "Explosi\xF3n De Onda Sint\xE9tica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8354362082992128
+    m_Localized: Armadura De Discoteca
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8354836303585280
+    m_Localized: Ambiente Relajado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8355547594629120
+    m_Localized: "Se\xF1uelo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8355993570779136
+    m_Localized: Espacio Personal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8357953313185792
+    m_Localized: Divisa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8358562661670912
+    m_Localized: Proyectil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8359087528484864
+    m_Localized: "Penetraci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8359581135151104
+    m_Localized: Objetivos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8360250135027712
+    m_Localized: Radio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8361018439245824
+    m_Localized: Velocidad de movimiento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8361289215123456
+    m_Localized: Salud
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8361631747153920
+    m_Localized: Lentitud
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8361958433103872
+    m_Localized: Cantidad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8362307776684032
+    m_Localized: Fuerza
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
