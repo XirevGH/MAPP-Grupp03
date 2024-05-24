@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77dd2effbcb5b94982211b3bb4118fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySprite: {fileID: 21300000, guid: 29b8918923ac85341a22275f7aad2f64, type: 3}
+  rend: {fileID: 0}
   drops:
   - item: {fileID: 2322821042000343324, guid: 73e8c7fac64e160469ab7a30447b8bc1, type: 3}
     dropChance: 60
