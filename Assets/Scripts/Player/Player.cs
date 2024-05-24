@@ -229,7 +229,7 @@ public class Player : MonoBehaviour
     public void AddXP(int amountToAdd)
     {
         xpHeld += amountToAdd;
-        UpdateXPSlider();
+        StartCoroutine(UpdateXPSlider());
         CheckForLevelUp();
     }
 
@@ -250,16 +250,33 @@ public class Player : MonoBehaviour
         xpToLevel *= 1.4f;
         level++;
         levelText.text = "Level: " + level;
-        UpdateXPSlider();
+        StartCoroutine(UpdateXPSlider());
         ResultManager.Instance.mainLevel = level;
         upgradeScreen.OpenUpgradeWindow();
         upgradeSystem.StartUpgradeSystem();
     }
 
-    private void UpdateXPSlider()
+    //private void UpdateXPSlider()
+    //{
+    //    xpSlider.value = (float)xpHeld / xpToLevel;
+    //}
+
+
+    private IEnumerator UpdateXPSlider()
     {
-        xpSlider.value = (float)xpHeld / xpToLevel;
+        float elapsedTime = 0;
+        float timeToChange = 0.5f;
+        float currentValue = xpSlider.value;
+        float nextValue = xpHeld / xpToLevel;
+
+        while (elapsedTime <= timeToChange)
+        {
+            elapsedTime += Time.unscaledDeltaTime;
+            xpSlider.value = Mathf.Lerp(currentValue, nextValue, elapsedTime / timeToChange);
+            yield return null;
+        }
     }
+
     #endregion
 
     public void AddItem(Item item)

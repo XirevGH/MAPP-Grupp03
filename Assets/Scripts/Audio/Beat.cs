@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Beat : MonoBehaviour
 {
-    [SerializeField] private float increaseCooldownDuration, reduceCooldownDuration, MusicSpeedChange, timeToChange;
     [SerializeField] private GameObject sprite, circle, particle;
     [SerializeField] private AudioClip collectedSound, notCollectedSound;
     private float percentageComplete, elapsedTime, beatLife;
@@ -25,8 +24,8 @@ public class Beat : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             percentageComplete = elapsedTime / beatLife;
-            sprite.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, percentageComplete);
-            circle.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, percentageComplete);
+            //sprite.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, percentageComplete);
+            //circle.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, percentageComplete);
             circle.transform.localScale = Vector3.Lerp(circleStartingScale, new Vector3(0, 0, 0), percentageComplete);
         }
 
