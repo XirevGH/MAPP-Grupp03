@@ -32,5 +32,6 @@ public class SettingsManager : MonoBehaviour
     public void ChangePauseButtonSides(bool isSetOnRight)
     {
         this.isSetOnRight = isSetOnRight;
+        Debug.Log("IsSetOnRight is: " + isSetOnRight);
     }
 }
