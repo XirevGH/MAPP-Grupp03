@@ -111,13 +111,13 @@ MonoBehaviour:
   itemPickupRadius: 3
   spriteRenderer: {fileID: 8449104146653439331}
   biggXpDropSprite: {fileID: 21300000, guid: 70141d51621e24facbca9196bbde84b4, type: 3}
-  biggXpSize: {x: 0.2, y: 0.2, z: 0.2}
+  biggXpSize: {x: 0.2, y: 0.2, z: 0}
   biggMaxXpValue: 10000
   mediumXpDropSprite: {fileID: 21300000, guid: 70141d51621e24facbca9196bbde84b4, type: 3}
-  mediumXpSize: {x: 0.15, y: 0.15, z: 0.15}
+  mediumXpSize: {x: 0.15, y: 0.15, z: 0}
   mediumMaxXpValue: 500
   smallXpDropSprite: {fileID: 21300000, guid: 70141d51621e24facbca9196bbde84b4, type: 3}
-  smallXpSize: {x: 0.1, y: 0.1, z: 0.1}
+  smallXpSize: {x: 0.1, y: 0.1, z: 0}
   smallMaxXpValue: 25
   XP: 25
 --- !u!95 &6385122906642026408

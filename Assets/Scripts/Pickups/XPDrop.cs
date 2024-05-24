@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
+
 public class XPDrop : Pickup
 {   [SerializeField] private SpriteRenderer spriteRenderer;
     
@@ -21,8 +17,6 @@ public class XPDrop : Pickup
     
     [SerializeField] private int XP;
 
-
-    
     public XPDrop Initialize(int initialXP)
     {   move = false;
         XP = initialXP;
@@ -30,9 +24,6 @@ public class XPDrop : Pickup
         SetXpType();
         return this;  
     }
-
-    
-    
 
     public new void MoveToPlayer()
     {   
