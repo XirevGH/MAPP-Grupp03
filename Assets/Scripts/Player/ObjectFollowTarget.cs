@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectFollowPlayer : MonoBehaviour
+public class ObjectFollowTarget : MonoBehaviour
 {
     public float followSpeed = 6f;
     public float yOffset = 1f;
-    private Player target;
+    public GameObject target;
 
     private void Awake()
     {
-        target = FindObjectOfType<Player>();
+        if (target == null)
+        {
+            target = FindObjectOfType<Player>().gameObject;
+        }
     }
     void FixedUpdate()
     {

@@ -2139,6 +2139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followSpeed: 2
   yOffset: 0
+  target: {fileID: 0}
 --- !u!95 &519420034
 Animator:
   serializedVersion: 5
@@ -12500,6 +12501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followSpeed: 1000
   yOffset: 0
+  target: {fileID: 519420028}
 --- !u!1 &1976371858
 GameObject:
   m_ObjectHideFlags: 0
