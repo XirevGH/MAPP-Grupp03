@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     [SerializeField] private List<Item> currentItems;
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private AudioClip levelUpSound;
-
+    [SerializeField] private AudioClip hitSound;
     private UpgradeSystem upgradeSystem;
     private UpgradePanel upgradeScreen;
     private Slider xpSlider;
@@ -114,6 +114,7 @@ public class Player : MonoBehaviour
             ColorPlayerSprite(true);
             continuousDamageTime += Time.deltaTime;
             ScaleParticleLifetime(continuousDamageTime);
+            SoundManager.Instance.PlaySFX(hitSound, 1);
         }
         if (takingDamagePeriod <= 0)
         {

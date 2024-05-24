@@ -17,7 +17,7 @@ public class BreakDance : Weapon
     private void Start()
     {
         UnityAction action = new UnityAction(Attack);
-        TriggerController.Instance.SetTrigger(0, action);
+        TriggerController.Instance.SetTrigger(4, action);
         anim = GetComponent<Animator>();
     }
 
@@ -69,12 +69,16 @@ public class BreakDance : Weapon
 
     public override void Attack()
     {
-        anim.SetTrigger("Attack");
-        foreach(GameObject enemy in enemies) 
+        if (gameObject.activeSelf)
         {
-            if(enemy.gameObject != null)
+            anim.SetTrigger("Attack");
+            SoundManager.Instance.PlaySFX(attackSound, 1);
+            foreach (GameObject enemy in enemies)
             {
-                enemy.GetComponent<Enemy>().TakeDamage(damage);
+                if (enemy.gameObject != null)
+                {
+                    enemy.GetComponent<Enemy>().TakeDamage(damage);
+                }
             }
         }
     }
