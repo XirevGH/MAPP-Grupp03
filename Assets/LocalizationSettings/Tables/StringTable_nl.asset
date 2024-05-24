@@ -86,6 +86,34 @@ MonoBehaviour:
     m_Localized: Saxofoon
     m_Metadata:
       m_Items: []
+  - m_Id: 8331149441507328
+    m_Localized: Pauzeknop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8331814695870464
+    m_Localized: Doorgaan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8332313407004672
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8333080310325248
+    m_Localized: Links
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8333918634254336
+    m_Localized: Rechts
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8335663439552512
+    m_Localized: Op
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8335870160019456
+    m_Localized: Uit
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

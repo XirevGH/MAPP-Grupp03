@@ -86,6 +86,34 @@ MonoBehaviour:
     m_Localized: Saxofon
     m_Metadata:
       m_Items: []
+  - m_Id: 8331149441507328
+    m_Localized: Pausknapp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8331814695870464
+    m_Localized: "\xC5terg\xE5"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8332313407004672
+    m_Localized: Meny
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8333080310325248
+    m_Localized: "V\xE4nster"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8333918634254336
+    m_Localized: "H\xF6ger"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8335663439552512
+    m_Localized: "P\xE5"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8335870160019456
+    m_Localized: Av
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

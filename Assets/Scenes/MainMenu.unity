@@ -2289,7 +2289,7 @@ MonoBehaviour:
   myMixer: {fileID: 24100000, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}
   musicSlider: {fileID: 22061624}
   SFXSlider: {fileID: 1441627578}
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 610686734}
   pauseMenu: {fileID: 0}
   pauseButtonRectTransform: {fileID: 0}
 --- !u!1 &63573628
@@ -28118,7 +28118,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 99.1
+  m_fontSize: 92.45
   m_fontSizeBase: 73.26
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -39914,7 +39914,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 138.65
+  m_fontSize: 147.2
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -61292,7 +61292,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 107.8
+  m_fontSize: 114.6
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -64007,7 +64007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3107362561719993206, guid: 005f4b37b96997747b938601cacd5dc1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3184757497871401548, guid: 005f4b37b96997747b938601cacd5dc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -64103,23 +64103,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3851437908341262648, guid: 005f4b37b96997747b938601cacd5dc1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.4339434
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3851437908341262648, guid: 005f4b37b96997747b938601cacd5dc1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3851437908341262648, guid: 005f4b37b96997747b938601cacd5dc1, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.4339434
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4214735630869912822, guid: 005f4b37b96997747b938601cacd5dc1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.4339434
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4214735630869912822, guid: 005f4b37b96997747b938601cacd5dc1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6030915761411844820, guid: 005f4b37b96997747b938601cacd5dc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -64155,15 +64155,15 @@ PrefabInstance:
       objectReference: {fileID: 668755574}
     - target: {fileID: 6977027265925278023, guid: 005f4b37b96997747b938601cacd5dc1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.4339434
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6977027265925278023, guid: 005f4b37b96997747b938601cacd5dc1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6977027265925278023, guid: 005f4b37b96997747b938601cacd5dc1, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.4339434
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7083624823417179555, guid: 005f4b37b96997747b938601cacd5dc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -64179,11 +64179,11 @@ PrefabInstance:
       objectReference: {fileID: 61601751}
     - target: {fileID: 7463293209909826077, guid: 005f4b37b96997747b938601cacd5dc1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.4339434
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7463293209909826077, guid: 005f4b37b96997747b938601cacd5dc1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7822786889282415537, guid: 005f4b37b96997747b938601cacd5dc1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

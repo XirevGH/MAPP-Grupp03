@@ -86,6 +86,34 @@ MonoBehaviour:
     m_Localized: Saxophone
     m_Metadata:
       m_Items: []
+  - m_Id: 8331149441507328
+    m_Localized: Pause Button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8331814695870464
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8332313407004672
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8333080310325248
+    m_Localized: Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8333918634254336
+    m_Localized: Right
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8335663439552512
+    m_Localized: On
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8335870160019456
+    m_Localized: Off
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
