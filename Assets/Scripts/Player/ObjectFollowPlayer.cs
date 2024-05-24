@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class ObjectFollowPlayer : MonoBehaviour
 {
     public float followSpeed = 6f;
     public float yOffset = 1f;
-    public Player target;
+    private Player target;
 
     private void Awake()
     {

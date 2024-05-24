@@ -56,7 +56,7 @@ TagManager:
   - PlayerLight
   - XPLight
   - FloorLight
-  - 
+  - WorldSpaceCanvas
   - 
   - 
   - 
@@ -78,6 +78,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: test
+  - name: Canvas
     uniqueID: 1013990051
     locked: 0
