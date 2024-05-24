@@ -59,7 +59,6 @@ public class GameController : MonoBehaviour
     {
         SoundManager.Instance.GetComponent<SoundManager>().Die();
         File.WriteAllText(playerStatsFile, playerStats.SaveToString());
-        ResultManager.Instance.CompileText();
         transition.ChangeScene();
     }
 
