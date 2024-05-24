@@ -130,6 +130,22 @@ MonoBehaviour:
     m_Localized: "Synthwave St\xF6t"
     m_Metadata:
       m_Items: []
+  - m_Id: 8354362082992128
+    m_Localized: Disco Rustning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8354836303585280
+    m_Localized: Lugna Vibbar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8355547594629120
+    m_Localized: Lockbete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8355993570779136
+    m_Localized: "Personlig Sf\xE4r"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

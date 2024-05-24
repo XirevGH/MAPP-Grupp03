@@ -8,7 +8,7 @@ Weapon,Arma,Break Dance,Break Dance,Inflige daño a todos los enemigos en el ár
 Weapon,Arma,Synthwave Blast,Explosión De Onda Sintética,Envía una explosión de ondas sintéticas en cualquier dirección.
 Utility,Utilidad,Roller Skates,Patines,Ponte tus patines y acelera tu movimiento.
 Utility,Utilidad,Groove Armor,Armadura De Discoteca,Ponte tu Armadura De Discoteca y amortigua los golpes de tus enemigos.
-Utility,Utilidad,Chill Vibe,Ambiente RelajadoHaz que tus enemigos se mueven más lento con tu Ambiente Relajado.
+Utility,Utilidad,Chill Vibe,Ambiente Relajado,que tus enemigos se mueven más lento con tu Ambiente Relajado.
 Utility,Utilidad,Decoy,Señuelo,Haz llover dinero para distraer a tus enemigos.
 Utility,Utilidad,Personal Space,Espacio Personal,Aleja a los enemigos para darte más espacio.
 Upgrade,Mejora,Bass Guitar,Bajo Electrico,Aumentar el daño por,IncreaseDamage,GetDamageIncreasePercentage,%
