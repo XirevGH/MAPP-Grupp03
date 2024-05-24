@@ -158,7 +158,7 @@ public class Player : MonoBehaviour
             if (!vibrating)
             {
                 vibrationTime = 1f;
-                Handheld.Vibrate();
+             //   Handheld.Vibrate();
                 Debug.Log("I'm vibrating");
                 vibrating = true;
             }
@@ -215,12 +215,13 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-        Handheld.Vibrate();
+    //    Handheld.Vibrate();
         StopParticles();
         SoundManager.Instance.PlaySFX(deathSound, 1.5f);
         isAlive = false;
         MetaUpgradeSystem.Instance.AddCurrency(currency);
         ResultManager.Instance.moneyEarned += currency;
+        ResultManager.Instance.currentItems = GetCurrentItems();
         gameController.GameOver();
     }
     #endregion

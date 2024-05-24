@@ -22090,10 +22090,12 @@ MonoBehaviour:
   timerText: {fileID: 3095667434961151154, guid: ea123d5ad32fcc34f987ef3e49be0304, type: 3}
   enemiesDefeatedText: {fileID: 4704084059594391430, guid: 410163a0795c9334498bb9d2e18eaebc, type: 3}
   moneyEarnedText: {fileID: 9167483687933025870, guid: f74ac1888e5efd74f9b48c349a43bb3b, type: 3}
+  playerItemsText: {fileID: 5291780898484335703, guid: 542f18c96f9124d43bf7802f49a32d71, type: 3}
   timeText: 
   mainLevel: 1
   enemiesDefeated: 0
   moneyEarned: 0
+  currentItems: []
 --- !u!4 &768095923
 Transform:
   m_ObjectHideFlags: 0
@@ -28118,7 +28120,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 99.1
+  m_fontSize: 99
   m_fontSizeBase: 73.26
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -39914,7 +39916,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 138.65
+  m_fontSize: 138.75
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -61292,7 +61294,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 107.8
+  m_fontSize: 107.85
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1

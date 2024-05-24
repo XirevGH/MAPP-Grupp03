@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Text;
 using TMPro;
 using UnityEngine;
 
@@ -8,7 +10,8 @@ public class ResultManager : MonoBehaviour
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private TMP_Text enemiesDefeatedText;
     [SerializeField] private TMP_Text moneyEarnedText;
-   
+    [SerializeField] private TMP_Text playerItemsText;
+
 
     public static ResultManager Instance;
 
@@ -16,8 +19,10 @@ public class ResultManager : MonoBehaviour
     public int mainLevel;
     public int enemiesDefeated;
     public int moneyEarned;
+    public List<Item> currentItems;
 
- 
+    
+
 
     private void Awake()
     {
@@ -26,10 +31,12 @@ public class ResultManager : MonoBehaviour
             //  gameObject.SetActive(false);
             //  Destroy(Instance.gameObject);
             Destroy(gameObject);
+            Debug.Log("ResultManager Destroyed");
             return;
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        Debug.Log("ResultManager initialized");
     }
 
     public void CompileText() {
@@ -37,6 +44,19 @@ public class ResultManager : MonoBehaviour
         levelText.text = "" + mainLevel;
         timerText.text = "" + timeText;
         enemiesDefeatedText.text = "" + enemiesDefeated;
+  
+
+        StringBuilder playerItemsBuilder = new StringBuilder();
+        for(int i = 0; i < currentItems.Count; i++)
+        {
+            playerItemsBuilder.Append(currentItems[i].name);
+            if(i < currentItems.Count - 1)
+            {
+                playerItemsBuilder.Append(", ");
+            }
+ 
+        }
+        playerItemsText.text = playerItemsBuilder.ToString();
     }
    
 
