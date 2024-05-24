@@ -116,8 +116,8 @@ MonoBehaviour:
   smallXpDropMaterial: {fileID: 2100000, guid: 1c3d3eea4b4cb644ea6188f568f0ee12, type: 2}
   circle: {fileID: 1613325581015159923}
   originalBlueColor: {r: 0, g: 0.38431373, b: 0.58431375, a: 0}
-  biggMaxXpValue: 10000
-  mediumMaxXpValue: 500
+  biggMaxXpValue: 800
+  mediumMaxXpValue: 400
   smallMaxXpValue: 25
   XP: 400
 --- !u!95 &6385122906642026408
