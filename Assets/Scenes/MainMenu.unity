@@ -17891,6 +17891,9 @@ MonoBehaviour:
   xpHeld: 0
   xpToLevel: 100
   level: 1
+  confettiLeft: {fileID: 4368079704156183935, guid: ea3173dfb29db0c4dbccab0e8a07b411, type: 3}
+  confettiRight: {fileID: 9049254798051967236, guid: ef6ea6e770217e042b2357228d5f536b, type: 3}
+  confettiCenter: {fileID: 1003694481400735471, guid: 8186de894dfc2cf41a583fa55019dcb9, type: 3}
 --- !u!114 &543497619
 MonoBehaviour:
   m_ObjectHideFlags: 0

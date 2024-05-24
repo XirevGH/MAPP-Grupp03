@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     public float xpHeld;
     public float xpToLevel;
     public int level;
-
+    public GameObject confettiLeft, confettiRight, confettiCenter;
 
     private bool isAlive = true;
     private bool isTakingDamage = false;
@@ -253,6 +253,18 @@ public class Player : MonoBehaviour
         levelText.text = "Level: " + level;
         StartCoroutine(UpdateXPSlider());
         ResultManager.Instance.mainLevel = level;
+        GameObject confettiLeftClone = Instantiate(confettiLeft, gameController.canvasWorldSpace.transform);
+        GameObject confettiRightClone = Instantiate(confettiRight, gameController.canvasWorldSpace.transform);
+        GameObject confettiCenterClone = Instantiate(confettiCenter, gameController.canvasWorldSpace.transform);
+
+        var mainModuleLeft = confettiLeftClone.GetComponent<ParticleSystem>().main;
+        mainModuleLeft.useUnscaledTime = true;
+
+        var mainModuleRight = confettiRightClone.GetComponent<ParticleSystem>().main;
+        mainModuleRight.useUnscaledTime = true;
+
+        var mainModuleCenter = confettiCenterClone.GetComponent<ParticleSystem>().main;
+        mainModuleCenter.useUnscaledTime = true;
         upgradeScreen.OpenUpgradeWindow();
         upgradeSystem.StartUpgradeSystem();
     }
