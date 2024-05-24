@@ -18156,6 +18156,7 @@ MonoBehaviour:
   currentItems: []
   deathSound: {fileID: 8300000, guid: e8601fc35a9bc0b4ba3871b84b3ef2fb, type: 3}
   levelUpSound: {fileID: 8300000, guid: b2a0fd55a83c06b4e936c1aa49f641fc, type: 3}
+  hitSound: {fileID: 8300000, guid: ff99c7fdbdc74b34d88d1065bca06d26, type: 3}
   currency: 0
   maxHealth: 100
   health: 100
@@ -21340,7 +21341,7 @@ MonoBehaviour:
   damageRank: 0
   damageUpgradeCost: 350
   percentageDamageIncrease: 20
-  attackSound: {fileID: 0}
+  attackSound: {fileID: 8300000, guid: cf41625681786034dbca85b54250d18c, type: 3}
   radiusIncreasePercentage: 10
   radiusRank: 0
   radiusUpgradeCost: 100
@@ -30834,7 +30835,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 81.5
+  m_fontSize: 85.5
   m_fontSizeBase: 73.26
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -43184,7 +43185,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 160
+  m_fontSize: 157.2
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -67862,7 +67863,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 127.55
+  m_fontSize: 122.5
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1

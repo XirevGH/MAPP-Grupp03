@@ -14,7 +14,8 @@ public class SynthwaveBlast : ProjectileWeapon
 
     public override void Attack()
     {
-        if (gameObject.activeSelf) {
+        if (gameObject.activeSelf) 
+        {
 
             SoundManager.Instance.PlaySFX(attackSound, 1);
             for (int i = 0; i < amountOfProjectiles; i++) {

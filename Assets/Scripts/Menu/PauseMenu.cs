@@ -87,7 +87,7 @@ public class PauseMenu : MonoBehaviour
 
     }
 
-    private void ToggleJoysticks(bool state)
+    public void ToggleJoysticks(bool state)
     {
         foreach (GameObject joystick in joysticks)
         {
