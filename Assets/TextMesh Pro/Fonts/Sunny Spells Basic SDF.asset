@@ -2645,6 +2645,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 31e687dc89f8e1347bb3e127321af8e2, type: 2}
   - {fileID: 11400000, guid: 6cba54c1e2d937d4695060e15faae3bb, type: 2}
   - {fileID: 11400000, guid: 95c2ec205f223f34596ae2228a4f8de4, type: 2}
+  - {fileID: 11400000, guid: 2d3c537668c2e1d43ba81ef039912c20, type: 2}
   m_CreationSettings:
     sourceFontFileName: 
     sourceFontFileGUID: 2975bd747e8c74143a4322ba231a4025
