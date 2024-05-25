@@ -61,5 +61,5 @@ public class ResultManager : MonoBehaviour
         }
         playerItemsText.text = playerItemsBuilder.ToString();
     }
-    }
 }
+
