@@ -6,14 +6,13 @@ using UnityEngine.UIElements;
 
 public class Magnet : Pickup
 {   
-    public AudioClip sound;
 
     private void Start()
     {
     }
     protected override void IndividualPickupAction(){
         XPDropPool.Instance.ActivateXpToPlayer();
-        SoundManager.Instance.PlaySFX(sound, 1);
+        SoundManager.Instance.PlaySFX(pickupSound, 1);
     }
 
 }

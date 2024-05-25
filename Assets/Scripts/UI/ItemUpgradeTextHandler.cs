@@ -19,7 +19,8 @@ public class ItemUpgradeTextHandler : MonoBehaviour
         string value = item.GetType().GetMethod(method).Invoke(item, null).ToString();
         if (method.Contains("Increase"))
         {
-            textfield.text += isPercentage ? " +" + value + "%" : " +" + value;
+            string firstSplit = textfield.text.Split('+')[0].Trim();
+            textfield.text = firstSplit += isPercentage ? firstSplit.Length < 10 ? "\t\t+" + value + "%" : "\t+" + value + "%" : firstSplit.Length < 10 ? "\t\t+" + value : "\t+" + value;
         }
         if (method.Contains("Cost"))
         {

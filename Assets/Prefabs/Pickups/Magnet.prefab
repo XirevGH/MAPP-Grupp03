@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   itemPickupRadius: 1.5
-  sound: {fileID: 8300000, guid: b2a0fd55a83c06b4e936c1aa49f641fc, type: 3}
+  pickupSound: {fileID: 8300000, guid: 05bfd15f2aba4f342a170060b3152cdf, type: 3}
 --- !u!82 &-107756065306538571
 AudioSource:
   m_ObjectHideFlags: 0

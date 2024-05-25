@@ -8,6 +8,7 @@ public class HealthPickup : Pickup
 
     protected override void IndividualPickupAction(){
         player.RestoreHealth(percentToHeal);
+        SoundManager.Instance.PlaySFX(pickupSound, 1);
     }
     
 }

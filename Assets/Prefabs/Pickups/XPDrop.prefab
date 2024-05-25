@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   itemPickupRadius: 3
+  pickupSound: {fileID: 8300000, guid: 05bfd15f2aba4f342a170060b3152cdf, type: 3}
   spriteRenderer: {fileID: 8449104146653439331}
   particleSystem: {fileID: 2050496183805389482}
   biggXpDropMaterial: {fileID: 2100000, guid: 9dc45b983ce9b2b448f55dee70bf3b01, type: 2}

@@ -8,7 +8,8 @@ public class Pickup : MonoBehaviour
     [SerializeField] protected float itemPickupRadius;
     protected static GameObject playerObject;
     protected static Player player;
-    
+    public AudioClip pickupSound;
+
     private float pickupDistance = 0.3f;
     protected bool move;
 

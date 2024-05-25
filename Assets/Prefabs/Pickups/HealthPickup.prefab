@@ -99,4 +99,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   itemPickupRadius: 1.5
+  pickupSound: {fileID: 8300000, guid: 05bfd15f2aba4f342a170060b3152cdf, type: 3}
   percentToHeal: 30
