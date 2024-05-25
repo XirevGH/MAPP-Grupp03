@@ -93,6 +93,7 @@ public class XPDrop : Pickup
         XP = 0;
     }
     protected override void IndividualPickupAction(){
+        SoundManager.Instance.PlaySFX(pickupSound, 1);
         player.GetComponent<Player>().AddXP(XP);
 
     }
