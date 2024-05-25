@@ -254,6 +254,26 @@ MonoBehaviour:
     m_Localized: "Aleja a los enemigos para darte m\xE1s espacio."
     m_Metadata:
       m_Items: []
+  - m_Id: 8703345619902464
+    m_Localized: Resultados
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8703860558798848
+    m_Localized: "Sobrevivi\xF3:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8704169389596672
+    m_Localized: 'Nivel:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8704515939770368
+    m_Localized: 'Enemigas derrotadas:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8705049664954368
+    m_Localized: 'Puntuaciones obtenidas:'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
