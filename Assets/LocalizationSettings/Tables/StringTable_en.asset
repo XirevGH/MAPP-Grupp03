@@ -186,6 +186,22 @@ MonoBehaviour:
     m_Localized: Force
     m_Metadata:
       m_Items: []
+  - m_Id: 8646538771832832
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8648258981732352
+    m_Localized: Developers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8656292592230400
+    m_Localized: 'UI:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8657711231672320
+    m_Localized: SFX
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
