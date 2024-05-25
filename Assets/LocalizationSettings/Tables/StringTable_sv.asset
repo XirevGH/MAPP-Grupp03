@@ -256,6 +256,26 @@ MonoBehaviour:
     m_Localized: "Knuffar bort fiender f\xF6r att ge dig sj\xE4lv mer utrymme."
     m_Metadata:
       m_Items: []
+  - m_Id: 8703345619902464
+    m_Localized: Resultat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8703860558798848
+    m_Localized: "\xD6verlevde:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8704169389596672
+    m_Localized: 'Level:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8704515939770368
+    m_Localized: 'Besegrade fiender:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8705049664954368
+    m_Localized: "Intj\xE4nade musiknoter:"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

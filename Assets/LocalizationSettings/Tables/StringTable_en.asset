@@ -254,6 +254,26 @@ MonoBehaviour:
     m_Localized: Pushes away enemies to give yourself some space.
     m_Metadata:
       m_Items: []
+  - m_Id: 8703345619902464
+    m_Localized: 'Results '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8703860558798848
+    m_Localized: 'Survived:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8704169389596672
+    m_Localized: 'Level:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8704515939770368
+    m_Localized: 'Enemies defeated:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8705049664954368
+    m_Localized: 'Notes Earned:'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

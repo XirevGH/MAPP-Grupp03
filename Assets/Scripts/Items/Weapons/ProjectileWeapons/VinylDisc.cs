@@ -22,6 +22,8 @@ public class VinylDisc : Projectile
 
     void Awake()
     {
+        SetTravelTime();
+
         if (Random.Range(0, 2) == 0)
         {
             vinylDisc.GetComponent<SpriteRenderer>().color = orange;
@@ -56,13 +58,7 @@ public class VinylDisc : Projectile
 
     void FixedUpdate()
     {
-        playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-        BPM = SoundManager.Instance.GetCurrentBPM();
-        noteValue = TriggerController.Instance.GetTrigger(VinylDiscController.triggerNumber).noteValue;
-        source = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>();
-        pitch = source.pitch;
-    
-        travelTime = (((60f / (BPM / noteValue)) / pitch) /2f);
+        SetTravelTime();
 
         if (isAtPlayer)
         {
@@ -106,6 +102,17 @@ public class VinylDisc : Projectile
     {
         DealDamage(other);
         DestroyWhenMaxPenetration();
+    }
+
+    private void SetTravelTime()
+    {
+        playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+        BPM = SoundManager.Instance.GetCurrentBPM();
+        noteValue = TriggerController.Instance.GetTrigger(VinylDiscController.triggerNumber).noteValue;
+        source = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>();
+        pitch = source.pitch;
+
+        travelTime = (((60f / (BPM / noteValue)) / pitch) / 2f);
     }
 
 }

@@ -39,10 +39,10 @@ public class VolumeSettings : MonoBehaviour
         myMixer.SetFloat("music", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("musicVolume", volume);
 
-        if (isInitialized)
-        {
-            PlayClickSound();
-        }
+        //if (isInitialized)
+        //{
+        //    PlayClickSound();
+        //}
     }
 
     public void SetSFXVolume()
@@ -51,10 +51,10 @@ public class VolumeSettings : MonoBehaviour
         myMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("SFXVolume", volume);
 
-        if (isInitialized)
-        {
-            PlayClickSound();
-        }
+        //if (isInitialized)
+        //{
+        //    PlayClickSound();
+        //}
     }
 
     private void LoadVolume()
