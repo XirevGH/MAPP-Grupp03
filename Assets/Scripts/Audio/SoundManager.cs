@@ -24,9 +24,9 @@ public class SoundManager : MonoBehaviour
     [Header("Beat relateted")]
     [SerializeField] private float timeToChange;
     [SerializeField] private int beatThreshold;
-    [SerializeField] private int BPMBetweenTracks;
-    [SerializeField] private int maxBPM;
-    [SerializeField] private int minBPM;
+    [SerializeField] private float BPMBetweenTracks;
+    [SerializeField] private float maxBPM;
+    [SerializeField] private float minBPM;
     // how many beats does it take to change track
 
     [Header("Enemy relateted")]
@@ -252,7 +252,7 @@ public class SoundManager : MonoBehaviour
 
         if(Array.IndexOf(BPMForTracks, currentBPM) != 0)
         {
-            if (currentPitchAdjustedBPM == currentBPM - (BPMBetweenTracks / beatThreshold))
+            if (currentPitchAdjustedBPM == currentBPM - (BPMBetweenTracks / (float)beatThreshold))
             {
                 ChangeTrack(Array.IndexOf(BPMForTracks, currentBPM) - 1, 1 + (((float)BPMBetweenTracks / (float)currentBPM / (float)beatThreshold)) * (beatThreshold - 1));
             }
@@ -264,9 +264,9 @@ public class SoundManager : MonoBehaviour
         if (Array.IndexOf(BPMForTracks, currentBPM) != BPMForTracks.Length-1)
         {
            
-            if (currentPitchAdjustedBPM == BPMForTracks[Array.IndexOf(BPMForTracks, currentBPM + BPMBetweenTracks)])
+            if (currentPitchAdjustedBPM == BPMForTracks[Array.IndexOf(BPMForTracks, currentBPM) + 1])
             {
-                ChangeTrack(Array.IndexOf(BPMForTracks, currentPitchAdjustedBPM));
+                ChangeTrack(Array.IndexOf(BPMForTracks, currentBPM) +1);
             }
         }
        
