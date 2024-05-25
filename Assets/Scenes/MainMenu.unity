@@ -17866,7 +17866,7 @@ MonoBehaviour:
   currentItems: []
   deathSound: {fileID: 8300000, guid: e8601fc35a9bc0b4ba3871b84b3ef2fb, type: 3}
   levelUpSound: {fileID: 8300000, guid: b2a0fd55a83c06b4e936c1aa49f641fc, type: 3}
-  hitSound: {fileID: 8300000, guid: 074649c6c130c214086444e24cb7be28, type: 3}
+  hitSound: {fileID: 8300000, guid: 493457e39a6731d4195747c8537b34c6, type: 3}
   currency: 0
   maxHealth: 100
   health: 100
@@ -30944,7 +30944,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 75.8
+  m_fontSize: 85.5
   m_fontSizeBase: 73.26
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -43247,7 +43247,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 160
+  m_fontSize: 157.2
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -67807,7 +67807,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 135.4
+  m_fontSize: 122.5
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1
