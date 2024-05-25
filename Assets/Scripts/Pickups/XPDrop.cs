@@ -3,20 +3,23 @@ using UnityEngine;
 public class XPDrop : Pickup
 {   [SerializeField] private SpriteRenderer spriteRenderer;
     
-    [SerializeField] private Sprite biggXpDropSprite; 
-    public Vector3 biggXpSize;
+    [SerializeField] private ParticleSystem particleSystem;
+    [SerializeField] private Material biggXpDropMaterial; 
+    [SerializeField] private Material mediumXpDropMaterial; 
+    [SerializeField] private Material smallXpDropMaterial; 
+    [SerializeField] private SpriteRenderer circle;
+    [SerializeField] private Color originalBlueColor;
     public int biggMaxXpValue;
-
-    [SerializeField] private Sprite mediumXpDropSprite; 
-    public Vector3 mediumXpSize;
     public int mediumMaxXpValue;
-
-    [SerializeField] private Sprite smallXpDropSprite;
-    public Vector3 smallXpSize;
     public int smallMaxXpValue;
-    
     [SerializeField] private int XP;
+    private ParticleSystemRenderer particleSystemRenderer;
 
+    private void Awake()
+    {
+        particleSystemRenderer = particleSystem.GetComponent<ParticleSystemRenderer>();
+        SetXpType();
+    }
     public XPDrop Initialize(int initialXP)
     {   move = false;
         XP = initialXP;
@@ -55,19 +58,25 @@ public class XPDrop : Pickup
     
     public void SetXpToBiggXp(){
         XPDropPool.Instance.SetAsBiggXp(this);
-        spriteRenderer.sprite = biggXpDropSprite;
-        transform.localScale = biggXpSize;
+         particleSystemRenderer.material = biggXpDropMaterial;
+        particleSystemRenderer.trailMaterial = biggXpDropMaterial;
+        circle.material = biggXpDropMaterial;
+        circle.color = Color.white;
     }
     public void SetXpToMediumXp(){
         XPDropPool.Instance.SetAsMediumXp(this);
-        spriteRenderer.sprite = mediumXpDropSprite;
-        transform.localScale = mediumXpSize;
+        particleSystemRenderer.material = mediumXpDropMaterial;
+        particleSystemRenderer.trailMaterial = mediumXpDropMaterial;
+        circle.material = mediumXpDropMaterial;
+        circle.color = Color.white;
     }
 
     public void SetXpToSmallXp(){
         XPDropPool.Instance.SetAsSmallXp(this); 
-        spriteRenderer.sprite = smallXpDropSprite;
-        transform.localScale = smallXpSize;
+        particleSystemRenderer.material = smallXpDropMaterial;
+        particleSystemRenderer.trailMaterial = smallXpDropMaterial;
+        circle.material = smallXpDropMaterial;
+        circle.color = originalBlueColor;
     }
     public int NeededXpForNextLevel()
     {

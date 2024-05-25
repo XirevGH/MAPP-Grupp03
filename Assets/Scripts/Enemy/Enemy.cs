@@ -101,14 +101,15 @@ public class Enemy : MonoBehaviour
 
         if (IsAlive()) 
         {
-            if (Vector3.Distance(target.transform.position, transform.position) < 0.5)
-            {
+            if (Vector2.Distance(target.transform.position, transform.position) < 0.5)
+            {   
+                enemyAnim.SetTrigger("Attack");
                 player.GetComponent<Player>().TakeDamage(1);
                 
             }
 
-            if (Vector3.Distance(player.transform.position, transform.position) < 1)
-            {
+            if (Vector2.Distance(player.transform.position, transform.position) < 1)
+            {   enemyAnim.SetTrigger("Attack");
                 player.GetComponent<Player>().TakeDamage(1);
             }
 
@@ -122,7 +123,7 @@ public class Enemy : MonoBehaviour
             }
 
             enemyAnim.SetTrigger("Walking");
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, thisMovementSpeed / 200);
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, thisMovementSpeed / 200);
         }
            
     }
@@ -220,8 +221,8 @@ public class Enemy : MonoBehaviour
         if (health <= 0 && alive)
         {
             alive = false;
-            Drops();
             enemyAnim.SetTrigger("Dead");
+            Invoke("Drops", 1f);
             Invoke("DestroyGameObject", 1.6f);
             Invoke("RemoveText", 0.8f);
         }

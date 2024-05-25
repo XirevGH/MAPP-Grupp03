@@ -8,14 +8,14 @@ public class NormalEnemy : Enemy
         SelectTarget();
         if (IsAlive())
         {
-            if (Vector3.Distance(target.transform.position, transform.position) < 0.5)
+            if (Vector2.Distance(target.transform.position, transform.position) < 0.5)
             {   enemyAnim.SetTrigger("Attack");
                 player.GetComponent<Player>().TakeDamage(1);
                 
             }
 
-            if (Vector3.Distance(player.transform.position, transform.position) < 1)
-            {
+            if (Vector2.Distance(player.transform.position, transform.position) < 1)
+            {   enemyAnim.SetTrigger("Attack");
                 player.GetComponent<Player>().TakeDamage(1);
             }
             if (transform.position.x < target.transform.position.x)
