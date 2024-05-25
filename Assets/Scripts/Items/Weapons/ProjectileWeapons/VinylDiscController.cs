@@ -18,6 +18,7 @@ public class VinylDiscController : ProjectileWeapon
     {
         UnityAction action = new UnityAction(Attack);
         TriggerController.Instance.SetTrigger(triggerNumber, action);
+        source = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -45,7 +46,6 @@ public class VinylDiscController : ProjectileWeapon
             clone.GetComponent<Projectile>().SetDamage(damage);
             clone.GetComponent<Projectile>().SetPenetration(penetration);
             clone.GetComponent<VinylDisc>().isAtPlayer = true;
-            this.GetComponent<AudioSource>().Play();
             SoundManager.Instance.PlaySFX(attackSound, 1 - (i * 0.1f));
 
             yield return new WaitForSeconds(attackDelayTime);
