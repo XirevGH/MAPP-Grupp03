@@ -396,7 +396,7 @@ Transform:
   m_GameObject: {fileID: 6536046719154458180}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -444,7 +444,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 29b8918923ac85341a22275f7aad2f64, type: 3}
+  m_Sprite: {fileID: 8876486, guid: 07174ce587f49384aaa93b7402f597f7, type: 3}
   m_Color: {r: 1, g: 0.1745283, b: 0.6170782, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f97681663d5fff248837cf7e2164cc3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySprite: {fileID: 0}
+  rend: {fileID: 0}
   drops:
   - item: {fileID: 2322821042000343324, guid: 73e8c7fac64e160469ab7a30447b8bc1, type: 3}
     dropChance: 100
@@ -552,7 +552,7 @@ Animator:
   m_GameObject: {fileID: 6536046719154458180}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c22b8a405e918184896658046c9faf01, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

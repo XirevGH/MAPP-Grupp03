@@ -198,6 +198,9 @@ Transform:
   m_Children:
   - {fileID: 4242615980615075938}
   - {fileID: 7876800223104575639}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2315549906690075028
@@ -241,15 +244,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8f69658c4faeb884b8d08f2b63128076, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!58 &133893402141746889
@@ -286,7 +289,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5.12
+  m_Radius: 1
 --- !u!114 &3719447861068649009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,8 +302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cac232a23dcd3d49873b29688e562ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite1: {fileID: 21300000, guid: bd878ec972563c74bb5abf6036e989c5, type: 3}
-  sprite2: {fileID: 21300000, guid: c4c3e18636987ec4bab139db95db1d25, type: 3}
+  sprite1: {fileID: 21300000, guid: b8b2a4adbc781904596c41b7e8b7c1ce, type: 3}
+  sprite2: {fileID: 21300000, guid: 8f69658c4faeb884b8d08f2b63128076, type: 3}
 --- !u!95 &1872082759964401493
 Animator:
   serializedVersion: 5
