@@ -144,12 +144,11 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < amount; i++) 
         {
             Bounds bound = spawnLocations[Random.Range(0, spawnLocations.Length)].GetComponent<Collider2D>().bounds;
-            Vector3 randomPoint = new Vector3(
+            Vector2 randomPoint = new Vector2(
             Random.Range(bound.min.x, bound.max.x),
-            Random.Range(bound.min.y, bound.max.y),
-            Random.Range(bound.min.z, bound.max.z)
+            Random.Range(bound.min.y, bound.max.y)
             );
-            SpawnEnemy(new Vector3Int((int)randomPoint.x, (int)randomPoint.y, (int)randomPoint.z));
+            SpawnEnemy(new Vector3Int((int)randomPoint.x, (int)randomPoint.y, (int)0));
             
         }
     }

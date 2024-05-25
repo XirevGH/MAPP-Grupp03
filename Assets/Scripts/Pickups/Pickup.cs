@@ -20,7 +20,7 @@ public class Pickup : MonoBehaviour
         if(playerObject == null){
             playerObject = Player.Instance.gameObject;
         }
-
+        
         move = false;
     }
     void FixedUpdate(){
@@ -31,7 +31,7 @@ public class Pickup : MonoBehaviour
         }
         if (move && player != null)
         {   
-            transform.position = Vector3.MoveTowards(transform.position, playerObject.transform.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, playerObject.transform.position, speed * Time.deltaTime);
             if (distanceSquared < pickupDistance * pickupDistance){
                IndividualPickupAction();
                ReturnToPool();
