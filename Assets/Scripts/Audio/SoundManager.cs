@@ -266,7 +266,7 @@ public class SoundManager : MonoBehaviour
            
             if (currentPitchAdjustedBPM == BPMForTracks[Array.IndexOf(BPMForTracks, currentBPM) + 1])
             {
-                ChangeTrack(Array.IndexOf(BPMForTracks, currentBPM) +1);
+                ChangeTrack(Array.IndexOf(BPMForTracks, currentBPM) + 1);
             }
         }
        
