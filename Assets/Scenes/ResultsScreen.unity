@@ -1058,7 +1058,7 @@ MonoBehaviour:
   timerText: {fileID: 6202136613860997156}
   enemiesDefeatedText: {fileID: 6412768776665912186}
   moneyEarnedText: {fileID: 474331154557127938}
-  playerItemsText: {fileID: 0}
+  playerItemsText: {fileID: 1478191429}
   timeText: 
   mainLevel: 1
   enemiesDefeated: 0
