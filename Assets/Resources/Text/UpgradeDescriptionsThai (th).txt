@@ -1,40 +1,48 @@
-Weapon,Weapon,Bass Guitar,Bass Guitar,Swing at your enemies in close combat with this aimable weapon.
-Weapon,Weapon,Vinyl Record,Vinyl Record,Send out Vinyl Records like boomerangs.
-Weapon,Weapon,Yoyo,Yoyo,Swing around permanent Yoyos that speed up along with the beat.
-Weapon,Weapon,Disco Ball,Disco Ball,Launch Disco Balls into the air.
-Weapon,Weapon,Electric Guitar,Electric Guitar,Zap your nearest enemies.
-Weapon,Weapon,Saxophone,Saxophone,Shoot out musical notes at your nearest enemies.
-Weapon,Weapon,Break Dance,Break Dance,Deal damage to all enemies in your surrounding area.
-Weapon,Weapon,Synthwave Blast,Synthwave Blast,Send out Synthwave Bolts in any direction.
-Utility,Utility,Roller Skates,Roller Skates,Put on your roller skates and speed up your movement.
-Utility,Utility,Groove Armor,Groove Armor,Put on your Groove Armor and dampen the blows of your enemies.
-Utility,Utility,Chill Vibe,Chill Vibe,Make your enemies move slower with your chill vibe.
-Utility,Utility,Decoy,Decoy,Make it rain money to distract your enemies.
-Utility,Utility,Personal Space,Personal Space,Pushes away enemies to give yourself some space.
-Upgrade,Upgrade,Bass Guitar,Bass Guitar,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
-Upgrade,Upgrade,Vinyl Record,Vinyl Record,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
-Upgrade,Upgrade,Vinyl Record,Vinyl Record,Increase the amount of Vinyl Records shot out by,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
-Upgrade,Upgrade,Vinyl Record,Vinyl Record,Increase the amount of targets each Vinyl Record can deal damage to by,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
-Upgrade,Upgrade,Yoyo,Yoyo,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
-Upgrade,Upgrade,Yoyo,Yoyo,Increase the amount of Yoyos by,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
-Upgrade,Upgrade,Disco Ball,Disco Ball,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
-Upgrade,Upgrade,Disco Ball,Disco Ball,Increase the amount of Disco Balls launched by,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
-Upgrade,Upgrade,Disco Ball,Disco Ball,Increase the amount of targets each Disco Ball can deal damage to by,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
-Upgrade,Upgrade,Electric Guitar,Electric Guitar,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
-Upgrade,Upgrade,Electric Guitar,Electric Guitar,Increase the amount of targets the Electric Guitar will zap,IncreaseTetherAmount,GetTetherAmountIncreasePerUpgrade,.
-Upgrade,Upgrade,Saxophone,Saxophone,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
-Upgrade,Upgrade,Saxophone,Saxophone,Increase the amount of Notes fired by,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
-Upgrade,Upgrade,Saxophone,Saxophone,Increase the amount of targets each Note can deal damage to by,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
-Upgrade,Upgrade,Break Dance,Break Dance,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
-Upgrade,Upgrade,Break Dance,Break Dance,Increase radius by,IncreaseRadius,GetRadiusIncreasePercentage,%
-Upgrade,Upgrade,Synthwave Blast,Synthwave Blast,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
-Upgrade,Upgrade,Synthwave Blast,Synthwave Blast,Increase the amount of Synthwave Bolts in each blast by,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
-Upgrade,Upgrade,Synthwave Blast,Synthwave Blast,Increase the amount of targets each Synthwave Bolt can deal damage to by,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
-Upgrade,Upgrade,Roller Skates,Roller Skates,Increase movement speed by,IncreaseMovementSpeed,GetMovementSpeedIncreasePercentage,%
-Upgrade,Upgrade,Groove Armor,Groove Armor,Increase health by,IncreaseHealth,GetHealthIncreasePercentage,%
-Upgrade,Upgrade,Chill Vibe,Chill Vibe,Increase the area of your chill vibe by,IncreaseRadius,GetRadiusIncreasePercentage,%
-Upgrade,Upgrade,Chill Vibe,Chill Vibe,Increase the slow of your chill vibe by,IncreaseSlow,GetSlowIncreasePercentage,%
-Upgrade,Upgrade,Decoy,Decoy,Increase the amount of decoys by,IncreaseDecoyAmount,GetDecoyAmountIncreasePerUpgrade,.
-Upgrade,Upgrade,Decoy,Decoy,Increase the amount of health your decoys have by,IncreaseDecoyHealth,GetDecoyHealthAmountIncreasePerUpgrade,.
-Upgrade,Upgrade,Personal Space,Personal Space,Increases the radius by,IncreaseRadius,GetRadiusIncreasePercentage,%
-Upgrade,Upgrade,Personal Space,Personal Space,Increases the pushback by,IncreaseForce,GetForceIncreasePercentage,%
+﻿Weapon,อาวุธ,Bass Guitar,เบส,ตีศัตรูที่ใกล้ที่สุดด้วยอาวุธที่เล็งได้
+Weapon,อาวุธ,Vinyl Record,แผ่นเสียง,โยนแผ่นเสียงที่วกกลับมาหาเหมือนบูมเมอแรง
+Weapon,อาวุธ,Yoyo,โยโย่,แกว่งโยโย่รอบตัว
+Weapon,อาวุธ,Disco Ball,ลูกดิสโก้บอล,โยน ลูกดิสโก้บอลขึ้นฟ้า
+Weapon,อาวุธ,Electric Guitar,กีต้าร์ไฟฟ้า,ช็อกศัตรูที่อยู่ใกล้
+Weapon,อาวุธ,Saxophone,แซกโซโฟน,ยิงโน้ตดนตรีใส่ศัตรูที่อยู่ใกล้
+Weapon,อาวุธ,Break Dance,เบรกแดนซ์,ทำความเสียหายให้กับศัตรูที่อยู่ใกล้
+Weapon,อาวุธ,Synthwave Blast,เครื่องสังเคราะห์เสียง, ส่งคลื่นเสียงไปทุกทิศทาง
+Utility,ของเสริม,Roller Skates,รองเท้าสเก็ต,ใส่รองเท้าสเก็ตแล้วเดินเร็วขึ้น
+Utility,ของเสริม,Groove Armor,เกราะ,เกราะช่วยป้องกันความเสียหายจากศัตรู
+Utility,ของเสริม,Chill Vibe,ใจเย็น, ทำให้ศัตรูใจเย็นด้วย.
+Utility,ของเสริม,Decoy,เหยื่อ,โยนเงินขึ้นฟ้าเพื่อล่อศัตรู
+Utility,ของเสริม,Personal Space,พื้นที่ส่วนตัว,ดันศัตรูออกไปจากพื้นที่ส่วนตัว
+Upgrade,อัพเกรดอาวุธ,Bass Guitar,เบส,ทำความเสียหายมากขึ้น,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,อัพเกรดอาวุธ,Vinyl Record,แผ่นเสียง,ทำความเสียหายมากขึ้น,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,อัพเกรดอาวุธ,Vinyl Record,แผ่นเสียง,เพิ่มจำนวนแผ่นเสียง,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,แผ่น
+Upgrade,อัพเกรดอาวุธ,Vinyl Record,แผ่นเสียง,เพิ่มจำนวนศัตรูที่แผ่นเสียงสามารถสร้างความเสียหายได้
+,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,ตัว
+Upgrade,อัพเกรดอาวุธ,Yoyo,Yoyo,ทำความเสียหายมากขึ้น,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,อัพเกรดอาวุธ,Yoyo,Yoyo,เพิ่มจำนวนโยโย่,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,อัน
+Upgrade,อัพเกรดอาวุธ,Disco Ball,ลูกดิสโก้บอล,ทำความเสียหายมากขึ้น,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,อัพเกรดอาวุธ,Disco Ball,ลูกดิสโก้บอล,เพิ่มจำนวนลูกดิสโก้บอล,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,ลูก
+Upgrade,อัพเกรดอาวุธ,Disco Ball,ลูกดิสโก้บอล,เพิ่มจำนวนศัตรูที่ลูกดิสโก้บอลสามารถสร้างความเสียหายได้
+,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,ตัว
+Upgrade,อัพเกรดอาวุธ,Electric Guitar,กีต้าร์ไฟฟ้า,ทำความเสียหายมากขึ้น,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,อัพเกรดอาวุธ,Electric Guitar,กีต้าร์ไฟฟ้า,เพิ่มจำนวนศัตรูที่กีต้าร์ไฟฟ้าสามารถสร้างความเสียหายได้,IncreaseTetherAmount,GetTetherAmountIncreasePerUpgrade,ตัว
+Upgrade,อัพเกรดอาวุธ,Saxophone,แซกโซโฟน,ทำความเสียหายมากขึ้น,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,อัพเกรดอาวุธ,Saxophone,แซกโซโฟน,เพิ่มจำนวนโน้ตดนตรี,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,ตัว
+Upgrade,อัพเกรดอาวุธ,Saxophone,แซกโซโฟน,เพิ่มจำนวนศัตรูที่แซกโซโฟนสามารถสร้างความเสียหายได้
+,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,ตัว
+Upgrade,อัพเกรดอาวุธ,Break Dance,เบรกแดนซ์,ทำความเสียหายมากขึ้น,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,อัพเกรดอาวุธ,Break Dance,เบรกแดนซ์,เพิ่มขอบเขตการโจมตี,IncreaseRadius,GetRadiusIncreasePercentage,%
+
+Upgrade,อัพเกรดอาวุธ,Synthwave Blast,เครื่องสังเคราะห์เสียง,ทำความเสียหายมากขึ้น,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,อัพเกรดอาวุธ,Synthwave Blast,เครื่องสังเคราะห์เสียง,เพิ่มจำนวนคลื่นเสียง,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,ลูก
+Upgrade,อัพเกรดอาวุธ,Synthwave Blast,เครื่องสังเคราะห์เสีย,เพิ่มจำนวนศัตรูที่เครื่องสังเคราะห์เสียสามารถสร้างความเสียหายได้
+,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,ตัว
+Upgrade,อัพเกรดของเสริม,Roller Skates,รองเท้าสเก็ต,เดินเร็วขึ้น
+by,IncreaseMovementSpeed,GetMovementSpeedIncreasePercentage,%
+Upgrade,อัพเกรดของเสริม,Groove Armor,เกราะ,เพิ่มเลือด,IncreaseHealth,GetHealthIncreasePercentage,%
+Upgrade,อัพเกรดของเสริม,Chill Vibe,ใจเย็น,เพิ่มขอบเขต,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,อัพเกรด,Chill Vibe,ใจเย็น,เพิ่มความเย็น,IncreaseSlow,GetSlowIncreasePercentage,%
+Upgrade,อัพเกรดของเสริม,Decoy,เหยื่อ,เพิ่มจำนวนเหยื่อ,IncreaseDecoyAmount,GetDecoyAmountIncreasePerUpgrade,ตัว
+Upgrade,อัพเกรดของเสริม,Decoy,เหยื่อ,เพิ่มเลือดเหยื่อ,IncreaseDecoyHealth,GetDecoyHealthAmountIncreasePerUpgrade,%
+Upgrade,อัพเกรดของเสริม,Personal Space,พื้นที่ส่วนตัว,เพิ่มขอบเขตพื้นที่ส่วนตัว,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,อัพเกรดของเสริม,Personal Space,พื้นที่ส่วนตัว,ดันแรงขึ้น
+,IncreaseForce,GetForceIncreasePercentage,%
+
