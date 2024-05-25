@@ -33,6 +33,7 @@ public class EnemySpawner : MonoBehaviour
     public static GameObject bossEnemyParent;
 
     public GameObject[] spawnLocations;
+    public GameObject circleSpawnRotationPoint;
     public GameObject player;
 
     public float spawnRate;
@@ -140,7 +141,7 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemiesInCircle(int amount)
     {
-        spawnLocations[0].transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Random.Range(0f, 361f));
+        circleSpawnRotationPoint.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Random.Range(0f, 361f));
         for (int i = 0; i < amount; i++) 
         {
             Bounds bound = spawnLocations[Random.Range(0, spawnLocations.Length)].GetComponent<Collider2D>().bounds;
