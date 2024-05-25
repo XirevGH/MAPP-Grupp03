@@ -122,4 +122,14 @@ public class DecoyController : Utility
     {
         return decoyHealth;
     }
+
+    public int GetAmountUpgradeRank()
+    {
+        return decoyAmountRank;
+    }
+
+    public int GetHealthUpgradeRank()
+    {
+        return decoyHealthRank;
+    }
 }
