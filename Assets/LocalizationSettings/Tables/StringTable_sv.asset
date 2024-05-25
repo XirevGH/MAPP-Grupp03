@@ -202,6 +202,60 @@ MonoBehaviour:
     m_Localized: SFX
     m_Metadata:
       m_Items: []
+  - m_Id: 8679443594223616
+    m_Localized: "Sv\xE4ng mot dina fiender i n\xE4rstrid med detta riktbara vapen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8681660766232576
+    m_Localized: Skicka ut vinylskivor som bumeranger.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8682358585171968
+    m_Localized: "Sv\xE4ng runt permanenta Jojoar som \xF6kar fart tillsammans med
+      takten."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8682671060819968
+    m_Localized: "Sl\xE4ng upp discokulor i luften."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8683098003218432
+    m_Localized: "Elektrifiera dina n\xE4rmaste fiender."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8683268652670976
+    m_Localized: "Skjut ut musiknoter mot dina n\xE4rmaste fiender."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8685023268446208
+    m_Localized: "Skada alla fiender som befinner sig n\xE4ra omkring dig. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8685223521296384
+    m_Localized: "Skicka ut Synthwave St\xF6tar i valfri riktning."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8686385045708800
+    m_Localized: "Ta p\xE5 dig dina rullskridskor och f\xE5 fart p\xE5 din r\xF6relse."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8686784410558464
+    m_Localized: "Ta p\xE5 dig din Disco Rustning och d\xE4mpa dina fienders slag."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8686988761243648
+    m_Localized: "F\xE5 dina fiender att r\xF6ra sig l\xE5ngsammare med dina lugna
+      vibbar. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8687225626173440
+    m_Localized: "F\xE5 det att regna pengar f\xF6r att distrahera dina fiender."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8687432912871424
+    m_Localized: "Knuffar bort fiender f\xF6r att ge dig sj\xE4lv mer utrymme."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
