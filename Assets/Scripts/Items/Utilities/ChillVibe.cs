@@ -84,4 +84,14 @@ public class ChillVibe : Utility
            
         }
     }
+
+    public int GetRadiusUpgradeRank()
+    {
+        return radiusRank;
+    }
+
+    public int GetSlowUpgradeRank()
+    {
+        return slowRank;
+    }
 }
