@@ -14628,7 +14628,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Swing at your enemies in close combat with this aimable weapon
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: 5428608028598007450, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -14692,7 +14692,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &454668717
@@ -16812,7 +16812,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Make it rain money to distract your enemies
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: 5428608028598007450, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -16876,7 +16876,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &522420230
@@ -24835,7 +24835,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Pushes away enemies to give yourself some space
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: 5428608028598007450, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -24899,7 +24899,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &849057587
@@ -28415,7 +28415,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 85.5
+  m_fontSize: 92.45
   m_fontSizeBase: 73.26
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -29093,7 +29093,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Launch Disco Balls into the air
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: 5428608028598007450, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -29157,7 +29157,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1004853074
@@ -39917,7 +39917,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 157.2
+  m_fontSize: 147.2
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -40467,7 +40467,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Zap your nearest enemies
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: 5428608028598007450, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -40531,7 +40531,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1251509243
@@ -43330,7 +43330,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Deal damage to all enemies in your surrounding area
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: 5428608028598007450, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -43394,7 +43394,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1378749481
@@ -47290,7 +47290,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Send out vinyl records like boomerangs
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: 5428608028598007450, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -47354,7 +47354,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1527340286
@@ -56507,7 +56507,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Shoot out musical notes at your nearest enemies
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: 5428608028598007450, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -56571,7 +56571,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1851414671
@@ -58652,7 +58652,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Make your enemies move slower with your chill vibe
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: 5428608028598007450, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -58716,7 +58716,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1912326280
@@ -58972,7 +58972,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Swing around permanent Yoyos that speed up along with the beat
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: 5428608028598007450, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -59036,7 +59036,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1915751665
@@ -59903,7 +59903,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Put on your Groove Armor and dampen the blows of your enemies
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: 5428608028598007450, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -59967,7 +59967,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1984215389
@@ -61594,7 +61594,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Put on your roller skates and speed up your movement
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: 5428608028598007450, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -61658,7 +61658,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2033281340
@@ -62539,7 +62539,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 122.5
+  m_fontSize: 114.6
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -64298,7 +64298,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Send out Synthwave Bolts in any direction
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acb3a264d8423a04cbba7741154c7050, type: 2}
   m_sharedMaterial: {fileID: 5428608028598007450, guid: 0ea477bccff8a584297a190836b2e17b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -64362,7 +64362,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2134796220
