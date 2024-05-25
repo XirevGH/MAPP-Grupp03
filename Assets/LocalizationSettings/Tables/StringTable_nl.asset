@@ -255,6 +255,26 @@ MonoBehaviour:
     m_Localized: Duwt vijanden weg om jezelf meer ruimte te geven.
     m_Metadata:
       m_Items: []
+  - m_Id: 8703345619902464
+    m_Localized: Resultaten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8703860558798848
+    m_Localized: 'Overleefd:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8704169389596672
+    m_Localized: 'Level: '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8704515939770368
+    m_Localized: 'Vijanden verslagen:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8705049664954368
+    m_Localized: 'Verdiende scores:'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
