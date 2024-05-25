@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject[] joysticks;
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject pauseButton;
@@ -41,7 +40,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Resume()
     {
-        ToggleJoysticks(true);
+        JoystickController.Instance.ToggleJoysticks(true);
         TriggerController.Instance.ToggleTrigger(true);
         SoundManager.Instance.ToggleMusicPause(true);
         pauseMenuUI.SetActive(false);
@@ -54,7 +53,7 @@ public class PauseMenu : MonoBehaviour
     {
 
         if (upgradeScreen.activeInHierarchy == false) { 
-            ToggleJoysticks(false);
+            JoystickController.Instance.ToggleJoysticks(false);
             TriggerController.Instance.ToggleTrigger(false);
             SoundManager.Instance.ToggleMusicPause(false);
             pauseMenuUI.SetActive(true);
@@ -67,7 +66,7 @@ public class PauseMenu : MonoBehaviour
     public void LoadMenu()
     {
         GameIsPaused = false;
-        ToggleJoysticks(true);
+        JoystickController.Instance.ToggleJoysticks(true);
         Time.timeScale = 1f;
         SoundManager.Instance.Click();
         SceneManager.LoadScene(mainMenuSceneName);
@@ -85,13 +84,5 @@ public class PauseMenu : MonoBehaviour
         settingPanel.SetActive(false);
         SoundManager.Instance.Click();
 
-    }
-
-    public void ToggleJoysticks(bool state)
-    {
-        foreach (GameObject joystick in joysticks)
-        {
-            joystick.SetActive(state);
-        }
     }
 }
