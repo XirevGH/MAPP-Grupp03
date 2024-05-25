@@ -16,25 +16,33 @@ public class VolumeSettings : MonoBehaviour
   
 
     private float baseClickVolume;
+    private bool isInitialized = false;
+
     private void Start()
     {
-    
         if (PlayerPrefs.HasKey("musicVolume"))
         {
             LoadVolume();
-        } else
+        }
+        else
         {
             SetMusicVolume();
             SetSFXVolume();
         }
+
+        isInitialized = true;
     }
 
     public void SetMusicVolume()
     {
         float volume = musicSlider.value;
-        myMixer.SetFloat("music", Mathf.Log10(volume)*20);
+        myMixer.SetFloat("music", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("musicVolume", volume);
-      
+
+        if (isInitialized)
+        {
+            PlayClickSound();
+        }
     }
 
     public void SetSFXVolume()
@@ -43,7 +51,10 @@ public class VolumeSettings : MonoBehaviour
         myMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("SFXVolume", volume);
 
-       
+        if (isInitialized)
+        {
+            PlayClickSound();
+        }
     }
 
     private void LoadVolume()
@@ -66,5 +77,10 @@ public class VolumeSettings : MonoBehaviour
     {
         healthBar.SetActive(false);
         //SoundManager.Instance.GetComponent<SoundManager>().Click();
+    }
+
+    public void PlayClickSound()
+    {
+        SoundManager.Instance.Click();
     }
 }
