@@ -4,6 +4,8 @@ using System;
 using TMPro;
 using System.Reflection;
 using System.Linq;
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization;
 
 public class UpgradeSystem : MonoBehaviour
 {
@@ -58,6 +60,8 @@ public class UpgradeSystem : MonoBehaviour
 
     public string GetUpgradeDescription(Item item, string typeOfChoice, string upgrade)
     {
+        Locale currentSelectedLocale = LocalizationSettings.SelectedLocale;
+        Debug.Log(currentSelectedLocale);
         var file = Resources.Load<TextAsset>("Text/UpgradeDescriptions");
         foreach (string line in file.text.Split("\n")) {
             string[] fields = line.Split(',');
