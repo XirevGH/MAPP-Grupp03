@@ -199,6 +199,30 @@ MonoBehaviour:
     m_Key: SFX
     m_Metadata:
       m_Items: []
+  - m_Id: 8679443594223616
+    m_Key: Bass guitar des
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8681660766232576
+    m_Key: Vinylc des
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8682358585171968
+    m_Key: Yoyo des
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8682671060819968
+    m_Key: DiscoBall des
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8683098003218432
+    m_Key: Zap your nearest enemies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8683268652670976
+    m_Key: Shoot out musical notes at your nearest enemies.
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

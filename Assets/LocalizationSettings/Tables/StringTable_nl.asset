@@ -202,6 +202,31 @@ MonoBehaviour:
     m_Localized: SFX
     m_Metadata:
       m_Items: []
+  - m_Id: 8679443594223616
+    m_Localized: Zwaai naar je vijanden in gevechten van dichtbij met dit richtbare
+      wapen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8681660766232576
+    m_Localized: Stuur vinylplaten uit als boemerangs.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8682358585171968
+    m_Localized: Zwaai rond permanente jojo's die versnellen met de beat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8682671060819968
+    m_Localized: Gooi discoballen in de lucht.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8683098003218432
+    m_Localized: Elektriseer je dichtstbijzijnde vijanden.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8683268652670976
+    m_Localized: Schiet muzieknoten op je dichtstbijzijnde vijanden.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

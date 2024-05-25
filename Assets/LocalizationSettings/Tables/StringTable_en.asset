@@ -202,6 +202,30 @@ MonoBehaviour:
     m_Localized: SFX
     m_Metadata:
       m_Items: []
+  - m_Id: 8679443594223616
+    m_Localized: Swing at your enemies in close combat with this aimable weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8681660766232576
+    m_Localized: Send out Vinyl Records like boomerangs.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8682358585171968
+    m_Localized: Swing around permanent Yoyos that speed up along with the beat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8682671060819968
+    m_Localized: Launch Disco Balls into the air.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8683098003218432
+    m_Localized: Zap your nearest enemies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8683268652670976
+    m_Localized: Shoot out musical notes at your nearest enemies.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

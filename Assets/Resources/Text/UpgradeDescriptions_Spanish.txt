@@ -1,7 +1,7 @@
 Weapon,Arma,Bass Guitar,Bajo Electrico,Golpea a tus enemigos en combate cuerpo a cuerpo con esta arma apuntable.
 Weapon,Arma,Vinyl Record,Disco De Vinilo,Envíe discos de vinilo como bumeranes.
 Weapon,Arma,Yoyo,Yoyó,Gira alrededor de Yoyós permanentes que se aceleran con el ritmo.
-Weapon,Arma,Disco Ball,Bola De Disco,Släng upp discokulor i luften.
+Weapon,Arma,Disco Ball,Bola De Disco,Lanza bolas de discoteca al aire.
 Weapon,Arma,Electric Guitar,Guitarra Electrica,Electrifica a tus enemigos más cercanos.
 Weapon,Arma,Saxophone,Saxofón,Dispara notas musicales a tus enemigos más cercanos.
 Weapon,Arma,Break Dance,Break Dance,Inflige daño a todos los enemigos en el área circundante. 
