@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class JoystickController : MonoBehaviour
 {
+    public GameObject leftJoystic;
+    public GameObject rightJoystic;
+
     public static JoystickController Instance
     {
         get; private set;
@@ -14,6 +17,7 @@ public class JoystickController : MonoBehaviour
 
     public void ToggleJoysticks(bool state)
     {
-        gameObject.SetActive(state);
+        leftJoystic.SetActive(state);
+        rightJoystic.SetActive(state);
     }
 }
