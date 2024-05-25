@@ -23,6 +23,5 @@ public class UpgradePanel : MonoBehaviour
         JoystickController.Instance.ToggleJoysticks(true);
         SoundManager.Instance.ToggleMusicPause(true);
         tintPanel.SetActive(false);
-      
     }
 }
