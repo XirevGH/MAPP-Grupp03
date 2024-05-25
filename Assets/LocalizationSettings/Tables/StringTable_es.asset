@@ -226,6 +226,34 @@ MonoBehaviour:
     m_Localized: "Dispara notas musicales a tus enemigos m\xE1s cercanos."
     m_Metadata:
       m_Items: []
+  - m_Id: 8685023268446208
+    m_Localized: "Inflige da\xF1o a todos los enemigos en el \xE1rea circundante. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8685223521296384
+    m_Localized: "Env\xEDa una explosi\xF3n de ondas sint\xE9ticas en cualquier direcci\xF3n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8686385045708800
+    m_Localized: Ponte tus patines y acelera tu movimiento.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8686784410558464
+    m_Localized: Ponte tu Armadura De Discoteca y amortigua los golpes de tus enemigos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8686988761243648
+    m_Localized: "que tus enemigos se mueven m\xE1s lento con tu Ambiente Relajado."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8687225626173440
+    m_Localized: Haz llover dinero para distraer a tus enemigos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8687432912871424
+    m_Localized: "Aleja a los enemigos para darte m\xE1s espacio."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
