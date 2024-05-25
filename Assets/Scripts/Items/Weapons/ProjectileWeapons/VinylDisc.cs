@@ -17,10 +17,20 @@ public class VinylDisc : Projectile
     private Vector3  startPosition, endPosition, playerPosition, controlPoint;
     private Quaternion aimingArrowRotation;
     private AudioSource source;
+    public Color orange;
+    public Color pink;
 
     void Awake()
     {
-        vinylDisc.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(Random.Range(0f, 1f), 0.7f, 1);
+        if (Random.Range(0, 2) == 0)
+        {
+            vinylDisc.GetComponent<SpriteRenderer>().color = orange;
+        } 
+        else
+        {
+            vinylDisc.GetComponent<SpriteRenderer>().color = pink;
+        }
+       
 
         aimingArrowRotation = GameObject.FindGameObjectWithTag("AimingArrow").transform.rotation;
         startPosition = transform.position;

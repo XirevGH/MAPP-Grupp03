@@ -17884,7 +17884,7 @@ MonoBehaviour:
   currentItems: []
   deathSound: {fileID: 8300000, guid: e8601fc35a9bc0b4ba3871b84b3ef2fb, type: 3}
   levelUpSound: {fileID: 8300000, guid: b2a0fd55a83c06b4e936c1aa49f641fc, type: 3}
-  hitSound: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: 074649c6c130c214086444e24cb7be28, type: 3}
   currency: 0
   maxHealth: 100
   health: 100
