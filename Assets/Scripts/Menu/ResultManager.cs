@@ -38,6 +38,7 @@ public class ResultManager : MonoBehaviour
             Instance.timerText = this.timerText;
             Instance.enemiesDefeatedText = this.enemiesDefeatedText;
             Instance.moneyEarnedText = this.moneyEarnedText;
+            Instance.playerItemsText = this.playerItemsText;
             Destroy(this);
             Instance.CompileText();
         }
