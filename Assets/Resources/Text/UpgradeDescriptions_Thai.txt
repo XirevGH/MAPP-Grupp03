@@ -1,0 +1,40 @@
+Weapon,Weapon,Bass Guitar,Bass Guitar,Swing at your enemies in close combat with this aimable weapon.
+Weapon,Weapon,Vinyl Record,Vinyl Record,Send out Vinyl Records like boomerangs.
+Weapon,Weapon,Yoyo,Yoyo,Swing around permanent Yoyos that speed up along with the beat.
+Weapon,Weapon,Disco Ball,Disco Ball,Launch Disco Balls into the air.
+Weapon,Weapon,Electric Guitar,Electric Guitar,Zap your nearest enemies.
+Weapon,Weapon,Saxophone,Saxophone,Shoot out musical notes at your nearest enemies.
+Weapon,Weapon,Break Dance,Break Dance,Deal damage to all enemies in your surrounding area.
+Weapon,Weapon,Synthwave Blast,Synthwave Blast,Send out Synthwave Bolts in any direction.
+Utility,Utility,Roller Skates,Roller Skates,Put on your roller skates and speed up your movement.
+Utility,Utility,Groove Armor,Groove Armor,Put on your Groove Armor and dampen the blows of your enemies.
+Utility,Utility,Chill Vibe,Chill Vibe,Make your enemies move slower with your chill vibe.
+Utility,Utility,Decoy,Decoy,Make it rain money to distract your enemies.
+Utility,Utility,Personal Space,Personal Space,Pushes away enemies to give yourself some space.
+Upgrade,Upgrade,Bass Guitar,Bass Guitar,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Upgrade,Vinyl Record,Vinyl Record,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Upgrade,Vinyl Record,Vinyl Record,Increase the amount of Vinyl Records shot out by,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Upgrade,Vinyl Record,Vinyl Record,Increase the amount of targets each Vinyl Record can deal damage to by,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
+Upgrade,Upgrade,Yoyo,Yoyo,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Upgrade,Yoyo,Yoyo,Increase the amount of Yoyos by,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Upgrade,Disco Ball,Disco Ball,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Upgrade,Disco Ball,Disco Ball,Increase the amount of Disco Balls launched by,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Upgrade,Disco Ball,Disco Ball,Increase the amount of targets each Disco Ball can deal damage to by,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
+Upgrade,Upgrade,Electric Guitar,Electric Guitar,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Upgrade,Electric Guitar,Electric Guitar,Increase the amount of targets the Electric Guitar will zap,IncreaseTetherAmount,GetTetherAmountIncreasePerUpgrade,.
+Upgrade,Upgrade,Saxophone,Saxophone,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Upgrade,Saxophone,Saxophone,Increase the amount of Notes fired by,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Upgrade,Saxophone,Saxophone,Increase the amount of targets each Note can deal damage to by,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
+Upgrade,Upgrade,Break Dance,Break Dance,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Upgrade,Break Dance,Break Dance,Increase radius by,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,Upgrade,Synthwave Blast,Synthwave Blast,Increase damage by,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Upgrade,Synthwave Blast,Synthwave Blast,Increase the amount of Synthwave Bolts in each blast by,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Upgrade,Synthwave Blast,Synthwave Blast,Increase the amount of targets each Synthwave Bolt can deal damage to by,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
+Upgrade,Upgrade,Roller Skates,Roller Skates,Increase movement speed by,IncreaseMovementSpeed,GetMovementSpeedIncreasePercentage,%
+Upgrade,Upgrade,Groove Armor,Groove Armor,Increase health by,IncreaseHealth,GetHealthIncreasePercentage,%
+Upgrade,Upgrade,Chill Vibe,Chill Vibe,Increase the area of your chill vibe by,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,Upgrade,Chill Vibe,Chill Vibe,Increase the slow of your chill vibe by,IncreaseSlow,GetSlowIncreasePercentage,%
+Upgrade,Upgrade,Decoy,Decoy,Increase the amount of decoys by,IncreaseDecoyAmount,GetDecoyAmountIncreasePerUpgrade,.
+Upgrade,Upgrade,Decoy,Decoy,Increase the amount of health your decoys have by,IncreaseDecoyHealth,GetDecoyHealthAmountIncreasePerUpgrade,.
+Upgrade,Upgrade,Personal Space,Personal Space,Increases the radius by,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,Upgrade,Personal Space,Personal Space,Increases the pushback by,IncreaseForce,GetForceIncreasePercentage,%
