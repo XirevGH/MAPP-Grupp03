@@ -1,20 +1,16 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
+
 
 public class PursePanel : MonoBehaviour
 {
     [SerializeField] private GameObject tintPanel;
-
 
     public void OpenPurseWindow()
     {
         Time.timeScale = 0f;
         gameObject.SetActive(true);
         TriggerController.Instance.ToggleTrigger(false);
+        JoystickController.Instance.ToggleJoysticks(false);
         SoundManager.Instance.ToggleMusicPause(false);
         tintPanel.SetActive(true);
     }
@@ -24,9 +20,8 @@ public class PursePanel : MonoBehaviour
         Time.timeScale = 1f;
         gameObject.SetActive(false);
         TriggerController.Instance.ToggleTrigger(true);
+        JoystickController.Instance.ToggleJoysticks(true);
         SoundManager.Instance.ToggleMusicPause(true);
         tintPanel.SetActive(false);
     }
-
-
 }

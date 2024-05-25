@@ -114,7 +114,7 @@ public class Player : MonoBehaviour
             ColorPlayerSprite(true);
             continuousDamageTime += Time.deltaTime;
             ScaleParticleLifetime(continuousDamageTime);
-            SoundManager.Instance.PlaySFX(hitSound, 1);
+           
         }
         if (takingDamagePeriod <= 0)
         {
@@ -161,6 +161,7 @@ public class Player : MonoBehaviour
                 vibrationTime = 1f;
                 Handheld.Vibrate();
                 Debug.Log("I'm vibrating");
+                SoundManager.Instance.PlaySFX(hitSound, 1);
                 vibrating = true;
             }
 
