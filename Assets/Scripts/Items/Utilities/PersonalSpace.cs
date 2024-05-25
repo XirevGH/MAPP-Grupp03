@@ -111,5 +111,13 @@ public class PersonalSpace : Utility
         }
     }
 
-}
+    public int GetRadiusUpgradeRank()
+    {
+        return radiusRank;
+    }
 
+    public int GetForceUpgradeRank()
+    {
+        return forceRank;
+    }
+}
