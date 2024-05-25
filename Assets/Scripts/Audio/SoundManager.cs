@@ -32,7 +32,12 @@ public class SoundManager : MonoBehaviour
     [Header("Enemy relateted")]
     [SerializeField] private int maxEnemySounds = 3;
     [SerializeField] private int currentEnemySoundsPlaying = 0;
-    [SerializeField] private bool canPlay = false;
+    [SerializeField] private bool canPlayEnemy = false;
+
+    [Header("EXP relateted")]
+    [SerializeField] private int maxExpSounds = 3;
+    [SerializeField] private int currentExpSoundsPlaying = 0;
+    [SerializeField] private bool canPlayEXP = false;
 
     private Slider musicSpeedSilder;
     public static SoundManager Instance
@@ -89,7 +94,18 @@ public class SoundManager : MonoBehaviour
             }
         }
 
-        canPlay = currentEnemySoundsPlaying < maxEnemySounds;
+        canPlayEnemy = currentEnemySoundsPlaying < maxEnemySounds;
+
+        foreach (XPDrop exp in GameObject.FindObjectsOfType<XPDrop>(false))
+        {
+            if (exp.gameObject.GetComponent<AudioSource>().isPlaying)
+            {
+                currentExpSoundsPlaying++;
+            }
+        }
+
+        canPlayEXP = currentExpSoundsPlaying < maxExpSounds;
+
 
     }
 
@@ -347,8 +363,21 @@ public class SoundManager : MonoBehaviour
 
     public void PlayEnemySFX(GameObject gameobject, AudioClip clip, float volume)
     {
-        Debug.Log(canPlay);
-        if (canPlay)
+        Debug.Log(canPlayEXP);
+        if (canPlayEnemy)
+        {
+            AudioSource audioSource = gameobject.GetComponent<AudioSource>();
+            audioSource.pitch = (float)UnityEngine.Random.Range(0.5f, currentTrack.pitch);
+            audioSource.volume = (float)UnityEngine.Random.Range(volume - 0.3f, volume);
+            audioSource.PlayOneShot(clip, volume);
+        }
+
+    }
+
+    public void PlayExpSFX(GameObject gameobject, AudioClip clip, float volume)
+    {
+        Debug.Log(canPlayEXP);
+        if (canPlayEXP)
         {
             AudioSource audioSource = gameobject.GetComponent<AudioSource>();
             audioSource.pitch = (float)UnityEngine.Random.Range(0.5f, currentTrack.pitch);
