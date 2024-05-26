@@ -18282,7 +18282,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1103054515861734431, guid: 17ccd9c1a77fa004790076d7ee038be3, type: 3}
       propertyPath: damage
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1103054515861734431, guid: 17ccd9c1a77fa004790076d7ee038be3, type: 3}
       propertyPath: player
@@ -30818,7 +30818,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: damage
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: player
@@ -31955,7 +31955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Break Dance
-  damage: 1
+  damage: 15
   damageRank: 0
   damageUpgradeCost: 350
   percentageDamageIncrease: 20
@@ -33047,7 +33047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: damage
-      value: 4
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: player
@@ -40272,7 +40272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Saxophone
-  damage: 2
+  damage: 10
   damageRank: 0
   damageUpgradeCost: 75
   percentageDamageIncrease: 10
@@ -48291,7 +48291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Bass Guitar
-  damage: 2
+  damage: 10
   damageRank: 0
   damageUpgradeCost: 50
   percentageDamageIncrease: 10
@@ -83880,7 +83880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
       propertyPath: damage
-      value: 3
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
       propertyPath: player
@@ -99142,7 +99142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Electric Guitar
-  damage: 2
+  damage: 10
   damageRank: 0
   damageUpgradeCost: 150
   percentageDamageIncrease: 10
