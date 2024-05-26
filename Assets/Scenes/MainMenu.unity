@@ -49616,6 +49616,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1660192431}
+        m_TargetAssemblyTypeName: MainMenuEffectController, Assembly-CSharp
+        m_MethodName: ResetCoroutines
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1084008216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75180,6 +75192,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1660192431}
+        m_TargetAssemblyTypeName: MainMenuEffectController, Assembly-CSharp
+        m_MethodName: ResetCoroutines
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1602011471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81637,6 +81661,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1660192430}
   - component: {fileID: 1660192431}
+  - component: {fileID: 1660192432}
   m_Layer: 0
   m_Name: Buttons
   m_TagString: Untagged
@@ -81689,10 +81714,112 @@ MonoBehaviour:
   upgradesUnlit: {fileID: 21300000, guid: 5480eef0e41ddc84ba906bbaf7447ed7, type: 3}
   settingsLit: {fileID: 21300000, guid: 4b24b0f74ad19b54f9c2697b12be861c, type: 3}
   settingsUnlit: {fileID: 21300000, guid: ba59fdf2e21794a41b882b326ffdec91, type: 3}
+  off1: {fileID: 8300000, guid: f337a5414fa09364fa25de7dd9d4dc8f, type: 3}
+  off2: {fileID: 8300000, guid: 841be6a0024e91f419669299b6c86a53, type: 3}
+  on1: {fileID: 8300000, guid: 8c72ad376430bfe42bfc7ab5f6413723, type: 3}
+  on2: {fileID: 8300000, guid: 8c937659e07f1fd4ba28c6ea00aba060, type: 3}
+  on3: {fileID: 8300000, guid: 9a3df2175aa40ed47a82378f3b98e7a7, type: 3}
+  on4: {fileID: 8300000, guid: 79c597ba7ae7f3d489d58b37e8d87ab2, type: 3}
   minWaitTime: 0
   maxWaitTime: 2
   minFlickerTime: 0
-  maxFlickerTime: 0.5
+  maxFlickerTime: 0.2
+--- !u!82 &1660192432
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660192429}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4d43f2946afa8a64696c8fe18dff186a, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: -0.6
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.2
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1661616394
 GameObject:
   m_ObjectHideFlags: 0
@@ -82025,6 +82152,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1418972433}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: CloseItems
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1660192431}
+        m_TargetAssemblyTypeName: MainMenuEffectController, Assembly-CSharp
+        m_MethodName: ResetCoroutines
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
