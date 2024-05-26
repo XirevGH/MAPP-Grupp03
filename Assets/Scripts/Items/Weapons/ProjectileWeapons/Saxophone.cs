@@ -41,7 +41,7 @@ public class Saxophone : ProjectileWeapon
         if (gameObject.activeSelf)
         {
             List<GameObject> closestEnemy = FindClosestEnemy(base.amountOfProjectiles);
-            if (closestEnemy != null)
+            if (closestEnemy.Count != 0)
             {
                 SoundManager.Instance.PlaySFX(attackSound, 0.5f);
                 foreach (GameObject target in closestEnemy)

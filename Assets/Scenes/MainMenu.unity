@@ -5246,6 +5246,11 @@ MonoBehaviour:
   item: {fileID: 656064299}
   method: GetCurrentRadiusIncrease
   isPercentage: 1
+--- !u!82 &127493580 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8236551686586084526, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+  m_PrefabInstance: {fileID: 5131103641739008332}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &130441475
 GameObject:
   m_ObjectHideFlags: 0
@@ -11664,6 +11669,11 @@ MonoBehaviour:
   item: {fileID: 1784713650}
   method: GetIncreaseDecoyAmountCost
   isPercentage: 0
+--- !u!82 &326839253 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5048579084480845104, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+  m_PrefabInstance: {fileID: 5131103641739008332}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &329286310
 GameObject:
   m_ObjectHideFlags: 0
@@ -40422,7 +40432,7 @@ MonoBehaviour:
   penetrationUpgradeCost: 150
   shootingPoint: {fileID: 798736328}
   notePrefab: {fileID: 5730958551181348608, guid: 7869788c3305b0340a1bc5d1b68be1fe, type: 3}
-  speed: 20
+  speed: 10
 --- !u!1 &801691589
 GameObject:
   m_ObjectHideFlags: 0
@@ -46737,7 +46747,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.85
+  m_fontSize: 33.6
   m_fontSizeBase: 73.26
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -48485,7 +48495,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.2, y: 0}
+  m_Offset: {x: 2.2, y: 0.88405156}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -48496,7 +48506,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.8, y: 1}
+  m_Size: {x: 3.7999997, y: 2.7681031}
   m_EdgeRadius: 0
 --- !u!4 &1047333871
 Transform:
@@ -57877,7 +57887,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.3
+  m_fontSize: 76.45
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -59151,7 +59161,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 68.75
+  m_fontSize: 74.6
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -99626,6 +99636,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!82 &2053229010 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1570489843778087493, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+  m_PrefabInstance: {fileID: 5131103641739008332}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2054245122
 GameObject:
   m_ObjectHideFlags: 0
@@ -99750,7 +99765,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 66.45
+  m_fontSize: 72.3
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -102023,6 +102038,18 @@ PrefabInstance:
       propertyPath: minBPM
       value: 75
       objectReference: {fileID: 0}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: expSource1
+      value: 
+      objectReference: {fileID: 326839253}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: expSource2
+      value: 
+      objectReference: {fileID: 2053229010}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: expSource3
+      value: 
+      objectReference: {fileID: 127493580}
     - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: beatThreshold
       value: 10
