@@ -253,7 +253,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.31840003
+  m_FillAmount: 0.2
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -11704,7 +11704,7 @@ MonoBehaviour:
   m_MinValue: 75
   m_MaxValue: 200
   m_WholeNumbers: 0
-  m_Value: 114.8
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
