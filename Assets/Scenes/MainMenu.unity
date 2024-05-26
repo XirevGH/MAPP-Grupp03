@@ -2266,7 +2266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &67619378
 RectTransform:
   m_ObjectHideFlags: 0
@@ -81634,6 +81634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1660192430}
+  - component: {fileID: 1660192431}
   m_Layer: 0
   m_Name: Buttons
   m_TagString: Untagged
@@ -81664,6 +81665,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1660192431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660192429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9c778f15ed70e749a02c9faed36a50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonImages:
+  - {fileID: 1912058779}
+  - {fileID: 72363132}
+  - {fileID: 2130827844}
+  playLit: {fileID: 21300000, guid: f05b9d2a05d913248896a94bf9f56792, type: 3}
+  playUnlit: {fileID: 21300000, guid: 9a766b313d0f680488f8edd410cd95ea, type: 3}
+  upgradesLit: {fileID: 21300000, guid: b1a399133672bb64eaf8376ef2218214, type: 3}
+  upgradesUnlit: {fileID: 21300000, guid: 5480eef0e41ddc84ba906bbaf7447ed7, type: 3}
+  settingsLit: {fileID: 21300000, guid: 4b24b0f74ad19b54f9c2697b12be861c, type: 3}
+  settingsUnlit: {fileID: 21300000, guid: ba59fdf2e21794a41b882b326ffdec91, type: 3}
+  minWaitTime: 0
+  maxWaitTime: 2
+  minFlickerTime: 0
+  maxFlickerTime: 0.5
 --- !u!1 &1661616394
 GameObject:
   m_ObjectHideFlags: 0
