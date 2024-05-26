@@ -69,7 +69,7 @@ public class ChillVibe : Utility
 
             Enemy  enemyScript = other.gameObject.GetComponent<Enemy>();
             enemyScript.GetComponent<Enemy>().isSlow = true;
-            enemyScript.thisMovementSpeed = enemyScript.thisMovementSpeed * slowSpeedPercent * Enemy.movementSpeed * enemyScript.baseMovementSpeed;
+            enemyScript.thisMovementSpeed =  slowSpeedPercent * Enemy.movementSpeed * enemyScript.baseMovementSpeed;
            
           
         }
