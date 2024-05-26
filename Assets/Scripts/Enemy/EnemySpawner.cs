@@ -51,7 +51,7 @@ public class EnemySpawner : MonoBehaviour
     
    void Update()
     {
-        if (waveCount == 61)
+        if (waveCount >= 61)
         {
             ResetWaveCount();
         }
