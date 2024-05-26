@@ -43,12 +43,21 @@ public class ResultManager : MonoBehaviour
             Instance.enemiesDefeatedText = this.enemiesDefeatedText;
             Instance.moneyEarnedText = this.moneyEarnedText;
             Instance.iconPictures = this.iconPictures;
-            Destroy(this);
             Instance.SetImages();
+            Instance.CompileText();
+            Destroy(this);
         }
     }
 
-    private void SetImages()
+    private void CompileText()
+    {
+        moneyEarnedText.text = "" + moneyEarned;
+        levelText.text = "" + mainLevel;
+        timerText.text = "" + timeText;
+        enemiesDefeatedText.text = "" + enemiesDefeated;
+    }
+
+        private void SetImages()
     {
         int itemAmount = currentItems.Count;
         for(int i = 0; i < iconPictures.Length; i++)
