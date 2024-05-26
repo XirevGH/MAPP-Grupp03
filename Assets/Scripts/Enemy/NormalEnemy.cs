@@ -1,7 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
-using static UnityEngine.InputManagerEntry;
+
 public class NormalEnemy : Enemy
 {
     public Collider2D screenCollider;
