@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -49,15 +50,29 @@ public class EnemySpawner : MonoBehaviour
 
     
    void Update()
-    {   
-        if(!bossAlive){ //Stops vave spwaning if ther is a boss alive
-            if(!waveHasSpawned){
-                SpawnWave();
-                waveHasSpawned = true;
-                Invoke("SpawnNextWave", spawnRate);
-            }
-            
+    {
+        if (waveCount == 61)
+        {
+            ResetWaveCount();
         }
+            if (!bossAlive)
+            { //Stops vave spwaning if ther is a boss alive
+                if (!waveHasSpawned)
+                {
+                    SpawnWave();
+                    waveHasSpawned = true;
+                    Invoke("SpawnNextWave", spawnRate);
+                }
+
+            }
+        
+       
+    }
+
+    public void ResetWaveCount()
+    {
+        waveCount = 0;
+        Enemy.healthProcenIncrease *= 1.5f;
     }
 
     void SpawnWave()
@@ -82,27 +97,69 @@ public class EnemySpawner : MonoBehaviour
     {
         if(!bossAlive){
             spawnRate -= 0.00001f;
-            spawnIncreaser += 0.0006f;}
+            spawnIncreaser += 0.0006f;
+        }
     }
     void SpawnEnemy(Vector3Int position)
     {   
          
-        if(IsBossWave()){
+        if(IsBossWave())
+        {
             Instantiate(GetBossToSpawn(), position, Quaternion.identity, bossEnemyParent.GetComponent<Transform>());
-        }else{
-            if(waveCount < 60){
-                Instantiate(enemyDrunkard, position, Quaternion.identity, normalEnemyParent.GetComponent<Transform>());
-            }else if(waveCount < 120){
-                Instantiate(enemyDancer, position, Quaternion.identity, normalEnemyParent.GetComponent<Transform>());
-            }else{
-                Instantiate(enemyBouncer, position, Quaternion.identity, normalEnemyParent.GetComponent<Transform>());
+        }
+        else
+        {
+            if(waveCount < 30)
+            {
+                int value = Random.Range(0, 101);
+                if (value < 80)
+                {
+                    Instantiate(enemyDrunkard, position, Quaternion.identity, normalEnemyParent.GetComponent<Transform>());
+                }
+                else
+                {
+                    Instantiate(enemyDancer, position, Quaternion.identity, normalEnemyParent.GetComponent<Transform>());
+                }
+                
+            }else if(waveCount < 60){
+
+                int value = Random.Range(0, 101);
+                if (value < 20)
+                {
+                    Instantiate(enemyDrunkard, position, Quaternion.identity, normalEnemyParent.GetComponent<Transform>());
+                }
+                else if(value < 85 && value > 20 )
+                {
+                    Instantiate(enemyDancer, position, Quaternion.identity, normalEnemyParent.GetComponent<Transform>());
+                }
+                else 
+                {
+                    Instantiate(enemyBouncer, position, Quaternion.identity, normalEnemyParent.GetComponent<Transform>());
+                }
+              
+            }else
+            {
+                int value = Random.Range(0, 101);
+                if (value < 33)
+                {
+                    Instantiate(enemyDrunkard, position, Quaternion.identity, normalEnemyParent.GetComponent<Transform>());
+                }
+                else if (value < 66 && value > 33)
+                {
+                    Instantiate(enemyDancer, position, Quaternion.identity, normalEnemyParent.GetComponent<Transform>());
+                }
+                else
+                {
+                    Instantiate(enemyBouncer, position, Quaternion.identity, normalEnemyParent.GetComponent<Transform>());
+                }
+
             }
         }
         
         
     }
 
-    
+
 
 /*    void SpawnEnemiesInCorners()
     {

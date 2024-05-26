@@ -6723,9 +6723,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossWaves:
   - enemyBOSS: {fileID: 6536046719154458180, guid: e9c853b6690eefb479ed71008c35e6bf, type: 3}
-    bossWave: 60
+    bossWave: 30
   - enemyBOSS: {fileID: 6536046719154458180, guid: 7acaae812f68b64499f21201d4c83f64, type: 3}
-    bossWave: 120
+    bossWave: 60
   spawnIncreaser: 5
   mainCamera: {fileID: 519420031}
   tilemap: {fileID: 1947654048}
