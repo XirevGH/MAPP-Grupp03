@@ -68115,20 +68115,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3398288376994009385, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
       propertyPath: m_Color.b
-      value: 0.43793842
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3398288376994009385, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
       propertyPath: m_Color.g
-      value: 0.9622642
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3398288376994009385, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
       propertyPath: m_Color.r
-      value: 0.23148806
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3398288376994009385, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3398288376994009385, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 41504d774ba914b419d42f324fd0cb3c, type: 2}
     - target: {fileID: 4845860124362309007, guid: ae94bd5916259de4a881d36eb2ab8d90, type: 3}
       propertyPath: m_Name
       value: ChillVibe

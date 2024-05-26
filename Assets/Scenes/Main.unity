@@ -511,7 +511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 0.3}
   m_AnchorMax: {x: 0.45, y: 0.47}
-  m_AnchoredPosition: {x: 0, y: -76.99997}
+  m_AnchoredPosition: {x: 0, y: -76.99996}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &70347318
@@ -4667,7 +4667,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.8
+  m_fontSize: 20.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5721,7 +5721,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.55, y: 0.3}
   m_AnchorMax: {x: 0.95, y: 0.47}
-  m_AnchoredPosition: {x: -0.1000061, y: -79.99997}
+  m_AnchoredPosition: {x: -0.1000061, y: -79.99996}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &816420849
@@ -10366,7 +10366,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2131686110}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -12993,7 +12993,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.4
+  m_fontSize: 16.45
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -13352,11 +13352,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8ee63eb952678448d967196a631605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelText: {fileID: 6256552757786023533, guid: f055b79b77a15314cb97578cd6d155b6, type: 3}
   timerText: {fileID: 3095667434961151154, guid: ea123d5ad32fcc34f987ef3e49be0304, type: 3}
+  levelText: {fileID: 6256552757786023533, guid: f055b79b77a15314cb97578cd6d155b6, type: 3}
   enemiesDefeatedText: {fileID: 4704084059594391430, guid: 410163a0795c9334498bb9d2e18eaebc, type: 3}
   moneyEarnedText: {fileID: 9167483687933025870, guid: f74ac1888e5efd74f9b48c349a43bb3b, type: 3}
-  playerItemsText: {fileID: 0}
+  iconPictures: []
   timeText: 
   mainLevel: 1
   enemiesDefeated: 0
@@ -14347,7 +14347,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.55
+  m_fontSize: 20.95
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -14854,3 +14854,4 @@ SceneRoots:
   - {fileID: 627292949}
   - {fileID: 2115886693}
   - {fileID: 1443266045}
+  - {fileID: 1488270235}
