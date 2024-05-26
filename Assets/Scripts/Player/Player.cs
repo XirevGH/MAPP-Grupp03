@@ -252,7 +252,8 @@ public class Player : MonoBehaviour
         xpHeld -= xpToLevel;
         xpToLevel *= 1.4f;
         level++;
-        levelText.text = "Level: " + level;
+        System.String[] text = levelText.text.Split(':');
+        levelText.text = text[0] + ":" + level;
         StartCoroutine(UpdateXPSlider());
         ResultManager.Instance.mainLevel = level;
         GameObject confettiLeftClone = Instantiate(confettiLeft, gameController.canvasWorldSpace.transform);

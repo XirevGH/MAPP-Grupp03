@@ -260,15 +260,27 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8704169389596672
-    m_Key: Level
+    m_Key: Level result
     m_Metadata:
       m_Items: []
   - m_Id: 8704515939770368
-    m_Key: 'Enemies defeated:'
+    m_Key: Enemies Slain
     m_Metadata:
       m_Items: []
   - m_Id: 8705049664954368
     m_Key: 'Notes Earned:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8884481252462592
+    m_Key: Stats
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8886145028001792
+    m_Key: Items Used
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8891787075719168
+    m_Key: level InGame
     m_Metadata:
       m_Items: []
   m_Metadata:

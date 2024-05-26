@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Unity.VisualScripting;
+using UnityEditor.Localization.Plugins.XLIFF.V12;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -35,10 +36,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private bool canPlayEnemy = false;
 
     [Header("EXP relateted")]
-    [SerializeField] private int maxExpSounds = 3;
-    [SerializeField] private int currentExpSoundsPlaying = 0;
-    [SerializeField] private bool canPlayEXP = false;
-
+    [SerializeField] private AudioSource expSource1, expSource2, expSource3;
     private Slider musicSpeedSilder;
     public static SoundManager Instance
     {
@@ -96,16 +94,7 @@ public class SoundManager : MonoBehaviour
 
         canPlayEnemy = currentEnemySoundsPlaying < maxEnemySounds;
 
-        foreach (XPDrop exp in GameObject.FindObjectsOfType<XPDrop>(false))
-        {
-            if (exp.gameObject.GetComponent<AudioSource>().isPlaying)
-            {
-                currentExpSoundsPlaying++;
-            }
-        }
-
-        canPlayEXP = currentExpSoundsPlaying < maxExpSounds;
-
+      
 
     }
 
@@ -363,7 +352,6 @@ public class SoundManager : MonoBehaviour
 
     public void PlayEnemySFX(GameObject gameobject, AudioClip clip, float volume)
     {
-        Debug.Log(canPlayEXP);
         if (canPlayEnemy)
         {
             AudioSource audioSource = gameobject.GetComponent<AudioSource>();
@@ -374,17 +362,30 @@ public class SoundManager : MonoBehaviour
 
     }
 
-    public void PlayExpSFX(GameObject gameobject, AudioClip clip, float volume)
+    public void PlayExpSFX(AudioClip clip, float volume)
     {
-        Debug.Log(canPlayEXP);
-        if (canPlayEXP)
+        if (expSource1.isPlaying == false)
         {
-            AudioSource audioSource = gameobject.GetComponent<AudioSource>();
-            audioSource.pitch = (float)UnityEngine.Random.Range(0.5f, currentTrack.pitch);
-            audioSource.volume = (float)UnityEngine.Random.Range(volume - 0.3f, volume);
+            AudioSource audioSource = expSource1;
+            audioSource.pitch = currentTrack.pitch;
             audioSource.PlayOneShot(clip, volume);
         }
-
+        else if (!expSource2.isPlaying)
+        {
+            AudioSource audioSource = expSource2;
+            audioSource.pitch = currentTrack.pitch;
+            audioSource.PlayOneShot(clip, volume);
+        }
+        else if (!expSource3.isPlaying)
+        {
+            AudioSource audioSource = expSource3;
+            audioSource.pitch = currentTrack.pitch;
+            audioSource.PlayOneShot(clip, volume);
+        }
+        else
+        {
+            return;
+        }
     }
 
     public void Click()
