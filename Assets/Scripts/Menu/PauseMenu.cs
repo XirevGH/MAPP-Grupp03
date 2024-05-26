@@ -53,7 +53,7 @@ public class PauseMenu : MonoBehaviour
     void PauseGame()
     {
 
-        if (upgradeScreen.activeInHierarchy == false) { 
+        if (upgradeScreen.activeInHierarchy == false) {
             JoystickController.Instance.ToggleJoysticks(false);
             TriggerController.Instance.ToggleTrigger(false);
             SoundManager.Instance.ToggleMusicPause(false);

@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class JoystickController : MonoBehaviour
 {
-    public GameObject leftJoystic;
-    public GameObject rightJoystic;
+    public DynamicJoystick leftJoystic;
+    public DynamicJoystick rightJoystic;
 
     public static JoystickController Instance
     {
@@ -17,7 +18,14 @@ public class JoystickController : MonoBehaviour
 
     public void ToggleJoysticks(bool state)
     {
-        leftJoystic.SetActive(state);
-        rightJoystic.SetActive(state);
+        leftJoystic.gameObject.SetActive(state);
+        rightJoystic.gameObject.SetActive(state);
+        leftJoystic.handle.anchoredPosition = Vector2.zero;
+        rightJoystic.handle.anchoredPosition = Vector2.zero;
+        leftJoystic.input = Vector2.zero;
+        rightJoystic.input = Vector2.zero;
+       
     }
+
+
 }

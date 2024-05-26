@@ -10,5 +10,7 @@ public class HealthPickup : Pickup
         player.RestoreHealth(percentToHeal);
         SoundManager.Instance.PlaySFX(pickupSound, 1);
     }
+
     
+
 }
