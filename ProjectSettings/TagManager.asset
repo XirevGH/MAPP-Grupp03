@@ -38,6 +38,7 @@ TagManager:
   - Decoy
   - Personal Space
   - MusicSpeedlider
+  - Despawner
   layers:
   - Default
   - TransparentFX
