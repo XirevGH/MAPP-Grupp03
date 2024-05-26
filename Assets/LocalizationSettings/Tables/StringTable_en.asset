@@ -263,7 +263,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8704169389596672
-    m_Localized: 'Level:'
+    m_Localized: Level
     m_Metadata:
       m_Items: []
   - m_Id: 8704515939770368
@@ -280,6 +280,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 8886145028001792
     m_Localized: Items Used
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8891787075719168
+    m_Localized: 'Level:'
     m_Metadata:
       m_Items: []
   references:
