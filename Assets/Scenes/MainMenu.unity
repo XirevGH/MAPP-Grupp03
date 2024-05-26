@@ -46602,7 +46602,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37
+  m_fontSize: 33.6
   m_fontSizeBase: 73.26
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -57741,7 +57741,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 84.05
+  m_fontSize: 76.45
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -59017,7 +59017,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 77.25
+  m_fontSize: 74.6
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -99616,7 +99616,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.65
+  m_fontSize: 72.3
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -101889,6 +101889,18 @@ PrefabInstance:
       value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: expSource1
+      value: 
+      objectReference: {fileID: 5131103641739008335}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: expSource2
+      value: 
+      objectReference: {fileID: 5131103641739008334}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+      propertyPath: expSource3
+      value: 
+      objectReference: {fileID: 5131103641739008333}
+    - target: {fileID: 7112286554095411555, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
       propertyPath: beatThreshold
       value: 10
       objectReference: {fileID: 0}
@@ -101934,6 +101946,21 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+--- !u!82 &5131103641739008333 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8236551686586084526, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+  m_PrefabInstance: {fileID: 5131103641739008332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &5131103641739008334 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1570489843778087493, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+  m_PrefabInstance: {fileID: 5131103641739008332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &5131103641739008335 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5048579084480845104, guid: e810ec76de73b68498ae8a74d6393fe0, type: 3}
+  m_PrefabInstance: {fileID: 5131103641739008332}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

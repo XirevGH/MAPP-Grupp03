@@ -36,9 +36,6 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private bool canPlayEnemy = false;
 
     [Header("EXP relateted")]
-    [SerializeField] private int maxExpSounds = 3;
-    [SerializeField] private int currentExpSoundsPlaying = 0;
-    [SerializeField] private bool canPlayEXP = false;
     [SerializeField] private AudioSource expSource1, expSource2, expSource3;
     private Slider musicSpeedSilder;
     public static SoundManager Instance
@@ -369,7 +366,6 @@ public class SoundManager : MonoBehaviour
     {
         if (expSource1.isPlaying == false)
         {
-            Debug.Log("wda");
             AudioSource audioSource = expSource1;
             audioSource.pitch = currentTrack.pitch;
             audioSource.PlayOneShot(clip, volume);
