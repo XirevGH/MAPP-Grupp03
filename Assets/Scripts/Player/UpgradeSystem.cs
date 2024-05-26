@@ -61,7 +61,6 @@ public class UpgradeSystem : MonoBehaviour
     public Tuple<string, string, string> GetUpgradeDescription(Item item, string typeOfChoice, string upgrade)
     {
         Locale currentSelectedLocale = LocalizationSettings.SelectedLocale;
-        Debug.Log(currentSelectedLocale); 
         var file = Resources.Load<TextAsset>("Text/UpgradeDescriptions" + currentSelectedLocale);
         foreach (string line in file.text.Split("\n")) {
             string[] fields = line.Split(',');

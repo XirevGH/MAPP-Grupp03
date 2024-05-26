@@ -306,6 +306,7 @@ MonoBehaviour:
   thisMovementSpeed: 2
   baseMovementSpeed: 2
   isSlow: 0
+  isPushedBack: 0
   damageNumbers: {fileID: 287581913604085729}
   damageNumberAnim: {fileID: 2898152515693454215}
   enemyAnim: {fileID: -8718832928761771214}
