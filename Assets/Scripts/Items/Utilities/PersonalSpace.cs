@@ -1,14 +1,12 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PersonalSpace : Utility
 {
-  
+    [SerializeField] private ParticleSystem ps;
     public float pushForce = 5f;
-    public float pushInterval = 10f;
-
-    private float timer = 0f;
-
 
     [SerializeField] private float radiusIncreasePercentage;
     [SerializeField] private float forceIncreasePercentage;
@@ -19,16 +17,49 @@ public class PersonalSpace : Utility
     public int radiusUpgradeCost;
     public int forceUpgradeCost;
 
+    private bool pushingBack;
 
-    private void Update()
+    private CircleCollider2D spaceCollider;
+    private HashSet<GameObject> colliders;
+
+    ParticleSystem.MainModule mainModule;
+
+
+    private void Start()
     {
+        UnityAction action = new UnityAction(PushEnemiesAway);
+        TriggerController.Instance.SetTrigger(4, action);
+        spaceCollider = GetComponent<CircleCollider2D>();
+        colliders = new HashSet<GameObject>();
+        mainModule = ps.main;
+        mainModule.startLifetime = 0.1f;
+    }
 
-        timer += Time.deltaTime;
-
-        if (timer >= pushInterval)
+    private void FixedUpdate()
+    {
+        if (pushingBack)
         {
-            PushEnemiesAway();
-            timer = 0f;
+            List<GameObject> copyOfColliders = new List<GameObject>(colliders);
+            foreach (GameObject collider in copyOfColliders)
+            {
+                if (collider != null)
+                {
+                    if (collider.gameObject.CompareTag("Enemy"))
+                    {
+                        Vector2 direction = collider.transform.position - transform.position;
+
+                        direction.Normalize();
+
+                        Rigidbody2D enemyRB = collider.gameObject.GetComponent<Rigidbody2D>();
+                        if (enemyRB != null)
+                        {
+                            collider.gameObject.GetComponent<Enemy>().isPushedBack = true;
+                            enemyRB.AddRelativeForce(direction * pushForce, ForceMode2D.Force);
+                            StartCoroutine(RemoveForce(enemyRB, 1f));
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -36,6 +67,7 @@ public class PersonalSpace : Utility
     {
         radiusRank++;
         gameObject.transform.localScale *= (1 + (radiusIncreasePercentage / 100f));
+        mainModule.startLifetime = gameObject.transform.localScale.x / 10;
     }
 
     public float GetCurrentRadiusIncrease()
@@ -82,31 +114,36 @@ public class PersonalSpace : Utility
 
     private void PushEnemiesAway()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, GetComponent<CircleCollider2D>().radius);
-
-        foreach (Collider2D collider in colliders)
+        if (gameObject.activeSelf) 
         {
-            if (collider.gameObject.CompareTag("Enemy"))
-            {
-                Vector2 direction = collider.transform.position - transform.position;
+            spaceCollider.enabled = true;
+            ps.Play(); 
+            ParticleSystem.EmissionModule em = ps.emission; 
+            em.enabled = true;
 
-                direction.Normalize();
-
-                Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
-                if (rb != null)
-                {
-                    rb.AddForce(direction * pushForce, ForceMode2D.Impulse);
-                    StartCoroutine(RemoveForce(rb, 1f));
-                }
-            }
+            pushingBack = true;
         }
     }
+
+/*    private void OnTriggerEnter2D(Collider2D other)
+    {
+        colliders.Add(other.gameObject);
+    }*/
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        colliders.Add(other.gameObject);
+    }
+
 
     private System.Collections.IEnumerator RemoveForce(Rigidbody2D rb, float delay)
     {
         yield return new WaitForSeconds(delay);
         if(rb != null)
         {
+            spaceCollider.enabled = false;
+            pushingBack = false;
+            rb.gameObject.GetComponent<Enemy>().isPushedBack = false;
             rb.velocity = Vector2.zero;
         }
     }
