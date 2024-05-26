@@ -1,10 +1,16 @@
+using Unity.VisualScripting;
 using UnityEngine;
-
-
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 public class NormalEnemy : Enemy
 {
     void FixedUpdate()
     {
+
+        if(Vector3.Distance(transform.position, player.transform.position) > destroyDistance)
+        {
+            Destroy(gameObject);
+        }
+
         SelectTarget();
         if (IsAlive())
         {
@@ -33,5 +39,7 @@ public class NormalEnemy : Enemy
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, thisMovementSpeed / 200);
         }
     }
+
+   
     
 }

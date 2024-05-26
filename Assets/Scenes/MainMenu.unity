@@ -12563,7 +12563,7 @@ Transform:
   m_GameObject: {fileID: 352253175}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 215.11029, y: -164.62912, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18282,7 +18282,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1103054515861734431, guid: 17ccd9c1a77fa004790076d7ee038be3, type: 3}
       propertyPath: damage
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1103054515861734431, guid: 17ccd9c1a77fa004790076d7ee038be3, type: 3}
       propertyPath: player
@@ -22617,7 +22617,7 @@ Transform:
   m_GameObject: {fileID: 500791840}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 215.11029, y: -164.62912, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30818,7 +30818,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: damage
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: player
@@ -31955,7 +31955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Break Dance
-  damage: 1
+  damage: 15
   damageRank: 0
   damageUpgradeCost: 350
   percentageDamageIncrease: 20
@@ -33047,7 +33047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: damage
-      value: 4
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: player
@@ -35232,7 +35232,7 @@ Transform:
   m_GameObject: {fileID: 788045226}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 215.11029, y: -164.62912, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40272,7 +40272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Saxophone
-  damage: 2
+  damage: 10
   damageRank: 0
   damageUpgradeCost: 75
   percentageDamageIncrease: 10
@@ -46602,7 +46602,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.85
+  m_fontSize: 33.6
   m_fontSizeBase: 73.26
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -48291,7 +48291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Bass Guitar
-  damage: 2
+  damage: 10
   damageRank: 0
   damageUpgradeCost: 50
   percentageDamageIncrease: 10
@@ -57741,7 +57741,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70.3
+  m_fontSize: 76.45
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -59017,7 +59017,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 68.75
+  m_fontSize: 74.6
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -59888,7 +59888,7 @@ Transform:
   m_GameObject: {fileID: 1253387431}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 215.11029, y: -164.62912, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76173,7 +76173,7 @@ Transform:
   m_GameObject: {fileID: 1648194154}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 215.11029, y: -164.62912, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83884,7 +83884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
       propertyPath: damage
-      value: 3
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
       propertyPath: player
@@ -92811,7 +92811,7 @@ Transform:
   m_GameObject: {fileID: 2001551021}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 215.11029, y: -164.62912, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -99146,7 +99146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Electric Guitar
-  damage: 2
+  damage: 10
   damageRank: 0
   damageUpgradeCost: 150
   percentageDamageIncrease: 10
@@ -99624,7 +99624,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 66.45
+  m_fontSize: 72.3
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1
