@@ -49,6 +49,7 @@ public class Enemy : MonoBehaviour
     public SpriteRenderer sprite;
     public static float movementSpeed;  // Global % enemy movespeed increase.  
     public static float healthProcenIncrease;
+    public static float destroyDistance = 50;
     public float health;
     private bool alive;
     public float thisMovementSpeed; 
@@ -125,6 +126,8 @@ public class Enemy : MonoBehaviour
             enemyAnim.SetTrigger("Walking");
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, thisMovementSpeed / 200);
         }
+
+
            
     }
 
