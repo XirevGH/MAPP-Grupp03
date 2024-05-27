@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class ElectricBolt : MonoBehaviour
 {
@@ -12,15 +13,18 @@ public class ElectricBolt : MonoBehaviour
     private float length;
     private float angle;
     private Vector3 direction;
-    private float spriteChangeCooldown = 0.1f;
+    private float spriteChangeCooldown = 0.05f;
     private bool spriteChangeReady;
+    private bool setLighter;
 
     private SpriteRenderer rend;
+    private Light2D boltLight; 
 
     private void Start()
     {
         rend = GetComponent<SpriteRenderer>();
         damage = player.GetComponent<ElectricGuitar>().GetDamage();
+        boltLight = transform.GetComponentInChildren<Light2D>();
         spriteChangeReady = true;
         DealDamage();
     }
@@ -56,6 +60,16 @@ public class ElectricBolt : MonoBehaviour
             ChangeSprite();
             spriteChangeReady = false;
             Invoke("SetSpriteReady", spriteChangeCooldown);
+            boltLight.intensity = setLighter ? 6 : 4;
+            boltLight.falloffIntensity = setLighter ? 0.3f : 0.5f;
+            if(setLighter == true)
+            {
+                setLighter = false;
+            }
+            else
+            {
+                setLighter = true;
+            }
         }
     }
 

@@ -1,0 +1,40 @@
+﻿Weapon,อาวุธ,Bass Guitar,เบส,ตีศัตรูที่อยู่ใกล้ที่สุด
+Weapon,อาวุธ,Vinyl Record,แผ่นเสียง,โยนแผ่นเสียงที่วกกลับมาหา เหมือนบูมเมอแรง
+Weapon,อาวุธ,Yoyo,โยโย่,แกว่งโยโย่รอบตัว
+Weapon,อาวุธ,Disco Ball,ลูกดิสโก้บอล,โยนลูกดิสโก้บอลขึ้นฟ้า
+Weapon,อาวุธ,Electric Guitar,กีต้าร์ไฟฟ้า,ช็อกศัตรูที่อยู่ใกล้
+Weapon,อาวุธ,Saxophone,แซกโซโฟน,ยิงโน้ตดนตรีใส่ศัตรูที่อยู่ใกล้
+Weapon,อาวุธ,Break Dance,เบรกแดนซ์,ทำความเสียหายให้กับศัตรูที่อยู่ใกล้
+Weapon,อาวุธ,Synthwave Blast,เครื่องสังเคราะห์เสียง,ส่งคลื่นเสียงไปทุกทิศทาง
+Utility,ของเสริม,Roller Skates,รองเท้าสเก็ต,ใส่รองเท้าสเก็ตแล้วเดินเร็วขึ้น
+Utility,ของเสริม,Groove Armor,เกราะ,เกราะช่วยป้องกันความเสียหายจากศัตรู
+Utility,ของเสริม,Chill Vibe,ใจเย็น,ทำให้ศัตรูใจเย็น
+Utility,ของเสริม,Decoy,เหยื่อ,โยนเงินขึ้นฟ้าเพื่อล่อศัตรู
+Utility,ของเสริม,Personal Space,พื้นที่ส่วนตัว,ดันศัตรูออกไปจากพื้นที่ส่วนตัว
+Upgrade,อัพเกรดอาวุธ,Bass Guitar,เบส,ทำความเสียหายมากขึ้น,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,อัพเกรดอาวุธ,Vinyl Record,แผ่นเสียง,ทำความเสียหายมากขึ้น,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,อัพเกรดอาวุธ,Vinyl Record,แผ่นเสียง,เพิ่มจำนวนแผ่นเสียง,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,แผ่น
+Upgrade,อัพเกรดอาวุธ,Vinyl Record,แผ่นเสียง,เพิ่มจำนวนศัตรูที่แผ่นเสียงสามารถสร้างความเสียหายได้,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,ตัว
+Upgrade,อัพเกรดอาวุธ,Yoyo,Yoyo,ทำความเสียหายมากขึ้น,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,อัพเกรดอาวุธ,Yoyo,Yoyo,เพิ่มจำนวนโยโย่,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,อัน
+Upgrade,อัพเกรดอาวุธ,Disco Ball,ลูกดิสโก้บอล,ทำความเสียหายมากขึ้น,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,อัพเกรดอาวุธ,Disco Ball,ลูกดิสโก้บอล,เพิ่มจำนวนลูกดิสโก้บอล,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,ลูก
+Upgrade,อัพเกรดอาวุธ,Disco Ball,ลูกดิสโก้บอล,เพิ่มจำนวนศัตรูที่ลูกดิสโก้บอลสามารถสร้างความเสียหายได้,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,ตัว
+Upgrade,อัพเกรดอาวุธ,Electric Guitar,กีต้าร์ไฟฟ้า,ทำความเสียหายมากขึ้น,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,อัพเกรดอาวุธ,Electric Guitar,กีต้าร์ไฟฟ้า,เพิ่มจำนวนศัตรูที่กีต้าร์ไฟฟ้าสามารถสร้างความเสียหายได้,IncreaseTetherAmount,GetTetherAmountIncreasePerUpgrade,ตัว
+Upgrade,อัพเกรดอาวุธ,Saxophone,แซกโซโฟน,ทำความเสียหายมากขึ้น,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,อัพเกรดอาวุธ,Saxophone,แซกโซโฟน,เพิ่มจำนวนโน้ตดนตรี,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,ตัว
+Upgrade,อัพเกรดอาวุธ,Saxophone,แซกโซโฟน,เพิ่มจำนวนศัตรูที่แซกโซโฟนสามารถสร้างความเสียหายได้,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,ตัว
+Upgrade,อัพเกรดอาวุธ,Break Dance,เบรกแดนซ์,ทำความเสียหายมากขึ้น,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,อัพเกรดอาวุธ,Break Dance,เบรกแดนซ์,เพิ่มขอบเขตการโจมตี,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,อัพเกรดอาวุธ,Synthwave Blast,เครื่องสังเคราะห์เสียง,ทำความเสียหายมากขึ้น,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,อัพเกรดอาวุธ,Synthwave Blast,เครื่องสังเคราะห์เสียง,เพิ่มจำนวนคลื่นเสียง,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,ลูก
+Upgrade,อัพเกรดอาวุธ,Synthwave Blast,เครื่องสังเคราะห์เสีย,เพิ่มจำนวนศัตรูที่เครื่องสังเคราะห์เสียสามารถสร้างความเสียหายได้,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,ตัว
+Upgrade,อัพเกรดของเสริม,Roller Skates,รองเท้าสเก็ต,เดินเร็วขึ้น,IncreaseMovementSpeed,GetMovementSpeedIncreasePercentage,%
+Upgrade,อัพเกรดของเสริม,Groove Armor,เกราะ,เพิ่มเลือด,IncreaseHealth,GetHealthIncreasePercentage,%
+Upgrade,อัพเกรดของเสริม,Chill Vibe,ใจเย็น,เพิ่มขอบเขต,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,อัพเกรด,Chill Vibe,ใจเย็น,เพิ่มความเย็น,IncreaseSlow,GetSlowIncreasePercentage,%
+Upgrade,อัพเกรดของเสริม,Decoy,เหยื่อ,เพิ่มจำนวนเหยื่อ,IncreaseDecoyAmount,GetDecoyAmountIncreasePerUpgrade,ตัว
+Upgrade,อัพเกรดของเสริม,Decoy,เหยื่อ,เพิ่มเลือดเหยื่อ,IncreaseDecoyHealth,GetDecoyHealthAmountIncreasePerUpgrade,%
+Upgrade,อัพเกรดของเสริม,Personal Space,พื้นที่ส่วนตัว,เพิ่มขอบเขตพื้นที่ส่วนตัว,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,อัพเกรดของเสริม,Personal Space,พื้นที่ส่วนตัว,ดันแรงขึ้น,IncreaseForce,GetForceIncreasePercentage,%

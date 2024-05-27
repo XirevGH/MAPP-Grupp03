@@ -86,7 +86,7 @@ public class DecoyController : Utility
     public void IncreaseDecoyHealth()
     {
         decoyHealthRank++;
-        decoyHealth += decoyHealthIncreasePerUpgrade;
+        decoyHealth *= (1 + (decoyHealthIncreasePerUpgrade / 100f));
     }
 
     public int GetDecoyHealthAmountIncreasePerUpgrade()
@@ -121,5 +121,15 @@ public class DecoyController : Utility
     public float GetCurrentDecoyHealthAmount()
     {
         return decoyHealth;
+    }
+
+    public int GetAmountUpgradeRank()
+    {
+        return decoyAmountRank;
+    }
+
+    public int GetHealthUpgradeRank()
+    {
+        return decoyHealthRank;
     }
 }

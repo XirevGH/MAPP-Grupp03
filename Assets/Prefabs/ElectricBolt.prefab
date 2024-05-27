@@ -1,5 +1,99 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5566860425293527275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1564701111818645281}
+  - component: {fileID: 4263800072047932349}
+  m_Layer: 16
+  m_Name: Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1564701111818645281
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5566860425293527275}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.12, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4557914739834727014}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4263800072047932349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5566860425293527275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 1
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.3
+  m_Color: {r: 0, g: 1, b: 0.9806142, a: 1}
+  m_Intensity: 6
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 21d1a4d700000000a342703c
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: -0.026600122, y: 0.06575, z: 0}
+    m_Extent: {x: 5.9456997, y: 1.21275, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.8
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -3.6589992, y: 0.026978552, z: 0}
+  - {x: -1.8906022, y: -0.34784025, z: 0}
+  - {x: -1.2130399, y: 0.20268118, z: 0}
+  - {x: 0.95728403, y: -0.27373242, z: 0}
+  - {x: 2.9264565, y: -0.33725452, z: 0}
+  - {x: 3.6463697, y: -0.13610244, z: 0}
+  - {x: 4.378913, y: -0.22710848, z: 0}
+  - {x: 5.12, y: 0.03654319, z: 0}
+  - {x: 3.6887221, y: 0.47794163, z: 0}
+  - {x: 2.7994175, y: -0.06199336, z: 0}
+  - {x: 1.0525689, y: 0.22385457, z: 0}
+  - {x: 0.2691363, y: 0.45676842, z: 0}
+  - {x: -1.7106254, y: 0.41442057, z: 0}
+  - {x: -1.8588428, y: -0.12551442, z: 0}
+  - {x: -3.6798, y: 0.32972488, z: 0}
+  - {x: -5.172935, y: -0.016391575, z: 0}
 --- !u!1 &8209966115709815941
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,7 +125,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1564701111818645281}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &-1986548830457748142
@@ -75,7 +170,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 6cdf2b8b37816bd4b9894d22bce117b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0acd2cc6adcd76e4c93d5d82c2dd8047, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -83,7 +178,7 @@ SpriteRenderer:
   m_Size: {x: 10.24, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1475987785119949244
@@ -100,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bolt1: {fileID: 21300000, guid: 0acd2cc6adcd76e4c93d5d82c2dd8047, type: 3}
   bolt2: {fileID: 21300000, guid: ef6f99be616a7474c81a5083b39b26d9, type: 3}
-  lifetime: 0.2
+  lifetime: 0.4
 --- !u!61 &563254170990130544
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -136,7 +231,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0.5}
     oldSize: {x: 10.24, y: 1.28}
     newSize: {x: 10.24, y: 1.28}
     adaptiveTilingThreshold: 0.5

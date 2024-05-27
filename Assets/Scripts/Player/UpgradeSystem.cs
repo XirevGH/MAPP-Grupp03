@@ -4,6 +4,8 @@ using System;
 using TMPro;
 using System.Reflection;
 using System.Linq;
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization;
 
 public class UpgradeSystem : MonoBehaviour
 {
@@ -56,9 +58,10 @@ public class UpgradeSystem : MonoBehaviour
         }
     }
 
-    public string GetUpgradeDescription(Item item, string typeOfChoice, string upgrade)
+    public Tuple<string, string, string> GetUpgradeDescription(Item item, string typeOfChoice, string upgrade)
     {
-        var file = Resources.Load<TextAsset>("Text/UpgradeDescriptions");
+        Locale currentSelectedLocale = LocalizationSettings.SelectedLocale;
+        var file = Resources.Load<TextAsset>("Text/UpgradeDescriptions" + currentSelectedLocale);
         foreach (string line in file.text.Split("\n")) {
             string[] fields = line.Split(',');
             string type = fields[0];
@@ -78,18 +81,18 @@ public class UpgradeSystem : MonoBehaviour
                     //Debug.Log(upgradeMethodName);
                     //Debug.Log(getStatIncrease);
                     //Debug.Log(symbol);
-                    return description + " " + item.GetType().GetMethod(getStatIncrease).Invoke(item, null) + symbol;
+                    return Tuple.Create(translatedType, translatedName, description + " " + item.GetType().GetMethod(getStatIncrease).Invoke(item, null) + symbol);
                 }
             }
             if (typeOfChoice == "Weapon" || typeOfChoice == "Utility")
             {
                 if (name.Equals(item.GetName()))
                 {
-                    return description;
+                    return Tuple.Create(translatedType, translatedName, description);
                 }
             }
         }
-        return "Item Missing or Upgrade Missing or Text Missing";
+        return Tuple.Create("Missing", "Missing", "Missing");
     }
     public Tuple<Item, string> ChooseRandomUpgrade()
     {
@@ -171,18 +174,21 @@ public class UpgradeSystem : MonoBehaviour
     }
 
 
-    public void SetPanelContent(GameObject panel, Item item, string textDescription, string typeOfChoice)
+    public void SetPanelContent(GameObject panel, Item item, Tuple<string, string, string> textDescription, string typeOfChoice)
     {
+        string type = textDescription.Item1;
+        string name = textDescription.Item2;
+        string description = textDescription.Item3;
         if(typeOfChoice.Equals("Upgrade"))
         {
-            panel.GetComponentsInChildren<TMP_Text>()[2].text = item.GetItemType() + " Upgrade";
+            panel.GetComponentsInChildren<TMP_Text>()[2].text = type;
         }
         else
         {
-            panel.GetComponentsInChildren<TMP_Text>()[2].text = item.GetItemType();
+            panel.GetComponentsInChildren<TMP_Text>()[2].text = type;
         }
-        panel.GetComponentsInChildren<TMP_Text>()[0].text = item.GetName();
-        panel.GetComponentsInChildren<TMP_Text>()[1].text = textDescription;
+        panel.GetComponentsInChildren<TMP_Text>()[0].text = name;
+        panel.GetComponentsInChildren<TMP_Text>()[1].text = description;
         if(item.GetItemType().Equals("Weapon"))
         {
             panel.GetComponent<UnityEngine.UI.Image>().sprite = weaponPanel;

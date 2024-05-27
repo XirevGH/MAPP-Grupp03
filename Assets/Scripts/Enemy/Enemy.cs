@@ -49,15 +49,17 @@ public class Enemy : MonoBehaviour
     public SpriteRenderer sprite;
     public static float movementSpeed;  // Global % enemy movespeed increase.  
     public static float healthProcenIncrease;
+    public static float destroyDistance = 50;
     public float health;
     private bool alive;
     public float thisMovementSpeed; 
 
     public float baseMovementSpeed;
     public bool isSlow;
+    public bool isPushedBack;
 
     protected float startingHealth;
-
+    protected Rigidbody2D rb;
     public TMP_Text damageNumbers;
     public Animator damageNumberAnim;
     public Animator enemyAnim;
@@ -73,6 +75,7 @@ public class Enemy : MonoBehaviour
         target = player;
         alive = true;
         StaticUpdateManager.RegisterUpdate(CustomSlowUpdate);
+        rb = GetComponent<Rigidbody2D>();
     }
 
     protected virtual void CustomSlowUpdate() //Slow uppdate 0.4s
@@ -91,22 +94,16 @@ public class Enemy : MonoBehaviour
         damageNumberWindow -= Time.deltaTime;
 
 
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-
-        if (rb != null)
+        /*if (rb != null)
         {
             StartCoroutine(RemoveForce(rb, 1f));
-        }
+        }*/
 
 
         if (IsAlive()) 
         {
-            if (Vector2.Distance(target.transform.position, transform.position) < 0.5)
-            {   
-                enemyAnim.SetTrigger("Attack");
-                player.GetComponent<Player>().TakeDamage(1);
-                
-            }
+            enemyAnim.SetTrigger("Walking");
+
 
             if (Vector2.Distance(player.transform.position, transform.position) < 1)
             {   enemyAnim.SetTrigger("Attack");
@@ -122,10 +119,8 @@ public class Enemy : MonoBehaviour
                 sprite.flipX = true;
             }
 
-            enemyAnim.SetTrigger("Walking");
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, thisMovementSpeed / 200);
-        }
-           
+            
+        }      
     }
 
     protected void SelectTarget(){
@@ -185,7 +180,7 @@ public class Enemy : MonoBehaviour
         return builder.ToString();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+/*    private void OnCollisionEnter2D(Collision2D collision)
     {
 
         if (collision.gameObject.CompareTag("Enemy"))
@@ -196,10 +191,10 @@ public class Enemy : MonoBehaviour
                 StartCoroutine(RemoveForce(rb, 1f));
             }
         }
-    }
+    }*/
 
 
-    private System.Collections.IEnumerator RemoveForce(Rigidbody2D rb, float delay)
+/*    private System.Collections.IEnumerator RemoveForce(Rigidbody2D rb, float delay)
     {
       
         yield return new WaitForSeconds(delay);
@@ -208,7 +203,7 @@ public class Enemy : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
       
-    }
+    }*/
 
 
     public float GetHealth() 

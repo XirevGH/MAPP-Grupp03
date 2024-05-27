@@ -44,4 +44,9 @@ public class GrooveArmor : Utility
     {
         return (float)Math.Round((Mathf.Pow(1 + (percentageIncrease / 100f), healthRank) - 1) * 100, 1); ;
     }
+
+    public int GetHealthUpgradeRank()
+    {
+        return healthRank;
+    }
 }

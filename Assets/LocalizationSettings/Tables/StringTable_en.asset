@@ -147,7 +147,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8357953313185792
-    m_Localized: Currency
+    m_Localized: Note
     m_Metadata:
       m_Items: []
   - m_Id: 8358562661670912
@@ -259,19 +259,31 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8703860558798848
-    m_Localized: 'Survived:'
+    m_Localized: Survived
     m_Metadata:
       m_Items: []
   - m_Id: 8704169389596672
-    m_Localized: 'Level:'
+    m_Localized: Level
     m_Metadata:
       m_Items: []
   - m_Id: 8704515939770368
-    m_Localized: 'Enemies defeated:'
+    m_Localized: Enemies Slain
     m_Metadata:
       m_Items: []
   - m_Id: 8705049664954368
-    m_Localized: 'Notes Earned:'
+    m_Localized: Notes Earned
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8884481252462592
+    m_Localized: Stats
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8886145028001792
+    m_Localized: Items Used
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8891787075719168
+    m_Localized: 'Level: 1'
     m_Metadata:
       m_Items: []
   references:

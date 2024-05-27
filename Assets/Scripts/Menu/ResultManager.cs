@@ -1,16 +1,18 @@
+using System;
 using System.Collections.Generic;
-using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Linq;
 
 public class ResultManager : MonoBehaviour
 {
+    [SerializeField] private TMP_Text timerText; 
     [SerializeField] private TMP_Text levelText;
-    [SerializeField] private TMP_Text timerText;
     [SerializeField] private TMP_Text enemiesDefeatedText;
     [SerializeField] private TMP_Text moneyEarnedText;
-    [SerializeField] private TMP_Text playerItemsText;
+    [SerializeField] private Image[] iconPictures;
 
     public static ResultManager Instance;
 
@@ -38,29 +40,40 @@ public class ResultManager : MonoBehaviour
             Instance.timerText = this.timerText;
             Instance.enemiesDefeatedText = this.enemiesDefeatedText;
             Instance.moneyEarnedText = this.moneyEarnedText;
-            Instance.playerItemsText = this.playerItemsText;
-            Destroy(this);
+            Instance.iconPictures = this.iconPictures;
+            Instance.SetImages();
             Instance.CompileText();
+            Destroy(this);
         }
     }
 
-    public void CompileText() {
+    private void CompileText()
+    {
         moneyEarnedText.text = "" + moneyEarned;
         levelText.text = "" + mainLevel;
         timerText.text = "" + timeText;
         enemiesDefeatedText.text = "" + enemiesDefeated;
-          
-    StringBuilder playerItemsBuilder = new StringBuilder();
-        for(int i = 0; i<currentItems.Count; i++)
-        {
-            playerItemsBuilder.Append(currentItems[i].name);
-            if(i<currentItems.Count - 1)
-            {
-                playerItemsBuilder.Append(", ");
-            }
- 
-        }
-        playerItemsText.text = playerItemsBuilder.ToString();
     }
+
+        private void SetImages()
+    {
+        int itemAmount = currentItems.Count;
+        for(int i = 0; i < iconPictures.Length; i++)
+        {
+            if (itemAmount > 0)
+            {
+                Debug.Log("Tried putting image");
+                string itemName = String.Concat(currentItems[i].GetName().Where(c => !Char.IsWhiteSpace(c)));
+                iconPictures[i].sprite = Resources.Load<Sprite>("Icons/" + itemName + "Pixel");
+                iconPictures[i].color = new Color32(255, 255, 255, 255);
+            }
+            else
+            {
+                iconPictures[i].sprite = null;
+                iconPictures[i].color = new Color32(255, 255, 255, 0);
+            }
+            itemAmount--;
+        }
+    } 
 }
 

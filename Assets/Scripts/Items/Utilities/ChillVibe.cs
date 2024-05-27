@@ -69,7 +69,7 @@ public class ChillVibe : Utility
 
             Enemy  enemyScript = other.gameObject.GetComponent<Enemy>();
             enemyScript.GetComponent<Enemy>().isSlow = true;
-            enemyScript.thisMovementSpeed = enemyScript.thisMovementSpeed * slowSpeedPercent * Enemy.movementSpeed * enemyScript.baseMovementSpeed;
+            enemyScript.thisMovementSpeed =  slowSpeedPercent * Enemy.movementSpeed * enemyScript.baseMovementSpeed;
            
           
         }
@@ -83,5 +83,15 @@ public class ChillVibe : Utility
             //other.gameObject.GetComponent<Enemy>().thisMovementSpeed = Enemy.movementSpeed + other.GetComponent<Enemy>().baseMovementSpeed ;
            
         }
+    }
+
+    public int GetRadiusUpgradeRank()
+    {
+        return radiusRank;
+    }
+
+    public int GetSlowUpgradeRank()
+    {
+        return slowRank;
     }
 }

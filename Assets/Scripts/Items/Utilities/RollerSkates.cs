@@ -46,4 +46,9 @@ public class RollerSkates : Utility
     {
         return movementSpeedUpgradeCost;
     }
+
+    public int GetMovementSpeedUpgradeRank()
+    {
+        return movementSpeedRank;
+    }
 }

@@ -1,0 +1,40 @@
+Weapon,Vapen,Bass Guitar,Basgitarr,Sväng mot dina fiender i närstrid med detta riktbara vapen.
+Weapon,Vapen,Vinyl Record,Vinylskiva,Skicka ut vinylskivor som bumeranger.
+Weapon,Vapen,Yoyo,Jojo,Sväng runt permanenta Jojoar som ökar fart tillsammans med takten.
+Weapon,Vapen,Disco Ball,Discokula,Släng upp discokulor i luften.
+Weapon,Vapen,Electric Guitar,Elgitarr,Elektrifiera dina närmaste fiender.
+Weapon,Vapen,Saxophone,Saxofon,Skjut ut musiknoter mot dina närmaste fiender.
+Weapon,Vapen,Break Dance,Breakdans,Skada alla fiender som befinner sig nära omkring dig. 
+Weapon,Vapen,Synthwave Blast,Synthwave Stöt,Skicka ut Synthwave Stötar i valfri riktning.
+Utility,Verktyg,Roller Skates,Rullskridskor,Ta på dig dina rullskridskor och få fart på din rörelse.
+Utility,Verktyg,Groove Armor,Disco Rustning,Ta på dig din Disco Rustning och dämpa dina fienders slag.
+Utility,Verktyg,Chill Vibe,Lugna Vibbar,Få dina fiender att röra sig långsammare med dina lugna vibbar. 
+Utility,Verktyg,Decoy,Lockbete,Få det att regna pengar för att distrahera dina fiender.
+Utility,Verktyg,Personal Space,Personlig Sfär,Knuffar bort fiender för att ge dig själv mer utrymme.
+Upgrade,Vapen Uppgradering,Bass Guitar,Basgitarr,Öka skadan med,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Vapen Uppgradering,Vinyl Record,Vinylskiva,Öka skadan med,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Vapen Uppgradering,Vinyl Record,Vinylskiva,Öka mängden Vinylskivor som skjuts ut med,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Vapen Uppgradering,Vinyl Record,Vinylskiva,Öka antalet måltavlor som varje vinylskiva kan skada med,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
+Upgrade,Vapen Uppgradering,Yoyo,Jojo,Öka skadan med,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Vapen Uppgradering,Yoyo,Jojo,Öka mängden jojoar med,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Vapen Uppgradering,Disco Ball,Discokula,Öka skadan med,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Vapen Uppgradering,Disco Ball,Discokula,Öka antalet discokulor som skjuts ut med,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Vapen Uppgradering,Disco Ball,Discokula,Öka antalet måltavlor som varje discokula kan skada med,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
+Upgrade,Vapen Uppgradering,Electric Guitar,Elgitarr,Öka skadan med,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Vapen Uppgradering,Electric Guitar,Elgitarr,Öka antalet måltavlor som elgitarren kommer att elektrifiera,IncreaseTetherAmount,GetTetherAmountIncreasePerUpgrade,.
+Upgrade,Vapen Uppgradering,Saxophone,Saxofon,Öka skadan med,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Vapen Uppgradering,Saxophone,Saxofon,Öka antalet musiknoter som avfyras med,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Vapen Uppgradering,Saxophone,Saxofon,Öka antalet måltavlor som varje musiknot kan skada med,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
+Upgrade,Vapen Uppgradering,Break Dance,Breakdans,Öka skadan med,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Vapen Uppgradering,Break Dance,Breakdans,Öka radien med,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,Vapen Uppgradering,Synthwave Blast,Synthwave Stöt,Öka skadan med,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Vapen Uppgradering,Synthwave Blast,Synthwave Stöt,Öka antalet Synthwave stötar i varje sprängskott med,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Vapen Uppgradering,Synthwave Blast,Synthwave Stöt,Öka antalet måltavlor som varje Synthwave Stöt kan skada med,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
+Upgrade,Verktyg Uppgradering,Roller Skates,Rullskridskor,Öka rörelsehastigheten med,IncreaseMovementSpeed,GetMovementSpeedIncreasePercentage,%
+Upgrade,Verktyg Uppgradering,Groove Armor,Disco Rustning,Öka hälsan med,IncreaseHealth,GetHealthIncreasePercentage,%
+Upgrade,Verktyg Uppgradering,Chill Vibe,Lugna Vibbar,Öka området för dina lugna vibbar med,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,Verktyg Uppgradering,Chill Vibe,Lugna Vibbar,Öka långsamheten i dina lugna vibbar med,IncreaseSlow,GetSlowIncreasePercentage,%
+Upgrade,Verktyg Uppgradering,Decoy,Lockbete,Öka antalet lockbeten med,IncreaseDecoyAmount,GetDecoyAmountIncreasePerUpgrade,.
+Upgrade,Verktyg Uppgradering,Decoy,Lockbete,Öka mängden hälsa dina lockbeten har med,IncreaseDecoyHealth,GetDecoyHealthAmountIncreasePerUpgrade,.
+Upgrade,Verktyg Uppgradering,Personal Space,Personlig Sfär,Öka radien med,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,Verktyg Uppgradering,Personal Space,Personlig Sfär,Öka knuffkraften med,IncreaseForce,GetForceIncreasePercentage,%

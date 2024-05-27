@@ -1,0 +1,40 @@
+Weapon,Arma,Bass Guitar,Bajo Electrico,Golpea a tus enemigos en combate cuerpo a cuerpo con esta arma apuntable.
+Weapon,Arma,Vinyl Record,Disco De Vinilo,Envíe discos de vinilo como bumeranes.
+Weapon,Arma,Yoyo,Yoyó,Gira alrededor de Yoyós permanentes que se aceleran con el ritmo.
+Weapon,Arma,Disco Ball,Bola De Disco,Lanza bolas de discoteca al aire.
+Weapon,Arma,Electric Guitar,Guitarra Electrica,Electrifica a tus enemigos más cercanos.
+Weapon,Arma,Saxophone,Saxofón,Dispara notas musicales a tus enemigos más cercanos.
+Weapon,Arma,Break Dance,Break Dance,Inflige daño a todos los enemigos en el área circundante. 
+Weapon,Arma,Synthwave Blast,Explosión De Onda Sintética,Envía una explosión de ondas sintéticas en cualquier dirección.
+Utility,Utilidad,Roller Skates,Patines,Ponte tus patines y acelera tu movimiento.
+Utility,Utilidad,Groove Armor,Armadura De Discoteca,Ponte tu Armadura De Discoteca y amortigua los golpes de tus enemigos.
+Utility,Utilidad,Chill Vibe,Ambiente Relajado,que tus enemigos se mueven más lento con tu Ambiente Relajado.
+Utility,Utilidad,Decoy,Señuelo,Haz llover dinero para distraer a tus enemigos.
+Utility,Utilidad,Personal Space,Espacio Personal,Aleja a los enemigos para darte más espacio.
+Upgrade,Arma Mejora,Bass Guitar,Bajo Electrico,Aumentar el daño por,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Arma Mejora,Vinyl Record,Disco De Vinilo,Aumentar el daño por,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Arma Mejora,Vinyl Record,Disco De Vinilo,Aumentar la cantidad de discos de vinilo disparados por,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Arma Mejora,Vinyl Record,Disco De Vinilo,Aumenta la cantidad de objetivos a los que cada disco de vinilo puede causar daño al,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
+Upgrade,Arma Mejora,Yoyo,Yoyó,Aumentar el daño por,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Arma Mejora,Yoyo,Yoyó,Aumentar el número de yoyós con,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Arma Mejora,Disco Ball,Bola De Disco,Aumentar el daño por,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Arma Mejora,Disco Ball,Bola De Disco,Aumentar la cantidad de Bolas de Disco lanzadas por,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Arma Mejora,Disco Ball,Bola De Disco,Aumenta el número de objetivos que cada bola de discoteca puede dañar,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
+Upgrade,Arma Mejora,Electric Guitar,Guitarra Electrica,Aumentar el daño por,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Arma Mejora,Electric Guitar,Guitarra Electrica,Aumenta el número de objetivos que electrificará la guitarra eléctrica,IncreaseTetherAmount,GetTetherAmountIncreasePerUpgrade,.
+Upgrade,Arma Mejora,Saxophone,Saxofón,Aumentar el daño por,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Arma Mejora,Saxophone,Saxofón,Aumentar el número de notas musicales disparadas con,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Arma Mejora,Saxophone,Saxofón,Aumenta el número de objetivos que cada nota musical puede dañar,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
+Upgrade,Arma Mejora,Break Dance,Break Dance,Aumentar el daño por,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Arma Mejora,Break Dance,Break Dance,Aumentar el radio en,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,Arma Mejora,Synthwave Blast,Explosión De Onda Sintética,Aumentar el daño por,IncreaseDamage,GetDamageIncreasePercentage,%
+Upgrade,Arma Mejora,Synthwave Blast,Explosión De Onda Sintética,Aumenta la cantidad de Synthwave Bolts en cada explosión por,IncreaseProjectileCount,GetProjectileIncreasePerUpgrade,.
+Upgrade,Arma Mejora,Synthwave Blast,Explosión De Onda Sintética,Aumentar el número de objetivos que cada Synthwave Shock puede dañar,IncreasePenetrationAmount,GetPenetrationIncreasePerUpgrade,.
+Upgrade,Utilidad Mejora,Roller Skates,Patines,Aumentar la velocidad de movimiento mediante,IncreaseMovementSpeed,GetMovementSpeedIncreasePercentage,%
+Upgrade,Utilidad Mejora,Groove Armor,Armadura De Discoteca,Aumentar la salud con,IncreaseHealth,GetHealthIncreasePercentage,%
+Upgrade,Utilidad Mejora,Chill Vibe,Ambiente Relajado,Amplia el área de tu Ambiente Relajado con,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,Utilidad Mejora,Chill Vibe,Ambiente Relajado,Aumenta la lentitud de tu Ambiente Relajado con,IncreaseSlow,GetSlowIncreasePercentage,%
+Upgrade,Utilidad Mejora,Decoy,Señuelo,Aumentar el número de señuelos en,IncreaseDecoyAmount,GetDecoyAmountIncreasePerUpgrade,.
+Upgrade,Utilidad Mejora,Decoy,Señuelo,Aumenta la cantidad de salud que llevan tus señuelos,IncreaseDecoyHealth,GetDecoyHealthAmountIncreasePerUpgrade,.
+Upgrade,Utilidad Mejora,Personal Space,Espacio Personal,Aumentar el radio en,IncreaseRadius,GetRadiusIncreasePercentage,%
+Upgrade,Utilidad Mejora,Personal Space,Espacio Personal,Aumenta la fuerza de empuje en,IncreaseForce,GetForceIncreasePercentage,%

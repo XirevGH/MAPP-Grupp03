@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7147415229971535302}
   - component: {fileID: 2050496183805389482}
   - component: {fileID: 5103640982862871953}
-  - component: {fileID: 5316724126399912736}
+  - component: {fileID: 1774155406645470871}
   m_Layer: 11
   m_Name: XPDrop
   m_TagString: XPDrop20
@@ -5437,7 +5437,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!82 &5316724126399912736
+--- !u!82 &1774155406645470871
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5446,10 +5446,10 @@ AudioSource:
   m_GameObject: {fileID: 2322821042000343324}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -396259705445800102, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 5f9d7106b0c24f245a2f1123275117b9, type: 3}
+  OutputAudioMixerGroup: {fileID: -7150925619713777832, guid: 990a92e7698c2fb49af7c8c8a95d260f, type: 2}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.829
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
