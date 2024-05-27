@@ -217,9 +217,9 @@ MonoBehaviour:
   player: {fileID: 0}
   target: {fileID: 0}
   sprite: {fileID: 0}
-  health: 15
+  health: 25
   thisMovementSpeed: 0
-  baseMovementSpeed: 6
+  baseMovementSpeed: 8
   isSlow: 0
   damageNumbers: {fileID: 287581913604085729}
   damageNumberAnim: {fileID: 2898152515693454215}

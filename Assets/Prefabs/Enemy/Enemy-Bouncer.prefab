@@ -212,14 +212,14 @@ MonoBehaviour:
     dropChance: 5
   - item: {fileID: 4917292742459662858, guid: 1b734ef44a4dcc54483736fca6f4d999, type: 3}
     dropChance: 1
-  xpValue: 35
+  xpValue: 50
   multiDrop: 0
   player: {fileID: 0}
   target: {fileID: 0}
   sprite: {fileID: 0}
-  health: 25
-  thisMovementSpeed: 2
-  baseMovementSpeed: 0
+  health: 50
+  thisMovementSpeed: 4
+  baseMovementSpeed: 10
   isSlow: 0
   damageNumbers: {fileID: 287581913604085729}
   damageNumberAnim: {fileID: 2898152515693454215}
