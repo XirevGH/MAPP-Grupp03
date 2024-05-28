@@ -38,7 +38,7 @@ public abstract class ProjectileWeapon : Weapon
 
     public int GetPenetrationIncreasePerUpgrade()
     {
-        return projectileIncreasePerUpgrade;
+        return penetrationIncreasePerUpgrade;
     }
 
     public int GetIncreaseProjectileCountCost()

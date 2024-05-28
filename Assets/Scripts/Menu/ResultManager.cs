@@ -14,8 +14,6 @@ public class ResultManager : MonoBehaviour
     [SerializeField] private TMP_Text moneyEarnedText;
     [SerializeField] private Image[] iconPictures;
 
-    public static ResultManager Instance;
-
     public string timeText;
     public int mainLevel;
     public int enemiesDefeated;
@@ -23,6 +21,7 @@ public class ResultManager : MonoBehaviour
 
     public List<Item> currentItems;
 
+    public static ResultManager Instance;
     private void Awake()
     {
         if (SceneManager.GetActiveScene().name == "Main") 

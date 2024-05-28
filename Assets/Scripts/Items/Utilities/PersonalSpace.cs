@@ -121,7 +121,6 @@ public class PersonalSpace : Utility
             ps.Play(); 
             ParticleSystem.EmissionModule em = ps.emission; 
             em.enabled = true;
-
             pushingBack = true;
         }
     }
