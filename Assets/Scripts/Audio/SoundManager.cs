@@ -395,5 +395,10 @@ public class SoundManager : MonoBehaviour
         SFXSource.PlayOneShot(clickSound[0], 1); 
     }
 
+    public void SliderSound()
+    {
+        SFXSource.PlayOneShot(clickSound[0], 1);
+    }
+
     
 }
