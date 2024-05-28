@@ -61,6 +61,7 @@ public class Enemy : MonoBehaviour
     protected float startingHealth;
     protected Rigidbody2D rb;
     public TMP_Text damageNumbers;
+    public Canvas damageNumberCanvas;
     public Animator damageNumberAnim;
     public Animator enemyAnim;
     public AudioClip hitSound;
@@ -156,9 +157,9 @@ public class Enemy : MonoBehaviour
         {
             damageNumbers.text = "";
             count = 0;
-            damageNumbers.gameObject.transform.parent.transform.SetParent(gameObject.transform);
-            damageNumbers.gameObject.transform.parent.position = gameObject.transform.position;
-            damageNumbers.gameObject.transform.parent.localPosition = new Vector2(0, 1.42f);
+            ReattachText();
+            damageNumberCanvas.transform.position = gameObject.transform.position;
+            damageNumberCanvas.transform.localPosition = new Vector2(0, 1.42f);
         }
         StringBuilder builder = new StringBuilder(damageNumbers.text);
         if (count > 0)
@@ -175,7 +176,7 @@ public class Enemy : MonoBehaviour
         }
         if (transform.childCount > 0)
         {
-            damageNumbers.gameObject.transform.parent.transform.SetParent(null);
+            damageNumberCanvas.transform.SetParent(null);
         }
         return builder.ToString();
     }
@@ -217,18 +218,21 @@ public class Enemy : MonoBehaviour
         {
             alive = false;
             enemyAnim.SetTrigger("Dead");
-            Invoke("Drops", 1f);
+            Drops();
+            ReattachText();
             Invoke("DestroyGameObject", 1.6f);
-            Invoke("RemoveText", 0.8f);
+
         }
         return alive;
     }
 
 
-    //This should instead reattach the gameobject to the enemy if we are to reuse the gameobject instead of destroying them.
-    private void RemoveText()
+    protected void ReattachText()
     {
-        Destroy(damageNumbers.transform.parent.gameObject);
+        if (damageNumberCanvas != null) { 
+            damageNumberCanvas.transform.SetParent(gameObject.transform);
+        }
+        
     }
 
     

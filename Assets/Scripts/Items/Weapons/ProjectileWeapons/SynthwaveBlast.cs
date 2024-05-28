@@ -9,7 +9,7 @@ public class SynthwaveBlast : ProjectileWeapon
     private void Start()
     {
         UnityAction action = new UnityAction(Attack);
-        TriggerController.Instance.SetTrigger(5, action);
+        TriggerController.Instance.SetTrigger(beatNumber, action);
     }
 
     public override void Attack()

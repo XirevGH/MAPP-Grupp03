@@ -17,7 +17,7 @@ public class BreakDance : Weapon
     private void Start()
     {
         UnityAction action = new UnityAction(Attack);
-        TriggerController.Instance.SetTrigger(4, action);
+        TriggerController.Instance.SetTrigger(beatNumber, action);
         anim = GetComponent<Animator>();
     }
 

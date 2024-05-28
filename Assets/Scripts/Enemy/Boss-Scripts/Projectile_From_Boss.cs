@@ -54,11 +54,12 @@ public class Projectile_From_Boss : MonoBehaviour{
         transform.position += projectileDirection * projectileSpeed * Time.deltaTime;
         projectileLifetime -= Time.deltaTime;
 
-        if (projectileLifetime <= 0 || Vector3.Distance(target.transform.position, transform.position) >= lastMeasuredDistance*1.01)
+        /*if (projectileLifetime <= 0 || Vector3.Distance(target.transform.position, transform.position) >= lastMeasuredDistance*1.01)
         {
             ActivateSecondaryObject();
         }
         lastMeasuredDistance = Vector3.Distance(target.transform.position, transform.position);
+        */
     }
 
     private void ActivateSecondaryObject()

@@ -6,7 +6,6 @@ public class VinylDiscController : ProjectileWeapon
 {
     [SerializeField] private GameObject vinylDisc;
     [SerializeField] private float attackDelayTime;
-    public static int triggerNumber = 7;
 
     private Vector3 playerPosition;
     private float BPM;
@@ -14,10 +13,21 @@ public class VinylDiscController : ProjectileWeapon
     private AudioSource source;
     private float pitch;
 
+    public static VinylDiscController Instance 
+    { 
+        get; 
+        private set; 
+    }
+
+    protected override void Awake()
+    {
+        Instance = this;
+        base.Awake();
+    }
     private void Start()
     {
         UnityAction action = new UnityAction(Attack);
-        TriggerController.Instance.SetTrigger(triggerNumber, action);
+        TriggerController.Instance.SetTrigger(beatNumber, action);
         source = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>();
     }
 

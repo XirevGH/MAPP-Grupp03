@@ -11,7 +11,7 @@ public class ElectricGuitar : TetheringWeapon
     private void Start()
     {
         UnityAction action = new UnityAction(Attack);
-        TriggerController.Instance.SetTrigger(11, action);
+        TriggerController.Instance.SetTrigger(beatNumber, action);
     }
 
     private void OnTriggerStay2D(Collider2D other)

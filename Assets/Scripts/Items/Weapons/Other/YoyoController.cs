@@ -4,12 +4,23 @@ using UnityEngine.Events;
 public class YoyoController : PermanentProjectileWeapon
 {
     public GameObject yoyo;
-    public static int triggerNumber = 7;
+
+    public static YoyoController Instance
+    {
+        get;
+        private set;
+    }
+
+    protected override void Awake()
+    {
+        Instance = this;
+        base.Awake();
+    }
 
     private void Start()
     {
         UnityAction action1 = new UnityAction(Attack);
-        TriggerController.Instance.SetTrigger(triggerNumber, action1);
+        TriggerController.Instance.SetTrigger(beatNumber, action1);
     }
 
     void Update()

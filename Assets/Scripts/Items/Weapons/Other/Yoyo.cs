@@ -31,7 +31,7 @@ public class Yoyo : Projectile
     private void Update()
     {
         BPM = SoundManager.Instance.GetCurrentBPM();
-        noteValue = TriggerController.Instance.GetTrigger(YoyoController.triggerNumber).noteValue;
+        noteValue = TriggerController.Instance.GetTrigger(YoyoController.Instance.GetBeatNumber()).noteValue;
         pitch = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>().pitch;
        
 

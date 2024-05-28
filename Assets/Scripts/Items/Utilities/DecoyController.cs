@@ -26,7 +26,7 @@ public class DecoyController : Utility
     private void Start()
     {
         UnityAction action = new UnityAction(Throw);
-        TriggerController.Instance.SetTrigger(15, action);
+        TriggerController.Instance.SetTrigger(beatNumber, action);
     }
 
     void Update()

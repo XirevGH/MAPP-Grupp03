@@ -83,7 +83,7 @@ public class BossEnemy : Enemy
             //Shoot att player
             if (Vector3.Distance(player.transform.position, transform.position) < 15 && attackCooldown <= 0) {
                 enemyAnim.SetTrigger("TrowAttack");
-                GetComponent<Superclass_BossAttack_Projectile>().ShootAtPlayer(target);
+                /*GetComponent<Superclass_BossAttack_Projectile>().ShootAtPlayer(target);*/
                 attackCooldown = baseAttackCooldown;
                 //activates Charge
                 enemyAnim.SetTrigger("Charge");

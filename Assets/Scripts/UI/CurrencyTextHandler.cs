@@ -26,6 +26,6 @@ public class CurrencyTextHandler : MonoBehaviour
     private void SetText()
     {
         currency = MetaUpgradeSystem.Instance.GetCurrencyAmount().ToString();
-        textField.text = "Currency: " + currency;
+        textField.text = ":" + currency;
     }
 }

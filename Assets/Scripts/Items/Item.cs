@@ -6,6 +6,7 @@ public abstract class Item : MonoBehaviour
 {
     [SerializeField] protected Player player;
     [SerializeField] protected string itemName;
+    [SerializeField] protected int beatNumber;
     protected List<string> upgradeOptions = new List<string>();
     protected bool active;
 
@@ -36,6 +37,11 @@ public abstract class Item : MonoBehaviour
     public List<string> GetUpgradeOptions()
     {
         return new List<string>(upgradeOptions);
+    }
+
+    public int GetBeatNumber()
+    {
+        return beatNumber;
     }
 
     protected abstract void CreateUpgradeOptions();

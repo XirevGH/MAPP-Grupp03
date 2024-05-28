@@ -108,7 +108,7 @@ public class VinylDisc : Projectile
     {
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
         BPM = SoundManager.Instance.GetCurrentBPM();
-        noteValue = TriggerController.Instance.GetTrigger(VinylDiscController.triggerNumber).noteValue;
+        noteValue = TriggerController.Instance.GetTrigger(VinylDiscController.Instance.GetBeatNumber()).noteValue;
         source = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>();
         pitch = source.pitch;
 

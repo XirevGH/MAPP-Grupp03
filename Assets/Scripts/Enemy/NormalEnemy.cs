@@ -15,6 +15,7 @@ public class NormalEnemy : Enemy
 
         if (Vector3.Distance(transform.position, player.transform.position) > destroyDistance)
         {
+            ReattachText();
             Destroy(gameObject);
         }
 
@@ -50,15 +51,19 @@ public class NormalEnemy : Enemy
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+/*    private void OnTriggerExit2D(Collider2D other)
     {
         if (other == screenCollider)
         {
-         
-           Destroy(gameObject);
-            
+            if (damageNumberCanvas != null)
+            {
+                ReattachText();
+                *//*Destroy(damageNumberCanvas.gameObject);*//*
+            }
+                
+            Destroy(gameObject);
         }
-    }
+    }*/
 
 
 }
