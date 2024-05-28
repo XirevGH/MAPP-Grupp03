@@ -116,6 +116,7 @@ public class PersonalSpace : Utility
     {
         if (gameObject.activeSelf) 
         {
+            colliders.Clear();
             spaceCollider.enabled = true;
             ps.Play(); 
             ParticleSystem.EmissionModule em = ps.emission; 
