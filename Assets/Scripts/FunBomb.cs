@@ -1,47 +1,56 @@
+using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class BoogieBomb : PhysicalWeapon
+public class FunBomb : PhysicalWeapon
 {
     private HashSet<Collider2D> colliders = new HashSet<Collider2D>();
-    private AudioSource audioSource;
 
     public bool usedAbility = false;
     public bool dealDamage = false;
     public bool bombMoving = false;
-    public float abilityCooldown; // Assuming this is set in the Inspector or elsewhere
+    public float abilityCooldown;
     public float bombRangeY;
     public float bombRangeX;
 
-    public AudioClip bombClip;
+    private AudioSource audioSource;
+
     [SerializeField] private GameObject bombParticles;
     [SerializeField] private Transform playerPosition;
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        ResetBombPosition();
+     //   UnityAction action = new UnityAction(TriggerAbility);
+        SetRandomBombRange();
+   //     TriggerController.Instance.SetTrigger(4, action);
+        Debug.Log("Program starting");
     }
 
-    void FixedUpdate()
+
+    private void FixedUpdate()
     {
         if (!bombMoving)
         {
             GetComponent<SpriteRenderer>().enabled = false;
             transform.position = playerPosition.position;
         }
+    }
 
+    public void TriggerAbility()
+    {
         if (!usedAbility)
         {
             bombMoving = true;
-            MoveBomb();
-            Attack();
-        }
-    }
+            transform.position = transform.position + new Vector3(bombRangeX, bombRangeY, 0);
 
-    private void MoveBomb()
-    {
-        transform.position += new Vector3(bombRangeX, bombRangeY, 0);
+
+            Invoke("TouchedGround", 0.5f);
+            Invoke("AbilityCooldown", abilityCooldown);
+            usedAbility = true;
+            Debug.Log("Main use done");
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -50,45 +59,50 @@ public class BoogieBomb : PhysicalWeapon
         {
             colliders.Add(other);
             DealDamage(other);
+            Debug.Log("Deals damage");
         }
-
         if (!dealDamage)
         {
             colliders.Clear();
         }
     }
 
+
     public override void Attack()
     {
-        usedAbility = true;
-        // TODO: Add animation
-        Invoke("TouchedGround", 0.5f);
-        Invoke("ResetAbility", abilityCooldown);
+        /*  usedAbility = true;
+          Invoke("TouchedGround", 0.5f);
+          Invoke("AbilityCooldown", abilityCooldown); */
     }
 
     private void TouchedGround()
     {
-        audioSource.PlayOneShot(bombClip, 0.7f);
+        audioSource.Play();
         Instantiate(bombParticles, transform.position, bombParticles.transform.localRotation);
+        Debug.Log("instantiated but not rendered");
         GetComponent<SpriteRenderer>().enabled = true;
         dealDamage = true;
         Invoke("ReturnBomb", 1f);
+        Debug.Log("Touched ground and rendered");
     }
 
     private void ReturnBomb()
     {
-        ResetBombPosition();
+        GetComponent<SpriteRenderer>().enabled = false;
+        SetRandomBombRange();
         bombMoving = false;
+        Debug.Log("Bomb safely returned");
     }
 
-    private void ResetBombPosition()
-    {
-        bombRangeY = Random.Range(-5, 5);
-        bombRangeX = Random.Range(-5, 5);
-    }
-
-    private void ResetAbility()
+    private void AbilityCooldown()
     {
         usedAbility = false;
+        Debug.Log("UsedAbility false");
+    }
+
+    private void SetRandomBombRange()
+    {
+    //    bombRangeY = Random.Range(-3, 3);
+      //  bombRangeX = Random.Range(-3, 3);
     }
 }
