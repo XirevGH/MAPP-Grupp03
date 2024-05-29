@@ -1,9 +1,5 @@
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 public class GameController : MonoBehaviour
@@ -70,14 +66,4 @@ public class GameController : MonoBehaviour
         Vector3Int maxPosition = tilemap.WorldToCell(cameraPosition + new Vector3(cameraSize- 5 * mainCamera.aspect , cameraSize + 10, 0));
         return new BoundsInt(minPosition, maxPosition - minPosition);
     }
-    
-    
-
-
-    
-
-    
-
-    
-
 }
