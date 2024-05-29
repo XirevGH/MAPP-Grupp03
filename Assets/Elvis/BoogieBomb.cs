@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class BoogieBomb : PhysicalWeapon
-{
+{/*
     private HashSet<Collider2D> colliders = new HashSet<Collider2D>();
 
     public bool usedAbility = false;
@@ -72,7 +72,7 @@ public class BoogieBomb : PhysicalWeapon
     {
       /*  usedAbility = true;
         Invoke("TouchedGround", 0.5f);
-        Invoke("AbilityCooldown", abilityCooldown); */
+        Invoke("AbilityCooldown", abilityCooldown); 
     }
 
     private void TouchedGround()
@@ -104,5 +104,9 @@ public class BoogieBomb : PhysicalWeapon
     {
         bombRangeY = Random.Range(-3, 3);
         bombRangeX = Random.Range(-3, 3);
+    }*/
+    public override void Attack()
+    {
     }
-}
+
+    }
