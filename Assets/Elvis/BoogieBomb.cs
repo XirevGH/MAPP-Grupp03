@@ -1,5 +1,8 @@
+using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BoogieBomb : PhysicalWeapon
 {
@@ -12,19 +15,25 @@ public class BoogieBomb : PhysicalWeapon
     public float bombRangeY;
     public float bombRangeX;
 
+    private AudioSource audioSource;
+
     [SerializeField] private GameObject bombParticles;
     [SerializeField] private Transform playerPosition;
 
     private void Start()
     {
+        UnityAction action = new UnityAction(TriggerAbility);
         SetRandomBombRange();
+        TriggerController.Instance.SetTrigger(4, action);
+        Debug.Log("Program starting");
     }
 
+   
     private void FixedUpdate()
     {
         if (!bombMoving)
         {
-            this.GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
             transform.position = playerPosition.position;
         }
     }
@@ -35,7 +44,12 @@ public class BoogieBomb : PhysicalWeapon
         {
             bombMoving = true;
             transform.position = transform.position + new Vector3(bombRangeX, bombRangeY, 0);
-            Attack();
+
+         
+            Invoke("TouchedGround", 0.5f);
+            Invoke("AbilityCooldown", abilityCooldown);
+            usedAbility = true;
+            Debug.Log("Main use done");
         }
     }
 
@@ -45,6 +59,7 @@ public class BoogieBomb : PhysicalWeapon
         {
             colliders.Add(other);
             DealDamage(other);
+            Debug.Log("Deals damage");
         }
         if (!dealDamage)
         {
@@ -52,35 +67,42 @@ public class BoogieBomb : PhysicalWeapon
         }
     }
 
+    
     public override void Attack()
     {
-        usedAbility = true;
+      /*  usedAbility = true;
         Invoke("TouchedGround", 0.5f);
-        Invoke("AbilityCooldown", abilityCooldown);
+        Invoke("AbilityCooldown", abilityCooldown); */
     }
 
     private void TouchedGround()
     {
+        audioSource.Play();
         Instantiate(bombParticles, transform.position, bombParticles.transform.localRotation);
-        this.GetComponent<SpriteRenderer>().enabled = true;
+        Debug.Log("instantiated but not rendered");
+        GetComponent<SpriteRenderer>().enabled = true;
         dealDamage = true;
         Invoke("ReturnBomb", 1f);
+        Debug.Log("Touched ground and rendered");
     }
 
     private void ReturnBomb()
     {
+        GetComponent<SpriteRenderer>().enabled = false;
         SetRandomBombRange();
         bombMoving = false;
+        Debug.Log("Bomb safely returned");
     }
 
     private void AbilityCooldown()
     {
         usedAbility = false;
+        Debug.Log("UsedAbility false");
     }
 
     private void SetRandomBombRange()
     {
-        bombRangeY = Random.Range(-5, 5);
-        bombRangeX = Random.Range(-5, 5);
+        bombRangeY = Random.Range(-3, 3);
+        bombRangeX = Random.Range(-3, 3);
     }
 }

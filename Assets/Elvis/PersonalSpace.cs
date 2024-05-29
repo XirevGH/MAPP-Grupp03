@@ -28,6 +28,7 @@ public class PersonalSpace : Utility
     private void Start()
     {
         UnityAction action = new UnityAction(PushEnemiesAway);
+
         TriggerController.Instance.SetTrigger(4, action);
         spaceCollider = GetComponent<CircleCollider2D>();
         colliders = new HashSet<GameObject>();
