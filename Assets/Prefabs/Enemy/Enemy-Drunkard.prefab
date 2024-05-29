@@ -302,7 +302,7 @@ MonoBehaviour:
   player: {fileID: 0}
   target: {fileID: 0}
   sprite: {fileID: 0}
-  health: 200
+  health: 20
   thisMovementSpeed: 2
   baseMovementSpeed: 2
   isSlow: 0
