@@ -10476,7 +10476,7 @@ MonoBehaviour:
   bombRangeY: 0
   bombRangeX: 0
   bombClip: {fileID: 8300000, guid: 745eeb8ee584e8a468ae0db5923340bd, type: 3}
-  bombParticles: {fileID: 4049775820849989704, guid: 43d4212d805fae44f931e63efdc014c8, type: 3}
+  bombParticles: {fileID: 7776500034765388597, guid: 9948e620db5cd7c4e9e3261d312a9adf, type: 3}
   playerPosition: {fileID: 5383820192035051673}
 --- !u!212 &2135706944
 SpriteRenderer:
@@ -10541,7 +10541,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 745eeb8ee584e8a468ae0db5923340bd, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

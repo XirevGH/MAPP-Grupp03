@@ -34,14 +34,9 @@ public class BoogieBomb : PhysicalWeapon
         if (!usedAbility)
         {
             bombMoving = true;
-            MoveBomb();
+            transform.position += new Vector3(bombRangeX, bombRangeY, 0);
             Attack();
         }
-    }
-
-    private void MoveBomb()
-    {
-        transform.position += new Vector3(bombRangeX, bombRangeY, 0);
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -61,7 +56,7 @@ public class BoogieBomb : PhysicalWeapon
     public override void Attack()
     {
         usedAbility = true;
-        // TODO: Add animation
+
         Invoke("TouchedGround", 0.5f);
         Invoke("ResetAbility", abilityCooldown);
     }
