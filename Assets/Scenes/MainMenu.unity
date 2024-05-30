@@ -17506,7 +17506,7 @@ PrefabInstance:
       objectReference: {fileID: 543497618}
     - target: {fileID: 1103054515861734431, guid: 17ccd9c1a77fa004790076d7ee038be3, type: 3}
       propertyPath: beatNumber
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1103054515861734431, guid: 17ccd9c1a77fa004790076d7ee038be3, type: 3}
       propertyPath: attackSound
@@ -29911,7 +29911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: beatNumber
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5214673971135684392, guid: 28e61c0e6bd18434f9cd40386daa180b, type: 3}
       propertyPath: attackSound
@@ -31036,7 +31036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Break Dance
-  beatNumber: 1
+  beatNumber: 4
   damage: 15
   damageRank: 0
   damageUpgradeCost: 350
@@ -32136,7 +32136,7 @@ PrefabInstance:
       objectReference: {fileID: 543497618}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: beatNumber
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3209665109395448345, guid: a1ee59d2ddfdd3a46b2b617b84ca9317, type: 3}
       propertyPath: attackSound
@@ -39081,7 +39081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Saxophone
-  beatNumber: 1
+  beatNumber: 4
   damage: 10
   damageRank: 0
   damageUpgradeCost: 75
@@ -44731,7 +44731,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.85
+  m_fontSize: 30.1
   m_fontSizeBase: 73.26
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -46569,7 +46569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Bass Guitar
-  beatNumber: 1
+  beatNumber: 4
   damage: 10
   damageRank: 0
   damageUpgradeCost: 50
@@ -55324,7 +55324,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 89.35
+  m_fontSize: 87.85
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -56409,7 +56409,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 84.25
+  m_fontSize: 85.7
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -80929,7 +80929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
       propertyPath: beatNumber
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8497690072020535060, guid: 1d8bfd054454a374684f1faa95ccf3e4, type: 3}
       propertyPath: attackSound
@@ -101255,7 +101255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 543497618}
   itemName: Electric Guitar
-  beatNumber: 1
+  beatNumber: 4
   damage: 10
   damageRank: 0
   damageUpgradeCost: 150
@@ -101600,7 +101600,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 84.15
+  m_fontSize: 85.6
   m_fontSizeBase: 110
   m_fontWeight: 400
   m_enableAutoSizing: 1
