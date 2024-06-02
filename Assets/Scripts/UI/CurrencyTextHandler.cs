@@ -4,7 +4,6 @@ using TMPro;
 public class CurrencyTextHandler : MonoBehaviour
 {
     [SerializeField] private TMP_Text textField;
-    [SerializeField] private ButtonEventUpdater updater;
     private string currency;
 
     public static CurrencyTextHandler Instance

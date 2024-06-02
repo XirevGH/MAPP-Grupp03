@@ -159,7 +159,7 @@ public class Player : MonoBehaviour
             if (!vibrating)
             {
                 vibrationTime = 1f;
-             //   Handheld.Vibrate();
+                Handheld.Vibrate();
                 Debug.Log("I'm vibrating");
                 SoundManager.Instance.PlaySFX(hitSound, 1);
                 vibrating = true;
