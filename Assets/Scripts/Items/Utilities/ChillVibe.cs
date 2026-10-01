@@ -1,97 +1,74 @@
-using System;
 using UnityEngine;
 
 public class ChillVibe : Utility
 {
-    [SerializeField] private float slowSpeedPercent;
-    [SerializeField] private float radiusIncreasePercentage;
-    [SerializeField] private float slowIncreasePercentage;
+    private float metaUpgradedRadius = 3f;
+    private float metaUpgradedSlowPercent = 20f;
 
-    public int slowRank;
-    public int slowUpgradeCost;
-    public int radiusRank;
-    public int radiusUpgradeCost;
+    private float inRunRadiusMultiplier = 1f;
+    private float inRunSlowAdditive = 0f;
 
-    public void IncreaseRadius()
+    private void Start()
     {
-        radiusRank++;
-        gameObject.transform.localScale *= (1 + (radiusIncreasePercentage / 100f));
+        InitializeStats();
     }
 
-    public void IncreaseSlow()
+    public void InitializeStats()
     {
-        slowRank++;
-        slowSpeedPercent *= (1 - (slowIncreasePercentage / 100f));
+        if (utilityData == null) return;
+
+        var radiusUpgrade = utilityData.GetUpgrade(StatType.Radius);
+        metaUpgradedRadius = radiusUpgrade != null && MetaUpgradeManager.Instance != null
+            ? MetaUpgradeManager.Instance.GetStatValue(radiusUpgrade)
+            : 3f;
+
+        var slowUpgrade = utilityData.GetUpgrade(StatType.SlowPercentage);
+        metaUpgradedSlowPercent = slowUpgrade != null && MetaUpgradeManager.Instance != null
+            ? MetaUpgradeManager.Instance.GetStatValue(slowUpgrade)
+            : 20f;
+
+        ApplyRadiusScale();
     }
 
-    public float GetRadiusIncreasePercentage()
+    private void ApplyRadiusScale()
     {
-        return (float)Math.Round(radiusIncreasePercentage, 1);
-    }
-
-    public float GetSlowIncreasePercentage()
-    {
-        return (float)Math.Round(slowIncreasePercentage, 1);
-    }
-
-    protected override void CreateUpgradeOptions()
-    {
-        upgradeOptions.Add("IncreaseRadius");
-        upgradeOptions.Add("IncreaseSlow");
-    }
-
-    public int GetIncreaseRadiusCost()
-    {
-        return radiusUpgradeCost;
-    }
-
-    public int GetIncreaseSlowCost()
-    {
-        return slowUpgradeCost;
-    }
-
-    public float GetCurrentSlowIncrease()
-    {
-        
-        return (float)Math.Round(100 - (slowSpeedPercent * 100), 1);
-    }
-
-    public float GetCurrentRadiusIncrease()
-    {
-        
-        return (float)Math.Round((Mathf.Pow(1 + (radiusIncreasePercentage / 100f), radiusRank) - 1) * 100, 1);
+        transform.localScale = Vector3.one * GetCurrentRadius();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") && other.TryGetComponent<Enemy>(out var enemy))
         {
-
-            Enemy  enemyScript = other.gameObject.GetComponent<Enemy>();
-            enemyScript.GetComponent<Enemy>().isSlow = true;
-            enemyScript.thisMovementSpeed =  slowSpeedPercent * Enemy.movementSpeed * enemyScript.baseMovementSpeed;
-           
-          
+            enemy.isSlow = true;
+            ApplySlowToEnemy(enemy);
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") && other.TryGetComponent<Enemy>(out var enemy))
         {
-            other.gameObject.GetComponent<Enemy>().isSlow = false;
-            //other.gameObject.GetComponent<Enemy>().thisMovementSpeed = Enemy.movementSpeed + other.GetComponent<Enemy>().baseMovementSpeed ;
-           
+            enemy.isSlow = false;
+            enemy.UpdateSpeed();
         }
     }
 
-    public int GetRadiusUpgradeRank()
+    private void ApplySlowToEnemy(Enemy enemy)
     {
-        return radiusRank;
+        float slowFactor = Mathf.Clamp01(1f - (GetCurrentSlowPercent() / 100f));
+        enemy.thisMovementSpeed = slowFactor * Enemy.movementSpeed * enemy.baseMovementSpeed;
     }
 
-    public int GetSlowUpgradeRank()
+    public float GetCurrentRadius() => metaUpgradedRadius * inRunRadiusMultiplier;
+    public float GetCurrentSlowPercent() => Mathf.Clamp(metaUpgradedSlowPercent + inRunSlowAdditive, 0f, 90f);
+    public void IncreaseInRunRadius(float percentage)
     {
-        return slowRank;
+        inRunRadiusMultiplier *= (1f + (percentage / 100f));
+        ApplyRadiusScale();
+    }
+
+    public void IncreaseInRunSlow(float percentagePoints)
+    {
+        inRunSlowAdditive += percentagePoints;
     }
 }

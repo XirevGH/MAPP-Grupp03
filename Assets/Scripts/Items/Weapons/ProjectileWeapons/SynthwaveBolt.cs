@@ -2,36 +2,59 @@ using UnityEngine;
 
 public class SynthwaveBolt : Projectile
 {
-    private void Start()
+    [Header("Movement & Growth Settings")]
+    [SerializeField] private float growSpeed = 10f;       // Speed at which bolt extends
+    [SerializeField] private float travelSpeed = 25f;     // Speed at which bolt shoots outward
+    [SerializeField] private float maxLifetime = 1.5f;    // Destroy after this many seconds if it hits nothing
+
+    private float currentLifetime;
+    private float targetScaleX = 1f;
+
+    private void Awake()
     {
-        SquishBolt();
+        // Start squished (0 length on X)
+        transform.localScale = new Vector3(0f, transform.localScale.y, transform.localScale.z);
+        currentLifetime = maxLifetime;
     }
 
-    void SquishBolt()
+    private void Update()
     {
-        transform.localScale = new Vector2(0, transform.localScale.y);
-    }
-
-    void MoveBolt()
-    {
-        if (transform.localScale.x < 1)
+        if (transform.localScale.x < targetScaleX)
         {
-            transform.localScale = new Vector2(transform.localScale.x + 0.1f, transform.localScale.y);
+            float newScaleX = Mathf.MoveTowards(transform.localScale.x, targetScaleX, growSpeed * Time.deltaTime);
+            transform.localScale = new Vector3(newScaleX, transform.localScale.y, transform.localScale.z);
         }
         else
         {
-            transform.localPosition = new Vector2(transform.localPosition.x + 0.8f, transform.localPosition.y);
+            transform.localPosition += new Vector3(travelSpeed * Time.deltaTime, 0f, 0f);
         }
-    }
 
-    private void FixedUpdate()
-    {
-        MoveBolt();
+        currentLifetime -= Time.deltaTime;
+        if (currentLifetime <= 0f)
+        {
+            Despawn();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        DealDamage(other);
-        DestroyWhenMaxPenetration();
+        if (other.CompareTag("Enemy"))
+        {
+            DealDamage(other);
+            DestroyWhenMaxPenetration();
+        }
     }
+
+    protected override void Despawn()
+    {
+        if (transform.parent != null && transform.parent.name.Contains("Pivot"))
+        {
+            Destroy(transform.parent.gameObject);
+        }
+        else
+        {
+            base.Despawn();
+        }
+    }
+
 }

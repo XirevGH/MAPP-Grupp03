@@ -4,9 +4,10 @@ using UnityEngine.SceneManagement;
 
 public abstract class Item : MonoBehaviour
 {
+    public abstract ItemDefinitionSO BaseItemData { get; }
+
     [SerializeField] protected Player player;
-    [SerializeField] protected string itemName;
-    [SerializeField] protected int beatNumber;
+
     protected List<string> upgradeOptions = new List<string>();
     protected bool active;
 
@@ -18,34 +19,24 @@ public abstract class Item : MonoBehaviour
         }
     }
 
-    protected virtual void Awake()
-    {
-        CreateUpgradeOptions();
-    }
-
-
     public string GetName()
     {
-        return itemName;
+        if (BaseItemData != null)
+        {
+            return BaseItemData.ItemName;
+        }
+        return gameObject.name;
     }
+
+    public Sprite GetIcon() => BaseItemData.Icon;
+
+    public int GetBeatNumber() => BaseItemData.BeatNumber;
 
     public void EnableGameObject()
     {
         gameObject.SetActive(true);
     }
 
-    public List<string> GetUpgradeOptions()
-    {
-        return new List<string>(upgradeOptions);
-    }
-
-    public int GetBeatNumber()
-    {
-        return beatNumber;
-    }
-
-    protected abstract void CreateUpgradeOptions();
-
-    public abstract string GetItemType();
+    public string GetItemType() => BaseItemData.GetItemType();
 }
 

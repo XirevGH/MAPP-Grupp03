@@ -1,7 +1,7 @@
+using UnityEngine;
+
 public abstract class Utility : Item
 {
-    public override string GetItemType()
-    {
-        return "Utility";
-    }
+    [SerializeField] protected UtilityDataSO utilityData;
+    public override ItemDefinitionSO BaseItemData => utilityData;
 }

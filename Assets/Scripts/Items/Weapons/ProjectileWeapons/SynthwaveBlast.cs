@@ -5,27 +5,41 @@ public class SynthwaveBlast : ProjectileWeapon
 {
     [SerializeField] GameObject synthwavePivotPrefab;
 
-
-    private void Start()
+    protected override void Start()
     {
-        UnityAction action = new UnityAction(Attack);
-        TriggerController.Instance.SetTrigger(beatNumber, action);
+        base.Start();
+
+        if (weaponData != null && weaponData.HasBeatTrigger)
+        {
+            UnityAction action = new UnityAction(Attack);
+            TriggerController.Instance.SetTrigger(weaponData.BeatNumber, action);
+        }
     }
 
     public override void Attack()
     {
-        if (gameObject.activeSelf) 
+        if (!gameObject.activeSelf || synthwavePivotPrefab == null) return;
+
+        if (weaponData != null && weaponData.AttackSound != null)
         {
+            SoundManager.Instance.PlaySFX(weaponData.AttackSound, 1f);
+        }
 
-            SoundManager.Instance.PlaySFX(attackSound, 1);
-            for (int i = 0; i < amountOfProjectiles; i++) {
-                float randomValue = Random.Range(0f, 360f);
-                GameObject clone = Instantiate(synthwavePivotPrefab, transform);
-                clone.transform.eulerAngles = new Vector3(0, 0, randomValue);
-                clone.transform.GetChild(0).GetComponent<SynthwaveBolt>().SetDamage(damage);
-                clone.transform.GetChild(0).GetComponent<SynthwaveBolt>().SetPenetration(penetration);
-                
+        int projectileCount = GetCurrentProjectileCount();
+        float finalDamage = GetCurrentDamage();
+        int finalPenetration = GetCurrentPenetration();
 
+        for (int i = 0; i < projectileCount; i++)
+        {
+            float randomAngle = Random.Range(0f, 360f);
+
+            GameObject clone = Instantiate(synthwavePivotPrefab, transform.position, Quaternion.Euler(0f, 0f, randomAngle), transform);
+
+            if (clone.TryGetComponent<SynthwaveBolt>(out var bolt) ||
+                (clone.transform.childCount > 0 && clone.transform.GetChild(0).TryGetComponent(out bolt)))
+            {
+                bolt.SetDamage(finalDamage);
+                bolt.SetPenetration(finalPenetration);
             }
         }
     }

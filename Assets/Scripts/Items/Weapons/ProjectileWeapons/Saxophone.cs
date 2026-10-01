@@ -1,30 +1,35 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Saxophone : ProjectileWeapon
 {
-    public Transform shootingPoint;
-    public GameObject notePrefab; 
-    public float speed;
-    private List<GameObject> enemies = new List<GameObject>();
+    [Header("Saxophone Components & Settings")]
+    [SerializeField] private Transform shootingPoint;
+    [SerializeField] private GameObject notePrefab;
+    [SerializeField] private float projectileSpeed = 12f;
 
+    private readonly HashSet<GameObject> enemiesInRange = new HashSet<GameObject>();
 
-    private void Start()
+    protected override void Start()
     {
-        UnityAction action = new UnityAction(Attack);
-        TriggerController.Instance.SetTrigger(beatNumber, action);
-    }
+        base.Start();
 
+        if (shootingPoint == null) shootingPoint = transform;
+
+        if (weaponData != null && weaponData.HasBeatTrigger)
+        {
+            UnityAction action = new UnityAction(Attack);
+            TriggerController.Instance.SetTrigger(weaponData.BeatNumber, action);
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy") && !enemies.Contains(other.gameObject))
+        if (other.CompareTag("Enemy"))
         {
-            enemies.Add(other.gameObject);
+            enemiesInRange.Add(other.gameObject);
         }
     }
 
@@ -32,69 +37,64 @@ public class Saxophone : ProjectileWeapon
     {
         if (other.CompareTag("Enemy"))
         {
-            enemies.Remove(other.gameObject);
+            enemiesInRange.Remove(other.gameObject);
         }
     }
 
     public override void Attack()
     {
-        if (gameObject.activeSelf)
-        {
-            List<GameObject> closestEnemy = FindClosestEnemy(base.amountOfProjectiles);
-            if (closestEnemy.Count != 0)
-            {
-                SoundManager.Instance.PlaySFX(attackSound, 0.3f);
-                foreach (GameObject target in closestEnemy)
-                {
+        if (!gameObject.activeSelf || notePrefab == null) return;
 
-                    ShootNoteAtEnemy(target);
-                }
-                //StartCooldown();
+        enemiesInRange.RemoveWhere(e => e == null);
+
+        if (enemiesInRange.Count == 0) return;
+
+        List<GameObject> targets = FindClosestEnemies(GetCurrentProjectileCount());
+        if (targets.Count > 0)
+        {
+            if (weaponData != null && weaponData.AttackSound != null)
+            {
+                SoundManager.Instance.PlaySFX(weaponData.AttackSound, 0.3f);
+            }
+
+            foreach (GameObject target in targets)
+            {
+                ShootNoteAtEnemy(target);
             }
         }
     }
 
-    private List<GameObject> FindClosestEnemy(int number)
+    private List<GameObject> FindClosestEnemies(int targetCount)
     {
-        if (enemies == null || enemies.Count == 0 || number <= 0)
-            return new List<GameObject>();  
+        if (enemiesInRange.Count == 0 || targetCount <= 0)
+            return new List<GameObject>();
 
-        List<KeyValuePair<float, GameObject>> distances = new List<KeyValuePair<float, GameObject>>();
+        Vector3 origin = shootingPoint.position;
 
-        foreach (GameObject enemy in enemies)
-        {
-            if (enemy != null)
-            {
-                float distance = (enemy.transform.position - shootingPoint.position).sqrMagnitude;
-                distances.Add(new KeyValuePair<float, GameObject>(distance, enemy));
-            }
-        }
-
-        
-        distances.Sort((a, b) => a.Key.CompareTo(b.Key));
-
-        
-        List<GameObject> enemiesToAttack = new List<GameObject>();
-        for (int i = 0; i < Math.Min(number, distances.Count); i++)
-        {
-            enemiesToAttack.Add(distances[i].Value);
-        }
-
-    return enemiesToAttack;
-}
+        return enemiesInRange
+            .Where(e => e != null)
+            .OrderBy(e => (e.transform.position - origin).sqrMagnitude)
+            .Take(targetCount)
+            .ToList();
+    }
 
     private void ShootNoteAtEnemy(GameObject enemy)
     {
-        if (notePrefab)
+        if (enemy == null || notePrefab == null) return;
+
+        Vector3 spawnPos = shootingPoint.position;
+        GameObject note = Instantiate(notePrefab, spawnPos, Quaternion.identity);
+
+        if (note.TryGetComponent<NoteProjectile>(out var noteProjectile))
         {
-            GameObject note = Instantiate(notePrefab, shootingPoint.position, Quaternion.identity);
-            note.SetActive(true);
-            NoteProjectile noteProjectile = note.GetComponent<NoteProjectile>();
-            if (noteProjectile != null)
-            {
-                Vector3 direction = (enemy.transform.position - shootingPoint.position).normalized;
-                noteProjectile.Initialize( damage, speed, penetration, direction ); 
-            }
+            Vector3 direction = (enemy.transform.position - spawnPos).normalized;
+
+            noteProjectile.Initialize(
+                GetCurrentDamage(),
+                projectileSpeed,
+                GetCurrentPenetration(),
+                direction
+            );
         }
     }
 }

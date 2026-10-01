@@ -4,12 +4,11 @@ using UnityEngine;
 
 public abstract class PhysicalWeapon : Weapon 
 {
-    public void DealDamage(Collider2D other)
+    public virtual void DealDamage(Collider2D other)
     {
-        if (other.gameObject != null)
+        if (other != null && other.TryGetComponent<Enemy>(out var enemy))
         {
-            other.GetComponent<Enemy>().TakeDamage(damage);
-
+            enemy.TakeDamage(GetCurrentDamage());
         }
     }
 }

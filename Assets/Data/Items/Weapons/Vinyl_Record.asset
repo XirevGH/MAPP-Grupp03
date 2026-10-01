@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ea3db5f93447c1438a61e7975fd0473, type: 3}
+  m_Name: Vinyl_Record
+  m_EditorClassIdentifier: 
+  itemID: 20
+  itemName: Vinyl Record
+  icon: {fileID: 21300000, guid: 733f8c173a4bef54cbd93cf6d9569fc9, type: 3}
+  beatNumber: 4
+  baseDescription: 
+  availableMetaUpgrades:
+  - {fileID: 11400000, guid: a627f53f13e76a84ebad17cf69aaea26, type: 2}
+  - {fileID: 11400000, guid: ff9f493dde377b946aaafb8820bdc1f7, type: 2}
+  - {fileID: 11400000, guid: 0505bd344acb2be40bac2ca37a4eca57, type: 2}
+  baseDamage: 10
+  attackSound: {fileID: 0}

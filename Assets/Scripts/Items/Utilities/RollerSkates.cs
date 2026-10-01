@@ -1,54 +1,54 @@
-using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class RollerSkates : Utility
 {
-    public PlayerMovement playerMovement;
-    public float percentageIncrease;
-    public int movementSpeedRank;
-    public int movementSpeedUpgradeCost;
+    [SerializeField] private PlayerMovement playerMovement;
 
+    private bool isBonusApplied = false;
 
-    private void OnEnable()
+    private void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Main") 
+        ApplyMetaSpeedBonus();
+    }
+
+    private void ApplyMetaSpeedBonus()
+    {
+        if (isBonusApplied) return;
+
+        if (playerMovement == null)
         {
-            playerMovement.IncreaseMovementSpeed(Mathf.Pow(1 + (percentageIncrease / 100f), movementSpeedRank));
+            if (player != null)
+            {
+                playerMovement = player.GetComponent<PlayerMovement>();
+            }
+            else
+            {
+                playerMovement = FindObjectOfType<PlayerMovement>();
+            }
         }
-    }
 
-    public float GetMovementSpeedIncreasePercentage()
-    {
-        return percentageIncrease;
-    }
+        if (utilityData == null || playerMovement == null) return;
 
-    public void IncreaseMovementSpeed()
-    {
-        movementSpeedRank++;
-        if (SceneManager.GetActiveScene().name == "Main")
+        var speedUpgrade = utilityData.GetUpgrade(StatType.MovementSpeed);
+
+        if (speedUpgrade != null && MetaUpgradeManager.Instance != null)
         {
-            playerMovement.IncreaseMovementSpeed(1 + (percentageIncrease / 100f));
+            float totalSpeedBonusPercent = MetaUpgradeManager.Instance.GetStatValue(speedUpgrade);
+
+            if (totalSpeedBonusPercent > 0f)
+            {
+                playerMovement.IncreaseMovementSpeed(1f + (totalSpeedBonusPercent / 100f));
+            }
         }
-    }
-    
-    public float GetCurrentMovementSpeedIncrease()
-    {
-        return (float)Math.Round((Mathf.Pow(1 + (percentageIncrease / 100f), movementSpeedRank) - 1) * 100, 1);
+
+        isBonusApplied = true;
     }
 
-    protected override void CreateUpgradeOptions()
+    public void IncreaseInRunMovementSpeed(float percentage)
     {
-        upgradeOptions.Add("IncreaseMovementSpeed");
-    }
-
-    public int GetIncreaseMovementSpeedCost()
-    {
-        return movementSpeedUpgradeCost;
-    }
-
-    public int GetMovementSpeedUpgradeRank()
-    {
-        return movementSpeedRank;
+        if (playerMovement != null)
+        {
+            playerMovement.IncreaseMovementSpeed(1f + (percentage / 100f));
+        }
     }
 }

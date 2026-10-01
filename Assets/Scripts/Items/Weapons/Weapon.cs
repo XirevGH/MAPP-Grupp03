@@ -3,52 +3,49 @@ using UnityEngine;
 
 public abstract class Weapon : Item
 {
-    public float damage;
-    public int damageRank;
-    public int damageUpgradeCost;
-    public float percentageDamageIncrease;
-    public AudioClip attackSound;
+    [SerializeField] protected WeaponDataSO weaponData;
 
-    protected override void Awake()
+    public override ItemDefinitionSO BaseItemData => weaponData;
+
+    protected float metaUpgradedDamage;
+
+    private float inRunDamageMultiplier = 1f;
+
+    protected virtual void Start()
     {
-        base.Awake();
+        InitializeStartingStats();
+    }
+
+    public void InitializeStartingStats()
+    {
+        if (weaponData == null)
+        {
+            return;
+        }
+
+        float baseDmg = weaponData.BaseDamage;
+
+        UpgradeDefinitionSO dmgUpgrade = weaponData.GetUpgrade(StatType.Damage);
+
+        if (dmgUpgrade != null && MetaUpgradeManager.Instance != null)
+        {
+            float bonusPercent = MetaUpgradeManager.Instance.GetStatValue(dmgUpgrade);
+            baseDmg *= (1f + (bonusPercent / 100f));
+        }
+
+        metaUpgradedDamage = baseDmg;
+        inRunDamageMultiplier = 1f;
     }
 
     public abstract void Attack();
 
-    public virtual void IncreaseDamage()
+    public virtual void IncreaseInRunDamage(float percent)
     {
-        damageRank++;
-        damage *= (1 + (percentageDamageIncrease / 100f));
-    }
-
-    public float GetDamageIncreasePercentage()
-    {
-        return percentageDamageIncrease;
+        inRunDamageMultiplier *= (1f + (percent / 100f));
     }
 
     public float GetCurrentDamage()
     {
-        return (float)Math.Round(damage, 1);
-    }
-
-    protected override void CreateUpgradeOptions()
-    {
-        upgradeOptions.Add("IncreaseDamage");
-    }
-
-    public override string GetItemType()
-    {
-        return "Weapon";
-    }
-
-    public int GetIncreaseDamageCost()
-    {
-        return damageUpgradeCost;
-    }
-
-    public int GetDamageUpgradeRank()
-    {
-        return damageRank;
+        return metaUpgradedDamage * inRunDamageMultiplier;
     }
 }

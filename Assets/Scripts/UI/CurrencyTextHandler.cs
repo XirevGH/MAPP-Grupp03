@@ -1,30 +1,51 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class CurrencyTextHandler : MonoBehaviour
 {
     [SerializeField] private TMP_Text textField;
-    private string currency;
 
-    public static CurrencyTextHandler Instance
+    private void Awake()
     {
-        get; private set;
+        if (textField == null)
+        {
+            textField = GetComponent<TMP_Text>();
+        }
     }
 
-    void Start()
+    private void Start()
     {
-        Instance = this;
-        SetText();
+        // 1. Subscribe to live currency updates
+        if (MetaUpgradeManager.Instance != null)
+        {
+            MetaUpgradeManager.Instance.OnCurrencyChanged += UpdateDisplay;
+            UpdateDisplay(MetaUpgradeManager.Instance.GetCurrency());
+        }
+        else
+        {
+            SetText(0);
+        }
     }
 
-    public void UpdateCurrency()
+    private void OnDestroy()
     {
-        SetText();
+        // Unsubscribe to prevent memory leaks when changing scenes
+        if (MetaUpgradeManager.Instance != null)
+        {
+            MetaUpgradeManager.Instance.OnCurrencyChanged -= UpdateDisplay;
+        }
     }
 
-    private void SetText()
+    private void UpdateDisplay(int totalCurrency)
     {
-        currency = MetaUpgradeSystem.Instance.GetCurrencyAmount().ToString();
-        textField.text = ":" + currency;
+        SetText(totalCurrency);
+    }
+
+    private void SetText(int amount)
+    {
+        if (textField != null)
+        {
+            textField.text = ":" + amount; // Matches your UI format (e.g. ":500")
+        }
     }
 }

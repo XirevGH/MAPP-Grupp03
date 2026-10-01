@@ -4,18 +4,23 @@ using UnityEngine.Events;
 
 public class BassGuitar : PhysicalWeapon
 {
-    public  HashSet<Collider2D> colliders = new HashSet<Collider2D>();
-    public Animator anim;
-   
+    [SerializeField] private Animator anim;
 
-    private void Start()
+    private static readonly int SwingStateHash = Animator.StringToHash("BassGuitarSwing");
+    private static readonly int IdleStateHash = Animator.StringToHash("BassGuitarIdle");
+
+    private HashSet<Collider2D> hitEnemiesInCurrentSwing = new HashSet<Collider2D>();
+
+    protected override void Start()
     {
-        anim = GetComponent<Animator>();
-       
-        UnityAction action = new UnityAction(Attack);         
-        TriggerController.Instance.SetTrigger(beatNumber, action);
+        base.Start();
+        if (anim == null) anim = GetComponent<Animator>();
 
-        
+        if (weaponData != null && weaponData.HasBeatTrigger)
+        {
+            UnityAction action = new UnityAction(Attack);
+            TriggerController.Instance.SetTrigger(weaponData.BeatNumber, action);
+        }
     }
 
     public override void Attack()
@@ -23,25 +28,30 @@ public class BassGuitar : PhysicalWeapon
         if (gameObject.activeSelf)
         {
             anim.SetTrigger("Attacking");
-            SoundManager.Instance.PlaySFX(attackSound, 1);
+            if (weaponData != null && weaponData.AttackSound != null)
+            {
+                SoundManager.Instance.PlaySFX(weaponData.AttackSound, 1f);
+            }
         }
         
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("BassGuitarSwing") && !colliders.Contains(other) && other.gameObject.CompareTag("Enemy")) 
-        {
-            colliders.Add(other);
-           
-            DealDamage(other);
+        var stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
-          
-        }
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("BassGuitarIdle"))
+        if (stateInfo.shortNameHash == SwingStateHash)
         {
-            colliders.Clear();
+            if (!hitEnemiesInCurrentSwing.Contains(other) && other.CompareTag("Enemy"))
+            {
+                hitEnemiesInCurrentSwing.Add(other);
+                DealDamage(other);
+            }
+        }
+
+        else if (stateInfo.shortNameHash == IdleStateHash)
+        {
+            hitEnemiesInCurrentSwing.Clear();
         }
     }
 }

@@ -1,85 +1,107 @@
-using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class BreakDance : Weapon
 {
+    [SerializeField] private Animator anim;
 
-    [SerializeField] private float radiusIncreasePercentage;
-    private Animator anim;
-    public int radiusRank;
-    public int radiusUpgradeCost;
+    // Runtime Cached Radius Stats
+    private float metaUpgradedRadius = 1f;
+    private float inRunRadiusMultiplier = 1f;
 
-    private HashSet<GameObject> enemies = new HashSet<GameObject>();
+    private readonly HashSet<GameObject> enemiesInRange = new HashSet<GameObject>();
 
-    private void Start()
+    protected override void Start()
     {
-        UnityAction action = new UnityAction(Attack);
-        TriggerController.Instance.SetTrigger(beatNumber, action);
-        anim = GetComponent<Animator>();
+        base.Start(); // ◄── CRITICAL: Initializes meta damage!
+
+        if (anim == null) anim = GetComponent<Animator>();
+
+        InitializeRadiusStats();
+
+        if (weaponData != null && weaponData.HasBeatTrigger)
+        {
+            UnityAction action = new UnityAction(Attack);
+            TriggerController.Instance.SetTrigger(weaponData.BeatNumber, action);
+        }
     }
 
-    public void IncreaseRadius()
+    public void InitializeRadiusStats()
     {
-        radiusRank++;
-        gameObject.transform.localScale *= (1 + (radiusIncreasePercentage / 100f));
+        if (weaponData == null) return;
+
+        // Query Radius meta-upgrade
+        var radiusUpgrade = weaponData.GetUpgrade(StatType.Radius);
+        if (radiusUpgrade != null && MetaUpgradeManager.Instance != null)
+        {
+            // Gets base radius value (e.g. 1.0) + meta rank bonuses
+            metaUpgradedRadius = MetaUpgradeManager.Instance.GetStatValue(radiusUpgrade);
+        }
+        else
+        {
+            metaUpgradedRadius = 1f; // Default baseline scale
+        }
+
+        ApplyRadiusScale();
     }
 
-    public float GetRadiusIncreasePercentage()
+    private void ApplyRadiusScale()
     {
-        return radiusIncreasePercentage;
-    }
-
-    public float GetCurrentRadiusIncrease()
-    {
-        return (float)Math.Round((Mathf.Pow(1 + (radiusIncreasePercentage / 100f), radiusRank) - 1) * 100, 1);
-    }
-
-    public int GetIncreaseRadiusCost()
-
-    {
-        return radiusUpgradeCost;
-    }
-
-    public int GetRadiusUpgradeRank()
-    {
-        return radiusRank;
-    }
-
-    protected override void CreateUpgradeOptions()
-    {
-        base.CreateUpgradeOptions();
-        upgradeOptions.Add("IncreaseRadius");
+        transform.localScale = Vector3.one * GetCurrentRadius();
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
         {
-            enemies.Add(other.gameObject);
+            enemiesInRange.Add(other.gameObject);
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        enemies.Remove(other.gameObject);
+        if (other.CompareTag("Enemy"))
+        {
+            enemiesInRange.Remove(other.gameObject);
+        }
     }
 
     public override void Attack()
     {
-        if (gameObject.activeSelf)
+        if (!gameObject.activeSelf) return;
+
+        if (anim != null)
         {
             anim.SetTrigger("Attack");
-            SoundManager.Instance.PlaySFX(attackSound, 1);
-            foreach (GameObject enemy in enemies)
+        }
+
+        if (weaponData != null && weaponData.AttackSound != null)
+        {
+            SoundManager.Instance.PlaySFX(weaponData.AttackSound, 1f);
+        }
+
+        // Purge dead enemies killed by other attacks
+        enemiesInRange.RemoveWhere(e => e == null);
+
+        float finalDamage = GetCurrentDamage();
+
+        foreach (GameObject enemyObj in enemiesInRange)
+        {
+            if (enemyObj != null && enemyObj.TryGetComponent<Enemy>(out var enemyScript))
             {
-                if (enemy.gameObject != null)
-                {
-                    enemy.GetComponent<Enemy>().TakeDamage(damage);
-                }
+                enemyScript.TakeDamage(finalDamage);
             }
         }
+    }
+
+    // Public Getters & Modifiers
+    public float GetCurrentRadius() => metaUpgradedRadius * inRunRadiusMultiplier;
+
+    // Called when picking an in-run level-up card (e.g. "+15% Breakdance Radius")
+    public void IncreaseInRunRadius(float percentage)
+    {
+        inRunRadiusMultiplier *= (1f + (percentage / 100f));
+        ApplyRadiusScale();
     }
 }

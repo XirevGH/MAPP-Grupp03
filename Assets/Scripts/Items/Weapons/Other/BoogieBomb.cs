@@ -15,8 +15,9 @@ public class BoogieBomb : PhysicalWeapon
     [SerializeField] private GameObject bombParticles;
     [SerializeField] private Transform playerPosition;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         SetRandomBombRange();
     }
 

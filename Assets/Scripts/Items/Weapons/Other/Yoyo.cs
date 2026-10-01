@@ -1,130 +1,112 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class Yoyo : Projectile
 {
-    [SerializeField] private float rotateSpeed, colliderStartingOffset, colliderSuperModeOffset;
-    [SerializeField] private int triggerNumber;
-    [SerializeField] private GameObject ball, yoyoString;
-    [SerializeField] private Vector3 ballStartPosition, ballSuperModePosition, stringStartPosition, stringSuperModePosition, stringStartScale, stringSuperModeScale;
+    [Header("Orbit & Rotation Settings")]
+    [SerializeField] private float baseRotationSpeed = 120f;
+    [SerializeField] private float superModeMultiplier = 3f;
 
-    private List<string> upgradeOptions;
-    public float angle, superModeTime, elapsedTime, percentageComplete, superModeMultiplier;
+    [Header("Components & Transforms")]
+    [SerializeField] private GameObject ball;
+    [SerializeField] private GameObject yoyoString;
+    [SerializeField] private CircleCollider2D circleColl;
 
-    private bool superMode;
-    private float lerpTime, lerpElapsedTime;
+    [Header("Positions & Offsets")]
+    [SerializeField] private Vector3 ballStartPosition;
+    [SerializeField] private Vector3 ballSuperModePosition;
+    [SerializeField] private Vector3 stringStartPosition;
+    [SerializeField] private Vector3 stringSuperModePosition;
+    [SerializeField] private Vector3 stringStartScale;
+    [SerializeField] private Vector3 stringSuperModeScale;
+    [SerializeField] private float colliderStartingOffset;
+    [SerializeField] private float colliderSuperModeOffset;
 
-    private float BPM, noteValue, pitch;
+    public float angle;
 
-    private CircleCollider2D circleColl;
+    private bool isSuperMode = false;
+    private float superModeDuration;
+    private float superModeTimer;
 
-    private void Start()
+    private void Awake()
     {
-        upgradeOptions = new List<string> {"SuperMode", "PlusOneYoyo"};
-        superMode = false;
-        lerpTime = 0;
-        circleColl = GetComponent<CircleCollider2D>();
+        if (circleColl == null) circleColl = GetComponent<CircleCollider2D>();
+        ResetSuperMode();
     }
 
     private void Update()
     {
-        BPM = SoundManager.Instance.GetCurrentBPM();
-        noteValue = TriggerController.Instance.GetTrigger(YoyoController.Instance.GetBeatNumber()).noteValue;
-        pitch = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>().pitch;
-       
+        if (Time.timeScale == 0f) return;
 
-        rotateSpeed = BPM / 60;
-        superModeTime = ((60f / (BPM / noteValue)) / pitch) / 2;
-        lerpTime = superModeTime / 5;
-    }
+        float currentBPM = SoundManager.Instance != null ? SoundManager.Instance.GetCurrentBPM() : 120f;
+        float speedMultiplier = isSuperMode ? superModeMultiplier : 1f;
+        float currentRotateSpeed = (currentBPM / 60f) * baseRotationSpeed * speedMultiplier;
 
-    private void FixedUpdate()
-    {
-        if (Time.timeScale == 0)
-        {
-            return;
-        }
+        angle = Mathf.Repeat(angle + (currentRotateSpeed * Time.deltaTime), 360f);
+        transform.eulerAngles = new Vector3(0f, 0f, angle);
 
-        if (angle == 360)
-        { 
-         angle = 0;
-        }
-        transform.eulerAngles = new Vector3(0, 0, angle);
-       
-        if (superMode)
+        if (isSuperMode)
         {
-            SuperMode();
-        }
-        else
-        {
-            angle += rotateSpeed;
-            superMode = false;
+            UpdateSuperMode();
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        DealDamage(other);
-    }
-
 
     public void ActivateSuperMode()
     {
-        superMode = true;
+        float bpm = SoundManager.Instance != null ? SoundManager.Instance.GetCurrentBPM() : 120f;
+        float pitch = SoundManager.Instance != null ? SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>().pitch : 1f;
+        float noteValue = TriggerController.Instance != null && YoyoController.Instance != null
+            ? TriggerController.Instance.GetTrigger(YoyoController.Instance.BaseItemData.BeatNumber).noteValue
+            : 1f;
+
+        superModeDuration = Mathf.Max(0.1f, ((60f / (bpm / noteValue)) / pitch) / 2f);
+        superModeTimer = 0f;
+        isSuperMode = true;
     }
 
-    public void SuperMode()
+    private void UpdateSuperMode()
     {
-        angle += rotateSpeed * superModeMultiplier;
-        elapsedTime += Time.deltaTime;
-        percentageComplete = elapsedTime / superModeTime;
-        if (percentageComplete < 0.8f)
+        superModeTimer += Time.deltaTime;
+        float progress = Mathf.Clamp01(superModeTimer / superModeDuration);
+
+        float extendProgress = progress < 0.5f
+            ? progress / 0.5f
+            : (1f - progress) / 0.5f;
+
+        ball.transform.localPosition = Vector3.Lerp(ballStartPosition, ballSuperModePosition, extendProgress);
+        yoyoString.transform.localPosition = Vector3.Lerp(stringStartPosition, stringSuperModePosition, extendProgress);
+        yoyoString.transform.localScale = Vector3.Lerp(stringStartScale, stringSuperModeScale, extendProgress);
+
+        if (circleColl != null)
         {
-            ExtendYoyoDistance();
+            circleColl.offset = new Vector2(Mathf.Lerp(colliderStartingOffset, colliderSuperModeOffset, extendProgress), 0f);
         }
-        else if (percentageComplete >= 0.8f)
-        {
-            ResetYoyoDistance();
-        }
-        if (Mathf.FloorToInt(percentageComplete) == 1)
+
+        if (progress >= 1f)
         {
             ResetSuperMode();
         }
     }
 
-    private void ExtendYoyoDistance()
-    {
-        float percentageComplete = elapsedTime / lerpTime;
-        ball.transform.localPosition = Vector3.Lerp(ballStartPosition, ballSuperModePosition, percentageComplete);
-        yoyoString.transform.localPosition = Vector3.Lerp(stringStartPosition, stringSuperModePosition, percentageComplete);
-        yoyoString.transform.localScale = Vector3.Lerp(stringStartScale, stringSuperModeScale, percentageComplete);
-        circleColl.offset = new Vector2(Mathf.Lerp(colliderStartingOffset, colliderSuperModeOffset, percentageComplete), 0f);
-    }
-
-    private void ResetYoyoDistance()
-    {
-        lerpElapsedTime += Time.deltaTime;
-        float percentageComplete = lerpElapsedTime / lerpTime;
-        ball.transform.localPosition = Vector3.Lerp(ballSuperModePosition, ballStartPosition, percentageComplete);
-        yoyoString.transform.localPosition = Vector3.Lerp(stringSuperModePosition, stringStartPosition, percentageComplete);
-        yoyoString.transform.localScale = Vector3.Lerp(stringSuperModeScale, stringStartScale, percentageComplete);
-        circleColl.offset = new Vector2(Mathf.Lerp(colliderSuperModeOffset, colliderStartingOffset, percentageComplete), 0f);
-    }
-
     public void ResetSuperMode()
     {
-        percentageComplete = 0;
-        elapsedTime = 0;
-        lerpElapsedTime = 0;
-        superMode = false;
+        isSuperMode = false;
+        superModeTimer = 0f;
+
         ball.transform.localPosition = ballStartPosition;
         yoyoString.transform.localPosition = stringStartPosition;
         yoyoString.transform.localScale = stringStartScale;
-        if(circleColl != null)
+
+        if (circleColl != null)
         {
             circleColl.offset = new Vector2(colliderStartingOffset, 0f);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            DealDamage(other);
         }
     }
 }

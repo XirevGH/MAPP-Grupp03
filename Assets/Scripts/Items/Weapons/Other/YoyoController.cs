@@ -1,67 +1,113 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class YoyoController : PermanentProjectileWeapon
 {
-    public GameObject yoyo;
+    [SerializeField] private GameObject yoyoPrefab;
 
-    public static YoyoController Instance
-    {
-        get;
-        private set;
-    }
+    private readonly List<Yoyo> activeYoyos = new List<Yoyo>();
 
-    protected override void Awake()
+    public static YoyoController Instance { get; private set; }
+
+    protected void Awake()
     {
         Instance = this;
-        base.Awake();
     }
 
-    private void Start()
+    protected override void Start()
     {
-        UnityAction action1 = new UnityAction(Attack);
-        TriggerController.Instance.SetTrigger(beatNumber, action1);
-    }
-
-    void Update()
-    {
-        if (amountOfProjectiles > transform.childCount)
+        base.Start();
+        if (weaponData != null && weaponData.HasBeatTrigger)
         {
-            AddYoyo();
-            SetYoyoPosition();
+            UnityAction action = new UnityAction(Attack);
+            TriggerController.Instance.SetTrigger(weaponData.BeatNumber, action);
+        }
+
+        SynchronizeYoyoCount();
+    }
+
+    private void Update()
+    {
+        if (GetCurrentProjectileCount() > activeYoyos.Count)
+        {
+            SynchronizeYoyoCount();
         }
     }
 
-    public override void Attack() 
+    public override void Attack()
     {
-        if (gameObject.activeSelf)
+        if (!gameObject.activeSelf || activeYoyos.Count == 0) return;
+
+        if (weaponData != null && weaponData.AttackSound != null)
         {
-            int totalYoyo = transform.childCount;
-            SoundManager.Instance.PlaySFX(attackSound, 1);
-            for (int i = 0; i < totalYoyo; i++)
+            SoundManager.Instance.PlaySFX(weaponData.AttackSound, 1f);
+        }
+
+        for (int i = 0; i < activeYoyos.Count; i++)
+        {
+            if (activeYoyos[i] != null)
             {
-                transform.GetChild(i).GetComponent<Yoyo>().ActivateSuperMode();
+                activeYoyos[i].ActivateSuperMode();
             }
         }
     }
 
-    private void SetYoyoPosition()
+    private void SynchronizeYoyoCount()
     {
-        int totalYoyo = transform.childCount;
-        float angle = 360f / totalYoyo;
-        float nextAngle = 0;
+        int targetCount = GetCurrentProjectileCount();
 
-        for (int i = 0; i < totalYoyo; i++)
+        while (activeYoyos.Count < targetCount)
         {
-            transform.GetChild(i).GetComponent<Yoyo>().angle = nextAngle;
-            transform.GetChild(i).GetComponent<Yoyo>().ResetSuperMode();
-            nextAngle += angle;
+            SpawnSingleYoyo();
+        }
+
+        RecalculateYoyoSpacing();
+    }
+
+    private void RecalculateYoyoSpacing()
+    {
+        int total = activeYoyos.Count;
+        if (total == 0) return;
+
+        float angleStep = 360f / total;
+        float currentAngle = 0f;
+
+        for (int i = 0; i < total; i++)
+        {
+            if (activeYoyos[i] != null)
+            {
+                activeYoyos[i].angle = currentAngle;
+                activeYoyos[i].ResetSuperMode();
+                activeYoyos[i].SetDamage(GetCurrentDamage());
+                currentAngle += angleStep;
+            }
         }
     }
 
-    public void AddYoyo()
+    private void SpawnSingleYoyo()
     {
-        GameObject clone = Instantiate(yoyo, transform.position, Quaternion.identity, transform);
-        clone.GetComponent<Yoyo>().SetDamage(damage);
+        if (yoyoPrefab == null) return;
+
+        GameObject clone = Instantiate(yoyoPrefab, transform.position, Quaternion.identity, transform);
+
+        if (clone.TryGetComponent<Yoyo>(out var yoyoScript))
+        {
+            yoyoScript.SetDamage(GetCurrentDamage());
+            activeYoyos.Add(yoyoScript);
+        }
+    }
+    public override void IncreaseInRunDamage(float percentIncrease)
+    {
+        base.IncreaseInRunDamage(percentIncrease);
+
+        float newDamage = GetCurrentDamage();
+        for (int i = 0; i < activeYoyos.Count; i++)
+        {
+            if (activeYoyos[i] != null)
+            {
+                activeYoyos[i].SetDamage(newDamage);
+            }
+        }
     }
 }

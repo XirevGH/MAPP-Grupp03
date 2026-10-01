@@ -1,53 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class PermanentProjectileWeapon : Weapon
 {
-    [SerializeField] protected int amountOfProjectiles;
-    [SerializeField] protected int projectileIncreasePerUpgrade;
+    protected int metaUpgradedProjectiles;
+    protected int inRunBonusProjectiles = 0;
 
-    public int projectileRank;
-    public int projectileUpgradeCost;
-
-    public override void IncreaseDamage()
+    protected override void Start()
     {
-        base.IncreaseDamage();
-        foreach(Projectile projectile in gameObject.GetComponentsInChildren<Projectile>())
-        {
-            projectile.SetDamage(damage);
-        }
+        base.Start();
+        InitializePermanentProjectileStats();
     }
 
-    public void IncreaseProjectileCount()
+    public virtual void InitializePermanentProjectileStats()
     {
-        projectileRank++;
-        amountOfProjectiles += projectileIncreasePerUpgrade;
+        if (weaponData == null) return;
+
+        var projUpgrade = weaponData.GetUpgrade(StatType.ProjectileCount);
+        metaUpgradedProjectiles = projUpgrade != null && MetaUpgradeManager.Instance != null
+            ? Mathf.RoundToInt(MetaUpgradeManager.Instance.GetStatValue(projUpgrade))
+            : 1;
     }
 
-    public int GetProjectileIncreasePerUpgrade()
-    {
-        return projectileIncreasePerUpgrade;
-    }
+    public int GetCurrentProjectileCount() => metaUpgradedProjectiles + inRunBonusProjectiles;
 
-    protected override void CreateUpgradeOptions()
+    public void IncreaseInRunProjectiles(int amount)
     {
-        base.CreateUpgradeOptions();
-        upgradeOptions.Add("IncreaseProjectileCount");
+        inRunBonusProjectiles += amount;
     }
-
-    public int GetIncreaseProjectileCountCost()
-    {
-        return projectileUpgradeCost;
-    }
-
-    public int GetProjectileUpgradeRank() 
-    {
-        return projectileRank;
-    }
-
-    public int GetCurrentProjectileCount()
-    {
-        return amountOfProjectiles;
-    }    
 }

@@ -2,72 +2,59 @@ using UnityEngine;
 
 public abstract class ProjectileWeapon : Weapon
 {
-    [SerializeField] protected int amountOfProjectiles;
-    [SerializeField] protected int projectileIncreasePerUpgrade;
-    [SerializeField] protected int penetration;
-    [SerializeField] protected int penetrationIncreasePerUpgrade;
-    public int projectileRank;
-    public int projectileUpgradeCost;
-    public int penetrationRank;
-    public int penetrationUpgradeCost;
+    protected int metaUpgradedProjectiles;
+    protected int metaUpgradedPenetration;
 
-    protected override void CreateUpgradeOptions()
+    protected int inRunBonusProjectiles = 0;
+    protected int inRunBonusPenetration = 0;
+
+    protected override void Start()
     {
-        base.CreateUpgradeOptions();
-
-        upgradeOptions.Add("IncreaseProjectileCount");
-        upgradeOptions.Add("IncreasePenetrationAmount");
+        base.Start();
+        InitializeProjectileStats();
     }
-
-    public void IncreaseProjectileCount()
+    public virtual void InitializeProjectileStats()
     {
-        projectileRank++;
-        amountOfProjectiles += projectileIncreasePerUpgrade;
-    }
+        if (weaponData == null) return;
 
-    public void IncreasePenetrationAmount()
-    {
-        penetrationRank++;
-        penetration += penetrationIncreasePerUpgrade;
-    }
+        var projUpgrade = weaponData.GetUpgrade(StatType.ProjectileCount);
+        if (projUpgrade != null && MetaUpgradeManager.Instance != null)
+        {
+            metaUpgradedProjectiles = Mathf.RoundToInt(MetaUpgradeManager.Instance.GetStatValue(projUpgrade));
+        }
+        else
+        {
+            metaUpgradedProjectiles = 1;
+        }
 
-    public int GetProjectileIncreasePerUpgrade()
-    {
-        return projectileIncreasePerUpgrade;
-    }
-
-    public int GetPenetrationIncreasePerUpgrade()
-    {
-        return penetrationIncreasePerUpgrade;
-    }
-
-    public int GetIncreaseProjectileCountCost()
-    {
-        return projectileUpgradeCost;
-    }
-
-    public int GetIncreasePenetrationAmountCost()
-    {
-        return penetrationUpgradeCost;
-    }
-
-    public int GetProjectileUpgradeRank()
-    {
-        return projectileRank;
-    }
-
-    public int GetPenetrationUpgradeRank()
-    {
-        return penetrationRank;
+        var penUpgrade = weaponData.GetUpgrade(StatType.Penetration);
+        if (penUpgrade != null && MetaUpgradeManager.Instance != null)
+        {
+            metaUpgradedPenetration = Mathf.RoundToInt(MetaUpgradeManager.Instance.GetStatValue(penUpgrade));
+        }
+        else
+        {
+            metaUpgradedPenetration = 1;
+        }
     }
 
     public int GetCurrentProjectileCount()
     {
-        return amountOfProjectiles;
+        return metaUpgradedProjectiles + inRunBonusProjectiles;
     }
 
-    public int GetCurrentPenetrationAmount()
+    public int GetCurrentPenetration()
     {
-        return penetration;
+        return metaUpgradedPenetration + inRunBonusPenetration;
+    }
+
+    public void IncreaseInRunProjectiles(int amount)
+    {
+        inRunBonusProjectiles += amount;
+    }
+
+    public void IncreaseInRunPenetration(int amount)
+    {
+        inRunBonusPenetration += amount;
     }
 }

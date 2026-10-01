@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb513f14f91709e46ad4645dccc70801, type: 3}
+  m_Name: Disco_Ball_Projectile_Count
+  m_EditorClassIdentifier: 
+  upgradeID: 42
+  displayName: Disco Ball Projectile Count
+  icon: {fileID: 21300000, guid: ce855ba8cb0c9b140a44797ee02270f4, type: 3}
+  descriptionFormat: 
+  targetStat: 1
+  baseValue: 1
+  increasePerRank: 1
+  isPercentage: 0
+  maxRank: 10
+  baseCost: 100
+  costMultiplierPerRank: 1.35

@@ -5,42 +5,29 @@ using UnityEngine.Events;
 
 public class DiscoBallController : ProjectileWeapon
 {    
-    [SerializeField] private GameObject discoBall;
-    [SerializeField] private float blinkTime;
-    public List<GameObject> activeDiscoBalls = new();
+    [SerializeField] private GameObject discoBallPrefab;
 
+    private readonly List<DiscoBall> activeDiscoBalls = new List<DiscoBall>();
 
-    private float BPM, attackDelayTime, pitch;
-    private AudioSource source;
+    public static DiscoBallController Instance { get; private set; }
 
-    public static DiscoBallController Instance
+    protected void Awake()
     {
-        get; private set;
-    }
-
-    protected override void Awake()
-    {
-        base.Awake();
         Instance = this;
     }
 
-    private void Start()
+    protected override void Start()
     {
-        UnityAction action1 = new UnityAction(Attack);
-        UnityAction action2 = new UnityAction(Blink);
-        TriggerController.Instance.SetTrigger(beatNumber, action1);
-        TriggerController.Instance.SetTrigger(1, action2);
+        base.Start();
+        if (weaponData != null && weaponData.HasBeatTrigger)
+        {
+            UnityAction attackAction = new UnityAction(Attack);
+            TriggerController.Instance.SetTrigger(weaponData.BeatNumber, attackAction);
+
+            UnityAction blinkAction = new UnityAction(BlinkAllDiscoBalls);
+            TriggerController.Instance.SetTrigger(1, blinkAction);
+        }
     }
-
-    private void FixedUpdate()
-    {
-        BPM = SoundManager.Instance.GetCurrentBPM();
-        source = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>();
-        pitch = source.pitch;
-
-        attackDelayTime = ((60f / BPM) / 2) / pitch;
-    }
-
 
     public void Blink()
     {
@@ -54,7 +41,7 @@ public class DiscoBallController : ProjectileWeapon
 
             for (int i =0; i < activeDiscoBalls.Count; i++)
             {
-                GameObject discoBall = activeDiscoBalls[i];
+                DiscoBall discoBall = activeDiscoBalls[i];
 
                 if (discoBall == null)
                 {
@@ -66,31 +53,64 @@ public class DiscoBallController : ProjectileWeapon
                 }
             }
         }
-        
     }
 
     public override void Attack()
     {
-        if (gameObject.activeSelf)
+        if (gameObject.activeSelf && discoBallPrefab != null)
         {
-            StartCoroutine("AttackDelay");
+            StartCoroutine(AttackDelayRoutine());
         }
-
     }
 
-    private IEnumerator AttackDelay()
+    private IEnumerator AttackDelayRoutine()
     {
-        for (int i = 0; i < amountOfProjectiles; i++)
-        {
-            GameObject clone = Instantiate(discoBall, transform.position, Quaternion.identity);
-            activeDiscoBalls.Add(clone);
-            clone.GetComponent<DiscoBall>().SetDamage(damage);
-            clone.GetComponent<DiscoBall>().SetPenetration(penetration);
-            SoundManager.Instance.PlaySFX(attackSound, 1 - (i * 0.1f));
-        
-            yield return new WaitForSeconds(attackDelayTime);
-    
-        }
+        float bpm = SoundManager.Instance != null ? SoundManager.Instance.GetCurrentBPM() : 120f;
+        float pitch = SoundManager.Instance != null ? SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>().pitch : 1f;
+        float burstDelay = ((60f / bpm) / 2f) / pitch;
 
+        int count = GetCurrentProjectileCount();
+        float damage = GetCurrentDamage();
+        int penetration = GetCurrentPenetration();
+
+        for (int i = 0; i < count; i++)
+        {
+            GameObject clone = Instantiate(discoBallPrefab, transform.position, Quaternion.identity);
+
+            if (clone.TryGetComponent<DiscoBall>(out var ball))
+            {
+                ball.SetDamage(damage);
+                ball.SetPenetration(penetration);
+                activeDiscoBalls.Add(ball);
+            }
+
+            if (weaponData != null && weaponData.AttackSound != null)
+            {
+                float pitchShift = Mathf.Max(0.2f, 1f - (i * 0.05f));
+                SoundManager.Instance.PlaySFX(weaponData.AttackSound, pitchShift);
+            }
+
+            yield return new WaitForSeconds(burstDelay);
+        }
+    }
+    public void BlinkAllDiscoBalls()
+    {
+
+        for (int i = activeDiscoBalls.Count - 1; i >= 0; i--)
+        {
+            if (activeDiscoBalls[i] == null)
+            {
+                activeDiscoBalls.RemoveAt(i);
+            }
+            else
+            {
+                activeDiscoBalls[i].Blink();
+            }
+        }
+    }
+
+    public void UnregisterDiscoBall(DiscoBall ball)
+    {
+        activeDiscoBalls.Remove(ball);
     }
 }

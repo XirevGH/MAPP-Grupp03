@@ -1,32 +1,52 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class DecoyController : Utility
 {
-    public float decoyHealth, throwDistance, throwDelayTime;
-    [SerializeField] private GameObject decoy;
-    [SerializeField] private int amountOfDecoy;
-    [SerializeField] private int decoyIncreasePerUpgrade;
-    [SerializeField] private int decoyHealthIncreasePerUpgrade;
 
-    public int decoyAmountRank;
-    public int decoyAmountUpgradeCost;
-    
-    public int decoyHealthRank;
-    public int decoyHealthUpgradeCost;
-    
+    [Header("Decoy Prefab & Throw Settings")]
+    [SerializeField] private GameObject decoyPrefab;
+    [SerializeField] private float throwDistance = 5f;
+    [SerializeField] private float throwDelayTime = 0.15f;
+
+
+    private int metaUpgradedDecoyAmount;
+    private float metaUpgradedDecoyHealth;
+
+    private int inRunBonusDecoyAmount = 0;
+    private float inRunHealthMultiplier = 1f;
 
     public DynamicJoystick dynamicJoystick;
-    private Vector2 playerDirection, throwingDirection, playerPosition;
+    private Vector2 playerDirection;
+    private Vector2 throwingDirection;
+    private Vector2 playerPosition;
 
     private void Start()
     {
-        UnityAction action = new UnityAction(Throw);
-        TriggerController.Instance.SetTrigger(beatNumber, action);
+        InitializeStats();
+
+        if (utilityData != null && utilityData.HasBeatTrigger)
+        {
+            UnityAction action = new UnityAction(Throw);
+            TriggerController.Instance.SetTrigger(utilityData.BeatNumber, action);
+        }
+    }
+
+    public void InitializeStats()
+    {
+        if (utilityData == null) return;
+
+        var amountUpgrade = utilityData.GetUpgrade(StatType.DecoyAmount);
+        metaUpgradedDecoyAmount = amountUpgrade != null && MetaUpgradeManager.Instance != null
+            ? Mathf.RoundToInt(MetaUpgradeManager.Instance.GetStatValue(amountUpgrade))
+            : 1;
+
+        var healthUpgrade = utilityData.GetUpgrade(StatType.DecoyHealth);
+        metaUpgradedDecoyHealth = healthUpgrade != null && MetaUpgradeManager.Instance != null
+            ? MetaUpgradeManager.Instance.GetStatValue(healthUpgrade)
+            : 10f;
     }
 
     void Update()
@@ -43,93 +63,50 @@ public class DecoyController : Utility
                     }
                 }
             }
-            playerPosition = player.transform.position;
-            playerDirection = new Vector2(dynamicJoystick.Horizontal, dynamicJoystick.Vertical).normalized;
-            
+            if (player != null && dynamicJoystick != null)
+            {
+                playerPosition = player.transform.position;
+                playerDirection = new Vector2(dynamicJoystick.Horizontal, dynamicJoystick.Vertical).normalized;
+            }
         }
-    }
-
-    private Vector2 FindLandingSpot()
-    {
-        throwingDirection = -playerDirection;
-
-        return playerPosition + (throwDistance * throwingDirection);
     }
 
     public void Throw()
     {
         if (gameObject.activeSelf)
         {
-            StartCoroutine("ThrowDelay");
+            StartCoroutine(ThrowDelayRoutine());
         }
     }
 
-     private IEnumerator ThrowDelay()
-     {
+    private IEnumerator ThrowDelayRoutine()
+    {
+        int totalDecoys = GetCurrentDecoyAmount();
+        float currentHealth = GetCurrentDecoyHealth();
 
-        for (int i = 0; i < amountOfDecoy; i++)
+        for (int i = 0; i < totalDecoys; i++)
         {
-            GameObject newDecoy = Instantiate(decoy, transform.position, Quaternion.identity);
-            newDecoy.GetComponent<Decoy>().endPosition = FindLandingSpot();
-            newDecoy.GetComponent<Decoy>().SetHealth(decoyHealth); 
+            GameObject newDecoy = Instantiate(decoyPrefab, transform.position, Quaternion.identity);
+
+            if (newDecoy.TryGetComponent<Decoy>(out var decoyComponent))
+            {
+                decoyComponent.endPosition = FindLandingSpot();
+                decoyComponent.SetHealth(currentHealth);
+            }
+
             yield return new WaitForSeconds(throwDelayTime);
-        }  
-        
-     }
-
-    public void IncreaseDecoyAmount()
-    {
-        decoyAmountRank++;
-        amountOfDecoy += decoyIncreasePerUpgrade;
+        }
     }
 
-    public void IncreaseDecoyHealth()
+    private Vector2 FindLandingSpot()
     {
-        decoyHealthRank++;
-        decoyHealth *= (1 + (decoyHealthIncreasePerUpgrade / 100f));
+        throwingDirection = playerDirection == Vector2.zero ? Vector2.down : -playerDirection;
+        return playerPosition + (throwDistance * throwingDirection);
     }
 
-    public int GetDecoyHealthAmountIncreasePerUpgrade()
-    {
-        return decoyHealthIncreasePerUpgrade;
-    }
-    public int GetDecoyAmountIncreasePerUpgrade()
-    {
-        return decoyIncreasePerUpgrade;
-    }
+    public int GetCurrentDecoyAmount() => metaUpgradedDecoyAmount + inRunBonusDecoyAmount;
+    public float GetCurrentDecoyHealth() => metaUpgradedDecoyHealth * inRunHealthMultiplier;
 
-    protected override void CreateUpgradeOptions()
-    {
-        upgradeOptions.Add("IncreaseDecoyHealth");
-        upgradeOptions.Add("IncreaseDecoyAmount");
-    }
-
-    public int GetIncreaseDecoyHealthCost()
-    {
-        return decoyHealthUpgradeCost;
-    }
-
-    public int GetIncreaseDecoyAmountCost()
-    {
-        return decoyAmountUpgradeCost;
-    }
-
-    public int GetCurrentDecoyAmount()
-    {
-        return amountOfDecoy;
-    }
-    public float GetCurrentDecoyHealthAmount()
-    {
-        return decoyHealth;
-    }
-
-    public int GetAmountUpgradeRank()
-    {
-        return decoyAmountRank;
-    }
-
-    public int GetHealthUpgradeRank()
-    {
-        return decoyHealthRank;
-    }
+    public void IncreaseInRunDecoyAmount(int amount) => inRunBonusDecoyAmount += amount;
+    public void IncreaseInRunDecoyHealth(float percentage) => inRunHealthMultiplier *= (1f + (percentage / 100f));
 }

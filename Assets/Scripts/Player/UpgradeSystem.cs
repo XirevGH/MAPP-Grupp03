@@ -1,389 +1,344 @@
-using System.Collections.Generic;
-using UnityEngine;
 using System;
-using TMPro;
-using System.Reflection;
+using System.Collections.Generic;
 using System.Linq;
-using UnityEngine.Localization.Settings;
-using UnityEngine.Localization;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgradeSystem : MonoBehaviour
 {
-    [SerializeField] private GameObject[] panels;
+    [Header("UI Panels (Card Choices)")]
+    [SerializeField] private GameObject[] panels; // The 3 choice panels
     [SerializeField] private Player player;
-    [SerializeField] private Sprite weaponPanel, utilityPanel, placeholderSprite;
 
-    private MetaUpgradeSystem controller;
+    [Header("Card Background Sprites")]
+    [SerializeField] private Sprite weaponPanelSprite;
+    [SerializeField] private Sprite utilityPanelSprite;
+    [SerializeField] private Sprite placeholderSprite;
 
-    private Dictionary<Item, List<string>> upgradeOptions = new Dictionary<Item, List<string>>();
-    [SerializeField] private List<Item> sessionItems;
-    [SerializeField] private List<Item> choiceItems;
-    private List<Item> currentPlayerItems = new List<Item>();
-    private List<string> typeOptions = new List<string>();
-    
-    private int allowedAmountOfWeapons;
-    private int allowedAmountOfUtility;
+    [Header("Inventory Rules")]
+    [SerializeField] private int maxWeapons = 4;
+    [SerializeField] private int maxUtilities = 3;
 
-    private void Awake()
+    // Available unowned items that can be offered as new weapons/utilities
+    private List<Item> unownedSessionItems = new List<Item>();
+    private List<Item> temporaryChoicePool = new List<Item>();
+
+    private void Start()
     {
         if (player == null)
         {
-            player = FindObjectOfType<Player>();
+            player = Player.Instance != null ? Player.Instance : FindObjectOfType<Player>();
         }
 
-        if (controller == null)
-        {
-            controller = MetaUpgradeSystem.Instance;
-        }
-        
-        allowedAmountOfWeapons = 4;
-        allowedAmountOfUtility = 3;
-        sessionItems = new List<Item>(controller.GetItems());
-        sessionItems.Remove(player.GetCurrentItems()[0]);
+        InitializeSessionItems();
     }
 
-
-    public void InitializeUpgradeOptions(List<Item> playerItems)
+    public void InitializeSessionItems()
     {
-        upgradeOptions = new Dictionary<Item, List<string>>();
+        if (player == null) return;
 
-        //Loops over each item that the player has.
-        foreach (Item item in playerItems)
+        // Fetch all items from the player character
+        unownedSessionItems = new List<Item>(player.GetAllItems());
+
+        // Remove starting active items from the "unowned" pool
+        foreach (Item ownedItem in player.GetCurrentItems())
         {
-            //Adds each item as a key to a dictionary along with its list of upgrade options as values if it doesn't already exist.
-            if (!upgradeOptions.ContainsKey(item)) 
-            { 
-                upgradeOptions.Add(item, item.GetUpgradeOptions());
-            }
+            unownedSessionItems.Remove(ownedItem);
         }
     }
 
-    public Tuple<string, string, string> GetUpgradeDescription(Item item, string typeOfChoice, string upgrade)
-    {
-        Locale currentSelectedLocale = LocalizationSettings.SelectedLocale;
-        var file = Resources.Load<TextAsset>("Text/UpgradeDescriptions" + currentSelectedLocale);
-        foreach (string line in file.text.Split("\n")) {
-            string[] fields = line.Split(',');
-            string type = fields[0];
-            string translatedType = fields[1];
-            string name = fields[2];
-            string translatedName = fields[3];
-            string description = fields[4];
-            if (typeOfChoice == "Upgrade" && type.Equals("Upgrade") && name.Equals(item.GetName())) {
-                string upgradeMethodName = fields[5];
-                if (upgradeMethodName.Equals(upgrade))
-                {
-                    string getStatIncrease = fields[6];
-                    string symbol = fields[7];
-                    //Debug.Log(type);
-                    //Debug.Log(name);
-                    //Debug.Log(description);
-                    //Debug.Log(upgradeMethodName);
-                    //Debug.Log(getStatIncrease);
-                    //Debug.Log(symbol);
-                    return Tuple.Create(translatedType, translatedName, description + " " + item.GetType().GetMethod(getStatIncrease).Invoke(item, null) + symbol);
-                }
-            }
-            if (typeOfChoice == "Weapon" || typeOfChoice == "Utility")
-            {
-                if (name.Equals(item.GetName()))
-                {
-                    return Tuple.Create(translatedType, translatedName, description);
-                }
-            }
-        }
-        return Tuple.Create("Missing", "Missing", "Missing");
-    }
-    public Tuple<Item, string> ChooseRandomUpgrade()
-    {
-        //Get a random number based on the amount of items in the dictionary of available upgrade options.
-        int randomItemIndex = UnityEngine.Random.Range(0, upgradeOptions.Count);
-
-        //Fetch the keys from the dictionary and put it in a list and use the random number as an index to get a random item.
-        Item chosenItem = new List<Item>(upgradeOptions.Keys)[randomItemIndex];
-
-        //Get a random number based on the amount of upgrade options that the chosen item currently has.
-        int randomUpgradeIndex = UnityEngine.Random.Range(0, upgradeOptions[chosenItem].Count);
-
-        //Fetch the upgrade option at the index of the random number.
-
-        Debug.Log("Upgrade: Amount of upgrades for " + chosenItem + ": " + upgradeOptions[chosenItem].Count);
-        Debug.Log("Upgrade: Random index chosen: " + randomUpgradeIndex);
-        string chosenUpgrade = upgradeOptions[chosenItem][randomUpgradeIndex];
-
-        //Return the chosen item along with the chosen upgrade.
-        return Tuple.Create(chosenItem, chosenUpgrade);
-    }
-
-    private Tuple<Item, string> ChooseRandomItem(string typeOfItem)
-    {
-        List<Item> itemsOfType = new List<Item>();
-
-        foreach (Item item in choiceItems)
-        {
-            if (item is Weapon && typeOfItem.Equals("Weapon"))
-            {
-                itemsOfType.Add((Weapon)item);
-            }
-            if (item is Utility && typeOfItem.Equals("Utility"))
-            {
-                itemsOfType.Add((Utility)item);
-            }
-        }
-
-        
-        int randomItemIndex = UnityEngine.Random.Range(0, itemsOfType.Count);
-
-        Item chosenItem = itemsOfType[randomItemIndex];
-        return Tuple.Create(chosenItem, chosenItem.GetName());
-    }
-
-    private void RemoveUpgradeOption(Item item, string upgradeOption)
-    {
-        upgradeOptions[item].Remove(upgradeOption);
-        if (upgradeOptions[item].Count == 0)
-        {
-            upgradeOptions.Remove(item);
-        }
-    }
-
-    private void RemoveItemAsChoice(Item item, List<Item> choiceItems)
-    {
-        choiceItems.Remove(item);
-    }
-
-    private string ChooseUpgradeType(List<string> typeOptions)
-    {
-        //Get a random number based on the length of the typeOptions list.
-        int randomTypeIndex = UnityEngine.Random.Range(0, typeOptions.Count);
-        //Return the type of upgrade using the random index.
-        return typeOptions[randomTypeIndex];
-    }
-
-    public List<Item> GetItems()
-    {
-        //Gets the current items that the player has and adds them to the list.
-        return player.GetCurrentItems();
-    }
-
-    private void InitializeItems()
-    {
-        //Prepare all available items in order to be able to remove from the random choices from the list 
-        // during the current upgrade session without it affecting the available items.
-        choiceItems = new List<Item>(sessionItems);
-    }
-
-
-    public void SetPanelContent(GameObject panel, Item item, Tuple<string, string, string> textDescription, string typeOfChoice)
-    {
-        string type = textDescription.Item1;
-        string name = textDescription.Item2;
-        string description = textDescription.Item3;
-        if(typeOfChoice.Equals("Upgrade"))
-        {
-            panel.GetComponentsInChildren<TMP_Text>()[2].text = type;
-        }
-        else
-        {
-            panel.GetComponentsInChildren<TMP_Text>()[2].text = type;
-        }
-        panel.GetComponentsInChildren<TMP_Text>()[0].text = name;
-        panel.GetComponentsInChildren<TMP_Text>()[1].text = description;
-        if(item.GetItemType().Equals("Weapon"))
-        {
-            panel.GetComponent<UnityEngine.UI.Image>().sprite = weaponPanel;
-        } 
-        else
-        {
-            panel.GetComponent<UnityEngine.UI.Image>().sprite = utilityPanel;
-        }
-        
-        string fileItemName = String.Concat(item.GetName().Where(c => !Char.IsWhiteSpace(c)));
-        Sprite currentSprite = Resources.Load<Sprite>("Icons/" + fileItemName + "Pixel");
-        if(currentSprite != null)
-        {
-            panel.GetComponentsInChildren<UnityEngine.UI.Image>()[1].sprite = currentSprite;
-        }
-        else
-        {
-            panel.GetComponentsInChildren<UnityEngine.UI.Image>()[1].sprite = placeholderSprite;
-        }
-    }
-
-
-    private void SetPanelMethod(GameObject panel, string typeOfChoice, Item item, string upgrade)
-    {
-        //Depending on if it is an item or an upgrade, the button gets told to call a different method along with the necessary information.
-        if (typeOfChoice.Equals("Upgrade"))
-        { 
-            panel.GetComponent<UpgradeButton>().PrepareMethodToExecute(nameof(PerformRandomizedUpgrade), item, upgrade);
-        }
-        else
-        {
-            panel.GetComponent<UpgradeButton>().PrepareMethodToExecute(nameof(GiveRandomizedItem), item);
-        }
-    }
-
+    // Called when the player levels up
     public void StartUpgradeSystem()
     {
-        //Takes the list of items that the upgrade system is currently holding
-        //and places them inside of a new list so that the new list can
-        //be modified inside of the loop without it affecting the original list.
-        InitializeItems();
+        if (player == null) player = Player.Instance;
+        if (player == null) return;
 
-        //Gets all of the items that the player is currently holding.
-        currentPlayerItems = GetItems();
+        temporaryChoicePool = new List<Item>(unownedSessionItems);
+        List<Item> ownedItems = player.GetCurrentItems();
 
-        //If player has at least one item then we get all of the upgrades that are possible to present to the player.
-        if (currentPlayerItems.Count > 0) 
-        {
-            //Sends in the items that the player has which get put into a dictionary that connects each item to its list of upgrade options.
-            InitializeUpgradeOptions(currentPlayerItems);
-        }
-
-        // Chooses a random item or upgrade based on the amount of panels the upgrade system has.
         for (int i = 0; i < panels.Length; i++)
         {
-            Item item;
-            string upgradeText;
+            if (panels[i] == null) continue;
 
-            //Figure out what is possible to present to the player based on what they currently have.
-            typeOptions = DetermineTypeOptions();
+            // Decide whether to offer a New Item or a Stat Upgrade
+            bool canOfferNewWeapon = GetOwnedCount<Weapon>() < maxWeapons && HasAvailableItemsOfType<Weapon>();
+            bool canOfferNewUtility = GetOwnedCount<Utility>() < maxUtilities && HasAvailableItemsOfType<Utility>();
+            bool canOfferStatUpgrade = ownedItems.Count > 0;
 
-            //Randomly choose one type.
-            string typeOfChoice = ChooseUpgradeType(typeOptions);
+            // Pick a choice type
+            List<string> validTypes = new List<string>();
+            if (canOfferStatUpgrade) validTypes.Add("StatUpgrade");
+            if (canOfferNewWeapon) validTypes.Add("NewWeapon");
+            if (canOfferNewUtility) validTypes.Add("NewUtility");
 
-            //Depending on which type was chosen, we execute different methods to either get an upgrade or an item.
-            if (typeOfChoice.Equals("Upgrade"))
+            if (validTypes.Count == 0)
             {
-                //Select a random item that the player has, and then choose a random upgrade from that item.
-                (item, upgradeText) = ChooseRandomUpgrade();
-
-                //Remove the upgrade option so that it cannot be chosen again for the remaining loops.
-                RemoveUpgradeOption(item, upgradeText);
-            }
-            else
-            {
-                //Choose an item based on the random type, which at this point can only be Weapon or Utility.
-                (item, upgradeText) = ChooseRandomItem(typeOfChoice);
-
-                //Remove the item so it cannot be received again as a choice for the remaining loops.
-                RemoveItemAsChoice(item, choiceItems);
+                panels[i].SetActive(false);
+                continue;
             }
 
+            panels[i].SetActive(true);
+            string chosenType = validTypes[UnityEngine.Random.Range(0, validTypes.Count)];
 
-            //Sets the text on the panel for the type of item or upgrade chosen.
-            SetPanelContent(panels[i], item, GetUpgradeDescription(item, typeOfChoice, upgradeText), typeOfChoice);
-
-            //Prepares the button with the method to call in case that button is pressed.
-            SetPanelMethod(panels[i], typeOfChoice, item, upgradeText);
+            if (chosenType == "StatUpgrade")
+            {
+                // Pick a random owned item and roll an in-run upgrade for it
+                Item randomOwnedItem = ownedItems[UnityEngine.Random.Range(0, ownedItems.Count)];
+                SetupStatUpgradeCard(panels[i], randomOwnedItem);
+            }
+            else if (chosenType == "NewWeapon")
+            {
+                Item newWeapon = GetRandomUnownedItem<Weapon>();
+                SetupNewItemCard(panels[i], newWeapon);
+            }
+            else if (chosenType == "NewUtility")
+            {
+                Item newUtility = GetRandomUnownedItem<Utility>();
+                SetupNewItemCard(panels[i], newUtility);
+            }
         }
     }
 
-    public void PerformRandomizedUpgrade(Item item, string upgradeText)
+    #region Card Setup
+    private void SetupNewItemCard(GameObject panel, Item item)
     {
-        //Uses reflection to dynamically get the correct type and method to call.
-        MethodInfo methodInfo = item.GetType().GetMethod(upgradeText);
+        if (item == null || item.BaseItemData == null) return;
 
-        //Calls the upgrade method on the given item.
-        methodInfo.Invoke(item, null);
+        ItemDefinitionSO data = item.BaseItemData;
+
+        // UI Text
+        SetPanelText(panel, data.ItemName, data.BaseDescription, $"NEW {data.GetItemType().ToUpper()}");
+
+        // Sprites
+        SetPanelSprites(panel, data);
+
+        // Hook up the button click event (No reflection!)
+        var btn = panel.GetComponent<Button>();
+        if (btn == null) btn = panel.GetComponentInChildren<Button>();
+
+        if (btn != null)
+        {
+            btn.onClick.RemoveAllListeners();
+            btn.onClick.AddListener(() =>
+            {
+                GiveNewItem(item);
+                CloseUpgradePanel();
+            });
+        }
     }
 
-    public void GiveRandomizedItem(Item item)
+    private void SetupStatUpgradeCard(GameObject panel, Item item)
     {
-        //Provides the player with the item.
+        if (item == null || item.BaseItemData == null) return;
+
+        ItemDefinitionSO data = item.BaseItemData;
+
+        // Pick one of the item's available upgrade definitions (Damage, Projectiles, Penetration, etc.)
+        UpgradeDefinitionSO upgradeSO = null;
+        if (data.AvailableMetaUpgrades != null && data.AvailableMetaUpgrades.Count > 0)
+        {
+            upgradeSO = data.AvailableMetaUpgrades[UnityEngine.Random.Range(0, data.AvailableMetaUpgrades.Count)];
+        }
+
+        // Dynamic Title & Description (e.g. "Saxophone: +1 Projectile" or "Electric Guitar: +1 Tether")
+        string cardTitle = $"{data.ItemName}";
+        string cardSubtitle = upgradeSO != null
+            ? $"{upgradeSO.DisplayName}: +{upgradeSO.IncreasePerRank}{(upgradeSO.IsPercentage ? "%" : "")}"
+            : "+10% Power";
+
+        SetPanelText(panel, cardTitle, cardSubtitle, "UPGRADE");
+        SetPanelSprites(panel, data);
+
+        // Wire up the button
+        var btn = panel.GetComponent<Button>();
+        if (btn == null) btn = panel.GetComponentInChildren<Button>();
+
+        if (btn != null)
+        {
+            btn.onClick.RemoveAllListeners();
+            btn.onClick.AddListener(() =>
+            {
+                ApplyStatUpgrade(item, upgradeSO);
+                CloseUpgradePanel();
+            });
+        }
+    }
+
+    private void SetPanelText(GameObject panel, string title, string description, string category)
+    {
+        TMP_Text[] textComponents = panel.GetComponentsInChildren<TMP_Text>();
+        if (textComponents.Length > 0) textComponents[0].text = title;
+        if (textComponents.Length > 1) textComponents[1].text = description;
+        if (textComponents.Length > 2) textComponents[2].text = category;
+    }
+
+    private void SetPanelSprites(GameObject panel, ItemDefinitionSO data)
+    {
+        var panelImage = panel.GetComponent<Image>();
+        if (panelImage != null)
+        {
+            panelImage.sprite = data.GetItemType() == "Weapon" ? weaponPanelSprite : utilityPanelSprite;
+        }
+
+        // Set item icon
+        Image[] images = panel.GetComponentsInChildren<Image>();
+        if (images.Length > 1 && data.Icon != null)
+        {
+            images[1].sprite = data.Icon;
+        }
+    }
+    #endregion
+
+    #region Apply Choices
+    public void GiveNewItem(Item item)
+    {
+        if (item == null || player == null) return;
+
         player.AddItem(item);
-        MethodInfo methodInfo = item.GetType().GetMethod("EnableGameObject");
-        methodInfo.Invoke(item, null);
-        //Removes the item from the UpgradeAbility class so that it cannot be given again.
-        sessionItems.Remove(item);
+        item.EnableGameObject();
+        unownedSessionItems.Remove(item);
     }
 
-    private List<string> DetermineTypeOptions()
+    public void ApplyStatUpgrade(Item item, UpgradeDefinitionSO upgradeSO)
     {
-        //Only add the ability to upgrade items if the player has more than one item or if the single available item has at least one available upgrade.
-        if (!typeOptions.Contains("Upgrade"))
-        {
-            typeOptions.Add("Upgrade");
-        }
-        int options = 0;
-        foreach (Item key in upgradeOptions.Keys)
-        {
-            options += upgradeOptions[key].Count;
-        }
-        if (options == 0)
-        {
-            //If we do not have any items that can be upgraded and it currently exists in the list then remove it.
-            if (typeOptions.Contains("Upgrade"))
-            {
-                typeOptions.Remove("Upgrade");
-            }
-        }
+        if (item == null || upgradeSO == null) return;
 
-        //Start two counters that will keep track of how many weapons and utilities the player has.
-        int numberOfWeapons = 0;
-        int numberOfUtilities = 0;
+        // Use the value defined in the ScriptableObject as the in-run card boost
+        float statBoostAmount = upgradeSO.IncreasePerRank;
 
-        //Start a loop that will iterate through each item.
-        foreach (Item item in currentPlayerItems)
+        switch (upgradeSO.TargetStat)
         {
-            //Check if the current item inherits from the Weapon class.
-            if (item is Weapon)
-            {
-                //Increase the counter for the amount of weapons the player has.
-                numberOfWeapons++;
-            }
-            //Check if the current item inherits from the Utility class.
-            if (item is Utility)
-            {
-                //Increase the counter for the amount of utilities the player has.
-                numberOfUtilities++;
-            }
-        }
-        //Check if we're at the maximum allowed amount of weapons yet.
-        if (numberOfWeapons < allowedAmountOfWeapons)
-        {
-            //If we aren't at the max then add "Weapon" to the list so that it can be chosen as an option unless it is already in there.
-            if (!typeOptions.Contains("Weapon"))
-            { 
-                typeOptions.Add("Weapon");
-            }
-        }
-        //Check if we're at the maximum allowed amount of utilities yet.
-        if (numberOfUtilities < allowedAmountOfUtility)
-        {
-            //If we aren't then add "Utility" to the list so that it can be chosen as an option unless it is already in there.
-            if (!typeOptions.Contains("Utility"))
-            {
-                typeOptions.Add("Utility");
-            }
-        }
-        //Check if we are at the allowed amount of weapons or are out of weapons.
-        if ((numberOfWeapons == allowedAmountOfWeapons || CountItemType(typeof(Weapon)) == 0) && typeOptions.Contains("Weapon"))
-        {
-            //Remove the string from the list so that it cannot be chosen as an option.
-            typeOptions.Remove("Weapon");
-        }
-        //Check if we are at the allowed amount of utilities or we are out of utilities.
-        if ((numberOfUtilities == allowedAmountOfUtility || CountItemType(typeof(Utility)) == 0) && typeOptions.Contains("Utility"))
-        {
-            //Remove the string from the list so that it cannot be chosen as an option.
-            typeOptions.Remove("Utility");
-        }
+            // ─────────────────────────────────────────────
+            // 1. WEAPON STATS
+            // ─────────────────────────────────────────────
+            case StatType.Damage:
+                if (item is Weapon weapon)
+                {
+                    weapon.IncreaseInRunDamage(statBoostAmount);
+                }
+                break;
 
-        return typeOptions;
+            case StatType.ProjectileCount:
+                if (item is ProjectileWeapon projWeapon)
+                {
+                    projWeapon.IncreaseInRunProjectiles(Mathf.RoundToInt(statBoostAmount));
+                }
+                else if (item is PermanentProjectileWeapon permWeapon)
+                {
+                    permWeapon.IncreaseInRunProjectiles(Mathf.RoundToInt(statBoostAmount));
+                }
+                break;
+
+            case StatType.Penetration:
+                if (item is ProjectileWeapon piercingWeapon)
+                {
+                    piercingWeapon.IncreaseInRunPenetration(Mathf.RoundToInt(statBoostAmount));
+                }
+                break;
+
+            case StatType.TetherAmount:
+                if (item is TetheringWeapon tetherWeapon)
+                {
+                    tetherWeapon.IncreaseInRunTethers(Mathf.RoundToInt(statBoostAmount));
+                }
+                break;
+
+            // ─────────────────────────────────────────────
+            // 2. SPATIAL & UTILITY STATS
+            // ─────────────────────────────────────────────
+            case StatType.Radius:
+                if (item is BreakDance breakDance)
+                {
+                    breakDance.IncreaseInRunRadius(statBoostAmount);
+                }
+                else if (item is ChillVibe chillVibe)
+                {
+                    chillVibe.IncreaseInRunRadius(statBoostAmount);
+                }
+                else if (item is PersonalSpace personalSpace)
+                {
+                    personalSpace.IncreaseInRunRadius(statBoostAmount);
+                }
+                break;
+
+            case StatType.SlowPercentage:
+                if (item is ChillVibe vibe)
+                {
+                    vibe.IncreaseInRunSlow(statBoostAmount);
+                }
+                break;
+
+            case StatType.Force:
+                if (item is PersonalSpace space)
+                {
+                    space.IncreaseInRunForce(statBoostAmount);
+                }
+                break;
+
+            case StatType.MovementSpeed:
+                if (item is RollerSkates skates)
+                {
+                    skates.IncreaseInRunMovementSpeed(statBoostAmount);
+                }
+                break;
+
+            case StatType.Health:
+                if (item is GrooveArmor armor)
+                {
+                    armor.IncreaseInRunHealth(statBoostAmount);
+                }
+                break;
+
+            case StatType.DecoyAmount:
+                if (item is DecoyController decoyAmount)
+                {
+                    decoyAmount.IncreaseInRunDecoyAmount(Mathf.RoundToInt(statBoostAmount));
+                }
+                break;
+
+            case StatType.DecoyHealth:
+                if (item is DecoyController decoyHealth)
+                {
+                    decoyHealth.IncreaseInRunDecoyHealth(statBoostAmount);
+                }
+                break;
+
+            default:
+                Debug.LogWarning($"[UpgradeSystem] Unhandled StatType: {upgradeSO.TargetStat} on {item.name}");
+                break;
+        }
     }
 
-    private int CountItemType(Type type)
+    private void CloseUpgradePanel()
     {
-        int itemCount = 0;
-        foreach (Item item in choiceItems)
+        var upgradePanel = FindObjectOfType<UpgradePanel>(true);
+        if (upgradePanel != null)
         {
-            if (type.IsAssignableFrom(item.GetType()))
-            {
-                itemCount++;
-            }
+            upgradePanel.CloseUpgradeWindow();
         }
-        return itemCount;
     }
+    #endregion
+
+    #region Helpers
+    private int GetOwnedCount<T>() where T : Item
+    {
+        return player != null ? player.GetCurrentItems().OfType<T>().Count() : 0;
+    }
+
+    private bool HasAvailableItemsOfType<T>() where T : Item
+    {
+        return temporaryChoicePool.OfType<T>().Any();
+    }
+
+    private Item GetRandomUnownedItem<T>() where T : Item
+    {
+        List<T> matching = temporaryChoicePool.OfType<T>().ToList();
+        if (matching.Count == 0) return null;
+
+        Item chosen = matching[UnityEngine.Random.Range(0, matching.Count)];
+        temporaryChoicePool.Remove(chosen);
+        return chosen;
+    }
+    #endregion
 }

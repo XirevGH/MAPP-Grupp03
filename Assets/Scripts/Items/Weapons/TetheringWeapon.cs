@@ -4,62 +4,58 @@ using UnityEngine;
 
 public abstract class TetheringWeapon : Weapon
 {
-    [SerializeField] protected int amountOfTethers;
-    [SerializeField] protected int tetherIncreasePerUpgrade;
-    protected HashSet<GameObject> enemies = new HashSet<GameObject>();
-    public int tetherRank;
-    public int tetherUpgradeCost;
+    protected int metaUpgradedTethers;
+    protected int inRunBonusTethers = 0;
 
-    public void IncreaseTetherAmount()
+    protected HashSet<GameObject> enemies = new HashSet<GameObject>();
+
+    protected override void Start()
     {
-        tetherRank++;
-        amountOfTethers += tetherIncreasePerUpgrade;
+        base.Start();
+        InitializeTetherStats();
     }
 
-    protected GameObject[] GetClosestEnemies(int amountOfTethers)
+    public virtual void InitializeTetherStats()
+    {
+        if (weaponData == null) return;
+
+        var tetherUpgrade = weaponData.GetUpgrade(StatType.TetherAmount);
+
+        if (tetherUpgrade != null && MetaUpgradeManager.Instance != null)
+        {
+            metaUpgradedTethers = Mathf.RoundToInt(MetaUpgradeManager.Instance.GetStatValue(tetherUpgrade));
+        }
+        else
+        {
+            metaUpgradedTethers = 1;
+        }
+    } 
+
+    protected GameObject[] GetClosestEnemies(int targetCount)
     {
         SortedSet<GameObject> sortedEnemies = new SortedSet<GameObject>(new GameObjectComparer());
         foreach (GameObject enemy in enemies)
         {
-            sortedEnemies.Add(enemy);
+            if (enemy != null)
+            {
+                sortedEnemies.Add(enemy);
+            }
         }
-        return sortedEnemies.Take(amountOfTethers).ToArray();
-    }
-    protected int AdjustTargetOverflow(int amountOfTethers)
-    {
-        if (enemies.Count < amountOfTethers)
-        {
-            return enemies.Count;
-        }
-        else
-        {
-            return amountOfTethers;
-        }
+        return sortedEnemies.Take(targetCount).ToArray();
     }
 
-    public int GetTetherAmountIncreasePerUpgrade()
+    protected int AdjustTargetOverflow(int targetCount)
     {
-        return tetherIncreasePerUpgrade;
+        return Mathf.Min(enemies.Count, targetCount);
     }
 
-    protected override void CreateUpgradeOptions()
+    public void IncreaseInRunTethers(int amount)
     {
-        base.CreateUpgradeOptions();
-        upgradeOptions.Add("IncreaseTetherAmount");
-    }
-
-    public int GetIncreaseTetherAmountCost()
-    {
-        return tetherUpgradeCost;
-    }
-
-    public int GetTetherUpgradeRank()
-    {
-        return tetherRank;
+        inRunBonusTethers += amount;
     }
 
     public int GetCurrentTetherAmount()
     {
-        return amountOfTethers;
+        return metaUpgradedTethers + inRunBonusTethers;
     }
 }

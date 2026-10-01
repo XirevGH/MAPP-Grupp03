@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ea3db5f93447c1438a61e7975fd0473, type: 3}
+  m_Name: Break_Dance
+  m_EditorClassIdentifier: 
+  itemID: 70
+  itemName: Break Dance
+  icon: {fileID: 21300000, guid: 249be288c4f587e4298f86b742594ed1, type: 3}
+  beatNumber: 4
+  baseDescription: 
+  availableMetaUpgrades:
+  - {fileID: 11400000, guid: 8373f0dc4f469444bafb184c29e90ceb, type: 2}
+  - {fileID: 11400000, guid: ab3527896ee628b4f9adb1f89b27f1f8, type: 2}
+  baseDamage: 15
+  attackSound: {fileID: 0}

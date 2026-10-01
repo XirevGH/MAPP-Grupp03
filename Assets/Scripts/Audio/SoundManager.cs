@@ -43,39 +43,75 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null)
+        if (Instance == null)
         {
-            Destroy(Instance.gameObject);
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-        //slider = GameObject.FindGameObjectWithTag("volumeSlider").GetComponent<Slider>();
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Start()
     {
-        StopInGameMusic();
         isOnePlaying = true;
         isInMenu = false;
         isTimeToChange = false;
         currentTrack = musicSource1;
-        currentBPM = BPMForTracks[0];
+        currentBPM = (BPMForTracks != null && BPMForTracks.Length > 0) ? BPMForTracks[0] : 120;
         currentPitchAdjustedBPM = currentBPM;
         currentTrackNumber = 0;
-      
+
+        // If starting directly in the gameplay scene, start the music automatically!
+        if (SceneManager.GetActiveScene().name == "Main")
+        {
+            StartGame();
+        }
+        else
+        {
+            StopInGameMusic();
+        }
     }
 
     void FixedUpdate()
     {
         currentScene = SceneManager.GetActiveScene();
-        if (SceneManager.GetActiveScene().name == "Main")
+
+        if (currentScene.name == "Main")
         {
             if (musicSpeedSilder == null)
             {
-                musicSpeedSilder = GameObject.FindGameObjectWithTag("MusicSpeedlider").GetComponent<Slider>();
+                // Try tag first, fallback to finding by name/type
+                GameObject sliderObj = GameObject.FindGameObjectWithTag("MusicSpeedlider");
+                if (sliderObj != null)
+                {
+                    musicSpeedSilder = sliderObj.GetComponent<Slider>();
+                }
+                else
+                {
+                    // Fallback: searches for a slider named MusicSpeedSlider or similar
+                    var allSliders = FindObjectsOfType<Slider>(true);
+                    foreach (var s in allSliders)
+                    {
+                        if (s.gameObject.name.ToLower().Contains("musicspeed") || s.gameObject.name.ToLower().Contains("bpm"))
+                        {
+                            musicSpeedSilder = s;
+                            break;
+                        }
+                    }
+                }
+
+                // Ensure slider bounds match the song BPM bounds
+                if (musicSpeedSilder != null)
+                {
+                    musicSpeedSilder.minValue = minBPM;
+                    musicSpeedSilder.maxValue = maxBPM;
+                    musicSpeedSilder.value = currentPitchAdjustedBPM;
+                }
             }
         }
-
     }
 
     private void Update()
@@ -327,6 +363,8 @@ public class SoundManager : MonoBehaviour
 
     private IEnumerator UpdateMusicSpeedSliderValue()
     {
+        if (musicSpeedSilder == null) yield break;
+
         float elapsedTime = 0;
         float currentValue = musicSpeedSilder.value;
         float nextValue = currentPitchAdjustedBPM;
@@ -334,7 +372,10 @@ public class SoundManager : MonoBehaviour
         while (elapsedTime <= timeToChange)
         {
             elapsedTime += Time.deltaTime;
-            musicSpeedSilder.value = Mathf.Lerp(currentValue, nextValue, elapsedTime / timeToChange);
+            if (musicSpeedSilder != null)
+            {
+                musicSpeedSilder.value = Mathf.Lerp(currentValue, nextValue, elapsedTime / timeToChange);
+            }
             yield return null;
         }
     }

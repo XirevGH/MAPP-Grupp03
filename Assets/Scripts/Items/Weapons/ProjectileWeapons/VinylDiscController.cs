@@ -4,63 +4,68 @@ using UnityEngine.Events;
 
 public class VinylDiscController : ProjectileWeapon
 {
-    [SerializeField] private GameObject vinylDisc;
-    [SerializeField] private float attackDelayTime;
+    [SerializeField] private GameObject vinylDiscPrefab;
 
-    private Vector3 playerPosition;
-    private float BPM;
+    public static VinylDiscController Instance { get; private set; }
 
-    private AudioSource source;
-    private float pitch;
-
-    public static VinylDiscController Instance 
-    { 
-        get; 
-        private set; 
-    }
-
-    protected override void Awake()
+    protected void Awake()
     {
         Instance = this;
-        base.Awake();
-    }
-    private void Start()
-    {
-        UnityAction action = new UnityAction(Attack);
-        TriggerController.Instance.SetTrigger(beatNumber, action);
-        source = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>();
     }
 
-    private void FixedUpdate()
+    protected override void Start()
     {
-        BPM = SoundManager.Instance.GetCurrentBPM();
-        source = SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>();
-        pitch = source.pitch;
+        base.Start();
 
-        attackDelayTime = ((60f / BPM) / 2 ) / pitch;
+        if (weaponData != null && weaponData.HasBeatTrigger)
+        {
+            UnityAction action = new UnityAction(Attack);
+            TriggerController.Instance.SetTrigger(weaponData.BeatNumber, action);
+        }
     }
 
     public override void Attack()
     {
-        if (gameObject.activeSelf) { 
-            StartCoroutine("AttackDelay");
+        if (gameObject.activeSelf && vinylDiscPrefab != null)
+        {
+            StartCoroutine(AttackDelayRoutine());
         }
     }
 
-    private IEnumerator AttackDelay()
+    private IEnumerator AttackDelayRoutine()
     {
-        for (int i = 0; i < amountOfProjectiles; i++)
+        float bpm = SoundManager.Instance != null ? SoundManager.Instance.GetCurrentBPM() : 120f;
+        float pitch = SoundManager.Instance != null ? SoundManager.Instance.transform.GetChild(0).GetComponent<AudioSource>().pitch : 1f;
+        float attackDelay = ((60f / bpm) / 2f) / pitch;
+
+        int projectileCount = GetCurrentProjectileCount();
+        float currentDamage = GetCurrentDamage();
+        int currentPenetration = GetCurrentPenetration();
+
+        for (int i = 0; i < projectileCount; i++)
         {
-            playerPosition = player.transform.position;
-            GameObject clone = Instantiate(vinylDisc, playerPosition, Quaternion.identity);
-            clone.GetComponent<Projectile>().SetDamage(damage);
-            clone.GetComponent<Projectile>().SetPenetration(penetration);
-            clone.GetComponent<VinylDisc>().isAtPlayer = true;
-            SoundManager.Instance.PlaySFX(attackSound, 1 - (i * 0.1f));
+            Vector3 spawnPos = player != null ? player.transform.position : transform.position;
 
-            yield return new WaitForSeconds(attackDelayTime);
+            GameObject clone = Instantiate(vinylDiscPrefab, spawnPos, Quaternion.identity);
 
+            if (clone.TryGetComponent<Projectile>(out var proj))
+            {
+                proj.SetDamage(currentDamage);
+                proj.SetPenetration(currentPenetration);
+            }
+
+            if (clone.TryGetComponent<VinylDisc>(out var vinylScript))
+            {
+                vinylScript.isAtPlayer = true;
+            }
+
+            if (weaponData != null && weaponData.AttackSound != null)
+            {
+                float pitchShift = Mathf.Max(0.2f, 1f - (i * 0.05f));
+                SoundManager.Instance.PlaySFX(weaponData.AttackSound, pitchShift);
+            }
+
+            yield return new WaitForSeconds(attackDelay);
         }
-
     }
 }
