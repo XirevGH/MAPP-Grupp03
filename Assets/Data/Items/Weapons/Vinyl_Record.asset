@@ -15,8 +15,8 @@ MonoBehaviour:
   itemID: 20
   itemName: Vinyl Record
   icon: {fileID: 21300000, guid: 733f8c173a4bef54cbd93cf6d9569fc9, type: 3}
+  baseDescription: Send out vinyl records like boomerangs.
   beatNumber: 4
-  baseDescription: 
   availableMetaUpgrades:
   - {fileID: 11400000, guid: a627f53f13e76a84ebad17cf69aaea26, type: 2}
   - {fileID: 11400000, guid: ff9f493dde377b946aaafb8820bdc1f7, type: 2}

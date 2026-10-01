@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Decoy_Amount
   m_EditorClassIdentifier: 
   upgradeID: 61
-  displayName: Decoy Amount
+  displayName: Additional Decoy
   icon: {fileID: 21300000, guid: c94f7c81a3041634f96c53f8745fc84e, type: 3}
   descriptionFormat: 
   targetStat: 9

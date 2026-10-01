@@ -13615,7 +13615,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Swing at your enemies in close combat with this aimable weapon
+  m_text: Swing at your enemies in close combat with this aimable weapon.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
   m_sharedMaterial: {fileID: 2919237917986636873, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
@@ -15653,7 +15653,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Make it rain money to distract your enemies
+  m_text: Make it rain money to distract your enemies.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
   m_sharedMaterial: {fileID: 2919237917986636873, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
@@ -22473,7 +22473,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pushes away enemies to give yourself some space
+  m_text: Pushes away enemies to give yourself some space.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
   m_sharedMaterial: {fileID: 2919237917986636873, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
@@ -26885,7 +26885,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Launch Disco Balls into the air
+  m_text: Launch Disco Balls into the air.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
   m_sharedMaterial: {fileID: 2919237917986636873, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
@@ -32542,7 +32542,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Zap your nearest enemies
+  m_text: Zap your nearest enemies.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
   m_sharedMaterial: {fileID: 2919237917986636873, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
@@ -35357,7 +35357,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Deal damage to all enemies in your surrounding area
+  m_text: Deal damage to all enemies in your surrounding area.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
   m_sharedMaterial: {fileID: 2919237917986636873, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
@@ -39245,7 +39245,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Send out vinyl records like boomerangs
+  m_text: Send out vinyl records like boomerangs.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
   m_sharedMaterial: {fileID: 2919237917986636873, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
@@ -48507,7 +48507,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Shoot out musical notes at your nearest enemies
+  m_text: Shoot out musical notes at your nearest enemies.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
   m_sharedMaterial: {fileID: 2919237917986636873, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
@@ -50705,7 +50705,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Make your enemies move slower with your chill vibe
+  m_text: Make your enemies move slower with your chill vibe.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
   m_sharedMaterial: {fileID: 2919237917986636873, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
@@ -50880,7 +50880,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Swing around permanent Yoyos that speed up along with the beat
+  m_text: Swing around permanent Yoyos that speed up along with the beat.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
   m_sharedMaterial: {fileID: 2919237917986636873, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
@@ -53721,7 +53721,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Put on your roller skates and speed up your movement
+  m_text: Put on your roller skates and speed up your movement.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
   m_sharedMaterial: {fileID: 2919237917986636873, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
@@ -56407,7 +56407,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Send out Synthwave Bolts in any direction
+  m_text: Send out Synthwave Bolts in any direction.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}
   m_sharedMaterial: {fileID: 2919237917986636873, guid: f2d4ac613bd4a8b43a685e426549f98e, type: 2}

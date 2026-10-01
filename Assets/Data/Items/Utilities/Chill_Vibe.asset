@@ -15,7 +15,7 @@ MonoBehaviour:
   itemID: 50
   itemName: Chill Vibe
   icon: {fileID: 21300000, guid: 0d9b49e752a14104fa3e06b5a93ee0a6, type: 3}
-  baseDescription: 
+  baseDescription: Make your enemies move slower with your chill vibe.
   beatNumber: 0
   availableMetaUpgrades:
   - {fileID: 11400000, guid: bcb7ca2509afd6e4fb0b3f5a957377fe, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Roller_Skates_Movement_Speed
   m_EditorClassIdentifier: 
   upgradeID: 111
-  displayName: Roller Skates Movement Speed
+  displayName: Movement Speed
   icon: {fileID: 21300000, guid: 237db69951be2be4a92edc9d63030747, type: 3}
   descriptionFormat: 
   targetStat: 5

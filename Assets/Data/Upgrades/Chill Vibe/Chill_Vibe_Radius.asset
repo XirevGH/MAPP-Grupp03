@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chill_Vibe_Radius
   m_EditorClassIdentifier: 
   upgradeID: 51
-  displayName: Chill Vibe Radius
+  displayName: Radius
   icon: {fileID: 21300000, guid: 0d9b49e752a14104fa3e06b5a93ee0a6, type: 3}
   descriptionFormat: 
   targetStat: 3

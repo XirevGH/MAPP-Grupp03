@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Disco_Ball_Projectile_Count
   m_EditorClassIdentifier: 
   upgradeID: 42
-  displayName: Disco Ball Projectile Count
+  displayName: Projectiles
   icon: {fileID: 21300000, guid: ce855ba8cb0c9b140a44797ee02270f4, type: 3}
   descriptionFormat: 
   targetStat: 1

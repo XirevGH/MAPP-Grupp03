@@ -15,7 +15,7 @@ MonoBehaviour:
   itemID: 60
   itemName: Decoy
   icon: {fileID: 21300000, guid: c94f7c81a3041634f96c53f8745fc84e, type: 3}
-  baseDescription: 
+  baseDescription: Make it rain money to distract your enemies.
   beatNumber: 4
   availableMetaUpgrades:
   - {fileID: 11400000, guid: 61327b0fd27ca1149803be62bc6010f2, type: 2}

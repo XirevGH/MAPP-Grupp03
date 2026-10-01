@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Personal_Space_Force
   m_EditorClassIdentifier: 
   upgradeID: 101
-  displayName: Personal Space Force
+  displayName: Pushback Force
   icon: {fileID: 21300000, guid: 5a02eed262a69bc4aad4fb131dad1fa5, type: 3}
   descriptionFormat: 
   targetStat: 8

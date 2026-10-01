@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Vinyl_Record_Projectile_Penetration
   m_EditorClassIdentifier: 
   upgradeID: 23
-  displayName: Vinyl Projectile Penetration
+  displayName: Penetration Power
   icon: {fileID: 21300000, guid: 733f8c173a4bef54cbd93cf6d9569fc9, type: 3}
   descriptionFormat: 
   targetStat: 2

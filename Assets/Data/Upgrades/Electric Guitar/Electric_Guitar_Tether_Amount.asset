@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Electric_Guitar_Tether_Amount
   m_EditorClassIdentifier: 
   upgradeID: 82
-  displayName: Electric Guitar Tether Amount
+  displayName: Targets
   icon: {fileID: 21300000, guid: 13480c9bb48b700458b761b4658f53c1, type: 3}
   descriptionFormat: 
   targetStat: 4

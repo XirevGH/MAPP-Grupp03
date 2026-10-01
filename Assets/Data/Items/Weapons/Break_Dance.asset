@@ -15,8 +15,8 @@ MonoBehaviour:
   itemID: 70
   itemName: Break Dance
   icon: {fileID: 21300000, guid: 249be288c4f587e4298f86b742594ed1, type: 3}
+  baseDescription: Deal damage to all enemies in your surrounding area.
   beatNumber: 4
-  baseDescription: 
   availableMetaUpgrades:
   - {fileID: 11400000, guid: 8373f0dc4f469444bafb184c29e90ceb, type: 2}
   - {fileID: 11400000, guid: ab3527896ee628b4f9adb1f89b27f1f8, type: 2}

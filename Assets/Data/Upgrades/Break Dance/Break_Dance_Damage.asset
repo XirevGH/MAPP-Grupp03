@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Break_Dance_Damage
   m_EditorClassIdentifier: 
   upgradeID: 71
-  displayName: Break Dance Damage
+  displayName: Damage
   icon: {fileID: 21300000, guid: 249be288c4f587e4298f86b742594ed1, type: 3}
   descriptionFormat: 
   targetStat: 0

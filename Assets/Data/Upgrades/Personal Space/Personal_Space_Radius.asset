@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Personal_Space_Radius
   m_EditorClassIdentifier: 
   upgradeID: 102
-  displayName: Personal Space Radius
+  displayName: Radius
   icon: {fileID: 21300000, guid: 5a02eed262a69bc4aad4fb131dad1fa5, type: 3}
   descriptionFormat: 
   targetStat: 3

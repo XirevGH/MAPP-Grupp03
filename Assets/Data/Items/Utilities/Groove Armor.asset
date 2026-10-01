@@ -15,7 +15,7 @@ MonoBehaviour:
   itemID: 90
   itemName: Groove Armor
   icon: {fileID: 21300000, guid: 44ec73a82089dd149ad5e4fce329be55, type: 3}
-  baseDescription: 
+  baseDescription: Put on your Groove Armor and dampen the blows of your enemies.
   beatNumber: 0
   availableMetaUpgrades:
   - {fileID: 11400000, guid: 3e978d3de5051884987a0e7e6292bd21, type: 2}

@@ -15,7 +15,7 @@ MonoBehaviour:
   itemID: 100
   itemName: Personal Space
   icon: {fileID: 21300000, guid: 5a02eed262a69bc4aad4fb131dad1fa5, type: 3}
-  baseDescription: 
+  baseDescription: Pushes away enemies to give yourself some space.
   beatNumber: 4
   availableMetaUpgrades:
   - {fileID: 11400000, guid: dac79fb7aac7206489c7575f70a0f329, type: 2}

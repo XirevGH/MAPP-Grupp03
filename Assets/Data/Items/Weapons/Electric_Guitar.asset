@@ -15,7 +15,7 @@ MonoBehaviour:
   itemID: 80
   itemName: Electric Guitar
   icon: {fileID: 21300000, guid: 13480c9bb48b700458b761b4658f53c1, type: 3}
-  baseDescription: 
+  baseDescription: Zap your nearest enemies.
   beatNumber: 4
   availableMetaUpgrades:
   - {fileID: 11400000, guid: 74abaea07799ea649a03cd13bd13a7c9, type: 2}

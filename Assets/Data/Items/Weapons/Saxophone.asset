@@ -15,8 +15,8 @@ MonoBehaviour:
   itemID: 120
   itemName: Saxophone
   icon: {fileID: 21300000, guid: 904f877814eedca4d982a1927832696d, type: 3}
+  baseDescription: Shoot out musical notes at your nearest enemies.
   beatNumber: 4
-  baseDescription: 
   availableMetaUpgrades:
   - {fileID: 11400000, guid: b7e0c6cee19bd654b91bcd028393cfea, type: 2}
   - {fileID: 11400000, guid: 55e86472984c6c545b7a3091ea6c801a, type: 2}

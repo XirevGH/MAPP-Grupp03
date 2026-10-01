@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Synthwave_Blast_Projectile_Penetration
   m_EditorClassIdentifier: 
   upgradeID: 133
-  displayName: Synthwave Blast Projectile Penetration
+  displayName: Penetration Power
   icon: {fileID: 21300000, guid: d4da567e0f9a6f347be30f490455b4b2, type: 3}
   descriptionFormat: 
   targetStat: 2

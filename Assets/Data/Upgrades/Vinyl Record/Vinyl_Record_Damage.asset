@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Vinyl_Record_Damage
   m_EditorClassIdentifier: 
   upgradeID: 21
-  displayName: Vinyl Record Damage
+  displayName: Damage
   icon: {fileID: 21300000, guid: 733f8c173a4bef54cbd93cf6d9569fc9, type: 3}
   descriptionFormat: 
   targetStat: 0
