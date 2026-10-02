@@ -13,9 +13,27 @@ MonoBehaviour:
   m_Name: Synthwave_Blast
   m_EditorClassIdentifier: 
   itemID: 130
-  itemName: Synthwave Blast
+  localizedItemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320396759034626048
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320396842652270592
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 21300000, guid: d4da567e0f9a6f347be30f490455b4b2, type: 3}
-  baseDescription: Send out Synthwave Bolts in any direction.
+  fallbackItemName: 
+  fallbackDescription: 
   beatNumber: 4
   availableMetaUpgrades:
   - {fileID: 11400000, guid: 54dfdc09ab95c564cb6061be01473035, type: 2}
@@ -23,3 +41,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f398c8c8be5556a43a8e0ec615bbf0ea, type: 2}
   baseDamage: 15
   attackSound: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

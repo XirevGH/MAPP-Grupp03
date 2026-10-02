@@ -13,9 +13,27 @@ MonoBehaviour:
   m_Name: Saxophone
   m_EditorClassIdentifier: 
   itemID: 120
-  itemName: Saxophone
+  localizedItemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320396422508838912
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320396500980072448
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 21300000, guid: 904f877814eedca4d982a1927832696d, type: 3}
-  baseDescription: Shoot out musical notes at your nearest enemies.
+  fallbackItemName: 
+  fallbackDescription: 
   beatNumber: 4
   availableMetaUpgrades:
   - {fileID: 11400000, guid: b7e0c6cee19bd654b91bcd028393cfea, type: 2}
@@ -23,3 +41,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: eebc2d800f5435145aadae467168631b, type: 2}
   baseDamage: 15
   attackSound: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

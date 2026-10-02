@@ -203,7 +203,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8679443594223616
-    m_Localized: Swing at your enemies in close combat with this aimable weapon
+    m_Localized: Swing at your enemies in close combat with this aimable weapon.
     m_Metadata:
       m_Items: []
   - m_Id: 8681660766232576
@@ -283,7 +283,231 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8891787075719168
-    m_Localized: 'Level: 1'
+    m_Localized: 'Level: {0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320390731928829952
+    m_Localized: NEW WEAPON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320394945123975168
+    m_Localized: NEW UTILITY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320395127467147264
+    m_Localized: UPGRADE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320395210866688000
+    m_Localized: Bass Guitar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320395475414024192
+    m_Localized: Swing at your enemies in close combat with this aimable weapon.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320395578593902592
+    m_Localized: Vinyl Record
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320395685225693184
+    m_Localized: Send out Vinyl Records like boomerangs.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320395783095582720
+    m_Localized: Yoyo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320395862971908096
+    m_Localized: Swing around permanent Yoyos that speed up along with the beat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320395960556584960
+    m_Localized: Disco Ball
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320396104995831808
+    m_Localized: Launch Disco Balls into the air.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320396209702436864
+    m_Localized: Electric Guitar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320396283136311296
+    m_Localized: Zap your nearest enemies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320396422508838912
+    m_Localized: Saxophone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320396500980072448
+    m_Localized: Shoot out musical notes at your nearest enemies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320396589022707712
+    m_Localized: Break Dance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320396686158594048
+    m_Localized: Deal damage to all enemies in your surrounding area.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320396759034626048
+    m_Localized: Synthwave Blast
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320396842652270592
+    m_Localized: Send out Synthwave Bolts in any direction.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320396938643111936
+    m_Localized: Roller Skates
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397030787776512
+    m_Localized: Put on your roller skates and speed up your movement.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397105328947200
+    m_Localized: Groove Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397186400649216
+    m_Localized: Put on your Groove Armor and dampen the blows of your enemies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397274707525632
+    m_Localized: Chill Vibe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397346732113920
+    m_Localized: Make your enemies move slower with your chill vibe.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397439317180416
+    m_Localized: Decoy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397508342841344
+    m_Localized: Make it rain money to distract your enemies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397585887133696
+    m_Localized: Personal Space
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397690958643200
+    m_Localized: Pushes away enemies to give yourself some space.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397757446750208
+    m_Localized: Increase damage by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397914812841984
+    m_Localized: Increase damage by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320398020215701504
+    m_Localized: Increase the amount of Vinyl Records shot out by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320398104017895424
+    m_Localized: Increase targets hit by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320398412961939456
+    m_Localized: Increase damage by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320398488065146880
+    m_Localized: Increase the amount of Yoyos by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320398559397675008
+    m_Localized: Increase damage by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320398634299555840
+    m_Localized: Increase Disco Balls launched by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320398698505961472
+    m_Localized: Increase targets hit by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320398797097271296
+    m_Localized: Increase damage by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320398868815675392
+    m_Localized: Increase targets zapped by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320398941142253568
+    m_Localized: Increase damage by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320399025502289920
+    m_Localized: Increase Notes fired by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320399115612717056
+    m_Localized: Increase targets hit by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320399200127942656
+    m_Localized: Increase damage by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320399269073911808
+    m_Localized: Increase radius by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320399322656145408
+    m_Localized: Increase damage by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320399416252039168
+    m_Localized: Increase Synthwave Bolts by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320399616228065280
+    m_Localized: Increase targets hit by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320399781349425152
+    m_Localized: Increase movement speed by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320399869434003456
+    m_Localized: Increase health by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320399949792673792
+    m_Localized: Increase area of chill vibe by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320400009771220992
+    m_Localized: Increase slow effect by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320400076997525504
+    m_Localized: Increase decoys by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320400151664525312
+    m_Localized: Increase decoy health by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320400231138197504
+    m_Localized: Increase radius by {0}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320400334745894912
+    m_Localized: Increase pushback by {0}
     m_Metadata:
       m_Items: []
   references:

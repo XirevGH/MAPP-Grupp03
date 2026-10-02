@@ -13,9 +13,27 @@ MonoBehaviour:
   m_Name: Decoy_Health
   m_EditorClassIdentifier: 
   upgradeID: 62
-  displayName: Decoy Health
+  localizedDisplayName:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320397439317180416
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320400151664525312
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 21300000, guid: c94f7c81a3041634f96c53f8745fc84e, type: 3}
-  descriptionFormat: 
+  fallbackDisplayName: Upgrade
+  fallbackDescriptionFormat: +{0}
   targetStat: 10
   baseValue: 10
   increasePerRank: 10
@@ -23,3 +41,6 @@ MonoBehaviour:
   maxRank: 10
   baseCost: 100
   costMultiplierPerRank: 1.35
+  references:
+    version: 2
+    RefIds: []

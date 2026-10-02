@@ -13,9 +13,27 @@ MonoBehaviour:
   m_Name: Personal_Space_Radius
   m_EditorClassIdentifier: 
   upgradeID: 102
-  displayName: Radius
+  localizedDisplayName:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320397585887133696
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320400231138197504
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 21300000, guid: 5a02eed262a69bc4aad4fb131dad1fa5, type: 3}
-  descriptionFormat: 
+  fallbackDisplayName: Upgrade
+  fallbackDescriptionFormat: +{0}
   targetStat: 3
   baseValue: 10
   increasePerRank: 10
@@ -23,3 +41,6 @@ MonoBehaviour:
   maxRank: 10
   baseCost: 100
   costMultiplierPerRank: 1.35
+  references:
+    version: 2
+    RefIds: []

@@ -1,36 +1,35 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.UI;
 
 public class UpgradeSystem : MonoBehaviour
 {
     [Header("UI Panels (Card Choices)")]
-    [SerializeField] private GameObject[] panels; // The 3 choice panels
+    [SerializeField] private GameObject[] panels;
     [SerializeField] private Player player;
 
     [Header("Card Background Sprites")]
     [SerializeField] private Sprite weaponPanelSprite;
     [SerializeField] private Sprite utilityPanelSprite;
-    [SerializeField] private Sprite placeholderSprite;
+
+    [Header("Localized Category Badges")]
+    [SerializeField] private LocalizedString newWeaponBadge = new LocalizedString("StringTable", "badge_new_weapon");
+    [SerializeField] private LocalizedString newUtilityBadge = new LocalizedString("StringTable", "badge_new_utility");
+    [SerializeField] private LocalizedString upgradeBadge = new LocalizedString("StringTable", "badge_upgrade");
 
     [Header("Inventory Rules")]
     [SerializeField] private int maxWeapons = 4;
     [SerializeField] private int maxUtilities = 3;
 
-    // Available unowned items that can be offered as new weapons/utilities
     private List<Item> unownedSessionItems = new List<Item>();
     private List<Item> temporaryChoicePool = new List<Item>();
 
     private void Start()
     {
-        if (player == null)
-        {
-            player = Player.Instance != null ? Player.Instance : FindObjectOfType<Player>();
-        }
-
+        if (player == null) player = Player.Instance != null ? Player.Instance : FindObjectOfType<Player>();
         InitializeSessionItems();
     }
 
@@ -38,17 +37,13 @@ public class UpgradeSystem : MonoBehaviour
     {
         if (player == null) return;
 
-        // Fetch all items from the player character
         unownedSessionItems = new List<Item>(player.GetAllItems());
-
-        // Remove starting active items from the "unowned" pool
         foreach (Item ownedItem in player.GetCurrentItems())
         {
             unownedSessionItems.Remove(ownedItem);
         }
     }
 
-    // Called when the player levels up
     public void StartUpgradeSystem()
     {
         if (player == null) player = Player.Instance;
@@ -61,12 +56,10 @@ public class UpgradeSystem : MonoBehaviour
         {
             if (panels[i] == null) continue;
 
-            // Decide whether to offer a New Item or a Stat Upgrade
             bool canOfferNewWeapon = GetOwnedCount<Weapon>() < maxWeapons && HasAvailableItemsOfType<Weapon>();
             bool canOfferNewUtility = GetOwnedCount<Utility>() < maxUtilities && HasAvailableItemsOfType<Utility>();
             bool canOfferStatUpgrade = ownedItems.Count > 0;
 
-            // Pick a choice type
             List<string> validTypes = new List<string>();
             if (canOfferStatUpgrade) validTypes.Add("StatUpgrade");
             if (canOfferNewWeapon) validTypes.Add("NewWeapon");
@@ -79,53 +72,50 @@ public class UpgradeSystem : MonoBehaviour
             }
 
             panels[i].SetActive(true);
-            string chosenType = validTypes[UnityEngine.Random.Range(0, validTypes.Count)];
+            string chosenType = validTypes[Random.Range(0, validTypes.Count)];
 
             if (chosenType == "StatUpgrade")
             {
-                // Pick a random owned item and roll an in-run upgrade for it
-                Item randomOwnedItem = ownedItems[UnityEngine.Random.Range(0, ownedItems.Count)];
+                Item randomOwnedItem = ownedItems[Random.Range(0, ownedItems.Count)];
                 SetupStatUpgradeCard(panels[i], randomOwnedItem);
             }
             else if (chosenType == "NewWeapon")
             {
                 Item newWeapon = GetRandomUnownedItem<Weapon>();
-                SetupNewItemCard(panels[i], newWeapon);
+                SetupNewItemCard(panels[i], newWeapon, true);
             }
             else if (chosenType == "NewUtility")
             {
                 Item newUtility = GetRandomUnownedItem<Utility>();
-                SetupNewItemCard(panels[i], newUtility);
+                SetupNewItemCard(panels[i], newUtility, false);
             }
         }
     }
 
-    #region Card Setup
-    private void SetupNewItemCard(GameObject panel, Item item)
+    private void SetupNewItemCard(GameObject panel, Item item, bool isWeapon)
     {
         if (item == null || item.BaseItemData == null) return;
 
         ItemDefinitionSO data = item.BaseItemData;
 
-        // UI Text
-        SetPanelText(panel, data.ItemName, data.BaseDescription, $"NEW {data.GetItemType().ToUpper()}");
+        // Fetch localized badge
+        string badgeText = isWeapon ? newWeaponBadge.GetLocalizedString() : newUtilityBadge.GetLocalizedString();
 
-        // Sprites
+        // Populate Card UI
+        SetPanelText(panel, data.ItemName, data.BaseDescription, badgeText);
         SetPanelSprites(panel, data);
 
-        // Hook up the button click event (No reflection!)
-        var btn = panel.GetComponent<Button>();
+        // Wire Button
+        Button btn = panel.GetComponent<Button>();
         if (btn == null) btn = panel.GetComponentInChildren<Button>();
+        if (btn == null) btn = panel.AddComponent<Button>();
 
-        if (btn != null)
+        btn.onClick.RemoveAllListeners();
+        btn.onClick.AddListener(() =>
         {
-            btn.onClick.RemoveAllListeners();
-            btn.onClick.AddListener(() =>
-            {
-                GiveNewItem(item);
-                CloseUpgradePanel();
-            });
-        }
+            GiveNewItem(item);
+            CloseUpgradePanel();
+        });
     }
 
     private void SetupStatUpgradeCard(GameObject panel, Item item)
@@ -134,43 +124,39 @@ public class UpgradeSystem : MonoBehaviour
 
         ItemDefinitionSO data = item.BaseItemData;
 
-        // Pick one of the item's available upgrade definitions (Damage, Projectiles, Penetration, etc.)
+        // Pick one of the item's available upgrade definitions
         UpgradeDefinitionSO upgradeSO = null;
         if (data.AvailableMetaUpgrades != null && data.AvailableMetaUpgrades.Count > 0)
         {
-            upgradeSO = data.AvailableMetaUpgrades[UnityEngine.Random.Range(0, data.AvailableMetaUpgrades.Count)];
+            upgradeSO = data.AvailableMetaUpgrades[Random.Range(0, data.AvailableMetaUpgrades.Count)];
         }
 
-        // Dynamic Title & Description (e.g. "Saxophone: +1 Projectile" or "Electric Guitar: +1 Tether")
-        string cardTitle = $"{data.ItemName}";
-        string cardSubtitle = upgradeSO != null
-            ? $"{upgradeSO.DisplayName}: +{upgradeSO.IncreasePerRank}{(upgradeSO.IsPercentage ? "%" : "")}"
-            : "+10% Power";
+        // Formats using the localized template (e.g. "Ökar skadan med 10%")
+        string upgradeDesc = upgradeSO != null ? upgradeSO.GetFormattedDescription(1) : "+10%";
+        string badgeText = upgradeBadge.GetLocalizedString();
 
-        SetPanelText(panel, cardTitle, cardSubtitle, "UPGRADE");
+        SetPanelText(panel, data.ItemName, upgradeDesc, badgeText);
         SetPanelSprites(panel, data);
 
-        // Wire up the button
-        var btn = panel.GetComponent<Button>();
+        // Wire Button
+        Button btn = panel.GetComponent<Button>();
         if (btn == null) btn = panel.GetComponentInChildren<Button>();
+        if (btn == null) btn = panel.AddComponent<Button>();
 
-        if (btn != null)
+        btn.onClick.RemoveAllListeners();
+        btn.onClick.AddListener(() =>
         {
-            btn.onClick.RemoveAllListeners();
-            btn.onClick.AddListener(() =>
-            {
-                ApplyStatUpgrade(item, upgradeSO);
-                CloseUpgradePanel();
-            });
-        }
+            ApplyStatUpgrade(item, upgradeSO);
+            CloseUpgradePanel();
+        });
     }
 
-    private void SetPanelText(GameObject panel, string title, string description, string category)
+    private void SetPanelText(GameObject panel, string title, string description, string badge)
     {
         TMP_Text[] textComponents = panel.GetComponentsInChildren<TMP_Text>();
-        if (textComponents.Length > 0) textComponents[0].text = title;
-        if (textComponents.Length > 1) textComponents[1].text = description;
-        if (textComponents.Length > 2) textComponents[2].text = category;
+        if (textComponents.Length > 0) textComponents[0].text = title;       // Card Title (e.g. Basgitarr)
+        if (textComponents.Length > 1) textComponents[1].text = description; // Card Description
+        if (textComponents.Length > 2) textComponents[2].text = badge;       // Category Badge (e.g. NYTT VAPEN)
     }
 
     private void SetPanelSprites(GameObject panel, ItemDefinitionSO data)
@@ -181,20 +167,16 @@ public class UpgradeSystem : MonoBehaviour
             panelImage.sprite = data.GetItemType() == "Weapon" ? weaponPanelSprite : utilityPanelSprite;
         }
 
-        // Set item icon
         Image[] images = panel.GetComponentsInChildren<Image>();
         if (images.Length > 1 && data.Icon != null)
         {
             images[1].sprite = data.Icon;
         }
     }
-    #endregion
 
-    #region Apply Choices
     public void GiveNewItem(Item item)
     {
         if (item == null || player == null) return;
-
         player.AddItem(item);
         item.EnableGameObject();
         unownedSessionItems.Remove(item);
@@ -313,32 +295,18 @@ public class UpgradeSystem : MonoBehaviour
     private void CloseUpgradePanel()
     {
         var upgradePanel = FindObjectOfType<UpgradePanel>(true);
-        if (upgradePanel != null)
-        {
-            upgradePanel.CloseUpgradeWindow();
-        }
-    }
-    #endregion
-
-    #region Helpers
-    private int GetOwnedCount<T>() where T : Item
-    {
-        return player != null ? player.GetCurrentItems().OfType<T>().Count() : 0;
+        if (upgradePanel != null) upgradePanel.CloseUpgradeWindow();
     }
 
-    private bool HasAvailableItemsOfType<T>() where T : Item
-    {
-        return temporaryChoicePool.OfType<T>().Any();
-    }
+    private int GetOwnedCount<T>() where T : Item => player != null ? player.GetCurrentItems().OfType<T>().Count() : 0;
+    private bool HasAvailableItemsOfType<T>() where T : Item => temporaryChoicePool.OfType<T>().Any();
 
     private Item GetRandomUnownedItem<T>() where T : Item
     {
         List<T> matching = temporaryChoicePool.OfType<T>().ToList();
         if (matching.Count == 0) return null;
-
-        Item chosen = matching[UnityEngine.Random.Range(0, matching.Count)];
+        Item chosen = matching[Random.Range(0, matching.Count)];
         temporaryChoicePool.Remove(chosen);
         return chosen;
     }
-    #endregion
 }

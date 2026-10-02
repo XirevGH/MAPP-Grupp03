@@ -13,9 +13,27 @@ MonoBehaviour:
   m_Name: Saxophone_Projectile_Penetration
   m_EditorClassIdentifier: 
   upgradeID: 123
-  displayName: Penetration Power
+  localizedDisplayName:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320396422508838912
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320399115612717056
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 21300000, guid: 904f877814eedca4d982a1927832696d, type: 3}
-  descriptionFormat: 
+  fallbackDisplayName: Upgrade
+  fallbackDescriptionFormat: +{0}
   targetStat: 2
   baseValue: 1
   increasePerRank: 1
@@ -23,3 +41,6 @@ MonoBehaviour:
   maxRank: 10
   baseCost: 100
   costMultiplierPerRank: 1.35
+  references:
+    version: 2
+    RefIds: []

@@ -13,9 +13,27 @@ MonoBehaviour:
   m_Name: Vinyl_Record
   m_EditorClassIdentifier: 
   itemID: 20
-  itemName: Vinyl Record
+  localizedItemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320395578593902592
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320395685225693184
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 21300000, guid: 733f8c173a4bef54cbd93cf6d9569fc9, type: 3}
-  baseDescription: Send out vinyl records like boomerangs.
+  fallbackItemName: 
+  fallbackDescription: 
   beatNumber: 4
   availableMetaUpgrades:
   - {fileID: 11400000, guid: a627f53f13e76a84ebad17cf69aaea26, type: 2}
@@ -23,3 +41,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0505bd344acb2be40bac2ca37a4eca57, type: 2}
   baseDamage: 10
   attackSound: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

@@ -285,7 +285,234 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8891787075719168
-    m_Localized: 'Level: 1 '
+    m_Localized: "Niv\xE5: {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320390731928829952
+    m_Localized: NYTT VAPEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320394945123975168
+    m_Localized: NYTT VERKTYG
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320395127467147264
+    m_Localized: UPPGRADERING
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320395210866688000
+    m_Localized: Basgitarr
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320395475414024192
+    m_Localized: "Sv\xE4ng mot dina fiender i n\xE4rstrid med detta riktbara vapen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320395578593902592
+    m_Localized: Vinylskiva
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320395685225693184
+    m_Localized: Skicka ut vinylskivor som bumeranger.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320395783095582720
+    m_Localized: Jojo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320395862971908096
+    m_Localized: "Sv\xE4ng runt permanenta Jojoar som \xF6kar fart tillsammans med
+      takten."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320395960556584960
+    m_Localized: Discokula
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320396104995831808
+    m_Localized: "Sl\xE4ng upp discokulor i luften."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320396209702436864
+    m_Localized: Elgitarr
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320396283136311296
+    m_Localized: "Elektrifiera dina n\xE4rmaste fiender."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320396422508838912
+    m_Localized: Saxofon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320396500980072448
+    m_Localized: "Skjut ut musiknoter mot dina n\xE4rmaste fiender."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320396589022707712
+    m_Localized: Breakdans
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320396686158594048
+    m_Localized: "Skada alla fiender som befinner sig n\xE4ra omkring dig."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320396759034626048
+    m_Localized: "Synthwave St\xF6t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320396842652270592
+    m_Localized: "Skicka ut Synthwave St\xF6tar i valfri riktning."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320396938643111936
+    m_Localized: Rullskridskor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397030787776512
+    m_Localized: "Ta p\xE5 dig dina rullskridskor och f\xE5 fart p\xE5 din r\xF6relse."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397105328947200
+    m_Localized: Disco Rustning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397186400649216
+    m_Localized: "Ta p\xE5 dig din Disco Rustning och d\xE4mpa dina fienders slag."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397274707525632
+    m_Localized: Lugna Vibbar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397346732113920
+    m_Localized: "F\xE5 dina fiender att r\xF6ra sig l\xE5ngsammare med dina lugna
+      vibbar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397439317180416
+    m_Localized: Lockbete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397508342841344
+    m_Localized: "F\xE5 det att regna pengar f\xF6r att distrahera dina fiender."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397585887133696
+    m_Localized: "Personlig Sf\xE4r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397690958643200
+    m_Localized: "Knuffar bort fiender f\xF6r att ge dig sj\xE4lv mer utrymme."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397757446750208
+    m_Localized: "\xD6ka skadan med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320397914812841984
+    m_Localized: "\xD6ka skadan med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320398020215701504
+    m_Localized: "\xD6ka m\xE4ngden Vinylskivor som skjuts ut med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320398104017895424
+    m_Localized: "\xD6ka antalet m\xE5ltavlor som varje vinylskiva kan skada med
+      {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320398412961939456
+    m_Localized: "\xD6ka skadan med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320398488065146880
+    m_Localized: "\xD6ka m\xE4ngden jojoar med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320398559397675008
+    m_Localized: "\xD6ka skadan med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320398634299555840
+    m_Localized: "\xD6ka antalet discokulor som skjuts ut med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320398698505961472
+    m_Localized: "\xD6ka antalet m\xE5ltavlor som varje discokula kan skada med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320398797097271296
+    m_Localized: "\xD6ka skadan med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320398868815675392
+    m_Localized: "\xD6ka antalet m\xE5ltavlor som elgitarren elektrifierar med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320398941142253568
+    m_Localized: "\xD6ka skadan med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320399025502289920
+    m_Localized: "\xD6ka antalet musiknoter som avfyras med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320399115612717056
+    m_Localized: "\xD6ka antalet m\xE5ltavlor som varje musiknot kan skada med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320399200127942656
+    m_Localized: "\xD6ka skadan med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320399269073911808
+    m_Localized: "\xD6ka radien med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320399322656145408
+    m_Localized: "\xD6ka skadan med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320399416252039168
+    m_Localized: "\xD6ka antalet Synthwave st\xF6tar med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320399616228065280
+    m_Localized: "\xD6ka antalet m\xE5ltavlor som varje st\xF6t kan skada med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320399781349425152
+    m_Localized: "\xD6ka r\xF6relsehastigheten med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320399869434003456
+    m_Localized: "\xD6ka h\xE4lsan med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320399949792673792
+    m_Localized: "\xD6ka omr\xE5det f\xF6r dina lugna vibbar med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320400009771220992
+    m_Localized: "\xD6ka l\xE5ngsamheten med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320400076997525504
+    m_Localized: "\xD6ka antalet lockbeten med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320400151664525312
+    m_Localized: "\xD6ka lockbetenas h\xE4lsa med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320400231138197504
+    m_Localized: "\xD6ka radien med {0}"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 320400334745894912
+    m_Localized: "\xD6ka knuffkraften med {0}"
     m_Metadata:
       m_Items: []
   references:

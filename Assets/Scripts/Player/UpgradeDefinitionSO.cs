@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Localization;
 
 public enum StatType
 {
@@ -20,9 +21,12 @@ public class UpgradeDefinitionSO : ScriptableObject
 {
     [Header("Identity")]
     [SerializeField] private string upgradeID;
-    [SerializeField] private string displayName;
+    [SerializeField] private LocalizedString localizedDisplayName;
+    [SerializeField] private LocalizedString localizedDescription;
     [SerializeField] private Sprite icon;
-    [TextArea][SerializeField] private string descriptionFormat;
+
+    [SerializeField] private string fallbackDisplayName = "Upgrade";
+    [SerializeField] private string fallbackDescriptionFormat = "+{0}";
 
     [Header("Stat Configuration")]
     [SerializeField] private StatType targetStat;
@@ -36,13 +40,48 @@ public class UpgradeDefinitionSO : ScriptableObject
     [SerializeField] private float costMultiplierPerRank = 1.35f;
 
     public string UpgradeID => upgradeID;
-    public string DisplayName => displayName;
     public Sprite Icon => icon;
     public StatType TargetStat => targetStat;
     public int MaxRank => maxRank;
     public float IncreasePerRank => increasePerRank;
     public bool IsPercentage => isPercentage;
     public float BaseValue => baseValue;
+
+    public string DisplayName
+    {
+        get
+        {
+            if (localizedDisplayName != null && !localizedDisplayName.IsEmpty)
+            {
+                return localizedDisplayName.GetLocalizedString();
+            }
+            return !string.IsNullOrEmpty(fallbackDisplayName) ? fallbackDisplayName : name;
+        }
+    }
+
+    public string GetFormattedDescription(float boostAmount)
+    {
+        string formattedValue = isPercentage ? $"{boostAmount:0.#}%" : $"{boostAmount:0.#}";
+
+        if (localizedDescription != null && !localizedDescription.IsEmpty)
+        {
+            // Unity's LocalizedString replaces {0} with the passed argument!
+            return localizedDescription.GetLocalizedString(formattedValue);
+        }
+
+        if (!string.IsNullOrEmpty(fallbackDescriptionFormat))
+        {
+            return string.Format(fallbackDescriptionFormat, formattedValue);
+        }
+
+        return isPercentage ? $"+{formattedValue}" : $"+{boostAmount:0.#}";
+    }
+
+    public string GetFormattedDescription(int currentRank)
+    {
+        float totalValue = GetCalculatedValue(currentRank);
+        return GetFormattedDescription(totalValue);
+    }
 
     public int GetCostForRank(int currentRank)
     {
@@ -53,12 +92,5 @@ public class UpgradeDefinitionSO : ScriptableObject
     public float GetCalculatedValue(int currentRank)
     {
         return baseValue + (currentRank * increasePerRank);
-    }
-
-    public string GetFormattedDescription(int currentRank)
-    {
-        float value = GetCalculatedValue(currentRank);
-        string formattedValue = isPercentage ? $"{value:0.#}%" : $"{value:0.#}";
-        return string.Format(descriptionFormat, formattedValue);
     }
 }

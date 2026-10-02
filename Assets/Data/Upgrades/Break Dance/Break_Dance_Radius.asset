@@ -13,9 +13,27 @@ MonoBehaviour:
   m_Name: Break_Dance_Radius
   m_EditorClassIdentifier: 
   upgradeID: 72
-  displayName: Radius
+  localizedDisplayName:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320396589022707712
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320399269073911808
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 21300000, guid: 249be288c4f587e4298f86b742594ed1, type: 3}
-  descriptionFormat: 
+  fallbackDisplayName: Upgrade
+  fallbackDescriptionFormat: +{0}
   targetStat: 3
   baseValue: 10
   increasePerRank: 10
@@ -23,3 +41,6 @@ MonoBehaviour:
   maxRank: 10
   baseCost: 100
   costMultiplierPerRank: 1.35
+  references:
+    version: 2
+    RefIds: []

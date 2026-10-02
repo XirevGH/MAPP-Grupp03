@@ -13,9 +13,30 @@ MonoBehaviour:
   m_Name: Roller_Skates
   m_EditorClassIdentifier: 
   itemID: 110
-  itemName: Roller Skates
+  localizedItemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320396938643111936
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320397030787776512
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 21300000, guid: 237db69951be2be4a92edc9d63030747, type: 3}
-  baseDescription: Put on your roller skates and speed up your movement.
+  fallbackItemName: 
+  fallbackDescription: 
   beatNumber: 0
   availableMetaUpgrades:
   - {fileID: 11400000, guid: 5ff943f70d7eb434cab1d061f7f8b8f5, type: 2}
+  references:
+    version: 2
+    RefIds: []

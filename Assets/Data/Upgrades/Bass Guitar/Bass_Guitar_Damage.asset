@@ -13,9 +13,27 @@ MonoBehaviour:
   m_Name: Bass_Guitar_Damage
   m_EditorClassIdentifier: 
   upgradeID: 11
-  displayName: Damage
+  localizedDisplayName:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320395210866688000
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320397757446750208
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 21300000, guid: fb6fabdafe273aa46a2b47bded7fb679, type: 3}
-  descriptionFormat: 
+  fallbackDisplayName: Upgrade
+  fallbackDescriptionFormat: +{0}
   targetStat: 0
   baseValue: 10
   increasePerRank: 10
@@ -23,3 +41,6 @@ MonoBehaviour:
   maxRank: 10
   baseCost: 20
   costMultiplierPerRank: 1.35
+  references:
+    version: 2
+    RefIds: []

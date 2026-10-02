@@ -13,12 +13,33 @@ MonoBehaviour:
   m_Name: Break_Dance
   m_EditorClassIdentifier: 
   itemID: 70
-  itemName: Break Dance
+  localizedItemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320396589022707712
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320396686158594048
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 21300000, guid: 249be288c4f587e4298f86b742594ed1, type: 3}
-  baseDescription: Deal damage to all enemies in your surrounding area.
+  fallbackItemName: 
+  fallbackDescription: 
   beatNumber: 4
   availableMetaUpgrades:
   - {fileID: 11400000, guid: 8373f0dc4f469444bafb184c29e90ceb, type: 2}
   - {fileID: 11400000, guid: ab3527896ee628b4f9adb1f89b27f1f8, type: 2}
   baseDamage: 15
   attackSound: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

@@ -13,9 +13,27 @@ MonoBehaviour:
   m_Name: Vinyl_Record_Projectile_Count
   m_EditorClassIdentifier: 
   upgradeID: 22
-  displayName: Projectiles
+  localizedDisplayName:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320395578593902592
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320398020215701504
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 21300000, guid: 733f8c173a4bef54cbd93cf6d9569fc9, type: 3}
-  descriptionFormat: 
+  fallbackDisplayName: Upgrade
+  fallbackDescriptionFormat: +{0}
   targetStat: 1
   baseValue: 1
   increasePerRank: 1
@@ -23,3 +41,6 @@ MonoBehaviour:
   maxRank: 10
   baseCost: 200
   costMultiplierPerRank: 1.35
+  references:
+    version: 2
+    RefIds: []

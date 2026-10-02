@@ -13,12 +13,33 @@ MonoBehaviour:
   m_Name: Yoyo
   m_EditorClassIdentifier: 
   itemID: 30
-  itemName: Yoyo
+  localizedItemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320395783095582720
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320395862971908096
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 21300000, guid: 2970aefbb1a95d74ab2e908ab156cd1a, type: 3}
-  baseDescription: Swing around permanent Yoyos that speed up along with the beat.
+  fallbackItemName: 
+  fallbackDescription: 
   beatNumber: 4
   availableMetaUpgrades:
   - {fileID: 11400000, guid: 409b1a21e5623cc47b3986c0731e53fc, type: 2}
   - {fileID: 11400000, guid: 5297a26d3dab42348a1fba4a5abcb7f9, type: 2}
   baseDamage: 15
   attackSound: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

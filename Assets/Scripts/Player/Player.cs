@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 public class Player : MonoBehaviour
 {
@@ -26,6 +28,8 @@ public class Player : MonoBehaviour
     [SerializeField] private UpgradePanel upgradeScreen;
     [SerializeField] private UpgradeSystem upgradeSystem;
     [SerializeField] private GameController gameController;
+    [SerializeField] private LocalizedString localizedLevelFormat = new LocalizedString("StringTable", "ui_level_format");
+
 
     [Header("Audio & FX")]
     [SerializeField] private ParticleSystem hpLossParticles;
@@ -70,6 +74,8 @@ public class Player : MonoBehaviour
 
     private void OnDestroy()
     {
+        LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
+
         if (Instance == this)
         {
             Instance = null;
@@ -81,13 +87,31 @@ public class Player : MonoBehaviour
         health = maxHealth;
         isAlive = true;
         UpdateHealthSlider();
+        UpdateLevelDisplay();
 
-        if (levelText != null)
-        {
-            levelText.text = $"Level: {level}";
-        }
+        LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
+
     }
 
+    private void OnLocaleChanged(Locale newLocale)
+    {
+        UpdateLevelDisplay();
+    }
+
+    public void UpdateLevelDisplay()
+    {
+        if (levelText != null)
+        {
+            if (!localizedLevelFormat.IsEmpty)
+            {
+                levelText.text = localizedLevelFormat.GetLocalizedString(level);
+            }
+            else
+            {
+                levelText.text = $"Level: {level}";
+            }
+        }
+    }
 
 
     private void Update()
@@ -253,10 +277,7 @@ public class Player : MonoBehaviour
         xpToLevel *= 1.4f;
         level++;
 
-        if (levelText != null)
-        {
-            levelText.text = $"Level: {level}";
-        }
+        UpdateLevelDisplay();
 
         StartCoroutine(UpdateXPSliderRoutine());
 

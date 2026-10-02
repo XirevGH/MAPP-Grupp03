@@ -13,10 +13,31 @@ MonoBehaviour:
   m_Name: Chill_Vibe
   m_EditorClassIdentifier: 
   itemID: 50
-  itemName: Chill Vibe
+  localizedItemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320397274707525632
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320397346732113920
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 21300000, guid: 0d9b49e752a14104fa3e06b5a93ee0a6, type: 3}
-  baseDescription: Make your enemies move slower with your chill vibe.
+  fallbackItemName: 
+  fallbackDescription: 
   beatNumber: 0
   availableMetaUpgrades:
   - {fileID: 11400000, guid: bcb7ca2509afd6e4fb0b3f5a957377fe, type: 2}
   - {fileID: 11400000, guid: 857bd7e171d0b9a41a7072f38822fccd, type: 2}
+  references:
+    version: 2
+    RefIds: []

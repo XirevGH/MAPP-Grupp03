@@ -13,9 +13,27 @@ MonoBehaviour:
   m_Name: Groove_Armor_Health
   m_EditorClassIdentifier: 
   upgradeID: 91
-  displayName: Health
+  localizedDisplayName:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320397105328947200
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  localizedDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:36a812a686b058d4fb4a1177c241dd26
+    m_TableEntryReference:
+      m_KeyId: 320399869434003456
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   icon: {fileID: 21300000, guid: 44ec73a82089dd149ad5e4fce329be55, type: 3}
-  descriptionFormat: 
+  fallbackDisplayName: Upgrade
+  fallbackDescriptionFormat: +{0}
   targetStat: 6
   baseValue: 10
   increasePerRank: 10
@@ -23,3 +41,6 @@ MonoBehaviour:
   maxRank: 10
   baseCost: 100
   costMultiplierPerRank: 1.35
+  references:
+    version: 2
+    RefIds: []
