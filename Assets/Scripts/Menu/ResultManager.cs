@@ -1,76 +1,39 @@
-using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class ResultManager : MonoBehaviour
 {
-    [SerializeField] private TMP_Text timerText;
-    [SerializeField] private TMP_Text levelText;
-    [SerializeField] private TMP_Text enemiesDefeatedText;
-    [SerializeField] private TMP_Text moneyEarnedText;
-    [SerializeField] private Image[] iconPictures;
+    public static ResultManager Instance { get; private set; }
 
-    public string timeText;
-    public int mainLevel;
-    public int enemiesDefeated;
-    public int moneyEarned;
-    public List<Item> currentItems;
+    // Match Stats
+    public string timeText = "00:00";
+    public int mainLevel = 1;
+    public int enemiesDefeated = 0;
+    public int moneyEarned = 0;
 
-    public static ResultManager Instance;
+    // Saved Items for the Results Screen
+    public List<ItemDefinitionSO> savedItemData = new List<ItemDefinitionSO>();
+    public List<string> fallbackItemNames = new List<string>();
 
     private void Awake()
     {
-        if (SceneManager.GetActiveScene().name == "Main")
+        if (Instance != null && Instance != this)
         {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(Instance.gameObject);
-            }
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            // Binds UI references from the GameOver scene onto the persistent Instance data
-            Instance.levelText = this.levelText;
-            Instance.timerText = this.timerText;
-            Instance.enemiesDefeatedText = this.enemiesDefeatedText;
-            Instance.moneyEarnedText = this.moneyEarnedText;
-            Instance.iconPictures = this.iconPictures;
-
-            Instance.SetImages();
-            Instance.CompileText();
             Destroy(gameObject);
+            return;
         }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
-    private void CompileText()
+    public void ResetData()
     {
-        if (moneyEarnedText != null) moneyEarnedText.text = moneyEarned.ToString();
-        if (levelText != null) levelText.text = mainLevel.ToString();
-        if (timerText != null) timerText.text = timeText;
-        if (enemiesDefeatedText != null) enemiesDefeatedText.text = enemiesDefeated.ToString();
-    }
-
-    private void SetImages()
-    {
-        if (iconPictures == null || currentItems == null) return;
-
-        for (int i = 0; i < iconPictures.Length; i++)
-        {
-            if (i < currentItems.Count && currentItems[i] != null && currentItems[i].BaseItemData != null)
-            {
-                iconPictures[i].sprite = currentItems[i].BaseItemData.Icon;
-                iconPictures[i].color = Color.white;
-            }
-            else
-            {
-                iconPictures[i].sprite = null;
-                iconPictures[i].color = new Color(1f, 1f, 1f, 0f);
-            }
-        }
+        timeText = "00:00";
+        mainLevel = 1;
+        enemiesDefeated = 0;
+        moneyEarned = 0;
+        savedItemData.Clear();
+        fallbackItemNames.Clear();
     }
 }

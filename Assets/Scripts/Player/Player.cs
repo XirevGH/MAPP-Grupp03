@@ -222,6 +222,7 @@ public class Player : MonoBehaviour
         if (hpSlider != null) hpSlider.value = health / maxHealth;
     }
 
+    // Inside Player.cs:
     private void Die()
     {
         isAlive = false;
@@ -240,7 +241,16 @@ public class Player : MonoBehaviour
         if (ResultManager.Instance != null)
         {
             ResultManager.Instance.moneyEarned += currency;
-            ResultManager.Instance.currentItems = GetCurrentItems();
+
+            List<ItemDefinitionSO> itemsToSave = new List<ItemDefinitionSO>();
+            foreach (Item item in currentItems)
+            {
+                if (item != null && item.BaseItemData != null)
+                {
+                    itemsToSave.Add(item.BaseItemData);
+                }
+            }
+            ResultManager.Instance.savedItemData = itemsToSave;
         }
 
         if (gameController != null)

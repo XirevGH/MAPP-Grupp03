@@ -2197,17 +2197,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8135886326569738822, guid: 56fae09712773584fb63896d473a98ee, type: 3}
   m_PrefabInstance: {fileID: 363362732}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &363362734 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8135886326569738823, guid: 56fae09712773584fb63896d473a98ee, type: 3}
-  m_PrefabInstance: {fileID: 363362732}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba0d0e7a039f526499c356a3c5cd6d3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &371572267
 GameObject:
   m_ObjectHideFlags: 0
@@ -9469,8 +9458,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c252617200498747890a995535d31c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftJoystic: {fileID: 1605011739}
-  rightJoystic: {fileID: 363362734}
+  leftJoystick: {fileID: 0}
+  rightJoystick: {fileID: 0}
 --- !u!1 &1309495111
 GameObject:
   m_ObjectHideFlags: 0
@@ -11458,17 +11447,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8135886326569738822, guid: 56fae09712773584fb63896d473a98ee, type: 3}
   m_PrefabInstance: {fileID: 1605011737}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1605011739 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8135886326569738823, guid: 56fae09712773584fb63896d473a98ee, type: 3}
-  m_PrefabInstance: {fileID: 1605011737}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba0d0e7a039f526499c356a3c5cd6d3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1607291700
 GameObject:
   m_ObjectHideFlags: 0
@@ -13521,16 +13499,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8ee63eb952678448d967196a631605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 3095667434961151154, guid: ea123d5ad32fcc34f987ef3e49be0304, type: 3}
-  levelText: {fileID: 6256552757786023533, guid: f055b79b77a15314cb97578cd6d155b6, type: 3}
-  enemiesDefeatedText: {fileID: 4704084059594391430, guid: 410163a0795c9334498bb9d2e18eaebc, type: 3}
-  moneyEarnedText: {fileID: 9167483687933025870, guid: f74ac1888e5efd74f9b48c349a43bb3b, type: 3}
-  iconPictures: []
   timeText: 
   mainLevel: 1
   enemiesDefeated: 0
   moneyEarned: 0
-  currentItems: []
+  savedItemData:
+  - {fileID: 11400000, guid: edbe068b63226b644819a1540e8b39e3, type: 2}
+  - {fileID: 11400000, guid: 1785924f7e4918c4e8e84adb2a4e38d0, type: 2}
+  - {fileID: 11400000, guid: 341fd856d4e3f024296d0c8b3eaf7722, type: 2}
+  - {fileID: 11400000, guid: d6a5d3837200d55468f89947d9be423e, type: 2}
+  - {fileID: 11400000, guid: 1798a48390ad32744bf839a3760f0c92, type: 2}
+  - {fileID: 11400000, guid: f1782383ec8d00643b56301025ea33ef, type: 2}
+  - {fileID: 11400000, guid: ed1fb99ac14cc7f45b2d722df66b3e11, type: 2}
+  - {fileID: 11400000, guid: b42f0e2cf8537ed49ac388f47f42f85b, type: 2}
+  - {fileID: 11400000, guid: a9e33f4b5b304bf4bba143392158345a, type: 2}
+  - {fileID: 11400000, guid: b8ee1c99e5eebea47a81feb201c823d5, type: 2}
+  - {fileID: 11400000, guid: 0e4cf678082106642af3f538a740fbe3, type: 2}
+  - {fileID: 11400000, guid: b8992f857a311864c996fc903677b98d, type: 2}
+  - {fileID: 11400000, guid: a35f109fbf17bdd4c8276e965f528c14, type: 2}
+  fallbackItemNames: []
 --- !u!4 &1976371860
 Transform:
   m_ObjectHideFlags: 0

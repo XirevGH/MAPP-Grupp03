@@ -112,7 +112,7 @@ MonoBehaviour:
   itemPickupRadius: 3
   pickupSound: {fileID: 8300000, guid: 5f9d7106b0c24f245a2f1123275117b9, type: 3}
   spriteRenderer: {fileID: 8449104146653439331}
-  particleSystem: {fileID: 2050496183805389482}
+  particles: {fileID: 2050496183805389482}
   biggXpDropMaterial: {fileID: 2100000, guid: 9dc45b983ce9b2b448f55dee70bf3b01, type: 2}
   mediumXpDropMaterial: {fileID: 2100000, guid: 59ce68f8dc1d1514fb1247bd63d14fb6, type: 2}
   smallXpDropMaterial: {fileID: 2100000, guid: 1c3d3eea4b4cb644ea6188f568f0ee12, type: 2}
