@@ -6,7 +6,6 @@ public class BreakDance : Weapon
 {
     [SerializeField] private Animator anim;
 
-    // Runtime Cached Radius Stats
     private float metaUpgradedRadius = 1f;
     private float inRunRadiusMultiplier = 1f;
 
@@ -14,7 +13,7 @@ public class BreakDance : Weapon
 
     protected override void Start()
     {
-        base.Start(); // ◄── CRITICAL: Initializes meta damage!
+        base.Start();
 
         if (anim == null) anim = GetComponent<Animator>();
 
@@ -31,16 +30,14 @@ public class BreakDance : Weapon
     {
         if (weaponData == null) return;
 
-        // Query Radius meta-upgrade
         var radiusUpgrade = weaponData.GetUpgrade(StatType.Radius);
         if (radiusUpgrade != null && MetaUpgradeManager.Instance != null)
         {
-            // Gets base radius value (e.g. 1.0) + meta rank bonuses
             metaUpgradedRadius = MetaUpgradeManager.Instance.GetStatValue(radiusUpgrade);
         }
         else
         {
-            metaUpgradedRadius = 1f; // Default baseline scale
+            metaUpgradedRadius = 1f;
         }
 
         ApplyRadiusScale();
@@ -81,7 +78,7 @@ public class BreakDance : Weapon
             SoundManager.Instance.PlaySFX(weaponData.AttackSound, 1f);
         }
 
-        // Purge dead enemies killed by other attacks
+        // Purge dead enemies destroyed while inside the trigger zone
         enemiesInRange.RemoveWhere(e => e == null);
 
         float finalDamage = GetCurrentDamage();
@@ -95,10 +92,8 @@ public class BreakDance : Weapon
         }
     }
 
-    // Public Getters & Modifiers
     public float GetCurrentRadius() => metaUpgradedRadius * inRunRadiusMultiplier;
 
-    // Called when picking an in-run level-up card (e.g. "+15% Breakdance Radius")
     public void IncreaseInRunRadius(float percentage)
     {
         inRunRadiusMultiplier *= (1f + (percentage / 100f));

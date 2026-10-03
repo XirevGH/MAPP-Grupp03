@@ -1,50 +1,52 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class NoteProjectile : Projectile 
-{ 
-    
+public class NoteProjectile : Projectile
+{
+    [Header("Visuals & Movement")]
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Sprite sprite1;
+    [SerializeField] private Sprite sprite2;
+    [SerializeField] private float maxLifetime = 5f;
+
     private Vector3 direction;
+    private float currentLifetime;
 
-    [SerializeField] private Sprite sprite1, sprite2;
-    private float lifetime = 5f;
-
-   public void Initialize(float damage, float speed, int penetration, Vector3 direction)
+    private void Awake()
     {
-        base.damage = damage;
-        base.speed = speed;
-        base.penetration = penetration;  
-        this.direction = direction;
-        
-        GetComponent<SpriteRenderer>().sprite = randomSprite();
-        
+        if (spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
+        currentLifetime = maxLifetime;
     }
 
-    private Sprite randomSprite(){
-        if(Random.Range(0, 2) == 1){
-            return sprite1;
-        }else{
-            return sprite2;
+    public void Initialize(float damage, float speed, int penetration, Vector3 direction)
+    {
+        this.damage = damage;
+        this.speed = speed;
+        this.penetration = penetration;
+        this.direction = direction;
+
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.sprite = Random.Range(0, 2) == 1 ? sprite1 : sprite2;
         }
     }
-    
 
     private void Update()
     {
         transform.position += direction * speed * Time.deltaTime;
-        lifetime -= Time.deltaTime;
-        if (lifetime <= 0)
+
+        currentLifetime -= Time.deltaTime;
+        if (currentLifetime <= 0f)
         {
-            Destroy(gameObject); 
+            Despawn();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        DealDamage(other);
-        DestroyWhenMaxPenetration();
+        if (other.CompareTag("Enemy"))
+        {
+            DealDamage(other);
+            DestroyWhenMaxPenetration();
+        }
     }
-
-    
 }

@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     [SerializeField] private List<Item> currentItems = new List<Item>();
     [SerializeField] private List<Item> allItems = new List<Item>();
 
-    [Header("Direct Scene UI References (Drag & Drop in Inspector)")]
+    [Header("Direct Scene UI References")]
     [SerializeField] private Slider hpSlider;
     [SerializeField] private Slider xpSlider;
     [SerializeField] private TMP_Text levelText;
@@ -39,12 +39,8 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject confettiLeft, confettiRight, confettiCenter;
 
     [Header("Damage & FX Settings")]
-    [SerializeField] private float damageGracePeriod = 0.15f;
-    [SerializeField] private float soundCooldown = 1.0f;
-
     private float takingDamagePeriod = 0f;
     private float continuousDamageTime = 0f;
-    private float soundTimer = 0f;
     private bool isTakingDamage = false;
 
     private bool isAlive = true;

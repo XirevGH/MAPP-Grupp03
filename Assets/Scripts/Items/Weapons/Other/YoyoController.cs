@@ -27,6 +27,10 @@ public class YoyoController : PermanentProjectileWeapon
         SynchronizeYoyoCount();
     }
 
+    protected void OnDestroy()
+    {
+        if (Instance == this) Instance = null;
+    }
     private void Update()
     {
         if (GetCurrentProjectileCount() > activeYoyos.Count)

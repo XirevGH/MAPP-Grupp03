@@ -33,7 +33,6 @@ public class VinylDisc : Projectile
         aimingArrowRotation = GameObject.FindGameObjectWithTag("AimingArrow").transform.rotation;
         startPosition = transform.position;
 
-        // Find endPosition by using Trigonometry (angle of the aiming arrow and travelDistance)
         endPosition = new Vector3(
             Mathf.Cos(Mathf.Deg2Rad * aimingArrowRotation.eulerAngles.z) * travelDistance + startPosition.x,
             Mathf.Sin(Mathf.Deg2Rad * aimingArrowRotation.eulerAngles.z) * travelDistance + startPosition.y,
@@ -55,6 +54,7 @@ public class VinylDisc : Projectile
     {
         SetTravelTime();
 
+        // Phase 1: Arc outward along quadratic bezier curve towards calculated end position
         if (isAtPlayer)
         {
             elapsedTime += Time.deltaTime;
@@ -74,6 +74,8 @@ public class VinylDisc : Projectile
                 isHalfWay = true;
             }
         }
+
+        // Phase 2: Arc back to player's dynamic position
         else if (isHalfWay)
         {
             elapsedTime += Time.deltaTime;

@@ -8,9 +8,6 @@ public abstract class Item : MonoBehaviour
 
     [SerializeField] protected Player player;
 
-    protected List<string> upgradeOptions = new List<string>();
-    protected bool active;
-
     private void LateUpdate()
     {
         if (!player.GetCurrentItems().Contains(this))

@@ -52,13 +52,26 @@ public class UpgradeSystem : MonoBehaviour
         temporaryChoicePool = new List<Item>(unownedSessionItems);
         List<Item> ownedItems = player.GetCurrentItems();
 
+        // 1. Build a temporary pool of all available stat upgrades for owned items
+        List<(Item item, UpgradeDefinitionSO upgrade)> availableUpgradePool = new List<(Item, UpgradeDefinitionSO)>();
+        foreach (Item ownedItem in ownedItems)
+        {
+            if (ownedItem != null && ownedItem.BaseItemData != null && ownedItem.BaseItemData.AvailableMetaUpgrades != null)
+            {
+                foreach (var upg in ownedItem.BaseItemData.AvailableMetaUpgrades)
+                {
+                    availableUpgradePool.Add((ownedItem, upg));
+                }
+            }
+        }
+
         for (int i = 0; i < panels.Length; i++)
         {
             if (panels[i] == null) continue;
 
             bool canOfferNewWeapon = GetOwnedCount<Weapon>() < maxWeapons && HasAvailableItemsOfType<Weapon>();
             bool canOfferNewUtility = GetOwnedCount<Utility>() < maxUtilities && HasAvailableItemsOfType<Utility>();
-            bool canOfferStatUpgrade = ownedItems.Count > 0;
+            bool canOfferStatUpgrade = availableUpgradePool.Count > 0;
 
             List<string> validTypes = new List<string>();
             if (canOfferStatUpgrade) validTypes.Add("StatUpgrade");
@@ -76,8 +89,12 @@ public class UpgradeSystem : MonoBehaviour
 
             if (chosenType == "StatUpgrade")
             {
-                Item randomOwnedItem = ownedItems[Random.Range(0, ownedItems.Count)];
-                SetupStatUpgradeCard(panels[i], randomOwnedItem);
+                int randomIndex = Random.Range(0, availableUpgradePool.Count);
+                var (chosenItem, chosenUpgrade) = availableUpgradePool[randomIndex];
+
+                availableUpgradePool.RemoveAt(randomIndex);
+
+                SetupStatUpgradeCard(panels[i], chosenItem, chosenUpgrade);
             }
             else if (chosenType == "NewWeapon")
             {
@@ -98,14 +115,11 @@ public class UpgradeSystem : MonoBehaviour
 
         ItemDefinitionSO data = item.BaseItemData;
 
-        // Fetch localized badge
         string badgeText = isWeapon ? newWeaponBadge.GetLocalizedString() : newUtilityBadge.GetLocalizedString();
 
-        // Populate Card UI
         SetPanelText(panel, data.ItemName, data.BaseDescription, badgeText);
         SetPanelSprites(panel, data);
 
-        // Wire Button
         Button btn = panel.GetComponent<Button>();
         if (btn == null) btn = panel.GetComponentInChildren<Button>();
         if (btn == null) btn = panel.AddComponent<Button>();
@@ -118,27 +132,18 @@ public class UpgradeSystem : MonoBehaviour
         });
     }
 
-    private void SetupStatUpgradeCard(GameObject panel, Item item)
+    private void SetupStatUpgradeCard(GameObject panel, Item item, UpgradeDefinitionSO upgradeSO)
     {
         if (item == null || item.BaseItemData == null) return;
 
         ItemDefinitionSO data = item.BaseItemData;
 
-        // Pick one of the item's available upgrade definitions
-        UpgradeDefinitionSO upgradeSO = null;
-        if (data.AvailableMetaUpgrades != null && data.AvailableMetaUpgrades.Count > 0)
-        {
-            upgradeSO = data.AvailableMetaUpgrades[Random.Range(0, data.AvailableMetaUpgrades.Count)];
-        }
-
-        // Formats using the localized template (e.g. "Ökar skadan med 10%")
         string upgradeDesc = upgradeSO != null ? upgradeSO.GetFormattedDescription(1) : "+10%";
         string badgeText = upgradeBadge.GetLocalizedString();
 
         SetPanelText(panel, data.ItemName, upgradeDesc, badgeText);
         SetPanelSprites(panel, data);
 
-        // Wire Button
         Button btn = panel.GetComponent<Button>();
         if (btn == null) btn = panel.GetComponentInChildren<Button>();
         if (btn == null) btn = panel.AddComponent<Button>();
@@ -154,9 +159,9 @@ public class UpgradeSystem : MonoBehaviour
     private void SetPanelText(GameObject panel, string title, string description, string badge)
     {
         TMP_Text[] textComponents = panel.GetComponentsInChildren<TMP_Text>();
-        if (textComponents.Length > 0) textComponents[0].text = title;       // Card Title (e.g. Basgitarr)
-        if (textComponents.Length > 1) textComponents[1].text = description; // Card Description
-        if (textComponents.Length > 2) textComponents[2].text = badge;       // Category Badge (e.g. NYTT VAPEN)
+        if (textComponents.Length > 0) textComponents[0].text = title;
+        if (textComponents.Length > 1) textComponents[1].text = description;
+        if (textComponents.Length > 2) textComponents[2].text = badge;
     }
 
     private void SetPanelSprites(GameObject panel, ItemDefinitionSO data)
@@ -186,14 +191,10 @@ public class UpgradeSystem : MonoBehaviour
     {
         if (item == null || upgradeSO == null) return;
 
-        // Use the value defined in the ScriptableObject as the in-run card boost
         float statBoostAmount = upgradeSO.IncreasePerRank;
 
         switch (upgradeSO.TargetStat)
         {
-            // ─────────────────────────────────────────────
-            // 1. WEAPON STATS
-            // ─────────────────────────────────────────────
             case StatType.Damage:
                 if (item is Weapon weapon)
                 {
@@ -226,9 +227,6 @@ public class UpgradeSystem : MonoBehaviour
                 }
                 break;
 
-            // ─────────────────────────────────────────────
-            // 2. SPATIAL & UTILITY STATS
-            // ─────────────────────────────────────────────
             case StatType.Radius:
                 if (item is BreakDance breakDance)
                 {

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class DiscoBallController : ProjectileWeapon
-{    
+{
     [SerializeField] private GameObject discoBallPrefab;
 
     private readonly List<DiscoBall> activeDiscoBalls = new List<DiscoBall>();
@@ -19,6 +19,7 @@ public class DiscoBallController : ProjectileWeapon
     protected override void Start()
     {
         base.Start();
+
         if (weaponData != null && weaponData.HasBeatTrigger)
         {
             UnityAction attackAction = new UnityAction(Attack);
@@ -26,32 +27,6 @@ public class DiscoBallController : ProjectileWeapon
 
             UnityAction blinkAction = new UnityAction(BlinkAllDiscoBalls);
             TriggerController.Instance.SetTrigger(1, blinkAction);
-        }
-    }
-
-    public void Blink()
-    {
-
-        if (activeDiscoBalls.Count == 0)
-        {
-            return;
-        }
-        else
-        {
-
-            for (int i =0; i < activeDiscoBalls.Count; i++)
-            {
-                DiscoBall discoBall = activeDiscoBalls[i];
-
-                if (discoBall == null)
-                {
-                    activeDiscoBalls.RemoveAt(i);
-                }
-                else
-                {
-                    discoBall.GetComponent<DiscoBall>().Blink();
-                }
-            }
         }
     }
 
@@ -93,9 +68,9 @@ public class DiscoBallController : ProjectileWeapon
             yield return new WaitForSeconds(burstDelay);
         }
     }
+
     public void BlinkAllDiscoBalls()
     {
-
         for (int i = activeDiscoBalls.Count - 1; i >= 0; i--)
         {
             if (activeDiscoBalls[i] == null)

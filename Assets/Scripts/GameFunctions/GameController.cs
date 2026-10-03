@@ -5,57 +5,75 @@ using UnityEngine.Tilemaps;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private SceneTransition transition;
-    public GameObject pursePanel, canvasWorldSpace;
+    public GameObject pursePanel;
+    public GameObject canvasWorldSpace;
     public PlayerStats playerStats;
-    private string playerStatsFile;
     public Camera mainCamera;
     public Tilemap tilemap;
-     
+
     public int currentTrackBPM;
-    
+
+    private string playerStatsFile;
 
     private void Awake()
     {
-        playerStatsFile = Application.persistentDataPath + "/playerInfo.json";
+        playerStatsFile = Path.Combine(Application.persistentDataPath, "playerInfo.json");
         ReadFile(playerStatsFile);
-        mainCamera = Camera.main;
-        Enemy.movementSpeed = 1f;        // Global % enemy movespeed increase.  
+
+        if (mainCamera == null) mainCamera = Camera.main;
+
+        Enemy.movementSpeed = 1f;
         Enemy.healthProcenIncrease = 1f;
+    }
+
+    private void Start()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.StartGame();
+        }
     }
 
     private void Update()
     {
-        if (SoundManager.Instance != null) 
-        { 
+        if (SoundManager.Instance != null)
+        {
             currentTrackBPM = SoundManager.Instance.GetCurrentBPM();
         }
     }
 
     private void FixedUpdate()
-    {  
-        Enemy.movementSpeed += 0.0001f; // Global % enemy movespeed increase.  
-       
+    {
+        Enemy.movementSpeed += 0.0001f;
     }
 
     private void ReadFile(string saveFile)
     {
-        playerStats = FindObjectOfType<PlayerStats>();
-        if (File.Exists(saveFile))
+        if (playerStats == null) playerStats = FindObjectOfType<PlayerStats>();
+
+        if (File.Exists(saveFile) && playerStats != null)
         {
             string fileContents = File.ReadAllText(saveFile);
-            playerStats.GetComponent<PlayerStats>().CreateFromJSON(fileContents);
-        }
-        else
-        {
-            Debug.Log("File does not exist.");
+            playerStats.CreateFromJSON(fileContents);
         }
     }
 
     public void GameOver()
     {
-        SoundManager.Instance.GetComponent<SoundManager>().Die();
-        File.WriteAllText(playerStatsFile, playerStats.SaveToString());
-        transition.ChangeScene();
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.Die();
+        }
+
+        if (playerStats != null)
+        {
+            File.WriteAllText(playerStatsFile, playerStats.SaveToString());
+        }
+
+        if (transition != null)
+        {
+            transition.ChangeScene();
+        }
     }
 
     public BoundsInt GetBoundsFromCamera()
@@ -63,7 +81,7 @@ public class GameController : MonoBehaviour
         float cameraSize = mainCamera.orthographicSize;
         Vector3 cameraPosition = mainCamera.transform.position;
         Vector3Int minPosition = tilemap.WorldToCell(cameraPosition - new Vector3(cameraSize - 2 * mainCamera.aspect * 2.5f, cameraSize + 10, 0));
-        Vector3Int maxPosition = tilemap.WorldToCell(cameraPosition + new Vector3(cameraSize- 5 * mainCamera.aspect , cameraSize + 10, 0));
+        Vector3Int maxPosition = tilemap.WorldToCell(cameraPosition + new Vector3(cameraSize - 5 * mainCamera.aspect, cameraSize + 10, 0));
         return new BoundsInt(minPosition, maxPosition - minPosition);
     }
 }

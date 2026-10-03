@@ -3,7 +3,7 @@ using UnityEngine;
 public class XPDrop : Pickup
 {   [SerializeField] private SpriteRenderer spriteRenderer;
     
-    [SerializeField] private ParticleSystem particleSystem;
+    [SerializeField] private ParticleSystem particles;
     [SerializeField] private Material biggXpDropMaterial; 
     [SerializeField] private Material mediumXpDropMaterial; 
     [SerializeField] private Material smallXpDropMaterial; 
@@ -17,7 +17,7 @@ public class XPDrop : Pickup
 
     private void Awake()
     {
-        particleSystemRenderer = particleSystem.GetComponent<ParticleSystemRenderer>();
+        particleSystemRenderer = particles.GetComponent<ParticleSystemRenderer>();
         SetXpType();
     }
     public XPDrop Initialize(int initialXP)

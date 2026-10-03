@@ -281,13 +281,11 @@ public class SoundManager : MonoBehaviour
             }
             musicSource2.Stop();
             musicSource2.pitch = 1;
-            
         }
     }
 
     private void UpdateTrackIfBPMChanged()
     {
-        //pitch goes down
 
         if(Array.IndexOf(BPMForTracks, currentBPM) != 0)
         {
@@ -297,9 +295,6 @@ public class SoundManager : MonoBehaviour
             }
         }
         
-
-
-        //pitch goes up
         if (Array.IndexOf(BPMForTracks, currentBPM) != BPMForTracks.Length-1)
         {
            
@@ -308,13 +303,7 @@ public class SoundManager : MonoBehaviour
                 ChangeTrack(Array.IndexOf(BPMForTracks, currentBPM) + 1);
             }
         }
-       
-
-        
     }
-
-  
-
     public void ChangePitch(bool increasePitch)
     {
         StartCoroutine(ChangePitchCoroutine(increasePitch));
@@ -384,7 +373,6 @@ public class SoundManager : MonoBehaviour
     {
         AudioSource audioSource = SFXSource;
         audioSource.pitch = currentTrack.pitch;
-        //audioSource.volume = (float)UnityEngine.Random.Range(0.5f, volume);
         audioSource.PlayOneShot(clip, volume);
 
     }
@@ -429,9 +417,6 @@ public class SoundManager : MonoBehaviour
 
     public void Click()
     {
-        //float randomPitch = UnityEngine.Random.Range(-0.2f, 0.2f);
-        //SFXSource.pitch = Mathf.Clamp(SFXSource.pitch + randomPitch, 0.1f, 3.0f);
-
         SFXSource.pitch = (float)UnityEngine.Random.Range(0.5f, 1.5f);
         SFXSource.PlayOneShot(clickSound[0], 1); 
     }
@@ -440,6 +425,4 @@ public class SoundManager : MonoBehaviour
     {
         SFXSource.PlayOneShot(clickSound[0], 1);
     }
-
-    
 }

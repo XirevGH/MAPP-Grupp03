@@ -77,7 +77,5 @@ public class Floor : MonoBehaviour
                 }
             }
         }
-
-        tilemap.CompressBounds();
     }
 }

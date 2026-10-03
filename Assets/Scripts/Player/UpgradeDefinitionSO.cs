@@ -65,7 +65,6 @@ public class UpgradeDefinitionSO : ScriptableObject
 
         if (localizedDescription != null && !localizedDescription.IsEmpty)
         {
-            // Unity's LocalizedString replaces {0} with the passed argument!
             return localizedDescription.GetLocalizedString(formattedValue);
         }
 

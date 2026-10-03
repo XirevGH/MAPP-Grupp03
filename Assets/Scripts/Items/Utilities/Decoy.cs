@@ -11,8 +11,6 @@ public class Decoy : MonoBehaviour
     {
         startPosition = transform.position;
         controlPoint = BezierCurve.CalculateControlPoint(startPosition, endPosition, controlPointOffSet, true);
-
-        //Debug.Log(controlPoint);
     }
     private void FixedUpdate()
     {

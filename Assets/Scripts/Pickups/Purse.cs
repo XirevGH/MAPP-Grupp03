@@ -45,13 +45,11 @@ public class Purse : Pickup
             SoundManager.Instance.PlaySFX(sfxClip, 1f);
         }
 
-        // 1. Add currency to the player
         if (player != null)
         {
             player.AddCurrency(moneyAmount);
         }
 
-        // 2. Grant a random stat upgrade to an owned item
         UpgradeRandomOwnedItem();
     }
 
@@ -62,26 +60,22 @@ public class Purse : Pickup
         List<Item> ownedItems = player.GetCurrentItems();
         if (ownedItems == null || ownedItems.Count == 0) return;
 
-        // Pick a random owned item (e.g. Bass Guitar, Saxophone, Roller Skates)
         Item randomItem = ownedItems[Random.Range(0, ownedItems.Count)];
         if (randomItem == null || randomItem.BaseItemData == null) return;
 
         ItemDefinitionSO itemData = randomItem.BaseItemData;
 
-        // Pick a random upgrade defined for that item
         UpgradeDefinitionSO chosenUpgradeSO = null;
         if (itemData.AvailableMetaUpgrades != null && itemData.AvailableMetaUpgrades.Count > 0)
         {
             chosenUpgradeSO = itemData.AvailableMetaUpgrades[Random.Range(0, itemData.AvailableMetaUpgrades.Count)];
         }
 
-        // Apply the upgrade cleanly without reflection!
         if (chosenUpgradeSO != null)
         {
             upgradeSystem.ApplyStatUpgrade(randomItem, chosenUpgradeSO);
         }
 
-        // Update the Purse popup UI with item details
         UpdatePursePopupUI(randomItem, chosenUpgradeSO);
     }
 
@@ -91,11 +85,10 @@ public class Purse : Pickup
 
         ItemDefinitionSO data = item.BaseItemData;
 
-        // 1. Set Title & Description Text
         TMP_Text[] textComponents = pursePanelGameObject.GetComponentsInChildren<TMP_Text>();
         if (textComponents.Length > 0)
         {
-            textComponents[0].text = data.ItemName; // Title (e.g., "Bass Guitar")
+            textComponents[0].text = data.ItemName;
         }
         if (textComponents.Length > 1)
         {
@@ -103,14 +96,13 @@ public class Purse : Pickup
                 ? $"{upgradeSO.DisplayName}: +{upgradeSO.IncreasePerRank}{(upgradeSO.IsPercentage ? "%" : "")}"
                 : "+10% Power";
 
-            textComponents[1].text = bonusText; // Description
+            textComponents[1].text = bonusText;
         }
         if (textComponents.Length > 2)
         {
             textComponents[2].text = $"+${moneyAmount} COINS & UPGRADE!";
         }
 
-        // 2. Set Icon Image
         Image[] images = pursePanelGameObject.GetComponentsInChildren<Image>();
         if (images.Length > 1 && data.Icon != null)
         {

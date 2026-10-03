@@ -8,8 +8,12 @@ public class ElectricGuitar : TetheringWeapon
     protected override void Start()
     {
         base.Start();
-        UnityAction action = new UnityAction(Attack);
-        TriggerController.Instance.SetTrigger(weaponData.BeatNumber, action);
+
+        if (weaponData != null && weaponData.HasBeatTrigger)
+        {
+            UnityAction action = new UnityAction(Attack);
+            TriggerController.Instance.SetTrigger(weaponData.BeatNumber, action);
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -22,12 +26,20 @@ public class ElectricGuitar : TetheringWeapon
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        enemies.Remove(other.gameObject);
+        if (other.CompareTag("Enemy"))
+        {
+            enemies.Remove(other.gameObject);
+        }
     }
 
     public override void Attack()
     {
-        if (gameObject.activeSelf && enemies.Count > 0)
+        if (!gameObject.activeSelf) return;
+
+        // Clean up dead enemies killed by other weapons
+        enemies.RemoveWhere(e => e == null);
+
+        if (enemies.Count > 0)
         {
             if (weaponData != null && weaponData.AttackSound != null)
             {
@@ -36,16 +48,17 @@ public class ElectricGuitar : TetheringWeapon
 
             GameObject[] targetEnemies = GetClosestEnemies(AdjustTargetOverflow(GetCurrentTetherAmount()));
             float finalDamage = GetCurrentDamage();
+            Transform sourceTransform = player != null ? player.transform : transform;
 
             for (int i = 0; i < targetEnemies.Length; i++)
             {
-                if (targetEnemies[i] != null)
+                if (targetEnemies[i] != null && bolt != null)
                 {
                     GameObject clone = Instantiate(bolt);
 
                     if (clone.TryGetComponent<ElectricBolt>(out var electricBolt))
                     {
-                        electricBolt.Initialize(player.transform, targetEnemies[i], finalDamage);
+                        electricBolt.Initialize(sourceTransform, targetEnemies[i], finalDamage);
                     }
                 }
             }

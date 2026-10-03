@@ -15,7 +15,6 @@ public class CurrencyTextHandler : MonoBehaviour
 
     private void Start()
     {
-        // 1. Subscribe to live currency updates
         if (MetaUpgradeManager.Instance != null)
         {
             MetaUpgradeManager.Instance.OnCurrencyChanged += UpdateDisplay;
@@ -29,7 +28,6 @@ public class CurrencyTextHandler : MonoBehaviour
 
     private void OnDestroy()
     {
-        // Unsubscribe to prevent memory leaks when changing scenes
         if (MetaUpgradeManager.Instance != null)
         {
             MetaUpgradeManager.Instance.OnCurrencyChanged -= UpdateDisplay;
@@ -45,7 +43,7 @@ public class CurrencyTextHandler : MonoBehaviour
     {
         if (textField != null)
         {
-            textField.text = ":" + amount; // Matches your UI format (e.g. ":500")
+            textField.text = ":" + amount;
         }
     }
 }

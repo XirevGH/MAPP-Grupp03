@@ -6,8 +6,6 @@ public class MetaUpgradeManager : MonoBehaviour
 {
     public static MetaUpgradeManager Instance { get; private set; }
 
-    [SerializeField] private ItemDefinitionSO[] allGameItems;
-
     private MetaSaveData saveData = new MetaSaveData();
     private string saveFilePath;
 

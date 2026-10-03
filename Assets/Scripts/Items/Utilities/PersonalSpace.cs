@@ -34,8 +34,6 @@ public class PersonalSpace : Utility
             UnityAction action = new UnityAction(PushEnemiesAway);
             TriggerController.Instance.SetTrigger(utilityData.BeatNumber, action);
         }
-
-        mainModule.startLifetime = 0.1f;
     }
 
     public void InitializeStats()

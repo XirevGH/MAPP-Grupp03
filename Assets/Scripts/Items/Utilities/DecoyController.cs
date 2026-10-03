@@ -51,23 +51,21 @@ public class DecoyController : Utility
 
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Main") {
-            if (dynamicJoystick == null)
+        if (dynamicJoystick == null)
+        {
+            DynamicJoystick[] dynamicJoysticks = FindObjectsOfType<DynamicJoystick>();
+            foreach (DynamicJoystick joystick in dynamicJoysticks)
             {
-                DynamicJoystick[] dynamicJoysticks = FindObjectsOfType<DynamicJoystick>();
-                foreach (DynamicJoystick joystick in dynamicJoysticks)
+                if (joystick.GetPosition() == "Right")
                 {
-                    if (joystick.GetPosition() == "Right")
-                    {
-                        dynamicJoystick = joystick;
-                    }
+                    dynamicJoystick = joystick;
                 }
             }
-            if (player != null && dynamicJoystick != null)
-            {
-                playerPosition = player.transform.position;
-                playerDirection = new Vector2(dynamicJoystick.Horizontal, dynamicJoystick.Vertical).normalized;
-            }
+        }
+        if (player != null && dynamicJoystick != null)
+        {
+            playerPosition = player.transform.position;
+            playerDirection = new Vector2(dynamicJoystick.Horizontal, dynamicJoystick.Vertical).normalized;
         }
     }
 

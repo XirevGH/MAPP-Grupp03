@@ -1,16 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Localization; // ◄── Required for Unity Localization
+using UnityEngine.Localization;
 
 public abstract class ItemDefinitionSO : ScriptableObject
 {
     [Header("Identity & Localization")]
     [SerializeField] private string itemID;
-    [SerializeField] private LocalizedString localizedItemName;       // e.g. StringTable / item_bass_name
-    [SerializeField] private LocalizedString localizedDescription;    // e.g. StringTable / item_bass_desc
+    [SerializeField] private LocalizedString localizedItemName;
+    [SerializeField] private LocalizedString localizedDescription;
     [SerializeField] private Sprite icon;
 
-    // Fallbacks
     [SerializeField] private string fallbackItemName;
     [TextArea][SerializeField] private string fallbackDescription;
 
@@ -21,14 +20,12 @@ public abstract class ItemDefinitionSO : ScriptableObject
     [Header("Meta Upgrades")]
     [SerializeField] private List<UpgradeDefinitionSO> availableMetaUpgrades;
 
-    // Public Getters
     public string ItemID => itemID;
     public Sprite Icon => icon;
     public int BeatNumber => beatNumber;
     public bool HasBeatTrigger => beatNumber > 0;
     public IReadOnlyList<UpgradeDefinitionSO> AvailableMetaUpgrades => availableMetaUpgrades;
 
-    // Localized Name (Returns translated string based on active locale)
     public string ItemName
     {
         get
@@ -41,7 +38,6 @@ public abstract class ItemDefinitionSO : ScriptableObject
         }
     }
 
-    // Localized Base Description
     public string BaseDescription
     {
         get

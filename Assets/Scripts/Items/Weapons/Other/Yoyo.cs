@@ -26,11 +26,17 @@ public class Yoyo : Projectile
     private bool isSuperMode = false;
     private float superModeDuration;
     private float superModeTimer;
+    private float triggerNoteValue;
 
     private void Awake()
     {
         if (circleColl == null) circleColl = GetComponent<CircleCollider2D>();
         ResetSuperMode();
+
+        if (YoyoController.Instance != null)
+        {
+            triggerNoteValue = TriggerController.Instance.GetTrigger(YoyoController.Instance.BaseItemData.BeatNumber).noteValue;
+        }
     }
 
     private void Update()

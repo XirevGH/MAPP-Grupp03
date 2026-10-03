@@ -16,17 +16,14 @@ public class GrooveArmor : Utility
         if (isApplied) return;
         if (utilityData == null || player == null) return;
 
-        // 1. Look up the Health meta-upgrade
         var healthUpgrade = utilityData.GetUpgrade(StatType.Health);
 
         if (healthUpgrade != null && MetaUpgradeManager.Instance != null)
         {
-            // Gets base value (e.g., 15%) + meta rank bonuses (e.g., +15%) = 30%
             float totalBonusPercent = MetaUpgradeManager.Instance.GetStatValue(healthUpgrade);
 
             if (totalBonusPercent > 0)
             {
-                // Multiplier: 1 + (30 / 100) = 1.30x
                 player.IncreaseMaxHealth(1f + (totalBonusPercent / 100f));
             }
         }

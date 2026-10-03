@@ -1,31 +1,38 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class JoystickController : MonoBehaviour
 {
-    public DynamicJoystick leftJoystic;
-    public DynamicJoystick rightJoystic;
+    [SerializeField] private DynamicJoystick leftJoystick;
+    [SerializeField] private DynamicJoystick rightJoystick;
 
-    public static JoystickController Instance
-    {
-        get; private set;
-    }
+    public static JoystickController Instance { get; private set; }
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void ToggleJoysticks(bool state)
     {
-        leftJoystic.gameObject.SetActive(state);
-        rightJoystic.gameObject.SetActive(state);
-        leftJoystic.handle.anchoredPosition = Vector2.zero;
-        rightJoystic.handle.anchoredPosition = Vector2.zero;
-        leftJoystic.input = Vector2.zero;
-        rightJoystic.input = Vector2.zero;
-       
+        if (leftJoystick != null)
+        {
+            leftJoystick.gameObject.SetActive(state);
+            leftJoystick.handle.anchoredPosition = Vector2.zero;
+            leftJoystick.input = Vector2.zero;
+        }
+
+        if (rightJoystick != null)
+        {
+            rightJoystick.gameObject.SetActive(state);
+            rightJoystick.handle.anchoredPosition = Vector2.zero;
+            rightJoystick.input = Vector2.zero;
+        }
     }
-
-
 }
