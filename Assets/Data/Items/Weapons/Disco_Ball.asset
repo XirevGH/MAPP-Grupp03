@@ -40,7 +40,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5d0f509ccde908e428f321770d85ffdc, type: 2}
   - {fileID: 11400000, guid: 1d357d3ec9e9f974f96025c2c17927fb, type: 2}
   baseDamage: 15
-  attackSound: {fileID: 0}
+  attackSound: {fileID: 8300000, guid: 64db24276734dd94c9fc7337805a49d7, type: 3}
   references:
     version: 2
     RefIds: []
